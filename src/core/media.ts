@@ -127,9 +127,38 @@ export async function sampleFrames(file: string, opts: SampleOptions = {}): Prom
   return out;
 }
 
+/** Decodifica el vídeo completo a baja resolución y fps reducidos para medir cambios de color. */
+export async function scanFrames(
+  file: string,
+  opts: { fps?: number; width?: number } = {},
+): Promise<FrameSample[]> {
+  const info = await probe(file);
+  if (info.kind === 'image') return [];
+  const fps = opts.fps ?? 15;
+  const width = opts.width ?? 80;
+  const height = Math.max(16, Math.round((width * info.height) / Math.max(1, info.width)));
+  const r = await exec('ffmpeg', [
+    '-v', 'error', '-i', file,
+    '-vf', `fps=${fps},scale=${width}:${height}:flags=area`,
+    '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-',
+  ], { timeoutMs: 240_000 });
+  if (!r.ok) return [];
+  const frameSize = width * height * 3;
+  const out: FrameSample[] = [];
+  for (let offset = 0; offset + frameSize <= r.stdout.length; offset += frameSize) {
+    out.push({ t: roundTo(out.length / fps, 3), width, height, rgb: r.stdout.subarray(offset, offset + frameSize) });
+  }
+  return out;
+}
+
+function roundTo(v: number, d: number): number {
+  return Math.round(v * 10 ** d) / 10 ** d;
+}
+
 /**
- * Detecta cortes de plano reales con el detector de escenas de FFmpeg
- * (select + showinfo). Devuelve null si FFmpeg no pudo analizar el archivo.
+ * Detecta cortes combinando el detector de escenas de FFmpeg (luminancia) con
+ * un barrido RGB propio. El detector de FFmpeg no ve cortes sólo de color;
+ * el barrido sí. Se exige un pico claro sobre el movimiento de fondo.
  */
 export async function detectCuts(file: string, threshold = 0.1): Promise<number[] | null> {
   const r = await exec('ffmpeg', [
@@ -139,8 +168,42 @@ export async function detectCuts(file: string, threshold = 0.1): Promise<number[
   ], { timeoutMs: 180_000 });
   if (!r.ok && !/pts_time/.test(r.stderr)) return null;
   const times = [...r.stderr.matchAll(/pts_time:([0-9]+(?:\.[0-9]+)?)/g)].map((m) => Number(m[1]));
-  const unique = [...new Set(times.map((t) => Math.round(t * 1000) / 1000))].filter((t) => t > 0.02);
-  return unique.sort((a, b) => a - b);
+  const sceneCuts = [...new Set(times.map((t) => Math.round(t * 1000) / 1000))].filter((t) => t > 0.02);
+
+  const scanned = await scanFrames(file, { fps: 15, width: 80 });
+  const diffs: number[] = [];
+  for (let i = 1; i < scanned.length; i++) {
+    const a = scanned[i - 1].rgb;
+    const b = scanned[i].rgb;
+    let sum = 0;
+    let count = 0;
+    for (let p = 0; p < a.length; p += 3) {
+      sum += Math.abs(a[p] - b[p]) + Math.abs(a[p + 1] - b[p + 1]) + Math.abs(a[p + 2] - b[p + 2]);
+      count += 3;
+    }
+    diffs.push(sum / count / 255);
+  }
+  const rgbCuts: number[] = [];
+  if (diffs.length >= 4) {
+    const sorted = [...diffs].sort((x, y) => x - y);
+    const med = sorted[Math.floor(sorted.length / 2)];
+    const mean = diffs.reduce((x, y) => x + y, 0) / diffs.length;
+    const variance = diffs.reduce((x, y) => x + (y - mean) ** 2, 0) / diffs.length;
+    const limit = Math.max(0.045, med * 1.8, mean + 1.5 * Math.sqrt(variance));
+    for (let i = 1; i < diffs.length - 1; i++) {
+      const d = diffs[i];
+      if (d >= limit && d >= diffs[i - 1] && d >= diffs[i + 1]) rgbCuts.push(scanned[i + 1].t);
+    }
+  }
+
+  const merged: number[] = [];
+  for (const t of [...sceneCuts, ...rgbCuts].sort((a, b) => a - b)) {
+    if (!merged.some((m) => Math.abs(m - t) < 0.12)) merged.push(t);
+  }
+  const infoForDuration = await probe(file);
+  const result = merged.filter((t) => t > 0.02 && t < infoForDuration.duration - 0.02);
+  if (!result.length && !sceneCuts.length && !rgbCuts.length) return [];
+  return result;
 }
 
 /** Extrae fotogramas a disco como PNG/JPG usando ffmpeg. */
@@ -166,6 +229,19 @@ export async function extractFrames(
   const r = await exec('ffmpeg', args, { timeoutMs: 120_000 });
   if (!r.ok) throw new MediaError(`No se pudieron extraer fotogramas: ${r.stderr.trim().slice(0, 300)}`);
   return fs.readdirSync(outDir).filter((f) => f.startsWith('frame-')).sort().map((f) => path.join(outDir, f));
+}
+
+/** Extrae un único fotograma en un instante exacto (PNG) con FFmpeg. */
+export async function extractFrameAt(file: string, t: number, out: string, width = 0): Promise<string> {
+  ensureDir(path.dirname(out));
+  const args = ['-v', 'error', '-y', '-ss', Math.max(0, t).toFixed(3), '-i', file, '-frames:v', '1'];
+  if (width > 0) args.push('-vf', `scale=${width}:-2:flags=lanczos`);
+  args.push(out);
+  const r = await exec('ffmpeg', args, { timeoutMs: 60_000 });
+  if (!r.ok || !fs.existsSync(out)) {
+    throw new MediaError(`No se pudo extraer el fotograma ${t.toFixed(2)}s: ${r.stderr.trim().slice(0, 200)}`);
+  }
+  return out;
 }
 
 /** Escribe un búfer RGB24 como PNG real (usa ffmpeg como codificador). */

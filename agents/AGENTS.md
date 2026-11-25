@@ -1,7 +1,8 @@
 # Visual Engine · instrucciones para agentes
 
-Este proyecto tiene instalado **Visual Engine**: un motor local que mide y mejora la calidad
-visual de lo que produces. No es una guía de estilo: ejecuta herramientas reales.
+Este proyecto tiene instalado **Visual Engine 0.2**: un motor local que mide y mejora la calidad
+visual de lo que produces. No es una guía de estilo: ejecuta herramientas reales y devuelve
+evidencia.
 
 ## Cuándo usarlo
 
@@ -11,57 +12,59 @@ o mejorar un resultado visual. No lo uses para tareas sin componente visual.
 ## Ciclo obligatorio
 
 1. **Comprobar** antes de prometer:
-   `ve doctor --json`
-   Si falta `ffmpeg` o los navegadores de Playwright, dilo y no simules la captura.
-2. **Medir la referencia** (imagen o vídeo):
-   `ve analyze <referencia> --samples 10 --json`
-   Anota paleta, luminancia, contraste, saturación, colorido, densidad de bordes,
-   movimiento y cortes. Son los objetivos numéricos.
-3. **Partir de una base con intención**, no de un div vacío:
-   `ve effects list` y `ve effects apply <id> --out <proyecto> [--set clave=valor]`
-   Adapta los parámetros a la paleta medida.
-4. **Generar y capturar**:
-   `ve capture <url|html> --serve <carpeta> --width 540 --height 960 --frames 6 --json`
-   Revisa `consoleErrors` y `errors`: un diseño bonito con errores JS no está terminado.
-5. **Revisar contra la referencia**:
-   `ve review --reference <ref> --target-dir <carpeta> --target index.html --frames 6`
-   Aplica sólo las correcciones priorizadas y repite. Muestra la puntuación antes y después.
+   `ve doctor --json` y `ve vision status --json`.
+   Si falta ffmpeg, Playwright, Tesseract u Ollama, dilo y no simules esa capacidad.
+2. **Descomponer la referencia** (imagen o vídeo):
+   - `ve analyze <ref> --samples 12 --json` → color, luz, movimiento, cortes.
+   - `ve timeline <ref> --out <dir> --storyboard` → escenas y fotogramas clave.
+   - `ve motion <ref> --json` → paneo, zoom, aceleración, transiciones.
+   - `ve inspect <ref> --json` → composición, formas, texto (estimado), profundidad (estimada).
+   - `ve detect <ref> --json` → efectos con confianza y estado.
+3. **Especificar**: `ve spec <ref> --out <dir>` y `ve recommend --spec <dir>/spec.json --out <dir>`.
+   Usa la paleta, la composición y los efectos medidos; no inventes otros.
+4. **Construir** con una base intencionada (`ve effects apply`) y capturar:
+   `ve capture <url|html> --serve <carpeta> --frames 6 --json`.
+   Revisa `consoleErrors` y `errors`.
+5. **Comparar**: `ve review ... --frames 6` y, si hay dos vídeos, `ve temporal <ref> <resultado>`.
+   Aplica sólo las correcciones que suban fidelidad **y** calidad; muestra ambas cifras.
+6. **Iterar con red**: prepara el cambio y usa `ve iterate --replace` o `--patch`. El motor
+   copia, mide y revierte si empeora. No edites a mano sin copia.
+
+## Cómo leer los estados
+
+- `verified`: la señal se midió (halo, nitidez, partículas en movimiento, viñeta, cortes).
+- `estimated`: hay proxy, no certeza (texto sin OCR, objetos por saliencia, profundidad,
+  parallax, reflejos, glitch, distorsión).
+- `available:false`: falta herramienta/modelo. Devuelve el motivo, no lo rellenes.
 
 ## Reglas de calidad
 
-- **Nada de diseños planos** si el usuario pide calidad avanzada: fondo con profundidad,
-  jerarquía tipográfica real, un foco de luz y micro-detalle (grano, retícula, partículas finas).
-- **Una idea visual por pantalla.** No acumules efectos: si un efecto no sube la fidelidad
-  ni la legibilidad, se quita.
-- **Respeta la referencia** por encima de tu gusto: paleta, contraste y ritmo se copian;
-  la creatividad va en la ejecución, no en cambiar los objetivos.
-- **Rendimiento**: DPR máximo 2, un solo canvas, pausar animaciones con `document.hidden`,
-  respetar `prefers-reduced-motion`.
-- **Accesibilidad mínima**: contraste de texto suficiente, foco visible, texto alternativo.
-- **Nada de recursos externos** por defecto: sin CDNs, sin fuentes de Google, sin imágenes
-  de stock con licencia dudosa.
+- **Nada de diseños planos** si piden calidad avanzada: profundidad, jerarquía, foco y detalle.
+- **Una idea visual por pantalla**; quita lo que no suba la medición.
+- **Respeta la referencia** por encima del gusto: paleta, contraste, composición y ritmo.
+- **Rendimiento**: DPR ≤ 2, un canvas, pausa con `document.hidden`, `prefers-reduced-motion`.
+- **Accesibilidad**: contraste, foco visible, texto alternativo.
+- **Sin recursos externos** por defecto (CDNs, fuentes, stock dudoso).
 
-## Licencias (no las ignores)
+## Licencias
 
-- GSAP: núcleo y plugins públicos gratis; los de Club GSAP son de pago.
-- Remotion: gratis para individuos y equipos pequeños, **no es MIT**.
-- React Bits: componentes MIT o CC-BY (atribución obligatoria en CC-BY). No hay paquete npm oficial.
-- Three.js, Motion, Playwright: MIT/Apache. FFmpeg: LGPL/GPL según el binario.
+GSAP Club no; Remotion no es MIT; React Bits CC-BY exige atribución; FFmpeg según build;
+Three.js/Motion/Playwright son permisivas. No instales nada de pago.
 
 ## Honestidad
 
-- No declares un módulo "funcionando" sin haber ejecutado su comando y visto la salida.
-- Distingue siempre **implementado**, **medido** y **pendiente**.
-- Si una comparación no aplica (por ejemplo, referencia en vídeo y resultado en imagen),
-  dilo en vez de inventar una puntuación.
-- Nunca inventes cifras: usa las que devuelve `review.json`.
+- No declares un módulo funcionando sin ejecutar su comando y ver la salida.
+- Distingue implementado, medido, estimado y pendiente.
+- No inventes cifras: usa `review.json`, `spec.json` o la salida de la herramienta.
+- Si no hay OCR/modelo, el resultado correcto es "no disponible", no una descripción inventada.
 
 ## Herramientas MCP
 
-`visual_doctor`, `visual_analyze`, `visual_extract_frames`, `visual_capture`,
+Las 13 de 0.1 (`visual_doctor`, `visual_analyze`, `visual_extract_frames`, `visual_capture`,
 `visual_compare`, `visual_review`, `visual_effects_list`, `visual_effect_get`,
 `visual_effect_apply`, `visual_adapters`, `visual_scaffold`, `visual_deps_plan`,
-`visual_install_deps`.
+`visual_install_deps`) y las 10 de 0.2: `visual_timeline`, `visual_camera`, `visual_inspect`,
+`visual_effects_detect`, `visual_spec`, `visual_recommend`, `visual_temporal`, `visual_vision`,
+`visual_iterate` (confirm=true) y `visual_backup`.
 
-La CLI y la API local (`ve serve`, `http://127.0.0.1:4747`) ofrecen lo mismo si el cliente
-no habla MCP.
+La CLI y la API local (`ve serve`, `http://127.0.0.1:4747`) ofrecen lo mismo.

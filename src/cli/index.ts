@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import fs from 'node:fs';
 import path from 'node:path';
 import { ADAPTERS } from '../core/adapters.js';
 import { runNpm } from '../core/deps.js';
@@ -22,6 +23,21 @@ import {
 import { startApi } from '../api/server.js';
 import { PACKAGE_ROOT } from '../core/paths.js';
 import { exec } from '../core/run.js';
+import {
+  opBackups,
+  opCamera,
+  opDetectEffects,
+  opInspect,
+  opIterate,
+  opRecommend,
+  opRestoreBackup,
+  opSpec,
+  opTemporal,
+  opTimeline,
+  opVision,
+} from '../core/advanced.js';
+import { describeIteration } from '../core/iterate.js';
+import { describeTemporal } from '../core/temporal.js';
 
 interface Parsed {
   _: string[];
@@ -86,6 +102,16 @@ COMANDOS
   capture <destino>      Captura el proyecto en Chromium y mide el resultado
   compare <ref> <cand>   Compara referencia y resultado
   review                 Ciclo completo: analizar + capturar + comparar + informe
+  timeline <vídeo>       Escenas, fotogramas clave y storyboard medidos
+  motion <vídeo>         Movimiento de cámara (desplazamiento, zoom, rotación)
+  inspect <archivo>      Composición, formas, texto y profundidad estimada
+  detect <vídeo>         Efectos visuales con evidencia y estado (verified/estimated)
+  spec <vídeo>           Especificación visual estructurada (JSON + Markdown)
+  recommend              Tecnología y código por efecto (--effect o --spec)
+  temporal <ref> <cand>  Comparación temporal y calidad multidimensional
+  vision [status|describe|ocr]  Modelos locales Ollama y Tesseract (opcional)
+  iterate                Aplica un cambio, mide y revierte si empeora
+  backup [list|restore]  Copias de seguridad de las iteraciones
   effects [list]         Biblioteca de efectos reutilizables
   effects show <id>      Ficha de un efecto
   effects apply <id>     Aplica un efecto en --out
@@ -104,6 +130,10 @@ EJEMPLOS
   ve analyze referencia.mp4 --samples 12
   ve review --reference referencia.mp4 --target-dir ./mi-web --frames 6 --out ./out
   ve review --reference intro.mp4 --target http://localhost:3000 --width 1080 --height 1920
+  ve timeline intro.mp4 --out ./analisis --storyboard
+  ve spec intro.mp4 --out ./analisis
+  ve temporal referencia.mp4 resultado.mp4 --out ./analisis
+  ve iterate --reference referencia.mp4 --target-dir ./mi-web --replace index.nuevo.html
   ve effects apply aurora-hero --out ./mi-web --set accent=#12e0c8
   ve adapters scaffold three --out ./mi-web/visual/three
   ve init --agents all --clients claude,cursor
@@ -222,10 +252,11 @@ async function cmdReview(p: Parsed) {
     outDir: s(p, 'out'),
   });
   if (jsonOut(p)) {
-    console.log(JSON.stringify({ score: r.score, grade: r.grade, comparison: r.comparison, image: r.image, report: r.report, warnings: r.warnings, heatmap: r.heatmap }, null, 2));
+    console.log(JSON.stringify({ score: r.score, grade: r.grade, quality: r.quality, comparison: r.comparison, image: r.image, report: r.report, warnings: r.warnings, heatmap: r.heatmap }, null, 2));
   } else {
     console.log(`\nFidelidad: ${r.score.toFixed(1)}/100 (${r.grade})`);
     console.log(r.comparison.summary);
+    console.log(`Calidad: ${r.quality.summary}`);
     console.log('\nCorrecciones priorizadas:');
     r.comparison.recommendations.forEach((rec, i) => console.log(`  ${i + 1}. ${rec}`));
     if (r.image) console.log(`\nSSIM ${r.image.ssim} · ΔE ${r.image.deltaE} · MAE ${r.image.mae}`);
@@ -400,6 +431,191 @@ async function cmdUpdate(p: Parsed) {
   console.log('\nActualizado. Reinicia los clientes MCP para recargar las herramientas.');
 }
 
+async function cmdTimeline(p: Parsed) {
+  const file = p._[0];
+  if (!file) throw new Error('Uso: ve timeline <vídeo> [--samples n] [--out dir] [--storyboard]');
+  const r = await opTimeline({ path: file, samples: n(p, 'samples'), outDir: s(p, 'out'), storyboard: b(p, 'storyboard') });
+  if (jsonOut(p)) {
+    console.log(JSON.stringify({ timeline: r.timeline, json: r.json, storyboard: r.storyboard }, null, 2));
+    return;
+  }
+  for (const line of r.description) console.log(line);
+  if (r.json) console.log(`\nLínea temporal: ${r.json}`);
+  if (r.storyboard?.length) {
+    console.log(`Storyboard: ${r.storyboard.length} fotogramas clave`);
+    r.storyboard.forEach((f) => console.log(`  ${f}`));
+  }
+}
+
+async function cmdMotion(p: Parsed) {
+  const file = p._[0];
+  if (!file) throw new Error('Uso: ve motion <vídeo> [--samples n]');
+  const r = await opCamera({ path: file, samples: n(p, 'samples'), width: n(p, 'width') });
+  if (jsonOut(p)) {
+    console.log(JSON.stringify(r.camera, null, 2));
+    return;
+  }
+  for (const line of r.description) console.log(line);
+  if (r.camera.warnings.length) {
+    console.log('\nAvisos:');
+    r.camera.warnings.forEach((w) => console.log(`  - ${w}`));
+  }
+}
+
+async function cmdInspect(p: Parsed) {
+  const file = p._[0];
+  if (!file) throw new Error('Uso: ve inspect <archivo> [--frames n] [--ocr]');
+  const r = await opInspect({ path: file, frames: n(p, 'frames'), ocr: b(p, 'ocr'), outDir: s(p, 'out') });
+  if (jsonOut(p)) {
+    console.log(JSON.stringify(r, null, 2));
+    return;
+  }
+  for (const line of r.description) console.log(line);
+  if (r.ocr?.available && r.ocr.lines?.length) {
+    console.log('\nTexto leído (Tesseract):');
+    r.ocr.lines.forEach((l) => console.log(`  [${l.confidence.toFixed(0)}%] ${l.text}`));
+  } else if (b(p, 'ocr')) {
+    console.log(`\nOCR: ${r.ocr?.reason ?? 'no disponible'}`);
+  }
+}
+
+async function cmdDetect(p: Parsed) {
+  const file = p._[0];
+  if (!file) throw new Error('Uso: ve detect <vídeo> [--samples n] [--out dir]');
+  const r = await opDetectEffects({ path: file, samples: n(p, 'samples'), outDir: s(p, 'out') });
+  if (jsonOut(p)) {
+    console.log(JSON.stringify({ report: r.report, json: r.json }, null, 2));
+    return;
+  }
+  for (const line of r.description) console.log(line);
+  if (r.json) console.log(`\nDatos: ${r.json}`);
+}
+
+async function cmdSpec(p: Parsed) {
+  const file = p._[0];
+  if (!file) throw new Error('Uso: ve spec <vídeo> [--samples n] [--out dir]');
+  const r = await opSpec({ path: file, samples: n(p, 'samples'), outDir: s(p, 'out') });
+  if (jsonOut(p)) {
+    console.log(JSON.stringify({ spec: r.spec, paths: r.paths }, null, 2));
+    return;
+  }
+  for (const line of r.description) console.log(line);
+  console.log('\nEfectos:');
+  if (!r.spec.effects.length) console.log('  ninguno por encima del umbral');
+  r.spec.effects.forEach((e) => console.log(`  ${e.label} (${e.status}, ${(e.confidence * 100).toFixed(0)}%) → ${e.technology}`));
+  console.log(`\nJSON: ${r.paths.json}\nMarkdown: ${r.paths.md}`);
+}
+
+async function cmdRecommend(p: Parsed) {
+  const effect = s(p, 'effect') ?? (p._[0] !== 'recommend' ? p._[0] : undefined);
+  const specFile = s(p, 'spec');
+  if (!effect && !specFile) {
+    const r = await opRecommend({});
+    console.log(`Efectos con recomendación: ${r.catalog.join(', ')}`);
+    console.log('Uso: ve recommend --effect glow | ve recommend --spec spec.json --out ./codigo');
+    return;
+  }
+  const r = await opRecommend({ effect, specFile });
+  if (jsonOut(p)) {
+    console.log(JSON.stringify(r.recommendations, null, 2));
+    return;
+  }
+  const outDir = s(p, 'out');
+  for (const rec of r.recommendations) {
+    console.log(`\n${rec.label} → ${rec.tech}${rec.checked ? ' · sintaxis JS OK' : ' · revisar código'}`);
+    console.log(`  ${rec.why}`);
+    console.log(`  Rendimiento: ${rec.performance}`);
+    if (rec.install.length) console.log(`  Instalar: npm install ${rec.install.join(' ')}`);
+    for (const sn of rec.snippets) {
+      const target = outDir ? path.join(outDir, rec.id, sn.filename) : undefined;
+      if (target) {
+        fs.mkdirSync(path.dirname(target), { recursive: true });
+        fs.writeFileSync(target, sn.code, 'utf8');
+        console.log(`  ${sn.language}: ${target}`);
+      } else {
+        console.log(`  ${sn.language}: ${sn.filename} (usa --out para escribirlo)`);
+      }
+    }
+    if (rec.checkOutput) console.log(`  Error de sintaxis: ${rec.checkOutput}`);
+  }
+}
+
+async function cmdTemporal(p: Parsed) {
+  const [reference, candidate] = p._;
+  if (!reference || !candidate) throw new Error('Uso: ve temporal <referencia.mp4> <resultado.mp4>');
+  const r = await opTemporal({ reference, candidate, samples: n(p, 'samples'), outDir: s(p, 'out') });
+  if (jsonOut(p)) {
+    console.log(JSON.stringify(r, null, 2));
+    return;
+  }
+  for (const line of describeTemporal(r)) console.log(line);
+  if (r.report) console.log(`\nInforme: ${r.report.md}`);
+}
+
+async function cmdVision(p: Parsed) {
+  const action = (p._[0] ?? 'status') as 'status' | 'describe' | 'ocr';
+  if (!['status', 'describe', 'ocr'].includes(action)) throw new Error('Uso: ve vision [status|describe|ocr] [imagen] [--model nombre]');
+  const r = await opVision({ action, path: p._[1], model: s(p, 'model'), prompt: s(p, 'prompt') });
+  if (jsonOut(p)) {
+    console.log(JSON.stringify({ status: r.status, result: r.result }, null, 2));
+    return;
+  }
+  for (const line of r.description) console.log(line);
+}
+
+async function cmdIterate(p: Parsed) {
+  const reference = s(p, 'reference');
+  const targetDir = s(p, 'target-dir') ?? s(p, 'project');
+  if (!reference) throw new Error('Falta --reference <imagen|vídeo>');
+  const r = await opIterate({
+    projectDir: targetDir,
+    target: s(p, 'target') ?? 'index.html',
+    reference,
+    targetDir,
+    patchFile: s(p, 'patch'),
+    replaceFile: s(p, 'replace'),
+    width: n(p, 'width'),
+    height: n(p, 'height'),
+    frames: n(p, 'frames'),
+    intervalMs: n(p, 'interval'),
+    outDir: s(p, 'out'),
+    minDelta: n(p, 'min-delta'),
+    keep: b(p, 'keep'),
+  });
+  if (jsonOut(p)) {
+    console.log(JSON.stringify(r, null, 2));
+  } else {
+    for (const line of describeIteration(r)) console.log(line);
+  }
+  if (r.status === 'failed') process.exitCode = 1;
+}
+
+async function cmdBackup(p: Parsed) {
+  const sub = p._[0] ?? 'list';
+  const project = s(p, 'project');
+  if (sub === 'list') {
+    const items = opBackups(project);
+    if (jsonOut(p)) {
+      console.log(JSON.stringify(items, null, 2));
+      return;
+    }
+    console.log(`Iteraciones: ${items.length}`);
+    for (const m of items) {
+      console.log(`  ${m.id}  ${m.status.padEnd(9)} objetivo ${m.target}${m.before ? ` · antes ${m.before.score.toFixed(1)}` : ''}${m.after ? ` → después ${m.after.score.toFixed(1)}` : ''}`);
+    }
+    return;
+  }
+  if (sub === 'restore') {
+    const id = p._[1];
+    if (!id) throw new Error('Uso: ve backup restore <id> --project <dir>');
+    const r = opRestoreBackup(project, id);
+    console.log(r.message);
+    r.restored.forEach((f) => console.log(`  ${f}`));
+    return;
+  }
+  throw new Error(`Subcomando desconocido: ${sub}. Usa list o restore.`);
+}
+
 async function main() {
   const p = parse(process.argv.slice(2));
   const cmd = p._[0] ?? 'help';
@@ -435,6 +651,36 @@ async function main() {
       return;
     case 'review':
       await cmdReview(rest);
+      return;
+    case 'timeline':
+      await cmdTimeline(rest);
+      return;
+    case 'motion':
+      await cmdMotion(rest);
+      return;
+    case 'inspect':
+      await cmdInspect(rest);
+      return;
+    case 'detect':
+      await cmdDetect(rest);
+      return;
+    case 'spec':
+      await cmdSpec(rest);
+      return;
+    case 'recommend':
+      await cmdRecommend(rest);
+      return;
+    case 'temporal':
+      await cmdTemporal(rest);
+      return;
+    case 'vision':
+      await cmdVision(rest);
+      return;
+    case 'iterate':
+      await cmdIterate(rest);
+      return;
+    case 'backup':
+      await cmdBackup(rest);
       return;
     case 'effects':
       await cmdEffects(rest);

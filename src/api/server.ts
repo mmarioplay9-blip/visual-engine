@@ -1,6 +1,19 @@
 import http from 'node:http';
 import { URL } from 'node:url';
 import {
+  opBackups,
+  opCamera,
+  opDetectEffects,
+  opInspect,
+  opIterate,
+  opRecommend,
+  opRestoreBackup,
+  opSpec,
+  opTemporal,
+  opTimeline,
+  opVision,
+} from '../core/advanced.js';
+import {
   opAdapters,
   opAnalyze,
   opApplyEffect,
@@ -76,6 +89,22 @@ export async function startApi(opts: ApiOptions = {}): Promise<ApiServer> {
       return opInstallDeps({ ...b, confirm: b.confirm === true });
     } },
     { method: 'GET', pattern: /^\/v1\/doctor$/, handler: async (_b, q) => opDoctor({ capabilities: q.get('capabilities')?.split(',').filter(Boolean) }) },
+    { method: 'POST', pattern: /^\/v1\/timeline$/, handler: async (b) => opTimeline(b) },
+    { method: 'POST', pattern: /^\/v1\/camera$/, handler: async (b) => opCamera(b) },
+    { method: 'POST', pattern: /^\/v1\/inspect$/, handler: async (b) => opInspect(b) },
+    { method: 'POST', pattern: /^\/v1\/effects\/detect$/, handler: async (b) => opDetectEffects(b) },
+    { method: 'POST', pattern: /^\/v1\/spec$/, handler: async (b) => opSpec(b) },
+    { method: 'GET', pattern: /^\/v1\/recommend$/, handler: async (_b, q) => opRecommend({ effect: q.get('effect') ?? undefined }) },
+    { method: 'POST', pattern: /^\/v1\/recommend$/, handler: async (b) => opRecommend(b) },
+    { method: 'POST', pattern: /^\/v1\/temporal$/, handler: async (b) => opTemporal(b) },
+    { method: 'GET', pattern: /^\/v1\/vision\/status$/, handler: async () => opVision({ action: 'status' }) },
+    { method: 'POST', pattern: /^\/v1\/vision$/, handler: async (b) => opVision(b) },
+    { method: 'POST', pattern: /^\/v1\/iterate$/, handler: async (b) => {
+      if (b.confirm !== true) throw new Error('Iteración no confirmada: envía confirm=true (escribe archivos).');
+      return opIterate(b);
+    } },
+    { method: 'GET', pattern: /^\/v1\/backups$/, handler: async (_b, q) => opBackups(q.get('project') ?? undefined) },
+    { method: 'POST', pattern: /^\/v1\/backups\/restore$/, handler: async (b) => opRestoreBackup(b.project, b.id) },
   ];
 
   const server = http.createServer(async (req, res) => {
@@ -147,6 +176,14 @@ export function capabilities() {
   return {
     implementado: [
       'Análisis de imágenes y vídeo de referencia (paleta, luz, contraste, detalle, movimiento, cortes)',
+      'Línea temporal con escenas, fotogramas clave y storyboard (detector de escenas FFmpeg)',
+      'Movimiento de cámara medido (desplazamiento, zoom, rotación, aceleración, temblor, transiciones)',
+      'Composición, círculos, líneas, regiones de texto (estimadas), saliencia y profundidad proxy',
+      'Detección de efectos con evidencia y estado verified/estimated',
+      'Especificación visual JSON+Markdown y recomendaciones con snippets validados',
+      'Comparación temporal con deriva, cortes alineados y calidad multidimensional',
+      'Iteración con copia, verificación y reversión automática',
+      'Visión local opcional (Tesseract/Ollama) sin APIs externas',
       'Extracción de fotogramas con FFmpeg',
       'Captura real con Playwright (varios fotogramas, errores de consola y de red)',
       'Comparación de perfiles con puntuación de fidelidad y correcciones priorizadas',
@@ -159,10 +196,16 @@ export function capabilities() {
     ],
     pendiente: [
       'Publicación del repositorio GitHub y actualizaciones verificadas desde remoto',
-      'Análisis de vídeo con detección de objetos/pose (no implementado)',
+      'Detección semántica de objetos/pose: requiere modelo local; no integrada (sólo regiones salientes)',
+      'OCR y descripción con visión local: dependen de Tesseract/Ollama instalados y con modelo',
       'Sincronización automática de audio y subtítulos',
-      'Ajuste automático de código fuente (las correcciones se entregan al agente, no se aplican solas)',
       'Prueba en Linux y macOS (sólo probado en Windows en esta máquina)',
+    ],
+    limites: [
+      'El texto se localiza sin OCR si Tesseract no está: estado estimated.',
+      'La profundidad y el parallax son proxies geométricos, no mapas métricos.',
+      'La etiqueta de un efecto es una interpretación de la señal medida.',
+      'El parcheo lo aporta el agente; iterate lo aplica, mide y revierte, pero no inventa el cambio.',
     ],
   };
 }

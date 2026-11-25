@@ -23,7 +23,19 @@ del agente; la verificación deja de ser una opinión.
 | Módulo | Responsabilidad | Dependencias |
 | --- | --- | --- |
 | `core/run.ts` | Ejecutar binarios con `spawn`, sin shell, con timeout y stdout binario | Node |
-| `core/media.ts` | FFprobe/FFmpeg: metadatos, muestreo RGB, fotogramas, codificación, cortes | ffmpeg |
+| `core/media.ts` | FFprobe/FFmpeg: metadatos, muestreo RGB, fotogramas, codificación, barrido y cortes | ffmpeg |
+| `core/pixels.ts` | Gris, blur, Sobel, laplaciano, correlación, warp y componentes conexas en JS puro | Node |
+| `core/motion.ts` | Traslación, zoom, rotación, aceleración, temblor y transiciones | pixels, media |
+| `core/timeline.ts` | Escenas, cortes, fotogramas clave y storyboard | media, analysis |
+| `core/inspect.ts` | Composición, círculos/líneas, texto, saliencia y profundidad proxy | pixels |
+| `core/effects.ts` | Detección de efectos con evidencia y estado verified/estimated | pixels, util |
+| `core/spec.ts` | Especificación visual JSON+Markdown | análisis completo |
+| `core/recommend.ts` | Tecnología y snippets por efecto, JS validado | Node |
+| `core/vision.ts` | Ollama y Tesseract opcionales, sin APIs externas | run |
+| `core/quality.ts` | Seis dimensiones de calidad y pesos renormalizables | compare |
+| `core/temporal.ts` | Alineación temporal, curvas, cortes y deriva | analysis, quality |
+| `core/iterate.ts` | Copia SHA-256, parche, verificación y reversión | review, run |
+| `core/advanced.ts` | Operaciones compartidas por CLI, MCP y API para 0.2 | todos |
 | `core/analysis.ts` | Métricas por fotograma y perfil visual agregado | media, util |
 | `core/compare.ts` | Perfiles: puntuación/paleta/correcciones. Imágenes: SSIM/MAE/ΔE/heatmap | analysis, media |
 | `core/capture.ts` | Chromium real, varios fotogramas, errores JS y de red | Playwright |
@@ -31,8 +43,8 @@ del agente; la verificación deja de ser una opinión.
 | `core/deps.ts` | Registro de herramientas, detección real, plan e instalación npm | run |
 | `core/adapters.ts` | Scaffolds de las 7 herramientas + `node --check` | run |
 | `core/static.ts` | Servidor estático mínimo para capturar proyectos locales | Node http |
-| `core/review.ts` | Orquestador E2E y generación de informes | todos |
-| `core/ops.ts` | Operaciones compartidas por MCP, API y CLI | todos |
+| `core/review.ts` | Orquestador E2E, informe y calidad integrada | todos |
+| `core/ops.ts` | Operaciones de 0.1 compartidas por MCP, API y CLI | todos |
 | `core/init.ts` | Instrucciones, skills y configuración MCP en el proyecto | Node |
 | `mcp/server.ts` | Protocolo MCP por stdio | SDK MCP + zod |
 | `api/server.ts` | HTTP local con CORS loopback y escritura bloqueada | Node http |
@@ -80,11 +92,46 @@ cromáticos (un cambio de matiz con la misma luz apenas puntúa). Está document
 el informe lo refleja: la corrección de movimiento habla de recorrido y de capas con
 desplazamiento, no de "más animación".
 
-### Cortes reales, no inferidos
+### Movimiento de cámara: medir antes de interpretar
 
-El detector de escenas de FFmpeg (`select='gt(scene,0.1)',showinfo`) aporta tiempos reales de
-corte. El muestreo sirve de respaldo si falla. En la demo detecta los dos cortes (1.00 s y
-2.00 s) y calcula 40 cortes/min.
+La traslación se obtiene maximizando la correlación normalizada de Pearson entre fotogramas
+consecutivos sobre una ventana de ±10 px (`bestShift`). El zoom y la rotación se buscan como
+hipótesis: se deforma el segundo fotograma con `warpGray` y se exige una mejora de correlación de
+0.004. La convención es «desplazamiento del contenido» (dx>0 a la derecha); la escala de alineación
+s<1 implica que el contenido creció, así que el zoom publicado es `1/s`. Cada par declara
+`verified` si la correlación es ≥0.55 y `estimated` si no. La rotación está en el modelo, pero no
+se validó con una referencia propia: no se presenta como verificada.
+
+### Evidencia antes que etiqueta
+
+Cada efecto devuelve `{id, confidence, status, frameRatio, evidence, hint}`. La señal se mide
+(halo, nitidez, motas con movimiento, viñeta, simetría…) y la etiqueta es una interpretación.
+Glow/bloom, partículas, blur, iluminación y grano se marcan `verified`; parallax, glitch, reflejos
+y distorsión, `estimated`. Los objetos no se clasifican: sólo hay regiones salientes; el texto se
+localiza por componentes de luminancia y el OCR sólo aparece si Tesseract existe.
+
+### Calidad multidimensional
+
+`quality.ts` combina fidelidad 0.35, composición 0.20, jerarquía 0.15, animación 0.15, fluidez
+0.10 y rendimiento 0.05. Las dimensiones sin datos se excluyen y el resto se renormaliza: el
+rendimiento sólo puntúa si hay tiempos reales de captura. La composición compara el equilibrio de
+masa por cuadrantes; la jerarquía, contraste/detalle/foco; la animación, movimiento, ritmo y
+número de cortes; la fluidez, el jerk de la curva y el parpadeo de luminancia.
+
+### Iteración con red de seguridad
+
+`iterate.ts` copia el objetivo con SHA-256, revisa antes, aplica (`--replace` o `git apply
+--check` + `git apply`) y revisa después. Si la puntuación no sube al menos `--min-delta`, restaura
+la copia y deja el estado `reverted`; `--keep` permite conservar un cambio no medido. Las rutas se
+validan dentro del proyecto y el historial queda en `.visual-engine/iterations/<id>/`.
+
+### Cortes con dos señales
+
+El detector de escenas de FFmpeg mide luminancia y se pierde cortes sólo de color. Por eso se
+combina con `scanFrames` (15 fps, 80 px, RGB crudo) y un pico local por encima de
+`max(0.045, mediana×1.8, media+1.5σ)`, fusionando ambos con 0.12 s de tolerancia. En la referencia
+de motion detecta 0.87 s y 1.60 s (reales 0.80/1.60; resolución 1/15 s) y no marca cortes en
+paneo/zoom. La demo de 0.1 sigue dando sus dos cortes y 40 cortes/min.
 
 ### Captura reproducible
 
@@ -135,7 +182,10 @@ explícitamente en el resultado para no afirmar una verificación que no se hizo
   la raíz servida.
 - La API limita el cuerpo a 2 MB, valida JSON y bloquea la instalación salvo opt-in.
 - El MCP no escribe en el proyecto salvo en herramientas explícitas (`visual_effect_apply`,
-  `visual_scaffold`, `visual_install_deps`).
+  `visual_scaffold`, `visual_install_deps`, `visual_iterate` con `confirm=true`).
+- Ollama y Tesseract se consultan sólo en localhost/PATH; si faltan, devuelven el motivo.
+- `iterate` exige `confirm=true` en MCP/API, valida que el objetivo esté dentro del proyecto y
+  nunca aplica un parche sin copia previa.
 - `ve init` no sobrescribe archivos existentes sin `--force`.
 
 ## Rendimiento
@@ -146,11 +196,14 @@ explícitamente en el resultado para no afirmar una verificación que no se hizo
 - `compareImages`: SSIM por bloques 8×8, O(n) sobre la imagen reducida.
 - La demo usa un canvas, DPR ≤ 2, partículas en un solo draw call y pausa con `document.hidden`
   en los efectos que la implementan.
+- Cámara: 12–16 muestras a 128 px; timeline, 20 a 128 px; inspección, 3 a 192 px.
+- `scanFrames` decodifica a 15 fps/80 px para detectar cortes de color en una sola pasada.
+- `spec` reutiliza el análisis y no vuelve a decodificar para cada sección.
 
 ## Extender
 
-- **Nueva herramienta MCP**: añadir a `src/mcp/server.ts` y a `ops.ts`; probar con
-  `tests/mcp.test.mjs` (cliente real por stdio).
+- **Nueva herramienta MCP**: añadir a `src/mcp/server.ts` y a `advanced.ts`; probar con
+  `tests/advanced.test.mjs` (cliente real por stdio).
 - **Nuevo efecto**: crear carpeta con `recipe.json` y `templates/`; `ve effects list` lo
   detecta; `tests/cli.test.mjs` comprueba el número esperado (actualizar el test si cambia).
 - **Nueva capacidad**: añadir a `CAPABILITIES` en `deps.ts` y al registro `TOOLBOX` si implica

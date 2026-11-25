@@ -1,5 +1,8 @@
 # Verificación real — 2026-11-25
 
+> La fase 0.2 (timeline, cámara, inspección, efectos, spec, temporal e iteración) se verificó por
+> separado en [VERIFICACION-0.2](VERIFICACION-0.2.md).
+
 Todo lo de este documento se ejecutó en esta máquina. Los fallos encontrados se conservan:
 forman parte del resultado.
 

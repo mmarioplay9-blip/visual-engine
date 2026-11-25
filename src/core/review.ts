@@ -6,6 +6,7 @@ import { compareImages, compareProfiles, type Comparison, type ImageComparison }
 import { ensureDir, newRunDir } from './paths.js';
 import { startStatic, type StaticServer } from './static.js';
 import { sampleFrames, rgbToPng } from './media.js';
+import { evaluateQuality, type QualityEvaluation } from './quality.js';
 
 export interface ReviewOptions {
   /** Imagen o vídeo de referencia. */
@@ -38,6 +39,7 @@ export interface ReviewResult {
     profile: VisualProfile;
   };
   comparison: Comparison;
+  quality: QualityEvaluation;
   image?: ImageComparison;
   heatmap?: string;
   referenceFrame?: string;
@@ -112,6 +114,15 @@ function buildReport(r: Omit<ReviewResult, 'report' | 'id'>): string {
     ], ['Medida', 'Valor']));
   }
   lines.push('');
+  lines.push('## Calidad por dimensiones');
+  lines.push('');
+  lines.push(r.quality.summary);
+  lines.push('');
+  lines.push(mdTable(
+    r.quality.dimensions.map((d) => [d.label, d.score !== null ? d.score.toFixed(1) : '—', d.available ? 'sí' : 'no', Object.entries(d.evidence).map(([k, v]) => `${k}=${v}`).join(', ')]),
+    ['Dimensión', 'Puntuación', 'Disponible', 'Evidencia'],
+  ));
+  lines.push('');
   lines.push('## Correcciones priorizadas');
   lines.push('');
   cmp.recommendations.forEach((rec, i) => lines.push(`${i + 1}. ${rec}`));
@@ -182,6 +193,10 @@ export async function review(opts: ReviewOptions): Promise<ReviewResult> {
   if (!cap.ok) warnings.push('La captura registró errores; revisa `consoleErrors` y `errors` antes de valorar el diseño.');
 
   const comparison = compareProfiles(refProfile, cap.profile!);
+  const quality = evaluateQuality(refProfile, cap.profile!, {
+    captureTimings: cap.timings,
+    targetIntervalMs: captureOpts.intervalMs,
+  });
 
   // Fotograma de referencia al mismo aspecto que la captura, y diferencia por píxel.
   let referenceFrame: string | undefined;
@@ -217,6 +232,7 @@ export async function review(opts: ReviewOptions): Promise<ReviewResult> {
       profile: cap.profile!,
     },
     comparison,
+    quality,
     image,
     heatmap,
     referenceFrame,

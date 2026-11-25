@@ -1,122 +1,118 @@
 ---
 name: visual-engine
-description: Motor local y gratuito de calidad visual. Analiza imágenes y vídeos de referencia, genera efectos profesionales, captura el proyecto en Chromium, compara el resultado con la referencia y devuelve diferencias medidas con correcciones priorizadas. Úsala para diseño, animación, 3D, HUD, vídeo o cualquier petición de "que se vea profesional".
+description: Motor local y gratuito de calidad visual. Descompone referencias en escenas, movimiento de cámara, composición, formas, efectos y especificación reproducible; captura el proyecto en Chromium, compara por tiempo y por dimensiones, y permite iterar con reversión. Úsala para diseño, animación, 3D, HUD, vídeo o cualquier petición de "que se vea profesional".
 ---
 
-# Visual Engine
+# Visual Engine 0.2
 
-Convierte una petición visual en un ciclo medido: **referencia → medición → construcción →
-captura → comparación → corrección**. Todo en local, sin APIs de pago y sin depender del modelo.
+Convierte una referencia profesional en una **especificación medida** y verifica el resultado:
+**referencia → escenas/cámara/efectos → spec → construcción → captura → comparación temporal →
+corrección con reversión**. Todo local, sin APIs de pago.
 
 ## Antes de empezar
 
 ```bash
-ve doctor          # herramientas reales: ffmpeg, Playwright + navegadores, GSAP, Three.js, Motion, Remotion
-ve adapters        # licencias y límites gratuitos de cada herramienta
+ve doctor
+ve vision status
+ve adapters
 ```
 
-Si falta ffmpeg o los navegadores de Playwright, pide instalarlos y **no simules** capturas.
-Node ≥ 20, ffmpeg en PATH y `npx playwright install chromium` cubren todo el flujo.
+`doctor` comprueba ffmpeg, Playwright y librerías. `vision status` dice si hay Tesseract y si
+Ollama tiene un modelo de visión. **Si faltan, no inventes OCR ni descripciones**: el motor
+devolverá `available:false` y el motivo.
 
 ## Ciclo de trabajo
 
-### 1. Medir la referencia
+### 1. Descomponer la referencia
 
 ```bash
-ve analyze referencia.mp4 --samples 12 --json
+ve timeline referencia.mp4 --out ./analisis --storyboard
+ve motion referencia.mp4 --json
+ve inspect referencia.mp4
+ve detect referencia.mp4
 ```
 
-Devuelve: paleta dominante con porcentajes, luminancia, contraste, saturación, colorido,
-densidad de bordes, curva de movimiento, cortes reales (detector de escenas de FFmpeg) y ritmo.
-Esos números son el objetivo. No los sustituyas por impresiones.
+- **timeline**: escenas reales, cortes, ritmo, fotogramas clave y storyboard.
+- **motion**: desplazamiento, zoom, rotación, velocidad, aceleración, temblor y transiciones.
+  Mira `status`: `verified` es correlación alta; `estimated` es un par dudoso.
+- **inspect**: composición (tercios, equilibrio, simetría, horizonte), círculos/líneas, regiones
+  de texto, saliencia y profundidad proxy. El texto y la profundidad son **estimados**.
+- **detect**: efectos con confianza y evidencia. La señal es medida; la etiqueta es una
+  interpretación. Glow, partículas, blur, luz y grano suelen ser verificables; parallax,
+  glitch, reflejos y distorsión son estimaciones.
 
-Para estudiar movimiento o transiciones:
+### 2. Generar la especificación y el código
 
 ```bash
-ve frames referencia.mp4 --count 24 --width 720 --out ./frames
+ve spec referencia.mp4 --out ./analisis
+ve recommend --spec ./analisis/spec.json --out ./codigo
 ```
 
-### 2. Elegir base
-
-```bash
-ve effects list
-ve effects show aurora-hero
-ve effects apply aurora-hero --out ./mi-web --set accent=#12e0c8 --set title="..."
-```
-
-Efectos incluidos (autocontenidos, sin dependencias salvo `particle-nebula`):
-
-| id | categoría | para qué |
-| --- | --- | --- |
-| `aurora-hero` | hero | fondo aurora con grano y entrada tipográfica |
-| `kinetic-title` | tipografía | titular editorial con revelado y ticker |
-| `glass-hud` | interfaz | telemetría con anillos SVG y radar |
-| `particle-nebula` | 3D | partículas Three.js con shader (requiere `three`) |
-| `noise-warp` | transición | corte por franjas con ruido |
-| `sweep-banner` | hero | banner de cristal con barrido de luz |
-
-Adaptadores para integrar librerías reales:
-
-```bash
-ve adapters scaffold three --out ./mi-web/visual/three
-ve adapters scaffold gsap  --out ./mi-web/visual/gsap
-```
+`spec.md` contiene escenas, paleta con roles, composición, jerarquía tipográfica estimada, capas,
+cámara, efectos con parámetros, stack, pasos de implementación y plan de verificación. Los
+snippets JS se validan con `node --check`; CSS/GLSL no se compilan.
 
 ### 3. Construir sin genéricos
 
-- Fondo con profundidad (degradado + foco), no un color plano.
-- Jerarquía tipográfica clara: un titular grande, apoyo legible, etiquetas pequeñas en versalitas.
-- Un único foco de luz y micro-detalle (grano, retícula, líneas guía, partículas finas).
-- Movimiento con motivo: entrada escalonada, barrido de luz, parallax leve. Nada que distraiga.
-- Reutiliza los colores medidos; no inventes una paleta nueva.
+- Fondo con profundidad y un foco de luz; no un color plano.
+- Jerarquía real: titular, apoyo y etiquetas; alturas basadas en la referencia.
+- Un solo motivo de movimiento; parallax sólo si la referencia lo tiene.
+- Micro-detalle (grano, retícula, partículas finas) medido, no decorativo.
+- Respeta la paleta y el contraste medidos; la creatividad va en la ejecución.
 
-### 4. Capturar
+### 4. Capturar y comparar
 
 ```bash
 ve capture index.html --serve ./mi-web --width 540 --height 960 --frames 6 --json
-```
-
-`frames >= 6` mide animación. Revisa `consoleErrors` y `errors`: si hay errores, arréglalos
-antes de valorar el diseño. Usa `ve capture --full` para páginas largas.
-
-### 5. Comparar e iterar
-
-```bash
 ve review --reference referencia.mp4 --target-dir ./mi-web --target index.html \
   --width 540 --height 960 --frames 6 --out ./out/revision
+ve temporal referencia.mp4 resultado.mp4
 ```
 
-Salida: puntuación 0-100, tabla de diferencias por métrica, ΔE de paleta, SSIM/MAE del primer
-fotograma, mapa de calor PNG y **correcciones priorizadas**. Aplica una o dos, vuelve a medir y
-compara la puntuación. Si no sube, revierte: el objetivo es fidelidad, no acumular efectos.
+`review` da fidelidad (color/luz/estructura) **y** calidad por dimensiones: composición,
+jerarquía, animación, fluidez y rendimiento (si hay tiempos de captura). No aceptes una sola
+cifra: mira qué dimensión falla.
 
-Umbral razonable: **≥ 80** para una referencia clara; por debajo de 60 el resultado no se parece.
+### 5. Corregir con red de seguridad
+
+```bash
+# El agente prepara el cambio (archivo nuevo o parche git)
+ve iterate --reference referencia.mp4 --target-dir ./mi-web \
+  --replace index.nuevo.html --min-delta 0.5
+ve backup list --project ./mi-web
+ve backup restore <id> --project ./mi-web
+```
+
+`iterate` copia el archivo con SHA-256, revisa antes, aplica, revisa después y **revierte solo**
+si no mejora. `--keep` conserva el cambio para inspección. El parche usa `git apply --check` y
+exige un repositorio git.
 
 ## MCP
 
-Herramientas: `visual_doctor`, `visual_analyze`, `visual_extract_frames`, `visual_capture`,
-`visual_compare`, `visual_review`, `visual_effects_list`, `visual_effect_get`,
-`visual_effect_apply`, `visual_adapters`, `visual_scaffold`, `visual_deps_plan`,
-`visual_install_deps`. Recurso: `visual://effects`. Prompt: `visual-quality-review`.
-
-API equivalente: `ve serve` → `POST /v1/review`, `/v1/analyze`, `/v1/capture`, `/v1/compare`.
+23 herramientas. Las nuevas: `visual_timeline`, `visual_camera`, `visual_inspect`,
+`visual_effects_detect`, `visual_spec`, `visual_recommend`, `visual_temporal`, `visual_vision`,
+`visual_iterate` (requiere `confirm=true`) y `visual_backup`. Recurso `visual://effects`, prompt
+`visual-quality-review`. La CLI y `ve serve` ofrecen lo mismo.
 
 ## Reglas duras
 
-1. **No afirmes sin medir.** "Se ve bien" no es un resultado; una puntuación y una captura sí.
-2. **Nada de diseños planos** cuando se pide calidad avanzada.
-3. **Sin efectos porque sí.** Si un efecto no mejora fidelidad o legibilidad, fuera.
-4. **Rendimiento:** un canvas, DPR ≤ 2, pausa con `document.hidden`, `prefers-reduced-motion`.
-5. **Accesibilidad:** contraste suficiente, foco visible, texto alternativo.
-6. **Licencias:** GSAP Club no; Remotion no es MIT; React Bits CC-BY exige atribución;
-   FFmpeg según build. No instales nada de pago.
-7. **Todo local:** sin CDNs, sin telemetría, sin enviar material del usuario a servicios externos.
-8. **Distingue** implementado / medido / pendiente en tu informe final.
+1. **Distingue** `verified`, `estimated` y `available:false` en tu informe.
+2. **No afirmes** que hay objetos, OCR o profundidad métrica si el motor sólo da regiones,
+   texto localizado o un proxy.
+3. **No añadas efectos** que no suban fidelidad, calidad o legibilidad.
+4. **Rendimiento**: DPR ≤ 2, un canvas, pausa con `document.hidden`, `prefers-reduced-motion`.
+5. **Accesibilidad**: contraste, foco visible, texto alternativo.
+6. **Licencias**: GSAP Club no; Remotion no es MIT; React Bits CC-BY exige atribución; FFmpeg
+   según build. Nada de pago.
+7. **Todo local**: Ollama sólo en localhost; sin enviar material a servicios externos.
+8. **Si una dimensión no aplica**, dilo; no la rellenes con una suposición.
 
 ## Límites conocidos
 
-- La comparación mide color, luz, contraste, detalle y movimiento; **no** entiende semántica,
-  tipografía concreta ni composición fina. El mapa de calor ayuda, pero la última mirada es humana.
-- Referencia y resultado deben compartir relación de aspecto para que la comparación sea justa.
-- No hay detección de objetos, pose ni OCR.
-- Probado en Windows; Linux/macOS están soportados por diseño pero sin pruebas en esta máquina.
+- Sin Tesseract no hay lectura de texto; las regiones son estimadas.
+- Sin modelo de visión no hay etiquetas de objetos; sólo saliencia.
+- La profundidad y el parallax son proxies geométricos.
+- La rotación de cámara no está validada con una referencia propia.
+- Las transiciones suaves (fundido/barrido) se estiman; los cortes duros se verifican.
+- La comparación temporal exige dos vídeos; una secuencia de capturas se compara en `review`.
+- Probado en Windows; Linux/macOS están soportados por diseño, no probados aquí.

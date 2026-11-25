@@ -32,5 +32,14 @@ if (!fs.existsSync(reference)) {
   console.log(`referencia existente: ${path.relative(root, reference)}`);
 }
 
+const refs02 = ['premium-ui.mp4', 'premium-ui-alt.mp4', 'motion-graphics.mp4', 'depth-3d.mp4', 'camera-pan.mp4', 'camera-zoom.mp4'];
+const refs02Dir = path.join(here, 'reference', '0.2');
+if (!refs02.every((f) => fs.existsSync(path.join(refs02Dir, f)))) {
+  console.log('\nGenerando referencias variadas 0.2...');
+  execFileSync(process.execPath, [path.join(here, 'make-refs-0.2.mjs')], { stdio: 'inherit' });
+} else {
+  console.log(`referencias 0.2 existentes: ${refs02.length}`);
+}
+
 console.log('\nListo. Revisión:');
 console.log('  node dist/cli/index.js review --reference demo/reference/brand-intro.mp4 --target-dir demo/site --target index.html --width 540 --height 960 --frames 6 --out demo/out/review');

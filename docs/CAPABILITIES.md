@@ -1,87 +1,98 @@
-# Capacidades: implementado, verificado y pendiente
+# Capacidades de Visual Engine 0.2
 
-Fecha de la verificación: 2026-11-25 · Windows 11 · Node 26.13.1 · ffmpeg 9.1 · Playwright 1.65.1.
+Fecha: 2026-11-25 · Windows 11 · Node 26.13.1 · FFmpeg 9.1 · Playwright 1.65.1.
 
-"Creado" no es "verificado". Esta tabla separa lo que se ejecutó de lo que sólo está diseñado.
+Tres estados, sin mezclarlos:
 
-## Núcleo visual
+- **Verificado**: se ejecutó y se comprobó el resultado con una prueba o una medición.
+- **Estimado**: hay una señal medida, pero la interpretación es un proxy; se devuelve como
+  `estimated` con su evidencia.
+- **No disponible**: falta una herramienta o un modelo; se devuelve el motivo exacto.
 
-| Requisito | Implementación | Verificación |
+## Análisis de referencia
+
+| Requisito | Implementación | Estado |
 | --- | --- | --- |
-| Analizar imágenes y vídeos de referencia | `analyzeFile` con FFprobe/FFmpeg | Referencia 540×960, 3.00 s, 30 fps, 90 fotogramas leídos correctamente |
-| Extraer fotogramas | `ve frames` | 4 PNG reales verificados por cabecera PNG |
-| Estudiar movimiento | Curva de diferencia en luminancia | Movimiento 0.045 en la referencia; la demo midió 0.016 |
-| Estudiar colores | Paleta por histograma 4 bits + fusión | Paleta de referencia: turquesa, ámbar, azules profundos |
-| Estudiar composición | Masas por cuadrante + densidad de bordes | Incluido en el perfil; no se usa aún para recomendaciones específicas |
-| Estudiar transiciones | Detector de escenas de FFmpeg | 2 cortes detectados en 1.00 s y 2.00 s |
-| Identificar efectos visuales | No implementado (requiere visión semántica) | **Pendiente** |
-| Reproducir efectos | Biblioteca + adaptadores | 6 efectos aplicados con sintaxis JS válida |
-| Generar animaciones | Efectos CSS/Canvas/GSAP/WAAPI | Demo con GSAP + Three.js capturada sin errores JS |
-| Generar partículas | `particle-nebula`, demo Three.js | Shader compilado en Chromium durante la captura |
-| Generar iluminación | Degradados, aurora, foco y bandas | Medido en luminancia/contraste de la captura |
-| Generar shaders | `ShaderMaterial` GLSL en Three.js | Renderizado en la demo; sin errores de consola |
-| Generar gráficos 3D | Three.js (anillos y partículas) | Verificado en capturas |
-| Biblioteca reutilizable | 6 recetas con parámetros | Listadas, aplicadas y comprobadas |
-| Ejecutar el proyecto | Playwright + servidor estático | [`api.test.mjs`](../tests/api.test.mjs) |
-| Capturar resultados | PNG por fotograma | 6 capturas por revisión |
-| Comparar con la referencia | Perfiles + SSIM/MAE/ΔE + heatmap PNG | Pruebas unitarias y E2E |
-| Corregir iterativamente | Informe con correcciones priorizadas | Ciclo real 68.0 → 74.3 → 81.3 |
-| Evitar diseños planos | Reglas en skill/instrucciones + métricas | La línea base plana puntuó 68.0; la versión con luz y detalle, 81.3 |
+| Fotogramas clave y escenas | `timeline.ts` + detector FFmpeg + barrido RGB | **Verificado**: 3 escenas, cortes 0,87/1,60 s, 8 claves y 8 PNG |
+| Línea temporal con métricas | muestras por tiempo, luma, contraste, movimiento, ritmo | **Verificado** |
+| Objetos | regiones salientes por contraste/saturación | **Estimado**: no hay etiqueta semántica ni cajas de clase |
+| Texto | regiones por componentes de luminancia | **Estimado**: localiza LUMEN; sin OCR no lee |
+| OCR | Tesseract por CLI | **No disponible** en esta máquina; adaptador implementado |
+| Formas | Hough de círculos por gradiente + líneas por proyección | **Verificado**: anillo r=30, confianza 94 % |
+| Composición | tercios, equilibrio, simetría, espacio negativo, horizonte, ángulo dominante | **Verificado** (medidas geométricas) |
+| Profundidad | proxy de nitidez local + gradiente vertical | **Estimado**: 3 capas, no distancias |
+| Movimiento de cámara | correlación de traslación + hipótesis de escala/rotación | Paneo y zoom **verificados**; rotación **no verificada** |
+| Aceleración, temblor, velocidad | derivadas de la serie de desplazamiento | **Verificado** |
+| Transiciones | cortes con FFmpeg+RGB; fundido/barrido por umbral | Cortes **verificados**; resto **estimado** |
+| Glow / bloom | halo alrededor de zonas claras | Señal **verificada**, etiqueta interpretada |
+| Partículas | motas de contraste local + movimiento entre fotogramas | **Verificado**: 70 partículas sintéticas detectadas |
+| Blur / bokeh | varianza del laplaciano global y centro/borde | **Verificado** en el clip; sin falso positivo en UI |
+| Parallax | desplazamiento por franjas | **Estimado** |
+| Glitch | desplazamiento R/B + saltos de fila | **Estimado** |
+| Iluminación | viñeta centro/esquinas | **Verificado** |
+| Reflejos | simetría vertical bajo un eje | **Estimado** (simetría medida) |
+| Distorsión | residuo de desplazamiento por franjas | **Estimado** |
+| Grano | ruido temporal en zonas planas | **Verificado** (nivel de ruido) |
+| Ollama local | `/api/tags` y `/api/generate` en localhost | Servicio **verificado**; descripción **no ejecutada** (0 modelos de visión) |
+| OpenCV / MediaPipe | no se usan | **No instalados**; sustituidos por JS propio |
+
+## Especificación y reproducción
+
+| Requisito | Implementación | Estado |
+| --- | --- | --- |
+| Especificación estructurada | `spec.ts`: escenas, paleta con roles, composición, tipografía estimada, capas, cámara, efectos, stack, verificación | **Verificado** (JSON+MD) |
+| Tecnología por efecto | `recommend.ts` con 10 efectos | **Verificado** |
+| Código de implementación | snippets CSS/JS/GLSL con parámetros medidos | JS **validado con `node --check`**; CSS/GLSL no compilados |
+| Reproducir efectos | biblioteca de 6 recetas + snippets | **Verificado** (aplicación y captura) |
+
+## Comparación y corrección
+
+| Requisito | Implementación | Estado |
+| --- | --- | --- |
+| Comparación temporal | `temporal.ts`: tiempo normalizado, curvas, cortes, deriva | **Verificado** (88,3/100 A en UI vs alt) |
+| Evaluación no sólo de color | `quality.ts`: fidelidad 0,35, composición 0,20, jerarquía 0,15, animación 0,15, fluidez 0,10, rendimiento 0,05 | **Verificado**; el demo baja de 81,3 a 66,5 global |
+| Rendimiento | tiempos reales de captura → intervalo, jitter | **Verificado** cuando hay capturas; si no, se excluye |
+| Fluidez | jerk de la curva + parpadeo de luminancia | **Verificado** |
+| Corrección iterativa | `iterate.ts`: copia SHA-256, revisión antes/después, reversión | **Verificado** (80,6→36,0 revertido; 80,6→90,5 conservado) |
+| Parche del agente | `git apply --check` + `git apply` | **Verificado** manualmente en repo temporal |
+| Revertir | `ve backup restore` | **Verificado**; archivo idéntico por hash |
+| Backup | `.visual-engine/iterations/<id>/backup` + manifiesto | **Verificado** |
 
 ## Interfaces
 
 | Requisito | Estado |
 | --- | --- |
-| MCP | Implementado y probado con cliente real (`tests/mcp.test.mjs`): 13 herramientas, 1 recurso, 1 prompt |
-| CLI | Implementado: 17 comandos y subcomandos, probado |
-| API local | Implementado: 14 rutas, probado; instalación bloqueada por defecto |
-| Skills | `skills/visual-engine/SKILL.md` + copia por `ve init` |
-| Instrucciones de agentes | `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, regla de Cursor |
-| Independiente del modelo | Sí: no hay SDK de modelo ni clave; todo es local |
+| MCP | **23 herramientas**, 1 recurso, 1 prompt; probado con cliente stdio real |
+| CLI | **24 comandos** con subcomandos; probado |
+| API local | **27 rutas** (GET/POST), loopback; instalación bloqueada por defecto |
+| Skills | `skills/visual-engine/SKILL.md`; `ve init` la copia al proyecto |
+| Instrucciones | `agents/AGENTS.md`; `ve init` genera AGENTS/CLAUDE/GEMINI/Cursor |
+| Independencia del modelo | Sí: no hay SDK de modelo; Ollama es opcional y local |
 | Windows / Linux / macOS | Diseñado multiplataforma; **probado sólo en Windows** |
-| Instalación automática | PowerShell y Bash; ver [VERIFICACION](VERIFICACION.md) |
-| Actualización desde GitHub | `ve update` (git pull + install + build); **remoto sin publicar** |
+| Instalación / actualización | PowerShell/Bash y `ve update`; remoto público **sin publicar** |
 
-## Herramientas integradas
+## Límites y pendientes
 
-| Herramienta | Licencia | Estado en esta máquina |
-| --- | --- | --- |
-| FFmpeg / FFprobe | LGPL/GPL según build | Instalado, usado en todo el flujo |
-| Playwright | Apache-2.0 | 1.65.1 + Chromium 1255 |
-| Three.js | MIT | 0.170.0, usado en demo |
-| GSAP | Estándar gratuito | 3.15.1, usado en demo; sin plugins Club |
-| Motion | MIT | 12.43.0 instalado; scaffold generado |
-| Remotion | Remotion License (no MIT) | **No instalado**; scaffold y licencia documentados |
-| React Bits | MIT / CC-BY | Sin paquete npm; componente propio generado |
+1. **Sin OCR** hasta instalar Tesseract; el texto se localiza, no se lee.
+2. **Sin modelo de objetos/pose**: sólo saliencia; no hay clases ni cajas semánticas.
+3. **Sin visión local** hasta instalar un modelo en Ollama; no se descarga solo.
+4. **Profundidad y parallax** son proxies geométricos, no mapas métricos.
+5. **Etiquetas de efectos** interpretan señales; no identifican el shader ni el plugin concretos.
+6. **Rotación** de cámara sin referencia de validación.
+7. **Referencias sintéticas**: cubren UI, motion graphics y 3D esquemático, no material real de
+   cliente con licencia.
+8. **Temporal** exige dos vídeos; una secuencia de capturas se evalúa en `review`, con otra
+   alineación.
+9. **Corrección**: el agente aporta el cambio; el motor lo aplica, mide y revierte, pero no
+   inventa la solución.
+10. **Plataformas**: sin pruebas en Linux/macOS.
+11. **Publicación**: el repositorio no está en GitHub en esta fase.
 
-## Comparación: qué mide y qué no
+## Cómo se evita el autoengaño
 
-Mide: paleta ponderada por superficie, luminancia, contraste, saturación, colorido, densidad de
-bordes, movimiento entre fotogramas, cortes, ritmo, y diferencia por píxel (SSIM, MAE, RMSE,
-ΔE) con mapa de calor.
-
-**No mide**: tipografía concreta, legibilidad, jerarquía semántica, calidad artística,
-correspondencia de objetos, texto correcto ni audio. Tampoco detecta pose, objetos u OCR.
-
-## Límites conocidos
-
-1. **Aspecto**: si la referencia y el resultado no comparten relación de aspecto, el mapa de
-   calor se estira; el informe lo advierte y la puntuación de color sigue siendo válida.
-2. **Movimiento en gris**: los cambios sólo de matiz puntúan poco. Documentado en el informe.
-3. **Resolución de análisis**: 192 px de ancho; suficiente para color y estructura, no para
-   leer texto ni evaluar tipografía.
-4. **Referencia sintética**: la demo usa un clip generado por código, no material de un cliente.
-   Es reproducible y no tiene licencias de terceros.
-5. **Corrección manual**: el motor no edita el código del usuario; entrega instrucciones al
-   agente. La automatización del parcheo queda pendiente por diseño.
-6. **Remotion**: no instalado; el primer render descargaría su propio Chromium.
-7. **Plataformas**: no se ha ejecutado en Linux ni macOS.
-8. **Publicación**: el repositorio no está en GitHub; los instaladores requieren `-Repo`/`VE_REPO`.
-9. **Idioma**: interfaz, informes e instrucciones en español; los identificadores de código en inglés.
-
-## Pendiente por fases
-
-- Fase 2: corrección automática de código con verificación, extracción de paleta por regiones,
-  comparación de tipografía, análisis de audio y subtítulos.
-- Fase 3: publicación, CI multiplataforma, catálogo firmado de efectos, integración con
-  Remotion y React Bits verificada en un proyecto React real.
+- Cada detección devuelve `status`, `confidence` y `evidence` numérica.
+- Los textos, objetos y profundidad llevan `estimated` y el método en el resultado.
+- Si falta Tesseract/Ollama, se devuelve `available:false` con el motivo; no se rellena.
+- La calidad global renormaliza cuando una dimensión no tiene datos (p. ej. rendimiento).
+- Los tests exigen resultados concretos: cortes, zoom>1,0, texto localizado, partículas con
+  movimiento, snippets válidos, reversión por hash.

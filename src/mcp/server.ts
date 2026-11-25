@@ -18,6 +18,19 @@ import {
   opVersion,
 } from '../core/ops.js';
 import { capabilityCatalog } from '../core/deps.js';
+import {
+  opBackups,
+  opCamera,
+  opDetectEffects,
+  opInspect,
+  opIterate,
+  opRecommend,
+  opRestoreBackup,
+  opSpec,
+  opTemporal,
+  opTimeline,
+  opVision,
+} from '../core/advanced.js';
 
 const json = (v: unknown) => JSON.stringify(v, null, 2);
 
@@ -42,7 +55,18 @@ Ciclo obligatorio cuando el usuario pida calidad visual avanzada:
 5. visual_review → puntuación de fidelidad, mapa de calor y correcciones priorizadas.
 6. Aplicar SOLO las correcciones medidas y repetir la revisión para comparar la puntuación.
 
+Referencias profesionales (0.2):
+- visual_timeline → escenas, fotogramas clave y storyboard.
+- visual_camera → desplazamiento, zoom, rotación, aceleración y transiciones (verificado/estimado).
+- visual_inspect → composición, formas, regiones de texto y profundidad (proxy declarado).
+- visual_effects_detect → efectos con evidencia numérica y estado.
+- visual_spec → especificación estructurada para reconstruir.
+- visual_recommend → tecnología y código verificado por efecto.
+- visual_temporal → comparación por tiempo y calidad multidimensional.
+- visual_iterate → aplica un cambio del agente, mide y revierte si empeora (requiere confirm).
+
 Reglas:
+- Distingue siempre "verified" de "estimated": el OCR/objetos necesitan Tesseract o un modelo local; si no están, dilo.
 - No declares un módulo funcionando sin haber ejecutado la herramienta.
 - No añadas efectos que suban el coste sin mejorar la puntuación de fidelidad.
 - Respeta licencias: GSAP Club, Remotion (umbral de empresa) y React Bits CC-BY requieren atención.
@@ -217,6 +241,7 @@ export function createServer(): McpServer {
           correcciones: r.comparison.recommendations,
           metricas: r.comparison.metrics,
           paleta: r.comparison.palette,
+          calidad: r.quality,
           imagen: r.image,
           capturas: r.target.frames,
           erroresConsola: r.target.consoleErrors,
@@ -355,6 +380,227 @@ export function createServer(): McpServer {
     async (args) => {
       try {
         return ok(await opInstallDeps(args));
+      } catch (e) {
+        return fail(e);
+      }
+    },
+  );
+
+  server.registerTool(
+    'visual_timeline',
+    {
+      title: 'Línea temporal de vídeo',
+      description: 'Detecta escenas reales con FFmpeg, muestrea métricas por fotograma, elige fotogramas clave y puede exportar un storyboard PNG.',
+      inputSchema: {
+        path: z.string().describe('Vídeo de referencia.'),
+        samples: z.number().int().min(6).max(60).optional().describe('Muestras temporales (por defecto 20).'),
+        outDir: z.string().optional().describe('Carpeta para timeline.json y el storyboard.'),
+        storyboard: z.boolean().optional(),
+      },
+    },
+    async (args) => {
+      try {
+        const r = await opTimeline(args);
+        return ok({ timeline: r.timeline, resumen: r.description, storyboard: r.storyboard, json: r.json });
+      } catch (e) {
+        return fail(e);
+      }
+    },
+  );
+
+  server.registerTool(
+    'visual_camera',
+    {
+      title: 'Movimiento de cámara',
+      description: 'Mide desplazamiento global, zoom y rotación entre fotogramas por correlación, con confianza, aceleración, temblor y transiciones. Separa pares verificados de estimados.',
+      inputSchema: {
+        path: z.string().describe('Vídeo de referencia.'),
+        samples: z.number().int().min(6).max(30).optional(),
+        width: z.number().int().min(64).max(320).optional(),
+      },
+    },
+    async (args) => {
+      try {
+        const r = await opCamera(args);
+        return ok({ camara: r.camera, resumen: r.description });
+      } catch (e) {
+        return fail(e);
+      }
+    },
+  );
+
+  server.registerTool(
+    'visual_inspect',
+    {
+      title: 'Composición, formas, texto y profundidad',
+      description: 'Mide composición (tercios, equilibrio, simetría, horizonte), detecta círculos y líneas, localiza regiones de texto (estimadas sin OCR), regiones salientes y un proxy de profundidad. Declara qué es verificado y qué estimado.',
+      inputSchema: {
+        path: z.string().describe('Imagen o vídeo.'),
+        frames: z.number().int().min(1).max(6).optional(),
+        ocr: z.boolean().optional().describe('Intenta OCR con Tesseract si está instalado.'),
+        outDir: z.string().optional(),
+      },
+    },
+    async (args) => {
+      try {
+        const r = await opInspect(args);
+        return ok({ contenido: r.content, resumen: r.description, ocr: r.ocr });
+      } catch (e) {
+        return fail(e);
+      }
+    },
+  );
+
+  server.registerTool(
+    'visual_effects_detect',
+    {
+      title: 'Detectar efectos visuales',
+      description: 'Detecta glow/bloom, partículas, desenfoque, parallax, glitch, iluminación, reflejos, distorsión y grano con evidencia numérica, confianza y estado verified/estimated. La etiqueta es una interpretación de la señal medida.',
+      inputSchema: {
+        path: z.string().describe('Vídeo de referencia.'),
+        samples: z.number().int().min(4).max(16).optional(),
+        outDir: z.string().optional(),
+      },
+    },
+    async (args) => {
+      try {
+        const r = await opDetectEffects(args);
+        return ok({ efectos: r.report, resumen: r.description, json: r.json });
+      } catch (e) {
+        return fail(e);
+      }
+    },
+  );
+
+  server.registerTool(
+    'visual_spec',
+    {
+      title: 'Especificación visual estructurada',
+      description: 'Combina perfil, línea temporal, cámara, composición y efectos en una especificación JSON+Markdown: escenas, paleta con roles, tipografía estimada, capas, efectos con parámetros, stack y plan de verificación.',
+      inputSchema: {
+        path: z.string().describe('Vídeo de referencia.'),
+        samples: z.number().int().min(8).max(24).optional(),
+        outDir: z.string().optional(),
+      },
+    },
+    async (args) => {
+      try {
+        const r = await opSpec(args);
+        return ok({ especificacion: r.spec, rutas: r.paths, resumen: r.description });
+      } catch (e) {
+        return fail(e);
+      }
+    },
+  );
+
+  server.registerTool(
+    'visual_recommend',
+    {
+      title: 'Tecnología y código por efecto',
+      description: 'Devuelve la tecnología recomendada, el motivo, el coste y snippets reales (CSS/JS/GLSL) generados con los parámetros medidos. Los snippets JS se validan con node --check.',
+      inputSchema: {
+        effect: z.string().optional().describe('glow, bloom, particles, blur, parallax, glitch, lighting, reflections, distortion, grain'),
+        specFile: z.string().optional().describe('spec.json para recomendar todos sus efectos.'),
+        params: z.record(z.union([z.string(), z.number(), z.boolean()])).optional(),
+      },
+    },
+    async (args) => {
+      try {
+        return ok(await opRecommend(args as any));
+      } catch (e) {
+        return fail(e);
+      }
+    },
+  );
+
+  server.registerTool(
+    'visual_temporal',
+    {
+      title: 'Comparación temporal',
+      description: 'Compara referencia y resultado por tiempo normalizado: curva de luminancia, movimiento, cortes alineados, deriva y calidad por dimensiones (fidelidad, composición, jerarquía, animación, fluidez y rendimiento si hay tiempos).',
+      inputSchema: {
+        reference: z.string(),
+        candidate: z.string(),
+        samples: z.number().int().min(6).max(24).optional(),
+        outDir: z.string().optional(),
+      },
+    },
+    async (args) => {
+      try {
+        return ok(await opTemporal(args));
+      } catch (e) {
+        return fail(e);
+      }
+    },
+  );
+
+  server.registerTool(
+    'visual_vision',
+    {
+      title: 'Visión local opcional',
+      description: 'Comprueba Tesseract/Ollama locales, ejecuta OCR real o describe una imagen con un modelo de visión de Ollama. Nunca usa APIs externas; si falta el modelo, devuelve el motivo.',
+      inputSchema: {
+        action: z.enum(['status', 'describe', 'ocr']),
+        path: z.string().optional(),
+        model: z.string().optional(),
+        prompt: z.string().optional(),
+      },
+    },
+    async (args) => {
+      try {
+        return ok(await opVision(args));
+      } catch (e) {
+        return fail(e);
+      }
+    },
+  );
+
+  server.registerTool(
+    'visual_iterate',
+    {
+      title: 'Iterar con verificación y reversión',
+      description: 'Aplica un reemplazo o un parche git del agente sobre el proyecto, hace copia de seguridad, revisa antes y después, y revierte automáticamente si la puntuación no mejora. Requiere confirm=true porque escribe archivos.',
+      inputSchema: {
+        projectDir: z.string().optional(),
+        target: z.string().describe('Archivo objetivo relativo al proyecto.'),
+        reference: z.string(),
+        targetDir: z.string().optional(),
+        patchFile: z.string().optional(),
+        replaceFile: z.string().optional(),
+        width: z.number().int().min(320).max(3840).optional(),
+        height: z.number().int().min(240).max(2160).optional(),
+        frames: z.number().int().min(1).max(30).optional(),
+        minDelta: z.number().min(0).max(100).optional(),
+        keep: z.boolean().optional(),
+        confirm: z.boolean().describe('Debe ser true: la operación escribe en el proyecto.'),
+      },
+    },
+    async (args) => {
+      try {
+        if (args.confirm !== true) return fail(new Error('Iteración no confirmada: envía confirm=true.'));
+        return ok(await opIterate(args));
+      } catch (e) {
+        return fail(e);
+      }
+    },
+  );
+
+  server.registerTool(
+    'visual_backup',
+    {
+      title: 'Copias de seguridad de iteraciones',
+      description: 'Lista las iteraciones con sus puntuaciones o restaura los archivos de una iteración concreta.',
+      inputSchema: {
+        action: z.enum(['list', 'restore']),
+        project: z.string().optional(),
+        id: z.string().optional(),
+      },
+    },
+    async (args) => {
+      try {
+        if (args.action === 'list') return ok(opBackups(args.project));
+        if (!args.id) return fail(new Error('Indica el id de la iteración.'));
+        return ok(opRestoreBackup(args.project, args.id));
       } catch (e) {
         return fail(e);
       }

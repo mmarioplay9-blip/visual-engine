@@ -30,6 +30,8 @@ export interface CaptureResult {
   consoleErrors: string[];
   profile?: VisualProfile;
   title: string;
+  /** instante (ms) de cada captura, para medir fluidez y rendimiento reales */
+  timings: number[];
 }
 
 function toUrl(target: string): string {
@@ -53,6 +55,7 @@ export async function capture(opts: CaptureOptions): Promise<CaptureResult> {
   const errors: string[] = [];
   const consoleErrors: string[] = [];
   const files: string[] = [];
+  const timings: number[] = [];
   let title = '';
   let browser: Browser | undefined;
   let context: BrowserContext | undefined;
@@ -95,6 +98,7 @@ export async function capture(opts: CaptureOptions): Promise<CaptureResult> {
 
     for (let i = 0; i < frameCount; i++) {
       const file = path.join(outDir, `capture-${String(i + 1).padStart(2, '0')}.png`);
+      timings.push(Date.now());
       await page.screenshot({ path: file, fullPage: opts.fullPage ?? false });
       files.push(file);
       if (i < frameCount - 1) await page.waitForTimeout(intervalMs);
@@ -120,5 +124,6 @@ export async function capture(opts: CaptureOptions): Promise<CaptureResult> {
     consoleErrors,
     profile,
     title,
+    timings,
   };
 }
