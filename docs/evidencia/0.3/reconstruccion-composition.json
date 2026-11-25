@@ -1,0 +1,167 @@
+{
+  "version": "0.3",
+  "id": "reference-to-effects",
+  "title": "Referencia → efectos: remotion.mp4",
+  "description": "Composición derivada de señales medidas. Las asignaciones son hipótesis declaradas, no identificaciones exactas.",
+  "width": 1280,
+  "height": 720,
+  "duration": 3,
+  "fps": 30,
+  "background": "#080a0c",
+  "shared": {
+    "accent": "#12e0c8",
+    "accent2": "#e6f4f6",
+    "bg": "#080a0c",
+    "speed": 0.54925
+  },
+  "layers": [
+    {
+      "id": "ref-1-parallax-layers",
+      "effect": "parallax-layers",
+      "params": {
+        "accent": "#12e0c8",
+        "accent2": "#e6f4f6",
+        "bg": "#080a0c",
+        "speed": 0.38939999999999997
+      },
+      "opacity": 0.7999999999999999,
+      "blend": "normal",
+      "start": 0,
+      "duration": 3,
+      "transform": {
+        "x": 0,
+        "y": -0.88992,
+        "scale": 1,
+        "rotate": 0
+      },
+      "tracks": [
+        {
+          "property": "opacity",
+          "keys": [
+            {
+              "t": 0,
+              "value": 0,
+              "ease": "easeOut"
+            },
+            {
+              "t": 0.7,
+              "value": 1,
+              "ease": "easeInOut"
+            },
+            {
+              "t": 2.3,
+              "value": 1,
+              "ease": "easeIn"
+            },
+            {
+              "t": 3,
+              "value": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ref-2-volumetric-rays",
+      "effect": "volumetric-rays",
+      "params": {
+        "accent": "#12e0c8",
+        "accent2": "#e6f4f6",
+        "bg": "#080a0c",
+        "speed": 0.38939999999999997,
+        "intensity": 0.65
+      },
+      "opacity": 0.95,
+      "blend": "screen",
+      "start": 0,
+      "duration": 3,
+      "transform": {
+        "x": 0,
+        "y": -0.88992,
+        "scale": 1,
+        "rotate": 0
+      },
+      "tracks": [
+        {
+          "property": "opacity",
+          "keys": [
+            {
+              "t": 0,
+              "value": 0,
+              "ease": "easeOut"
+            },
+            {
+              "t": 0.7,
+              "value": 1,
+              "ease": "easeInOut"
+            },
+            {
+              "t": 2.3,
+              "value": 1,
+              "ease": "easeIn"
+            },
+            {
+              "t": 3,
+              "value": 0
+            }
+          ]
+        }
+      ],
+      "mask": {
+        "type": "radial",
+        "center": [
+          0.55,
+          0.45
+        ],
+        "radius": 0.78,
+        "feather": 0.4
+      }
+    },
+    {
+      "id": "ref-text",
+      "effect": "split-reveal",
+      "params": {
+        "title": "REMOTION - RENDER REAL",
+        "kicker": "texto leído por OCR",
+        "bg": "#080a0c",
+        "accent": "#12e0c8",
+        "accent2": "#e6f4f6",
+        "speed": 0.8
+      },
+      "opacity": 0.95,
+      "blend": "normal",
+      "start": 0.6000000000000001,
+      "duration": 1.8,
+      "transform": {
+        "x": 0,
+        "y": 0,
+        "scale": 1,
+        "rotate": 0
+      },
+      "tracks": []
+    }
+  ],
+  "provenance": {
+    "source": "<repo>\\demo\\out\\remotion.mp4",
+    "mapping": [
+      {
+        "detected": "parallax",
+        "mappedTo": "parallax-layers",
+        "status": "estimated",
+        "confidence": 0.75,
+        "note": "La diferencia de desplazamiento entre capas se aproxima con un paisaje en profundidades."
+      },
+      {
+        "detected": "lighting",
+        "mappedTo": "volumetric-rays",
+        "status": "verified",
+        "confidence": 1,
+        "note": "La caída de luz se aproxima con haces volumétricos; no prueba la existencia de god rays."
+      }
+    ],
+    "warnings": [
+      "Las correspondencias efecto detectado → efecto de biblioteca son hipótesis declaradas, no identificaciones exactas. Revisa el estado y la confianza de cada capa.",
+      "La capa tipográfica usa texto leído por OCR; puede contener errores de reconocimiento."
+    ]
+  }
+}

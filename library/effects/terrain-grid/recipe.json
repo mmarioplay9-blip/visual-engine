@@ -1,0 +1,79 @@
+{
+  "id": "terrain-grid",
+  "name": "Terrain Grid",
+  "category": "3d",
+  "summary": "Terreno wireframe en perspectiva con ruido fractal y cámara en vuelo; horizonte y niebla por profundidad.",
+  "tags": [
+    "3d",
+    "terreno",
+    "grid",
+    "paisaje",
+    "canvas"
+  ],
+  "engines": [
+    "canvas2d"
+  ],
+  "requires": [],
+  "performance": "Pendiente de medición 0.3: ejecuta `ve benchmark --effect terrain-grid`.",
+  "license": "MIT (propio)",
+  "entry": "index.html",
+  "compatibility": {
+    "chrome": ">=120",
+    "firefox": ">=120",
+    "safari": ">=17",
+    "reducedMotion": "dibuja un fotograma estático",
+    "dependencies": "ninguna"
+  },
+  "integration": {
+    "mount": "mount(canvas, params)",
+    "cleanup": "la función devuelta cancela el RAF y los listeners",
+    "standalone": "index.html"
+  },
+  "params": [
+    {
+      "name": "bg",
+      "type": "color",
+      "default": "#05070d",
+      "description": "Fondo base"
+    },
+    {
+      "name": "accent",
+      "type": "color",
+      "default": "#12e0c8",
+      "description": "Acento frío"
+    },
+    {
+      "name": "accent2",
+      "type": "color",
+      "default": "#ffb454",
+      "description": "Acento cálido"
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "default": 1,
+      "description": "Velocidad de la animación",
+      "min": 0,
+      "max": 4,
+      "step": 0.05
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "default": 1,
+      "description": "Velocidad de vuelo",
+      "min": 0,
+      "max": 3,
+      "step": 0.05
+    },
+    {
+      "name": "density",
+      "type": "number",
+      "default": 26,
+      "description": "Resolución de la retícula (referencia visual)",
+      "min": 12,
+      "max": 40,
+      "step": 1
+    }
+  ]
+}

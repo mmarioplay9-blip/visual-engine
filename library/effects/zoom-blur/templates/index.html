@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Zoom Blur · Visual Engine</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #05070d; }
+  #ve-canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+  body[data-error]::after { content: attr(data-error); position: fixed; left: 16px; bottom: 16px; color: #ff9aa5; font: 12px ui-monospace, monospace; max-width: 80ch; }
+</style>
+</head>
+<body>
+  <canvas id="ve-canvas" aria-label="Zoom Blur"></canvas>
+  <script type="module">
+    import { mount } from './effect.js';
+    const canvas = document.getElementById('ve-canvas');
+    let dispose;
+    try {
+      dispose = mount(canvas);
+      window.__veReady = true;
+    } catch (error) {
+      document.body.dataset.error = String(error && error.message ? error.message : error);
+      console.error(error);
+    }
+    window.addEventListener('pagehide', () => { if (dispose) dispose(); }, { once: true });
+  </script>
+</body>
+</html>

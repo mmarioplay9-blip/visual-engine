@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Visual Engine · Galería 0.3</title>
+<style>
+  :root { color-scheme: dark; --bg:#06090f; --panel:#0b121c; --line:#1b2a3a; --ink:#eaf5ff; --muted:#8ea6ba; --accent:#12e0c8; --warm:#ffb454; }
+  * { box-sizing: border-box; }
+  html, body { margin:0; height:100%; background:var(--bg); color:var(--ink); font-family: ui-sans-serif, system-ui, sans-serif; }
+  body { display:grid; grid-template-rows: auto 1fr; }
+  header { display:flex; align-items:center; gap:18px; padding:14px 20px; border-bottom:1px solid var(--line); background:rgba(6,9,15,.92); }
+  header h1 { margin:0; font-size:16px; letter-spacing:-.02em; }
+  header .badge { font:11px ui-monospace,monospace; color:var(--accent); border:1px solid #1f4a48; border-radius:999px; padding:4px 9px; }
+  header .spacer { flex:1; }
+  header a { color:var(--muted); font-size:12px; text-decoration:none; }
+  header a:hover { color:var(--ink); }
+  #app { display:grid; grid-template-columns: 300px minmax(0, 1fr) 350px; min-height:0; }
+  aside, main, #builder { min-height:0; overflow:auto; }
+  aside { border-right:1px solid var(--line); padding:14px; background:#080d15; }
+  #builder { border-left:1px solid var(--line); padding:14px; background:#080d15; }
+  main { display:flex; flex-direction:column; gap:12px; padding:14px; }
+  input, select, button, textarea { font:inherit; }
+  input[type=search], select { width:100%; background:#0d1722; color:var(--ink); border:1px solid var(--line); border-radius:8px; padding:8px 10px; }
+  .cats { display:flex; flex-wrap:wrap; gap:5px; margin:10px 0 14px; }
+  .cats button { background:#0c1621; color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:4px 8px; font-size:11px; cursor:pointer; }
+  .cats button.active { color:#03110f; background:var(--accent); border-color:var(--accent); }
+  .grid { display:grid; gap:7px; }
+  .card { text-align:left; border:1px solid var(--line); background:#0b141f; color:var(--ink); border-radius:10px; padding:9px 10px; cursor:pointer; }
+  .card:hover { border-color:#2f6d68; }
+  .card.active { border-color:var(--accent); background:#0d1c25; }
+  .card b { display:block; font-size:12px; font-weight:600; }
+  .card small { color:var(--muted); font-size:10px; }
+  .preview-wrap { position:relative; border:1px solid var(--line); border-radius:12px; overflow:hidden; background:#030509; aspect-ratio:16/9; min-height:240px; }
+  .preview-wrap iframe { width:100%; height:100%; border:0; display:block; }
+  .preview-bar { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  .pill { font:11px ui-monospace,monospace; color:var(--muted); border:1px solid var(--line); border-radius:999px; padding:3px 8px; }
+  h2 { margin:0; font-size:18px; letter-spacing:-.02em; }
+  h3 { margin:16px 0 7px; font-size:11px; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); }
+  p { margin:0; color:var(--muted); font-size:12px; line-height:1.55; }
+  .controls { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:7px 10px; }
+  .control { display:grid; gap:3px; font-size:11px; color:var(--muted); }
+  .control input[type=range] { width:100%; accent-color:var(--accent); }
+  .control input[type=color] { width:100%; height:28px; border:1px solid var(--line); border-radius:6px; background:transparent; }
+  .control input[type=text] { background:#0d1722; color:var(--ink); border:1px solid var(--line); border-radius:6px; padding:5px 7px; font-size:11px; }
+  .code { margin:8px 0 0; padding:10px; border:1px solid var(--line); border-radius:8px; background:#050a10; color:#b9e8e2; font:11px/1.5 ui-monospace,monospace; white-space:pre-wrap; overflow:auto; max-height:150px; }
+  button.primary, button.ghost, button.danger { border-radius:8px; padding:8px 11px; cursor:pointer; font-size:12px; }
+  button.primary { background:var(--accent); color:#03110f; border:1px solid var(--accent); font-weight:600; }
+  button.ghost { background:#0d1722; color:var(--ink); border:1px solid var(--line); }
+  button.danger { background:#1a0b12; color:#ff9aa5; border:1px solid #4a1b28; }
+  .layer { border:1px solid var(--line); border-radius:8px; padding:8px; margin-bottom:7px; background:#0b141f; }
+  .layer .row { display:flex; gap:6px; align-items:center; justify-content:space-between; }
+  .layer b { font-size:11px; font-weight:600; }
+  .layer select { padding:4px 6px; font-size:10px; width:auto; }
+  .layer .meta { font:10px ui-monospace,monospace; color:var(--muted); margin-top:4px; }
+  .actions { display:flex; gap:6px; flex-wrap:wrap; margin-top:10px; }
+  .empty { border:1px dashed var(--line); border-radius:10px; padding:20px; color:var(--muted); font-size:12px; text-align:center; }
+  .notice { font:11px ui-monospace,monospace; color:var(--warm); margin-top:8px; }
+  @media (max-width: 1050px) { #app { grid-template-columns: 220px minmax(0,1fr); } #builder { grid-column:1/-1; border-left:0; border-top:1px solid var(--line); max-height:300px; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Visual Engine <span style="color:var(--muted);font-weight:400">/ galería local</span></h1>
+  <span class="badge" id="count">…</span>
+  <span class="spacer"></span>
+  <span class="pill">sin build · sin CDN</span>
+  <a href="/api/benchmarks" target="_blank">benchmarks</a>
+</header>
+<div id="app">
+  <aside>
+    <input id="search" type="search" placeholder="Buscar efecto, etiqueta, motor…" />
+    <div class="cats" id="cats"></div>
+    <div class="grid" id="list"></div>
+  </aside>
+  <main>
+    <div class="preview-wrap"><iframe id="preview" title="Previsualización del efecto" src="about:blank"></iframe></div>
+    <div class="preview-bar">
+      <h2 id="title">Elige un efecto</h2>
+      <span class="pill" id="meta">—</span>
+      <span class="spacer"></span>
+      <button class="ghost" id="reload">Reiniciar</button>
+      <button class="primary" id="add">Añadir a composición</button>
+    </div>
+    <p id="summary">Explora 58 efectos reales, modifica sus parámetros y combínalos. Todo se ejecuta en local.</p>
+    <div id="controls"></div>
+    <h3>Integración</h3>
+    <pre class="code" id="code">Selecciona un efecto.</pre>
+  </main>
+  <section id="builder">
+    <h2>Composición</h2>
+    <p>Capas, mezcla y timeline. Exporta el JSON universal o abre la previsualización generada.</p>
+    <div id="layers"></div>
+    <div class="actions">
+      <button class="ghost" id="compose">Generar composición</button>
+      <button class="ghost" id="export">Descargar JSON</button>
+      <button class="danger" id="clear">Vaciar</button>
+    </div>
+    <div class="notice" id="notice"></div>
+    <h3>Previsualización compuesta</h3>
+    <div class="preview-wrap" style="aspect-ratio:16/9"><iframe id="compPreview" title="Composición" src="about:blank"></iframe></div>
+  </section>
+</div>
+<script>
+const state = { effects: [], category: 'todos', query: '', current: null, params: {}, layers: [], duration: 6 };
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s == null ? '' : s).replace(/[&<>"']/g, (c) => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+const catNames = { particulas:'Partículas', iluminacion:'Iluminación', shaders:'Shaders', materiales:'Materiales', distorsion:'Distorsión', transiciones:'Transiciones', tipografia:'Tipografía', interactivos:'Interactivos', hud:'HUD', fondos:'Fondos', camara:'Cámara', '3d':'3D', hero:'Hero', interfaz:'Interfaz', transicion:'Transición' };
+
+function previewUrl(extra = {}) {
+  if (!state.current) return 'about:blank';
+  const q = new URLSearchParams();
+  for (const [k, v] of Object.entries({ ...state.params, ...extra })) q.set(k, String(v));
+  return '/preview/' + encodeURIComponent(state.current.id) + '/?' + q.toString();
+}
+function renderCats() {
+  const cats = ['todos', ...new Set(state.effects.map((e) => e.category))];
+  $('cats').innerHTML = cats.map((c) => '<button data-cat="' + esc(c) + '" class="' + (state.category === c ? 'active' : '') + '">' + esc(catNames[c] || c) + '</button>').join('');
+  $('cats').querySelectorAll('button').forEach((b) => b.onclick = () => { state.category = b.dataset.cat; renderCats(); renderList(); });
+}
+function renderList() {
+  const q = state.query.toLowerCase();
+  const list = state.effects.filter((e) => (state.category === 'todos' || e.category === state.category) && (!q || (e.id + ' ' + e.name + ' ' + e.summary + ' ' + e.tags.join(' ')).toLowerCase().includes(q)));
+  $('count').textContent = list.length + ' / ' + state.effects.length;
+  $('list').innerHTML = list.length ? list.map((e) => '<button class="card ' + (state.current && state.current.id === e.id ? 'active' : '') + '" data-id="' + esc(e.id) + '"><b>' + esc(e.name) + '</b><small>' + esc(catNames[e.category] || e.category) + ' · ' + esc(e.engines.join('+')) + '</small></button>').join('') : '<div class="empty">Sin resultados.</div>';
+  $('list').querySelectorAll('.card').forEach((b) => b.onclick = () => select(b.dataset.id));
+}
+function select(id) {
+  const e = state.effects.find((x) => x.id === id);
+  if (!e) return;
+  state.current = e; state.params = Object.fromEntries(e.params.map((p) => [p.name, p.default]));
+  $('title').textContent = e.name;
+  $('meta').textContent = (catNames[e.category] || e.category) + ' · ' + e.engines.join('+') + ' · ' + (e.license || 'MIT');
+  $('summary').textContent = e.summary;
+  $('preview').src = previewUrl();
+  $('code').textContent = "import { mount } from '" + e.id + "/effect.js';\n\nconst dispose = mount(document.querySelector('canvas'), " + JSON.stringify(state.params, null, 2) + ');\n\n// dispose() al desmontar';
+  $('controls').innerHTML = '<h3>Parámetros</h3><div class="controls">' + e.params.map((p) => {
+    const v = state.params[p.name];
+    if (p.type === 'color') return '<label class="control">' + esc(p.name) + '<input type="color" data-p="' + esc(p.name) + '" value="' + esc(v) + '"></label>';
+    if (p.type === 'number') return '<label class="control">' + esc(p.name) + ' <span data-v="' + esc(p.name) + '">' + esc(v) + '</span><input type="range" data-p="' + esc(p.name) + '" min="' + (p.min ?? 0) + '" max="' + (p.max ?? 100) + '" step="' + (p.step ?? 1) + '" value="' + esc(v) + '"></label>';
+    if (p.type === 'boolean') return '<label class="control">' + esc(p.name) + '<input type="checkbox" data-p="' + esc(p.name) + '" ' + (v ? 'checked' : '') + '></label>';
+    return '<label class="control">' + esc(p.name) + '<input type="text" data-p="' + esc(p.name) + '" value="' + esc(v) + '"></label>';
+  }).join('') + '</div>';
+  $('controls').querySelectorAll('[data-p]').forEach((input) => {
+    const handler = () => {
+      const p = e.params.find((x) => x.name === input.dataset.p);
+      let v = input.type === 'checkbox' ? input.checked : input.value;
+      if (p.type === 'number') v = Number(v);
+      state.params[p.name] = v;
+      const label = $('controls').querySelector('[data-v="' + p.name + '"]'); if (label) label.textContent = v;
+      $('preview').src = previewUrl();
+      $('code').textContent = "import { mount } from '" + e.id + "/effect.js';\n\nconst dispose = mount(document.querySelector('canvas'), " + JSON.stringify(state.params, null, 2) + ');\n\n// dispose() al desmontar';
+    };
+    input.addEventListener('input', handler);
+    input.addEventListener('change', handler);
+  });
+  renderList();
+}
+function renderLayers() {
+  $('layers').innerHTML = state.layers.length ? state.layers.map((l, i) => '<div class="layer"><div class="row"><b>' + i + 1 + '. ' + esc(l.effect) + '</b><button class="danger" data-remove="' + i + '">×</button></div><div class="row" style="margin-top:6px"><select data-blend="' + i + '">' + ['normal','screen','overlay','soft-light','multiply','lighter','color-dodge'].map((b) => '<option ' + (l.blend === b ? 'selected' : '') + '>' + b + '</option>').join('') + '</select><span class="meta">' + Object.keys(l.params).length + ' params</span></div></div>').join('') : '<div class="empty">Añade efectos desde la ficha.</div>';
+  $('layers').querySelectorAll('[data-blend]').forEach((s) => s.onchange = () => { state.layers[Number(s.dataset.blend)].blend = s.value; });
+  $('layers').querySelectorAll('[data-remove]').forEach((b) => b.onclick = () => { state.layers.splice(Number(b.dataset.remove), 1); renderLayers(); });
+}
+function composition() {
+  return {
+    version: '0.3', id: 'galeria-' + Date.now(), title: 'Composición de galería', description: 'Creada en la galería local de Visual Engine.',
+    width: 1280, height: 720, duration: Math.max(2, state.duration), fps: 30, background: '#05070d',
+    shared: { accent: '#12e0c8', accent2: '#ffb454', speed: 1 },
+    layers: state.layers.map((l, i) => ({ id: 'capa-' + (i + 1), effect: l.effect, params: l.params, opacity: 1, blend: l.blend, start: 0, duration: Math.max(2, state.duration), transform: { x: 0, y: 0, scale: 1, rotate: 0 }, tracks: [{ property: 'opacity', keys: [{ t: 0, value: 0, ease: 'easeOut' }, { t: 0.6, value: 1 }, { t: Math.max(0.7, state.duration - 0.5), value: 1 }, { t: Math.max(2, state.duration), value: 0 }] }] }))
+  };
+}
+async function load() {
+  state.effects = await (await fetch('/api/effects')).json();
+  renderCats(); renderList();
+  if (state.effects[0]) select(state.effects.find((e) => e.id === 'aurora-hero')?.id || state.effects[0].id);
+}
+$('search').addEventListener('input', (e) => { state.query = e.target.value; renderList(); });
+$('reload').onclick = () => { if (state.current) $('preview').src = previewUrl({ _: Date.now() }); };
+$('add').onclick = () => { if (!state.current) return; state.layers.push({ effect: state.current.id, params: { ...state.params }, blend: 'normal' }); renderLayers(); $('notice').textContent = 'Capa añadida: ' + state.current.name; };
+$('clear').onclick = () => { state.layers = []; renderLayers(); $('compPreview').src = 'about:blank'; };
+$('export').onclick = () => { const blob = new Blob([JSON.stringify(composition(), null, 2)], { type: 'application/json' }); const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'composicion-ve.json'; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000); };
+$('compose').onclick = async () => {
+  if (!state.layers.length) { $('notice').textContent = 'Añade al menos una capa.'; return; }
+  $('notice').textContent = 'Renderizando…';
+  try {
+    const r = await fetch('/api/compose', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(composition()) });
+    const data = await r.json();
+    if (!r.ok) throw new Error(data.error || 'Error');
+    $('compPreview').src = data.url + '?t=0.8&paused=1';
+    $('notice').innerHTML = 'Composición generada. <a href="' + data.url + '" target="_blank" style="color:var(--accent)">Abrir a tamaño completo</a>';
+  } catch (e) { $('notice').textContent = 'Error: ' + e.message; }
+};
+load().catch((e) => { $('count').textContent = 'error'; $('summary').textContent = 'No se pudo cargar la galería: ' + e.message; });
+</script>
+</body>
+</html>

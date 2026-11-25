@@ -1,0 +1,70 @@
+{
+  "id": "focus-pull",
+  "name": "Focus Pull",
+  "category": "camara",
+  "summary": "Cambio de foco entre fondo y primer plano con bokeh que se abre y cierra; profundidad de campo explícita.",
+  "tags": [
+    "camara",
+    "foco",
+    "bokeh",
+    "profundidad",
+    "canvas"
+  ],
+  "engines": [
+    "canvas2d"
+  ],
+  "requires": [],
+  "performance": "Pendiente de medición 0.3: ejecuta `ve benchmark --effect focus-pull`.",
+  "license": "MIT (propio)",
+  "entry": "index.html",
+  "compatibility": {
+    "chrome": ">=120",
+    "firefox": ">=120",
+    "safari": ">=17",
+    "reducedMotion": "dibuja un fotograma estático",
+    "dependencies": "ninguna"
+  },
+  "integration": {
+    "mount": "mount(canvas, params)",
+    "cleanup": "la función devuelta cancela el RAF y los listeners",
+    "standalone": "index.html"
+  },
+  "params": [
+    {
+      "name": "bg",
+      "type": "color",
+      "default": "#05070d",
+      "description": "Fondo base"
+    },
+    {
+      "name": "accent",
+      "type": "color",
+      "default": "#12e0c8",
+      "description": "Acento frío"
+    },
+    {
+      "name": "accent2",
+      "type": "color",
+      "default": "#ffb454",
+      "description": "Acento cálido"
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "default": 1,
+      "description": "Velocidad de la animación",
+      "min": 0,
+      "max": 4,
+      "step": 0.05
+    },
+    {
+      "name": "intensity",
+      "type": "number",
+      "default": 0.8,
+      "description": "Recorrido de foco",
+      "min": 0.2,
+      "max": 1.4,
+      "step": 0.05
+    }
+  ]
+}

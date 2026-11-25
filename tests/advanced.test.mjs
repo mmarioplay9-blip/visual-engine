@@ -148,7 +148,7 @@ test('temporal: compara dos clips y separa las seis dimensiones', async () => {
   const out = tmp('ve-temporal-');
   const r = await opTemporal({ reference: ref('premium-ui.mp4'), candidate: ref('premium-ui-alt.mp4'), samples: 10, outDir: out });
   assert.ok(r.score > 40 && r.score <= 100, `puntuación ${r.score}`);
-  assert.equal(r.quality.dimensions.length, 6);
+  assert.ok(r.quality.dimensions.length >= 12, `dimensiones ${r.quality.dimensions.length}`);
   assert.equal(r.quality.dimensions.find((d) => d.id === 'performance').available, false);
   assert.ok(r.quality.dimensions.filter((d) => d.available).length >= 5);
   assert.ok(r.report && fs.existsSync(r.report.md));

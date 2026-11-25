@@ -38,14 +38,14 @@ test('doctor detecta ffmpeg y Playwright de verdad', () => {
   assert.ok(d.ready >= 7, `sólo ${d.ready} herramientas`);
 });
 
-test('library lista 6 efectos y aplica uno sin placeholders', () => {
+test('library lista 58 efectos y aplica uno sin placeholders', () => {
   const list = run(['effects', 'list', '--json']);
   assert.equal(list.code, 0, list.stderr);
   const effects = JSON.parse(list.stdout);
-  assert.equal(effects.length, 6);
-  assert.deepEqual(effects.map((e) => e.id).sort(), [
-    'aurora-hero', 'glass-hud', 'kinetic-title', 'noise-warp', 'particle-nebula', 'sweep-banner',
-  ]);
+  assert.ok(effects.length >= 58, `sólo ${effects.length} efectos`);
+  for (const id of ['aurora-hero', 'glass-hud', 'kinetic-title', 'noise-warp', 'particle-nebula', 'sweep-banner', 'plasma-flow', 'dust-motes', 'torus-knot']) {
+    assert.ok(effects.some((e) => e.id === id), `falta ${id}`);
+  }
 
   const out = fs.mkdtempSync(path.join(os.tmpdir(), 've-cli-'));
   const applied = run(['effects', 'apply', 'aurora-hero', '--out', out, '--set', 'accent=#123456']);

@@ -12,6 +12,9 @@ import {
   opTemporal,
   opTimeline,
   opVision,
+  opCompose,
+  opReferenceEffects,
+  opBenchmark,
 } from '../core/advanced.js';
 import {
   opAdapters,
@@ -99,6 +102,18 @@ export async function startApi(opts: ApiOptions = {}): Promise<ApiServer> {
     { method: 'POST', pattern: /^\/v1\/temporal$/, handler: async (b) => opTemporal(b) },
     { method: 'GET', pattern: /^\/v1\/vision\/status$/, handler: async () => opVision({ action: 'status' }) },
     { method: 'POST', pattern: /^\/v1\/vision$/, handler: async (b) => opVision(b) },
+    { method: 'POST', pattern: /^\/v1\/compose$/, handler: async (b) => opCompose(b) },
+    { method: 'POST', pattern: /^\/v1\/composition\/validate$/, handler: async (b) => opCompose({ ...b, validateOnly: true }) },
+    { method: 'POST', pattern: /^\/v1\/reference-effects$/, handler: async (b) => opReferenceEffects(b) },
+    { method: 'POST', pattern: /^\/v1\/benchmark$/, handler: async (b) => opBenchmark(b) },
+    { method: 'GET', pattern: /^\/v1\/benchmarks$/, handler: async () => {
+      const file = new URL('../../library/benchmarks.json', import.meta.url);
+      try {
+        return JSON.parse(await (await import('node:fs/promises')).readFile(file, 'utf8'));
+      } catch {
+        return { pending: 'Ejecuta POST /v1/benchmark o `ve benchmark` para medir.' };
+      }
+    } },
     { method: 'POST', pattern: /^\/v1\/iterate$/, handler: async (b) => {
       if (b.confirm !== true) throw new Error('Iteración no confirmada: envía confirm=true (escribe archivos).');
       return opIterate(b);
@@ -188,7 +203,11 @@ export function capabilities() {
       'Captura real con Playwright (varios fotogramas, errores de consola y de red)',
       'Comparación de perfiles con puntuación de fidelidad y correcciones priorizadas',
       'Comparación por píxel (SSIM, MAE, ΔE) con mapa de calor PNG',
-      'Biblioteca de 6 efectos autocontenidos con parámetros',
+      'Biblioteca de 58 efectos autocontenidos (Canvas/WebGL) con parámetros, instrucciones y métricas',
+      'Motor de composición JSON con capas, mezclas, máscaras, transformaciones y timelines',
+      'Reference-to-Effects con correspondencias declaradas verified/estimated',
+      'Galería local opcional y banco de rendimiento con FPS/memoria reales',
+      'OCR Tesseract y visión local Ollama con detección de VRAM y selección de modelo',
       'Adaptadores GSAP, Three.js, Motion, Remotion, React Bits, Playwright y FFmpeg',
       'Detección real de dependencias y plan de instalación',
       'Instalación de paquetes npm gratuitos (opt-in)',
@@ -197,7 +216,7 @@ export function capabilities() {
     pendiente: [
       'Publicación del repositorio GitHub y actualizaciones verificadas desde remoto',
       'Detección semántica de objetos/pose: requiere modelo local; no integrada (sólo regiones salientes)',
-      'OCR y descripción con visión local: dependen de Tesseract/Ollama instalados y con modelo',
+      'Detección de objetos/pose: requiere un modelo específico que no forma parte de esta entrega',
       'Sincronización automática de audio y subtítulos',
       'Prueba en Linux y macOS (sólo probado en Windows en esta máquina)',
     ],

@@ -32,10 +32,14 @@ del agente; la verificación deja de ser una opinión.
 | `core/spec.ts` | Especificación visual JSON+Markdown | análisis completo |
 | `core/recommend.ts` | Tecnología y snippets por efecto, JS validado | Node |
 | `core/vision.ts` | Ollama y Tesseract opcionales, sin APIs externas | run |
-| `core/quality.ts` | Seis dimensiones de calidad y pesos renormalizables | compare |
+| `core/quality.ts` | 13 dimensiones de calidad y pesos renormalizables | compare |
+| `core/composition.ts` | JSON universal, validación, capas, tracks, máscaras, mezclas y HTML autónomo | library |
+| `core/refeffects.ts` | Señales medidas → efectos de biblioteca, con hipótesis y confianza | spec, composition |
+| `core/gallery.ts` | Galería local opcional: efectos, preview y composición | library, composition |
+| `core/benchmark.ts` | Banco FPS/frame time/heap/carga por efecto | capture |
 | `core/temporal.ts` | Alineación temporal, curvas, cortes y deriva | analysis, quality |
 | `core/iterate.ts` | Copia SHA-256, parche, verificación y reversión | review, run |
-| `core/advanced.ts` | Operaciones compartidas por CLI, MCP y API para 0.2 | todos |
+| `core/advanced.ts` | Operaciones compartidas por CLI, MCP y API para 0.2 y 0.3 | todos |
 | `core/analysis.ts` | Métricas por fotograma y perfil visual agregado | media, util |
 | `core/compare.ts` | Perfiles: puntuación/paleta/correcciones. Imágenes: SSIM/MAE/ΔE/heatmap | analysis, media |
 | `core/capture.ts` | Chromium real, varios fotogramas, errores JS y de red | Playwright |

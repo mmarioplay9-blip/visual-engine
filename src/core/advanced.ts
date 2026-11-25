@@ -8,10 +8,13 @@ import { describeContent, inspectFrames, type ContentAnalysis } from './inspect.
 import { describeEffects, detectEffects, saveEffectReport, type EffectReport } from './effects.js';
 import { buildVisualSpec, saveVisualSpec, type VisualSpec } from './spec.js';
 import { recommendAndCheck, recommendEffect, recommendationCatalog, type EffectRecommendation } from './recommend.js';
-import { describeVisionStatus, ocrImage, ollamaAnalyzeImage, visionStatus, type OcrResult, type OllamaResult, type VisionStatus } from './vision.js';
+import { describeVisionStatus, installVisionModel, ocrImage, ollamaAnalyzeImage, probeHardware, visionStatus, type OcrResult, type OllamaResult, type VisionStatus } from './vision.js';
 import { describeTemporal, temporalCompare, type TemporalComparison } from './temporal.js';
 import { describeIteration, listIterations, restoreIteration, runIteration, type IterationOptions, type IterationResult } from './iterate.js';
 import { ensureDir, newRunDir } from './paths.js';
+import { renderComposition, validateComposition, compositionSummary, type VEComposition, type RenderedComposition } from './composition.js';
+import { referenceEffects, specToComposition, type ReferenceEffectsResult } from './refeffects.js';
+import { benchmarkEffects, type BenchmarkReport } from './benchmark.js';
 
 /**
  * Operaciones de la capa avanzada. Cada una devuelve datos medidos y las rutas
@@ -129,6 +132,8 @@ export async function opSpec(input: {
   path: string;
   samples?: number;
   outDir?: string;
+  vision?: boolean;
+  model?: string;
 }): Promise<SpecOpResult> {
   const info = await probe(input.path);
   if (info.kind === 'image') throw new Error('La especificación completa requiere vídeo; para una imagen usa `ve inspect`.');
@@ -140,7 +145,27 @@ export async function opSpec(input: {
   const content = inspectFrames(frames);
   const effects = detectEffects(input.path, await sampleFrames(input.path, { count: samples, width: 192 }));
   const profile = await analyzeFile(input.path, { samples: Math.min(12, samples), width: 192 });
-  const spec = buildVisualSpec({ profile, timeline, camera, content, effects });
+  let ocr: OcrResult | undefined;
+  let semantic: OllamaResult | undefined;
+  let frameSize: { width: number; height: number } | undefined;
+  const visionPaths: string[] = [];
+  if (input.vision) {
+    const frame = await extractFrameAt(input.path, Math.min(0.6, Math.max(0.05, info.duration / 2)), path.join(outDir, 'vision-frame.png'), 960);
+    const frameInfo = await probe(frame);
+    frameSize = { width: frameInfo.width, height: frameInfo.height };
+    [ocr, semantic] = await Promise.all([ocrImage(frame), ollamaAnalyzeImage(frame, { model: input.model })]);
+    if (ocr) {
+      const file = path.join(outDir, 'ocr.json');
+      fs.writeFileSync(file, JSON.stringify(ocr, null, 2), 'utf8');
+      visionPaths.push(file);
+    }
+    if (semantic) {
+      const file = path.join(outDir, 'semantic.json');
+      fs.writeFileSync(file, JSON.stringify(semantic, null, 2), 'utf8');
+      visionPaths.push(file);
+    }
+  }
+  const spec = buildVisualSpec({ profile, timeline, camera, content, effects, ocr, semantic, frameSize });
   const paths = saveVisualSpec(spec, outDir);
   return {
     spec,
@@ -154,6 +179,9 @@ export async function opSpec(input: {
       ...describeTimeline(timeline),
       ...describeCamera(camera),
       ...content.warnings.map((w) => `Límite: ${w}`),
+      ...(ocr?.available ? [`OCR: ${ocr.lines?.length ?? 0} línea(s) leídas con Tesseract.`] : input.vision ? [`OCR no disponible: ${ocr?.reason ?? 'sin resultado'}`] : []),
+      ...(semantic?.available ? [`Visión local (${semantic.model}): ${semantic.response?.slice(0, 240)}`] : input.vision ? [`Visión local no disponible: ${semantic?.reason ?? 'sin resultado'}`] : []),
+      ...visionPaths.map((f) => `Artefacto de visión: ${f}`),
     ],
   };
 }
@@ -181,12 +209,28 @@ export async function opRecommend(input: {
 }
 
 export async function opVision(input: {
-  action: 'status' | 'describe' | 'ocr';
+  action: 'status' | 'describe' | 'ocr' | 'setup';
   path?: string;
   model?: string;
   prompt?: string;
   outDir?: string;
-}): Promise<{ status: VisionStatus; description: string[]; result?: OllamaResult | OcrResult }> {
+  install?: boolean;
+}): Promise<{ status: VisionStatus; description: string[]; result?: OllamaResult | OcrResult | { installed: boolean; model: string; output: string }; hardware?: Awaited<ReturnType<typeof probeHardware>> }> {
+  if (input.action === 'setup') {
+    const hardware = await probeHardware();
+    const install = input.install ? await installVisionModel(input.model) : null;
+    const status = await visionStatus();
+    return {
+      status,
+      hardware,
+      result: install ?? undefined,
+      description: [
+        `Hardware: ${hardware.gpu ?? 'GPU no detectada'} · VRAM ${hardware.vramTotalMb ?? '?'} MB · RAM ${hardware.ramTotalGb} GB.`,
+        install ? `${install.installed ? 'Modelo instalado' : 'No se pudo instalar'}: ${install.model}` : `Instalación no solicitada. Recomendado: ${status.selectedModel.recommended?.name ?? 'ninguno'}. Usa --install.`,
+        ...describeVisionStatus(status),
+      ],
+    };
+  }
   const status = await visionStatus();
   const description = describeVisionStatus(status);
   if (input.action === 'status') return { status, description };
@@ -197,6 +241,76 @@ export async function opVision(input: {
   }
   const result = await ollamaAnalyzeImage(input.path, { model: input.model, prompt: input.prompt });
   return { status, description: [...description, ...(result.available ? [result.response ?? ''] : [result.reason ?? 'Ollama no disponible'])], result };
+}
+
+export interface ComposeOpResult {
+  valid: boolean;
+  errors: string[];
+  composition: VEComposition;
+  description: string[];
+  rendered?: RenderedComposition;
+}
+
+export async function opCompose(input: {
+  composition?: unknown;
+  file?: string;
+  outDir?: string;
+  validateOnly?: boolean;
+}): Promise<ComposeOpResult> {
+  const raw = input.composition ?? (input.file ? JSON.parse(fs.readFileSync(input.file, 'utf8')) : undefined);
+  if (!raw) throw new Error('Indica una composición JSON o un archivo con --file.');
+  const valid = validateComposition(raw);
+  if (!valid.ok || !valid.value) return { valid: false, errors: valid.errors, composition: raw as VEComposition, description: valid.errors };
+  const rendered = input.validateOnly ? undefined : renderComposition(valid.value, { outDir: input.outDir });
+  return {
+    valid: true,
+    errors: [],
+    composition: valid.value,
+    description: [...compositionSummary(valid.value), ...(rendered ? [`HTML: ${rendered.html}`, `Config: ${rendered.config}`] : ['Sólo validación: no se escribieron archivos.'])],
+    rendered,
+  };
+}
+
+export async function opReferenceEffects(input: {
+  path?: string;
+  specFile?: string;
+  outDir?: string;
+  vision?: boolean;
+  model?: string;
+  render?: boolean;
+}): Promise<ReferenceEffectsResult & { specFile?: string; specPaths?: { json: string; md: string } }> {
+  const outDir = ensureDir(input.outDir ?? newRunDir('reference-effects'));
+  let spec: VisualSpec;
+  let specPaths: { json: string; md: string } | undefined;
+  if (input.specFile) {
+    spec = JSON.parse(fs.readFileSync(input.specFile, 'utf8')) as VisualSpec;
+  } else if (input.path) {
+    const specRun = await opSpec({ path: input.path, outDir, vision: input.vision, model: input.model });
+    spec = specRun.spec;
+    specPaths = specRun.paths;
+  } else {
+    throw new Error('Indica un vídeo (--path) o una especificación (--spec).');
+  }
+  const built = referenceEffects({ spec, outDir, render: input.render !== false });
+  return { ...built, specFile: specPaths?.json, specPaths };
+}
+
+export async function opBenchmark(input: {
+  effects?: string[];
+  ms?: number;
+  width?: number;
+  height?: number;
+  outFile?: string;
+  docsFile?: string;
+} = {}): Promise<BenchmarkReport> {
+  return benchmarkEffects({
+    ids: input.effects,
+    ms: input.ms,
+    width: input.width,
+    height: input.height,
+    outFile: input.outFile,
+    docsFile: input.docsFile ?? newRunDir('benchmarks') + '/RENDIMIENTO.md',
+  });
 }
 
 export async function opTemporal(input: {

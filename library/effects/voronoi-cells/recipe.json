@@ -1,0 +1,80 @@
+{
+  "id": "voronoi-cells",
+  "name": "Voronoi Cells",
+  "category": "shaders",
+  "summary": "Células de Voronoi animadas con bordes luminosos y puntos de semilla; shader de coste fijo 3×3.",
+  "tags": [
+    "shader",
+    "webgl",
+    "voronoi",
+    "celdas",
+    "procedural"
+  ],
+  "engines": [
+    "webgl",
+    "glsl"
+  ],
+  "requires": [],
+  "performance": "Pendiente de medición 0.3: ejecuta `ve benchmark --effect voronoi-cells`.",
+  "license": "MIT (propio)",
+  "entry": "index.html",
+  "compatibility": {
+    "chrome": ">=120",
+    "firefox": ">=120",
+    "safari": ">=17",
+    "reducedMotion": "dibuja un fotograma estático",
+    "dependencies": "ninguna"
+  },
+  "integration": {
+    "mount": "mount(canvas, params)",
+    "cleanup": "la función devuelta cancela el RAF y los listeners",
+    "standalone": "index.html"
+  },
+  "params": [
+    {
+      "name": "bg",
+      "type": "color",
+      "default": "#05070d",
+      "description": "Fondo base"
+    },
+    {
+      "name": "accent",
+      "type": "color",
+      "default": "#12e0c8",
+      "description": "Acento frío"
+    },
+    {
+      "name": "accent2",
+      "type": "color",
+      "default": "#ffb454",
+      "description": "Acento cálido"
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "default": 1,
+      "description": "Velocidad de la animación",
+      "min": 0,
+      "max": 4,
+      "step": 0.05
+    },
+    {
+      "name": "scale",
+      "type": "number",
+      "default": 0.5,
+      "description": "Densidad de células",
+      "min": 0.05,
+      "max": 1.5,
+      "step": 0.05
+    },
+    {
+      "name": "intensity",
+      "type": "number",
+      "default": 0.8,
+      "description": "Brillo de bordes",
+      "min": 0.1,
+      "max": 1.4,
+      "step": 0.05
+    }
+  ]
+}

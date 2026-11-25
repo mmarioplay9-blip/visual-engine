@@ -4,10 +4,14 @@ Motor universal, local y gratuito para subir la calidad visual de los proyectos 
 agentes de IA. Mide una referencia real, la descompone en escenas/movimiento/efectos, construye
 con intención, captura el resultado en un navegador real y compara ambos con números.
 
-> **Estado: 0.2 — análisis avanzado.** Verificado en Windows con 33 pruebas reales.
+> **Estado: 0.3 — motor de efectos y composición.** Verificado en Windows con 39 pruebas reales.
 > Cada capacidad de la tabla se ejecutó; lo estimado y lo pendiente está separado en
 > [docs/CAPABILITIES.md](docs/CAPABILITIES.md). El detalle de la última verificación está en
-> [docs/VERIFICACION-0.2.md](docs/VERIFICACION-0.2.md).
+> [docs/VERIFICACION-0.3.md](docs/VERIFICACION-0.3.md).
+
+La fase 0.3 añade **58 efectos ejecutables en 12 categorías**, composición por capas con
+mezclas/máscaras/curvas, Reference-to-Effects, galería local opcional, OCR y visión local
+verificados, y banco de rendimiento. La línea base 0.1/0.2 sigue verde.
 
 ## Qué hace de verdad
 
@@ -17,15 +21,19 @@ con intención, captura el resultado en un navegador real y compara ambos con n�
 | Movimiento de cámara: paneo, zoom, velocidad, aceleración, temblor | Correlación normalizada | Verificado (rotación estimada) |
 | Composición: tercios, equilibrio, simetría, horizonte, líneas | JS propio | Verificado |
 | Formas: círculos y líneas | Hough/proyección | Verificado |
-| Texto y objetos | Componentes de luminancia / saliencia | **Estimado** (sin OCR/modelo) |
+| Texto | Tesseract 5.4 | **Verificado**: `VISUAL ENGINE`, confianza 96,4 % en texto nítido; 81,1 % en el render |
+| Objetos | Componentes de luminancia / saliencia | **Estimado** (sin modelo de objetos) |
 | Profundidad | Proxy de nitidez + gradiente | **Estimado** |
 | Efectos: glow, bloom, partículas, blur, parallax, glitch, luz, reflejos, distorsión, grano | Señales de imagen con evidencia | Señal verificada; etiqueta interpretada |
 | Especificación visual JSON+MD para reproducir | `ve spec` | Verificado |
-| Tecnología y código por efecto | CSS/JS/GLSL; JS con `node --check` | Verificado |
-| Comparación temporal + calidad multidimensional | Curvas, cortes, deriva, 6 dimensiones | Verificado |
+| Biblioteca de efectos | 58 recetas Canvas/WebGL/CSS, 12 categorías | **Verificado**: 58/58 benchmark; 57 sin error en el primer barrido y 58 tras corregir `circuit-lines` |
+| Composición por capas | `ve compose`: máscaras, mezclas, tracks, JSON | **Verificado**: 3 capas, captura real |
+| Reference-to-Effects | `ve refeffects`: spec → composición y código | **Verificado** con render Remotion real; asignaciones marcadas como hipótesis |
+| Galería local opcional | `ve gallery`: 58 efectos, preview, composición | **Verificado** en Chromium; el núcleo sigue funcionando sin UI |
+| Visión local opcional | Ollama `llava:7b` + Tesseract | **Verificado** con descripción semántica real; `qwen2.5vl:3b` falló en esta instalación |
+| Comparación temporal + calidad multidimensional | Curvas, cortes, deriva, 13 dimensiones | Verificado |
 | Iteración con respaldo, medición y reversión | Copia SHA-256 + `git apply` | Verificado |
-| Visión local opcional | Ollama / Tesseract | Integración verificada; sin modelo instalado |
-| MCP, CLI y API local | 23 herramientas MCP, 24 comandos, 27 rutas | Verificado |
+| MCP, CLI y API local | 26 herramientas MCP, 28 comandos, API local | Verificado |
 
 ## Requisitos
 
@@ -144,17 +152,33 @@ temporal UI vs alt: 88,3/100 (A), calidad 98,2
 iteración: 80,6 → 90,5 conservada; 80,6 → 36,0 revertida
 ```
 
+## Efectos, composición y galería (0.3)
+
+```bash
+ve effects list --json                          # 58 efectos, 12 categorías
+ve effects show volumetric-rays                 # parámetros y compatibilidad
+ve benchmark --out library/benchmarks.json      # FPS, frame time, heap y carga
+ve refeffects referencia.mp4 --spec ./analisis/spec.json --out ./reconstruccion
+ve compose ./reconstruccion/composition.json --out ./render
+ve gallery --port 4173                          # opcional, no requiere abrirla para usar el motor
+```
+
+`ve refeffects` traduce señales medidas a capas, timeline y código; **no afirma** que el efecto
+identificado sea exactamente el de la referencia. Cada asignación lleva estado, confianza y nota.
+La composición 0.3 acepta capas, mezclas, máscaras y curvas y se renderiza como HTML autónomo.
+
 ## Arquitectura
 
 ```
 src/core   análisis, media, cámara, timeline, inspección, efectos, spec,
-           recomendaciones, visión local, calidad, temporal, iteración
-src/mcp    servidor MCP (stdio, 23 herramientas)
-src/api    API HTTP local (27 rutas)
-src/cli    comandos `ve` (24)
-library/   6 recetas con plantillas reales
-demo/      referencias 0.1 y 0.2 + landing base/final
-tests/     33 pruebas (núcleo, avanzadas, CLI, API, MCP, E2E)
+           composición, refeffects, galería, benchmark, visión, calidad,
+           temporal, iteración
+src/mcp    servidor MCP (stdio, 26 herramientas)
+src/api    API HTTP local (incluye 0.3)
+src/cli    comandos `ve` (28)
+library/   58 recetas ejecutables en 12 categorías + benchmarks.json
+demo/      referencias 0.1/0.2 + integraciones reales + landing base/final
+tests/     39 pruebas (núcleo, avanzadas, 0.3, CLI, API, MCP, E2E)
 ```
 
 Detalle y decisiones: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
@@ -165,10 +189,11 @@ Detalle y decisiones: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 npm test
 ```
 
-33 pruebas en ~74 s: análisis y cortes, comparación, mapa de calor, CLI, biblioteca, scaffolds,
-`ve init`, API, MCP real, timeline/storyboard, cámara, inspección, efectos en motion/UI/3D,
-spec, snippets JS válidos, temporal, iteración con reversión y restauración, visión, y el E2E
-que exige que la versión final supere a la línea base.
+39 pruebas en ~90 s: análisis y cortes, comparación, mapa de calor, CLI, biblioteca de 58
+efectos, composición, Reference-to-Effects, galería, OCR, scaffolds, `ve init`, API, MCP real,
+timeline/storyboard, cámara, inspección, efectos en motion/UI/3D, spec, snippets JS válidos,
+temporal, iteración con reversión y restauración, visión, y el E2E que exige que la versión
+final supere a la línea base.
 
 ## Licencias
 
@@ -178,6 +203,7 @@ incluye componentes de terceros copiados. Tesseract y Ollama son opcionales y no
 
 ## Qué falta
 
-OCR real y visión local (faltan Tesseract y un modelo), detección semántica de objetos/pose,
-rotación de cámara verificada, transiciones suaves verificadas, profundidad métrica, pruebas en
-Linux/macOS y publicación en GitHub. Lista honesta: [docs/CAPABILITIES.md](docs/CAPABILITIES.md).
+Detección semántica de objetos/pose, rotación de cámara verificada, transiciones suaves
+verificadas, profundidad métrica, pruebas en Linux/macOS y publicación en GitHub. La OCR y la
+visión local ya están verificadas, con límites declarados. Lista honesta:
+[docs/CAPABILITIES.md](docs/CAPABILITIES.md).

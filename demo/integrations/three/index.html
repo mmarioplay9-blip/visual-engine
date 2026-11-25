@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Three.js · Visual Engine</title>
+<style>
+  html,body{margin:0;height:100%;overflow:hidden;background:#05070d;color:#eaf7ff;font-family:ui-sans-serif,system-ui,sans-serif}
+  #stage{position:fixed;inset:0}
+  .copy{position:absolute;left:7vw;bottom:10vh;max-width:38ch}
+  .kicker{font:600 11px ui-monospace,monospace;color:#12e0c8;letter-spacing:.15em}
+  h1{font-size:clamp(34px,6vw,68px);letter-spacing:-.04em;line-height:.96;margin:12px 0}
+  p{color:#a9c2d2;font-size:14px;line-height:1.5;margin:0}
+  .hud{position:absolute;right:5vw;top:5vh;font:11px ui-monospace,monospace;color:#7fa4b5;text-align:right;line-height:1.8}
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<div class="hud">WEBGL · THREE.JS<br>TORUS KNOT · 1 DRAW CALL<br><span id="fps">—</span></div>
+<div class="copy">
+  <div class="kicker">THREE.JS · ESCENA REAL</div>
+  <h1>Geometría que respira.</h1>
+  <p>Un toro anudado con material físico, tres luces y cámara orbital. Todo en local, sin CDN ni texturas.</p>
+</div>
+<script type="importmap">{ "imports": { "three": "/node_modules/three/build/three.module.js" } }</script>
+<script type="module">
+  import * as THREE from 'three';
+  const stage = document.getElementById('stage');
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+  renderer.setPixelRatio(Math.min(2, devicePixelRatio || 1));
+  renderer.setSize(innerWidth, innerHeight);
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  stage.appendChild(renderer.domElement);
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.FogExp2(0x05070d, 0.055);
+  const camera = new THREE.PerspectiveCamera(42, innerWidth / innerHeight, 0.1, 80);
+  camera.position.set(0, 1.1, 7.4);
+  const geometry = new THREE.TorusKnotGeometry(1.65, 0.48, 220, 32, 2, 3);
+  const material = new THREE.MeshStandardMaterial({ color: 0x12e0c8, metalness: 0.88, roughness: 0.2, emissive: 0x07332f, emissiveIntensity: 0.55 });
+  const knot = new THREE.Mesh(geometry, material);
+  scene.add(knot);
+  scene.add(new THREE.HemisphereLight(0x9fe9ff, 0x1a0d05, 1.4));
+  const key = new THREE.PointLight(0xffb454, 60, 30); key.position.set(4, 4, 4); scene.add(key);
+  const rim = new THREE.PointLight(0x12e0c8, 80, 30); rim.position.set(-5, -2, 3); scene.add(rim);
+  let frames = 0, last = performance.now();
+  function animate(now) {
+    knot.rotation.x = Math.sin(now * 0.00025) * 0.6;
+    knot.rotation.y += 0.005;
+    renderer.render(scene, camera);
+    frames++;
+    if (now - last > 800) { document.getElementById('fps').textContent = Math.round(frames * 1000 / (now - last)) + ' FPS'; frames = 0; last = now; }
+    requestAnimationFrame(animate);
+  }
+  addEventListener('resize', () => { camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); renderer.setSize(innerWidth, innerHeight); });
+  requestAnimationFrame(animate);
+  window.__veReady = true;
+  window.__veThree = { revision: THREE.REVISION, triangles: geometry.index.count / 3 };
+</script>
+</body>
+</html>

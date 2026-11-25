@@ -23,7 +23,7 @@ test('API local responde health, efectos, análisis y captura', async (t) => {
   assert.ok(caps.pendiente.length >= 3);
 
   const effects = await (await fetch(`${api.url}/v1/effects`)).json();
-  assert.equal(effects.length, 6);
+  assert.ok(effects.length >= 58, `sólo ${effects.length} efectos`);
 
   const single = await fetch(`${api.url}/v1/effects/glass-hud`);
   assert.equal(single.status, 200);

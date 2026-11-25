@@ -1,6 +1,6 @@
 {
   "name": "visual-engine",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Motor universal de calidad visual para agentes de IA: analiza referencias, genera efectos, captura resultados y compara con la referencia.",
   "type": "module",
   "license": "MIT",
@@ -30,7 +30,11 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
+    "@remotion/cli": "^4.0.547",
     "@types/node": "^22.7.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "remotion": "^4.0.547",
     "typescript": "^5.6.0"
   },
   "files": [

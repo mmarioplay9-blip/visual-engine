@@ -1,0 +1,229 @@
+{
+  "version": "0.2",
+  "source": "<repo>\\demo\\out\\remotion.mp4",
+  "createdAt": "2026-11-25T12:21:34.611Z",
+  "canvas": {
+    "width": 1280,
+    "height": 720,
+    "aspect": 1.778,
+    "fps": 30,
+    "duration": 3
+  },
+  "palette": [
+    {
+      "hex": "#080a0c",
+      "share": 0.9636,
+      "role": "acento"
+    },
+    {
+      "hex": "#e6f4f6",
+      "share": 0.0124,
+      "role": "texto/luz"
+    },
+    {
+      "hex": "#213635",
+      "share": 0.0106,
+      "role": "apoyo"
+    },
+    {
+      "hex": "#889498",
+      "share": 0.0041,
+      "role": "apoyo"
+    },
+    {
+      "hex": "#b7c4c9",
+      "share": 0.0044,
+      "role": "apoyo"
+    },
+    {
+      "hex": "#5f6b70",
+      "share": 0.0027,
+      "role": "apoyo"
+    }
+  ],
+  "composition": {
+    "thirds": 0.066,
+    "balanceHorizontal": 0.975,
+    "balanceVertical": 0.868,
+    "symmetryHorizontal": 0.889,
+    "symmetryVertical": 0.862,
+    "negativeSpace": 0.556,
+    "centerBias": 0.955,
+    "horizonY": 0.556,
+    "dominantAngleDeg": 95,
+    "leadingLines": 0.359,
+    "notes": [
+      "Línea horizontal dominante en y=56%."
+    ]
+  },
+  "typography": {
+    "lines": [
+      {
+        "heightRatio": 0.05185185185185185,
+        "heightPx": 37,
+        "role": "apoyo",
+        "confidence": 0.8109999999999999,
+        "status": "verified",
+        "text": "REMOTION - RENDER REAL"
+      },
+      {
+        "heightRatio": 0.016666666666666666,
+        "heightPx": 12,
+        "role": "etiqueta",
+        "confidence": 0.593,
+        "status": "verified",
+        "text": "10196: frame 18"
+      }
+    ],
+    "note": "Alturas y contenido verificados con Tesseract sobre un fotograma; la confianza es la del OCR.",
+    "engine": "tesseract"
+  },
+  "text": {
+    "available": true,
+    "engine": "tesseract",
+    "content": "REMOTION - RENDER REAL\n10196: frame 18",
+    "lines": [
+      {
+        "text": "REMOTION - RENDER REAL",
+        "confidence": 81.1,
+        "box": [
+          403,
+          190,
+          54,
+          28
+        ]
+      },
+      {
+        "text": "10196: frame 18",
+        "confidence": 59.3,
+        "box": [
+          439,
+          327,
+          27,
+          9
+        ]
+      }
+    ],
+    "note": "Texto leído literalmente por OCR; revisa errores de reconocimiento en tipografías decorativas."
+  },
+  "semantic": {
+    "available": true,
+    "model": "llava:7b",
+    "description": "La imagen muestra un texto que dice \"VISUAL ENGINEER\" en una fuente grande y blanca, con un subtexto que dice \"100%\" en una fuente más pequeña y negra. El texto está sobre un fondo oscuro que simula un ambiente nocturno o de una sala de control.\n\nEn cuanto a los elementos visibles, la imagen parece ser una captura de pantalla de una pantalla de computadora o una imagen de una pantalla de televisión. La iluminación de la imagen es principalmente artificial, con una luz blanca que ilumina el texto y una luz azul que se extiende desde la parte superior derecha, creando un efecto de luz que se extiende hacia la izquierda.\n\nEn cuanto a lo que supones, la imagen parece ser una promoción o una publicidad para una empresa de visual engineering, lo que sugiere que la empresa se especializa en la creación de efectos visuales, como la iluminación y la visualización de datos o imágenes. La iluminación de la imagen es un ejemplo de lo que la empresa puede hacer, y el texto \"100%\" podría indicar que la empresa se compromete a proporcionar un servicio de visual engineering de alta.",
+    "latencyMs": 5764,
+    "note": "Descripción generada por un modelo local; es interpretación semántica, no una medición."
+  },
+  "scenes": [
+    {
+      "index": 0,
+      "start": 0,
+      "end": 3,
+      "duration": 3,
+      "luma": 0.056,
+      "motion": 0.0053,
+      "label": "plano estático"
+    }
+  ],
+  "layers": [
+    {
+      "name": "fondo (más blando)",
+      "cellShare": 0.375,
+      "sharpness": 0.078,
+      "status": "estimated"
+    },
+    {
+      "name": "plano medio",
+      "cellShare": 0.375,
+      "sharpness": 0.504,
+      "status": "estimated"
+    },
+    {
+      "name": "primer plano (más nítido)",
+      "cellShare": 0.25,
+      "sharpness": 5815.828,
+      "status": "estimated"
+    }
+  ],
+  "camera": {
+    "direction": "sin desplazamiento global medible",
+    "shiftX": 0,
+    "shiftY": -0.00309,
+    "speed": 0.00985,
+    "zoom": 1,
+    "rotationDeg": 0,
+    "acceleration": 0.0354,
+    "shake": 0,
+    "verifiedPairs": "9/9",
+    "transitions": []
+  },
+  "effects": [
+    {
+      "id": "parallax",
+      "label": "parallax",
+      "status": "estimated",
+      "confidence": 0.75,
+      "params": {
+        "separacionPx": 6,
+        "direccion": "capas opuestas"
+      },
+      "technology": "GSAP + CSS transforms",
+      "hint": "Capas con desplazamiento distinto. Reproducir separando fondo/medio/primer plano y moviéndolos a velocidades distintas."
+    },
+    {
+      "id": "lighting",
+      "label": "iluminación",
+      "status": "verified",
+      "confidence": 1,
+      "params": {
+        "vineta": 0.811,
+        "foco": "radial",
+        "movimiento": "lento"
+      },
+      "technology": "CSS (degradado radial)",
+      "hint": "Viñeta o foco radial. Reproducir con degradado radial y una luz animada; comprobar que no aplana el contraste."
+    }
+  ],
+  "implementation": {
+    "stack": [
+      "GSAP + CSS transforms",
+      "CSS (degradado radial)"
+    ],
+    "steps": [
+      "Lienzo 1280×720 (1.78:1) a 30 fps.",
+      "Fondo #000000; acento #080a0c.",
+      "Composición: equilibrio 98% horizontal, 89% de simetría, espacio negativo 56%.",
+      "Jerarquía: titular a 37 px de alto (OCR verificado).",
+      "Movimiento: sin desplazamiento global medible; zoom 1; rotación 0°.",
+      "Efecto parallax: Capas con desplazamiento distinto. Reproducir separando fondo/medio/primer plano y moviéndolos a velocidades distintas.",
+      "Efecto iluminación: Viñeta o foco radial. Reproducir con degradado radial y una luz animada; comprobar que no aplana el contraste."
+    ]
+  },
+  "verification": {
+    "metrics": [
+      "ΔE de paleta",
+      "luminancia",
+      "contraste",
+      "densidad de bordes",
+      "movimiento",
+      "cortes",
+      "composición",
+      "similitud temporal"
+    ],
+    "targets": {
+      "paleta": "ΔE medio ≤ 12 (medido: referencia / resultado)",
+      "luminancia": "diferencia ≤ 5 puntos porcentuales",
+      "contraste": "diferencia ≤ 4 puntos porcentuales",
+      "movimiento": "diferencia ≤ 0.02 (escala 0..1)",
+      "composicion": "equilibrio y simetría dentro de 20 puntos",
+      "temporal": "puntuación temporal ≥ 75/100"
+    },
+    "temporalScoreTarget": 75
+  },
+  "limitations": [
+    "OCR verificado con Tesseract; el contenido puede contener errores de reconocimiento.",
+    "Descripción semántica con llava:7b; no sustituye a la medición de píxeles.",
+    "Sin modelo de objetos: las regiones salientes no tienen etiqueta semántica.",
+    "La profundidad y el parallax son proxies geométricos, no mapas métricos.",
+    "La detección de efectos mide señales (halo, nitidez, desplazamiento) y propone una etiqueta."
+  ]
+}

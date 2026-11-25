@@ -43,7 +43,7 @@ test('MCP: listar herramientas y ejecutar doctor, biblioteca y análisis', async
   assert.ok(doctor.tools.find((t) => t.id === 'ffmpeg').disponible);
 
   const effects = parse(await client.callTool({ name: 'visual_effects_list', arguments: {} }));
-  assert.equal(effects.length, 6);
+  assert.ok(effects.length >= 58, `sólo ${effects.length} efectos`);
 
   const analysis = parse(await client.callTool({ name: 'visual_analyze', arguments: { paths: [reference], samples: 8 } }));
   assert.equal(analysis[0].perfil.kind, 'video');
@@ -82,5 +82,5 @@ test('MCP: review completo devuelve puntuación y escribe artefactos', async (t)
   // Recurso de la biblioteca por URI.
   const resource = await client.readResource({ uri: 'visual://effects' });
   const parsed = JSON.parse(resource.contents[0].text);
-  assert.equal(parsed.length, 6);
+  assert.ok(parsed.length >= 58, `solo ${parsed.length} efectos`);
 });

@@ -35,7 +35,11 @@ import {
   opTemporal,
   opTimeline,
   opVision,
+  opCompose,
+  opReferenceEffects,
+  opBenchmark,
 } from '../core/advanced.js';
+import { startGallery } from '../core/gallery.js';
 import { describeIteration } from '../core/iterate.js';
 import { describeTemporal } from '../core/temporal.js';
 
@@ -109,7 +113,11 @@ COMANDOS
   spec <vídeo>           Especificación visual estructurada (JSON + Markdown)
   recommend              Tecnología y código por efecto (--effect o --spec)
   temporal <ref> <cand>  Comparación temporal y calidad multidimensional
-  vision [status|describe|ocr]  Modelos locales Ollama y Tesseract (opcional)
+  compose <json>         Valida y renderiza una composición de capas (0.3)
+  refeffects <vídeo>     Referencia medida → composición de efectos y código
+  gallery                Galería local opcional (efectos, parámetros, composición)
+  benchmark              Mide FPS, frame time, memoria y carga de los efectos
+  vision [status|describe|ocr|setup]  Tesseract, VRAM y modelos locales de Ollama
   iterate                Aplica un cambio, mide y revierte si empeora
   backup [list|restore]  Copias de seguridad de las iteraciones
   effects [list]         Biblioteca de efectos reutilizables
@@ -133,6 +141,10 @@ EJEMPLOS
   ve timeline intro.mp4 --out ./analisis --storyboard
   ve spec intro.mp4 --out ./analisis
   ve temporal referencia.mp4 resultado.mp4 --out ./analisis
+  ve compose composicion.json --out ./mi-composicion
+  ve refeffects referencia.mp4 --out ./reconstruccion --vision --compare
+  ve gallery --port 4173
+  ve benchmark --ms 800 --width 960 --height 540
   ve iterate --reference referencia.mp4 --target-dir ./mi-web --replace index.nuevo.html
   ve effects apply aurora-hero --out ./mi-web --set accent=#12e0c8
   ve adapters scaffold three --out ./mi-web/visual/three
@@ -493,8 +505,8 @@ async function cmdDetect(p: Parsed) {
 
 async function cmdSpec(p: Parsed) {
   const file = p._[0];
-  if (!file) throw new Error('Uso: ve spec <vídeo> [--samples n] [--out dir]');
-  const r = await opSpec({ path: file, samples: n(p, 'samples'), outDir: s(p, 'out') });
+  if (!file) throw new Error('Uso: ve spec <vídeo> [--samples n] [--out dir] [--vision]');
+  const r = await opSpec({ path: file, samples: n(p, 'samples'), outDir: s(p, 'out'), vision: b(p, 'vision'), model: s(p, 'model') });
   if (jsonOut(p)) {
     console.log(JSON.stringify({ spec: r.spec, paths: r.paths }, null, 2));
     return;
@@ -553,14 +565,84 @@ async function cmdTemporal(p: Parsed) {
 }
 
 async function cmdVision(p: Parsed) {
-  const action = (p._[0] ?? 'status') as 'status' | 'describe' | 'ocr';
-  if (!['status', 'describe', 'ocr'].includes(action)) throw new Error('Uso: ve vision [status|describe|ocr] [imagen] [--model nombre]');
-  const r = await opVision({ action, path: p._[1], model: s(p, 'model'), prompt: s(p, 'prompt') });
+  const action = (p._[0] ?? 'status') as 'status' | 'describe' | 'ocr' | 'setup';
+  if (!['status', 'describe', 'ocr', 'setup'].includes(action)) throw new Error('Uso: ve vision [status|describe|ocr|setup] [imagen] [--model nombre] [--install]');
+  const r = await opVision({ action, path: p._[1], model: s(p, 'model'), prompt: s(p, 'prompt'), install: b(p, 'install') });
   if (jsonOut(p)) {
     console.log(JSON.stringify({ status: r.status, result: r.result }, null, 2));
     return;
   }
   for (const line of r.description) console.log(line);
+}
+
+async function cmdCompose(p: Parsed) {
+  const file = p._[0];
+  const inline = s(p, 'json');
+  if (!file && !inline) throw new Error('Uso: ve compose <composicion.json> [--out dir] [--validate]');
+  const r = await opCompose({
+    file,
+    composition: inline ? JSON.parse(inline) : undefined,
+    outDir: s(p, 'out') ?? 'composicion',
+    validateOnly: b(p, 'validate'),
+  });
+  if (jsonOut(p)) {
+    console.log(JSON.stringify(r, null, 2));
+    return;
+  }
+  if (!r.valid) {
+    console.error('Composición inválida:');
+    r.errors.forEach((e) => console.error(`  - ${e}`));
+    process.exitCode = 1;
+    return;
+  }
+  r.description.forEach((l) => console.log(l));
+  if (r.rendered) {
+    console.log(`\nAbre ${r.rendered.html} con un servidor local (npx serve).`);
+    if (r.rendered.warnings.length) r.rendered.warnings.forEach((w) => console.log(`  Aviso: ${w}`));
+  }
+}
+
+async function cmdReferenceEffects(p: Parsed) {
+  const file = p._[0];
+  const specFile = s(p, 'spec');
+  if (!file && !specFile) throw new Error('Uso: ve refeffects <vídeo> [--out dir] [--vision] [--spec spec.json]');
+  const r = await opReferenceEffects({ path: file, specFile, outDir: s(p, 'out'), vision: b(p, 'vision'), model: s(p, 'model'), render: !b(p, 'no-render') });
+  if (jsonOut(p)) {
+    console.log(JSON.stringify({ mapping: r.mapping, coverage: r.coverage, warnings: r.warnings, composition: r.composition, rendered: r.rendered }, null, 2));
+    return;
+  }
+  console.log(`Señales detectadas: ${r.coverage.detected} · asignadas: ${r.coverage.mapped} · capas: ${r.coverage.selected}`);
+  for (const m of r.mapping) {
+    console.log(`  ${m.detected.padEnd(12)} → ${m.mappedTo.padEnd(18)} ${m.status} ${(m.confidence * 100).toFixed(0)}%`);
+    console.log(`    ${m.note}`);
+  }
+  for (const w of r.warnings) console.log(`  Aviso: ${w}`);
+  if (r.rendered) {
+    console.log(`\nComposición: ${r.rendered.config}`);
+    console.log(`HTML: ${r.rendered.html}`);
+    console.log(`Efectos: ${r.rendered.effects.join(', ')}`);
+  }
+}
+
+async function cmdBenchmark(p: Parsed) {
+  const effects = multi(p, 'effects');
+  const r = await opBenchmark({ effects: effects.includes('all') ? undefined : effects.length ? effects : undefined, ms: n(p, 'ms'), width: n(p, 'width'), height: n(p, 'height'), outFile: s(p, 'out'), docsFile: s(p, 'docs') });
+  if (jsonOut(p)) {
+    console.log(JSON.stringify(r, null, 2));
+    return;
+  }
+  console.log(`Medidos ${r.summary.ok}/${r.summary.tested} efectos · FPS mediana ${r.summary.medianFps} · mínimo ${r.summary.minFps}`);
+  for (const e of r.effects) console.log(`  ${e.id.padEnd(20)} ${String(e.fps).padStart(6)} fps  ${String(e.frameMsMean).padStart(6)} ms  heap ${e.heapMb ?? '—'} MB  ${e.ok ? '' : 'ERROR'}`);
+  console.log(`\nJSON: ${s(p, 'out') ?? 'library/benchmarks.json'}`);
+}
+
+async function cmdGallery(p: Parsed) {
+  const g = await startGallery({ port: n(p, 'port') ?? 0 });
+  console.log(`Galería local: ${g.url}`);
+  console.log('Ctrl+C para detener. Visual Engine sigue funcionando sin esta interfaz.');
+  const shutdown = async () => { await g.close(); process.exit(0); };
+  process.on('SIGINT', shutdown);
+  process.on('SIGTERM', shutdown);
 }
 
 async function cmdIterate(p: Parsed) {
@@ -675,6 +757,18 @@ async function main() {
       return;
     case 'vision':
       await cmdVision(rest);
+      return;
+    case 'compose':
+      await cmdCompose(rest);
+      return;
+    case 'refeffects':
+      await cmdReferenceEffects(rest);
+      return;
+    case 'benchmark':
+      await cmdBenchmark(rest);
+      return;
+    case 'gallery':
+      await cmdGallery(rest);
       return;
     case 'iterate':
       await cmdIterate(rest);

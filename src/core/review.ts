@@ -37,6 +37,8 @@ export interface ReviewResult {
     errors: string[];
     consoleErrors: string[];
     profile: VisualProfile;
+    accessibility?: import('./capture.js').AccessibilityAudit;
+    typography?: import('./capture.js').TypographyAudit;
   };
   comparison: Comparison;
   quality: QualityEvaluation;
@@ -114,6 +116,16 @@ function buildReport(r: Omit<ReviewResult, 'report' | 'id'>): string {
     ], ['Medida', 'Valor']));
   }
   lines.push('');
+  if (tgt.accessibility) {
+    lines.push('## Accesibilidad de contraste (medida en DOM)');
+    lines.push('');
+    lines.push(`Elementos comprobados: ${tgt.accessibility.checked} · incumplimientos orientativos: ${tgt.accessibility.violations} · contraste medio ${tgt.accessibility.averageContrast}:1 · peor ${tgt.accessibility.worstContrast}:1.`);
+    lines.push('');
+    for (const s of tgt.accessibility.samples.slice(0, 6)) lines.push(`- ${s.text}: ${s.contrast}:1 (mínimo ${s.required}:1, ${s.fontSize}px)`);
+    lines.push('');
+    lines.push(tgt.accessibility.note);
+    lines.push('');
+  }
   lines.push('## Calidad por dimensiones');
   lines.push('');
   lines.push(r.quality.summary);
@@ -196,6 +208,8 @@ export async function review(opts: ReviewOptions): Promise<ReviewResult> {
   const quality = evaluateQuality(refProfile, cap.profile!, {
     captureTimings: cap.timings,
     targetIntervalMs: captureOpts.intervalMs,
+    accessibility: cap.accessibility,
+    typography: cap.typography,
   });
 
   // Fotograma de referencia al mismo aspecto que la captura, y diferencia por píxel.
@@ -230,6 +244,8 @@ export async function review(opts: ReviewOptions): Promise<ReviewResult> {
       errors: cap.errors,
       consoleErrors: cap.consoleErrors,
       profile: cap.profile!,
+      accessibility: cap.accessibility,
+      typography: cap.typography,
     },
     comparison,
     quality,

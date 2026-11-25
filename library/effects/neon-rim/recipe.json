@@ -1,0 +1,79 @@
+{
+  "id": "neon-rim",
+  "name": "Neon Rim Light",
+  "category": "iluminacion",
+  "summary": "Borde de neón pulsante sobre una tarjeta oscura, con dos temperaturas y caída de luz realista.",
+  "tags": [
+    "iluminacion",
+    "neon",
+    "borde",
+    "interfaz",
+    "canvas"
+  ],
+  "engines": [
+    "canvas2d"
+  ],
+  "requires": [],
+  "performance": "Pendiente de medición 0.3: ejecuta `ve benchmark --effect neon-rim`.",
+  "license": "MIT (propio)",
+  "entry": "index.html",
+  "compatibility": {
+    "chrome": ">=120",
+    "firefox": ">=120",
+    "safari": ">=17",
+    "reducedMotion": "dibuja un fotograma estático",
+    "dependencies": "ninguna"
+  },
+  "integration": {
+    "mount": "mount(canvas, params)",
+    "cleanup": "la función devuelta cancela el RAF y los listeners",
+    "standalone": "index.html"
+  },
+  "params": [
+    {
+      "name": "bg",
+      "type": "color",
+      "default": "#05070d",
+      "description": "Fondo base"
+    },
+    {
+      "name": "accent",
+      "type": "color",
+      "default": "#12e0c8",
+      "description": "Acento frío"
+    },
+    {
+      "name": "accent2",
+      "type": "color",
+      "default": "#ffb454",
+      "description": "Acento cálido"
+    },
+    {
+      "name": "speed",
+      "type": "number",
+      "default": 1,
+      "description": "Velocidad de la animación",
+      "min": 0,
+      "max": 4,
+      "step": 0.05
+    },
+    {
+      "name": "intensity",
+      "type": "number",
+      "default": 0.7,
+      "description": "Intensidad del borde",
+      "min": 0.2,
+      "max": 1.2,
+      "step": 0.05
+    },
+    {
+      "name": "radius",
+      "type": "number",
+      "default": 22,
+      "description": "Radio de la tarjeta",
+      "min": 4,
+      "max": 48,
+      "step": 1
+    }
+  ]
+}

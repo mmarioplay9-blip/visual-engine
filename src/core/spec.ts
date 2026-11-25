@@ -5,6 +5,7 @@ import type { CameraAnalysis } from './motion.js';
 import type { ContentAnalysis } from './inspect.js';
 import type { EffectDetection, EffectReport } from './effects.js';
 import type { VideoTimeline } from './timeline.js';
+import type { OcrResult, OllamaResult } from './vision.js';
 import { recommendEffect } from './recommend.js';
 import { clamp, hexToRgb, round } from './util.js';
 
@@ -22,7 +23,22 @@ export interface VisualSpec {
   palette: { hex: string; share: number; role: string }[];
   composition: ContentAnalysis['composition'] | null;
   typography: {
-    lines: { heightRatio: number; heightPx: number; role: string; confidence: number; status: 'estimated' }[];
+    lines: { heightRatio: number; heightPx: number; role: string; confidence: number; status: 'verified' | 'estimated'; text?: string }[];
+    note: string;
+    engine?: string;
+  };
+  text?: {
+    available: boolean;
+    engine: string;
+    content: string;
+    lines: { text: string; confidence: number; box: [number, number, number, number] }[];
+    note: string;
+  };
+  semantic?: {
+    available: boolean;
+    model: string;
+    description: string;
+    latencyMs?: number;
     note: string;
   };
   scenes: { index: number; start: number; end: number; duration: number; luma: number; motion: number; label: string }[];
@@ -63,6 +79,10 @@ export interface SpecInput {
   camera?: CameraAnalysis;
   content?: ContentAnalysis;
   effects?: EffectReport;
+  ocr?: OcrResult;
+  semantic?: OllamaResult;
+  /** dimensiones del fotograma sobre el que se ejecutó OCR (para ratios) */
+  frameSize?: { width: number; height: number };
 }
 
 function saturationOf(hex: string): number {
@@ -119,7 +139,7 @@ function effectParams(e: EffectDetection): Record<string, number | string> {
 }
 
 export function buildVisualSpec(input: SpecInput): VisualSpec {
-  const { profile, timeline, camera, content, effects } = input;
+  const { profile, timeline, camera, content, effects, ocr, semantic } = input;
   const stack = new Set<string>();
   const specEffects = (effects?.effects ?? []).map((e) => {
     const rec = recommendEffect(e.id, effectParams(e));
@@ -135,13 +155,26 @@ export function buildVisualSpec(input: SpecInput): VisualSpec {
     };
   });
 
-  const typographyLines = (content?.textLines ?? []).map((t) => ({
-    heightRatio: t.heightRatio,
-    heightPx: Math.round(t.heightRatio * profile.height),
-    role: t.heightRatio > 0.08 ? 'titular' : t.heightRatio > 0.035 ? 'apoyo' : 'etiqueta',
-    confidence: t.confidence,
-    status: 'estimated' as const,
-  }));
+  const frameH = input.frameSize?.height ?? profile.height;
+  const ocrLines = ocr?.available && ocr.lines?.length
+    ? ocr.lines.map((l) => {
+        const heightRatio = l.box[3] / Math.max(1, frameH);
+        return {
+          heightRatio,
+          heightPx: Math.round(heightRatio * profile.height),
+          role: heightRatio > 0.08 ? 'titular' : heightRatio > 0.035 ? 'apoyo' : 'etiqueta',
+          confidence: Math.min(1, l.confidence / 100),
+          status: 'verified' as const,
+          text: l.text,
+        };
+      })
+    : (content?.textLines ?? []).map((t) => ({
+        heightRatio: t.heightRatio,
+        heightPx: Math.round(t.heightRatio * profile.height),
+        role: t.heightRatio > 0.08 ? 'titular' : t.heightRatio > 0.035 ? 'apoyo' : 'etiqueta',
+        confidence: t.confidence,
+        status: 'estimated' as const,
+      }));
 
   const scenes = timeline
     ? timeline.scenes.map((s) => ({
@@ -164,7 +197,7 @@ export function buildVisualSpec(input: SpecInput): VisualSpec {
       `Composición: equilibrio ${(content.composition.balanceHorizontal * 100).toFixed(0)}% horizontal, ${(content.composition.symmetryHorizontal * 100).toFixed(0)}% de simetría, espacio negativo ${(content.composition.negativeSpace * 100).toFixed(0)}%.`,
     );
   }
-  if (typographyLines.length) steps.push(`Jerarquía: titular a ${Math.max(...typographyLines.map((t) => t.heightPx))} px de alto (estimado por regiones).`);
+  if (ocrLines.length) steps.push(`Jerarquía: titular a ${Math.max(...ocrLines.map((t) => t.heightPx))} px de alto (${ocrLines.some((t) => t.status === 'verified') ? 'OCR verificado' : 'estimado por regiones'}).`);
   if (camera) steps.push(`Movimiento: ${camera.summary.direction}; zoom ${camera.summary.zoom}; rotación ${camera.summary.rotationDeg}°.`);
   for (const e of specEffects) steps.push(`Efecto ${e.label}: ${e.hint}`);
   if (!specEffects.length) steps.push('Sin efectos detectados: construir sólo estructura, luz y tipografía.');
@@ -183,9 +216,32 @@ export function buildVisualSpec(input: SpecInput): VisualSpec {
     palette: paletteRoles(profile),
     composition: content?.composition ?? null,
     typography: {
-      lines: typographyLines,
-      note: 'Alturas estimadas por regiones de texto; sin OCR no se conoce el contenido literal.',
+      lines: ocrLines,
+      note: ocrLines.some((l) => l.status === 'verified')
+        ? 'Alturas y contenido verificados con Tesseract sobre un fotograma; la confianza es la del OCR.'
+        : 'Alturas estimadas por regiones de texto; sin OCR no se conoce el contenido literal.',
+      engine: ocrLines.some((l) => l.status === 'verified') ? 'tesseract' : 'luminance-regions',
     },
+    text: ocr?.available
+      ? {
+          available: true,
+          engine: 'tesseract',
+          content: ocr.text ?? '',
+          lines: (ocr.lines ?? []).map((l) => ({ text: l.text, confidence: l.confidence, box: l.box })),
+          note: 'Texto leído literalmente por OCR; revisa errores de reconocimiento en tipografías decorativas.',
+        }
+      : ocr
+        ? { available: false, engine: 'tesseract', content: '', lines: [], note: ocr.reason ?? 'OCR no disponible.' }
+        : undefined,
+    semantic: semantic
+      ? {
+          available: semantic.available,
+          model: semantic.model ?? 'ninguno',
+          description: semantic.response ?? '',
+          latencyMs: semantic.totalDurationMs,
+          note: 'Descripción generada por un modelo local; es interpretación semántica, no una medición.',
+        }
+      : undefined,
     scenes,
     layers: content?.depth.layers.map((l) => ({ ...l, status: 'estimated' })) ?? [],
     camera: camera
@@ -220,7 +276,8 @@ export function buildVisualSpec(input: SpecInput): VisualSpec {
       temporalScoreTarget: 75,
     },
     limitations: [
-      'Sin OCR: las regiones de texto no se leen, sólo se localizan.',
+      ...(ocrLines.some((l) => l.status === 'verified') ? ['OCR verificado con Tesseract; el contenido puede contener errores de reconocimiento.'] : ['Sin OCR: las regiones de texto no se leen, sólo se localizan.']),
+      ...(semantic?.available ? [`Descripción semántica con ${semantic.model}; no sustituye a la medición de píxeles.`] : ['Sin descripción semántica: no hay modelo de visión disponible.' ]),
       'Sin modelo de objetos: las regiones salientes no tienen etiqueta semántica.',
       'La profundidad y el parallax son proxies geométricos, no mapas métricos.',
       'La detección de efectos mide señales (halo, nitidez, desplazamiento) y propone una etiqueta.',
@@ -259,13 +316,34 @@ export function specToMarkdown(spec: VisualSpec): string {
     lines.push('');
   }
   if (spec.typography.lines.length) {
-    lines.push('## Jerarquía tipográfica (estimada)');
+    const verified = spec.typography.lines.some((t) => t.status === 'verified');
+    lines.push(`## Jerarquía tipográfica (${verified ? 'OCR verificado' : 'estimada'})`);
     lines.push('');
-    lines.push('| Rol | Alto | Confianza |');
-    lines.push('| --- | --- | --- |');
-    for (const t of spec.typography.lines) lines.push(`| ${t.role} | ${t.heightPx}px (${(t.heightRatio * 100).toFixed(1)}%) | ${(t.confidence * 100).toFixed(0)}% |`);
+    lines.push('| Rol | Alto | Confianza | Texto |');
+    lines.push('| --- | --- | --- | --- |');
+    for (const t of spec.typography.lines) lines.push(`| ${t.role} | ${t.heightPx}px (${(t.heightRatio * 100).toFixed(1)}%) | ${(t.confidence * 100).toFixed(0)}% | ${t.text ?? '—'} |`);
     lines.push('');
     lines.push(spec.typography.note);
+    lines.push('');
+  }
+  if (spec.text?.available) {
+    lines.push('## Texto leído (OCR)');
+    lines.push('');
+    lines.push('```text');
+    lines.push(spec.text.content || '(sin texto reconocido)');
+    lines.push('```');
+    lines.push('');
+    lines.push(spec.text.note);
+    lines.push('');
+  }
+  if (spec.semantic?.available) {
+    lines.push('## Descripción semántica local');
+    lines.push('');
+    lines.push(`Modelo: \`${spec.semantic.model}\`${spec.semantic.latencyMs ? ` · ${spec.semantic.latencyMs} ms` : ''}.`);
+    lines.push('');
+    lines.push(spec.semantic.description);
+    lines.push('');
+    lines.push(spec.semantic.note);
     lines.push('');
   }
   if (spec.camera) {

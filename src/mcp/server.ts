@@ -30,6 +30,9 @@ import {
   opTemporal,
   opTimeline,
   opVision,
+  opCompose,
+  opReferenceEffects,
+  opBenchmark,
 } from '../core/advanced.js';
 
 const json = (v: unknown) => JSON.stringify(v, null, 2);
@@ -64,6 +67,13 @@ Referencias profesionales (0.2):
 - visual_recommend → tecnología y código verificado por efecto.
 - visual_temporal → comparación por tiempo y calidad multidimensional.
 - visual_iterate → aplica un cambio del agente, mide y revierte si empeora (requiere confirm).
+
+Composición y biblioteca (0.3):
+- visual_effects_list / visual_effect_apply → 58 efectos con código, parámetros e instrucciones.
+- visual_compose → valida/renderiza una composición JSON con capas, máscaras, mezclas y timeline.
+- visual_reference_effects → convierte una especificación medida en composición y código; cada asignación declara si es verified o estimated.
+- visual_benchmark → mide FPS, frame time, heap y carga en Chromium.
+- visual_vision con action=setup → detecta VRAM y modelo recomendado; instalar requiere install=true.
 
 Reglas:
 - Distingue siempre "verified" de "estimated": el OCR/objetos necesitan Tesseract o un modelo local; si no están, dilo.
@@ -540,10 +550,11 @@ export function createServer(): McpServer {
       title: 'Visión local opcional',
       description: 'Comprueba Tesseract/Ollama locales, ejecuta OCR real o describe una imagen con un modelo de visión de Ollama. Nunca usa APIs externas; si falta el modelo, devuelve el motivo.',
       inputSchema: {
-        action: z.enum(['status', 'describe', 'ocr']),
+        action: z.enum(['status', 'describe', 'ocr', 'setup']),
         path: z.string().optional(),
         model: z.string().optional(),
         prompt: z.string().optional(),
+        install: z.boolean().optional().describe('Para setup: descarga el modelo recomendado si es true.'),
       },
     },
     async (args) => {
@@ -601,6 +612,74 @@ export function createServer(): McpServer {
         if (args.action === 'list') return ok(opBackups(args.project));
         if (!args.id) return fail(new Error('Indica el id de la iteración.'));
         return ok(opRestoreBackup(args.project, args.id));
+      } catch (e) {
+        return fail(e);
+      }
+    },
+  );
+
+  server.registerTool(
+    'visual_compose',
+    {
+      title: 'Componer capas de efectos',
+      description: 'Valida y renderiza una composición JSON 0.3: capas, parámetros compartidos, mezclas, máscaras, transformaciones y curvas de animación. Genera HTML autónomo y composition.json.',
+      inputSchema: {
+        composition: z.record(z.any()).optional().describe('Objeto de composición; si falta, usa file.'),
+        file: z.string().optional().describe('Ruta a un composition.json.'),
+        outDir: z.string().optional().describe('Directorio de salida.'),
+        validateOnly: z.boolean().optional(),
+      },
+    },
+    async (args) => {
+      try {
+        return ok(await opCompose(args as any));
+      } catch (e) {
+        return fail(e);
+      }
+    },
+  );
+
+  server.registerTool(
+    'visual_reference_effects',
+    {
+      title: 'Referencia visual → efectos y composición',
+      description: 'Analiza un vídeo de referencia, mapea las señales detectadas a efectos de la biblioteca y genera composición, timeline y código. Declara cada asignación como verified o estimated; no afirma identificación exacta.',
+      inputSchema: {
+        path: z.string().optional().describe('Vídeo de referencia.'),
+        specFile: z.string().optional().describe('Especificación ya generada (spec.json).'),
+        outDir: z.string().optional(),
+        vision: z.boolean().optional().describe('Ejecuta OCR y descripción local si están disponibles.'),
+        model: z.string().optional(),
+        render: z.boolean().optional(),
+      },
+    },
+    async (args) => {
+      try {
+        const r = await opReferenceEffects(args);
+        return ok({ mapping: r.mapping, coverage: r.coverage, warnings: r.warnings, composition: r.composition, rendered: r.rendered });
+      } catch (e) {
+        return fail(e);
+      }
+    },
+  );
+
+  server.registerTool(
+    'visual_benchmark',
+    {
+      title: 'Medir rendimiento de efectos',
+      description: 'Mide FPS reales con requestAnimationFrame, frame time medio/P95, heap JS y tiempo de carga en Chromium headless. Escribe library/benchmarks.json y un informe Markdown.',
+      inputSchema: {
+        effects: z.array(z.string()).optional(),
+        ms: z.number().int().min(300).max(4000).optional(),
+        width: z.number().int().min(320).max(1920).optional(),
+        height: z.number().int().min(240).max(1080).optional(),
+        outFile: z.string().optional(),
+        docsFile: z.string().optional(),
+      },
+    },
+    async (args) => {
+      try {
+        return ok(await opBenchmark(args));
       } catch (e) {
         return fail(e);
       }
