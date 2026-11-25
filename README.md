@@ -158,7 +158,7 @@ src/api    API HTTP local
 src/cli    comandos `ve`
 library/   6 recetas con plantillas reales
 demo/      referencia sintética + landing base/final
-tests/     19 pruebas (núcleo, CLI, API, MCP, E2E)
+tests/     20 pruebas (núcleo, CLI, API, MCP, E2E)
 ```
 
 Detalle: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
@@ -169,10 +169,10 @@ Detalle: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 npm test
 ```
 
-19 pruebas, ~28 s: metadatos y análisis de la referencia, detección de los dos cortes,
+20 pruebas, ~28 s: metadatos y análisis de la referencia, detección de los dos cortes,
 comparación idéntica (100) y opuesta, PNG del mapa de calor, CLI, biblioteca, scaffolds,
-`ve init` idempotente, API HTTP (incluido bloqueo de instalación), cliente MCP real y el ciclo
-E2E que exige que la versión final supere a la línea base.
+`ve init` idempotente, API HTTP (incluido bloqueo de instalación), cliente MCP real, `npm` sin
+shell y el ciclo E2E que exige que la versión final supere a la línea base.
 
 ## Licencias
 

@@ -33,8 +33,8 @@ Fecha de la verificación: 2026-11-25 · Windows 11 · Node 26.13.1 · ffmpeg 9.
 | Requisito | Estado |
 | --- | --- |
 | MCP | Implementado y probado con cliente real (`tests/mcp.test.mjs`): 12 herramientas, 1 recurso, 1 prompt |
-| CLI | Implementado: 14 comandos, probado |
-| API local | Implementado: 13 rutas, probado; instalación bloqueada por defecto |
+| CLI | Implementado: 17 comandos y subcomandos, probado |
+| API local | Implementado: 14 rutas, probado; instalación bloqueada por defecto |
 | Skills | `skills/visual-engine/SKILL.md` + copia por `ve init` |
 | Instrucciones de agentes | `AGENTS.md`, `CLAUDE.md`, `GEMINI.md`, regla de Cursor |
 | Independiente del modelo | Sí: no hay SDK de modelo ni clave; todo es local |
