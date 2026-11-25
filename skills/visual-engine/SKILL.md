@@ -1,9 +1,9 @@
 ---
 name: visual-engine
-description: Motor local y gratuito de calidad visual. Analiza referencias, dirige arte con 15 estilos, genera tokens y composiciones, compone efectos reales, captura en Chromium y compara con métricas. Úsala para diseño, motion graphics, 3D, HUD, vídeo o cualquier petición de "que se vea profesional".
+description: Motor local y gratuito de calidad visual. Analiza referencias, dirige arte con 15 estilos, critica con evidencia, depura el DOM, mide fidelidad, aplica gates y ejecuta un loop con reversión. Úsala para diseño, motion graphics, 3D, HUD, vídeo o cualquier petición de "que se vea profesional".
 ---
 
-# Visual Engine 0.4
+# Visual Engine 0.5
 
 Convierte una referencia en **dirección artística**, **especificación medida**, **composición
 ejecutable** y resultado verificado: referencia → identidad/tokens → escenas/cámara/efectos →
@@ -15,12 +15,14 @@ pago.
 ```bash
 ve doctor
 ve vision status
-ve adapters
-ve effects list --json
+ve context "tarea visual concreta" --max-recipes 3
+ve effects list --json        # catálogo completo: no lo pegues entero en el contexto
 ```
 
 `vision status` declara Tesseract, VRAM, modelos instalados y el modelo seleccionado. Si falta
 algo, devuelve `available:false` con el motivo. **No inventes OCR, objetos ni descripciones.**
+`context` selecciona herramientas, recetas y documentos; para el detalle de una receta usa
+`ve effects show <id>` o `loadRecipe`.
 
 ## Ciclo de trabajo
 
@@ -57,7 +59,24 @@ ve showcase --measure --out ./showcase
 **No inventes la fuente tipográfica** a partir de una imagen: `refdesign` sólo aproxima familia y
 escala. La arquitectura de componentes es una propuesta.
 
-### 3. Pasar de la referencia a efectos
+### 3. Criticar, depurar y aprobar
+
+```bash
+ve debug ./mi-web --serve ./mi-web --source ./mi-web
+ve critic --reference referencia.png --target-dir ./mi-web --brief "landing premium"
+ve fidelity --reference referencia.png --target-dir ./mi-web --spec ./analisis/spec.json
+ve gate --from ./inteligencia/intelligence.json --require-human
+```
+
+- `debug`: selectores, cajas, CSS computado, capas, animaciones, canvas y archivo fuente sólo si
+  la cadena aparece de verdad. Si no, `source:null`.
+- `critic`: cada hallazgo lleva evidencia, ubicación, gravedad, confianza y corrección. Un
+  minimalismo no se penaliza por no tener efectos; un efecto pesado en un estilo sobrio sí.
+- `fidelity`: dimensiones estructurales por separado; la similitud de píxeles no es calidad.
+- `gate`: un defecto crítico bloquea aunque la media sea alta. La aprobación artística humana es
+  una decisión aparte; `--require-human` la exige.
+
+### 4. Pasar de la referencia a efectos
 
 ```bash
 ve refeffects referencia.mp4 --spec ./analisis/spec.json --out ./reconstruccion
@@ -67,7 +86,7 @@ Produce `composition.json`, HTML, timeline, capas y código. Cada asignación ll
 nota que explica la hipótesis. **No afirmes que se identificó el plugin exacto**: es una
 correspondencia estimada salvo que el estado sea `verified` y aun así es una aproximación.
 
-### 4. Elegir o componer efectos
+### 5. Elegir o componer efectos
 
 ```bash
 ve effects show volumetric-rays
@@ -79,7 +98,7 @@ La biblioteca tiene **58 efectos en 12 categorías**. La composición admite has
 mezclas, máscaras radiales/lineales, transformaciones, opacidad y curvas
 `linear/easeIn/easeOut/easeInOut/spring`.
 
-### 5. Medir
+### 6. Medir
 
 ```bash
 ve benchmark --out library/benchmarks.json
@@ -94,17 +113,21 @@ ve temporal referencia.mp4 resultado.mp4 --out ./analisis
 - `review`: fidelidad + calidad por dimensiones; revisa `consoleErrors`.
 - `temporal`: dos vídeos alineados; no sustituye a `review` de una página estática.
 
-### 6. Corregir con red
+### 7. Corregir con red
 
 ```bash
 ve iterate --reference referencia.mp4 --target-dir ./mi-web \
   --replace index.nuevo.html --min-delta 0.5
-ve backup list --project ./mi-web
+ve loop --reference referencia.png --target-dir ./mi-web --brief "mejorar jerarquía" \
+  --replace index.nuevo.html --confirm --max-iterations 2 --max-tokens 12000
+ve loops list --project ./mi-web
+ve loops restore <id> --project ./mi-web --out <directorio-del-loop>
 ve backup restore <id> --project ./mi-web
 ```
 
-`iterate` copia con SHA-256, mide antes/después y revierte si no mejora. `--keep` conserva el
-cambio para inspección. Los parches exigen un repositorio git.
+`iterate` y `loop` copian, miden antes/después y revierten si no mejoran. `loop` añade límites de
+iteraciones, minutos y tokens estimados, y devuelve `awaiting-agent` si no recibe un cambio. No
+llama a un proveedor: el cambio lo aporta el agente. Los parches exigen un repositorio git.
 
 ## Cómo leer los estados
 
@@ -127,12 +150,12 @@ cambio para inspección. Los parches exigen un repositorio git.
 
 ## MCP
 
-**30 herramientas**. Las de 0.4: `visual_art_direction`, `visual_reference_design`,
-`visual_motion_director`, `visual_showcase`; más las 0.1/0.2/0.3 (`visual_compose`,
-`visual_reference_effects`, `visual_benchmark`, `visual_timeline`, `visual_camera`,
-`visual_inspect`, `visual_spec`, `visual_temporal`, `visual_vision`, `visual_iterate` con
-`confirm=true`, etc.). Recurso `visual://effects`, prompt `visual-quality-review`. CLI (32
-comandos) y `ve serve` ofrecen las mismas operaciones.
+**38 herramientas**. Las de 0.5: `visual_context`, `visual_debug`, `visual_critic`,
+`visual_fidelity`, `visual_gate`, `visual_smart_effects`, `visual_loop` y `visual_loops`; más
+las de 0.1–0.4 (`visual_art_direction`, `visual_reference_design`, `visual_motion_director`,
+`visual_showcase`, `visual_compose`, `visual_reference_effects`, `visual_benchmark`,
+`visual_iterate` con `confirm=true`, etc.). Recurso `visual://effects`, prompt
+`visual-quality-review`. CLI (39 comandos) y `ve serve` ofrecen las mismas operaciones.
 
 ## Límites conocidos
 
@@ -140,9 +163,12 @@ comandos) y `ve serve` ofrecen las mismas operaciones.
 - `llava:7b` describe, no lee copy exacto; `qwen2.5vl:3b` falló en esta instalación.
 - Sin modelo de objetos/pose: sólo saliencia; no hay clases ni cajas semánticas.
 - Profundidad y parallax son proxies geométricos, no mapas métricos.
-- La rotación se valida sobre un patrón sintético, no sobre cualquier render WebGL.
-- La transición CSS se valida por curva y reduced-motion; el A/B de transiciones contra vídeo
-  sigue pendiente.
-- La referencia A/B 0.4 es un cartel CC0 del MET; no es material de cliente.
+- La rotación se validó en patrón sintético y en una escena Three.js real (1,5°→1,41°); no
+  certifica cualquier WebGL.
+- El A/B de 0.5 incluye vídeo de tres planos; la comparación temporal contra un montaje derivado
+  dio 56,9/100 y no demuestra superioridad frente a una pieza externa de motion graphics.
+- Las referencias A/B son cuatro obras CC0 del MET (cinco casos); no son material de cliente.
+- Los gates por defecto del A/B rechazan los cinco casos; no se relajaron para aprobarlos.
+- El presupuesto de tokens del loop es estimado; no hay telemetría del proveedor.
 - Probado en Windows; Linux/macOS están soportados por diseño, no probados aquí.
 - El repositorio sigue **sin publicar** en GitHub.

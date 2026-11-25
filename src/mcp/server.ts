@@ -38,6 +38,16 @@ import {
   opReferenceDesign,
   opShowcase,
 } from '../core/advanced.js';
+import {
+  opIntelligence,
+  opDebug,
+  opSmartEffects,
+  opContext,
+  opGate,
+  opLoop,
+  opLoops,
+  opRestoreLoop,
+} from '../core/intelligence-ops.js';
 
 const json = (v: unknown) => JSON.stringify(v, null, 2);
 
@@ -84,6 +94,16 @@ Art Director y diseño (0.4):
 - visual_reference_design → imagen o especificación → identidad, layout, componentes, motion y código; separa medido de estimado.
 - visual_motion_director → recetas de movimiento, cámara, reduced motion y validación de rotación/transición.
 - visual_showcase → genera y mide 20 composiciones completas en Chromium.
+
+Visual Intelligence Loop (0.5):
+- visual_context → carga sólo las herramientas/recetas necesarias; el informe es compacto.
+- visual_debug → selectores, regiones, CSS, capas, animaciones y archivo fuente verificado.
+- visual_critic → defectos con evidencia, gravedad, confianza y corrección priorizada.
+- visual_fidelity → fidelidad estructural por dimensiones, sin confundirla con píxeles.
+- visual_gate → aceptación; un defecto crítico bloquea aunque la media sea alta.
+- visual_smart_effects → selección contextual; no añade efectos indiscriminadamente.
+- visual_loop → copia, aplica un cambio del agente, mide, conserva o revierte con límites.
+- visual_loops → historial y restauración de copias.
 
 Reglas:
 - Distingue siempre "verified" de "estimated": el OCR/objetos necesitan Tesseract o un modelo local; si no están, dilo.
@@ -763,6 +783,169 @@ export function createServer(): McpServer {
     },
     async (args) => {
       try { return ok(await opShowcase(args)); } catch (e) { return fail(e); }
+    },
+  );
+
+  server.registerTool(
+    'visual_context',
+    {
+      title: 'Contexto selectivo para agentes',
+      description: 'Clasifica la tarea y devuelve sólo las herramientas, recetas y documentos necesarios. Evita enviar los 58 efectos y toda la documentación al contexto.',
+      inputSchema: {
+        task: z.string().describe('Tarea o brief.'),
+        maxTools: z.number().int().min(2).max(8).optional(),
+        maxRecipes: z.number().int().min(0).max(5).optional(),
+        style: z.string().optional(),
+        projectType: z.string().optional(),
+        clearCache: z.boolean().optional(),
+      },
+    },
+    async (args) => { try { return ok(opContext(args)); } catch (e) { return fail(e); } },
+  );
+
+  server.registerTool(
+    'visual_debug',
+    {
+      title: 'Visual Debugger',
+      description: 'Inspecciona el DOM real: selectores, cajas, regiones, CSS computado, capas, animaciones, contraste, overflow, canvas y correspondencia con archivos fuente sólo si la cadena aparece de verdad.',
+      inputSchema: {
+        target: z.string().optional().describe('HTML relativo a targetDir o URL.'),
+        targetDir: z.string().optional(),
+        width: z.number().int().min(320).max(3840).optional(),
+        height: z.number().int().min(240).max(2160).optional(),
+        waitMs: z.number().int().min(0).max(15000).optional(),
+        outDir: z.string().optional(),
+        sourceRoot: z.string().optional(),
+      },
+    },
+    async (args) => { try { return ok(await opDebug(args)); } catch (e) { return fail(e); } },
+  );
+
+  server.registerTool(
+    'visual_critic',
+    {
+      title: 'Visual Critic',
+      description: 'Detecta diseño plano, falta de profundidad, movimiento rígido, efectos ausentes, composición/jerarquía, tipografía, coherencia, materiales/luz, transiciones, accesibilidad y rendimiento. Cada hallazgo incluye evidencia, ubicación, gravedad, confianza y corrección.',
+      inputSchema: {
+        reference: z.string(),
+        target: z.string().optional(),
+        targetDir: z.string().optional(),
+        brief: z.string().optional(),
+        style: z.string().optional(),
+        projectType: z.string().optional(),
+        specFile: z.string().optional(),
+        outDir: z.string().optional(),
+        frames: z.number().int().min(1).max(30).optional(),
+        width: z.number().int().min(320).max(3840).optional(),
+        height: z.number().int().min(240).max(2160).optional(),
+        humanApproval: z.object({ approved: z.boolean().optional(), reviewer: z.string().optional(), note: z.string().optional() }).optional(),
+        gates: z.record(z.any()).optional(),
+      },
+    },
+    async (args) => { try { return ok(await opIntelligence(args)); } catch (e) { return fail(e); } },
+  );
+
+  server.registerTool(
+    'visual_fidelity',
+    {
+      title: 'Reference Fidelity Engine',
+      description: 'Mide posición/proporción, tipografía, materiales, iluminación, profundidad, efectos, movimiento, ritmo, transiciones y coherencia entre fotogramas. Devuelve la similitud de píxeles aparte y no la usa como calidad artística.',
+      inputSchema: {
+        reference: z.string(),
+        target: z.string().optional(),
+        targetDir: z.string().optional(),
+        brief: z.string().optional(),
+        specFile: z.string().optional(),
+        outDir: z.string().optional(),
+      },
+    },
+    async (args) => { try { return ok(await opIntelligence(args)); } catch (e) { return fail(e); } },
+  );
+
+  server.registerTool(
+    'visual_gate',
+    {
+      title: 'Quality Gates',
+      description: 'Evalúa fidelidad, calidad, composición, tipografía, accesibilidad, rendimiento, funcionamiento, regresiones y aprobación humana. Un defecto crítico bloquea aunque la puntuación media sea alta.',
+      inputSchema: {
+        from: z.string().optional().describe('intelligence.json, review.json o gates.json.'),
+        config: z.record(z.any()).optional(),
+        humanApproval: z.object({ approved: z.boolean().optional(), reviewer: z.string().optional(), note: z.string().optional() }).optional(),
+        outDir: z.string().optional(),
+      },
+    },
+    async (args) => { try { return ok(opGate(args)); } catch (e) { return fail(e); } },
+  );
+
+  server.registerTool(
+    'visual_smart_effects',
+    {
+      title: 'Selección contextual de efectos',
+      description: 'Elige efectos por brief, estilo, tipo de proyecto y señales de referencia. Respeta el minimalismo, limita el presupuesto y no devuelve los 58 al contexto.',
+      inputSchema: {
+        brief: z.string(),
+        style: z.string().optional(),
+        projectType: z.string().optional(),
+        maxEffects: z.number().int().min(0).max(3).optional(),
+        intensity: z.enum(['restrained', 'balanced', 'expressive']).optional(),
+        allowDecorative: z.boolean().optional(),
+        referenceSignals: z.array(z.object({ id: z.string().optional(), category: z.string().optional(), confidence: z.number().min(0).max(1).optional() })).optional(),
+        outDir: z.string().optional(),
+      },
+    },
+    async (args) => { try { return ok(opSmartEffects(args)); } catch (e) { return fail(e); } },
+  );
+
+  server.registerTool(
+    'visual_loop',
+    {
+      title: 'Autonomous Improvement Loop',
+      description: 'Analiza, inspecciona, hace copia, aplica un reemplazo/parche del agente, vuelve a capturar, compara y conserva o revierte. Límites de iteraciones, tiempo y tokens estimados. Sin cambio devuelve awaiting-agent.',
+      inputSchema: {
+        projectDir: z.string().optional(),
+        targetDir: z.string().optional(),
+        target: z.string().optional(),
+        reference: z.string(),
+        brief: z.string(),
+        style: z.string().optional(),
+        projectType: z.string().optional(),
+        changes: z.array(z.object({ replaceFile: z.string().optional(), patchFile: z.string().optional() })).optional(),
+        replaceFile: z.string().optional(),
+        patchFile: z.string().optional(),
+        limits: z.object({
+          maxIterations: z.number().int().min(1).max(10).optional(),
+          maxMinutes: z.number().min(1).max(120).optional(),
+          maxTokenBudget: z.number().int().min(500).max(200000).optional(),
+          minQualityDelta: z.number().min(0).max(100).optional(),
+          minFidelityDelta: z.number().min(0).max(100).optional(),
+        }).optional(),
+        gates: z.record(z.any()).optional(),
+        humanApproval: z.object({ approved: z.boolean().optional(), reviewer: z.string().optional(), note: z.string().optional() }).optional(),
+        outDir: z.string().optional(),
+        confirm: z.boolean().describe('Obligatorio si se aportan cambios: escribe archivos.'),
+      },
+    },
+    async (args) => { try { return ok(await opLoop(args)); } catch (e) { return fail(e); } },
+  );
+
+  server.registerTool(
+    'visual_loops',
+    {
+      title: 'Historial de loops',
+      description: 'Lista los loops con estado, objetivo y tokens estimados, o restaura la copia de una iteración conservada.',
+      inputSchema: {
+        action: z.enum(['list', 'restore']),
+        project: z.string().optional(),
+        id: z.string().optional(),
+        outDir: z.string().optional().describe('Directorio del loop si se ejecutó con --out personalizado.'),
+      },
+    },
+    async (args) => {
+      try {
+        if (args.action === 'list') return ok(opLoops(args.project));
+        if (!args.id) return fail(new Error('Indica el id del loop.'));
+        return ok(opRestoreLoop(args.project, args.id, args.outDir));
+      } catch (e) { return fail(e); }
     },
   );
 

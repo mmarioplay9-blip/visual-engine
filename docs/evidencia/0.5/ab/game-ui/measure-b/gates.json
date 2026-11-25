@@ -1,0 +1,125 @@
+{
+  "version": "0.5",
+  "pass": false,
+  "decision": "reject",
+  "checks": [
+    {
+      "id": "quality",
+      "label": "Calidad visual global",
+      "status": "pass",
+      "actual": 73.4,
+      "threshold": 72,
+      "blocking": true,
+      "detail": "Puntuación ponderada de las dimensiones disponibles."
+    },
+    {
+      "id": "fidelity",
+      "label": "Fidelidad estructural",
+      "status": "fail",
+      "actual": 62.1,
+      "threshold": 70,
+      "blocking": true,
+      "detail": "No usa la similitud de píxeles como sustituto."
+    },
+    {
+      "id": "composition",
+      "label": "Composición",
+      "status": "pass",
+      "actual": 76.2,
+      "threshold": 62,
+      "blocking": true,
+      "detail": "Balance de masa medido."
+    },
+    {
+      "id": "typography",
+      "label": "Tipografía y legibilidad",
+      "status": "pass",
+      "actual": 100,
+      "threshold": 62,
+      "blocking": true,
+      "detail": "Auditoría DOM + escala."
+    },
+    {
+      "id": "performance",
+      "label": "Rendimiento",
+      "status": "pass",
+      "actual": 70.8,
+      "threshold": 55,
+      "blocking": true,
+      "detail": "Estabilidad de captura; no son FPS."
+    },
+    {
+      "id": "critical-findings",
+      "label": "Defectos críticos",
+      "status": "pass",
+      "actual": 0,
+      "threshold": 0,
+      "blocking": true,
+      "detail": "Un defecto crítico bloquea aunque la media sea alta."
+    },
+    {
+      "id": "high-findings",
+      "label": "Defectos de gravedad alta",
+      "status": "fail",
+      "actual": 2,
+      "threshold": 0,
+      "blocking": true,
+      "detail": "Los defectos altos también bloquean por defecto."
+    },
+    {
+      "id": "contrast",
+      "label": "Contraste DOM",
+      "status": "pass",
+      "actual": 0,
+      "threshold": 0,
+      "blocking": true,
+      "detail": "Peor contraste 8.4:1; 10 textos."
+    },
+    {
+      "id": "runtime",
+      "label": "Funcionamiento sin errores",
+      "status": "pass",
+      "actual": 0,
+      "threshold": 0,
+      "blocking": true,
+      "detail": "Consola, pageerror, recursos fallidos e imágenes rotas."
+    },
+    {
+      "id": "human-art",
+      "label": "Aprobación artística humana",
+      "status": "pending",
+      "actual": "pendiente",
+      "threshold": "recomendada",
+      "blocking": false,
+      "detail": "No bloquea por configuración, pero queda pendiente y se declara."
+    }
+  ],
+  "blockers": [
+    {
+      "id": "fidelity",
+      "label": "Fidelidad estructural",
+      "status": "fail",
+      "actual": 62.1,
+      "threshold": 70,
+      "blocking": true,
+      "detail": "No usa la similitud de píxeles como sustituto."
+    },
+    {
+      "id": "high-findings",
+      "label": "Defectos de gravedad alta",
+      "status": "fail",
+      "actual": 2,
+      "threshold": 0,
+      "blocking": true,
+      "detail": "Los defectos altos también bloquean por defecto."
+    }
+  ],
+  "warnings": [
+    "La calidad artística final aún no ha sido aprobada por una persona."
+  ],
+  "humanApproval": {
+    "required": false,
+    "approved": false
+  },
+  "summary": "Rechazado: 2 bloqueo(s). Una media alta no compensa un defecto crítico."
+}

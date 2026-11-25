@@ -9,6 +9,8 @@ Este repositorio usa Visual Engine (`ve`), un motor local y gratuito de calidad 
 - Genera una base: `ve effects apply <id> --out <carpeta>`.
 - Captura el resultado: `ve capture <html|url> --serve <carpeta> --frames 6`.
 - Revisa y compara: `ve review --reference <ref> --target-dir <carpeta> --frames 6`.
+- Depura y critica: `ve debug <html> --serve <carpeta> --source <carpeta>` y `ve critic --reference <ref> --target-dir <carpeta>`.
+- Acepta o itera: `ve gate --from <intelligence.json> --require-human` y `ve loop ... --confirm`.
 - API local: `ve serve` → `http://127.0.0.1:4747/v1/health`.
 
 ## Reglas

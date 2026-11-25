@@ -1,0 +1,58 @@
+{
+  "version": "0.5",
+  "score": 88,
+  "grade": "A",
+  "findings": [
+    {
+      "id": "motion-rigid",
+      "category": "motion",
+      "title": "Animaciones rígidas o demasiado rápidas",
+      "severity": "high",
+      "confidence": 0.8,
+      "evidence": [
+        {
+          "source": "motion",
+          "metric": "proporción lineal/≤120 ms",
+          "value": 1,
+          "threshold": 0.6,
+          "note": "3 animaciones observadas"
+        }
+      ],
+      "location": {
+        "selector": "html > body > main.reel > section.scene.s1:nth-of-type(1)",
+        "frame": 0
+      },
+      "fix": {
+        "kind": "motion",
+        "summary": "Usa una curva con salida suave y 180–500 ms; reserva el spring para interacción directa.",
+        "property": "transition-timing-function"
+      },
+      "status": "measured"
+    }
+  ],
+  "counts": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 0
+  },
+  "summary": "Crítica 88/100 (A): 0 crítico(s), 1 alto(s), 0 medio(s), 0 bajo(s).",
+  "agentTask": "# Tarea visual priorizada\n\nBrief: Reel de motion graphics de seis segundos, tres planos, cortes en el pico de movimiento.\nEstilo: motion-graphics\nCrítica: Crítica 88/100 (A): 0 crítico(s), 1 alto(s), 0 medio(s), 0 bajo(s).\n\n## Corrige sólo estos defectos medidos\n\n### [HIGH] Animaciones rígidas o demasiado rápidas\n- Evidencia: proporción lineal/≤120 ms=1 (objetivo 0.6)\n- Ubicación: html > body > main.reel > section.scene.s1:nth-of-type(1)\n- Corrección: Usa una curva con salida suave y 180–500 ms; reserva el spring para interacción directa.\n- Propiedad: transition-timing-function\n- Acción base: Sustituye el movimiento lineal por una curva con aceleración y desaceleración; reduce la distancia.\n\n## Reglas de la iteración\n\n1. No reescribas todo: aplica el cambio mínimo en la ubicación indicada.\n2. No añadas un efecto si no hay evidencia de que falta y una función que cumplir.\n3. Conserva las decisiones que ya pasan los umbrales.\n4. Vuelve a capturar y compara antes/después; revierte si no mejora.\n5. La aprobación artística final es humana.\n\n## Límites\n\n- Sin medición de rendimiento no se afirma FPS ni carga.\n- La crítica detecta defectos estructurales; no sustituye la aprobación artística humana.",
+  "limitations": [
+    "Sin medición de rendimiento no se afirma FPS ni carga.",
+    "La crítica detecta defectos estructurales; no sustituye la aprobación artística humana."
+  ],
+  "measured": {
+    "quality": 80.2,
+    "fidelity": 73.6,
+    "composition": 85.4,
+    "hierarchy": 65.9,
+    "typography": 91.2,
+    "depth": 77.6,
+    "lighting": 62.2,
+    "coherence": 90.4,
+    "transitions": 100,
+    "performance": 61.2
+  },
+  "artisticJudgment": false
+}

@@ -21,6 +21,16 @@ import {
   opShowcase,
 } from '../core/advanced.js';
 import {
+  opIntelligence,
+  opDebug,
+  opSmartEffects,
+  opContext,
+  opGate,
+  opLoop,
+  opLoops,
+  opRestoreLoop,
+} from '../core/intelligence-ops.js';
+import {
   opAdapters,
   opAnalyze,
   opApplyEffect,
@@ -114,6 +124,19 @@ export async function startApi(opts: ApiOptions = {}): Promise<ApiServer> {
     { method: 'POST', pattern: /^\/v1\/reference-design$/, handler: async (b) => opReferenceDesign(b) },
     { method: 'POST', pattern: /^\/v1\/motion-director$/, handler: async (b) => opMotionDirector(b) },
     { method: 'POST', pattern: /^\/v1\/showcase$/, handler: async (b) => opShowcase(b) },
+    { method: 'POST', pattern: /^\/v1\/intelligence$/, handler: async (b) => opIntelligence(b) },
+    { method: 'POST', pattern: /^\/v1\/debug$/, handler: async (b) => opDebug(b) },
+    { method: 'POST', pattern: /^\/v1\/critic$/, handler: async (b) => opIntelligence(b) },
+    { method: 'POST', pattern: /^\/v1\/fidelity$/, handler: async (b) => opIntelligence(b) },
+    { method: 'POST', pattern: /^\/v1\/gates$/, handler: async (b) => opGate(b) },
+    { method: 'POST', pattern: /^\/v1\/context$/, handler: async (b) => opContext(b) },
+    { method: 'POST', pattern: /^\/v1\/smart-effects$/, handler: async (b) => opSmartEffects(b) },
+    { method: 'POST', pattern: /^\/v1\/loop$/, handler: async (b) => {
+      if (b.confirm !== true && (b.replaceFile || b.patchFile || b.changes?.length)) throw new Error('Loop no confirmado: envía confirm=true (escribe archivos).');
+      return opLoop(b);
+    } },
+    { method: 'GET', pattern: /^\/v1\/loops$/, handler: async (_b, q) => opLoops(q.get('project') ?? undefined) },
+    { method: 'POST', pattern: /^\/v1\/loops\/restore$/, handler: async (b) => opRestoreLoop(b.project, b.id, b.outDir) },
     { method: 'GET', pattern: /^\/v1\/benchmarks$/, handler: async () => {
       const file = new URL('../../library/benchmarks.json', import.meta.url);
       try {
@@ -220,6 +243,12 @@ export function capabilities() {
       'Detección real de dependencias y plan de instalación',
       'Instalación de paquetes npm gratuitos (opt-in)',
       'Instrucciones y Skills para agentes',
+      'Visual Critic con evidencia, ubicación, gravedad, confianza y corrección',
+      'Visual Debugger con selectores, regiones, CSS, capas, frames y correspondencia fuente verificada',
+      'Reference Fidelity Engine por dimensiones, separado de la similitud de píxeles',
+      'Smart Effects Selection contextual que respeta estilos minimalistas',
+      'Quality Gates configurables con bloqueo por defecto de defectos críticos y aprobación humana',
+      'Autonomous Improvement Loop con copia, límites y reversión (el cambio lo aporta el agente)',
     ],
     pendiente: [
       'Publicación del repositorio GitHub y actualizaciones verificadas desde remoto',
@@ -233,6 +262,9 @@ export function capabilities() {
       'La profundidad y el parallax son proxies geométricos, no mapas métricos.',
       'La etiqueta de un efecto es una interpretación de la señal medida.',
       'El parcheo lo aporta el agente; iterate lo aplica, mide y revierte, pero no inventa el cambio.',
+      'El loop no llama a un proveedor de IA: si no recibe un cambio, devuelve una tarea para el agente conectado.',
+      'El presupuesto de tokens del loop es una estimación caracteres/4, no el recuento del proveedor.',
+      'La crítica es estructural; la aprobación artística final es humana.',
     ],
   };
 }

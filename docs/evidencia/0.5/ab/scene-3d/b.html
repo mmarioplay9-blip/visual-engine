@@ -1,0 +1,30 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Una órbita no es una línea. — B</title><style>
+:root{--bg:#05060f;--surface:#0d1224;--elevated:#141c36;--ink:#f3f5ff;--muted:#a5b0d0;--accent:#8b7bff;--accent2:#4ee1d0;--border:#27335a;--mono:VE JetBrains Mono}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:VE Inter,system-ui,sans-serif;font-size:16px;line-height:1.55}
+a{color:inherit}.nav{display:flex;justify-content:space-between;align-items:center;padding:18px clamp(20px,5vw,56px);border-bottom:1px solid var(--border);font-size:11px;color:var(--muted);letter-spacing:.04em;position:relative;z-index:3}
+.brand{font-family:var(--mono);font-weight:700;color:var(--ink);letter-spacing:.08em}.eyebrow{font:11px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+
+body{background:#05060f;color:#f3f5ff}.scene3{position:relative;height:100vh;overflow:hidden;isolation:isolate}.ref3{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.42;filter:grayscale(.65) sepia(.35) contrast(1.15);z-index:-3}.veil{position:absolute;inset:0;background:radial-gradient(circle at 72% 40%,#8b7bff22,transparent 38%),linear-gradient(90deg,#05060fee 0 38%,#05060f88 62%,#05060fcc);z-index:-2}
+#orbital{position:absolute;inset:0;width:100%;height:100%;z-index:-1}.overlay3{position:relative;z-index:2;max-width:660px;padding:8vh clamp(22px,6vw,74px) 0}.overlay3 h1{font-family:VE Space Grotesk,system-ui,sans-serif;font-size:clamp(52px,6.8vw,94px);line-height:.9;letter-spacing:-.065em;margin:14px 0 18px;max-width:10ch;font-weight:650}.overlay3 .lead{color:#b5c0dc;max-width:46ch;font-size:17px}
+.readout{font:11px var(--mono);color:var(--accent2);margin-top:18px;letter-spacing:.04em}.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#27335a;border:1px solid #27335a;margin-top:26px;max-width:600px}.metric{background:#05060fcc;padding:12px 14px;backdrop-filter:blur(8px)}.metric strong{font:600 24px var(--mono)}.metric small{display:block;color:#a5b0d0;font-size:10px}.credit{position:absolute;z-index:2;right:22px;bottom:18px;color:#8d99b8;font:10px var(--mono)}
+@media(max-width:760px){.overlay3{padding-top:5vh}.metrics{grid-template-columns:repeat(2,1fr)}.overlay3 h1{font-size:48px}}
+@media(prefers-reduced-motion:reduce){#orbital{opacity:.45}}
+</style></head><body><main class="scene3"><img class="ref3" src="reference.jpg" alt="Referencia CC0: escultura Astronomía del MET"><div class="veil"></div><canvas id="orbital" width="1280" height="720" aria-label="Escena 3D orbital"></canvas><nav class="nav" style="border-color:#27335a"><span class="brand">ORBITAL</span><span>ESTUDIO 04</span><span>VISUAL ENGINE / 0.5</span></nav><section class="overlay3"><p class="eyebrow">ORBITAL / ESTUDIO 04</p><h1>Una órbita no es una línea.</h1><p class="lead">Escena espacial interactiva con cámara Three.js, profundidad real y movimiento que respeta reduced motion.</p><div class="readout" id="readout">cámara 0.00° · 0 frames</div><div class="metrics"><div class="metric"><strong>01</strong><small>cuerpo</small></div><div class="metric"><strong>6°</strong><small>órbita</small></div><div class="metric"><strong>24</strong><small>capas</small></div><div class="metric"><strong>WebGL</strong><small>render</small></div></div></section><div class="credit">cámara Three.js real · rotación 1,5°</div></main><script type="module">
+import * as THREE from './three.module.js';
+const canvas=document.getElementById('orbital');
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+renderer.setSize(1280,720,false);renderer.setPixelRatio(1);
+const scene=new THREE.Scene();scene.fog=new THREE.FogExp2(0x05060f,.055);
+const camera=new THREE.PerspectiveCamera(42,16/9,.1,100);camera.position.set(0,.4,7);
+const group=new THREE.Group();scene.add(group);
+const geo=new THREE.IcosahedronGeometry(1.55,2);const mat=new THREE.MeshStandardMaterial({color:0x8b7bff,metalness:.7,roughness:.28,wireframe:true});group.add(new THREE.Mesh(geo,mat));
+const halo=new THREE.Mesh(new THREE.TorusGeometry(2.8,.012,8,180),new THREE.MeshBasicMaterial({color:0x4ee1d0,transparent:true,opacity:.5}));halo.rotation.x=1.1;group.add(halo);
+for(let i=0;i<90;i++){const p=new THREE.Mesh(new THREE.SphereGeometry(.012,4,4),new THREE.MeshBasicMaterial({color:0xa5b0d0}));p.position.set((Math.random()-.5)*14,(Math.random()-.5)*9,(Math.random()-.5)*10);scene.add(p)}
+scene.add(new THREE.AmbientLight(0x6677aa,1.2));const key=new THREE.DirectionalLight(0xffffff,2.4);key.position.set(4,5,3);scene.add(key);
+const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const expectedDeg=1.5;let frames=0,start=performance.now(),maxDeg=0;
+window.__ve3d={expectedDeg,currentDeg:0,maxDeg:0,frames:0,reducedMotion:reduced};
+function tick(now){frames++;const t=(now-start)/1000;const angle=reduced?0:Math.sin(t*.7)*THREE.MathUtils.degToRad(expectedDeg);camera.rotation.y=angle;camera.rotation.x=Math.sin(t*.45)*.012;group.rotation.y=t*.08;group.rotation.x=Math.sin(t*.3)*.08;halo.rotation.z=t*.12;renderer.render(scene,camera);const deg=Math.abs(angle)*180/Math.PI;maxDeg=Math.max(maxDeg,deg);window.__ve3d={...window.__ve3d,currentDeg:deg,maxDeg,frames};document.getElementById('readout').textContent='cámara '+deg.toFixed(2)+'° · '+frames+' frames';requestAnimationFrame(tick)}
+requestAnimationFrame(tick);
+window.__veReady=true;
+</script></body></html>

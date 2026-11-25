@@ -9,8 +9,9 @@ con componente visual: hero, landing, animación, 3D, HUD, vídeo o "mejora el d
 2. `visual_analyze` sobre la referencia → paleta y métricas objetivo.
 3. `visual_effect_apply` o `visual_scaffold` para partir de una base con intención.
 4. `visual_capture` con `frames >= 6` → detecta también errores de consola.
-5. `visual_review` → puntuación, mapa de calor y correcciones priorizadas.
-6. Aplica las correcciones y repite. Informa puntuación antes/después.
+5. `visual_review`, `visual_debug`, `visual_critic`, `visual_fidelity` y `visual_gate` → evidencia localizada, gates y aprobación humana.
+6. `visual_loop` con `confirm=true` si aportas un cambio; copia, mide, conserva o revierte.
+7. Aplica las correcciones y repite. Informa puntuación antes/después y qué no se pudo medir.
 
 ## Criterios
 

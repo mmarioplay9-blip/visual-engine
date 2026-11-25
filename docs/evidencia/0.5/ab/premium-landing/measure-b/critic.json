@@ -1,0 +1,110 @@
+{
+  "version": "0.5",
+  "score": 70,
+  "grade": "B",
+  "findings": [
+    {
+      "id": "coherence-low",
+      "category": "coherence",
+      "title": "Incoherencia estética entre la intención y el resultado",
+      "severity": "high",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "source": "quality",
+          "metric": "coherencia de matiz",
+          "value": 14.5,
+          "threshold": 58
+        }
+      ],
+      "location": {
+        "component": "palette"
+      },
+      "fix": {
+        "kind": "css",
+        "summary": "Reduce la paleta a tokens semánticos y elimina acentos que no tengan un rol.",
+        "property": "color tokens"
+      },
+      "status": "measured"
+    },
+    {
+      "id": "lighting-low",
+      "category": "lighting",
+      "title": "Iluminación plana o contradictoria",
+      "severity": "high",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "source": "quality",
+          "metric": "iluminación",
+          "value": 42.6,
+          "threshold": 58
+        }
+      ],
+      "location": {
+        "layer": "superficies"
+      },
+      "fix": {
+        "kind": "css",
+        "summary": "Define una dirección de luz principal y una sombra de contacto; evita halos sin fuente.",
+        "property": "box-shadow / gradient"
+      },
+      "status": "measured"
+    },
+    {
+      "id": "materials-missing",
+      "category": "materials",
+      "title": "El material declarado no aparece en el render",
+      "severity": "medium",
+      "confidence": 0.65,
+      "evidence": [
+        {
+          "source": "dom",
+          "metric": "señales de material",
+          "value": 1,
+          "threshold": 2
+        },
+        {
+          "source": "art-direction",
+          "metric": "material declarado",
+          "value": "paper"
+        }
+      ],
+      "location": {
+        "component": "superficies"
+      },
+      "fix": {
+        "kind": "css",
+        "summary": "Materializa paper: borde, sombra, transparencia o rugosidad coherentes.",
+        "property": "background / box-shadow / border"
+      },
+      "status": "measured"
+    }
+  ],
+  "counts": {
+    "critical": 0,
+    "high": 2,
+    "medium": 1,
+    "low": 0
+  },
+  "summary": "Crítica 70/100 (B): 0 crítico(s), 2 alto(s), 1 medio(s), 0 bajo(s).",
+  "agentTask": "# Tarea visual priorizada\n\nBrief: Landing de arquitectura premium, editorial, con una obra como material y una sola acción.\nEstilo: editorial\nCrítica: Crítica 70/100 (B): 0 crítico(s), 2 alto(s), 1 medio(s), 0 bajo(s).\n\n## Corrige sólo estos defectos medidos\n\n### [HIGH] Incoherencia estética entre la intención y el resultado\n- Evidencia: coherencia de matiz=14.5 (objetivo 58)\n- Ubicación: sin selector; componente palette\n- Corrección: Reduce la paleta a tokens semánticos y elimina acentos que no tengan un rol.\n- Propiedad: color tokens\n- Acción base: Reduce la paleta y reutiliza tokens; elimina acentos y materiales que no pertenecen al sistema.\n\n### [HIGH] Iluminación plana o contradictoria\n- Evidencia: iluminación=42.6 (objetivo 58)\n- Ubicación: sin selector; componente global\n- Corrección: Define una dirección de luz principal y una sombra de contacto; evita halos sin fuente.\n- Propiedad: box-shadow / gradient\n- Acción base: Unifica la dirección de luz y el contraste; evita sombras contradictorias.\n\n### [MEDIUM] El material declarado no aparece en el render\n- Evidencia: señales de material=1 (objetivo 2); material declarado=paper\n- Ubicación: sin selector; componente superficies\n- Corrección: Materializa paper: borde, sombra, transparencia o rugosidad coherentes.\n- Propiedad: background / box-shadow / border\n- Acción base: Haz explícito el material: borde, sombra, rugosidad o transparencia; no lo simules con ruido aleatorio.\n\n## Reglas de la iteración\n\n1. No reescribas todo: aplica el cambio mínimo en la ubicación indicada.\n2. No añadas un efecto si no hay evidencia de que falta y una función que cumplir.\n3. Conserva las decisiones que ya pasan los umbrales.\n4. Vuelve a capturar y compara antes/después; revierte si no mejora.\n5. La aprobación artística final es humana.\n\n## Límites\n\n- Sin medición de rendimiento no se afirma FPS ni carga.\n- Sin animaciones observadas no se afirma rigidez temporal.\n- La crítica detecta defectos estructurales; no sustituye la aprobación artística humana.",
+  "limitations": [
+    "Sin medición de rendimiento no se afirma FPS ni carga.",
+    "Sin animaciones observadas no se afirma rigidez temporal.",
+    "La crítica detecta defectos estructurales; no sustituye la aprobación artística humana."
+  ],
+  "measured": {
+    "quality": 78.9,
+    "fidelity": 63.5,
+    "composition": 97.1,
+    "hierarchy": 85.7,
+    "typography": 100,
+    "depth": 98.5,
+    "lighting": 42.6,
+    "coherence": 14.5,
+    "transitions": 100,
+    "performance": 91.6
+  },
+  "artisticJudgment": false
+}

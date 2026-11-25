@@ -1,0 +1,15 @@
+{
+  "reference": "CC0 MET 203938",
+  "page": "ab/scene-3d/b.html",
+  "a": null,
+  "b": {
+    "available": true,
+    "expectedDeg": 1.5,
+    "measuredMaxDeg": 1.41,
+    "errorDeg": 0.09,
+    "frames": 213,
+    "reducedMotion": false,
+    "status": "verified"
+  },
+  "note": "La rotación se lee de camera.rotation.y en Three.js real; no de una estimación de píxeles."
+}

@@ -46,6 +46,18 @@ import {
 import { startGallery } from '../core/gallery.js';
 import { describeIteration } from '../core/iterate.js';
 import { describeTemporal } from '../core/temporal.js';
+import {
+  opIntelligence,
+  opDebug,
+  opSmartEffects,
+  opContext,
+  opGate,
+  opLoop,
+  opLoops,
+  opRestoreLoop,
+  describeContext,
+  describeLoop,
+} from '../core/intelligence-ops.js';
 
 interface Parsed {
   _: string[];
@@ -123,6 +135,13 @@ COMANDOS
   refdesign <archivo>    Reference-to-Design: identidad, layout, componentes, motion y código
   motiondirector         Plan de movimiento, cámara, reduced motion y laboratorio
   showcase               Genera 20 composiciones; --measure las mide en Chromium
+  debug <target>         DOM real: selectores, CSS, capas, frames y archivo fuente verificado
+  critic                 Crítica con evidencia, gravedad, confianza y corrección
+  fidelity               Fidelidad estructural, separada de la similitud de píxeles
+  gate                   Quality Gates; una media alta no compensa un defecto crítico
+  context <tarea>        Carga selectiva de herramientas/recetas y caché de análisis
+  loop                   Ciclo con copia, límites, comparación y reversión
+  loops [list|restore]   Historial de loops y restauración de una copia
   gallery                Galería local opcional (efectos, parámetros, composición)
   benchmark              Mide FPS, frame time, memoria y carga de los efectos
   vision [status|describe|ocr|setup]  Tesseract, VRAM y modelos locales de Ollama
@@ -155,6 +174,12 @@ EJEMPLOS
   ve refdesign referencia.png --out ./sistema --vision
   ve motiondirector --style cinematic --out ./motion
   ve showcase --out ./showcase --measure
+  ve debug ./mi-web --serve ./mi-web --source ./mi-web
+  ve critic --reference ref.png --target-dir ./mi-web --brief "landing premium"
+  ve gate --from ./inteligencia/intelligence.json --require-human
+  ve context "landing cinematográfica" --max-recipes 3
+  ve effects select "dashboard financiero" --style financial-dashboard
+  ve loop --reference ref.png --target-dir ./mi-web --brief "mejorar jerarquía" --replace index.nuevo.html --confirm
   ve gallery --port 4173
   ve benchmark --ms 800 --width 960 --height 540
   ve iterate --reference referencia.mp4 --target-dir ./mi-web --replace index.nuevo.html
@@ -300,6 +325,25 @@ async function cmdReview(p: Parsed) {
 
 async function cmdEffects(p: Parsed) {
   const sub = p._[0] ?? 'list';
+  if (sub === 'select') {
+    const brief = p._.slice(1).join(' ').trim() || s(p, 'brief');
+    if (!brief) throw new Error('Uso: ve effects select "brief" [--style id] [--max n] [--out dir]');
+    const r = opSmartEffects({
+      brief,
+      style: s(p, 'style'),
+      projectType: s(p, 'project'),
+      maxEffects: n(p, 'max'),
+      intensity: s(p, 'intensity') as 'restrained' | 'balanced' | 'expressive' | undefined,
+      outDir: s(p, 'out'),
+    });
+    if (jsonOut(p)) console.log(JSON.stringify(r, null, 2));
+    else {
+      r.selected.forEach((e) => console.log(`  ${e.id} · ${e.role} · ${e.score} puntos`));
+      r.rationale.forEach((line) => console.log(line));
+      if (r.json) console.log(`\nDatos: ${r.json}`);
+    }
+    return;
+  }
   if (sub === 'list') {
     const effects = opListEffects({ category: s(p, 'category'), query: s(p, 'q') });
     if (jsonOut(p)) {
@@ -337,7 +381,7 @@ async function cmdEffects(p: Parsed) {
     applied.notes.forEach((note) => console.log(`  ${note}`));
     return;
   }
-  throw new Error(`Subcomando desconocido: ${sub}. Usa list, show o apply.`);
+  throw new Error(`Subcomando desconocido: ${sub}. Usa list, select, show o apply.`);
 }
 
 async function cmdAdapters(p: Parsed) {
@@ -672,6 +716,153 @@ async function cmdReferenceDesign(p: Parsed) {
   r.design.estimated.forEach((c) => console.log(`  ${c.value} — ${c.evidence}`));
 }
 
+function gateConfig(p: Parsed): Record<string, number | boolean> {
+  return {
+    ...(n(p, 'min-quality') !== undefined ? { minQuality: n(p, 'min-quality') } : {}),
+    ...(n(p, 'min-fidelity') !== undefined ? { minFidelity: n(p, 'min-fidelity') } : {}),
+    ...(n(p, 'min-composition') !== undefined ? { minComposition: n(p, 'min-composition') } : {}),
+    ...(n(p, 'min-typography') !== undefined ? { minTypography: n(p, 'min-typography') } : {}),
+    ...(n(p, 'min-performance') !== undefined ? { minPerformance: n(p, 'min-performance') } : {}),
+    ...(n(p, 'max-critical') !== undefined ? { maxCriticalFindings: n(p, 'max-critical') } : {}),
+    ...(n(p, 'max-high') !== undefined ? { maxHighFindings: n(p, 'max-high') } : {}),
+    ...(b(p, 'require-human') ? { requireHumanArtApproval: true } : {}),
+  };
+}
+
+function humanApproval(p: Parsed) {
+  return {
+    approved: b(p, 'human-approved'),
+    reviewer: s(p, 'reviewer'),
+    note: s(p, 'human-note'),
+  };
+}
+
+async function cmdIntelligence(p: Parsed, mode: 'critic' | 'fidelity') {
+  const reference = s(p, 'reference');
+  if (!reference) throw new Error(`Uso: ve ${mode} --reference <imagen|vídeo> --target-dir <proyecto> [--brief ...]`);
+  const r = await opIntelligence({
+    reference,
+    target: s(p, 'target') ?? p._[0] ?? 'index.html',
+    targetDir: s(p, 'target-dir') ?? s(p, 'project'),
+    brief: s(p, 'brief'),
+    style: s(p, 'style'),
+    projectType: s(p, 'project-type'),
+    specFile: s(p, 'spec'),
+    width: n(p, 'width'), height: n(p, 'height'), frames: n(p, 'frames'),
+    intervalMs: n(p, 'interval'), waitMs: n(p, 'wait'), outDir: s(p, 'out'),
+    humanApproval: humanApproval(p),
+    gates: gateConfig(p),
+  });
+  if (jsonOut(p)) {
+    console.log(JSON.stringify(mode === 'critic' ? { critic: r.critic, fidelity: r.fidelity, gates: r.gates } : r.fidelity, null, 2));
+    return;
+  }
+  if (mode === 'critic') {
+    r.description.forEach((line) => console.log(line));
+  } else {
+    console.log(r.fidelity.summary);
+    r.fidelity.dimensions.forEach((d) => console.log(`  ${d.label.padEnd(40)} ${d.score === null ? '—' : d.score.toFixed(1)}  ${d.status}`));
+    r.fidelity.warnings.forEach((w) => console.log(`  Límite: ${w}`));
+  }
+  console.log(`\nCrítica: ${r.paths.critic}\nFidelidad: ${r.paths.fidelity}\nGates: ${r.paths.gates}`);
+  if (r.gates.decision === 'reject') process.exitCode = 1;
+}
+
+async function cmdDebug(p: Parsed) {
+  const r = await opDebug({
+    target: s(p, 'target') ?? p._[0] ?? 'index.html',
+    targetDir: s(p, 'serve') ?? s(p, 'target-dir') ?? s(p, 'project'),
+    width: n(p, 'width'), height: n(p, 'height'), waitMs: n(p, 'wait'),
+    outDir: s(p, 'out'), sourceRoot: s(p, 'source') ?? s(p, 'serve') ?? s(p, 'target-dir'),
+  });
+  if (jsonOut(p)) {
+    console.log(JSON.stringify(r, null, 2));
+    return;
+  }
+  console.log(`${r.title || '(sin título)'} · ${r.url}`);
+  console.log(`Elementos ${r.counts.elements}; capas ${r.counts.layers}; materiales ${r.counts.materials}; animaciones ${r.counts.animations}.`);
+  console.log(`Contraste: ${r.contrast.violations} violación(es) de ${r.contrast.checked}; overflow ${r.scroll.overflowX}×${r.scroll.overflowY}.`);
+  for (const el of r.elements.slice(0, 8)) {
+    console.log(`  ${el.selector}  ${el.box.width}×${el.box.height}  ${el.source ? `→ ${el.source.file}:${el.source.line}` : 'sin archivo fuente verificado'}`);
+  }
+  r.warnings.forEach((w) => console.log(`  Límite: ${w}`));
+  console.log(`\nDOM: ${r.warnings.length ? 'ver --out' : 'dom.json'}`);
+}
+
+function cmdContext(p: Parsed) {
+  const task = p._.join(' ').trim() || s(p, 'task');
+  if (!task) throw new Error('Uso: ve context "tarea" [--max-tools 5] [--max-recipes 3] [--clear-cache]');
+  const r = opContext({ task, maxTools: n(p, 'max-tools'), maxRecipes: n(p, 'max-recipes'), style: s(p, 'style'), projectType: s(p, 'project'), clearCache: b(p, 'clear-cache') });
+  if (jsonOut(p)) console.log(JSON.stringify(r, null, 2));
+  else describeContext(r).forEach((line) => console.log(line));
+}
+
+function cmdGate(p: Parsed) {
+  const from = s(p, 'from') ?? p._[0];
+  if (!from) throw new Error('Uso: ve gate --from <intelligence.json|review.json> [--require-human] [--human-approved]');
+  const r = opGate({ from, config: gateConfig(p), humanApproval: humanApproval(p), outDir: s(p, 'out') });
+  if (jsonOut(p)) console.log(JSON.stringify(r, null, 2));
+  else {
+    console.log(r.summary);
+    r.checks.forEach((c) => console.log(`  ${c.status.padEnd(12)} ${c.label}: ${c.actual ?? '—'} (${c.threshold})${c.blocking ? '' : ' [informativo]'}`));
+    r.warnings.forEach((w) => console.log(`  Aviso: ${w}`));
+  }
+  if (r.decision === 'reject') process.exitCode = 1;
+}
+
+async function cmdLoop(p: Parsed) {
+  const reference = s(p, 'reference');
+  if (!reference) throw new Error('Uso: ve loop --reference <imagen|vídeo> --target-dir <proyecto> --brief "..." [--replace archivo | --patch archivo] --confirm');
+  const replaces = multi(p, 'replace');
+  const patches = multi(p, 'patch');
+  const changes = Array.from({ length: Math.max(replaces.length, patches.length) }, (_, i) => ({ replaceFile: replaces[i], patchFile: patches[i] })).filter((c) => c.replaceFile || c.patchFile);
+  const r = await opLoop({
+    reference,
+    projectDir: s(p, 'project') ?? s(p, 'target-dir'),
+    targetDir: s(p, 'target-dir') ?? s(p, 'project'),
+    target: s(p, 'target') ?? 'index.html',
+    brief: s(p, 'brief') ?? 'Mejorar la calidad visual',
+    style: s(p, 'style'), projectType: s(p, 'project-type'),
+    width: n(p, 'width'), height: n(p, 'height'), frames: n(p, 'frames'),
+    intervalMs: n(p, 'interval'), waitMs: n(p, 'wait'), outDir: s(p, 'out'),
+    changes,
+    confirm: b(p, 'confirm'),
+    humanApproval: humanApproval(p),
+    gates: gateConfig(p),
+    limits: {
+      ...(n(p, 'max-iterations') !== undefined ? { maxIterations: n(p, 'max-iterations') } : {}),
+      ...(n(p, 'max-minutes') !== undefined ? { maxMinutes: n(p, 'max-minutes') } : {}),
+      ...(n(p, 'max-tokens') !== undefined ? { maxTokenBudget: n(p, 'max-tokens') } : {}),
+      ...(n(p, 'min-delta') !== undefined ? { minQualityDelta: n(p, 'min-delta') } : {}),
+      ...(n(p, 'min-fidelity-delta') !== undefined ? { minFidelityDelta: n(p, 'min-fidelity-delta') } : {}),
+    },
+  });
+  if (jsonOut(p)) console.log(JSON.stringify(r, null, 2));
+  else describeLoop(r).forEach((line) => console.log(line));
+  if (r.status === 'failed' || r.status === 'reverted' || r.status === 'budget-stopped' || r.status === 'time-stopped') process.exitCode = 1;
+}
+
+function cmdLoops(p: Parsed) {
+  const sub = p._[0] ?? 'list';
+  const project = s(p, 'project');
+  if (sub === 'list') {
+    const items = opLoops(project);
+    if (jsonOut(p)) { console.log(JSON.stringify(items, null, 2)); return; }
+    console.log(`Loops: ${items.length}`);
+    items.forEach((m) => console.log(`  ${m.id}  ${m.status.padEnd(14)} ${m.target}  tokens≈${m.tokensEstimated}`));
+    return;
+  }
+  if (sub === 'restore') {
+    const id = p._[1];
+    if (!id) throw new Error('Uso: ve loops restore <id> --project <dir>');
+    const r = opRestoreLoop(project, id, s(p, 'out'));
+    console.log(r.message);
+    r.restored.forEach((f) => console.log(`  ${f}`));
+    return;
+  }
+  throw new Error(`Subcomando desconocido: ${sub}. Usa list o restore.`);
+}
+
 async function cmdShowcase(p: Parsed) {
   const r = await opShowcase({ outDir: s(p, 'out'), ids: multi(p, 'ids'), measure: b(p, 'measure') });
   if (jsonOut(p)) {
@@ -837,6 +1028,27 @@ async function main() {
       return;
     case 'showcase':
       await cmdShowcase(rest);
+      return;
+    case 'debug':
+      await cmdDebug(rest);
+      return;
+    case 'critic':
+      await cmdIntelligence(rest, 'critic');
+      return;
+    case 'fidelity':
+      await cmdIntelligence(rest, 'fidelity');
+      return;
+    case 'gate':
+      cmdGate(rest);
+      return;
+    case 'context':
+      cmdContext(rest);
+      return;
+    case 'loop':
+      await cmdLoop(rest);
+      return;
+    case 'loops':
+      cmdLoops(rest);
       return;
     case 'benchmark':
       await cmdBenchmark(rest);

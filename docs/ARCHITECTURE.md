@@ -43,6 +43,14 @@ del agente; la verificación deja de ser una opinión.
 | `core/motion-director.ts` | Recetas de motion, cámara, reduced-motion y validación sintética | motion, pixels |
 | `core/refdesign.ts` | Reference-to-Design: spec → identidad, layout, componentes y código | styles, motion-director, refeffects |
 | `core/showcase.ts` | 20 composiciones, assets compartidos, previews y medición Chromium | styles, library, capture |
+| `core/debugger.ts` | DOM real, CSS, cajas, regiones, capas, frames y fuente verificada | Playwright |
+| `core/critic.ts` | Defectos con evidencia, gravedad, confianza, ubicación y corrección | quality, debugger, styles |
+| `core/fidelity.ts` | Fidelidad estructural por dimensiones, separada de píxeles | quality, debugger, spec |
+| `core/smart-effects.ts` | Selección contextual y presupuesto de efectos | library, styles |
+| `core/gates.ts` | Criterios de aceptación, defectos críticos y aprobación humana | critic, fidelity, quality |
+| `core/context.ts` | Contexto selectivo, informes compactos, recetas y caché | library, smart-effects |
+| `core/loop.ts` | Copia, aplicar, recapturar, comparar, conservar/revertir y límites | review, debugger, critic, gates |
+| `core/intelligence-ops.ts` | Operaciones 0.5 compartidas por CLI, MCP y API | todos |
 | `core/advanced.ts` | Operaciones compartidas por CLI, MCP y API para 0.2, 0.3 y 0.4 | todos |
 | `core/analysis.ts` | Métricas por fotograma y perfil visual agregado | media, util |
 | `core/compare.ts` | Perfiles: puntuación/paleta/correcciones. Imágenes: SSIM/MAE/ΔE/heatmap | analysis, media |
@@ -137,6 +145,30 @@ usa el color dominante como fondo y recalcula texto/superficies. `motion-directo
 curva de transición y la magnitud de rotación con una imagen sintética, y excluye animaciones en
 `prefers-reduced-motion`.
 
+### El crítico mide, no opina por el usuario
+
+`critic.ts` sólo emite un hallazgo cuando tiene una medida: perfil, DOM, contraste, curva, FPS,
+especificación o runtime. Cada hallazgo contiene `severity`, `confidence`, `evidence`, `location`
+y `fix`. El estilo solicitado cambia el juicio: un minimalismo no se penaliza por no tener
+efectos; un efecto pesado en un estilo sobrio se marca como contradicción de intención. La
+crítica no es un juicio artístico y el gate puede exigir aprobación humana explícita.
+
+### El loop conserva o revierte con evidencia
+
+`loop.ts` copia los archivos afectados antes de aplicar, captura antes y después, ejecuta crítica,
+fidelidad y gates, y conserva sólo si hay mejora sin regresión o si el gate deja de rechazar.
+Los límites son iteraciones, minutos y un presupuesto de tokens **estimado por longitud**; no se
+presenta como telemetría del proveedor. Si no recibe un cambio, devuelve `awaiting-agent` y deja
+`agent-task.md`; no inventa diseño ni llama a un modelo. La restauración acepta el `outDir`
+personalizado además del historial por defecto.
+
+### Fidelidad estructural, no píxeles
+
+`fidelity.ts` calcula dimensiones con distinto estado (`verified`, `estimated`, `unavailable`) y
+devuelve la similitud de píxeles aparte. Una imagen puede parecerse y seguir siendo un mal
+diseño. La tipografía se compara por escala relativa, no por identificación de familia; el
+movimiento se estima desde CSS/DOM, no se reconstruye la trayectoria exacta.
+
 ### Iteración con red de seguridad
 
 `iterate.ts` copia el objetivo con SHA-256, revisa antes, aplica (`--replace` o `git apply
@@ -203,8 +235,8 @@ explícitamente en el resultado para no afirmar una verificación que no se hizo
 - El MCP no escribe en el proyecto salvo en herramientas explícitas (`visual_effect_apply`,
   `visual_scaffold`, `visual_install_deps`, `visual_iterate` con `confirm=true`).
 - Ollama y Tesseract se consultan sólo en localhost/PATH; si faltan, devuelven el motivo.
-- `iterate` exige `confirm=true` en MCP/API, valida que el objetivo esté dentro del proyecto y
-  nunca aplica un parche sin copia previa.
+- `iterate` y `loop` exigen `confirm=true` en MCP/API, validan que el objetivo esté dentro del
+  proyecto y nunca aplican un parche sin copia previa; el loop restaura si no mejora.
 - `ve init` no sobrescribe archivos existentes sin `--force`.
 
 ## Rendimiento
@@ -221,8 +253,9 @@ explícitamente en el resultado para no afirmar una verificación que no se hizo
 
 ## Extender
 
-- **Nueva herramienta MCP**: añadir a `src/mcp/server.ts` y a `advanced.ts`; probar con
-  `tests/advanced.test.mjs` (cliente real por stdio).
+- **Nueva herramienta MCP**: añadir a `src/mcp/server.ts` y a `intelligence-ops.ts` o
+  `advanced.ts`; probar con `tests/advanced.test.mjs` o `tests/mcp.test.mjs` (cliente real por
+  stdio). Añadir también el esquema de contexto si cambia el catálogo de herramientas.
 - **Nuevo efecto**: crear carpeta con `recipe.json` y `templates/`; `ve effects list` lo
   detecta; `tests/cli.test.mjs` comprueba el número esperado (actualizar el test si cambia).
 - **Nueva capacidad**: añadir a `CAPABILITIES` en `deps.ts` y al registro `TOOLBOX` si implica

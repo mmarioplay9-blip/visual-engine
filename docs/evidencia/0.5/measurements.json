@@ -1,0 +1,272 @@
+{
+  "generatedAt": "2026-11-25T20:40:54.960Z",
+  "cases": [
+    {
+      "id": "professional-app",
+      "reference": {
+        "title": "Architecture",
+        "artist": "Michelangelo Colonna",
+        "date": "17th century",
+        "objectId": 399581,
+        "url": "https://www.metmuseum.org/art/collection/search/399581",
+        "license": "CC0 / Public Domain"
+      },
+      "source": {
+        "aChars": 3801,
+        "bChars": 5563,
+        "aTokensEstimate": 951,
+        "bTokensEstimate": 1391,
+        "modelTokens": null,
+        "iterations": 0
+      },
+      "a": {
+        "quality": 66.4,
+        "fidelity": 64.6,
+        "pixelSimilarity": 41.9,
+        "accessibility": 100,
+        "composition": 87.8,
+        "typography": 94.8,
+        "performance": 91.2,
+        "fps": 61,
+        "loadMs": 813,
+        "critic": 76,
+        "critical": 0,
+        "high": 2,
+        "gates": "reject",
+        "webgl": null
+      },
+      "b": {
+        "quality": 79.6,
+        "fidelity": 75.4,
+        "pixelSimilarity": 63.5,
+        "accessibility": 100,
+        "composition": 98.1,
+        "typography": 99.2,
+        "performance": 91.5,
+        "fps": 61.3,
+        "loadMs": 814,
+        "critic": 88,
+        "critical": 0,
+        "high": 1,
+        "gates": "reject",
+        "webgl": null
+      }
+    },
+    {
+      "id": "premium-landing",
+      "reference": {
+        "title": "The Dance Class",
+        "artist": "Edgar Degas",
+        "date": "1874",
+        "objectId": 438817,
+        "url": "https://www.metmuseum.org/art/collection/search/438817",
+        "license": "CC0 / Public Domain"
+      },
+      "source": {
+        "aChars": 3140,
+        "bChars": 4772,
+        "aTokensEstimate": 785,
+        "bTokensEstimate": 1193,
+        "modelTokens": null,
+        "iterations": 0
+      },
+      "a": {
+        "quality": 73.7,
+        "fidelity": 71.2,
+        "pixelSimilarity": 48.9,
+        "accessibility": 100,
+        "composition": 91.5,
+        "typography": 100,
+        "performance": 89.3,
+        "fps": 61,
+        "loadMs": 819,
+        "critic": 76,
+        "critical": 0,
+        "high": 2,
+        "gates": "reject",
+        "webgl": null
+      },
+      "b": {
+        "quality": 78.9,
+        "fidelity": 72.2,
+        "pixelSimilarity": 63.5,
+        "accessibility": 100,
+        "composition": 97.1,
+        "typography": 100,
+        "performance": 91.6,
+        "fps": 60.8,
+        "loadMs": 822,
+        "critic": 70,
+        "critical": 0,
+        "high": 2,
+        "gates": "reject",
+        "webgl": null
+      }
+    },
+    {
+      "id": "game-ui",
+      "reference": {
+        "title": "Armor",
+        "artist": "Anonymous",
+        "date": "ca. 1540–50 and later",
+        "objectId": 23206,
+        "url": "https://www.metmuseum.org/art/collection/search/23206",
+        "license": "CC0 / Public Domain"
+      },
+      "source": {
+        "aChars": 3321,
+        "bChars": 3897,
+        "aTokensEstimate": 831,
+        "bTokensEstimate": 975,
+        "modelTokens": null,
+        "iterations": 0
+      },
+      "a": {
+        "quality": 71.5,
+        "fidelity": 63.3,
+        "pixelSimilarity": 53,
+        "accessibility": 100,
+        "composition": 84,
+        "typography": 100,
+        "performance": 86.9,
+        "fps": 60.9,
+        "loadMs": 809,
+        "critic": 76,
+        "critical": 0,
+        "high": 2,
+        "gates": "reject",
+        "webgl": null
+      },
+      "b": {
+        "quality": 73.4,
+        "fidelity": 62.1,
+        "pixelSimilarity": 68.7,
+        "accessibility": 100,
+        "composition": 76.2,
+        "typography": 100,
+        "performance": 70.8,
+        "fps": 61.4,
+        "loadMs": 827,
+        "critic": 76,
+        "critical": 0,
+        "high": 2,
+        "gates": "reject",
+        "webgl": null
+      }
+    },
+    {
+      "id": "scene-3d",
+      "reference": {
+        "title": "Astronomy",
+        "artist": "Giambologna",
+        "date": "17th century",
+        "objectId": 203938,
+        "url": "https://www.metmuseum.org/art/collection/search/203938",
+        "license": "CC0 / Public Domain"
+      },
+      "source": {
+        "aChars": 2992,
+        "bChars": 5455,
+        "aTokensEstimate": 748,
+        "bTokensEstimate": 1364,
+        "modelTokens": null,
+        "iterations": 0
+      },
+      "a": {
+        "quality": 75.1,
+        "fidelity": 64.6,
+        "pixelSimilarity": 60.9,
+        "accessibility": 100,
+        "composition": 91.9,
+        "typography": 100,
+        "performance": 85.5,
+        "fps": 61,
+        "loadMs": 813,
+        "critic": 76,
+        "critical": 0,
+        "high": 2,
+        "gates": "reject",
+        "webgl": null
+      },
+      "b": {
+        "quality": 76.8,
+        "fidelity": 66.1,
+        "pixelSimilarity": 71.8,
+        "accessibility": 100,
+        "composition": 82.7,
+        "typography": 100,
+        "performance": 65.3,
+        "fps": 58.6,
+        "loadMs": 894,
+        "critic": 76,
+        "critical": 0,
+        "high": 2,
+        "gates": "reject",
+        "webgl": {
+          "available": true,
+          "expectedDeg": 1.5,
+          "measuredMaxDeg": 1.41,
+          "errorDeg": 0.09,
+          "frames": 213,
+          "reducedMotion": false,
+          "status": "verified"
+        }
+      }
+    },
+    {
+      "id": "motion-graphics",
+      "reference": {
+        "title": "The Dance Class",
+        "artist": "Edgar Degas",
+        "date": "1874",
+        "objectId": 438817,
+        "url": "https://www.metmuseum.org/art/collection/search/438817",
+        "license": "CC0 / Public Domain"
+      },
+      "source": {
+        "aChars": 2985,
+        "bChars": 3234,
+        "aTokensEstimate": 747,
+        "bTokensEstimate": 809,
+        "modelTokens": null,
+        "iterations": 0
+      },
+      "a": {
+        "quality": 74.1,
+        "fidelity": 69.4,
+        "pixelSimilarity": 51.9,
+        "accessibility": 100,
+        "composition": 84.2,
+        "typography": 100,
+        "performance": 89.3,
+        "fps": 61.5,
+        "loadMs": 809,
+        "critic": 76,
+        "critical": 0,
+        "high": 2,
+        "gates": "reject",
+        "webgl": null
+      },
+      "b": {
+        "quality": 80.2,
+        "fidelity": 83.8,
+        "pixelSimilarity": 73.6,
+        "accessibility": 100,
+        "composition": 85.4,
+        "typography": 91.2,
+        "performance": 61.2,
+        "fps": 60.5,
+        "loadMs": 819,
+        "critic": 88,
+        "critical": 0,
+        "high": 1,
+        "gates": "reject",
+        "webgl": null
+      }
+    }
+  ],
+  "refVideo": "<repo>\\docs\\evidencia\\0.5\\references\\motion-reference.mp4",
+  "webgl": "webgl.json",
+  "motion": "motion.json",
+  "tokenNote": "Tokens estimados por caracteres/4; no hay telemetría del proveedor. Iteraciones del loop: 0; el A/B es una pasada reproducible."
+}

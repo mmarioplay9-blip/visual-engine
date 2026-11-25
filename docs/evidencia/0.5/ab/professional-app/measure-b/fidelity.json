@@ -1,0 +1,154 @@
+{
+  "version": "0.5",
+  "score": 75.4,
+  "grade": "B",
+  "dimensions": [
+    {
+      "id": "composition",
+      "label": "Posición y proporción de la composición",
+      "score": 98.1,
+      "weight": 0.14,
+      "status": "verified",
+      "evidence": {
+        "medicion": "masa por cuadrantes",
+        "nota": "proxy, no cajas de objetos"
+      },
+      "note": "La composición se mide por distribución de masa."
+    },
+    {
+      "id": "layout",
+      "label": "Layout y equilibrio",
+      "score": 96,
+      "weight": 0.1,
+      "status": "verified",
+      "evidence": {
+        "metodo": "balance horizontal/vertical del primer fotograma"
+      },
+      "note": "No se comparan posiciones de elementos individuales sin un mapa de referencia."
+    },
+    {
+      "id": "typography",
+      "label": "Tipografía y proporción",
+      "score": null,
+      "weight": 0.12,
+      "status": "unavailable",
+      "evidence": {
+        "nota": "requiere especificación y DOM"
+      },
+      "note": "Se compara escala relativa; la familia no se identifica."
+    },
+    {
+      "id": "palette",
+      "label": "Paleta y coherencia cromática",
+      "score": 0,
+      "weight": 0.1,
+      "status": "verified",
+      "evidence": {
+        "metodo": "histograma de matiz",
+        "nota": "no evalúa si el color es apropiado"
+      },
+      "note": "La similitud cromática no implica calidad artística."
+    },
+    {
+      "id": "lighting",
+      "label": "Iluminación",
+      "score": 66.7,
+      "weight": 0.09,
+      "status": "verified",
+      "evidence": {
+        "metodo": "luma, contraste y proporción oscura"
+      },
+      "note": "Medida global, no dirección de luz por objeto."
+    },
+    {
+      "id": "depth",
+      "label": "Profundidad",
+      "score": 99.1,
+      "weight": 0.08,
+      "status": "verified",
+      "evidence": {
+        "metodo": "dispersión de cuadrantes y detalle"
+      },
+      "note": "Proxy declarado; no es un mapa de profundidad."
+    },
+    {
+      "id": "materials",
+      "label": "Texturas y materiales",
+      "score": 70,
+      "weight": 0.07,
+      "status": "estimated",
+      "evidence": {
+        "materialDeclarado": "flat",
+        "señales": 12,
+        "blur": "no",
+        "sombra": "sí",
+        "estado": "estimated desde CSS computado"
+      },
+      "note": "Se infiere del CSS computado; no hay mapa de textura de referencia."
+    },
+    {
+      "id": "effects",
+      "label": "Efectos",
+      "score": null,
+      "weight": 0.08,
+      "status": "unavailable",
+      "evidence": {
+        "nota": "referencia sin efectos declarados"
+      },
+      "note": "La correspondencia es por etiqueta, no por píxel."
+    },
+    {
+      "id": "motion",
+      "label": "Trayectorias de movimiento",
+      "score": null,
+      "weight": 0.06,
+      "status": "unavailable",
+      "evidence": {
+        "nota": "sin cámara de referencia y animaciones comparables"
+      },
+      "note": "No se reconstruye la trayectoria exacta desde CSS."
+    },
+    {
+      "id": "rhythm",
+      "label": "Duración y ritmo",
+      "score": null,
+      "weight": 0.04,
+      "status": "unavailable",
+      "evidence": {
+        "nota": "sin escenas y animaciones comparables"
+      },
+      "note": "Ritmo global; no alineación escena a escena."
+    },
+    {
+      "id": "transitions",
+      "label": "Transiciones",
+      "score": 100,
+      "weight": 0.04,
+      "status": "verified",
+      "evidence": {
+        "nota": "sólo disponible con referencia temporal"
+      },
+      "note": "Sin vídeo de referencia no se afirma la transición."
+    },
+    {
+      "id": "frameCoherence",
+      "label": "Coherencia entre fotogramas",
+      "score": 82.8,
+      "weight": 0.08,
+      "status": "verified",
+      "evidence": {
+        "metodo": "estabilidad de luminancia",
+        "nota": "detecta parpadeo, no intención artística"
+      },
+      "note": "La estabilidad no equivale a buena dirección."
+    }
+  ],
+  "pixelSimilarity": 63.5,
+  "structuralVsPixel": "Estructura 75.4/100 · píxel 63.5/100. No son intercambiables: una imagen puede parecerse y seguir siendo un mal diseño.",
+  "warnings": [
+    "La similitud de píxeles se informa aparte y no se usa para aprobar calidad artística.",
+    "Layout, tipografía, materiales y movimiento se estiman con los datos disponibles; las dimensiones sin datos quedan fuera.",
+    "Sin especificación de referencia no se afirma fidelidad de posición, textura o trayectoria."
+  ],
+  "summary": "Fidelidad estructural 75.4/100 (B) · 8/12 dimensiones disponibles · similitud de píxeles 63.5 (informativa)."
+}

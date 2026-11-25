@@ -1,4 +1,4 @@
-# Capacidades de Visual Engine 0.4
+# Capacidades de Visual Engine 0.5
 
 Fecha: 2026-11-25 · Windows 11 · Node 26.13.1 · FFmpeg 9.1 · Playwright 1.65.1 ·
 Tesseract 5.4 · Ollama con `llava:7b` · RTX 4060 Ti (16.380 MB VRAM).
@@ -9,6 +9,42 @@ Tres estados, sin mezclarlos:
 - **Estimado**: hay una señal medida, pero la interpretación es un proxy; se devuelve como
   `estimated` con su evidencia.
 - **No disponible**: falta una herramienta o un modelo; se devuelve el motivo exacto.
+
+## 0.5 · Visual Intelligence Loop
+
+| Requisito | Implementación | Estado |
+| --- | --- | --- |
+| Visual Critic | 15 categorías con evidencia, ubicación, gravedad, confianza y corrección | **Verificado** con DOM y perfiles reales |
+| Debugger | selectores, cajas, regiones, CSS, capas, animaciones, canvas y fuente | **Verificado** en Chromium |
+| Correspondencia de fuente | clase/id/atributo encontrado en archivos del proyecto | **Verified** sólo con coincidencia; si no, `null` |
+| Fidelity Engine | layout, tipografía, paleta, luz, profundidad, materiales, efectos, movimiento, ritmo y transiciones | **Verificado/estimado por dimensión** |
+| Píxeles vs estructura | similitud de píxeles informativa, nunca sustituye calidad | **Verificado** |
+| Smart Effects | selección por brief, estilo, señales y presupuesto; anti-patrones | **Verificado**; minimalismo 0–1 |
+| Quality Gates | umbrales, defectos críticos, regresión y aprobación humana | **Verificado**; crítico bloquea |
+| Improvement Loop | copia, análisis, cambio del agente, recaptura, keep/revert y límites | **Verificado** con fixture y restauración |
+| Contexto selectivo | herramientas/recetas/docs acotados y caché por contenido | **Verificado**; 5 herramientas, 0–3 recetas |
+
+Suite completa: **54/54 pruebas PASS en 143,6 s**. MCP: **38 herramientas**. CLI: **39 comandos**.
+
+### A/B 0.5, cinco dominios
+
+Mismo agente, brief y copy; B usa tokens, Art Director, critic, fidelidad y gates. Referencias
+CC0 del MET usadas como dirección visual, no como pantallas de producto. **No se ajustaron las
+métricas.**
+
+| Caso | Calidad A → B | Fidelidad A → B | FPS A → B | Gates |
+| --- | ---: | ---: | ---: | --- |
+| App profesional | 66,4 → **79,6** | 64,6 → **75,4** | 61,0 → 61,3 | reject → reject |
+| Landing premium | 73,7 → **78,9** | 71,2 → **72,2** | 61,0 → 60,8 | reject → reject |
+| Interfaz de juego | 71,5 → **73,4** | 63,3 → 62,1 | 60,9 → 61,4 | reject → reject |
+| Escena 3D | 75,1 → **76,8** | 64,6 → **66,1** | 61,0 → 58,6 | reject → reject |
+| Motion graphics | 74,1 → **80,2** | 69,4 → **83,8** | 61,5 → 60,5 | reject → reject |
+
+La calidad sube en 5/5; fidelidad en 4/5 (juego baja 1,2). Los gates por defecto rechazan los
+cinco por coherencia/iluminación y un hallazgo de motion; no se relajaron. WebGL real: 1,5°
+esperados, 1,41° medidos, error 0,09°, 213 frames. Vídeo B: 7 s, 25 fps, 3 planos; temporal
+contra el montaje derivado 56,9/100. Tokens: estimación caracteres/4, sin telemetría del
+proveedor. Detalle: `docs/VERIFICACION-0.5.md` y `docs/evidencia/0.5/`.
 
 ## 0.4 · Art Director, Reference-to-Design y composiciones
 
@@ -139,11 +175,11 @@ con código 0. Se documenta como incompatibilidad de versión, no se oculta.
 
 | Requisito | Estado |
 | --- | --- |
-| MCP | **30 herramientas**, recurso de efectos y prompt; cliente stdio real |
-| CLI | **32 comandos**; incluye `art`, `refdesign`, `motiondirector`, `showcase` |
-| API local | mismas operaciones; incluye `/v1/art-direction`, `/v1/reference-design`, `/v1/motion-director`, `/v1/showcase` |
-| Skills | `skills/visual-engine/SKILL.md`, actualizada a 0.4 |
-| Instrucciones | `agents/AGENTS.md`, actualizadas a 0.4 |
+| MCP | **38 herramientas**, recurso de efectos y prompt; cliente stdio real |
+| CLI | **39 comandos**; incluye `art`, `refdesign`, `motiondirector`, `showcase`, `debug`, `critic`, `fidelity`, `gate`, `context`, `loop` y `loops` |
+| API local | mismas operaciones; incluye `/v1/intelligence`, `/v1/debug`, `/v1/critic`, `/v1/fidelity`, `/v1/gates`, `/v1/context`, `/v1/smart-effects`, `/v1/loop` |
+| Skills | `skills/visual-engine/SKILL.md`, actualizada a 0.5 |
+| Instrucciones | `agents/AGENTS.md`, actualizadas a 0.5 |
 | Independencia del modelo | Sí; no hay SDK de proveedor; Ollama es opcional y local |
 | Windows / Linux / macOS | Diseñado multiplataforma; **probado sólo en Windows** |
 | Instalación / actualización | PowerShell/Bash y `ve update`; **sin publicar en GitHub** |
@@ -153,16 +189,19 @@ con código 0. Se documenta como incompatibilidad de versión, no se oculta.
 1. **Objetos/pose**: no hay detector semántico; sólo saliencia. No se etiquetan clases.
 2. **Profundidad y parallax**: proxies geométricos, no mapas métricos.
 3. **Etiquetas de efectos**: interpretan señales; no identifican el shader o plugin concretos.
-4. **Rotación de cámara**: validada en magnitud sobre patrón sintético (2°→1,5°, error 0,5°); no certifica cualquier render WebGL.
-5. **Transiciones suaves**: curva y reduced-motion verificados; el A/B de transiciones contra vídeo no se ejecutó (la referencia A/B es estática).
+4. **Rotación de cámara**: patrón sintético 2°→1,5° (error 0,5°) y escena Three.js real 1,5°→1,41° (error 0,09°); no certifica cualquier WebGL.
+5. **Transiciones**: A/B con vídeo de tres planos y comparación temporal 56,9/100; la referencia es un montaje derivado de una obra CC0, no una pieza externa.
 6. **OCR**: falla con tipografía decorativa y puede confundir cifras; se declara.
 7. **LLaVA**: útil para descripción general, no para leer copy exacto; `qwen2.5vl:3b` falló.
-8. **Referencias reales**: se usaron renders propios autorizados (Remotion, GSAP, Three) y un
-   cartel CC0 del MET. No hay validación con material de cliente.
+8. **Referencias reales**: renders propios autorizados (Remotion, GSAP, Three) y cuatro obras
+   CC0 del MET reutilizadas en cinco casos A/B. No hay validación con material de cliente.
 9. **Temporal**: exige dos vídeos; la comparación de capturas se hace en `review`.
-10. **Plataformas**: sin pruebas en Linux/macOS.
-11. **Publicación**: el repositorio no se ha publicado en GitHub en esta fase.
-12. **Remotion**: aviso de `zod`; el render funciona, pero la combinación no está certificada.
+10. **Crítica**: es estructural; la aprobación artística final es humana y sigue pendiente.
+11. **Tokens del loop**: presupuesto estimado caracteres/4, no telemetría del proveedor.
+12. **Debugger**: inspecciona hasta 220 elementos prioritarios; no es inventario exhaustivo.
+13. **Plataformas**: sin pruebas en Linux/macOS.
+14. **Publicación**: el repositorio no se ha publicado en GitHub en esta fase.
+15. **Remotion**: aviso de `zod`; el render funciona, pero la combinación no está certificada.
 
 ## Cómo se evita el autoengaño
 

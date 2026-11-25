@@ -14,7 +14,8 @@ Usa el servidor MCP `visual-engine` (o la CLI `ve`) cuando la tarea tenga compon
 2. `visual_analyze` — extrae la paleta y métricas de la referencia.
 3. `visual_effects_list` / `visual_effect_apply` — base con intención, sin dependencias innecesarias.
 4. `visual_capture` — captura real con `frames >= 6`; revisa errores de consola.
-5. `visual_review` — puntuación y correcciones priorizadas; itera y compara.
+5. `visual_review` + `visual_debug` + `visual_critic` + `visual_fidelity` + `visual_gate` — evidencia localizada, fidelidad y aceptación.
+6. `visual_loop` con `confirm=true` — copia, aplica, mide y revierte. No inventes el cambio.
 
 ## Calidad
 

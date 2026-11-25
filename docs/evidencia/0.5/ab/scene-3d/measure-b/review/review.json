@@ -1,0 +1,1531 @@
+{
+  "outDir": "<repo>\\docs\\evidencia\\0.5\\ab\\scene-3d\\measure-b\\review",
+  "score": 71.8,
+  "grade": "C",
+  "reference": {
+    "path": "<repo>\\docs\\evidencia\\0.5\\ab\\scene-3d\\reference.jpg",
+    "profile": {
+      "source": "<repo>\\docs\\evidencia\\0.5\\ab\\scene-3d\\reference.jpg",
+      "kind": "video",
+      "width": 1280,
+      "height": 720,
+      "aspect": 1.778,
+      "duration": 0.04,
+      "fps": 25,
+      "frameCount": 10,
+      "aggregate": {
+        "luma": 0.546,
+        "contrast": 0.147,
+        "saturation": 0.065,
+        "colorfulness": 0.116,
+        "edgeDensity": 0.151,
+        "darkRatio": 0.009
+      },
+      "palette": [
+        {
+          "hex": "#9c9c9c",
+          "rgb": [
+            156,
+            156,
+            156
+          ],
+          "share": 0.8146
+        },
+        {
+          "hex": "#2a221d",
+          "rgb": [
+            42,
+            34,
+            29
+          ],
+          "share": 0.0671
+        },
+        {
+          "hex": "#5c4b3c",
+          "rgb": [
+            92,
+            75,
+            60
+          ],
+          "share": 0.0903
+        },
+        {
+          "hex": "#817062",
+          "rgb": [
+            129,
+            112,
+            98
+          ],
+          "share": 0.0251
+        },
+        {
+          "hex": "#c9b6ac",
+          "rgb": [
+            201,
+            182,
+            172
+          ],
+          "share": 0.0027
+        },
+        {
+          "hex": "#582818",
+          "rgb": [
+            88,
+            40,
+            24
+          ],
+          "share": 0
+        }
+      ],
+      "motion": 0,
+      "motionCurve": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "cuts": [],
+      "pace": 0,
+      "hueHistogram": [
+        0.185,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "frames": [
+        {
+          "t": 0.001,
+          "luma": 0.546,
+          "contrast": 0.147,
+          "saturation": 0.065,
+          "colorfulness": 0.116,
+          "edgeDensity": 0.151,
+          "darkRatio": 0.009,
+          "brightRatio": 0,
+          "quadrants": [
+            0.231,
+            0.245,
+            0.235,
+            0.289
+          ],
+          "palette": [
+            {
+              "hex": "#9c9c9c",
+              "rgb": [
+                156,
+                156,
+                156
+              ],
+              "share": 0.8146
+            },
+            {
+              "hex": "#2a221d",
+              "rgb": [
+                42,
+                34,
+                29
+              ],
+              "share": 0.0671
+            },
+            {
+              "hex": "#5c4b3c",
+              "rgb": [
+                92,
+                75,
+                60
+              ],
+              "share": 0.0903
+            },
+            {
+              "hex": "#817062",
+              "rgb": [
+                129,
+                112,
+                98
+              ],
+              "share": 0.0251
+            }
+          ]
+        },
+        {
+          "t": 0.005,
+          "luma": 0.546,
+          "contrast": 0.147,
+          "saturation": 0.065,
+          "colorfulness": 0.116,
+          "edgeDensity": 0.151,
+          "darkRatio": 0.009,
+          "brightRatio": 0,
+          "quadrants": [
+            0.231,
+            0.245,
+            0.235,
+            0.289
+          ],
+          "palette": [
+            {
+              "hex": "#9c9c9c",
+              "rgb": [
+                156,
+                156,
+                156
+              ],
+              "share": 0.8146
+            },
+            {
+              "hex": "#2a221d",
+              "rgb": [
+                42,
+                34,
+                29
+              ],
+              "share": 0.0671
+            },
+            {
+              "hex": "#5c4b3c",
+              "rgb": [
+                92,
+                75,
+                60
+              ],
+              "share": 0.0903
+            },
+            {
+              "hex": "#817062",
+              "rgb": [
+                129,
+                112,
+                98
+              ],
+              "share": 0.0251
+            }
+          ]
+        },
+        {
+          "t": 0.01,
+          "luma": 0.546,
+          "contrast": 0.147,
+          "saturation": 0.065,
+          "colorfulness": 0.116,
+          "edgeDensity": 0.151,
+          "darkRatio": 0.009,
+          "brightRatio": 0,
+          "quadrants": [
+            0.231,
+            0.245,
+            0.235,
+            0.289
+          ],
+          "palette": [
+            {
+              "hex": "#9c9c9c",
+              "rgb": [
+                156,
+                156,
+                156
+              ],
+              "share": 0.8146
+            },
+            {
+              "hex": "#2a221d",
+              "rgb": [
+                42,
+                34,
+                29
+              ],
+              "share": 0.0671
+            },
+            {
+              "hex": "#5c4b3c",
+              "rgb": [
+                92,
+                75,
+                60
+              ],
+              "share": 0.0903
+            },
+            {
+              "hex": "#817062",
+              "rgb": [
+                129,
+                112,
+                98
+              ],
+              "share": 0.0251
+            }
+          ]
+        },
+        {
+          "t": 0.014,
+          "luma": 0.546,
+          "contrast": 0.147,
+          "saturation": 0.065,
+          "colorfulness": 0.116,
+          "edgeDensity": 0.151,
+          "darkRatio": 0.009,
+          "brightRatio": 0,
+          "quadrants": [
+            0.231,
+            0.245,
+            0.235,
+            0.289
+          ],
+          "palette": [
+            {
+              "hex": "#9c9c9c",
+              "rgb": [
+                156,
+                156,
+                156
+              ],
+              "share": 0.8146
+            },
+            {
+              "hex": "#2a221d",
+              "rgb": [
+                42,
+                34,
+                29
+              ],
+              "share": 0.0671
+            },
+            {
+              "hex": "#5c4b3c",
+              "rgb": [
+                92,
+                75,
+                60
+              ],
+              "share": 0.0903
+            },
+            {
+              "hex": "#817062",
+              "rgb": [
+                129,
+                112,
+                98
+              ],
+              "share": 0.0251
+            }
+          ]
+        },
+        {
+          "t": 0.018,
+          "luma": 0.546,
+          "contrast": 0.147,
+          "saturation": 0.065,
+          "colorfulness": 0.116,
+          "edgeDensity": 0.151,
+          "darkRatio": 0.009,
+          "brightRatio": 0,
+          "quadrants": [
+            0.231,
+            0.245,
+            0.235,
+            0.289
+          ],
+          "palette": [
+            {
+              "hex": "#9c9c9c",
+              "rgb": [
+                156,
+                156,
+                156
+              ],
+              "share": 0.8146
+            },
+            {
+              "hex": "#2a221d",
+              "rgb": [
+                42,
+                34,
+                29
+              ],
+              "share": 0.0671
+            },
+            {
+              "hex": "#5c4b3c",
+              "rgb": [
+                92,
+                75,
+                60
+              ],
+              "share": 0.0903
+            },
+            {
+              "hex": "#817062",
+              "rgb": [
+                129,
+                112,
+                98
+              ],
+              "share": 0.0251
+            }
+          ]
+        },
+        {
+          "t": 0.022,
+          "luma": 0.546,
+          "contrast": 0.147,
+          "saturation": 0.065,
+          "colorfulness": 0.116,
+          "edgeDensity": 0.151,
+          "darkRatio": 0.009,
+          "brightRatio": 0,
+          "quadrants": [
+            0.231,
+            0.245,
+            0.235,
+            0.289
+          ],
+          "palette": [
+            {
+              "hex": "#9c9c9c",
+              "rgb": [
+                156,
+                156,
+                156
+              ],
+              "share": 0.8146
+            },
+            {
+              "hex": "#2a221d",
+              "rgb": [
+                42,
+                34,
+                29
+              ],
+              "share": 0.0671
+            },
+            {
+              "hex": "#5c4b3c",
+              "rgb": [
+                92,
+                75,
+                60
+              ],
+              "share": 0.0903
+            },
+            {
+              "hex": "#817062",
+              "rgb": [
+                129,
+                112,
+                98
+              ],
+              "share": 0.0251
+            }
+          ]
+        },
+        {
+          "t": 0.026,
+          "luma": 0.546,
+          "contrast": 0.147,
+          "saturation": 0.065,
+          "colorfulness": 0.116,
+          "edgeDensity": 0.151,
+          "darkRatio": 0.009,
+          "brightRatio": 0,
+          "quadrants": [
+            0.231,
+            0.245,
+            0.235,
+            0.289
+          ],
+          "palette": [
+            {
+              "hex": "#9c9c9c",
+              "rgb": [
+                156,
+                156,
+                156
+              ],
+              "share": 0.8146
+            },
+            {
+              "hex": "#2a221d",
+              "rgb": [
+                42,
+                34,
+                29
+              ],
+              "share": 0.0671
+            },
+            {
+              "hex": "#5c4b3c",
+              "rgb": [
+                92,
+                75,
+                60
+              ],
+              "share": 0.0903
+            },
+            {
+              "hex": "#817062",
+              "rgb": [
+                129,
+                112,
+                98
+              ],
+              "share": 0.0251
+            }
+          ]
+        },
+        {
+          "t": 0.03,
+          "luma": 0.546,
+          "contrast": 0.147,
+          "saturation": 0.065,
+          "colorfulness": 0.116,
+          "edgeDensity": 0.151,
+          "darkRatio": 0.009,
+          "brightRatio": 0,
+          "quadrants": [
+            0.231,
+            0.245,
+            0.235,
+            0.289
+          ],
+          "palette": [
+            {
+              "hex": "#9c9c9c",
+              "rgb": [
+                156,
+                156,
+                156
+              ],
+              "share": 0.8146
+            },
+            {
+              "hex": "#2a221d",
+              "rgb": [
+                42,
+                34,
+                29
+              ],
+              "share": 0.0671
+            },
+            {
+              "hex": "#5c4b3c",
+              "rgb": [
+                92,
+                75,
+                60
+              ],
+              "share": 0.0903
+            },
+            {
+              "hex": "#817062",
+              "rgb": [
+                129,
+                112,
+                98
+              ],
+              "share": 0.0251
+            }
+          ]
+        },
+        {
+          "t": 0.035,
+          "luma": 0.546,
+          "contrast": 0.147,
+          "saturation": 0.065,
+          "colorfulness": 0.116,
+          "edgeDensity": 0.151,
+          "darkRatio": 0.009,
+          "brightRatio": 0,
+          "quadrants": [
+            0.231,
+            0.245,
+            0.235,
+            0.289
+          ],
+          "palette": [
+            {
+              "hex": "#9c9c9c",
+              "rgb": [
+                156,
+                156,
+                156
+              ],
+              "share": 0.8146
+            },
+            {
+              "hex": "#2a221d",
+              "rgb": [
+                42,
+                34,
+                29
+              ],
+              "share": 0.0671
+            },
+            {
+              "hex": "#5c4b3c",
+              "rgb": [
+                92,
+                75,
+                60
+              ],
+              "share": 0.0903
+            },
+            {
+              "hex": "#817062",
+              "rgb": [
+                129,
+                112,
+                98
+              ],
+              "share": 0.0251
+            }
+          ]
+        },
+        {
+          "t": 0.039,
+          "luma": 0.546,
+          "contrast": 0.147,
+          "saturation": 0.065,
+          "colorfulness": 0.116,
+          "edgeDensity": 0.151,
+          "darkRatio": 0.009,
+          "brightRatio": 0,
+          "quadrants": [
+            0.231,
+            0.245,
+            0.235,
+            0.289
+          ],
+          "palette": [
+            {
+              "hex": "#9c9c9c",
+              "rgb": [
+                156,
+                156,
+                156
+              ],
+              "share": 0.8146
+            },
+            {
+              "hex": "#2a221d",
+              "rgb": [
+                42,
+                34,
+                29
+              ],
+              "share": 0.0671
+            },
+            {
+              "hex": "#5c4b3c",
+              "rgb": [
+                92,
+                75,
+                60
+              ],
+              "share": 0.0903
+            },
+            {
+              "hex": "#817062",
+              "rgb": [
+                129,
+                112,
+                98
+              ],
+              "share": 0.0251
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-11-25T20:40:01.868Z",
+      "warnings": [
+        "El detector de escenas de FFmpeg no encontró cortes por encima de 0.2."
+      ]
+    },
+    "description": [
+      "Fuente: <repo>\\docs\\evidencia\\0.5\\ab\\scene-3d\\reference.jpg",
+      "Formato: 1280x720 (1.78:1), video, 0.04 s, 25 fps",
+      "Luminancia media 54.6%, contraste 14.7%, saturación 6.5%",
+      "Colorido 11.6%, densidad de bordes 15.1%, zona oscura 0.9%",
+      "Paleta: #9c9c9c 81% · #2a221d 7% · #5c4b3c 9% · #817062 3% · #c9b6ac 0% · #582818 0%",
+      "Movimiento medio 0.00 · cortes 0 · ritmo 0 cortes/min",
+      "Pico de movimiento (p90) 0.00",
+      "Aviso: El detector de escenas de FFmpeg no encontró cortes por encima de 0.2."
+    ]
+  },
+  "target": {
+    "url": "http://127.0.0.1:65036/b.html",
+    "title": "Una órbita no es una línea. — B",
+    "frames": [
+      "<repo>\\docs\\evidencia\\0.5\\ab\\scene-3d\\measure-b\\review\\captures\\capture-01.png",
+      "<repo>\\docs\\evidencia\\0.5\\ab\\scene-3d\\measure-b\\review\\captures\\capture-02.png",
+      "<repo>\\docs\\evidencia\\0.5\\ab\\scene-3d\\measure-b\\review\\captures\\capture-03.png",
+      "<repo>\\docs\\evidencia\\0.5\\ab\\scene-3d\\measure-b\\review\\captures\\capture-04.png",
+      "<repo>\\docs\\evidencia\\0.5\\ab\\scene-3d\\measure-b\\review\\captures\\capture-05.png",
+      "<repo>\\docs\\evidencia\\0.5\\ab\\scene-3d\\measure-b\\review\\captures\\capture-06.png"
+    ],
+    "errors": [],
+    "consoleErrors": [],
+    "profile": {
+      "source": "captura:http://127.0.0.1:65036/b.html",
+      "kind": "sequence",
+      "width": 1280,
+      "height": 720,
+      "aspect": 1.778,
+      "duration": 0,
+      "fps": 0,
+      "frameCount": 6,
+      "aggregate": {
+        "luma": 0.122,
+        "contrast": 0.141,
+        "saturation": 0.359,
+        "colorfulness": 0.083,
+        "edgeDensity": 0.153,
+        "darkRatio": 0.542
+      },
+      "palette": [
+        {
+          "hex": "#11111d",
+          "rgb": [
+            17,
+            17,
+            29
+          ],
+          "share": 0.7423
+        },
+        {
+          "hex": "#2c293b",
+          "rgb": [
+            44,
+            41,
+            59
+          ],
+          "share": 0.2076
+        },
+        {
+          "hex": "#f4f5f7",
+          "rgb": [
+            244,
+            245,
+            247
+          ],
+          "share": 0.0159
+        },
+        {
+          "hex": "#4b5460",
+          "rgb": [
+            75,
+            84,
+            96
+          ],
+          "share": 0.0178
+        },
+        {
+          "hex": "#7d8089",
+          "rgb": [
+            125,
+            128,
+            137
+          ],
+          "share": 0.0055
+        },
+        {
+          "hex": "#a2a4ae",
+          "rgb": [
+            162,
+            164,
+            174
+          ],
+          "share": 0.0045
+        }
+      ],
+      "motion": 0.003,
+      "motionCurve": [
+        0.0034,
+        0.0031,
+        0.0028,
+        0.0029,
+        0.003
+      ],
+      "cuts": [],
+      "pace": 0,
+      "hueHistogram": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0.044,
+        0.95,
+        0,
+        0,
+        0
+      ],
+      "frames": [
+        {
+          "t": 0,
+          "luma": 0.122,
+          "contrast": 0.141,
+          "saturation": 0.359,
+          "colorfulness": 0.083,
+          "edgeDensity": 0.154,
+          "darkRatio": 0.542,
+          "brightRatio": 0.015,
+          "quadrants": [
+            0.326,
+            0.276,
+            0.12,
+            0.278
+          ],
+          "palette": [
+            {
+              "hex": "#11111d",
+              "rgb": [
+                17,
+                17,
+                29
+              ],
+              "share": 0.7423
+            },
+            {
+              "hex": "#2c293b",
+              "rgb": [
+                44,
+                41,
+                59
+              ],
+              "share": 0.2076
+            },
+            {
+              "hex": "#f4f5f7",
+              "rgb": [
+                244,
+                245,
+                247
+              ],
+              "share": 0.0159
+            },
+            {
+              "hex": "#4b5460",
+              "rgb": [
+                75,
+                84,
+                96
+              ],
+              "share": 0.0178
+            }
+          ]
+        },
+        {
+          "t": 0.25,
+          "luma": 0.122,
+          "contrast": 0.141,
+          "saturation": 0.359,
+          "colorfulness": 0.083,
+          "edgeDensity": 0.154,
+          "darkRatio": 0.541,
+          "brightRatio": 0.015,
+          "quadrants": [
+            0.326,
+            0.276,
+            0.12,
+            0.278
+          ],
+          "palette": [
+            {
+              "hex": "#11111d",
+              "rgb": [
+                17,
+                17,
+                29
+              ],
+              "share": 0.7423
+            },
+            {
+              "hex": "#2c293b",
+              "rgb": [
+                44,
+                41,
+                59
+              ],
+              "share": 0.2076
+            },
+            {
+              "hex": "#f4f5f7",
+              "rgb": [
+                244,
+                245,
+                247
+              ],
+              "share": 0.0159
+            },
+            {
+              "hex": "#4b5460",
+              "rgb": [
+                75,
+                84,
+                96
+              ],
+              "share": 0.0178
+            }
+          ]
+        },
+        {
+          "t": 0.5,
+          "luma": 0.122,
+          "contrast": 0.141,
+          "saturation": 0.359,
+          "colorfulness": 0.083,
+          "edgeDensity": 0.154,
+          "darkRatio": 0.541,
+          "brightRatio": 0.015,
+          "quadrants": [
+            0.326,
+            0.276,
+            0.12,
+            0.278
+          ],
+          "palette": [
+            {
+              "hex": "#11111d",
+              "rgb": [
+                17,
+                17,
+                29
+              ],
+              "share": 0.7423
+            },
+            {
+              "hex": "#2c293b",
+              "rgb": [
+                44,
+                41,
+                59
+              ],
+              "share": 0.2076
+            },
+            {
+              "hex": "#f4f5f7",
+              "rgb": [
+                244,
+                245,
+                247
+              ],
+              "share": 0.0159
+            },
+            {
+              "hex": "#4b5460",
+              "rgb": [
+                75,
+                84,
+                96
+              ],
+              "share": 0.0178
+            }
+          ]
+        },
+        {
+          "t": 0.75,
+          "luma": 0.122,
+          "contrast": 0.141,
+          "saturation": 0.359,
+          "colorfulness": 0.084,
+          "edgeDensity": 0.153,
+          "darkRatio": 0.542,
+          "brightRatio": 0.015,
+          "quadrants": [
+            0.326,
+            0.276,
+            0.12,
+            0.278
+          ],
+          "palette": [
+            {
+              "hex": "#11111d",
+              "rgb": [
+                17,
+                17,
+                29
+              ],
+              "share": 0.7423
+            },
+            {
+              "hex": "#2c293b",
+              "rgb": [
+                44,
+                41,
+                59
+              ],
+              "share": 0.2076
+            },
+            {
+              "hex": "#f4f5f7",
+              "rgb": [
+                244,
+                245,
+                247
+              ],
+              "share": 0.0159
+            },
+            {
+              "hex": "#4b5460",
+              "rgb": [
+                75,
+                84,
+                96
+              ],
+              "share": 0.0178
+            }
+          ]
+        },
+        {
+          "t": 1,
+          "luma": 0.122,
+          "contrast": 0.141,
+          "saturation": 0.359,
+          "colorfulness": 0.084,
+          "edgeDensity": 0.152,
+          "darkRatio": 0.542,
+          "brightRatio": 0.015,
+          "quadrants": [
+            0.326,
+            0.276,
+            0.12,
+            0.278
+          ],
+          "palette": [
+            {
+              "hex": "#11111d",
+              "rgb": [
+                17,
+                17,
+                29
+              ],
+              "share": 0.7423
+            },
+            {
+              "hex": "#2c293b",
+              "rgb": [
+                44,
+                41,
+                59
+              ],
+              "share": 0.2076
+            },
+            {
+              "hex": "#f4f5f7",
+              "rgb": [
+                244,
+                245,
+                247
+              ],
+              "share": 0.0159
+            },
+            {
+              "hex": "#4b5460",
+              "rgb": [
+                75,
+                84,
+                96
+              ],
+              "share": 0.0178
+            }
+          ]
+        },
+        {
+          "t": 1.25,
+          "luma": 0.122,
+          "contrast": 0.141,
+          "saturation": 0.359,
+          "colorfulness": 0.083,
+          "edgeDensity": 0.152,
+          "darkRatio": 0.542,
+          "brightRatio": 0.015,
+          "quadrants": [
+            0.326,
+            0.276,
+            0.12,
+            0.278
+          ],
+          "palette": [
+            {
+              "hex": "#11111d",
+              "rgb": [
+                17,
+                17,
+                29
+              ],
+              "share": 0.7423
+            },
+            {
+              "hex": "#2c293b",
+              "rgb": [
+                44,
+                41,
+                59
+              ],
+              "share": 0.2076
+            },
+            {
+              "hex": "#f4f5f7",
+              "rgb": [
+                244,
+                245,
+                247
+              ],
+              "share": 0.0159
+            },
+            {
+              "hex": "#4b5460",
+              "rgb": [
+                75,
+                84,
+                96
+              ],
+              "share": 0.0178
+            }
+          ]
+        }
+      ],
+      "createdAt": "2026-11-25T20:40:05.656Z",
+      "warnings": []
+    },
+    "accessibility": {
+      "checked": 10,
+      "violations": 0,
+      "averageContrast": 14.74,
+      "worstContrast": 6.13,
+      "samples": [
+        {
+          "text": "ORBITAL",
+          "contrast": 18.58,
+          "fontSize": 11,
+          "required": 4.5
+        },
+        {
+          "text": "ESTUDIO 04",
+          "contrast": 9.35,
+          "fontSize": 11,
+          "required": 4.5
+        },
+        {
+          "text": "VISUAL ENGINE / 0.5",
+          "contrast": 9.35,
+          "fontSize": 11,
+          "required": 4.5
+        },
+        {
+          "text": "ORBITAL / ESTUDIO 04",
+          "contrast": 6.13,
+          "fontSize": 11,
+          "required": 4.5
+        },
+        {
+          "text": "Una órbita no es una línea.",
+          "contrast": 18.58,
+          "fontSize": 87.04,
+          "required": 3
+        },
+        {
+          "text": "Escena espacial interactiva con cámara Three.js, profundidad real y movimiento q",
+          "contrast": 11.1,
+          "fontSize": 17,
+          "required": 4.5
+        },
+        {
+          "text": "01",
+          "contrast": 18.58,
+          "fontSize": 24,
+          "required": 3
+        },
+        {
+          "text": "6°",
+          "contrast": 18.58,
+          "fontSize": 24,
+          "required": 3
+        },
+        {
+          "text": "24",
+          "contrast": 18.58,
+          "fontSize": 24,
+          "required": 3
+        },
+        {
+          "text": "WebGL",
+          "contrast": 18.58,
+          "fontSize": 24,
+          "required": 3
+        }
+      ],
+      "note": "Contraste calculado en Chromium contra el primer ancestro con fondo opaco; aproximación orientativa, no certificación WCAG."
+    },
+    "typography": {
+      "elements": 10,
+      "headings": 1,
+      "distinctSizes": 4,
+      "averageFontSize": 24.4,
+      "hierarchyRatio": 7.9,
+      "note": "Tamaños y pesos leídos del DOM; no evalúa calidad artística de la elección tipográfica."
+    }
+  },
+  "comparison": {
+    "score": 71.8,
+    "grade": "C",
+    "metrics": [
+      {
+        "metric": "luminancia",
+        "reference": 0.546,
+        "candidate": 0.122,
+        "delta": 0.424,
+        "similarity": 0,
+        "weight": 0.14
+      },
+      {
+        "metric": "contraste",
+        "reference": 0.147,
+        "candidate": 0.141,
+        "delta": 0.006,
+        "similarity": 0.97,
+        "weight": 0.14
+      },
+      {
+        "metric": "saturación",
+        "reference": 0.065,
+        "candidate": 0.359,
+        "delta": 0.294,
+        "similarity": 0.16,
+        "weight": 0.1
+      },
+      {
+        "metric": "colorido",
+        "reference": 0.116,
+        "candidate": 0.083,
+        "delta": 0.033,
+        "similarity": 0.934,
+        "weight": 0.07
+      },
+      {
+        "metric": "densidad de bordes",
+        "reference": 0.151,
+        "candidate": 0.153,
+        "delta": 0.002,
+        "similarity": 0.992,
+        "weight": 0.12
+      },
+      {
+        "metric": "movimiento",
+        "reference": 0,
+        "candidate": 0.003,
+        "delta": 0.003,
+        "similarity": 0.9864,
+        "weight": 0.13
+      }
+    ],
+    "palette": {
+      "reference": [
+        "#9c9c9c",
+        "#2a221d",
+        "#5c4b3c",
+        "#817062",
+        "#c9b6ac",
+        "#582818"
+      ],
+      "candidate": [
+        "#11111d",
+        "#2c293b",
+        "#f4f5f7",
+        "#4b5460",
+        "#7d8089",
+        "#a2a4ae"
+      ],
+      "meanDeltaE": 8.54,
+      "similarity": 0.8447,
+      "missing": [
+        {
+          "hex": "#582818",
+          "share": 0,
+          "nearest": "#2c293b"
+        }
+      ],
+      "extra": []
+    },
+    "recommendations": [
+      "Faltan acentos de la referencia: #582818 (0%). Úsalos en elementos pequeños (bordes, indicadores, brillos), no como fondo completo.",
+      "El resultado es 42.4 puntos más oscuro. Aclara la base o sube el brillo de las capas grandes."
+    ],
+    "summary": "Fidelidad 71.8/100 (C). ΔE paleta 8.5, Δ luminancia -42.4%, Δ contraste -0.6%, Δ movimiento 0.30."
+  },
+  "quality": {
+    "overall": 76.8,
+    "grade": "B",
+    "dimensions": [
+      {
+        "id": "fidelity",
+        "label": "Fidelidad a la referencia",
+        "score": 71.8,
+        "weight": 0.3,
+        "evidence": {
+          "puntuacion": 71.8
+        },
+        "available": true
+      },
+      {
+        "id": "composition",
+        "label": "Composición",
+        "score": 82.7,
+        "weight": 0.12,
+        "evidence": {
+          "referencia": 0.94,
+          "resultado": 0.854,
+          "equilibrio": "masa por cuadrantes"
+        },
+        "available": true
+      },
+      {
+        "id": "hierarchy",
+        "label": "Jerarquía visual",
+        "score": 85.4,
+        "weight": 0.08,
+        "evidence": {
+          "referencia": 0.615,
+          "resultado": 0.688,
+          "base": "contraste, detalle y foco"
+        },
+        "available": true
+      },
+      {
+        "id": "typography",
+        "label": "Tipografía y legibilidad",
+        "score": 100,
+        "weight": 0.06,
+        "evidence": {
+          "elements": 10,
+          "headings": 1,
+          "distinctSizes": 4,
+          "averageFontSize": 24.4,
+          "hierarchyRatio": 7.9,
+          "note": "Tamaños y pesos leídos del DOM; no evalúa calidad artística de la elección tipográfica.",
+          "fuente": "DOM real (capture)"
+        },
+        "available": true
+      },
+      {
+        "id": "depth",
+        "label": "Profundidad",
+        "score": 77.3,
+        "weight": 0.05,
+        "evidence": {
+          "referencia": 0.398,
+          "resultado": 0.512,
+          "nota": "proxy de cuadrantes y detalle; no mapa métrico"
+        },
+        "available": true
+      },
+      {
+        "id": "lighting",
+        "label": "Iluminación",
+        "score": 38.9,
+        "weight": 0.07,
+        "evidence": {
+          "lumaReferencia": 0.546,
+          "lumaResultado": 0.122,
+          "contrasteReferencia": 0.147,
+          "contrasteResultado": 0.141
+        },
+        "available": true
+      },
+      {
+        "id": "animation",
+        "label": "Animación",
+        "score": 99.4,
+        "weight": 0.1,
+        "evidence": {
+          "movimientoReferencia": 0,
+          "movimientoResultado": 0.003,
+          "cortesReferencia": 0,
+          "cortesResultado": 0,
+          "ritmoReferencia": 0,
+          "ritmoResultado": 0
+        },
+        "available": true
+      },
+      {
+        "id": "transitions",
+        "label": "Transiciones y ritmo",
+        "score": 100,
+        "weight": 0.04,
+        "evidence": {
+          "cortesReferencia": 0,
+          "cortesResultado": 0,
+          "ritmoReferencia": 0,
+          "ritmoResultado": 0
+        },
+        "available": true
+      },
+      {
+        "id": "coherence",
+        "label": "Coherencia estética",
+        "score": 0,
+        "weight": 0.05,
+        "evidence": {
+          "histogramaDeMatiz": "coseno entre referencias y resultado",
+          "valor": 0
+        },
+        "available": true
+      },
+      {
+        "id": "accessibility",
+        "label": "Accesibilidad de contraste",
+        "score": 100,
+        "weight": 0.07,
+        "evidence": {
+          "checked": 10,
+          "violations": 0,
+          "averageContrast": 14.74,
+          "worstContrast": 6.13,
+          "samples": [
+            {
+              "text": "ORBITAL",
+              "contrast": 18.58,
+              "fontSize": 11,
+              "required": 4.5
+            },
+            {
+              "text": "ESTUDIO 04",
+              "contrast": 9.35,
+              "fontSize": 11,
+              "required": 4.5
+            },
+            {
+              "text": "VISUAL ENGINE / 0.5",
+              "contrast": 9.35,
+              "fontSize": 11,
+              "required": 4.5
+            },
+            {
+              "text": "ORBITAL / ESTUDIO 04",
+              "contrast": 6.13,
+              "fontSize": 11,
+              "required": 4.5
+            },
+            {
+              "text": "Una órbita no es una línea.",
+              "contrast": 18.58,
+              "fontSize": 87.04,
+              "required": 3
+            },
+            {
+              "text": "Escena espacial interactiva con cámara Three.js, profundidad real y movimiento q",
+              "contrast": 11.1,
+              "fontSize": 17,
+              "required": 4.5
+            },
+            {
+              "text": "01",
+              "contrast": 18.58,
+              "fontSize": 24,
+              "required": 3
+            },
+            {
+              "text": "6°",
+              "contrast": 18.58,
+              "fontSize": 24,
+              "required": 3
+            },
+            {
+              "text": "24",
+              "contrast": 18.58,
+              "fontSize": 24,
+              "required": 3
+            },
+            {
+              "text": "WebGL",
+              "contrast": 18.58,
+              "fontSize": 24,
+              "required": 3
+            }
+          ],
+          "note": "Contraste calculado en Chromium contra el primer ancestro con fondo opaco; aproximación orientativa, no certificación WCAG.",
+          "norma": "WCAG AA orientativo (4.5:1; 3:1 texto grande)"
+        },
+        "available": true
+      },
+      {
+        "id": "fluidity",
+        "label": "Fluidez",
+        "score": 99.9,
+        "weight": 0.03,
+        "evidence": {
+          "jerk": 0.0001,
+          "parpadeo": 0,
+          "muestras": 5
+        },
+        "available": true
+      },
+      {
+        "id": "performance",
+        "label": "Rendimiento",
+        "score": 65.3,
+        "weight": 0.03,
+        "evidence": {
+          "intervaloMedioMs": 413.8,
+          "intervaloTargetMs": 250,
+          "jitterRelativo": 0.013,
+          "capturas": 6
+        },
+        "available": true
+      },
+      {
+        "id": "restraint",
+        "label": "Contención decorativa",
+        "score": null,
+        "weight": 0.02,
+        "evidence": {
+          "nota": "sin recuento de efectos"
+        },
+        "available": false
+      }
+    ],
+    "summary": "Calidad 76.8/100 (B) · fidelidad 71.8 · composición 82.7 · jerarquía 85.4 · animación 99.4 · tipografía 100.0 · profundidad 77.3 · iluminación 38.9 · transiciones 100.0 · coherencia 0.0 · accesibilidad 100.0 · fluidez 99.9 · rendimiento 65.3.",
+    "weightsUsed": {
+      "fidelity": 0.3,
+      "composition": 0.12,
+      "hierarchy": 0.08,
+      "typography": 0.06,
+      "depth": 0.05,
+      "lighting": 0.07,
+      "animation": 0.1,
+      "transitions": 0.04,
+      "coherence": 0.05,
+      "accessibility": 0.07,
+      "fluidity": 0.03,
+      "performance": 0.03
+    }
+  },
+  "image": {
+    "width": 240,
+    "height": 135,
+    "mae": 0.4344,
+    "rmse": 0.4584,
+    "deltaE": 49.39,
+    "ssim": 0.2155,
+    "paletteDeltaE": 49.39,
+    "heatmap": "<repo>\\docs\\evidencia\\0.5\\ab\\scene-3d\\measure-b\\review\\diff\\heatmap.png",
+    "score": 15.1
+  },
+  "heatmap": "<repo>\\docs\\evidencia\\0.5\\ab\\scene-3d\\measure-b\\review\\diff\\heatmap.png",
+  "referenceFrame": "<repo>\\docs\\evidencia\\0.5\\ab\\scene-3d\\measure-b\\review\\reference-frame.png",
+  "warnings": []
+}
