@@ -4,6 +4,8 @@ export interface ExecOptions {
   cwd?: string;
   timeoutMs?: number;
   input?: Buffer | string;
+  /** Sólo para shims .cmd en Windows; nunca con rutas del usuario. */
+  shell?: boolean;
 }
 
 export interface ExecResult {
@@ -24,6 +26,7 @@ export function exec(command: string, args: string[], opts: ExecOptions = {}): P
     const child = spawn(command, args, {
       cwd: opts.cwd,
       windowsHide: true,
+      shell: opts.shell === true,
       stdio: ['pipe', 'pipe', 'pipe'],
     });
     const out: Buffer[] = [];

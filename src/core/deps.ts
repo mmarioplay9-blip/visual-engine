@@ -269,6 +269,27 @@ export interface InstallResult {
   stderr: string;
 }
 
+/**
+ * Localiza el CLI de npm que acompaña a Node. Evita lanzar `npm.cmd`, que en
+ * Windows exige shell y rompe con rutas que llevan espacios.
+ */
+export function npmCliPath(): string | null {
+  const exeDir = path.dirname(process.execPath);
+  const candidates = [
+    path.join(exeDir, 'node_modules', 'npm', 'bin', 'npm-cli.js'),
+    path.join(exeDir, 'lib', 'node_modules', 'npm', 'bin', 'npm-cli.js'),
+    path.join(exeDir, '..', 'lib', 'node_modules', 'npm', 'bin', 'npm-cli.js'),
+  ];
+  return candidates.find((c) => fs.existsSync(c)) ?? null;
+}
+
+/** Ejecuta npm sin shell cuando es posible (todas las plataformas soportadas). */
+export async function runNpm(args: string[], cwd: string, timeoutMs = 600_000) {
+  const cli = npmCliPath();
+  if (cli) return exec(process.execPath, [cli, ...args], { cwd, timeoutMs });
+  return exec('npm', args, { cwd, timeoutMs, shell: process.platform === 'win32' });
+}
+
 export function detectPackageManager(dir: string): string {
   if (fs.existsSync(path.join(dir, 'pnpm-lock.yaml'))) return 'pnpm';
   if (fs.existsSync(path.join(dir, 'yarn.lock'))) return 'yarn';
@@ -294,7 +315,9 @@ export async function installPackages(
     return { ok: true, manager, command, dryRun: true, stdout: 'Simulación: no se ha instalado nada.', stderr: '' };
   }
   if (!list.length) return { ok: true, manager, command, dryRun: false, stdout: 'Nada que instalar.', stderr: '' };
-  const r = await exec(manager, args, { cwd: dir, timeoutMs: 600_000 });
+  const r = manager === 'npm'
+    ? await runNpm(args, dir)
+    : await exec(manager, args, { cwd: dir, timeoutMs: 600_000, shell: process.platform === 'win32' });
   return {
     ok: r.ok,
     manager,

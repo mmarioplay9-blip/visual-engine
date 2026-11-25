@@ -1,4 +1,4 @@
-<#
+﻿<#
   Visual Engine · instalador para Windows
   Uso:
     powershell -ExecutionPolicy Bypass -File install\install.ps1
@@ -16,6 +16,9 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+# Salida UTF-8 para que los acentos se lean también al redirigir a un archivo.
+$OutputEncoding = [System.Text.Encoding]::UTF8
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
 function Require-Command([string]$Name, [string]$Hint) {
   if (-not (Get-Command $Name -ErrorAction SilentlyContinue)) {

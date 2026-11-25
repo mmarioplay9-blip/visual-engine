@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import path from 'node:path';
 import { ADAPTERS } from '../core/adapters.js';
+import { runNpm } from '../core/deps.js';
 import { initProject, type AgentName, type ClientName } from '../core/init.js';
 import {
   opAdapters,
@@ -378,18 +379,20 @@ async function cmdMcp() {
 
 async function cmdUpdate(p: Parsed) {
   const dir = path.resolve(s(p, 'dir') ?? PACKAGE_ROOT);
-  const steps: [string, string[]][] = [
-    ['git', ['-C', dir, 'pull', '--ff-only']],
-    ['npm', ['install', '--no-audit', '--no-fund']],
-    ['npm', ['run', 'build']],
+  const steps: { label: string; npm?: string[]; git?: string[] }[] = [
+    { label: 'git pull', git: ['-C', dir, 'pull', '--ff-only'] },
+    { label: 'npm install', npm: ['install', '--no-audit', '--no-fund'] },
+    { label: 'npm run build', npm: ['run', 'build'] },
   ];
-  for (const [cmd, args] of steps) {
-    console.log(`> ${cmd} ${args.join(' ')}`);
-    const r = await exec(cmd, args, { cwd: dir, timeoutMs: 600_000 });
+  for (const step of steps) {
+    console.log(`> ${step.label}`);
+    const r = step.npm
+      ? await runNpm(step.npm, dir)
+      : await exec('git', step.git!, { cwd: dir, timeoutMs: 600_000 });
     if (r.stdout.length) process.stdout.write(r.stdout.toString('utf8'));
     if (r.stderr.length) process.stderr.write(r.stderr);
     if (!r.ok) {
-      console.error(`Falló: ${cmd} ${args.join(' ')}`);
+      console.error(`Falló: ${step.label}`);
       process.exitCode = 1;
       return;
     }

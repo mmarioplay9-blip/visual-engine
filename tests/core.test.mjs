@@ -12,6 +12,7 @@ const importDist = (p) => import(pathToFileURL(path.join(root, 'dist', 'core', p
 const { metricsFromRgb, paletteFromHist, analyzeFile, composeProfile } = await importDist('analysis.js');
 const { probe, rgbToPng, sampleFrames } = await importDist('media.js');
 const { compareProfiles, compareImages } = await importDist('compare.js');
+const { runNpm, npmCliPath } = await importDist('deps.js');
 
 const reference = path.join(root, 'demo', 'reference', 'brand-intro.mp4');
 if (!fs.existsSync(reference)) {
@@ -120,6 +121,13 @@ test('compareImages: idénticas = SSIM 1 y mapa de calor PNG real', async () => 
   assert.ok(diff.score < 30);
   const head = fs.readFileSync(diff.heatmap).subarray(0, 8);
   assert.deepEqual([...head], [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a], 'el mapa de calor debe ser PNG');
+});
+
+test('runNpm lanza npm sin shell y responde', async () => {
+  const r = await runNpm(['--version'], root, 60_000);
+  assert.equal(r.ok, true, r.stderr);
+  assert.match(r.stdout.toString().trim(), /^\d+\.\d+\.\d+/, `versión inesperada: ${r.stdout}`);
+  if (process.platform === 'win32') assert.ok(npmCliPath(), 'debe encontrar npm-cli.js junto a Node');
 });
 
 test('analyzeFile rechaza archivos inexistentes con error claro', async () => {
