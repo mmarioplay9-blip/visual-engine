@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Glass HUD · Visual Engine</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body style="--bg: {{bg}}; --accent: {{accent}}; --panel: {{panel}}; --ink: {{ink}}">
+  <div class="grid" aria-hidden="true"></div>
+  <div class="ambient" aria-hidden="true"></div>
+
+  <header class="head">
+    <span class="brand"><i></i>{{title}}</span>
+    <span class="tag">VE / HUD 06</span>
+  </header>
+
+  <main class="layout">
+    <section class="core">
+      <div class="radar" aria-hidden="true"></div>
+      <svg viewBox="0 0 400 400" class="rings" aria-hidden="true">
+        <circle cx="200" cy="200" r="164" class="ring dashed" />
+        <circle cx="200" cy="200" r="140" class="ring faint" />
+        <circle cx="200" cy="200" r="106" class="ring" />
+        <circle cx="200" cy="200" r="46" class="ring faint" />
+        <g id="ticks"></g>
+        <path d="M200 36 L200 58 M200 342 L200 364 M36 200 L58 200 M342 200 L364 200" class="cross" />
+      </svg>
+      <div class="readout">
+        <span class="value" id="fidelity">0.0</span><span class="unit">%</span>
+        <span class="label">FIDELIDAD MEDIDA</span>
+      </div>
+      <div class="scanline" aria-hidden="true"></div>
+    </section>
+
+    <aside class="cards">
+      <div class="card">
+        <span class="k">PALETA</span>
+        <div class="swatches">
+          <i style="--c: var(--accent)"></i><i style="--c: #ffb454"></i><i style="--c: #3a6cff"></i><i style="--c: #f2f6ff"></i>
+        </div>
+        <span class="v">4 tonos · ΔE 3.2</span>
+      </div>
+      <div class="card">
+        <span class="k">MOVIMIENTO</span>
+        <div class="bars" id="bars"></div>
+        <span class="v" id="motion">0.00</span>
+      </div>
+      <div class="card">
+        <span class="k">LATIDO</span>
+        <span class="v big" id="clock">--:--:--</span>
+        <span class="v">sincronizado con el sistema</span>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="bar">
+    <span>REF → CAPTURA → Δ</span>
+    <span class="meter"><i></i></span>
+    <span id="fps">--- fps</span>
+  </footer>
+
+  <script type="module" src="effect.js"></script>
+</body>
+</html>

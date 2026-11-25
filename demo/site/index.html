@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Visual Engine · demo</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <canvas id="stage" aria-hidden="true"></canvas>
+
+  <div class="aurora" aria-hidden="true">
+    <span class="b b1"></span>
+    <span class="b b2"></span>
+    <span class="b b3"></span>
+  </div>
+  <div class="grid" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="scan" aria-hidden="true"></div>
+  <div class="beam" aria-hidden="true"></div>
+  <div class="ring-wrap" aria-hidden="true"></div>
+  <div class="pulse" aria-hidden="true"></div>
+
+  <header class="top">
+    <span class="brand"><i></i>VISUAL ENGINE</span>
+    <span class="chip">0.1 · LOCAL</span>
+  </header>
+
+  <main class="hero">
+    <p class="kicker" data-fade><span class="dot"></span>REFERENCIA · 3 s · 30 FPS</p>
+    <h1 data-split>La diferencia entre generar y diseñar.</h1>
+    <p class="lead" data-fade>Cada decisión visual responde a una medición: paleta, luz, ritmo y detalle. Sin efectos que no aportan.</p>
+    <div class="actions" data-fade>
+      <a class="btn" href="#">Ver la revisión</a>
+      <span class="hint">Δ medido, no opinado</span>
+    </div>
+    <div class="acts" data-fade>
+      <span class="act" data-act="0"><b>01</b> AURORA</span>
+      <span class="act" data-act="1"><b>02</b> PRISMA</span>
+      <span class="act" data-act="2"><b>03</b> NÚCLEO</span>
+    </div>
+  </main>
+
+  <footer class="bottom">
+    <span class="rule" aria-hidden="true"></span>
+    <span class="status" id="status">ACT 01 · AURORA</span>
+    <span class="time" id="time">00:00</span>
+  </footer>
+
+  <script type="importmap">{ "imports": { "three": "./vendor/three.module.min.js" } }</script>
+  <script src="./vendor/gsap.min.js"></script>
+  <script type="module" src="./main.js"></script>
+</body>
+</html>

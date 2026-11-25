@@ -1,0 +1,46 @@
+{
+  "name": "visual-engine",
+  "version": "0.1.0",
+  "description": "Motor universal de calidad visual para agentes de IA: analiza referencias, genera efectos, captura resultados y compara con la referencia.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "ve": "dist/cli/index.js",
+    "visual-engine": "dist/cli/index.js"
+  },
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsc -p tsconfig.json --watch",
+    "pretest": "node demo/prepare.mjs",
+    "test": "npm run build && node --test --test-concurrency=1 tests/",
+    "demo:prepare": "node demo/prepare.mjs",
+    "demo:reference": "node demo/make-reference.mjs",
+    "demo:review": "node dist/cli/index.js review --reference demo/reference/brand-intro.mp4 --target demo/site --out demo/out",
+    "ve": "node dist/cli/index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.20.0",
+    "gsap": "^3.13.0",
+    "motion": "^12.0.0",
+    "playwright": "^1.48.0",
+    "three": "^0.170.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.0",
+    "typescript": "^5.6.0"
+  },
+  "files": [
+    "dist",
+    "library",
+    "skills",
+    "agents",
+    "docs",
+    "install",
+    "README.md",
+    "LICENSE"
+  ]
+}

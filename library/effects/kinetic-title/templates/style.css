@@ -1,0 +1,184 @@
+:root {
+  color-scheme: dark;
+  --bg: #08090c;
+  --ink: #f2f5f8;
+  --accent: #ff4d6d;
+  font-family: "Inter", "Segoe UI", ui-sans-serif, system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.grid {
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--ink) 6%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--ink) 6%, transparent) 1px, transparent 1px);
+  background-size: min(11vw, 132px) min(11vw, 132px);
+  mask-image: radial-gradient(120% 90% at 70% 20%, black 30%, transparent 85%);
+}
+
+.glow {
+  position: fixed;
+  width: 62vw;
+  height: 62vw;
+  right: -18vw;
+  top: -26vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 30%, transparent), transparent 62%);
+  filter: blur(30px);
+  opacity: 0.55;
+  animation: breathe 9s ease-in-out infinite;
+}
+
+@keyframes breathe {
+  50% { transform: scale(1.12) translateY(2%); opacity: 0.4; }
+}
+
+.stage {
+  position: relative;
+  min-height: 100%;
+  padding: clamp(22px, 4.5vw, 64px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--ink) 55%, transparent);
+}
+
+.badge {
+  border: 1px solid color-mix(in srgb, var(--ink) 18%, transparent);
+  border-radius: 999px;
+  padding: 6px 12px;
+  letter-spacing: 0.12em;
+  color: color-mix(in srgb, var(--ink) 75%, transparent);
+}
+
+.stack {
+  margin: auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2px, 0.6vw, 10px);
+  font-size: clamp(46px, 11.4vw, 168px);
+  line-height: 0.88;
+  letter-spacing: -0.055em;
+  font-weight: 640;
+}
+
+.row { display: block; }
+.row .mask { display: block; overflow: hidden; padding-bottom: 0.06em; }
+.row em {
+  display: block;
+  font-style: normal;
+  transform: translateY(108%) rotate(2.5deg);
+  transform-origin: left bottom;
+}
+.row.accent em {
+  font-family: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  color: var(--accent);
+  background: linear-gradient(92deg, var(--accent) 0%, color-mix(in srgb, var(--accent) 45%, white) 45%, var(--accent) 100%);
+  background-size: 240% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 7s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.bottom {
+  display: flex;
+  align-items: center;
+  gap: clamp(14px, 3vw, 32px);
+  font-size: 12.5px;
+  color: color-mix(in srgb, var(--ink) 52%, transparent);
+}
+
+.rule {
+  flex: 0 0 clamp(48px, 9vw, 140px);
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  transform-origin: left;
+  transform: scaleX(0);
+}
+
+.note { margin: 0; max-width: 34ch; line-height: 1.5; }
+
+.coord {
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.12em;
+  font-size: 10.5px;
+  white-space: nowrap;
+  color: color-mix(in srgb, var(--ink) 34%, transparent);
+}
+
+.ticker {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  border-top: 1px solid color-mix(in srgb, var(--ink) 9%, transparent);
+  background: color-mix(in srgb, var(--bg) 80%, black);
+  padding: 9px 0;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--ink) 40%, transparent);
+}
+
+.track {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  white-space: nowrap;
+  animation: marquee 26s linear infinite;
+  will-change: transform;
+}
+
+.track i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.7;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-33.3333%); }
+}
+
+.perf { will-change: transform; }
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker .track, .glow, .row.accent em { animation: none !important; }
+  .row em { transform: none; }
+  .rule { transform: scaleX(1); }
+}

@@ -1,0 +1,27 @@
+---
+description: Visual Engine — medición y mejora de calidad visual con herramientas locales
+globs:
+alwaysApply: true
+---
+
+# Visual Engine en Cursor
+
+Usa el servidor MCP `visual-engine` (o la CLI `ve`) cuando la tarea tenga componente visual.
+
+## Secuencia
+
+1. `visual_doctor` — no prometas herramientas que falten.
+2. `visual_analyze` — extrae la paleta y métricas de la referencia.
+3. `visual_effects_list` / `visual_effect_apply` — base con intención, sin dependencias innecesarias.
+4. `visual_capture` — captura real con `frames >= 6`; revisa errores de consola.
+5. `visual_review` — puntuación y correcciones priorizadas; itera y compara.
+
+## Calidad
+
+- Evita fondos planos y tipografía sin jerarquía cuando se pide calidad avanzada.
+- Un foco de luz, profundidad real y micro-detalle (grano, retícula, partículas finas).
+- Nada de efectos gratuitos que bajen rendimiento o fidelidad.
+- Sin CDNs ni APIs de pago. DPR ≤ 2 y `prefers-reduced-motion`.
+- Licencias: GSAP Club de pago; Remotion no es MIT; React Bits CC-BY requiere atribución.
+
+Nunca afirmes que un módulo funciona sin haberlo ejecutado.

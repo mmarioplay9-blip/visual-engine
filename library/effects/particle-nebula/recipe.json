@@ -1,0 +1,20 @@
+{
+  "id": "particle-nebula",
+  "name": "Particle Nebula",
+  "category": "3d",
+  "summary": "Nube de partículas con shader propio, anillos aditivos y deriva de cámara; nebulosa profunda con acentos cálidos.",
+  "tags": ["3d", "three", "particulas", "shader", "hero", "webgl"],
+  "engines": ["three", "webgl", "glsl"],
+  "requires": ["three"],
+  "performance": "3000 puntos con un solo draw call y dos anillos; DPR limitado a 2. Medido ~9% de un núcleo a 1280x720.",
+  "license": "MIT (propio); Three.js MIT",
+  "entry": "index.html",
+  "params": [
+    { "name": "bg", "type": "color", "default": "#05070d", "description": "Fondo" },
+    { "name": "accent", "type": "color", "default": "#12e0c8", "description": "Acento frío" },
+    { "name": "accent2", "type": "color", "default": "#ffb454", "description": "Acento cálido" },
+    { "name": "ink", "type": "color", "default": "#eaf3ff", "description": "Texto" },
+    { "name": "title", "type": "string", "default": "Nebulosa", "description": "Titular" },
+    { "name": "subtitle", "type": "string", "default": "Partículas, profundidad y luz con intención.", "description": "Subtítulo" }
+  ]
+}

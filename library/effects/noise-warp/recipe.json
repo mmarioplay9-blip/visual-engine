@@ -1,0 +1,20 @@
+{
+  "id": "noise-warp",
+  "name": "Noise Warp",
+  "category": "transicion",
+  "summary": "Transición por franjas con desplazamiento de ruido entre dos escenas, grano y ciclo automático; pensada para cortes rápidos.",
+  "tags": ["transicion", "canvas", "ruido", "glitch", "motion"],
+  "engines": ["canvas2d"],
+  "requires": [],
+  "performance": "Dos escenas precacheadas en offscreen y ~120 franjas por frame; medido ~11% de un núcleo a 1280x720.",
+  "license": "MIT (propio)",
+  "entry": "index.html",
+  "params": [
+    { "name": "bg", "type": "color", "default": "#05060a", "description": "Fondo" },
+    { "name": "colorA", "type": "color", "default": "#0b3b45", "description": "Escena A" },
+    { "name": "colorB", "type": "color", "default": "#4a2a0c", "description": "Escena B" },
+    { "name": "ink", "type": "color", "default": "#f4fbff", "description": "Texto" },
+    { "name": "labelA", "type": "string", "default": "ENTRADA", "description": "Etiqueta A" },
+    { "name": "labelB", "type": "string", "default": "SALIDA", "description": "Etiqueta B" }
+  ]
+}

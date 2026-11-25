@@ -1,0 +1,19 @@
+{
+  "id": "glass-hud",
+  "name": "Glass HUD",
+  "category": "interfaz",
+  "summary": "Panel de telemetría con anillos SVG, radar giratorio, contadores reales y tarjetas de cristal; aspecto de instrumento, no de plantilla.",
+  "tags": ["hud", "interfaz", "datos", "svg", "glass", "telemetria"],
+  "engines": ["svg", "css"],
+  "requires": [],
+  "performance": "Sin canvas: SVG + animaciones CSS en compositor; los contadores usan un único requestAnimationFrame.",
+  "license": "MIT (propio)",
+  "entry": "index.html",
+  "params": [
+    { "name": "bg", "type": "color", "default": "#06090f", "description": "Fondo" },
+    { "name": "accent", "type": "color", "default": "#5ef2c0", "description": "Acento" },
+    { "name": "panel", "type": "color", "default": "#0d1420", "description": "Base del cristal" },
+    { "name": "ink", "type": "color", "default": "#e8f4ff", "description": "Texto" },
+    { "name": "title", "type": "string", "default": "SISTEMA VISUAL", "description": "Etiqueta superior" }
+  ]
+}

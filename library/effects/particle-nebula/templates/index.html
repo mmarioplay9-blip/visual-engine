@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Particle Nebula · Visual Engine</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body style="--bg: {{bg}}; --accent: {{accent}}; --accent-2: {{accent2}}; --ink: {{ink}}">
+  <div id="stage" aria-hidden="true"></div>
+  <div class="flare" aria-hidden="true"></div>
+
+  <main class="copy">
+    <p class="kicker"><span></span> WEBGL · SHADER PROPIO</p>
+    <h1>{{title}}</h1>
+    <p class="sub">{{subtitle}}</p>
+    <div class="stats">
+      <div><b>3k</b><span>partículas</span></div>
+      <div><b>1</b><span>draw call</span></div>
+      <div><b>60</b><span>fps objetivo</span></div>
+    </div>
+  </main>
+
+  <div class="corner tl" aria-hidden="true"></div>
+  <div class="corner br" aria-hidden="true"></div>
+
+  <script type="importmap">{ "imports": { "three": "/node_modules/three/build/three.module.js" } }</script>
+  <script type="module" src="effect.js"></script>
+</body>
+</html>

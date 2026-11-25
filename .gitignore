@@ -1,0 +1,11 @@
+node_modules/
+dist/
+demo/out/
+demo/reference/
+demo/site/vendor/
+.tmp/
+.cache/
+*.log
+.DS_Store
+Thumbs.db
+*.tsbuildinfo

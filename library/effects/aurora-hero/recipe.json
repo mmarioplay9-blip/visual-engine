@@ -1,0 +1,22 @@
+{
+  "id": "aurora-hero",
+  "name": "Aurora Hero",
+  "category": "hero",
+  "summary": "Héroe oscuro con aurora de gradientes en canvas, grano fino, viñeta y entrada tipográfica escalonada.",
+  "tags": ["hero", "aurora", "canvas", "gradiente", "premium", "oscuro"],
+  "engines": ["canvas2d", "css"],
+  "requires": [],
+  "performance": "5 blobs radiales por frame a DPR<=2; medido ~6% de un núcleo a 1280x720 en Chromium headless.",
+  "license": "MIT (propio)",
+  "entry": "index.html",
+  "params": [
+    { "name": "bg", "type": "color", "default": "#070b12", "description": "Fondo base" },
+    { "name": "accent", "type": "color", "default": "#12e0c8", "description": "Acento principal (aurora)" },
+    { "name": "accent2", "type": "color", "default": "#ffb454", "description": "Acento cálido secundario" },
+    { "name": "ink", "type": "color", "default": "#eef6ff", "description": "Color del texto principal" },
+    { "name": "eyebrow", "type": "string", "default": "Visual Engine · calidad medida", "description": "Texto pequeño superior" },
+    { "name": "title", "type": "string", "default": "Diseño que no parece generado.", "description": "Titular" },
+    { "name": "lead", "type": "string", "default": "Composición, luz y movimiento con una referencia detrás. Nada decorativo sin motivo.", "description": "Párrafo de apoyo" },
+    { "name": "cta", "type": "string", "default": "Ver el proceso", "description": "Texto del botón" }
+  ]
+}

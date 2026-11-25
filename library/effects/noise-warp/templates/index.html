@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Noise Warp · Visual Engine</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body style="--bg: {{bg}}; --ink: {{ink}}">
+  <canvas id="canvas" aria-hidden="true"></canvas>
+  <div class="frame" aria-hidden="true"></div>
+  <div class="chrome">
+    <span>TRANSICIÓN · RUIDO DIRECCIONAL</span>
+    <span class="hint">clic o espacio para alternar</span>
+  </div>
+  <div class="progress" aria-hidden="true"><i id="bar"></i></div>
+
+  <script type="module">
+    window.__VE_LABELS = { a: '{{labelA}}', b: '{{labelB}}', colorA: '{{colorA}}', colorB: '{{colorB}}' };
+  </script>
+  <script type="module" src="effect.js"></script>
+</body>
+</html>

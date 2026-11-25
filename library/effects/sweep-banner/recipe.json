@@ -1,0 +1,19 @@
+{
+  "id": "sweep-banner",
+  "name": "Sweep Banner",
+  "category": "hero",
+  "summary": "Banner de cristal con barrido de luz, degradado aurora, traza SVG que se dibuja y partículas: acabado de estudio en un solo bloque.",
+  "tags": ["banner", "luz", "svg", "glass", "hero", "premium"],
+  "engines": ["css", "svg"],
+  "requires": [],
+  "performance": "Sólo CSS y SVG animados; sin canvas ni RAF propio. Barrido en compositor.",
+  "license": "MIT (propio)",
+  "entry": "index.html",
+  "params": [
+    { "name": "bg", "type": "color", "default": "#07090f", "description": "Fondo de página" },
+    { "name": "ink", "type": "color", "default": "#f2f7ff", "description": "Texto" },
+    { "name": "accent", "type": "color", "default": "#7c5cff", "description": "Acento" },
+    { "name": "title", "type": "string", "default": "Intención, no decoración.", "description": "Titular" },
+    { "name": "subtitle", "type": "string", "default": "Cada capa tiene una razón; cada transición, una referencia.", "description": "Subtítulo" }
+  ]
+}

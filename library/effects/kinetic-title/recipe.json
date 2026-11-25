@@ -1,0 +1,21 @@
+{
+  "id": "kinetic-title",
+  "name": "Kinetic Title",
+  "category": "tipografia",
+  "summary": "Titular en dos líneas con revelado enmascarado, serif de acento, retícula sutil y ticker inferior en movimiento continuo.",
+  "tags": ["tipografia", "titular", "hero", "editorial", "motion", "sin-dependencias"],
+  "engines": ["css", "web-animations"],
+  "requires": [],
+  "performance": "Sin canvas ni bucles de render: animaciones en compositor (~1% CPU); 8 elementos animados.",
+  "license": "MIT (propio)",
+  "entry": "index.html",
+  "params": [
+    { "name": "bg", "type": "color", "default": "#08090c", "description": "Fondo" },
+    { "name": "ink", "type": "color", "default": "#f2f5f8", "description": "Tinta principal" },
+    { "name": "accent", "type": "color", "default": "#ff4d6d", "description": "Acento (serif y reglas)" },
+    { "name": "kicker", "type": "string", "default": "001 — Estudio de movimiento", "description": "Línea superior" },
+    { "name": "line1", "type": "string", "default": "La forma", "description": "Primera línea" },
+    { "name": "line2", "type": "string", "default": "sigue al ritmo", "description": "Segunda línea (acento)" },
+    { "name": "note", "type": "string", "default": "Cada transición responde a una referencia, no a una plantilla.", "description": "Nota inferior" }
+  ]
+}

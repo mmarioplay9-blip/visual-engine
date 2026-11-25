@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kinetic Title · Visual Engine</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body style="--bg: {{bg}}; --ink: {{ink}}; --accent: {{accent}}">
+  <div class="grid" aria-hidden="true"></div>
+  <div class="glow" aria-hidden="true"></div>
+
+  <main class="stage">
+    <header class="top">
+      <span class="kicker">{{kicker}}</span>
+      <span class="badge">VE · 0.1</span>
+    </header>
+
+    <h1 class="stack">
+      <span class="row" data-row><span class="mask"><em>{{line1}}</em></span></span>
+      <span class="row accent" data-row><span class="mask"><em>{{line2}}</em></span></span>
+    </h1>
+
+    <footer class="bottom">
+      <span class="rule" aria-hidden="true"></span>
+      <p class="note">{{note}}</p>
+      <span class="coord">35° 41′ N · 139° 41′ E</span>
+    </footer>
+  </main>
+
+  <div class="ticker" aria-hidden="true">
+    <div class="track">
+      <span>REFERENCIA</span><i></i><span>MEDICIÓN</span><i></i><span>ITERACIÓN</span><i></i>
+      <span>REFERENCIA</span><i></i><span>MEDICIÓN</span><i></i><span>ITERACIÓN</span><i></i>
+      <span>REFERENCIA</span><i></i><span>MEDICIÓN</span><i></i><span>ITERACIÓN</span><i></i>
+    </div>
+  </div>
+
+  <script type="module" src="effect.js"></script>
+</body>
+</html>
