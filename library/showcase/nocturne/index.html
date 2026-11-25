@@ -1,0 +1,45 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nocturne · Visual Engine 0.4</title><link rel="stylesheet" href="./design-system.css"><link rel="stylesheet" href="./page.css">
+</head><body data-style="cinematic" data-mode="dark">
+<canvas class="ve-bg" data-effect="anamorphic-bloom" data-bg="#070707" data-accent="#e8b86b" data-accent2="#5fc6bd" aria-hidden="true"></canvas><div class="ve-scrim" aria-hidden="true"></div>
+<div class="ve-shell"><header class="site-head ve-container"><div class="brand"><span class="brand-mark">VE</span>Nocturne</div>
+  <nav class="nav" aria-label="Navegación principal"><a href="#película" aria-current="page">Película</a><a href="#sesiones">Sesiones</a><a href="#prensa">Prensa</a><a href="#entradas">Entradas</a></nav>
+  <span class="head-meta">Un documental de Ana Vidal</span></header><main class="ve-container"><section class="hero">
+    <div><div class="eyebrow-row"><span class="status-dot"></span><p class="ve-eyebrow">Un documental de Ana Vidal</p></div>
+      <h1>La ciudad después del último tren.</h1><p class="ve-lead">Cinco noches, cuatro barrios y las voces que sostienen la madrugada. Estreno en salas seleccionadas.</p>
+      <div class="actions"><a class="ve-button" href="#accion">Ver trailer</a><a class="ve-button ve-button--ghost" href="#detalle">Funciones</a></div>
+      <div class="meta-line"><span>Documental</span><span>Estreno</span><span>Sesión especial</span></div><div class="stat-row"><div class="stat"><b>94 min</b><span>Duración</span></div><div class="stat"><b>2.39:1</b><span>Formato</span></div><div class="stat"><b>2026</b><span>Año</span></div></div>
+    </div><div class="feature" data-reveal="2">
+    <canvas data-effect="dissolve-grain" data-bg="#11100e" data-accent="#e8b86b" data-accent2="#5fc6bd" aria-label="Visualización generativa dissolve-grain"></canvas>
+    <div class="feature-overlay"><div><div class="feature-label">Documental</div><div class="feature-value">94 min</div></div><span class="status-dot" aria-label="Activo"></span></div>
+  </div></section></main><footer class="site-foot ve-container"><span>Nocturne · Visual Engine 0.4</span><span>Documental / Estreno / Sesión especial</span></footer></div>
+<script type="module">
+import * as fx0 from '../../assets/effects/anamorphic-bloom/effect.js';
+import * as fx1 from '../../assets/effects/dissolve-grain/effect.js';
+const fx = { 'anamorphic-bloom': fx0, 'dissolve-grain': fx1 };
+const failed = [];
+for (const canvas of document.querySelectorAll('canvas[data-effect]')) {
+  const mod = fx[canvas.dataset.effect];
+  try {
+    if (mod && typeof mod.mount === 'function') mod.mount(canvas, { bg: canvas.dataset.bg, accent: canvas.dataset.accent, accent2: canvas.dataset.accent2, speed: 0.8 });
+    else failed.push(canvas.dataset.effect + ': sin mount');
+  } catch (error) { failed.push(canvas.dataset.effect + ': ' + error.message); }
+}
+document.querySelectorAll('[data-tab]').forEach((tab) => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('[data-tab]').forEach((other) => other.setAttribute('aria-selected', String(other === tab)));
+  });
+});
+document.querySelectorAll('[data-action]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const pressed = button.getAttribute('aria-pressed') === 'true';
+    button.setAttribute('aria-pressed', String(!pressed));
+    button.textContent = pressed ? button.dataset.label || button.textContent : 'Hecho';
+  });
+});
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('[data-reveal]').forEach((el) => { el.style.opacity = '0'; requestAnimationFrame(() => { el.style.opacity = ''; }); });
+}
+window.__veShowcase = { id: 'nocturne', effects: ["anamorphic-bloom","dissolve-grain"], failed };
+document.fonts.ready.then(() => { window.__veReady = true; });
+</script></body></html>

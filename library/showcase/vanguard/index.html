@@ -1,0 +1,46 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vanguard · Visual Engine 0.4</title><link rel="stylesheet" href="./design-system.css"><link rel="stylesheet" href="./page.css">
+</head><body data-style="game-ui" data-mode="dark">
+<canvas class="ve-bg" data-effect="target-reticle" data-bg="#061016" data-accent="#63ffb5" data-accent2="#ffcf5a" aria-hidden="true"></canvas><div class="ve-scrim" aria-hidden="true"></div>
+<div class="ve-shell"><header class="site-head ve-container"><div class="brand"><span class="brand-mark">VE</span>Vanguard</div>
+  <nav class="nav" aria-label="Navegación principal"><a href="#escuadrón" aria-current="page">Escuadrón</a><a href="#mapa">Mapa</a><a href="#equipo">Equipo</a><a href="#rendimiento">Rendimiento</a></nav>
+  <span class="head-meta">Ronda 07 · Defensa</span></header><main class="ve-container"><div class="hud">
+    <section class="hud-main"><canvas data-effect="telemetry-grid" data-bg="#061016" data-accent="#63ffb5" data-accent2="#ffcf5a" aria-label="Instrumento telemetry-grid"></canvas>
+      <div class="hud-top"><div><p class="ve-eyebrow"><span class="status-dot"></span> Ronda 07 · Defensa</p><h1 class="ve-display">Mantén la línea.</h1></div><span class="chip">Alpha</span></div>
+      <div style="position:absolute;left:18px;bottom:18px;z-index:1;max-width:34ch"><p class="ve-lead" style="font-size:13px">Estado de escuadrón, economía y objetivos en tiempo real.</p><div class="actions"><button type="button" class="ve-button" data-action>Desplegar</button><button type="button" class="ve-button ve-button--ghost">Cambiar clase</button></div></div>
+    </section>
+    <aside class="hud-side"><div class="hud-panel"><h2>Objetivos</h2><ul class="objectives"><li>Alpha <span style="margin-left:auto;color:var(--ve-muted)">01</span></li><li>Bravo <span style="margin-left:auto;color:var(--ve-muted)">02</span></li><li>Charlie <span style="margin-left:auto;color:var(--ve-muted)">03</span></li></ul></div>
+      <div class="hud-panel"><h2>Telemetría</h2><div class="radar" aria-hidden="true"></div><div class="kpis" style="grid-template-columns:1fr 1fr"><div class="kpi"><span>Vidas</span><b style="font-size:15px">3/4</b></div><div class="kpi"><span>Economía</span><b style="font-size:15px">4.250</b></div><div class="kpi"><span>Objetivo</span><b style="font-size:15px">B</b></div><div class="kpi"><span>Tiempo</span><b style="font-size:15px">01:12</b></div></div></div>
+      <div class="hud-panel"><h2>Registro</h2><div class="insight">Estado de escuadrón, economía y objetivos en tiempo real.</div><div class="side-note">Sistema autónomo · sin enlace externo</div></div></aside>
+    <div class="hud-bottom"><div class="kpi"><span>Vidas</span><b>3/4</b></div><div class="kpi"><span>Economía</span><b>4.250</b></div><div class="kpi"><span>Objetivo</span><b>B</b></div><div class="kpi"><span>Tiempo</span><b>01:12</b></div></div>
+  </div></main><footer class="site-foot ve-container"><span>Vanguard · Visual Engine 0.4</span><span>Alpha / Bravo / Charlie</span></footer></div>
+<script type="module">
+import * as fx0 from '../../assets/effects/target-reticle/effect.js';
+import * as fx1 from '../../assets/effects/telemetry-grid/effect.js';
+const fx = { 'target-reticle': fx0, 'telemetry-grid': fx1 };
+const failed = [];
+for (const canvas of document.querySelectorAll('canvas[data-effect]')) {
+  const mod = fx[canvas.dataset.effect];
+  try {
+    if (mod && typeof mod.mount === 'function') mod.mount(canvas, { bg: canvas.dataset.bg, accent: canvas.dataset.accent, accent2: canvas.dataset.accent2, speed: 0.8 });
+    else failed.push(canvas.dataset.effect + ': sin mount');
+  } catch (error) { failed.push(canvas.dataset.effect + ': ' + error.message); }
+}
+document.querySelectorAll('[data-tab]').forEach((tab) => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('[data-tab]').forEach((other) => other.setAttribute('aria-selected', String(other === tab)));
+  });
+});
+document.querySelectorAll('[data-action]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const pressed = button.getAttribute('aria-pressed') === 'true';
+    button.setAttribute('aria-pressed', String(!pressed));
+    button.textContent = pressed ? button.dataset.label || button.textContent : 'Hecho';
+  });
+});
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('[data-reveal]').forEach((el) => { el.style.opacity = '0'; requestAnimationFrame(() => { el.style.opacity = ''; }); });
+}
+window.__veShowcase = { id: 'vanguard', effects: ["target-reticle","telemetry-grid"], failed };
+document.fonts.ready.then(() => { window.__veReady = true; });
+</script></body></html>

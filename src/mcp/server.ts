@@ -33,6 +33,10 @@ import {
   opCompose,
   opReferenceEffects,
   opBenchmark,
+  opArtDirection,
+  opMotionDirector,
+  opReferenceDesign,
+  opShowcase,
 } from '../core/advanced.js';
 
 const json = (v: unknown) => JSON.stringify(v, null, 2);
@@ -74,6 +78,12 @@ Composición y biblioteca (0.3):
 - visual_reference_effects → convierte una especificación medida en composición y código; cada asignación declara si es verified o estimated.
 - visual_benchmark → mide FPS, frame time, heap y carga en Chromium.
 - visual_vision con action=setup → detecta VRAM y modelo recomendado; instalar requiere install=true.
+
+Art Director y diseño (0.4):
+- visual_art_direction → 15 estilos, tokens DTCG, tipografía, materiales, selección de efectos y CSS.
+- visual_reference_design → imagen o especificación → identidad, layout, componentes, motion y código; separa medido de estimado.
+- visual_motion_director → recetas de movimiento, cámara, reduced motion y validación de rotación/transición.
+- visual_showcase → genera y mide 20 composiciones completas en Chromium.
 
 Reglas:
 - Distingue siempre "verified" de "estimated": el OCR/objetos necesitan Tesseract o un modelo local; si no están, dilo.
@@ -683,6 +693,76 @@ export function createServer(): McpServer {
       } catch (e) {
         return fail(e);
       }
+    },
+  );
+
+  server.registerTool(
+    'visual_art_direction',
+    {
+      title: 'Dirección artística y sistema de diseño',
+      description: 'Convierte un brief en identidad, paleta semántica, tipografía modular, espaciado, materiales, selección de efectos, tokens DTCG, auditoría estructural y CSS. Ofrece 15 estilos diferenciados.',
+      inputSchema: {
+        brief: z.string().describe('Brief o descripción del proyecto.'),
+        style: z.string().optional().describe('Estilo: minimal-premium, cinematic, futuristic, sci-fi, cyberpunk, glassmorphism, neumorphism, editorial, brutalism, game-ui, professional-app, financial-dashboard, immersive-3d, motion-graphics, organic-natural.'),
+        projectType: z.string().optional().describe('landing, dashboard, app, game, editorial, motion...'),
+        outDir: z.string().optional(),
+      },
+    },
+    async (args) => {
+      try { return ok(opArtDirection(args)); } catch (e) { return fail(e); }
+    },
+  );
+
+  server.registerTool(
+    'visual_reference_design',
+    {
+      title: 'Reference-to-Design',
+      description: 'Analiza una imagen o vídeo de referencia y produce identidad, tokens, paleta con roles, aproximación tipográfica, layout, capas, materiales, componentes, motion, efectos y código. Separa explícitamente lo medido de lo estimado.',
+      inputSchema: {
+        path: z.string().optional().describe('Imagen o vídeo de referencia.'),
+        specFile: z.string().optional().describe('Especificación visual JSON ya medida.'),
+        style: z.string().optional(),
+        brief: z.string().optional(),
+        outDir: z.string().optional(),
+        vision: z.boolean().optional().describe('Ejecuta OCR local; no identifica fuentes.'),
+        model: z.string().optional(),
+      },
+    },
+    async (args) => {
+      try { return ok(await opReferenceDesign(args)); } catch (e) { return fail(e); }
+    },
+  );
+
+  server.registerTool(
+    'visual_motion_director',
+    {
+      title: 'Motion Director',
+      description: 'Genera recetas de microinteracción, entrada/salida, transición, coreografía y cámara con CSS/GSAP/Motion, reduced motion y validación medida de rotación y transición.',
+      inputSchema: {
+        style: z.string().optional(),
+        brief: z.string().optional(),
+        projectType: z.string().optional(),
+        outDir: z.string().optional(),
+      },
+    },
+    async (args) => {
+      try { return ok(opMotionDirector(args)); } catch (e) { return fail(e); }
+    },
+  );
+
+  server.registerTool(
+    'visual_showcase',
+    {
+      title: 'Composiciones completas',
+      description: 'Genera 20 composiciones reutilizables con los estilos de 0.4 y mide en Chromium FPS, carga, overflow, contraste, fuentes, interacción y errores. Usa measure=true para ejecutar la medición.',
+      inputSchema: {
+        outDir: z.string().optional(),
+        ids: z.array(z.string()).optional(),
+        measure: z.boolean().optional(),
+      },
+    },
+    async (args) => {
+      try { return ok(await opShowcase(args)); } catch (e) { return fail(e); }
     },
   );
 

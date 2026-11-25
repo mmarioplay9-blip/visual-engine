@@ -1,0 +1,21 @@
+{
+  "id": "nocturne",
+  "title": "Nocturne",
+  "style": "cinematic",
+  "archetype": "landing",
+  "ok": true,
+  "loadMs": 717,
+  "fps": 43,
+  "frames": 31,
+  "heapMB": 9.5,
+  "overflowX": 0,
+  "contrastViolations": 0,
+  "contrastChecked": 22,
+  "worstContrast": 9.03,
+  "contrastSamples": [],
+  "fontReady": true,
+  "tabWorks": true,
+  "errors": [],
+  "screenshot": "nocturne/preview.png",
+  "measuredAt": "2026-11-25T20:06:07.366Z"
+}

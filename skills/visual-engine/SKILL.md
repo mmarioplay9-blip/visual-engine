@@ -1,13 +1,14 @@
 ---
 name: visual-engine
-description: Motor local y gratuito de calidad visual. Analiza referencias, compone efectos reales en capas, genera código y previsualizaciones, captura en Chromium y compara con métricas. Úsala para diseño, motion graphics, 3D, HUD, vídeo o cualquier petición de "que se vea profesional".
+description: Motor local y gratuito de calidad visual. Analiza referencias, dirige arte con 15 estilos, genera tokens y composiciones, compone efectos reales, captura en Chromium y compara con métricas. Úsala para diseño, motion graphics, 3D, HUD, vídeo o cualquier petición de "que se vea profesional".
 ---
 
-# Visual Engine 0.3
+# Visual Engine 0.4
 
-Convierte una referencia en **especificación medida**, **composición de efectos ejecutable** y
-resultado verificado: referencia → escenas/cámara/efectos → spec → composición → captura →
-comparación temporal → corrección con reversión. Todo local, sin APIs de pago.
+Convierte una referencia en **dirección artística**, **especificación medida**, **composición
+ejecutable** y resultado verificado: referencia → identidad/tokens → escenas/cámara/efectos →
+composición → captura → comparación temporal → corrección con reversión. Todo local, sin APIs de
+pago.
 
 ## Antes de empezar
 
@@ -39,7 +40,24 @@ ve spec referencia.mp4 --vision --out ./analisis
 - **detect**: efectos con evidencia y estado `verified`/`estimated`.
 - **spec --vision**: añade OCR y descripción semántica locales (`ocr.json`, `semantic.json`).
 
-### 2. Pasar de la referencia a efectos
+### 2. Dirigir el arte antes de componer
+
+```bash
+ve art "terminal financiera sobria" --style financial-dashboard --out ./sistema
+ve refdesign referencia.png --out ./sistema --vision
+ve motiondirector --style cinematic --out ./motion
+ve showcase --measure --out ./showcase
+```
+
+- `art`: 15 estilos, paleta semántica, escala modular, tokens DTCG, materiales y CSS.
+- `refdesign`: identidad, layout, componentes, motion y código; separa `verified` de `estimated`.
+- `motiondirector`: microinteracciones, entradas, transición, cámara y reduced-motion.
+- `showcase`: 20 composiciones, 10 arquetipos y medición real en Chromium.
+
+**No inventes la fuente tipográfica** a partir de una imagen: `refdesign` sólo aproxima familia y
+escala. La arquitectura de componentes es una propuesta.
+
+### 3. Pasar de la referencia a efectos
 
 ```bash
 ve refeffects referencia.mp4 --spec ./analisis/spec.json --out ./reconstruccion
@@ -49,7 +67,7 @@ Produce `composition.json`, HTML, timeline, capas y código. Cada asignación ll
 nota que explica la hipótesis. **No afirmes que se identificó el plugin exacto**: es una
 correspondencia estimada salvo que el estado sea `verified` y aun así es una aproximación.
 
-### 3. Elegir o componer efectos
+### 4. Elegir o componer efectos
 
 ```bash
 ve effects show volumetric-rays
@@ -61,7 +79,7 @@ La biblioteca tiene **58 efectos en 12 categorías**. La composición admite has
 mezclas, máscaras radiales/lineales, transformaciones, opacidad y curvas
 `linear/easeIn/easeOut/easeInOut/spring`.
 
-### 4. Medir
+### 5. Medir
 
 ```bash
 ve benchmark --out library/benchmarks.json
@@ -76,7 +94,7 @@ ve temporal referencia.mp4 resultado.mp4 --out ./analisis
 - `review`: fidelidad + calidad por dimensiones; revisa `consoleErrors`.
 - `temporal`: dos vídeos alineados; no sustituye a `review` de una página estática.
 
-### 5. Corregir con red
+### 6. Corregir con red
 
 ```bash
 ve iterate --reference referencia.mp4 --target-dir ./mi-web \
@@ -109,12 +127,12 @@ cambio para inspección. Los parches exigen un repositorio git.
 
 ## MCP
 
-**26 herramientas**. Las de 0.3: `visual_compose`, `visual_reference_effects`,
-`visual_gallery`, `visual_benchmark`; además de las 0.1/0.2 (`visual_timeline`, `visual_camera`,
-`visual_inspect`, `visual_effects_detect`, `visual_spec`, `visual_recommend`, `visual_temporal`,
-`visual_vision`, `visual_iterate` con `confirm=true`, `visual_backup`, etc.). Recurso
-`visual://effects`, prompt `visual-quality-review`. CLI y `ve serve` ofrecen las mismas
-operaciones.
+**30 herramientas**. Las de 0.4: `visual_art_direction`, `visual_reference_design`,
+`visual_motion_director`, `visual_showcase`; más las 0.1/0.2/0.3 (`visual_compose`,
+`visual_reference_effects`, `visual_benchmark`, `visual_timeline`, `visual_camera`,
+`visual_inspect`, `visual_spec`, `visual_temporal`, `visual_vision`, `visual_iterate` con
+`confirm=true`, etc.). Recurso `visual://effects`, prompt `visual-quality-review`. CLI (32
+comandos) y `ve serve` ofrecen las mismas operaciones.
 
 ## Límites conocidos
 
@@ -122,7 +140,9 @@ operaciones.
 - `llava:7b` describe, no lee copy exacto; `qwen2.5vl:3b` falló en esta instalación.
 - Sin modelo de objetos/pose: sólo saliencia; no hay clases ni cajas semánticas.
 - Profundidad y parallax son proxies geométricos, no mapas métricos.
-- La rotación de cámara no está validada; las transiciones suaves se estiman.
-- Las referencias de la verificación 0.3 son renders propios autorizados, no material de cliente.
+- La rotación se valida sobre un patrón sintético, no sobre cualquier render WebGL.
+- La transición CSS se valida por curva y reduced-motion; el A/B de transiciones contra vídeo
+  sigue pendiente.
+- La referencia A/B 0.4 es un cartel CC0 del MET; no es material de cliente.
 - Probado en Windows; Linux/macOS están soportados por diseño, no probados aquí.
 - El repositorio sigue **sin publicar** en GitHub.

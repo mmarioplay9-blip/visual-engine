@@ -1,0 +1,45 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lumen · Visual Engine 0.4</title><link rel="stylesheet" href="./design-system.css"><link rel="stylesheet" href="./page.css">
+</head><body data-style="minimal-premium" data-mode="light">
+<canvas class="ve-bg" data-effect="mesh-gradient" data-bg="#f6f2ea" data-accent="#9b3d2e" data-accent2="#1f5b4d" aria-hidden="true"></canvas><div class="ve-scrim" aria-hidden="true"></div>
+<div class="ve-shell"><header class="site-head ve-container"><div class="brand"><span class="brand-mark">VE</span>Lumen</div>
+  <nav class="nav" aria-label="Navegación principal"><a href="#estudio" aria-current="page">Estudio</a><a href="#proyectos">Proyectos</a><a href="#proceso">Proceso</a><a href="#contacto">Contacto</a></nav>
+  <span class="head-meta">Estudio de arquitectura · 2026</span></header><main class="ve-container"><section class="hero">
+    <div><div class="eyebrow-row"><span class="status-dot"></span><p class="ve-eyebrow">Estudio de arquitectura · 2026</p></div>
+      <h1>La luz construye el espacio.</h1><p class="ve-lead">Diseñamos viviendas donde la materia, la sombra y el tiempo forman una sola estructura.</p>
+      <div class="actions"><a class="ve-button" href="#accion">Ver proyectos</a><a class="ve-button ve-button--ghost" href="#detalle">Agendar visita</a></div>
+      <div class="meta-line"><span>Vivienda</span><span>Interiorismo</span><span>Paisaje</span></div><div class="stat-row"><div class="stat"><b>38</b><span>Proyectos</span></div><div class="stat"><b>12</b><span>Años</span></div><div class="stat"><b>06</b><span>Premios</span></div></div>
+    </div><div class="feature" data-reveal="2">
+    <canvas data-effect="dust-motes" data-bg="#fffdf8" data-accent="#9b3d2e" data-accent2="#1f5b4d" aria-label="Visualización generativa dust-motes"></canvas>
+    <div class="feature-overlay"><div><div class="feature-label">Vivienda</div><div class="feature-value">38</div></div><span class="status-dot" aria-label="Activo"></span></div>
+  </div></section></main><footer class="site-foot ve-container"><span>Lumen · Visual Engine 0.4</span><span>Vivienda / Interiorismo / Paisaje</span></footer></div>
+<script type="module">
+import * as fx0 from '../../assets/effects/mesh-gradient/effect.js';
+import * as fx1 from '../../assets/effects/dust-motes/effect.js';
+const fx = { 'mesh-gradient': fx0, 'dust-motes': fx1 };
+const failed = [];
+for (const canvas of document.querySelectorAll('canvas[data-effect]')) {
+  const mod = fx[canvas.dataset.effect];
+  try {
+    if (mod && typeof mod.mount === 'function') mod.mount(canvas, { bg: canvas.dataset.bg, accent: canvas.dataset.accent, accent2: canvas.dataset.accent2, speed: 0.8 });
+    else failed.push(canvas.dataset.effect + ': sin mount');
+  } catch (error) { failed.push(canvas.dataset.effect + ': ' + error.message); }
+}
+document.querySelectorAll('[data-tab]').forEach((tab) => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('[data-tab]').forEach((other) => other.setAttribute('aria-selected', String(other === tab)));
+  });
+});
+document.querySelectorAll('[data-action]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const pressed = button.getAttribute('aria-pressed') === 'true';
+    button.setAttribute('aria-pressed', String(!pressed));
+    button.textContent = pressed ? button.dataset.label || button.textContent : 'Hecho';
+  });
+});
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('[data-reveal]').forEach((el) => { el.style.opacity = '0'; requestAnimationFrame(() => { el.style.opacity = ''; }); });
+}
+window.__veShowcase = { id: 'lumen', effects: ["mesh-gradient","dust-motes"], failed };
+document.fonts.ready.then(() => { window.__veReady = true; });
+</script></body></html>

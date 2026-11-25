@@ -1,0 +1,21 @@
+{
+  "id": "terra",
+  "title": "Terra",
+  "style": "organic-natural",
+  "archetype": "mobile",
+  "ok": true,
+  "loadMs": 590,
+  "fps": 61,
+  "frames": 43,
+  "heapMB": 9.5,
+  "overflowX": 0,
+  "contrastViolations": 0,
+  "contrastChecked": 24,
+  "worstContrast": 4.73,
+  "contrastSamples": [],
+  "fontReady": true,
+  "tabWorks": true,
+  "errors": [],
+  "screenshot": "terra/preview.png",
+  "measuredAt": "2026-11-25T20:06:35.348Z"
+}

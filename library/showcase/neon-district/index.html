@@ -1,0 +1,48 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon District · Visual Engine 0.4</title><link rel="stylesheet" href="./design-system.css"><link rel="stylesheet" href="./page.css">
+</head><body data-style="cyberpunk" data-mode="dark">
+<canvas class="ve-bg" data-effect="glitch-slices" data-bg="#08060d" data-accent="#ff2e88" data-accent2="#f4ff3f" aria-hidden="true"></canvas><div class="ve-scrim" aria-hidden="true"></div>
+<div class="ve-shell"><header class="site-head ve-container"><div class="brand"><span class="brand-mark">VE</span>Neon District</div>
+  <nav class="nav" aria-label="Navegación principal"><a href="#campaña" aria-current="page">Campaña</a><a href="#contratos">Contratos</a><a href="#personaje">Personaje</a><a href="#ajustes">Ajustes</a></nav>
+  <span class="head-meta">Temporada 04 · Distrito 9</span></header><main class="ve-container"><div class="game">
+    <div class="game-title"><p class="ve-eyebrow">Temporada 04 · Distrito 9</p><h1>La ciudad no duerme. Tú tampoco.</h1><p class="ve-lead">Elige tu ruta, personaliza el implante y entra en el contrato antes de que cierre la ventana.</p>
+      <div class="actions"><button class="ve-button" type="button" data-action>Entrar al distrito</button><button class="ve-button ve-button--ghost" type="button">Continuar partida</button></div>
+      <div class="game-stats"><div><b>27</b><span>Nivel</span></div><div><b>18.420</b><span>Créditos</span></div><div><b>A-</b><span>Reputación</span></div></div></div>
+    <aside class="game-side"><div class="mission"><div><b>Contrato activo</b><p>Riesgo alto · Recompensa 4.800</p></div><span>ACTIVO</span></div>
+      <div class="feature feature--wide" data-reveal="2">
+    <canvas data-effect="neon-rim" data-bg="#120d1b" data-accent="#ff2e88" data-accent2="#f4ff3f" aria-label="Visualización generativa neon-rim"></canvas>
+    <div class="feature-overlay"><div><div class="feature-label">Contrato activo</div><div class="feature-value">27</div></div><span class="status-dot" aria-label="Activo"></span></div>
+  </div>
+      <div class="mission"><div><b>Contratos</b><p>Recompensa verificada · sin conexión</p></div><span>04</span></div>
+      <div class="mission"><div><b>Personaje</b><p>Configuración guardada localmente</p></div><span>LISTO</span></div></aside>
+  </div></main><footer class="site-foot ve-container"><span>Neon District · Visual Engine 0.4</span><span>Contrato activo / Riesgo alto / Recompensa 4.800</span></footer></div>
+<script type="module">
+import * as fx0 from '../../assets/effects/glitch-slices/effect.js';
+import * as fx1 from '../../assets/effects/neon-rim/effect.js';
+const fx = { 'glitch-slices': fx0, 'neon-rim': fx1 };
+const failed = [];
+for (const canvas of document.querySelectorAll('canvas[data-effect]')) {
+  const mod = fx[canvas.dataset.effect];
+  try {
+    if (mod && typeof mod.mount === 'function') mod.mount(canvas, { bg: canvas.dataset.bg, accent: canvas.dataset.accent, accent2: canvas.dataset.accent2, speed: 0.8 });
+    else failed.push(canvas.dataset.effect + ': sin mount');
+  } catch (error) { failed.push(canvas.dataset.effect + ': ' + error.message); }
+}
+document.querySelectorAll('[data-tab]').forEach((tab) => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('[data-tab]').forEach((other) => other.setAttribute('aria-selected', String(other === tab)));
+  });
+});
+document.querySelectorAll('[data-action]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const pressed = button.getAttribute('aria-pressed') === 'true';
+    button.setAttribute('aria-pressed', String(!pressed));
+    button.textContent = pressed ? button.dataset.label || button.textContent : 'Hecho';
+  });
+});
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('[data-reveal]').forEach((el) => { el.style.opacity = '0'; requestAnimationFrame(() => { el.style.opacity = ''; }); });
+}
+window.__veShowcase = { id: 'neon-district', effects: ["glitch-slices","neon-rim"], failed };
+document.fonts.ready.then(() => { window.__veReady = true; });
+</script></body></html>

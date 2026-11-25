@@ -1,0 +1,45 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aether · Visual Engine 0.4</title><link rel="stylesheet" href="./design-system.css"><link rel="stylesheet" href="./page.css">
+</head><body data-style="glassmorphism" data-mode="dark">
+<canvas class="ve-bg" data-effect="glass-refraction" data-bg="#0a1120" data-accent="#9ee7ff" data-accent2="#c8a8ff" aria-hidden="true"></canvas><div class="ve-scrim" aria-hidden="true"></div>
+<div class="ve-shell"><header class="site-head ve-container"><div class="brand"><span class="brand-mark">VE</span>Aether</div>
+  <nav class="nav" aria-label="Navegación principal"><a href="#producto" aria-current="page">Producto</a><a href="#equipos">Equipos</a><a href="#precios">Precios</a><a href="#entrar">Entrar</a></nav>
+  <span class="head-meta">Aether Workspace</span></header><main class="ve-container"><section class="hero">
+    <div><div class="eyebrow-row"><span class="status-dot"></span><p class="ve-eyebrow">Aether Workspace</p></div>
+      <h1>Todo el equipo. Un solo plano.</h1><p class="ve-lead">Documentos, decisiones y contexto compartido en una superficie que se adapta a cómo trabaja tu equipo.</p>
+      <div class="actions"><a class="ve-button" href="#accion">Crear espacio</a><a class="ve-button ve-button--ghost" href="#detalle">Ver demo</a></div>
+      <div class="meta-line"><span>Sincronización</span><span>Contexto</span><span>Sin fricción</span></div><div class="stat-row"><div class="stat"><b>12k</b><span>Equipos</span></div><div class="stat"><b>41</b><span>Países</span></div><div class="stat"><b>99,99 %</b><span>Uptime</span></div></div>
+    </div><div class="feature" data-reveal="2">
+    <canvas data-effect="bokeh-drift" data-bg="rgba(20,32,52,.56)" data-accent="#9ee7ff" data-accent2="#c8a8ff" aria-label="Visualización generativa bokeh-drift"></canvas>
+    <div class="feature-overlay"><div><div class="feature-label">Sincronización</div><div class="feature-value">12k</div></div><span class="status-dot" aria-label="Activo"></span></div>
+  </div></section></main><footer class="site-foot ve-container"><span>Aether · Visual Engine 0.4</span><span>Sincronización / Contexto / Sin fricción</span></footer></div>
+<script type="module">
+import * as fx0 from '../../assets/effects/glass-refraction/effect.js';
+import * as fx1 from '../../assets/effects/bokeh-drift/effect.js';
+const fx = { 'glass-refraction': fx0, 'bokeh-drift': fx1 };
+const failed = [];
+for (const canvas of document.querySelectorAll('canvas[data-effect]')) {
+  const mod = fx[canvas.dataset.effect];
+  try {
+    if (mod && typeof mod.mount === 'function') mod.mount(canvas, { bg: canvas.dataset.bg, accent: canvas.dataset.accent, accent2: canvas.dataset.accent2, speed: 0.8 });
+    else failed.push(canvas.dataset.effect + ': sin mount');
+  } catch (error) { failed.push(canvas.dataset.effect + ': ' + error.message); }
+}
+document.querySelectorAll('[data-tab]').forEach((tab) => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('[data-tab]').forEach((other) => other.setAttribute('aria-selected', String(other === tab)));
+  });
+});
+document.querySelectorAll('[data-action]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const pressed = button.getAttribute('aria-pressed') === 'true';
+    button.setAttribute('aria-pressed', String(!pressed));
+    button.textContent = pressed ? button.dataset.label || button.textContent : 'Hecho';
+  });
+});
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('[data-reveal]').forEach((el) => { el.style.opacity = '0'; requestAnimationFrame(() => { el.style.opacity = ''; }); });
+}
+window.__veShowcase = { id: 'aether', effects: ["glass-refraction","bokeh-drift"], failed };
+document.fonts.ready.then(() => { window.__veReady = true; });
+</script></body></html>

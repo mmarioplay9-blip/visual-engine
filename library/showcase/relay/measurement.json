@@ -1,0 +1,21 @@
+{
+  "id": "relay",
+  "title": "Relay",
+  "style": "professional-app",
+  "archetype": "app",
+  "ok": true,
+  "loadMs": 578,
+  "fps": 60,
+  "frames": 43,
+  "heapMB": 9.5,
+  "overflowX": 0,
+  "contrastViolations": 0,
+  "contrastChecked": 41,
+  "worstContrast": 5.32,
+  "contrastSamples": [],
+  "fontReady": true,
+  "tabWorks": true,
+  "errors": [],
+  "screenshot": "relay/preview.png",
+  "measuredAt": "2026-11-25T20:06:26.770Z"
+}

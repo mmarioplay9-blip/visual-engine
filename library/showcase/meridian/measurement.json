@@ -1,0 +1,21 @@
+{
+  "id": "meridian",
+  "title": "Meridian",
+  "style": "financial-dashboard",
+  "archetype": "dashboard",
+  "ok": true,
+  "loadMs": 588,
+  "fps": 61,
+  "frames": 43,
+  "heapMB": 9.5,
+  "overflowX": 0,
+  "contrastViolations": 0,
+  "contrastChecked": 49,
+  "worstContrast": 8.13,
+  "contrastSamples": [],
+  "fontReady": true,
+  "tabWorks": true,
+  "errors": [],
+  "screenshot": "meridian/preview.png",
+  "measuredAt": "2026-11-25T20:06:29.075Z"
+}

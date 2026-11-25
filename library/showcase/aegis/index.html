@@ -1,0 +1,46 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aegis · Visual Engine 0.4</title><link rel="stylesheet" href="./design-system.css"><link rel="stylesheet" href="./page.css">
+</head><body data-style="sci-fi" data-mode="dark">
+<canvas class="ve-bg" data-effect="wireframe-globe" data-bg="#05090c" data-accent="#b8f36b" data-accent2="#ff8b4a" aria-hidden="true"></canvas><div class="ve-scrim" aria-hidden="true"></div>
+<div class="ve-shell"><header class="site-head ve-container"><div class="brand"><span class="brand-mark">VE</span>Aegis</div>
+  <nav class="nav" aria-label="Navegación principal"><a href="#puente" aria-current="page">Puente</a><a href="#sonda">Sonda</a><a href="#laboratorio">Laboratorio</a><a href="#tripulación">Tripulación</a></nav>
+  <span class="head-meta">Misión AEGIS · Día 214</span></header><main class="ve-container"><div class="hud">
+    <section class="hud-main"><canvas data-effect="telemetry-grid" data-bg="#05090c" data-accent="#b8f36b" data-accent2="#ff8b4a" aria-label="Instrumento telemetry-grid"></canvas>
+      <div class="hud-top"><div><p class="ve-eyebrow"><span class="status-dot"></span> Misión AEGIS · Día 214</p><h1 class="ve-display">Más allá del límite cartografiado.</h1></div><span class="chip">Sonda K-9</span></div>
+      <div style="position:absolute;left:18px;bottom:18px;z-index:1;max-width:34ch"><p class="ve-lead" style="font-size:13px">Sistema de navegación, soporte vital y análisis de muestras en una sola vista.</p><div class="actions"><button type="button" class="ve-button" data-action>Iniciar inmersión</button><button type="button" class="ve-button ve-button--ghost">Registro de misión</button></div></div>
+    </section>
+    <aside class="hud-side"><div class="hud-panel"><h2>Objetivos</h2><ul class="objectives"><li>Sonda K-9 <span style="margin-left:auto;color:var(--ve-muted)">01</span></li><li>Análisis activo <span style="margin-left:auto;color:var(--ve-muted)">02</span></li><li>Sin retorno <span style="margin-left:auto;color:var(--ve-muted)">03</span></li></ul></div>
+      <div class="hud-panel"><h2>Telemetría</h2><div class="radar" aria-hidden="true"></div><div class="kpis" style="grid-template-columns:1fr 1fr"><div class="kpi"><span>Oxígeno</span><b style="font-size:15px">86 %</b></div><div class="kpi"><span>Blindaje</span><b style="font-size:15px">74 %</b></div><div class="kpi"><span>Señal</span><b style="font-size:15px">12,4 ua</b></div><div class="kpi"><span>Deriva</span><b style="font-size:15px">0,03°</b></div></div></div>
+      <div class="hud-panel"><h2>Registro</h2><div class="insight">Sistema de navegación, soporte vital y análisis de muestras en una sola vista.</div><div class="side-note">Sistema autónomo · sin enlace externo</div></div></aside>
+    <div class="hud-bottom"><div class="kpi"><span>Oxígeno</span><b>86 %</b></div><div class="kpi"><span>Blindaje</span><b>74 %</b></div><div class="kpi"><span>Señal</span><b>12,4 ua</b></div><div class="kpi"><span>Deriva</span><b>0,03°</b></div></div>
+  </div></main><footer class="site-foot ve-container"><span>Aegis · Visual Engine 0.4</span><span>Sonda K-9 / Análisis activo / Sin retorno</span></footer></div>
+<script type="module">
+import * as fx0 from '../../assets/effects/wireframe-globe/effect.js';
+import * as fx1 from '../../assets/effects/telemetry-grid/effect.js';
+const fx = { 'wireframe-globe': fx0, 'telemetry-grid': fx1 };
+const failed = [];
+for (const canvas of document.querySelectorAll('canvas[data-effect]')) {
+  const mod = fx[canvas.dataset.effect];
+  try {
+    if (mod && typeof mod.mount === 'function') mod.mount(canvas, { bg: canvas.dataset.bg, accent: canvas.dataset.accent, accent2: canvas.dataset.accent2, speed: 0.8 });
+    else failed.push(canvas.dataset.effect + ': sin mount');
+  } catch (error) { failed.push(canvas.dataset.effect + ': ' + error.message); }
+}
+document.querySelectorAll('[data-tab]').forEach((tab) => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('[data-tab]').forEach((other) => other.setAttribute('aria-selected', String(other === tab)));
+  });
+});
+document.querySelectorAll('[data-action]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const pressed = button.getAttribute('aria-pressed') === 'true';
+    button.setAttribute('aria-pressed', String(!pressed));
+    button.textContent = pressed ? button.dataset.label || button.textContent : 'Hecho';
+  });
+});
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('[data-reveal]').forEach((el) => { el.style.opacity = '0'; requestAnimationFrame(() => { el.style.opacity = ''; }); });
+}
+window.__veShowcase = { id: 'aegis', effects: ["wireframe-globe","telemetry-grid"], failed };
+document.fonts.ready.then(() => { window.__veReady = true; });
+</script></body></html>

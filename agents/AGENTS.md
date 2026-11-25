@@ -1,7 +1,8 @@
 # Visual Engine · instrucciones para agentes
 
-Este proyecto tiene instalado **Visual Engine 0.3**: un motor local que mide, compone y verifica
-calidad visual. No es una guía de estilo: ejecuta herramientas reales y devuelve evidencia.
+Este proyecto tiene instalado **Visual Engine 0.4**: un motor local que dirige arte, mide,
+compone y verifica calidad visual. No es una guía de estilo: ejecuta herramientas reales y
+devuelve evidencia.
 
 ## Cuándo usarlo
 
@@ -16,17 +17,21 @@ mejorar un resultado visual. No lo uses para tareas sin componente visual.
 2. **Descomponer la referencia**:
    `ve analyze`, `ve timeline`, `ve motion`, `ve inspect`, `ve detect`.
    Para OCR/visión: `ve spec <ref> --vision --out <dir>` (escribe `ocr.json` y `semantic.json`).
-3. **Especificar y reconstruir**:
+3. **Dirigir el arte y el movimiento**:
+   `ve art "brief" --style <id> --out <dir>`, `ve refdesign <ref> --out <dir>`,
+   `ve motiondirector --style <id> --out <dir>` y `ve showcase --measure`.
+   Usa tokens y escala; no inventes la fuente original ni la arquitectura de componentes.
+4. **Especificar y reconstruir**:
    `ve spec <ref> --out <dir>` y `ve refeffects <ref> --spec <dir>/spec.json --out <dir>`.
    Las correspondencias son hipótesis con estado y confianza; no son identificaciones exactas.
-4. **Componer o aplicar**:
+5. **Componer o aplicar**:
    `ve compose <composition.json> --out <dir>` para capas/mezclas/máscaras/curvas;
    `ve effects apply <id> --out <dir>` para una receta. La biblioteca tiene 58 efectos.
-5. **Capturar y revisar**:
+6. **Capturar y revisar**:
    `ve capture <url|html> --serve <carpeta> --frames 6 --json`.
    Revisa `consoleErrors` y `errors`. Después `ve review ... --frames 6` y, con dos vídeos,
    `ve temporal <ref> <resultado>`.
-6. **Iterar con red**: prepara el cambio y usa `ve iterate --replace` o `--patch`. El motor
+7. **Iterar con red**: prepara el cambio y usa `ve iterate --replace` o `--patch`. El motor
    copia, mide y revierte si empeora. No edites a mano sin copia.
 
 ## Cómo leer los estados
@@ -55,20 +60,20 @@ Three.js/Motion/Playwright son permisivas. No instales nada de pago.
 
 - No declares un módulo funcionando sin ejecutar su comando y ver la salida.
 - Distingue implementado, medido, estimado y pendiente.
-- No inventes cifras: usa `review.json`, `benchmark.json`, `spec.json` o la salida de la herramienta.
+- No inventes cifras: usa `review.json`, `benchmark.json`, `spec.json`, `measurements.json`, `ab-metrics.json` o la salida de la herramienta.
+- En Reference-to-Design, `confirmed` es medición y `estimated` es hipótesis. No los mezcles.
+- La rotación validada es magnitud sobre patrón sintético; no afirmes que certifica WebGL.
 - Si no hay OCR/modelo, el resultado correcto es "no disponible", no una descripción inventada.
 - Una puntuación automática no es un juicio artístico humano.
 - El repositorio no se publica en GitHub en esta fase.
 
 ## Herramientas MCP
 
-**26 herramientas**. Las 0.1: `visual_doctor`, `visual_analyze`, `visual_extract_frames`,
-`visual_capture`, `visual_compare`, `visual_review`, `visual_effects_list`,
-`visual_effect_get`, `visual_effect_apply`, `visual_adapters`, `visual_scaffold`,
-`visual_deps_plan`, `visual_install_deps`. Las 0.2: `visual_timeline`, `visual_camera`,
-`visual_inspect`, `visual_effects_detect`, `visual_spec`, `visual_recommend`,
-`visual_temporal`, `visual_vision`, `visual_iterate` (confirm=true), `visual_backup`.
-Las 0.3: `visual_compose`, `visual_reference_effects`, `visual_gallery`, `visual_benchmark`.
+**30 herramientas**. Las 0.4: `visual_art_direction`, `visual_reference_design`,
+`visual_motion_director`, `visual_showcase`; además de `visual_compose`,
+`visual_reference_effects`, `visual_benchmark`, `visual_timeline`, `visual_camera`,
+`visual_inspect`, `visual_spec`, `visual_temporal`, `visual_vision`, `visual_iterate`
+(confirm=true), `visual_backup`, etc.
 
-La CLI (28 comandos) y la API local (`ve serve`, `http://127.0.0.1:4747`) ofrecen lo mismo.
+La CLI (32 comandos) y la API local (`ve serve`, `http://127.0.0.1:4747`) ofrecen lo mismo.
 La galería (`ve gallery`) es opcional; el núcleo funciona sin interfaz.

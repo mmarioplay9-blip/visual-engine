@@ -4,14 +4,14 @@ Motor universal, local y gratuito para subir la calidad visual de los proyectos 
 agentes de IA. Mide una referencia real, la descompone en escenas/movimiento/efectos, construye
 con intención, captura el resultado en un navegador real y compara ambos con números.
 
-> **Estado: 0.3 — motor de efectos y composición.** Verificado en Windows con 39 pruebas reales.
+> **Estado: 0.4 — Art Director y diseño verificable.** Verificado en Windows con 45 pruebas reales.
 > Cada capacidad de la tabla se ejecutó; lo estimado y lo pendiente está separado en
 > [docs/CAPABILITIES.md](docs/CAPABILITIES.md). El detalle de la última verificación está en
-> [docs/VERIFICACION-0.3.md](docs/VERIFICACION-0.3.md).
+> [docs/VERIFICACION-0.4.md](docs/VERIFICACION-0.4.md).
 
-La fase 0.3 añade **58 efectos ejecutables en 12 categorías**, composición por capas con
-mezclas/máscaras/curvas, Reference-to-Effects, galería local opcional, OCR y visión local
-verificados, y banco de rendimiento. La línea base 0.1/0.2 sigue verde.
+La fase 0.4 añade **15 estilos de dirección artística**, tokens DTCG, Reference-to-Design,
+Motion Director, **20 composiciones completas** y una comparación A/B con referencia CC0. Conserva
+los 58 efectos, la composición 0.3, las 39 pruebas anteriores y el funcionamiento local/gratuito.
 
 ## Qué hace de verdad
 
@@ -33,7 +33,11 @@ verificados, y banco de rendimiento. La línea base 0.1/0.2 sigue verde.
 | Visión local opcional | Ollama `llava:7b` + Tesseract | **Verificado** con descripción semántica real; `qwen2.5vl:3b` falló en esta instalación |
 | Comparación temporal + calidad multidimensional | Curvas, cortes, deriva, 13 dimensiones | Verificado |
 | Iteración con respaldo, medición y reversión | Copia SHA-256 + `git apply` | Verificado |
-| MCP, CLI y API local | 26 herramientas MCP, 28 comandos, API local | Verificado |
+| Dirección artística | `ve art`: 15 estilos, tokens DTCG, tipografía, materiales y CSS | **Verificado** 15/15 estilos con contraste |
+| Reference-to-Design | `ve refdesign`: identidad, layout, componentes, motion y código | **Verificado** con cartel CC0; mide y declara estimaciones |
+| Motion Director | `ve motiondirector`: recetas, cámara, reduced-motion | **Verificado**: transición monotónica y rotación 2°→1,5° |
+| 20 composiciones | `ve showcase --measure`: 10 arquetipos, 15 estilos | **Verificado** 20/20, 61 FPS medianos, 0 contraste bajo |
+| MCP, CLI y API local | 30 herramientas MCP, 32 comandos, API local | Verificado |
 
 ## Requisitos
 
@@ -77,6 +81,9 @@ ve detect referencia.mp4                           # efectos con evidencia y est
 ve spec referencia.mp4 --out ./analisis            # spec.json + spec.md
 ve recommend --spec ./analisis/spec.json --out ./codigo
 ve temporal referencia.mp4 resultado.mp4 --out ./analisis
+ve art "terminal financiera sobria" --style financial-dashboard --out ./sistema
+ve refdesign referencia.png --out ./sistema --vision
+ve showcase --measure --out ./showcase
 ```
 
 Ciclo de construcción y mejora:
@@ -104,12 +111,10 @@ vuelve atrás.
 ve mcp
 ```
 
-Herramientas (23): las 13 de 0.1 (`visual_doctor`, `visual_analyze`, `visual_extract_frames`,
-`visual_capture`, `visual_compare`, `visual_review`, `visual_effects_list`, `visual_effect_get`,
-`visual_effect_apply`, `visual_adapters`, `visual_scaffold`, `visual_deps_plan`,
-`visual_install_deps`) y 10 nuevas: `visual_timeline`, `visual_camera`, `visual_inspect`,
-`visual_effects_detect`, `visual_spec`, `visual_recommend`, `visual_temporal`, `visual_vision`,
-`visual_iterate`, `visual_backup`. Recurso `visual://effects` y prompt `visual-quality-review`.
+Herramientas (30): las 13 de 0.1, las 10 de 0.2, las 3 de 0.3 (`visual_compose`,
+`visual_reference_effects`, `visual_benchmark`) y las 4 de 0.4: `visual_art_direction`,
+`visual_reference_design`, `visual_motion_director`, `visual_showcase`. Recurso
+`visual://effects` y prompt `visual-quality-review`.
 
 ### CLI + API local
 
@@ -118,10 +123,11 @@ ve serve                      # http://127.0.0.1:4747
 ve serve --allow-install      # habilita POST /v1/deps/install
 ```
 
-Rutas nuevas: `POST /v1/timeline`, `/v1/camera`, `/v1/inspect`, `/v1/effects/detect`,
-`/v1/spec`, `/v1/recommend`, `/v1/temporal`, `/v1/vision`, `/v1/iterate`,
-`/v1/backups/restore`; `GET /v1/recommend`, `/v1/vision/status`, `/v1/backups`. Escucha sólo en
-loopback; `iterate` exige `confirm=true`.
+Rutas: `POST /v1/timeline`, `/v1/camera`, `/v1/inspect`, `/v1/effects/detect`, `/v1/spec`,
+`/v1/recommend`, `/v1/temporal`, `/v1/vision`, `/v1/iterate`, `/v1/compose`,
+`/v1/reference-effects`, `/v1/benchmark`, `/v1/art-direction`, `/v1/reference-design`,
+`/v1/motion-director`, `/v1/showcase`; `GET /v1/recommend`, `/v1/vision/status`,
+`/v1/backups`, `/v1/benchmarks`. Escucha sólo en loopback; `iterate` exige `confirm=true`.
 
 ### Skills e instrucciones
 
@@ -173,12 +179,12 @@ La composición 0.3 acepta capas, mezclas, máscaras y curvas y se renderiza com
 src/core   análisis, media, cámara, timeline, inspección, efectos, spec,
            composición, refeffects, galería, benchmark, visión, calidad,
            temporal, iteración
-src/mcp    servidor MCP (stdio, 26 herramientas)
-src/api    API HTTP local (incluye 0.3)
-src/cli    comandos `ve` (28)
-library/   58 recetas ejecutables en 12 categorías + benchmarks.json
+src/mcp    servidor MCP (stdio, 30 herramientas)
+src/api    API HTTP local (incluye 0.4)
+src/cli    comandos `ve` (32)
+library/   58 recetas, 20 composiciones, fuentes OFL y benchmarks.json
 demo/      referencias 0.1/0.2 + integraciones reales + landing base/final
-tests/     39 pruebas (núcleo, avanzadas, 0.3, CLI, API, MCP, E2E)
+tests/     45 pruebas (núcleo, avanzadas, 0.3, 0.4, CLI, API, MCP, E2E)
 ```
 
 Detalle y decisiones: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
@@ -189,11 +195,11 @@ Detalle y decisiones: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 npm test
 ```
 
-39 pruebas en ~90 s: análisis y cortes, comparación, mapa de calor, CLI, biblioteca de 58
+45 pruebas en ~2 min: análisis y cortes, comparación, mapa de calor, CLI, biblioteca de 58
 efectos, composición, Reference-to-Effects, galería, OCR, scaffolds, `ve init`, API, MCP real,
 timeline/storyboard, cámara, inspección, efectos en motion/UI/3D, spec, snippets JS válidos,
-temporal, iteración con reversión y restauración, visión, y el E2E que exige que la versión
-final supere a la línea base.
+temporal, iteración con reversión y restauración, visión, los 15 estilos, Motion Director,
+Reference-to-Design, 20 composiciones y el E2E que exige que la versión final supere a la base.
 
 ## Licencias
 
@@ -203,7 +209,8 @@ incluye componentes de terceros copiados. Tesseract y Ollama son opcionales y no
 
 ## Qué falta
 
-Detección semántica de objetos/pose, rotación de cámara verificada, transiciones suaves
-verificadas, profundidad métrica, pruebas en Linux/macOS y publicación en GitHub. La OCR y la
-visión local ya están verificadas, con límites declarados. Lista honesta:
+Detección semántica de objetos/pose, transiciones comparadas contra un vídeo de referencia,
+profundidad métrica, pruebas en Linux/macOS y publicación en GitHub. La rotación ya se valida
+sobre patrón sintético y las transiciones CSS tienen curva y reduced-motion verificados; el A/B
+de transiciones con vídeo queda pendiente. Lista honesta:
 [docs/CAPABILITIES.md](docs/CAPABILITIES.md).

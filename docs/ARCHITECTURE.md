@@ -39,7 +39,11 @@ del agente; la verificación deja de ser una opinión.
 | `core/benchmark.ts` | Banco FPS/frame time/heap/carga por efecto | capture |
 | `core/temporal.ts` | Alineación temporal, curvas, cortes y deriva | analysis, quality |
 | `core/iterate.ts` | Copia SHA-256, parche, verificación y reversión | review, run |
-| `core/advanced.ts` | Operaciones compartidas por CLI, MCP y API para 0.2 y 0.3 | todos |
+| `core/styles.ts` | 15 perfiles artísticos, paleta semántica, tipografía, tokens DTCG, auditoría y CSS | util, paths |
+| `core/motion-director.ts` | Recetas de motion, cámara, reduced-motion y validación sintética | motion, pixels |
+| `core/refdesign.ts` | Reference-to-Design: spec → identidad, layout, componentes y código | styles, motion-director, refeffects |
+| `core/showcase.ts` | 20 composiciones, assets compartidos, previews y medición Chromium | styles, library, capture |
+| `core/advanced.ts` | Operaciones compartidas por CLI, MCP y API para 0.2, 0.3 y 0.4 | todos |
 | `core/analysis.ts` | Métricas por fotograma y perfil visual agregado | media, util |
 | `core/compare.ts` | Perfiles: puntuación/paleta/correcciones. Imágenes: SSIM/MAE/ΔE/heatmap | analysis, media |
 | `core/capture.ts` | Chromium real, varios fotogramas, errores JS y de red | Playwright |
@@ -121,6 +125,17 @@ localiza por componentes de luminancia y el OCR sólo aparece si Tesseract exist
 rendimiento sólo puntúa si hay tiempos reales de captura. La composición compara el equilibrio de
 masa por cuadrantes; la jerarquía, contraste/detalle/foco; la animación, movimiento, ritmo y
 número de cortes; la fluidez, el jerk de la curva y el parpadeo de luminancia.
+
+### Dirección artística como sistema, no como paleta
+
+`styles.ts` separa identidad (composición, tipografía, materiales, movimiento, efectos y
+anti-patrones) de los colores. Cada perfil produce tokens DTCG y CSS, pero la auditoría sólo
+comprueba estructura: contraste, escala, espaciado, mesura y accesibilidad. No se presenta como
+juicio artístico. `refdesign.ts` impone la paleta medida como fuente de verdad y marca cada dato
+como `verified` o `estimated`; si el rol de fondo es un negro minoritario de un cartel claro,
+usa el color dominante como fondo y recalcula texto/superficies. `motion-director.ts` valida la
+curva de transición y la magnitud de rotación con una imagen sintética, y excluye animaciones en
+`prefers-reduced-motion`.
 
 ### Iteración con red de seguridad
 

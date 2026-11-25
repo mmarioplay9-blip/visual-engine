@@ -1,0 +1,49 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relay · Visual Engine 0.4</title><link rel="stylesheet" href="./design-system.css"><link rel="stylesheet" href="./page.css">
+</head><body data-style="professional-app" data-mode="light">
+<canvas class="ve-bg" data-effect="circuit-lines" data-bg="#f4f6f9" data-accent="#2457d6" data-accent2="#0f766e" aria-hidden="true"></canvas><div class="ve-scrim" aria-hidden="true"></div>
+<div class="ve-shell"><header class="site-head ve-container"><div class="brand"><span class="brand-mark">VE</span>Relay</div>
+  <nav class="nav" aria-label="Navegación principal"><a href="#bandeja" aria-current="page">Bandeja</a><a href="#clientes">Clientes</a><a href="#macros">Macros</a><a href="#calidad">Calidad</a></nav>
+  <span class="head-meta">Relay · Bandeja compartida</span></header><main class="ve-container"><div class="app-layout">
+    <aside class="panel"><div class="brand" style="margin-bottom:18px"><span class="brand-mark">RE</span>Relay</div>
+      <nav class="side-nav" aria-label="Áreas"><a href="#bandeja" aria-current="page">Bandeja</a><a href="#clientes">Clientes</a><a href="#macros">Macros</a><a href="#calidad">Calidad</a></nav>
+      <div class="side-note">Relay · Bandeja compartida<br>Alta prioridad<br>Cuenta clave<br>SLA 4h</div></aside>
+    <section style="display:grid;gap:12px;align-content:start">
+      <div class="panel"><div class="panel-head"><div><p class="ve-eyebrow">Relay · Bandeja compartida</p><h2>Menos traspasos. Más resolución.</h2></div><span class="chip">Alta prioridad</span></div>
+        <div class="kpis" style="grid-template-columns:repeat(3,1fr)"><div class="kpi"><span>Abiertos</span><b>18</b></div><div class="kpi"><span>T. respuesta</span><b>2m 14s</b></div><div class="kpi"><span>CSAT</span><b>94 %</b></div></div></div>
+      <div class="composer"><span class="ve-eyebrow">Espacio de trabajo</span><h1>Prioriza conversaciones, comparte contexto y cierra el bucle con el cliente.</h1><div class="input" role="textbox" aria-label="Contenido de ejemplo" tabindex="0">Escribe una nota, adjunta evidencia o menciona a alguien del equipo…</div><div class="actions"><button class="ve-button" type="button" data-action>Abrir bandeja</button><button class="ve-button ve-button--ghost" type="button">Ver métricas</button></div><div class="chip-row" style="margin-top:14px"><span class="chip">Alta prioridad</span><span class="chip">Cuenta clave</span><span class="chip">SLA 4h</span></div></div>
+      <div class="panel"><div class="panel-head"><h3>Actividad</h3><div class="tabs" role="tablist"><button class="tab" type="button" role="tab" data-tab="Todo" aria-selected="true">Todo</button><button class="tab" type="button" role="tab" data-tab="Mío" aria-selected="false">Mío</button></div></div>
+      <div class="list"><div class="list-item" data-row><div><b>Contexto actualizado</b><p>Abiertos · Alta prioridad</p></div><time>9:02</time></div><div class="list-item" data-row><div><b>Decisión registrada</b><p>T. respuesta · Cuenta clave</p></div><time>10:03</time></div><div class="list-item" data-row><div><b>Evidencia adjunta</b><p>CSAT · SLA 4h</p></div><time>11:04</time></div></div></div>
+    </section>
+    <aside class="panel"><div class="panel-head"><h3>Contexto</h3><span class="status-dot"></span></div><div class="insight"><strong>Menos traspasos. Más resolución.</strong>Prioriza conversaciones, comparte contexto y cierra el bucle con el cliente.</div><hr class="ve-rule"><p class="ve-eyebrow">Serie</p><div class="chart" style="height:110px"><i style="--h:44%"></i><i style="--h:38%"></i><i style="--h:52%"></i><i style="--h:48%"></i><i style="--h:60%"></i><i style="--h:56%"></i><i style="--h:68%"></i><i style="--h:64%"></i></div><div class="side-note">Datos locales · 2026-11-25</div></aside>
+  </div></main><footer class="site-foot ve-container"><span>Relay · Visual Engine 0.4</span><span>Alta prioridad / Cuenta clave / SLA 4h</span></footer></div>
+<script type="module">
+import * as fx0 from '../../assets/effects/circuit-lines/effect.js';
+import * as fx1 from '../../assets/effects/wave-contours/effect.js';
+const fx = { 'circuit-lines': fx0, 'wave-contours': fx1 };
+const failed = [];
+for (const canvas of document.querySelectorAll('canvas[data-effect]')) {
+  const mod = fx[canvas.dataset.effect];
+  try {
+    if (mod && typeof mod.mount === 'function') mod.mount(canvas, { bg: canvas.dataset.bg, accent: canvas.dataset.accent, accent2: canvas.dataset.accent2, speed: 0.8 });
+    else failed.push(canvas.dataset.effect + ': sin mount');
+  } catch (error) { failed.push(canvas.dataset.effect + ': ' + error.message); }
+}
+document.querySelectorAll('[data-tab]').forEach((tab) => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('[data-tab]').forEach((other) => other.setAttribute('aria-selected', String(other === tab)));
+  });
+});
+document.querySelectorAll('[data-action]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const pressed = button.getAttribute('aria-pressed') === 'true';
+    button.setAttribute('aria-pressed', String(!pressed));
+    button.textContent = pressed ? button.dataset.label || button.textContent : 'Hecho';
+  });
+});
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('[data-reveal]').forEach((el) => { el.style.opacity = '0'; requestAnimationFrame(() => { el.style.opacity = ''; }); });
+}
+window.__veShowcase = { id: 'relay', effects: ["circuit-lines","wave-contours"], failed };
+document.fonts.ready.then(() => { window.__veReady = true; });
+</script></body></html>

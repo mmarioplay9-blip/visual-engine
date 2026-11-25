@@ -1,0 +1,21 @@
+{
+  "id": "signal",
+  "title": "Signal",
+  "style": "sci-fi",
+  "archetype": "dashboard",
+  "ok": true,
+  "loadMs": 586,
+  "fps": 61,
+  "frames": 43,
+  "heapMB": 9.5,
+  "overflowX": 0,
+  "contrastViolations": 0,
+  "contrastChecked": 47,
+  "worstContrast": 7.74,
+  "contrastSamples": [],
+  "fontReady": true,
+  "tabWorks": true,
+  "errors": [],
+  "screenshot": "signal/preview.png",
+  "measuredAt": "2026-11-25T20:06:39.688Z"
+}

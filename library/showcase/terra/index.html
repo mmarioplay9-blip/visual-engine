@@ -1,0 +1,44 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terra · Visual Engine 0.4</title><link rel="stylesheet" href="./design-system.css"><link rel="stylesheet" href="./page.css">
+</head><body data-style="organic-natural" data-mode="light">
+<canvas class="ve-bg" data-effect="caustic-light" data-bg="#f1eadc" data-accent="#31705a" data-accent2="#b45f3f" aria-hidden="true"></canvas><div class="ve-scrim" aria-hidden="true"></div>
+<div class="ve-shell"><header class="site-head ve-container"><div class="brand"><span class="brand-mark">VE</span>Terra</div>
+  <nav class="nav" aria-label="Navegación principal"><a href="#parcela" aria-current="page">Parcela</a><a href="#suelo">Suelo</a><a href="#cosecha">Cosecha</a><a href="#comunidad">Comunidad</a></nav>
+  <span class="head-meta">Terra · Temporada de otoño</span></header><main class="ve-container"><div class="mobile-stage"><div class="phone"><div class="phone-head"><span>9:41</span><span>Terra · Temporada de otoño</span></div>
+    <div class="phone-body"><p class="ve-eyebrow">Parcela Norte</p><h1>Comprende tu suelo.</h1><div class="feature feature--wide" data-reveal="2">
+    <canvas data-effect="ink-diffusion" data-bg="#fbf6eb" data-accent="#31705a" data-accent2="#b45f3f" aria-label="Visualización generativa ink-diffusion"></canvas>
+    <div class="feature-overlay"><div><div class="feature-label">Parcela Norte</div><div class="feature-value">42 %</div></div><span class="status-dot" aria-label="Activo"></span></div>
+  </div>
+      <div class="phone-grid"><div><b>42 %</b><span>Humedad</span></div><div><b>3,8 %</b><span>Materia orgánica</span></div><div><b>6,4</b><span>pH</span></div></div>
+      <p class="ve-lead" style="font-size:12px">Humedad, materia orgánica y calendario de siembra en lectura directa desde el campo.</p><div class="actions" style="margin-top:12px"><button class="ve-button" type="button" data-action style="min-height:38px;font-size:12px">Registrar parcela</button></div></div>
+    <nav class="phone-tabbar" aria-label="Navegación móvil"><span style="color:var(--ve-accent)">Parcela</span><span>Suelo</span><span>Cosecha</span><span>Comunidad</span></nav></div></div></main><footer class="site-foot ve-container"><span>Terra · Visual Engine 0.4</span><span>Parcela Norte / Sin riego / Local</span></footer></div>
+<script type="module">
+import * as fx0 from '../../assets/effects/caustic-light/effect.js';
+import * as fx1 from '../../assets/effects/ink-diffusion/effect.js';
+const fx = { 'caustic-light': fx0, 'ink-diffusion': fx1 };
+const failed = [];
+for (const canvas of document.querySelectorAll('canvas[data-effect]')) {
+  const mod = fx[canvas.dataset.effect];
+  try {
+    if (mod && typeof mod.mount === 'function') mod.mount(canvas, { bg: canvas.dataset.bg, accent: canvas.dataset.accent, accent2: canvas.dataset.accent2, speed: 0.8 });
+    else failed.push(canvas.dataset.effect + ': sin mount');
+  } catch (error) { failed.push(canvas.dataset.effect + ': ' + error.message); }
+}
+document.querySelectorAll('[data-tab]').forEach((tab) => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('[data-tab]').forEach((other) => other.setAttribute('aria-selected', String(other === tab)));
+  });
+});
+document.querySelectorAll('[data-action]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const pressed = button.getAttribute('aria-pressed') === 'true';
+    button.setAttribute('aria-pressed', String(!pressed));
+    button.textContent = pressed ? button.dataset.label || button.textContent : 'Hecho';
+  });
+});
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('[data-reveal]').forEach((el) => { el.style.opacity = '0'; requestAnimationFrame(() => { el.style.opacity = ''; }); });
+}
+window.__veShowcase = { id: 'terra', effects: ["caustic-light","ink-diffusion"], failed };
+document.fonts.ready.then(() => { window.__veReady = true; });
+</script></body></html>

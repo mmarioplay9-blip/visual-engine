@@ -1,0 +1,21 @@
+{
+  "id": "aegis",
+  "title": "Aegis",
+  "style": "sci-fi",
+  "archetype": "hud",
+  "ok": true,
+  "loadMs": 581,
+  "fps": 61,
+  "frames": 43,
+  "heapMB": 9.5,
+  "overflowX": 0,
+  "contrastViolations": 0,
+  "contrastChecked": 39,
+  "worstContrast": 7.32,
+  "contrastSamples": [],
+  "fontReady": true,
+  "tabWorks": true,
+  "errors": [],
+  "screenshot": "aegis/preview.png",
+  "measuredAt": "2026-11-25T20:06:11.606Z"
+}

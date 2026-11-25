@@ -1,0 +1,51 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meridian · Visual Engine 0.4</title><link rel="stylesheet" href="./design-system.css"><link rel="stylesheet" href="./page.css">
+</head><body data-style="financial-dashboard" data-mode="dark">
+<canvas class="ve-bg" data-effect="circuit-lines" data-bg="#071019" data-accent="#36d6a4" data-accent2="#ff6b6b" aria-hidden="true"></canvas><div class="ve-scrim" aria-hidden="true"></div>
+<div class="ve-shell"><header class="site-head ve-container"><div class="brand"><span class="brand-mark">VE</span>Meridian</div>
+  <nav class="nav" aria-label="Navegación principal"><a href="#resumen" aria-current="page">Resumen</a><a href="#riesgo">Riesgo</a><a href="#órdenes">Órdenes</a><a href="#informes">Informes</a></nav>
+  <span class="head-meta">Meridian · Cartera global</span></header><main class="ve-container"><div class="console">
+    <aside class="panel"><div class="brand" style="margin-bottom:20px"><span class="brand-mark">ME</span>Meridian</div>
+      <nav class="side-nav" aria-label="Secciones"><a href="#resumen" aria-current="page">Resumen<span>01</span></a><a href="#riesgo">Riesgo<span>02</span></a><a href="#órdenes">Órdenes<span>03</span></a><a href="#informes">Informes<span>04</span></a></nav>
+      <div class="side-note">Última sincronización<br>2026-11-25 · 09:42 UTC<br><br>Entorno verificado<br>Sin incidencias críticas</div>
+    </aside>
+    <section class="dash-main"><div class="panel"><div class="panel-head"><div><p class="ve-eyebrow">Meridian · Cartera global</p><h2>Exposición bajo control.</h2></div><div class="tabs" role="tablist"><button type="button" class="tab" role="tab" data-tab="Resumen" aria-selected="true">Resumen</button><button type="button" class="tab" role="tab" data-tab="Riesgo" aria-selected="false">Riesgo</button><button type="button" class="tab" role="tab" data-tab="Flujo" aria-selected="false">Flujo</button></div></div>
+      <div class="kpis"><div class="kpi"><span>Valor</span><b>€ 8,42 M</b><em>+1,8 %</em></div><div class="kpi"><span>Volatilidad</span><b>11,2 %</b><em>-0,4</em></div><div class="kpi"><span>Sharpe</span><b>1,76</b></div><div class="kpi"><span>Caja</span><b>6,3 %</b></div></div>
+      <div class="chart" aria-label="Serie temporal"><i style="--h:42%"></i><i style="--h:46%"></i><i style="--h:44%"></i><i style="--h:54%"></i><i style="--h:50%"></i><i style="--h:62%"></i><i style="--h:58%"></i><i style="--h:70%"></i><i style="--h:66%"></i><i style="--h:74%"></i><i style="--h:72%"></i><i style="--h:80%"></i></div><div class="chart-axis"><span>08:00</span><span>10:00</span><span>12:00</span><span>14:00</span><span>16:00</span></div></div>
+      <div class="panel"><div class="panel-head"><h3>Movimientos recientes</h3><span class="ve-mono" style="font-size:9px;color:var(--ve-muted)">4 registros</span></div>
+      <table class="table"><thead><tr><th>Serie</th><th>Valor</th><th>Δ</th><th>Estado</th></tr></thead><tbody><tr data-row><td>Valor</td><td>€ 8,42 M</td><td class="positive">+1,8 %</td><td>liquidado</td></tr><tr data-row><td>Volatilidad</td><td>11,2 %</td><td class="negative">-0,4</td><td>liquidado</td></tr><tr data-row><td>Reserva</td><td>12,8 %</td><td class="positive">+0,2</td><td>liquidado</td></tr><tr data-row><td>Cola</td><td>04</td><td class="negative">estable</td><td>cola</td></tr></tbody></table></div>
+    </section>
+    <aside class="panel"><div class="panel-head"><h3>Lectura</h3><span class="status-dot"></span></div><div class="insight"><span class="ve-eyebrow">Ahora</span><strong>Riesgo, atribución y liquidez con una lectura consistente del mercado.</strong>La señal se mantiene dentro del rango previsto. Revisa la ventana antes del cierre.</div>
+      <div class="bar-list"><div><span>Renta variable</span><i style="--w:68%"></i><span>68%</span></div><div><span>Divisa</span><i style="--w:51%"></i><span>51%</span></div><div><span>Renta fija</span><i style="--w:34%"></i><span>34%</span></div></div>
+      <hr class="ve-rule"><button class="ve-button" type="button" data-action style="width:100%">Ver posiciones</button><div class="side-note">Modelo: local · Sin conexión externa</div>
+    </aside></div></main><footer class="site-foot ve-container"><span>Meridian · Visual Engine 0.4</span><span>Renta variable / Divisa / Renta fija</span></footer></div>
+<script type="module">
+import * as fx0 from '../../assets/effects/circuit-lines/effect.js';
+import * as fx1 from '../../assets/effects/waveform-monitor/effect.js';
+const fx = { 'circuit-lines': fx0, 'waveform-monitor': fx1 };
+const failed = [];
+for (const canvas of document.querySelectorAll('canvas[data-effect]')) {
+  const mod = fx[canvas.dataset.effect];
+  try {
+    if (mod && typeof mod.mount === 'function') mod.mount(canvas, { bg: canvas.dataset.bg, accent: canvas.dataset.accent, accent2: canvas.dataset.accent2, speed: 0.8 });
+    else failed.push(canvas.dataset.effect + ': sin mount');
+  } catch (error) { failed.push(canvas.dataset.effect + ': ' + error.message); }
+}
+document.querySelectorAll('[data-tab]').forEach((tab) => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('[data-tab]').forEach((other) => other.setAttribute('aria-selected', String(other === tab)));
+  });
+});
+document.querySelectorAll('[data-action]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const pressed = button.getAttribute('aria-pressed') === 'true';
+    button.setAttribute('aria-pressed', String(!pressed));
+    button.textContent = pressed ? button.dataset.label || button.textContent : 'Hecho';
+  });
+});
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('[data-reveal]').forEach((el) => { el.style.opacity = '0'; requestAnimationFrame(() => { el.style.opacity = ''; }); });
+}
+window.__veShowcase = { id: 'meridian', effects: ["circuit-lines","waveform-monitor"], failed };
+document.fonts.ready.then(() => { window.__veReady = true; });
+</script></body></html>

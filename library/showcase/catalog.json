@@ -1,0 +1,27 @@
+{
+  "version": "0.4",
+  "count": 20,
+  "generatedAt": "2026-11-25T20:03:45.350Z",
+  "compositions": [
+    {
+      "id": "raw-grid",
+      "html": "<repo>\\library\\showcase\\raw-grid\\index.html",
+      "style": "brutalism",
+      "archetype": "mobile",
+      "effects": [
+        "dot-matrix",
+        "glitch-slices"
+      ]
+    },
+    {
+      "id": "mono",
+      "html": "<repo>\\library\\showcase\\mono\\index.html",
+      "style": "brutalism",
+      "archetype": "poster",
+      "effects": [
+        "ink-diffusion",
+        "dissolve-grain"
+      ]
+    }
+  ]
+}

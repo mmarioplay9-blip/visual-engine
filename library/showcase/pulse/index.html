@@ -1,0 +1,49 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pulse · Visual Engine 0.4</title><link rel="stylesheet" href="./design-system.css"><link rel="stylesheet" href="./page.css">
+</head><body data-style="motion-graphics" data-mode="dark">
+<canvas class="ve-bg" data-effect="waveform-monitor" data-bg="#090909" data-accent="#ff6b35" data-accent2="#7cf5ff" aria-hidden="true"></canvas><div class="ve-scrim" aria-hidden="true"></div>
+<div class="ve-shell"><header class="site-head ve-container"><div class="brand"><span class="brand-mark">VE</span>Pulse</div>
+  <nav class="nav" aria-label="Navegación principal"><a href="#ahora" aria-current="page">Ahora</a><a href="#cola">Cola</a><a href="#biblioteca">Biblioteca</a><a href="#salas">Salas</a></nav>
+  <span class="head-meta">Pulse · Sesión en vivo</span></header><main class="ve-container"><div class="app-layout">
+    <aside class="panel"><div class="brand" style="margin-bottom:18px"><span class="brand-mark">PU</span>Pulse</div>
+      <nav class="side-nav" aria-label="Áreas"><a href="#ahora" aria-current="page">Ahora</a><a href="#cola">Cola</a><a href="#biblioteca">Biblioteca</a><a href="#salas">Salas</a></nav>
+      <div class="side-note">Pulse · Sesión en vivo<br>Sesión 04<br>Estéreo<br>Sin pérdida</div></aside>
+    <section style="display:grid;gap:12px;align-content:start">
+      <div class="panel"><div class="panel-head"><div><p class="ve-eyebrow">Pulse · Sesión en vivo</p><h2>Escucha la estructura.</h2></div><span class="chip">Sesión 04</span></div>
+        <div class="kpis" style="grid-template-columns:repeat(3,1fr)"><div class="kpi"><span>BPM</span><b>124</b></div><div class="kpi"><span>Tonalidad</span><b>Fm</b></div><div class="kpi"><span>Duración</span><b>06:18</b></div></div></div>
+      <div class="composer"><span class="ve-eyebrow">Espacio de trabajo</span><h1>Un reproductor que muestra energía, textura y dinámica sin tapar la música.</h1><div class="input" role="textbox" aria-label="Contenido de ejemplo" tabindex="0">Escribe una nota, adjunta evidencia o menciona a alguien del equipo…</div><div class="actions"><button class="ve-button" type="button" data-action>Reproducir</button><button class="ve-button ve-button--ghost" type="button">Ver cola</button></div><div class="chip-row" style="margin-top:14px"><span class="chip">Sesión 04</span><span class="chip">Estéreo</span><span class="chip">Sin pérdida</span></div></div>
+      <div class="panel"><div class="panel-head"><h3>Actividad</h3><div class="tabs" role="tablist"><button class="tab" type="button" role="tab" data-tab="Todo" aria-selected="true">Todo</button><button class="tab" type="button" role="tab" data-tab="Mío" aria-selected="false">Mío</button></div></div>
+      <div class="list"><div class="list-item" data-row><div><b>Contexto actualizado</b><p>BPM · Sesión 04</p></div><time>9:02</time></div><div class="list-item" data-row><div><b>Decisión registrada</b><p>Tonalidad · Estéreo</p></div><time>10:03</time></div><div class="list-item" data-row><div><b>Evidencia adjunta</b><p>Duración · Sin pérdida</p></div><time>11:04</time></div></div></div>
+    </section>
+    <aside class="panel"><div class="panel-head"><h3>Contexto</h3><span class="status-dot"></span></div><div class="insight"><strong>Escucha la estructura.</strong>Un reproductor que muestra energía, textura y dinámica sin tapar la música.</div><hr class="ve-rule"><p class="ve-eyebrow">Serie</p><div class="chart" style="height:110px"><i style="--h:30%"></i><i style="--h:52%"></i><i style="--h:44%"></i><i style="--h:70%"></i><i style="--h:38%"></i><i style="--h:62%"></i><i style="--h:46%"></i><i style="--h:76%"></i><i style="--h:42%"></i><i style="--h:58%"></i></div><div class="side-note">Datos locales · 2026-11-25</div></aside>
+  </div></main><footer class="site-foot ve-container"><span>Pulse · Visual Engine 0.4</span><span>Sesión 04 / Estéreo / Sin pérdida</span></footer></div>
+<script type="module">
+import * as fx0 from '../../assets/effects/waveform-monitor/effect.js';
+import * as fx1 from '../../assets/effects/starfield-warp/effect.js';
+const fx = { 'waveform-monitor': fx0, 'starfield-warp': fx1 };
+const failed = [];
+for (const canvas of document.querySelectorAll('canvas[data-effect]')) {
+  const mod = fx[canvas.dataset.effect];
+  try {
+    if (mod && typeof mod.mount === 'function') mod.mount(canvas, { bg: canvas.dataset.bg, accent: canvas.dataset.accent, accent2: canvas.dataset.accent2, speed: 0.8 });
+    else failed.push(canvas.dataset.effect + ': sin mount');
+  } catch (error) { failed.push(canvas.dataset.effect + ': ' + error.message); }
+}
+document.querySelectorAll('[data-tab]').forEach((tab) => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('[data-tab]').forEach((other) => other.setAttribute('aria-selected', String(other === tab)));
+  });
+});
+document.querySelectorAll('[data-action]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const pressed = button.getAttribute('aria-pressed') === 'true';
+    button.setAttribute('aria-pressed', String(!pressed));
+    button.textContent = pressed ? button.dataset.label || button.textContent : 'Hecho';
+  });
+});
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('[data-reveal]').forEach((el) => { el.style.opacity = '0'; requestAnimationFrame(() => { el.style.opacity = ''; }); });
+}
+window.__veShowcase = { id: 'pulse', effects: ["waveform-monitor","starfield-warp"], failed };
+document.fonts.ready.then(() => { window.__veReady = true; });
+</script></body></html>

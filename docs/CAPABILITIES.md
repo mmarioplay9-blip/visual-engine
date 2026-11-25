@@ -1,4 +1,4 @@
-# Capacidades de Visual Engine 0.3
+# Capacidades de Visual Engine 0.4
 
 Fecha: 2026-11-25 · Windows 11 · Node 26.13.1 · FFmpeg 9.1 · Playwright 1.65.1 ·
 Tesseract 5.4 · Ollama con `llava:7b` · RTX 4060 Ti (16.380 MB VRAM).
@@ -9,6 +9,36 @@ Tres estados, sin mezclarlos:
 - **Estimado**: hay una señal medida, pero la interpretación es un proxy; se devuelve como
   `estimated` con su evidencia.
 - **No disponible**: falta una herramienta o un modelo; se devuelve el motivo exacto.
+
+## 0.4 · Art Director, Reference-to-Design y composiciones
+
+| Requisito | Implementación | Estado |
+| --- | --- | --- |
+| 15 estilos | perfiles con composición, tipografía, materiales, motion, efectos y anti-patrones | **Verificado** 15/15, contraste y tokens |
+| Identidad y tokens | DTCG, paleta semántica, escala modular, espaciado, sombras y CSS | **Verificado**; el sistema se renderiza |
+| Reference-to-Design | imagen/vídeo → identidad, layout, capas, componentes, motion y código | **Verificado** con cartel CC0; `confirmed` vs `estimated` |
+| Tipografía | fuentes OFL locales, escala, tracking, line-height y responsive | **Verificado**; familia original no identificada |
+| Motion Director | 6 recetas, 3 cámaras, CSS/GSAP/Motion One, reduced-motion | **Verificado**; curva y rotación medida |
+| 20 composiciones | 10 arquetipos, 15 estilos, efectos existentes | **Verificado** 20/20 en Chromium |
+| CLI/MCP/API | `art`, `refdesign`, `motiondirector`, `showcase` en las tres capas | **Verificado** por pruebas y smoke tests |
+
+Medición de las composiciones: **61 FPS medianos, mínimo 43, 0 violaciones de contraste en 619
+textos, 0 overflow, reduced-motion respetado**. Nocturne es el mínimo por bloom + grano.
+
+### A/B con referencia CC0
+
+Mismo agente, mismas instrucciones, mismo presupuesto y mismo copy; dos páginas estáticas
+capturadas a 1280×800. Referencia: *Moulin Rouge: La Goulue*, MET, CC0.
+
+| Dimensión | A genérica | B Art Director |
+| --- | ---: | ---: |
+| Coherencia | 0,0 | **98,1** |
+| Tipografía | 92,7 | **100,0** |
+| Accesibilidad | 91,1 | **97,7** |
+| Calidad total | 59,8 | **76,4** |
+
+La composición baja de 96,8 a 93,5 y se publica. La referencia es estática: no se usa para
+afirmar una mejora de transiciones contra vídeo. Evidencia en `docs/evidencia/0.4/ab/`.
 
 ## 0.3 · Inteligencia visual
 
@@ -109,11 +139,11 @@ con código 0. Se documenta como incompatibilidad de versión, no se oculta.
 
 | Requisito | Estado |
 | --- | --- |
-| MCP | **26 herramientas**, recurso de efectos y prompt; cliente stdio real |
-| CLI | **28 comandos**; `compose`, `refeffects`, `gallery`, `benchmark`, `vision setup` |
-| API local | mismas operaciones; sirve composiciones y galería |
-| Skills | `skills/visual-engine/SKILL.md`, actualizada a 0.3 |
-| Instrucciones | `agents/AGENTS.md`, actualizadas a 0.3 |
+| MCP | **30 herramientas**, recurso de efectos y prompt; cliente stdio real |
+| CLI | **32 comandos**; incluye `art`, `refdesign`, `motiondirector`, `showcase` |
+| API local | mismas operaciones; incluye `/v1/art-direction`, `/v1/reference-design`, `/v1/motion-director`, `/v1/showcase` |
+| Skills | `skills/visual-engine/SKILL.md`, actualizada a 0.4 |
+| Instrucciones | `agents/AGENTS.md`, actualizadas a 0.4 |
 | Independencia del modelo | Sí; no hay SDK de proveedor; Ollama es opcional y local |
 | Windows / Linux / macOS | Diseñado multiplataforma; **probado sólo en Windows** |
 | Instalación / actualización | PowerShell/Bash y `ve update`; **sin publicar en GitHub** |
@@ -123,12 +153,12 @@ con código 0. Se documenta como incompatibilidad de versión, no se oculta.
 1. **Objetos/pose**: no hay detector semántico; sólo saliencia. No se etiquetan clases.
 2. **Profundidad y parallax**: proxies geométricos, no mapas métricos.
 3. **Etiquetas de efectos**: interpretan señales; no identifican el shader o plugin concretos.
-4. **Rotación de cámara**: sin referencia de validación.
-5. **Transiciones suaves**: los cortes duros se verifican; fundidos/barridos son estimaciones.
+4. **Rotación de cámara**: validada en magnitud sobre patrón sintético (2°→1,5°, error 0,5°); no certifica cualquier render WebGL.
+5. **Transiciones suaves**: curva y reduced-motion verificados; el A/B de transiciones contra vídeo no se ejecutó (la referencia A/B es estática).
 6. **OCR**: falla con tipografía decorativa y puede confundir cifras; se declara.
 7. **LLaVA**: útil para descripción general, no para leer copy exacto; `qwen2.5vl:3b` falló.
-8. **Referencias reales**: se usaron renders propios autorizados (Remotion, GSAP, Three), no
-   material de terceros sin licencia. No hay validación con material de cliente.
+8. **Referencias reales**: se usaron renders propios autorizados (Remotion, GSAP, Three) y un
+   cartel CC0 del MET. No hay validación con material de cliente.
 9. **Temporal**: exige dos vídeos; la comparación de capturas se hace en `review`.
 10. **Plataformas**: sin pruebas en Linux/macOS.
 11. **Publicación**: el repositorio no se ha publicado en GitHub en esta fase.

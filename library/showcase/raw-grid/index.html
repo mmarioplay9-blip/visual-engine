@@ -1,0 +1,44 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Raw Grid · Visual Engine 0.4</title><link rel="stylesheet" href="./design-system.css"><link rel="stylesheet" href="./page.css">
+</head><body data-style="brutalism" data-mode="light">
+<canvas class="ve-bg" data-effect="dot-matrix" data-bg="#f2f0e8" data-accent="#ff3d00" data-accent2="#1e3aff" aria-hidden="true"></canvas><div class="ve-scrim" aria-hidden="true"></div>
+<div class="ve-shell"><header class="site-head ve-container"><div class="brand"><span class="brand-mark">VE</span>Raw Grid</div>
+  <nav class="nav" aria-label="Navegación principal"><a href="#todo" aria-current="page">Todo</a><a href="#color">Color</a><a href="#texto">Texto</a><a href="#ruido">Ruido</a></nav>
+  <span class="head-meta">RAW / GRID / 2026</span></header><main class="ve-container"><div class="mobile-stage"><div class="phone"><div class="phone-head"><span>9:41</span><span>RAW / GRID / 2026</span></div>
+    <div class="phone-body"><p class="ve-eyebrow">SIN FILTRO</p><h1>ARCHIVO SIN CURADURÍA.</h1><div class="feature feature--wide" data-reveal="2">
+    <canvas data-effect="glitch-slices" data-bg="#ffffff" data-accent="#ff3d00" data-accent2="#1e3aff" aria-label="Visualización generativa glitch-slices"></canvas>
+    <div class="feature-overlay"><div><div class="feature-label">SIN FILTRO</div><div class="feature-value">3.284</div></div><span class="status-dot" aria-label="Activo"></span></div>
+  </div>
+      <div class="phone-grid"><div><b>3.284</b><span>Elementos</span></div><div><b>91</b><span>Etiquetas</span></div><div><b>12 MB</b><span>Peso</span></div></div>
+      <p class="ve-lead" style="font-size:12px">Imágenes, notas y ruido. Busca por fecha, color o accidente.</p><div class="actions" style="margin-top:12px"><button class="ve-button" type="button" data-action style="min-height:38px;font-size:12px">Abrir archivo</button></div></div>
+    <nav class="phone-tabbar" aria-label="Navegación móvil"><span class="active" aria-current="page">Todo</span><span>Color</span><span>Texto</span><span>Ruido</span></nav></div></div></main><footer class="site-foot ve-container"><span>Raw Grid · Visual Engine 0.4</span><span>SIN FILTRO / LOCAL / ABIERTO</span></footer></div>
+<script type="module">
+import * as fx0 from '../../assets/effects/dot-matrix/effect.js';
+import * as fx1 from '../../assets/effects/glitch-slices/effect.js';
+const fx = { 'dot-matrix': fx0, 'glitch-slices': fx1 };
+const failed = [];
+for (const canvas of document.querySelectorAll('canvas[data-effect]')) {
+  const mod = fx[canvas.dataset.effect];
+  try {
+    if (mod && typeof mod.mount === 'function') mod.mount(canvas, { bg: canvas.dataset.bg, accent: canvas.dataset.accent, accent2: canvas.dataset.accent2, speed: 0.8 });
+    else failed.push(canvas.dataset.effect + ': sin mount');
+  } catch (error) { failed.push(canvas.dataset.effect + ': ' + error.message); }
+}
+document.querySelectorAll('[data-tab]').forEach((tab) => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('[data-tab]').forEach((other) => other.setAttribute('aria-selected', String(other === tab)));
+  });
+});
+document.querySelectorAll('[data-action]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const pressed = button.getAttribute('aria-pressed') === 'true';
+    button.setAttribute('aria-pressed', String(!pressed));
+    button.textContent = pressed ? button.dataset.label || button.textContent : 'Hecho';
+  });
+});
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('[data-reveal]').forEach((el) => { el.style.opacity = '0'; requestAnimationFrame(() => { el.style.opacity = ''; }); });
+}
+window.__veShowcase = { id: 'raw-grid', effects: ["dot-matrix","glitch-slices"], failed };
+document.fonts.ready.then(() => { window.__veReady = true; });
+</script></body></html>

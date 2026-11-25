@@ -1,0 +1,240 @@
+{
+  "reference": "docs/evidencia/0.4/referencia-dominio-publico.jpg",
+  "license": "CC0 · The Metropolitan Museum of Art (Moulin Rouge: La Goulue, Henri de Toulouse-Lautrec)",
+  "sameAgent": true,
+  "sameInstructions": true,
+  "sameBudget": "Dos páginas estáticas, mismo copy, sin efectos de biblioteca ni dependencias; una sola captura por variante.",
+  "baseline": {
+    "files": [
+      "docs/evidencia/0.4/ab/baseline.html"
+    ],
+    "captured": [
+      "<repo>\\docs\\evidencia\\0.4\\ab\\capture-baseline\\capture-01.png"
+    ],
+    "quality": 59.8,
+    "dimensions": {
+      "fidelity": 31.6,
+      "composition": 96.8,
+      "hierarchy": 45.4,
+      "typography": 92.7,
+      "depth": 85.4,
+      "lighting": 6.5,
+      "animation": 100,
+      "transitions": 100,
+      "coherence": 0,
+      "accessibility": 91.1,
+      "fluidity": null,
+      "performance": null,
+      "restraint": 100
+    },
+    "typography": {
+      "elements": 9,
+      "headings": 1,
+      "distinctSizes": 4,
+      "averageFontSize": 15.8,
+      "hierarchyRatio": 2.7,
+      "note": "Tamaños y pesos leídos del DOM; no evalúa calidad artística de la elección tipográfica."
+    },
+    "accessibility": {
+      "checked": 9,
+      "violations": 2,
+      "averageContrast": 7.73,
+      "worstContrast": 3.66,
+      "samples": [
+        {
+          "text": "ARCHIVO · CARTEL 1891 · DOMINIO PÚBLICO",
+          "contrast": 3.66,
+          "fontSize": 12,
+          "required": 4.5
+        },
+        {
+          "text": "LE BAL DES OMBRES",
+          "contrast": 16.29,
+          "fontSize": 32,
+          "required": 3
+        },
+        {
+          "text": "Una noche de música, cuerpo y luz artificial. La ciudad moderna entra en escena.",
+          "contrast": 8.67,
+          "fontSize": 16,
+          "required": 4.5
+        },
+        {
+          "text": "Abrir el archivo",
+          "contrast": 4.45,
+          "fontSize": 14,
+          "required": 4.5
+        },
+        {
+          "text": "Año",
+          "contrast": 7.01,
+          "fontSize": 12,
+          "required": 4.5
+        },
+        {
+          "text": "Licencia",
+          "contrast": 7.01,
+          "fontSize": 12,
+          "required": 4.5
+        },
+        {
+          "text": "Original",
+          "contrast": 7.01,
+          "fontSize": 12,
+          "required": 4.5
+        },
+        {
+          "text": "Reconstrucción sin sistema tipográfico ni tokens.",
+          "contrast": 7.74,
+          "fontSize": 16,
+          "required": 4.5
+        },
+        {
+          "text": "Mismo contenido. Sin dirección artística.",
+          "contrast": 7.74,
+          "fontSize": 16,
+          "required": 4.5
+        }
+      ],
+      "note": "Contraste calculado en Chromium contra el primer ancestro con fondo opaco; aproximación orientativa, no certificación WCAG."
+    }
+  },
+  "artDirector": {
+    "files": [
+      "docs/evidencia/0.4/ab/art-direction.html"
+    ],
+    "captured": [
+      "<repo>\\docs\\evidencia\\0.4\\ab\\capture-art\\capture-01.png"
+    ],
+    "quality": 76.4,
+    "dimensions": {
+      "fidelity": 56.5,
+      "composition": 93.5,
+      "hierarchy": 40,
+      "typography": 100,
+      "depth": 94.1,
+      "lighting": 49.7,
+      "animation": 100,
+      "transitions": 100,
+      "coherence": 98.1,
+      "accessibility": 97.7,
+      "fluidity": null,
+      "performance": null,
+      "restraint": 100
+    },
+    "typography": {
+      "elements": 13,
+      "headings": 1,
+      "distinctSizes": 6,
+      "averageFontSize": 19,
+      "hierarchyRatio": 11.4,
+      "note": "Tamaños y pesos leídos del DOM; no evalúa calidad artística de la elección tipográfica."
+    },
+    "accessibility": {
+      "checked": 13,
+      "violations": 0,
+      "averageContrast": 6.73,
+      "worstContrast": 5.1,
+      "samples": [
+        {
+          "text": "ARCHIVO · CARTEL 1891 · DOMINIO PÚBLICO",
+          "contrast": 5.1,
+          "fontSize": 10,
+          "required": 4.5
+        },
+        {
+          "text": "Motion graphics",
+          "contrast": 5.1,
+          "fontSize": 10,
+          "required": 4.5
+        },
+        {
+          "text": "Referencia medida → sistema",
+          "contrast": 9.35,
+          "fontSize": 10,
+          "required": 4.5
+        },
+        {
+          "text": "LE BAL DES OMBRES",
+          "contrast": 9.35,
+          "fontSize": 102.6,
+          "required": 3
+        },
+        {
+          "text": "Una noche de música, cuerpo y luz artificial. La ciudad moderna entra en escena.",
+          "contrast": 9.35,
+          "fontSize": 20,
+          "required": 4.5
+        },
+        {
+          "text": "Abrir el archivo",
+          "contrast": 9.35,
+          "fontSize": 16,
+          "required": 4.5
+        },
+        {
+          "text": "Ficha técnica",
+          "contrast": 9.35,
+          "fontSize": 16,
+          "required": 4.5
+        },
+        {
+          "text": "Año",
+          "contrast": 5.1,
+          "fontSize": 9,
+          "required": 4.5
+        },
+        {
+          "text": "Licencia",
+          "contrast": 5.1,
+          "fontSize": 9,
+          "required": 4.5
+        },
+        {
+          "text": "Original",
+          "contrast": 5.1,
+          "fontSize": 9,
+          "required": 4.5
+        },
+        {
+          "text": "Roles medidos, no colores decorativos.",
+          "contrast": 5.1,
+          "fontSize": 12,
+          "required": 4.5
+        },
+        {
+          "text": "Escala modular 1.45; hero 102.6px; cuerpo 16px.",
+          "contrast": 5.1,
+          "fontSize": 12,
+          "required": 4.5
+        }
+      ],
+      "note": "Contraste calculado en Chromium contra el primer ancestro con fondo opaco; aproximación orientativa, no certificación WCAG."
+    }
+  },
+  "design": {
+    "style": "motion-graphics",
+    "palette": {
+      "bg": "#d6ca9c",
+      "surface": "#c7bd93",
+      "elevated": "#bdb58e",
+      "text": "#162730",
+      "muted": "#46504b",
+      "accent": "#d6ca9c",
+      "accent2": "#908d87",
+      "border": "#a8a382",
+      "success": "#4ade80",
+      "warning": "#fbbf24",
+      "danger": "#fb7185",
+      "focus": "#7dd3fc"
+    },
+    "scaleRatio": 1.45,
+    "tokens": 2529
+  },
+  "limits": [
+    "Referencia estática: las dimensiones animación y transiciones no están disponibles en esta comparación A/B.",
+    "La transición se valida por separado con Motion Director (curva muestreada, rotación sintética y reduced-motion), no con una puntuación de vídeo.",
+    "El contenido es una maqueta con copy original basado en la ficha; no reproduce el texto del cartel.",
+    "La evaluación automática no sustituye la revisión artística humana."
+  ]
+}

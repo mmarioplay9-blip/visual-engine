@@ -1,0 +1,45 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Folio · Visual Engine 0.4</title><link rel="stylesheet" href="./design-system.css"><link rel="stylesheet" href="./page.css">
+</head><body data-style="editorial" data-mode="light">
+<canvas class="ve-bg" data-effect="ink-diffusion" data-bg="#f3eee2" data-accent="#a62f24" data-accent2="#1f4f46" aria-hidden="true"></canvas><div class="ve-scrim" aria-hidden="true"></div>
+<div class="ve-shell"><header class="site-head ve-container"><div class="brand"><span class="brand-mark">VE</span>Folio</div>
+  <nav class="nav" aria-label="Navegación principal"><a href="#en-portada" aria-current="page">En portada</a><a href="#ensayo">Ensayo</a><a href="#archivo">Archivo</a><a href="#tienda">Tienda</a></nav>
+  <span class="head-meta">Folio · Número 18 · Otoño</span></header><main class="ve-container"><article class="editorial"><div class="masthead"><b>Folio</b><span>Folio · Número 18 · Otoño</span></div>
+    <div class="ed-grid"><div><p class="ve-eyebrow">Ensayo visual</p><h1>Lo que queda cuando apagamos la pantalla.</h1><p class="ve-lead" style="margin-bottom:18px">Un ensayo visual sobre la atención, el aburrimiento y las formas de mirar.</p>
+      <div class="standfirst"><p class="drop">La atención no se pierde de golpe: se fragmenta en gestos pequeños. Una notificación, una pestaña, una promesa de que lo importante está en otro sitio. Este número reúne imágenes y notas que intentan recuperar una mirada sostenida.</p><p>No hay una conclusión limpia. Hay una práctica: volver al objeto, mirarlo otra vez y aceptar que la duración también es una forma de conocimiento.</p><p>Ensayo · Fotografía · Entrevista. Fotografías y textos seleccionados por el equipo editorial.</p></div>
+      <div class="motion-info"><div><b>132</b><span>Páginas</span></div><div><b>2.000</b><span>Tirada</span></div><div><b>Munken</b><span>Papel</span></div></div></div>
+      <aside class="ed-aside"><div class="feature feature--wide" data-reveal="2">
+    <canvas data-effect="dot-matrix" data-bg="#faf6ec" data-accent="#a62f24" data-accent2="#1f4f46" aria-label="Visualización generativa dot-matrix"></canvas>
+    <div class="feature-overlay"><div><div class="feature-label">Ensayo</div><div class="feature-value">132</div></div><span class="status-dot" aria-label="Activo"></span></div>
+  </div><p class="ve-eyebrow">Del número</p><div class="pullquote">«Mirar es una decisión que se renueva.»</div><p class="insight">Un ensayo visual sobre la atención, el aburrimiento y las formas de mirar.</p><hr class="ve-rule"><button class="ve-button" type="button" data-action style="width:100%">Leer número</button></aside></div>
+  </article></main><footer class="site-foot ve-container"><span>Folio · Visual Engine 0.4</span><span>Ensayo / Fotografía / Entrevista</span></footer></div>
+<script type="module">
+import * as fx0 from '../../assets/effects/ink-diffusion/effect.js';
+import * as fx1 from '../../assets/effects/dot-matrix/effect.js';
+const fx = { 'ink-diffusion': fx0, 'dot-matrix': fx1 };
+const failed = [];
+for (const canvas of document.querySelectorAll('canvas[data-effect]')) {
+  const mod = fx[canvas.dataset.effect];
+  try {
+    if (mod && typeof mod.mount === 'function') mod.mount(canvas, { bg: canvas.dataset.bg, accent: canvas.dataset.accent, accent2: canvas.dataset.accent2, speed: 0.8 });
+    else failed.push(canvas.dataset.effect + ': sin mount');
+  } catch (error) { failed.push(canvas.dataset.effect + ': ' + error.message); }
+}
+document.querySelectorAll('[data-tab]').forEach((tab) => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('[data-tab]').forEach((other) => other.setAttribute('aria-selected', String(other === tab)));
+  });
+});
+document.querySelectorAll('[data-action]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const pressed = button.getAttribute('aria-pressed') === 'true';
+    button.setAttribute('aria-pressed', String(!pressed));
+    button.textContent = pressed ? button.dataset.label || button.textContent : 'Hecho';
+  });
+});
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('[data-reveal]').forEach((el) => { el.style.opacity = '0'; requestAnimationFrame(() => { el.style.opacity = ''; }); });
+}
+window.__veShowcase = { id: 'folio', effects: ["ink-diffusion","dot-matrix"], failed };
+document.fonts.ready.then(() => { window.__veReady = true; });
+</script></body></html>

@@ -1,0 +1,21 @@
+{
+  "id": "lumen",
+  "title": "Lumen",
+  "style": "minimal-premium",
+  "archetype": "landing",
+  "ok": true,
+  "loadMs": 624,
+  "fps": 61,
+  "frames": 43,
+  "heapMB": 9.5,
+  "overflowX": 0,
+  "contrastViolations": 0,
+  "contrastChecked": 22,
+  "worstContrast": 6.07,
+  "contrastSamples": [],
+  "fontReady": true,
+  "tabWorks": true,
+  "errors": [],
+  "screenshot": "lumen/preview.png",
+  "measuredAt": "2026-11-25T20:06:04.965Z"
+}

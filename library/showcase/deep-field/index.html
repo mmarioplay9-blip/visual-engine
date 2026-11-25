@@ -1,0 +1,41 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deep Field · Visual Engine 0.4</title><link rel="stylesheet" href="./design-system.css"><link rel="stylesheet" href="./page.css">
+</head><body data-style="immersive-3d" data-mode="dark">
+<canvas class="ve-bg" data-effect="cube-field" data-bg="#05060f" data-accent="#8b7bff" data-accent2="#4ee1d0" aria-hidden="true"></canvas><div class="ve-scrim" aria-hidden="true"></div>
+<div class="ve-shell"><header class="site-head ve-container"><div class="brand"><span class="brand-mark">VE</span>Deep Field</div>
+  <nav class="nav" aria-label="Navegación principal"><a href="#recorrido" aria-current="page">Recorrido</a><a href="#objetos">Objetos</a><a href="#escala">Escala</a><a href="#fuentes">Fuentes</a></nav>
+  <span class="head-meta">Campo profundo · Coord. 04:22</span></header><main class="ve-container"><section class="scene3d"><p class="ve-eyebrow"><span class="status-dot"></span> Campo profundo · Coord. 04:22</p><h1>Mira lo que el tiempo dejó atrás.</h1><p class="ve-lead">Un recorrido espacial por galaxias cuya luz comenzó su viaje antes de que existiera la Tierra.</p>
+    <div class="scene-wrap"><canvas data-effect="starfield-warp" data-bg="#05060f" data-accent="#8b7bff" data-accent2="#4ee1d0" aria-label="Campo profundo"></canvas>
+      <div class="hotspot hotspot--a"><b>13,4 Gal</b>Distancia</div><div class="hotspot hotspot--b"><b>z 8,2</b>Corrimiento</div><div class="hotspot hotspot--c"><b>13.100 M</b>Años luz</div>
+      <div class="depth">CERCA<i></i>LEJOS</div></div>
+    <div class="actions" style="margin-top:18px"><button class="ve-button" type="button" data-action>Iniciar recorrido</button><button class="ve-button ve-button--ghost" type="button">Mapa celeste</button><span class="chip">JWST · Infrarrojo · Escala log</span></div></section></main><footer class="site-foot ve-container"><span>Deep Field · Visual Engine 0.4</span><span>JWST / Infrarrojo / Escala log</span></footer></div>
+<script type="module">
+import * as fx0 from '../../assets/effects/cube-field/effect.js';
+import * as fx1 from '../../assets/effects/starfield-warp/effect.js';
+const fx = { 'cube-field': fx0, 'starfield-warp': fx1 };
+const failed = [];
+for (const canvas of document.querySelectorAll('canvas[data-effect]')) {
+  const mod = fx[canvas.dataset.effect];
+  try {
+    if (mod && typeof mod.mount === 'function') mod.mount(canvas, { bg: canvas.dataset.bg, accent: canvas.dataset.accent, accent2: canvas.dataset.accent2, speed: 0.8 });
+    else failed.push(canvas.dataset.effect + ': sin mount');
+  } catch (error) { failed.push(canvas.dataset.effect + ': ' + error.message); }
+}
+document.querySelectorAll('[data-tab]').forEach((tab) => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('[data-tab]').forEach((other) => other.setAttribute('aria-selected', String(other === tab)));
+  });
+});
+document.querySelectorAll('[data-action]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const pressed = button.getAttribute('aria-pressed') === 'true';
+    button.setAttribute('aria-pressed', String(!pressed));
+    button.textContent = pressed ? button.dataset.label || button.textContent : 'Hecho';
+  });
+});
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('[data-reveal]').forEach((el) => { el.style.opacity = '0'; requestAnimationFrame(() => { el.style.opacity = ''; }); });
+}
+window.__veShowcase = { id: 'deep-field', effects: ["cube-field","starfield-warp"], failed };
+document.fonts.ready.then(() => { window.__veReady = true; });
+</script></body></html>

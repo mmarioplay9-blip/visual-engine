@@ -15,6 +15,10 @@ import { ensureDir, newRunDir } from './paths.js';
 import { renderComposition, validateComposition, compositionSummary, type VEComposition, type RenderedComposition } from './composition.js';
 import { referenceEffects, specToComposition, type ReferenceEffectsResult } from './refeffects.js';
 import { benchmarkEffects, type BenchmarkReport } from './benchmark.js';
+import { buildArtDirection, renderDesignSystem, designMarkdown, type ArtDirection } from './styles.js';
+import { buildMotionDirector, renderMotionLab, type MotionDirectorPlan } from './motion-director.js';
+import { buildReferenceDesign, renderReferenceDesign, type ReferenceDesign } from './refdesign.js';
+import { renderShowcase, measureShowcase, type ShowcaseMeasurement, type RenderShowcaseResult } from './showcase.js';
 
 /**
  * Operaciones de la capa avanzada. Cada una devuelve datos medidos y las rutas
@@ -332,6 +336,134 @@ export function opBackups(projectDir?: string) {
 
 export function opRestoreBackup(projectDir: string | undefined, id: string) {
   return restoreIteration(projectDir ?? process.cwd(), id);
+}
+
+export interface ArtDirectionOpResult {
+  artDirection: ArtDirection;
+  design: ReturnType<typeof renderDesignSystem>;
+  description: string[];
+}
+
+export function opArtDirection(input: { brief: string; style?: string; projectType?: string; outDir?: string }): ArtDirectionOpResult {
+  if (!input.brief?.trim()) throw new Error('Indica un brief para la dirección artística.');
+  const ad = buildArtDirection({ brief: input.brief, style: input.style, projectType: input.projectType });
+  const outDir = ensureDir(input.outDir ?? newRunDir('art-direction'));
+  const design = renderDesignSystem(ad, outDir);
+  fs.writeFileSync(path.join(outDir, 'art-direction.json'), JSON.stringify(ad, null, 2) + '\n', 'utf8');
+  fs.writeFileSync(path.join(outDir, 'ART-DIRECTION.md'), designMarkdown(ad), 'utf8');
+  return {
+    artDirection: ad, design,
+    description: [
+      `Estilo: ${ad.style.name} (${ad.style.id}).`,
+      `Auditoría estructural: ${ad.audit.structuralScore}/100; peor contraste ${Math.min(...ad.audit.contrastPairs.map((p) => p.ratio))}:1.`,
+      `Efectos propuestos: ${ad.effects.map((e) => e.id).join(', ') || 'ninguno'}.`,
+      `Sistema de diseño: ${design.html}`,
+      `Tokens: ${design.tokens}`,
+      'La auditoría es estructural; la calidad artística requiere revisión humana.',
+    ],
+  };
+}
+
+export function opMotionDirector(input: { style?: string; brief?: string; projectType?: string; outDir?: string }): { plan: MotionDirectorPlan; html: string; description: string[] } {
+  const ad = buildArtDirection({ brief: input.brief ?? 'Sistema de movimiento', style: input.style, projectType: input.projectType });
+  const outDir = ensureDir(input.outDir ?? newRunDir('motion-director'));
+  const lab = renderMotionLab(ad, outDir);
+  const plan = buildMotionDirector(ad);
+  fs.writeFileSync(path.join(outDir, 'motion-plan.json'), JSON.stringify(plan, null, 2) + '\n', 'utf8');
+  return {
+    plan, html: lab.html,
+    description: [
+      `Estilo: ${ad.style.name}; movimiento ${plan.level}.`,
+      `Duraciones ${plan.durations.micro}/${plan.durations.base}/${plan.durations.slow} ms; stagger ${plan.staggerMs} ms.`,
+      `Transición: ${plan.validation.transition.status} (${plan.validation.transition.samples} muestras, monotónica ${plan.validation.transition.monotonic ? 'sí' : 'no'}).`,
+      `Rotación: ${plan.validation.rotation.status}; esperada ${plan.validation.rotation.expectedDeg}°, medida ${plan.validation.rotation.measuredDeg}°, error ${plan.validation.rotation.errorDeg}°.`,
+      `Laboratorio: ${lab.html}`,
+      ...plan.limitations.map((l) => `Límite: ${l}`),
+    ],
+  };
+}
+
+export interface ReferenceDesignOpResult {
+  design: ReferenceDesign;
+  rendered: ReturnType<typeof renderReferenceDesign>;
+  description: string[];
+}
+
+export async function opReferenceDesign(input: {
+  path?: string;
+  specFile?: string;
+  style?: string;
+  brief?: string;
+  outDir?: string;
+  vision?: boolean;
+  model?: string;
+}): Promise<ReferenceDesignOpResult> {
+  if (!input.path && !input.specFile) throw new Error('Indica una imagen/vídeo (--path) o una especificación (--spec).');
+  const outDir = ensureDir(input.outDir ?? newRunDir('reference-design'));
+  let spec: VisualSpec;
+  if (input.specFile) {
+    spec = JSON.parse(fs.readFileSync(input.specFile, 'utf8')) as VisualSpec;
+  } else {
+    const info = await probe(input.path!);
+    if (info.kind === 'video') {
+      spec = (await opSpec({ path: input.path!, outDir: path.join(outDir, 'spec'), vision: input.vision, model: input.model })).spec;
+    } else {
+      const profile = await analyzeFile(input.path!, { samples: 1, width: 256 });
+      const content = inspectFrames(await sampleFrames(input.path!, { count: 1, width: 256 }));
+      let ocr: OcrResult | undefined;
+      if (input.vision) ocr = await ocrImage(input.path!);
+      if (ocr?.available && ocr.lines) {
+        content.ocr = { available: true, reason: 'OCR ejecutado con Tesseract.', lines: ocr.lines.map((l) => ({ text: l.text, confidence: l.confidence, box: l.box })) };
+        content.textLines = ocr.lines.map((l) => ({ x0: l.box[0], y0: l.box[1], x1: l.box[0] + l.box[2], y1: l.box[1] + l.box[3], heightRatio: l.box[3] / Math.max(1, info.height), components: l.text.trim().split(/\s+/).length, confidence: Math.min(1, l.confidence / 100), status: 'verified', text: l.text }));
+      }
+      spec = buildVisualSpec({ profile, content, ocr, frameSize: { width: info.width, height: info.height } });
+    }
+  }
+  const design = buildReferenceDesign(spec, { style: input.style, brief: input.brief });
+  const rendered = renderReferenceDesign(design, outDir);
+  return {
+    design, rendered,
+    description: [
+      `Referencia: ${design.source}`,
+      `Estilo propuesto: ${design.styleId} (confianza ${(design.styleConfidence * 100).toFixed(0)} %).`,
+      `Confirmado: ${design.confirmed.length} datos medidos; estimado: ${design.estimated.length} hipótesis.`,
+      `Tipografía aproximada: ${design.typography.approximation.display} / ${design.typography.approximation.body} (no identifica la fuente original).`,
+      `Efectos: ${design.effects.map((e) => `${e.detected}→${e.mappedTo}`).join(', ') || 'ninguno'}.`,
+      `Sistema: ${rendered.html}`,
+      `Diseño: ${rendered.markdown}`,
+      ...design.warnings.map((w) => `Aviso: ${w}`),
+      ...design.limitations.map((l) => `Límite: ${l}`),
+    ],
+  };
+}
+
+export interface ShowcaseOpResult {
+  rendered: RenderShowcaseResult;
+  measurements?: ShowcaseMeasurement[];
+  description: string[];
+}
+
+export async function opShowcase(input: { outDir?: string; ids?: string[]; measure?: boolean } = {}): Promise<ShowcaseOpResult> {
+  const rendered = renderShowcase({ outDir: input.outDir, ids: input.ids });
+  const measurements = input.measure ? await measureShowcase({ outDir: input.outDir, ids: input.ids }) : undefined;
+  const ok = measurements?.filter((m) => m.ok).length;
+  return {
+    rendered, measurements,
+    description: [
+      `${rendered.compositions.length} composiciones en ${rendered.outDir}.`,
+      'Estilos: ' + [...new Set(rendered.compositions.map((c) => c.style))].join(', '),
+      ...(measurements ? [
+        `Medición: ${ok}/${measurements.length} sin errores; FPS mediana ${medianOf(measurements.map((m) => m.fps))}; mínimo ${Math.min(...measurements.map((m) => m.fps))}.`,
+        `Violaciones de contraste: ${measurements.reduce((n, m) => n + m.contrastViolations, 0)}.`,
+      ] : ['Medición no solicitada; usa --measure.']),
+      `Catálogo: ${rendered.catalog}`,
+    ],
+  };
+}
+
+function medianOf(values: number[]): number {
+  const sorted = [...values].sort((a, b) => a - b);
+  return sorted[Math.floor(sorted.length / 2)] ?? 0;
 }
 
 export { describeTemporal, describeIteration, describeProfile };

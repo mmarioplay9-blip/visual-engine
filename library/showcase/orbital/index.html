@@ -1,0 +1,51 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orbital · Visual Engine 0.4</title><link rel="stylesheet" href="./design-system.css"><link rel="stylesheet" href="./page.css">
+</head><body data-style="futuristic" data-mode="dark">
+<canvas class="ve-bg" data-effect="circuit-lines" data-bg="#050b12" data-accent="#5ff2d6" data-accent2="#7aa2ff" aria-hidden="true"></canvas><div class="ve-scrim" aria-hidden="true"></div>
+<div class="ve-shell"><header class="site-head ve-container"><div class="brand"><span class="brand-mark">VE</span>Orbital</div>
+  <nav class="nav" aria-label="Navegación principal"><a href="#red" aria-current="page">Red</a><a href="#nodos">Nodos</a><a href="#alertas">Alertas</a><a href="#configuración">Configuración</a></nav>
+  <span class="head-meta">Orbital Network · Control</span></header><main class="ve-container"><div class="console">
+    <aside class="panel"><div class="brand" style="margin-bottom:20px"><span class="brand-mark">OR</span>Orbital</div>
+      <nav class="side-nav" aria-label="Secciones"><a href="#red" aria-current="page">Red<span>01</span></a><a href="#nodos">Nodos<span>02</span></a><a href="#alertas">Alertas<span>03</span></a><a href="#configuración">Configuración<span>04</span></a></nav>
+      <div class="side-note">Última sincronización<br>2026-11-25 · 09:42 UTC<br><br>Entorno verificado<br>Sin incidencias críticas</div>
+    </aside>
+    <section class="dash-main"><div class="panel"><div class="panel-head"><div><p class="ve-eyebrow">Orbital Network · Control</p><h2>Red estable. Ventana abierta.</h2></div><div class="tabs" role="tablist"><button type="button" class="tab" role="tab" data-tab="Resumen" aria-selected="true">Resumen</button><button type="button" class="tab" role="tab" data-tab="Riesgo" aria-selected="false">Riesgo</button><button type="button" class="tab" role="tab" data-tab="Flujo" aria-selected="false">Flujo</button></div></div>
+      <div class="kpis"><div class="kpi"><span>Nodos activos</span><b>47/48</b><em>+2</em></div><div class="kpi"><span>Latencia P95</span><b>38 ms</b><em>-6</em></div><div class="kpi"><span>Paquetes</span><b>99,98 %</b></div><div class="kpi"><span>Ventana</span><b>04:12</b></div></div>
+      <div class="chart" aria-label="Serie temporal"><i style="--h:34%"></i><i style="--h:30%"></i><i style="--h:42%"></i><i style="--h:39%"></i><i style="--h:55%"></i><i style="--h:48%"></i><i style="--h:66%"></i><i style="--h:60%"></i><i style="--h:72%"></i><i style="--h:68%"></i><i style="--h:78%"></i><i style="--h:74%"></i></div><div class="chart-axis"><span>08:00</span><span>10:00</span><span>12:00</span><span>14:00</span><span>16:00</span></div></div>
+      <div class="panel"><div class="panel-head"><h3>Movimientos recientes</h3><span class="ve-mono" style="font-size:9px;color:var(--ve-muted)">4 registros</span></div>
+      <table class="table"><thead><tr><th>Serie</th><th>Valor</th><th>Δ</th><th>Estado</th></tr></thead><tbody><tr data-row><td>Nodos activos</td><td>47/48</td><td class="positive">+2</td><td>liquidado</td></tr><tr data-row><td>Latencia P95</td><td>38 ms</td><td class="negative">-6</td><td>liquidado</td></tr><tr data-row><td>Reserva</td><td>12,8 %</td><td class="positive">+0,2</td><td>liquidado</td></tr><tr data-row><td>Cola</td><td>04</td><td class="negative">estable</td><td>cola</td></tr></tbody></table></div>
+    </section>
+    <aside class="panel"><div class="panel-head"><h3>Lectura</h3><span class="status-dot"></span></div><div class="insight"><span class="ve-eyebrow">Ahora</span><strong>Telemetría de 48 nodos, latencia agregada y estado de la constelación.</strong>La señal se mantiene dentro del rango previsto. Revisa la ventana antes del cierre.</div>
+      <div class="bar-list"><div><span>LIVE</span><i style="--w:68%"></i><span>68%</span></div><div><span>Órbita baja</span><i style="--w:51%"></i><span>51%</span></div><div><span>Sector 7</span><i style="--w:34%"></i><span>34%</span></div></div>
+      <hr class="ve-rule"><button class="ve-button" type="button" data-action style="width:100%">Abrir consola</button><div class="side-note">Modelo: local · Sin conexión externa</div>
+    </aside></div></main><footer class="site-foot ve-container"><span>Orbital · Visual Engine 0.4</span><span>LIVE / Órbita baja / Sector 7</span></footer></div>
+<script type="module">
+import * as fx0 from '../../assets/effects/circuit-lines/effect.js';
+import * as fx1 from '../../assets/effects/radar-sweep/effect.js';
+const fx = { 'circuit-lines': fx0, 'radar-sweep': fx1 };
+const failed = [];
+for (const canvas of document.querySelectorAll('canvas[data-effect]')) {
+  const mod = fx[canvas.dataset.effect];
+  try {
+    if (mod && typeof mod.mount === 'function') mod.mount(canvas, { bg: canvas.dataset.bg, accent: canvas.dataset.accent, accent2: canvas.dataset.accent2, speed: 0.8 });
+    else failed.push(canvas.dataset.effect + ': sin mount');
+  } catch (error) { failed.push(canvas.dataset.effect + ': ' + error.message); }
+}
+document.querySelectorAll('[data-tab]').forEach((tab) => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('[data-tab]').forEach((other) => other.setAttribute('aria-selected', String(other === tab)));
+  });
+});
+document.querySelectorAll('[data-action]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const pressed = button.getAttribute('aria-pressed') === 'true';
+    button.setAttribute('aria-pressed', String(!pressed));
+    button.textContent = pressed ? button.dataset.label || button.textContent : 'Hecho';
+  });
+});
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('[data-reveal]').forEach((el) => { el.style.opacity = '0'; requestAnimationFrame(() => { el.style.opacity = ''; }); });
+}
+window.__veShowcase = { id: 'orbital', effects: ["circuit-lines","radar-sweep"], failed };
+document.fonts.ready.then(() => { window.__veReady = true; });
+</script></body></html>

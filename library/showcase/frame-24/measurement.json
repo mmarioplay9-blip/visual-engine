@@ -1,0 +1,21 @@
+{
+  "id": "frame-24",
+  "title": "Frame 24",
+  "style": "motion-graphics",
+  "archetype": "motion",
+  "ok": true,
+  "loadMs": 564,
+  "fps": 61,
+  "frames": 43,
+  "heapMB": 9.5,
+  "overflowX": 0,
+  "contrastViolations": 0,
+  "contrastChecked": 24,
+  "worstContrast": 6.82,
+  "contrastSamples": [],
+  "fontReady": true,
+  "tabWorks": true,
+  "errors": [],
+  "screenshot": "frame-24/preview.png",
+  "measuredAt": "2026-11-25T20:06:33.175Z"
+}

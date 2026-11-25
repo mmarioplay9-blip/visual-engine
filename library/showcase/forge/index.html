@@ -1,0 +1,48 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forge · Visual Engine 0.4</title><link rel="stylesheet" href="./design-system.css"><link rel="stylesheet" href="./page.css">
+</head><body data-style="futuristic" data-mode="dark">
+<canvas class="ve-bg" data-effect="terrain-grid" data-bg="#050b12" data-accent="#5ff2d6" data-accent2="#7aa2ff" aria-hidden="true"></canvas><div class="ve-scrim" aria-hidden="true"></div>
+<div class="ve-shell"><header class="site-head ve-container"><div class="brand"><span class="brand-mark">VE</span>Forge</div>
+  <nav class="nav" aria-label="Navegación principal"><a href="#campaña" aria-current="page">Campaña</a><a href="#facción">Facción</a><a href="#mapa">Mapa</a><a href="#archivo">Archivo</a></nav>
+  <span class="head-meta">Forge · Facción Hierro</span></header><main class="ve-container"><div class="game">
+    <div class="game-title"><p class="ve-eyebrow">Forge · Facción Hierro</p><h1>Construye lo que sobrevive.</h1><p class="ve-lead">Asigna recursos, firma pactos y prepara la próxima expansión.</p>
+      <div class="actions"><button class="ve-button" type="button" data-action>Continuar</button><button class="ve-button ve-button--ghost" type="button">Nueva facción</button></div>
+      <div class="game-stats"><div><b>2.840</b><span>Recursos</span></div><div><b>07</b><span>Territorios</span></div><div><b>02</b><span>Pactos</span></div></div></div>
+    <aside class="game-side"><div class="mission"><div><b>Hierro</b><p>Expansión · Turno 42</p></div><span>ACTIVO</span></div>
+      <div class="feature feature--wide" data-reveal="2">
+    <canvas data-effect="ember-sparks" data-bg="#0a1520" data-accent="#5ff2d6" data-accent2="#7aa2ff" aria-label="Visualización generativa ember-sparks"></canvas>
+    <div class="feature-overlay"><div><div class="feature-label">Hierro</div><div class="feature-value">2.840</div></div><span class="status-dot" aria-label="Activo"></span></div>
+  </div>
+      <div class="mission"><div><b>Facción</b><p>Recompensa verificada · sin conexión</p></div><span>04</span></div>
+      <div class="mission"><div><b>Mapa</b><p>Configuración guardada localmente</p></div><span>LISTO</span></div></aside>
+  </div></main><footer class="site-foot ve-container"><span>Forge · Visual Engine 0.4</span><span>Hierro / Expansión / Turno 42</span></footer></div>
+<script type="module">
+import * as fx0 from '../../assets/effects/terrain-grid/effect.js';
+import * as fx1 from '../../assets/effects/ember-sparks/effect.js';
+const fx = { 'terrain-grid': fx0, 'ember-sparks': fx1 };
+const failed = [];
+for (const canvas of document.querySelectorAll('canvas[data-effect]')) {
+  const mod = fx[canvas.dataset.effect];
+  try {
+    if (mod && typeof mod.mount === 'function') mod.mount(canvas, { bg: canvas.dataset.bg, accent: canvas.dataset.accent, accent2: canvas.dataset.accent2, speed: 0.8 });
+    else failed.push(canvas.dataset.effect + ': sin mount');
+  } catch (error) { failed.push(canvas.dataset.effect + ': ' + error.message); }
+}
+document.querySelectorAll('[data-tab]').forEach((tab) => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('[data-tab]').forEach((other) => other.setAttribute('aria-selected', String(other === tab)));
+  });
+});
+document.querySelectorAll('[data-action]').forEach((button) => {
+  button.addEventListener('click', () => {
+    const pressed = button.getAttribute('aria-pressed') === 'true';
+    button.setAttribute('aria-pressed', String(!pressed));
+    button.textContent = pressed ? button.dataset.label || button.textContent : 'Hecho';
+  });
+});
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('[data-reveal]').forEach((el) => { el.style.opacity = '0'; requestAnimationFrame(() => { el.style.opacity = ''; }); });
+}
+window.__veShowcase = { id: 'forge', effects: ["terrain-grid","ember-sparks"], failed };
+document.fonts.ready.then(() => { window.__veReady = true; });
+</script></body></html>

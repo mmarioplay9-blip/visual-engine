@@ -15,6 +15,10 @@ import {
   opCompose,
   opReferenceEffects,
   opBenchmark,
+  opArtDirection,
+  opMotionDirector,
+  opReferenceDesign,
+  opShowcase,
 } from '../core/advanced.js';
 import {
   opAdapters,
@@ -106,6 +110,10 @@ export async function startApi(opts: ApiOptions = {}): Promise<ApiServer> {
     { method: 'POST', pattern: /^\/v1\/composition\/validate$/, handler: async (b) => opCompose({ ...b, validateOnly: true }) },
     { method: 'POST', pattern: /^\/v1\/reference-effects$/, handler: async (b) => opReferenceEffects(b) },
     { method: 'POST', pattern: /^\/v1\/benchmark$/, handler: async (b) => opBenchmark(b) },
+    { method: 'POST', pattern: /^\/v1\/art-direction$/, handler: async (b) => opArtDirection(b) },
+    { method: 'POST', pattern: /^\/v1\/reference-design$/, handler: async (b) => opReferenceDesign(b) },
+    { method: 'POST', pattern: /^\/v1\/motion-director$/, handler: async (b) => opMotionDirector(b) },
+    { method: 'POST', pattern: /^\/v1\/showcase$/, handler: async (b) => opShowcase(b) },
     { method: 'GET', pattern: /^\/v1\/benchmarks$/, handler: async () => {
       const file = new URL('../../library/benchmarks.json', import.meta.url);
       try {

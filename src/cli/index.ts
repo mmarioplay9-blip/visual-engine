@@ -38,6 +38,10 @@ import {
   opCompose,
   opReferenceEffects,
   opBenchmark,
+  opArtDirection,
+  opMotionDirector,
+  opReferenceDesign,
+  opShowcase,
 } from '../core/advanced.js';
 import { startGallery } from '../core/gallery.js';
 import { describeIteration } from '../core/iterate.js';
@@ -115,6 +119,10 @@ COMANDOS
   temporal <ref> <cand>  Comparación temporal y calidad multidimensional
   compose <json>         Valida y renderiza una composición de capas (0.3)
   refeffects <vídeo>     Referencia medida → composición de efectos y código
+  art <brief>            Dirección artística: identidad, tokens, tipografía, efectos y CSS
+  refdesign <archivo>    Reference-to-Design: identidad, layout, componentes, motion y código
+  motiondirector         Plan de movimiento, cámara, reduced motion y laboratorio
+  showcase               Genera 20 composiciones; --measure las mide en Chromium
   gallery                Galería local opcional (efectos, parámetros, composición)
   benchmark              Mide FPS, frame time, memoria y carga de los efectos
   vision [status|describe|ocr|setup]  Tesseract, VRAM y modelos locales de Ollama
@@ -143,6 +151,10 @@ EJEMPLOS
   ve temporal referencia.mp4 resultado.mp4 --out ./analisis
   ve compose composicion.json --out ./mi-composicion
   ve refeffects referencia.mp4 --out ./reconstruccion --vision --compare
+  ve art "panel financiero sobrio" --style financial-dashboard --out ./sistema
+  ve refdesign referencia.png --out ./sistema --vision
+  ve motiondirector --style cinematic --out ./motion
+  ve showcase --out ./showcase --measure
   ve gallery --port 4173
   ve benchmark --ms 800 --width 960 --height 540
   ve iterate --reference referencia.mp4 --target-dir ./mi-web --replace index.nuevo.html
@@ -624,6 +636,55 @@ async function cmdReferenceEffects(p: Parsed) {
   }
 }
 
+async function cmdArt(p: Parsed) {
+  const brief = p._.join(' ').trim() || s(p, 'brief');
+  if (!brief) throw new Error('Uso: ve art "brief del proyecto" [--style id] [--project tipo] [--out dir]');
+  const r = opArtDirection({ brief, style: s(p, 'style'), projectType: s(p, 'project'), outDir: s(p, 'out') });
+  if (jsonOut(p)) {
+    console.log(JSON.stringify({ artDirection: r.artDirection, design: r.design }, null, 2));
+    return;
+  }
+  r.description.forEach((line) => console.log(line));
+}
+
+async function cmdMotionDirector(p: Parsed) {
+  const r = opMotionDirector({ style: s(p, 'style'), brief: s(p, 'brief'), projectType: s(p, 'project'), outDir: s(p, 'out') });
+  if (jsonOut(p)) {
+    console.log(JSON.stringify({ plan: r.plan, html: r.html }, null, 2));
+    return;
+  }
+  r.description.forEach((line) => console.log(line));
+}
+
+async function cmdReferenceDesign(p: Parsed) {
+  const file = p._[0];
+  const specFile = s(p, 'spec');
+  if (!file && !specFile) throw new Error('Uso: ve refdesign <imagen|vídeo> [--out dir] [--vision] [--spec spec.json]');
+  const r = await opReferenceDesign({ path: file, specFile, style: s(p, 'style'), brief: s(p, 'brief'), outDir: s(p, 'out'), vision: b(p, 'vision'), model: s(p, 'model') });
+  if (jsonOut(p)) {
+    console.log(JSON.stringify({ design: r.design, rendered: r.rendered }, null, 2));
+    return;
+  }
+  r.description.forEach((line) => console.log(line));
+  console.log('\nConfirmado:');
+  r.design.confirmed.forEach((c) => console.log(`  ${c.value} — ${c.evidence}`));
+  console.log('\nEstimado:');
+  r.design.estimated.forEach((c) => console.log(`  ${c.value} — ${c.evidence}`));
+}
+
+async function cmdShowcase(p: Parsed) {
+  const r = await opShowcase({ outDir: s(p, 'out'), ids: multi(p, 'ids'), measure: b(p, 'measure') });
+  if (jsonOut(p)) {
+    console.log(JSON.stringify({ rendered: r.rendered, measurements: r.measurements }, null, 2));
+    return;
+  }
+  r.description.forEach((line) => console.log(line));
+  if (r.measurements) {
+    console.log('\nComposición      FPS  Contraste  Overflow');
+    for (const m of r.measurements) console.log(`  ${m.id.padEnd(15)} ${String(m.fps).padStart(3)}  ${String(m.contrastViolations).padStart(9)}  ${String(m.overflowX).padStart(8)}  ${m.ok ? 'OK' : 'REVISAR'}`);
+  }
+}
+
 async function cmdBenchmark(p: Parsed) {
   const effects = multi(p, 'effects');
   const r = await opBenchmark({ effects: effects.includes('all') ? undefined : effects.length ? effects : undefined, ms: n(p, 'ms'), width: n(p, 'width'), height: n(p, 'height'), outFile: s(p, 'out'), docsFile: s(p, 'docs') });
@@ -763,6 +824,19 @@ async function main() {
       return;
     case 'refeffects':
       await cmdReferenceEffects(rest);
+      return;
+    case 'art':
+      await cmdArt(rest);
+      return;
+    case 'refdesign':
+      await cmdReferenceDesign(rest);
+      return;
+    case 'motiondirector':
+    case 'motion-director':
+      await cmdMotionDirector(rest);
+      return;
+    case 'showcase':
+      await cmdShowcase(rest);
       return;
     case 'benchmark':
       await cmdBenchmark(rest);
