@@ -22,7 +22,7 @@ forman parte del resultado.
 - Instalador Windows: **exit 0** sobre un clon local del repositorio.
 - `ve update`: **exit 0** contra un remoto git local (no GitHub).
 - `ve deps install`: instaló `is-number` de verdad (1 paquete, 0 vulnerabilidades).
-- MCP: cliente stdio real, 12 herramientas, 1 recurso y 1 prompt.
+- MCP: cliente stdio real, 13 herramientas, 1 recurso y 1 prompt.
 - API local: 14 rutas, incluida la revisión completa con mapa de calor.
 
 ## Pruebas automáticas

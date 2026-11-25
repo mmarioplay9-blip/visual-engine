@@ -32,7 +32,7 @@ Fecha de la verificación: 2026-11-25 · Windows 11 · Node 26.13.1 · ffmpeg 9.
 
 | Requisito | Estado |
 | --- | --- |
-| MCP | Implementado y probado con cliente real (`tests/mcp.test.mjs`): 12 herramientas, 1 recurso, 1 prompt |
+| MCP | Implementado y probado con cliente real (`tests/mcp.test.mjs`): 13 herramientas, 1 recurso, 1 prompt |
 | CLI | Implementado: 17 comandos y subcomandos, probado |
 | API local | Implementado: 14 rutas, probado; instalación bloqueada por defecto |
 | Skills | `skills/visual-engine/SKILL.md` + copia por `ve init` |
