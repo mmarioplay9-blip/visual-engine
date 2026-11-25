@@ -1,0 +1,52 @@
+{
+  "composition": "relay",
+  "style": "professional-app",
+  "layout": {
+    "columns": 12,
+    "gutter": 15,
+    "maxWidth": 1440,
+    "radius": 8
+  },
+  "typography": {
+    "display": "VE Inter",
+    "body": "VE Inter",
+    "scaleRatio": 1.2,
+    "sizes": {
+      "caption": 10.5,
+      "small": 12.3,
+      "body": 14,
+      "lead": 17.5,
+      "h3": 16.8,
+      "h2": 20.2,
+      "h1": 24.2,
+      "display": 29,
+      "hero": 34.8
+    }
+  },
+  "effects": [
+    {
+      "id": "circuit-lines",
+      "params": {
+        "bg": "#ffffff",
+        "accent": "#2457d6",
+        "accent2": "#0f766e",
+        "speed": 0.8
+      }
+    },
+    {
+      "id": "wave-contours",
+      "params": {
+        "bg": "#ffffff",
+        "accent": "#2457d6",
+        "accent2": "#0f766e",
+        "speed": 0.8
+      }
+    }
+  ],
+  "motion": {
+    "level": "restrained",
+    "fastMs": 120,
+    "baseMs": 260,
+    "slowMs": 600
+  }
+}

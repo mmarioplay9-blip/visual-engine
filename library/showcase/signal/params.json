@@ -1,0 +1,52 @@
+{
+  "composition": "signal",
+  "style": "sci-fi",
+  "layout": {
+    "columns": 12,
+    "gutter": 15,
+    "maxWidth": 1400,
+    "radius": 2
+  },
+  "typography": {
+    "display": "VE JetBrains Mono",
+    "body": "VE Inter",
+    "scaleRatio": 1.26,
+    "sizes": {
+      "caption": 10.5,
+      "small": 12.3,
+      "body": 14,
+      "lead": 17.5,
+      "h3": 17.6,
+      "h2": 22.2,
+      "h1": 28,
+      "display": 35.3,
+      "hero": 44.5
+    }
+  },
+  "effects": [
+    {
+      "id": "radar-sweep",
+      "params": {
+        "bg": "#0b1215",
+        "accent": "#b8f36b",
+        "accent2": "#ff8b4a",
+        "speed": 0.8
+      }
+    },
+    {
+      "id": "waveform-monitor",
+      "params": {
+        "bg": "#0b1215",
+        "accent": "#b8f36b",
+        "accent2": "#ff8b4a",
+        "speed": 0.8
+      }
+    }
+  ],
+  "motion": {
+    "level": "restrained",
+    "fastMs": 140,
+    "baseMs": 380,
+    "slowMs": 1200
+  }
+}

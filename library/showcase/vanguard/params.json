@@ -1,0 +1,52 @@
+{
+  "composition": "vanguard",
+  "style": "game-ui",
+  "layout": {
+    "columns": 12,
+    "gutter": 14,
+    "maxWidth": 1500,
+    "radius": 6
+  },
+  "typography": {
+    "display": "VE Space Grotesk",
+    "body": "VE Inter",
+    "scaleRatio": 1.32,
+    "sizes": {
+      "caption": 11.3,
+      "small": 13.1,
+      "body": 15,
+      "lead": 18.8,
+      "h3": 19.8,
+      "h2": 26.1,
+      "h1": 34.5,
+      "display": 45.5,
+      "hero": 60.1
+    }
+  },
+  "effects": [
+    {
+      "id": "target-reticle",
+      "params": {
+        "bg": "#0b1a22",
+        "accent": "#63ffb5",
+        "accent2": "#ffcf5a",
+        "speed": 0.8
+      }
+    },
+    {
+      "id": "telemetry-grid",
+      "params": {
+        "bg": "#0b1a22",
+        "accent": "#63ffb5",
+        "accent2": "#ffcf5a",
+        "speed": 0.8
+      }
+    }
+  ],
+  "motion": {
+    "level": "expressive",
+    "fastMs": 90,
+    "baseMs": 300,
+    "slowMs": 600
+  }
+}

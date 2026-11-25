@@ -1,0 +1,52 @@
+{
+  "composition": "forge",
+  "style": "futuristic",
+  "layout": {
+    "columns": 12,
+    "gutter": 28,
+    "maxWidth": 1320,
+    "radius": 10
+  },
+  "typography": {
+    "display": "VE Space Grotesk",
+    "body": "VE Inter",
+    "scaleRatio": 1.3,
+    "sizes": {
+      "caption": 11.3,
+      "small": 13.1,
+      "body": 15,
+      "lead": 18.8,
+      "h3": 19.5,
+      "h2": 25.4,
+      "h1": 33,
+      "display": 42.8,
+      "hero": 55.7
+    }
+  },
+  "effects": [
+    {
+      "id": "terrain-grid",
+      "params": {
+        "bg": "#0a1520",
+        "accent": "#5ff2d6",
+        "accent2": "#7aa2ff",
+        "speed": 0.8
+      }
+    },
+    {
+      "id": "ember-sparks",
+      "params": {
+        "bg": "#0a1520",
+        "accent": "#5ff2d6",
+        "accent2": "#7aa2ff",
+        "speed": 0.8
+      }
+    }
+  ],
+  "motion": {
+    "level": "restrained",
+    "fastMs": 140,
+    "baseMs": 420,
+    "slowMs": 1100
+  }
+}

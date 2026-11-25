@@ -1,8 +1,88 @@
 {
   "version": "0.4",
   "count": 20,
-  "generatedAt": "2026-11-25T20:03:45.350Z",
+  "generatedAt": "2026-11-25T20:16:27.442Z",
   "compositions": [
+    {
+      "id": "lumen",
+      "html": "<repo>\\library\\showcase\\lumen\\index.html",
+      "style": "minimal-premium",
+      "archetype": "landing",
+      "effects": [
+        "mesh-gradient",
+        "dust-motes"
+      ]
+    },
+    {
+      "id": "nocturne",
+      "html": "<repo>\\library\\showcase\\nocturne\\index.html",
+      "style": "cinematic",
+      "archetype": "landing",
+      "effects": [
+        "anamorphic-bloom",
+        "dissolve-grain"
+      ]
+    },
+    {
+      "id": "orbital",
+      "html": "<repo>\\library\\showcase\\orbital\\index.html",
+      "style": "futuristic",
+      "archetype": "dashboard",
+      "effects": [
+        "circuit-lines",
+        "radar-sweep"
+      ]
+    },
+    {
+      "id": "aegis",
+      "html": "<repo>\\library\\showcase\\aegis\\index.html",
+      "style": "sci-fi",
+      "archetype": "hud",
+      "effects": [
+        "wireframe-globe",
+        "telemetry-grid"
+      ]
+    },
+    {
+      "id": "neon-district",
+      "html": "<repo>\\library\\showcase\\neon-district\\index.html",
+      "style": "cyberpunk",
+      "archetype": "game-menu",
+      "effects": [
+        "glitch-slices",
+        "neon-rim"
+      ]
+    },
+    {
+      "id": "aether",
+      "html": "<repo>\\library\\showcase\\aether\\index.html",
+      "style": "glassmorphism",
+      "archetype": "landing",
+      "effects": [
+        "glass-refraction",
+        "bokeh-drift"
+      ]
+    },
+    {
+      "id": "quiet-form",
+      "html": "<repo>\\library\\showcase\\quiet-form\\index.html",
+      "style": "neumorphism",
+      "archetype": "app",
+      "effects": [
+        "wave-contours",
+        "caustic-light"
+      ]
+    },
+    {
+      "id": "folio",
+      "html": "<repo>\\library\\showcase\\folio\\index.html",
+      "style": "editorial",
+      "archetype": "editorial",
+      "effects": [
+        "ink-diffusion",
+        "dot-matrix"
+      ]
+    },
     {
       "id": "raw-grid",
       "html": "<repo>\\library\\showcase\\raw-grid\\index.html",
@@ -14,6 +94,86 @@
       ]
     },
     {
+      "id": "vanguard",
+      "html": "<repo>\\library\\showcase\\vanguard\\index.html",
+      "style": "game-ui",
+      "archetype": "hud",
+      "effects": [
+        "target-reticle",
+        "telemetry-grid"
+      ]
+    },
+    {
+      "id": "relay",
+      "html": "<repo>\\library\\showcase\\relay\\index.html",
+      "style": "professional-app",
+      "archetype": "app",
+      "effects": [
+        "circuit-lines",
+        "wave-contours"
+      ]
+    },
+    {
+      "id": "meridian",
+      "html": "<repo>\\library\\showcase\\meridian\\index.html",
+      "style": "financial-dashboard",
+      "archetype": "dashboard",
+      "effects": [
+        "circuit-lines",
+        "waveform-monitor"
+      ]
+    },
+    {
+      "id": "deep-field",
+      "html": "<repo>\\library\\showcase\\deep-field\\index.html",
+      "style": "immersive-3d",
+      "archetype": "scene3d",
+      "effects": [
+        "cube-field",
+        "starfield-warp"
+      ]
+    },
+    {
+      "id": "frame-24",
+      "html": "<repo>\\library\\showcase\\frame-24\\index.html",
+      "style": "motion-graphics",
+      "archetype": "motion",
+      "effects": [
+        "volumetric-rays",
+        "bokeh-drift"
+      ]
+    },
+    {
+      "id": "terra",
+      "html": "<repo>\\library\\showcase\\terra\\index.html",
+      "style": "organic-natural",
+      "archetype": "mobile",
+      "effects": [
+        "caustic-light",
+        "ink-diffusion"
+      ]
+    },
+    {
+      "id": "atlas",
+      "html": "<repo>\\library\\showcase\\atlas\\index.html",
+      "style": "glassmorphism",
+      "archetype": "app",
+      "effects": [
+        "mesh-gradient",
+        "glass-refraction"
+      ]
+    },
+    {
+      "id": "signal",
+      "html": "<repo>\\library\\showcase\\signal\\index.html",
+      "style": "sci-fi",
+      "archetype": "dashboard",
+      "effects": [
+        "radar-sweep",
+        "waveform-monitor"
+      ]
+    },
+    {
       "id": "mono",
       "html": "<repo>\\library\\showcase\\mono\\index.html",
       "style": "brutalism",
@@ -21,6 +181,26 @@
       "effects": [
         "ink-diffusion",
         "dissolve-grain"
+      ]
+    },
+    {
+      "id": "pulse",
+      "html": "<repo>\\library\\showcase\\pulse\\index.html",
+      "style": "motion-graphics",
+      "archetype": "app",
+      "effects": [
+        "waveform-monitor",
+        "starfield-warp"
+      ]
+    },
+    {
+      "id": "forge",
+      "html": "<repo>\\library\\showcase\\forge\\index.html",
+      "style": "futuristic",
+      "archetype": "game-menu",
+      "effects": [
+        "terrain-grid",
+        "ember-sparks"
       ]
     }
   ]

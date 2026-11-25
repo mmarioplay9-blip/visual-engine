@@ -1,0 +1,52 @@
+{
+  "composition": "folio",
+  "style": "editorial",
+  "layout": {
+    "columns": 12,
+    "gutter": 36,
+    "maxWidth": 1300,
+    "radius": 0
+  },
+  "typography": {
+    "display": "VE Source Serif 4",
+    "body": "VE Inter",
+    "scaleRatio": 1.42,
+    "sizes": {
+      "caption": 12.8,
+      "small": 14.9,
+      "body": 17,
+      "lead": 21.3,
+      "h3": 24.1,
+      "h2": 34.3,
+      "h1": 48.7,
+      "display": 69.1,
+      "hero": 98.2
+    }
+  },
+  "effects": [
+    {
+      "id": "ink-diffusion",
+      "params": {
+        "bg": "#faf6ec",
+        "accent": "#a62f24",
+        "accent2": "#1f4f46",
+        "speed": 0.8
+      }
+    },
+    {
+      "id": "dot-matrix",
+      "params": {
+        "bg": "#faf6ec",
+        "accent": "#a62f24",
+        "accent2": "#1f4f46",
+        "speed": 0.8
+      }
+    }
+  ],
+  "motion": {
+    "level": "restrained",
+    "fastMs": 140,
+    "baseMs": 440,
+    "slowMs": 950
+  }
+}

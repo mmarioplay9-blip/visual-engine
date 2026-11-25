@@ -1,0 +1,52 @@
+{
+  "composition": "deep-field",
+  "style": "immersive-3d",
+  "layout": {
+    "columns": 12,
+    "gutter": 38,
+    "maxWidth": 1360,
+    "radius": 20
+  },
+  "typography": {
+    "display": "VE Space Grotesk",
+    "body": "VE Inter",
+    "scaleRatio": 1.35,
+    "sizes": {
+      "caption": 12,
+      "small": 14,
+      "body": 16,
+      "lead": 20,
+      "h3": 21.6,
+      "h2": 29.2,
+      "h1": 39.4,
+      "display": 53.1,
+      "hero": 71.7
+    }
+  },
+  "effects": [
+    {
+      "id": "cube-field",
+      "params": {
+        "bg": "#0d1224",
+        "accent": "#8b7bff",
+        "accent2": "#4ee1d0",
+        "speed": 0.8
+      }
+    },
+    {
+      "id": "starfield-warp",
+      "params": {
+        "bg": "#0d1224",
+        "accent": "#8b7bff",
+        "accent2": "#4ee1d0",
+        "speed": 0.8
+      }
+    }
+  ],
+  "motion": {
+    "level": "expressive",
+    "fastMs": 140,
+    "baseMs": 520,
+    "slowMs": 1400
+  }
+}

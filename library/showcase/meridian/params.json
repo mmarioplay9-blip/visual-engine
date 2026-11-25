@@ -1,0 +1,52 @@
+{
+  "composition": "meridian",
+  "style": "financial-dashboard",
+  "layout": {
+    "columns": 12,
+    "gutter": 12,
+    "maxWidth": 1560,
+    "radius": 6
+  },
+  "typography": {
+    "display": "VE Inter",
+    "body": "VE Inter",
+    "scaleRatio": 1.2,
+    "sizes": {
+      "caption": 10.5,
+      "small": 12.3,
+      "body": 14,
+      "lead": 17.5,
+      "h3": 16.8,
+      "h2": 20.2,
+      "h1": 24.2,
+      "display": 29,
+      "hero": 34.8
+    }
+  },
+  "effects": [
+    {
+      "id": "circuit-lines",
+      "params": {
+        "bg": "#0b1722",
+        "accent": "#36d6a4",
+        "accent2": "#ff6b6b",
+        "speed": 0.8
+      }
+    },
+    {
+      "id": "waveform-monitor",
+      "params": {
+        "bg": "#0b1722",
+        "accent": "#36d6a4",
+        "accent2": "#ff6b6b",
+        "speed": 0.8
+      }
+    }
+  ],
+  "motion": {
+    "level": "still",
+    "fastMs": 80,
+    "baseMs": 140,
+    "slowMs": 220
+  }
+}

@@ -3,7 +3,7 @@
 Brief: Editor colaborativo de mapas de producto
 
 Proyecto: **landing**. Estilo: **glassmorphism**. Modo: **dark**.
-Puntuación estructural: **88.5/100** (no es una nota artística).
+Puntuación estructural: **96.4/100** (no es una nota artística).
 
 ## Identidad y reglas
 
@@ -83,7 +83,7 @@ Nivel **restrained**. Duraciones 140/460/1000 ms; salida cubic-bezier(.16,1,.3,1
 
 ## Auditoría estructural
 
-- **contrast**: 45/100 — 17.7:1 OK; 1.07:1 BAJO; 10.24:1 OK; 14.11:1 OK
+- **contrast**: 100/100 — 17.7:1 OK; 16.49:1 OK; 10.24:1 OK; 14.11:1 OK
 - **type-scale**: 100/100 — 9 pasos, cuerpo 16px, ratio 1.27
 - **spacing**: 100/100 — base 8px, gutter 28px
 - **hierarchy**: 74.7/100 — ratio 1.27, display 41.6px

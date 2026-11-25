@@ -47,6 +47,7 @@ export interface ReferenceDesign {
   layers: { name: string; cellShare: number; sharpness: number; status: EvidenceStatus }[];
   materials: string[];
   components: string[];
+  timeline: { scenes: VisualSpec['scenes']; transitions: VisualSpec['camera'] extends null ? never[] : NonNullable<VisualSpec['camera']>['transitions']; note: string };
   motion: MotionDirectorPlan;
   effects: { detected: string; mappedTo: string; status: EvidenceStatus; confidence: number; note: string }[];
   implementation: { tokens: string; css: string; html: string; command: string };
@@ -171,6 +172,11 @@ export function buildReferenceDesign(spec: VisualSpec, opts: { style?: string; b
     layers: spec.layers.map((l) => ({ ...l, status: 'estimated' as const })),
     materials: [ad.materials.surface, ad.materials.texture, ad.materials.gradient],
     components: ad.components,
+    timeline: {
+      scenes: spec.scenes,
+      transitions: spec.camera?.transitions ?? [],
+      note: spec.scenes.length ? 'Escenas y transiciones medidas en la referencia.' : 'Referencia estática o sin escenas medidas; el timeline no se inventa.',
+    },
     motion, effects, implementation, warnings,
     limitations: [
       'La fuente tipográfica no se identifica: sólo se aproxima familia y escala.',

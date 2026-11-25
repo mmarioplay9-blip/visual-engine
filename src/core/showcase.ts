@@ -469,6 +469,14 @@ export function renderShowcase(opts: { outDir?: string; ids?: string[] } = {}): 
     fs.writeFileSync(path.join(dir, 'design-system.css'), artDirectionCss(ad, '../../assets/fonts'), 'utf8');
     fs.writeFileSync(path.join(dir, 'page.css'), PAGE_CSS, 'utf8');
     fs.writeFileSync(path.join(dir, 'tokens.json'), JSON.stringify(ad.tokenSet, null, 2) + '\n', 'utf8');
+    fs.writeFileSync(path.join(dir, 'params.json'), JSON.stringify({
+      composition: s.id,
+      style: ad.style.id,
+      layout: { columns: ad.layout.columns, gutter: ad.layout.gutter, maxWidth: ad.layout.maxWidth, radius: ad.layout.radius },
+      typography: { display: ad.typography.families.display, body: ad.typography.families.body, scaleRatio: ad.typography.scaleRatio, sizes: ad.typography.sizes },
+      effects: s.effects.map((id) => ({ id, params: { bg: ad.palette.surface, accent: ad.palette.accent, accent2: ad.palette.accent2, speed: 0.8 } })),
+      motion: { level: ad.motion.level, fastMs: ad.motion.fastMs, baseMs: ad.motion.baseMs, slowMs: ad.motion.slowMs },
+    }, null, 2) + '\n', 'utf8');
     fs.writeFileSync(path.join(dir, 'DESIGN.md'), designFile(ad), 'utf8');
     fs.writeFileSync(path.join(dir, 'MOTION.md'), motionDirectorMarkdown(ad, buildMotionDirector(ad)), 'utf8');
     const existing = fs.existsSync(path.join(dir, 'measurement.json'))

@@ -1,0 +1,52 @@
+{
+  "composition": "aether",
+  "style": "glassmorphism",
+  "layout": {
+    "columns": 12,
+    "gutter": 28,
+    "maxWidth": 1240,
+    "radius": 24
+  },
+  "typography": {
+    "display": "VE Space Grotesk",
+    "body": "VE Inter",
+    "scaleRatio": 1.27,
+    "sizes": {
+      "caption": 12,
+      "small": 14,
+      "body": 16,
+      "lead": 20,
+      "h3": 20.3,
+      "h2": 25.8,
+      "h1": 32.8,
+      "display": 41.6,
+      "hero": 52.9
+    }
+  },
+  "effects": [
+    {
+      "id": "glass-refraction",
+      "params": {
+        "bg": "rgba(20,32,52,.56)",
+        "accent": "#9ee7ff",
+        "accent2": "#c8a8ff",
+        "speed": 0.8
+      }
+    },
+    {
+      "id": "bokeh-drift",
+      "params": {
+        "bg": "rgba(20,32,52,.56)",
+        "accent": "#9ee7ff",
+        "accent2": "#c8a8ff",
+        "speed": 0.8
+      }
+    }
+  ],
+  "motion": {
+    "level": "restrained",
+    "fastMs": 140,
+    "baseMs": 460,
+    "slowMs": 1000
+  }
+}

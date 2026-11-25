@@ -1,0 +1,52 @@
+{
+  "composition": "quiet-form",
+  "style": "neumorphism",
+  "layout": {
+    "columns": 12,
+    "gutter": 33,
+    "maxWidth": 1180,
+    "radius": 26
+  },
+  "typography": {
+    "display": "VE Inter",
+    "body": "VE Inter",
+    "scaleRatio": 1.22,
+    "sizes": {
+      "caption": 12,
+      "small": 14,
+      "body": 16,
+      "lead": 20,
+      "h3": 19.5,
+      "h2": 23.8,
+      "h1": 29.1,
+      "display": 35.4,
+      "hero": 43.2
+    }
+  },
+  "effects": [
+    {
+      "id": "wave-contours",
+      "params": {
+        "bg": "#e8edf2",
+        "accent": "#2e6f8e",
+        "accent2": "#9b6b3f",
+        "speed": 0.8
+      }
+    },
+    {
+      "id": "caustic-light",
+      "params": {
+        "bg": "#e8edf2",
+        "accent": "#2e6f8e",
+        "accent2": "#9b6b3f",
+        "speed": 0.8
+      }
+    }
+  ],
+  "motion": {
+    "level": "restrained",
+    "fastMs": 180,
+    "baseMs": 380,
+    "slowMs": 900
+  }
+}

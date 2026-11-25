@@ -1,0 +1,52 @@
+{
+  "composition": "terra",
+  "style": "organic-natural",
+  "layout": {
+    "columns": 12,
+    "gutter": 38,
+    "maxWidth": 1200,
+    "radius": 32
+  },
+  "typography": {
+    "display": "VE Source Serif 4",
+    "body": "VE Inter",
+    "scaleRatio": 1.3,
+    "sizes": {
+      "caption": 12.8,
+      "small": 14.9,
+      "body": 17,
+      "lead": 21.3,
+      "h3": 22.1,
+      "h2": 28.7,
+      "h1": 37.3,
+      "display": 48.6,
+      "hero": 63.1
+    }
+  },
+  "effects": [
+    {
+      "id": "caustic-light",
+      "params": {
+        "bg": "#fbf6eb",
+        "accent": "#31705a",
+        "accent2": "#b45f3f",
+        "speed": 0.8
+      }
+    },
+    {
+      "id": "ink-diffusion",
+      "params": {
+        "bg": "#fbf6eb",
+        "accent": "#31705a",
+        "accent2": "#b45f3f",
+        "speed": 0.8
+      }
+    }
+  ],
+  "motion": {
+    "level": "restrained",
+    "fastMs": 140,
+    "baseMs": 620,
+    "slowMs": 1300
+  }
+}

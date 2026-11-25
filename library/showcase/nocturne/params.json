@@ -1,0 +1,52 @@
+{
+  "composition": "nocturne",
+  "style": "cinematic",
+  "layout": {
+    "columns": 12,
+    "gutter": 40,
+    "maxWidth": 1280,
+    "radius": 2
+  },
+  "typography": {
+    "display": "VE Source Serif 4",
+    "body": "VE Inter",
+    "scaleRatio": 1.36,
+    "sizes": {
+      "caption": 12,
+      "small": 14,
+      "body": 16,
+      "lead": 20,
+      "h3": 21.8,
+      "h2": 29.6,
+      "h1": 40.2,
+      "display": 54.7,
+      "hero": 74.4
+    }
+  },
+  "effects": [
+    {
+      "id": "anamorphic-bloom",
+      "params": {
+        "bg": "#11100e",
+        "accent": "#e8b86b",
+        "accent2": "#5fc6bd",
+        "speed": 0.8
+      }
+    },
+    {
+      "id": "dissolve-grain",
+      "params": {
+        "bg": "#11100e",
+        "accent": "#e8b86b",
+        "accent2": "#5fc6bd",
+        "speed": 0.8
+      }
+    }
+  ],
+  "motion": {
+    "level": "expressive",
+    "fastMs": 220,
+    "baseMs": 620,
+    "slowMs": 1400
+  }
+}

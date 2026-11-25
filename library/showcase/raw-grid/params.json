@@ -1,0 +1,52 @@
+{
+  "composition": "raw-grid",
+  "style": "brutalism",
+  "layout": {
+    "columns": 12,
+    "gutter": 12,
+    "maxWidth": 1440,
+    "radius": 0
+  },
+  "typography": {
+    "display": "VE JetBrains Mono",
+    "body": "VE Inter",
+    "scaleRatio": 1.5,
+    "sizes": {
+      "caption": 12,
+      "small": 14,
+      "body": 16,
+      "lead": 20,
+      "h3": 24,
+      "h2": 36,
+      "h1": 54,
+      "display": 81,
+      "hero": 121.5
+    }
+  },
+  "effects": [
+    {
+      "id": "dot-matrix",
+      "params": {
+        "bg": "#ffffff",
+        "accent": "#ff3d00",
+        "accent2": "#1e3aff",
+        "speed": 0.8
+      }
+    },
+    {
+      "id": "glitch-slices",
+      "params": {
+        "bg": "#ffffff",
+        "accent": "#ff3d00",
+        "accent2": "#1e3aff",
+        "speed": 0.8
+      }
+    }
+  ],
+  "motion": {
+    "level": "expressive",
+    "fastMs": 140,
+    "baseMs": 300,
+    "slowMs": 520
+  }
+}

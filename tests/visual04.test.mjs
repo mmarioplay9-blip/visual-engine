@@ -121,6 +121,7 @@ test('0.4 · Reference-to-Design separa confirmado de estimado y genera sistema'
   assert.ok(design.limitations.some((l) => /no se identifica/i.test(l)));
   assert.ok(design.effects.length >= 1);
   assert.ok(design.components.length >= 4);
+  assert.ok(design.timeline.note.length > 5);
   assert.ok(design.motion.validation.rotation.status === 'verified');
 
   const out = fs.mkdtempSync(path.join(os.tmpdir(), 've-refdesign04-'));
@@ -146,9 +147,12 @@ test('0.4 · 20 composiciones generadas, 15 estilos y 58 efectos preservados', (
   for (const comp of r.compositions) {
     assert.ok(fs.existsSync(comp.html), comp.html);
     const dir = path.dirname(comp.html);
-    for (const f of ['design-system.css', 'page.css', 'tokens.json', 'README.md', 'DESIGN.md', 'MOTION.md']) {
+    for (const f of ['design-system.css', 'page.css', 'tokens.json', 'params.json', 'README.md', 'DESIGN.md', 'MOTION.md']) {
       assert.ok(fs.existsSync(path.join(dir, f)), `${comp.id}: falta ${f}`);
     }
+    const params = JSON.parse(fs.readFileSync(path.join(dir, 'params.json'), 'utf8'));
+    assert.equal(params.effects.length, 2);
+    assert.ok(params.typography.scaleRatio > 1);
     const html = fs.readFileSync(comp.html, 'utf8');
     for (const effect of comp.effects) assert.match(html, new RegExp(`assets/effects/${effect}/effect\\.js`));
     assert.match(html, /prefers-reduced-motion|fonts\.ready/);

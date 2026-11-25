@@ -1,0 +1,52 @@
+{
+  "composition": "orbital",
+  "style": "futuristic",
+  "layout": {
+    "columns": 12,
+    "gutter": 28,
+    "maxWidth": 1360,
+    "radius": 10
+  },
+  "typography": {
+    "display": "VE Space Grotesk",
+    "body": "VE Inter",
+    "scaleRatio": 1.3,
+    "sizes": {
+      "caption": 10.5,
+      "small": 12.3,
+      "body": 14,
+      "lead": 17.5,
+      "h3": 18.2,
+      "h2": 23.7,
+      "h1": 30.8,
+      "display": 40,
+      "hero": 52
+    }
+  },
+  "effects": [
+    {
+      "id": "circuit-lines",
+      "params": {
+        "bg": "#0a1520",
+        "accent": "#5ff2d6",
+        "accent2": "#7aa2ff",
+        "speed": 0.8
+      }
+    },
+    {
+      "id": "radar-sweep",
+      "params": {
+        "bg": "#0a1520",
+        "accent": "#5ff2d6",
+        "accent2": "#7aa2ff",
+        "speed": 0.8
+      }
+    }
+  ],
+  "motion": {
+    "level": "restrained",
+    "fastMs": 140,
+    "baseMs": 420,
+    "slowMs": 1100
+  }
+}

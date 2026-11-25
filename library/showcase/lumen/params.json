@@ -1,0 +1,52 @@
+{
+  "composition": "lumen",
+  "style": "minimal-premium",
+  "layout": {
+    "columns": 12,
+    "gutter": 50,
+    "maxWidth": 1180,
+    "radius": 4
+  },
+  "typography": {
+    "display": "VE Space Grotesk",
+    "body": "VE Inter",
+    "scaleRatio": 1.34,
+    "sizes": {
+      "caption": 12,
+      "small": 14,
+      "body": 16,
+      "lead": 20,
+      "h3": 21.4,
+      "h2": 28.7,
+      "h1": 38.5,
+      "display": 51.6,
+      "hero": 69.1
+    }
+  },
+  "effects": [
+    {
+      "id": "mesh-gradient",
+      "params": {
+        "bg": "#fffdf8",
+        "accent": "#9b3d2e",
+        "accent2": "#1f5b4d",
+        "speed": 0.8
+      }
+    },
+    {
+      "id": "dust-motes",
+      "params": {
+        "bg": "#fffdf8",
+        "accent": "#9b3d2e",
+        "accent2": "#1f5b4d",
+        "speed": 0.8
+      }
+    }
+  ],
+  "motion": {
+    "level": "restrained",
+    "fastMs": 180,
+    "baseMs": 480,
+    "slowMs": 1100
+  }
+}

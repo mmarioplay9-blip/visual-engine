@@ -8,7 +8,7 @@ body[data-mode="light"] .ve-scrim { background: linear-gradient(180deg, color-mi
 .ve-shell { position: relative; z-index: 2; }
 .site-head { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 72px; border-bottom: 1px solid var(--ve-border); }
 .brand { display: flex; align-items: center; gap: 10px; font-family: var(--ve-display); font-weight: 650; letter-spacing: -.02em; font-size: 17px; white-space: nowrap; }
-.brand-mark { width: 26px; height: 26px; border: 1px solid var(--ve-accent); border-radius: 50%; display: grid; place-items: center; font-family: var(--ve-mono); font-size: 9px; color: var(--ve-accent); }
+.brand-mark { width: 26px; height: 26px; border: 1px solid var(--ve-accent); border-radius: 50%; display: grid; place-items: center; font-family: var(--ve-mono); font-size: 9px; color: var(--ve-text); }
 .nav { display: flex; align-items: center; gap: 24px; font-size: 13px; color: var(--ve-muted); }
 .nav a { text-decoration: none; padding: 8px 0; border-bottom: 1px solid transparent; }
 .nav a:hover, .nav a[aria-current="page"] { color: var(--ve-text); border-color: var(--ve-accent); }
@@ -142,7 +142,7 @@ body[data-mode="light"] .ve-scrim { background: linear-gradient(180deg, color-mi
 .phone-grid div { background: var(--ve-bg); border: 1px solid var(--ve-border); border-radius: calc(var(--ve-radius) * .6); padding: 9px; }
 .phone-grid b { display: block; font-family: var(--ve-display); font-size: 16px; } .phone-grid span { font-family: var(--ve-mono); font-size: 8px; color: var(--ve-muted); text-transform: uppercase; }
 .phone-tabbar { display: flex; justify-content: space-around; border-top: 1px solid var(--ve-border); padding: 11px 4px; font-family: var(--ve-mono); font-size: 8px; color: var(--ve-muted); }
-.phone-tabbar b { color: var(--ve-accent); font-weight: 400; }
+.phone-tabbar .active { color: var(--ve-text); border-bottom: 1px solid var(--ve-accent); padding-bottom: 2px; }
 .poster { min-height: calc(100vh - 72px); display: grid; place-content: center; padding: 40px 0; text-align: left; border-bottom: 1px solid var(--ve-border); }
 .poster h1 { font-size: clamp(74px, 14vw, 210px); line-height: .78; letter-spacing: -.07em; text-transform: uppercase; margin: 18px 0 22px; max-width: 9ch; }
 .poster .ve-lead { max-width: 42ch; }

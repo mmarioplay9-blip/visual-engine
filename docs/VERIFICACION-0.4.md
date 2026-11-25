@@ -36,8 +36,8 @@ ni omitidas. Las 39 pruebas anteriores siguen incluidas.
 ## 3. Las 20 composiciones
 
 Todas usan efectos existentes de la biblioteca y se sirven en local. Cada carpeta contiene
-`index.html`, `design-system.css`, `page.css`, `tokens.json`, `DESIGN.md`, `MOTION.md`,
-`README.md`, `measurement.json` y `preview.png`.
+`index.html`, `design-system.css`, `page.css`, `tokens.json`, `params.json`, `DESIGN.md`,
+`MOTION.md`, `README.md`, `measurement.json` y `preview.png`.
 
 | Composición | ID | Estilo | Arquetipo |
 | --- | --- | --- | --- |

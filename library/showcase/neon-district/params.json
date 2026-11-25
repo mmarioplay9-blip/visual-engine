@@ -1,0 +1,52 @@
+{
+  "composition": "neon-district",
+  "style": "cyberpunk",
+  "layout": {
+    "columns": 12,
+    "gutter": 14,
+    "maxWidth": 1360,
+    "radius": 0
+  },
+  "typography": {
+    "display": "VE Space Grotesk",
+    "body": "VE JetBrains Mono",
+    "scaleRatio": 1.33,
+    "sizes": {
+      "caption": 10.5,
+      "small": 12.3,
+      "body": 14,
+      "lead": 17.5,
+      "h3": 18.6,
+      "h2": 24.8,
+      "h1": 32.9,
+      "display": 43.8,
+      "hero": 58.3
+    }
+  },
+  "effects": [
+    {
+      "id": "glitch-slices",
+      "params": {
+        "bg": "#120d1b",
+        "accent": "#ff2e88",
+        "accent2": "#f4ff3f",
+        "speed": 0.8
+      }
+    },
+    {
+      "id": "neon-rim",
+      "params": {
+        "bg": "#120d1b",
+        "accent": "#ff2e88",
+        "accent2": "#f4ff3f",
+        "speed": 0.8
+      }
+    }
+  ],
+  "motion": {
+    "level": "expressive",
+    "fastMs": 140,
+    "baseMs": 300,
+    "slowMs": 700
+  }
+}
