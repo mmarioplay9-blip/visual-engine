@@ -1,0 +1,101 @@
+{
+  "version": "1.0",
+  "createdAt": "2026-11-26T02:46:21.354Z",
+  "intent": "Material study: brass ring, frosted glass card, charcoal paper, warm amber key light, teal rim light",
+  "reference": {
+    "path": "demo\\senal\\reference.jpg",
+    "kind": "video",
+    "width": 1392,
+    "height": 752,
+    "aspect": 1.851,
+    "duration": 0.04
+  },
+  "preserve": [
+    "composición y distribución",
+    "identidad visual",
+    "colores y materiales",
+    "tipografía y jerarquía",
+    "efectos existentes",
+    "animaciones y movimiento",
+    "proporciones y profundidad"
+  ],
+  "measured": {
+    "palette": [
+      {
+        "hex": "#1e2326",
+        "share": 0.524,
+        "role": "fondo",
+        "contrastWithBackground": null
+      },
+      {
+        "hex": "#beaa8f",
+        "share": 0.142,
+        "role": "superficie",
+        "contrastWithBackground": 5.04
+      },
+      {
+        "hex": "#454c45",
+        "share": 0.138,
+        "role": "superficie",
+        "contrastWithBackground": 2.17
+      },
+      {
+        "hex": "#8c7965",
+        "share": 0.099,
+        "role": "acento",
+        "contrastWithBackground": 3.61
+      },
+      {
+        "hex": "#080808",
+        "share": 0.036,
+        "role": "neutro",
+        "contrastWithBackground": 4.25
+      },
+      {
+        "hex": "#61655e",
+        "share": 0.019,
+        "role": "neutro",
+        "contrastWithBackground": 2.91
+      }
+    ],
+    "luma": 0.287,
+    "contrast": 0.217,
+    "saturation": 0.274,
+    "colorfulness": 0.246,
+    "edgeDensity": 0.113,
+    "darkRatio": 0.145,
+    "quadrants": [
+      0.443,
+      0.133,
+      0.259,
+      0.166
+    ],
+    "motion": 0,
+    "cuts": [],
+    "pace": 0
+  },
+  "typography": {
+    "status": "unavailable",
+    "scaleRatios": [],
+    "note": "Sin dos niveles de texto medibles: no se afirma una escala tipográfica. Describe la jerarquía mirando la referencia."
+  },
+  "effects": {
+    "verified": [],
+    "estimated": [],
+    "note": "Los efectos de esta referencia se confirman con `ve detect` (vídeo) o por inspección visual. No se afirman sin evidencia."
+  },
+  "nonNegotiables": [
+    "Conserva la distribución de masa por cuadrantes (44/13/26/17 %).",
+    "Conserva la luminancia (0.287) y el contraste (0.217); no inviertas a oscuro si la referencia es clara.",
+    "Conserva la paleta medida: #1e2326 (fondo), #beaa8f (superficie), #454c45 (superficie), #8c7965 (acento).",
+    "Conserva la proporción 1392×752 (1.851).",
+    "Conserva los efectos y el movimiento que existan; no añadas partículas, glow, glassmorphism ni degradados neón si no están.",
+    "La intención del usuario y la referencia mandan sobre cualquier estilo predefinido."
+  ],
+  "warnings": [],
+  "limits": [
+    "El perfil mide color, luz y composición; no entiende marcas, materiales ni intención.",
+    "La tipografía sólo se aproxima por alturas relativas: no hay identificación de familia.",
+    "Los efectos listados como estimated son correspondencias, no plugins exactos."
+  ]
+}

@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Señal 01 · estudio de materiales</title>
+<style>
+  :root{
+    --paper:#1e2326;
+    --paper-deep:#151a1c;
+    --bone:#efe6d6;
+    --brass:#beaa8f;
+    --brass-deep:#8c7965;
+    --teal:#1f4a4a;
+    --teal-lit:#4f9c92;
+    --ink:#0d1112;
+    --ease:cubic-bezier(.22,.61,.36,1);
+  }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    background:var(--paper-deep);
+    color:var(--bone);
+    font-family:"Inter","Segoe UI Variable","Segoe UI",system-ui,-apple-system,sans-serif;
+    display:grid;
+    place-items:center;
+    overflow:hidden;
+  }
+  .stage{
+    position:relative;
+    width:min(100vw,calc(100vh * 1.8511));
+    aspect-ratio:1392/752;
+    overflow:hidden;
+    background:var(--paper);
+    isolation:isolate;
+  }
+
+  /* ---------- materiales: papel de algodón ---------- */
+  .paper{
+    position:absolute;inset:0;
+    background:
+      radial-gradient(120% 90% at 18% 8%,#2b3134 0%,transparent 55%),
+      radial-gradient(90% 70% at 82% 92%,#191f21 0%,transparent 60%),
+      linear-gradient(168deg,#22282b 0%,#1e2326 45%,#1a1f21 100%);
+  }
+  .fiber{
+    position:absolute;inset:-20%;
+    opacity:.16;
+    mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='300' height='300' filter='url(%23n)'/></svg>");
+    background-size:300px 300px;
+    animation:grain 1.2s steps(3) infinite;
+  }
+  @keyframes grain{
+    0%{transform:translate3d(0,0,0)}
+    33%{transform:translate3d(-2%,1%,0)}
+    66%{transform:translate3d(1%,-2%,0)}
+    100%{transform:translate3d(0,0,0)}
+  }
+
+  /* ---------- iluminación: clave cálida + contraluz frío ---------- */
+  .key{
+    position:absolute;inset:0;
+    background:radial-gradient(46% 58% at 10% 6%,rgba(217,154,78,.55) 0%,rgba(190,120,52,.18) 42%,transparent 72%);
+    mix-blend-mode:screen;
+    filter:blur(6px);
+    animation:breathe 14s var(--ease) infinite alternate;
+  }
+  .rim{
+    position:absolute;inset:0;
+    background:radial-gradient(38% 44% at 74% 78%,rgba(79,156,146,.20) 0%,transparent 70%);
+    mix-blend-mode:screen;
+  }
+  .vignette{
+    position:absolute;inset:0;
+    background:radial-gradient(72% 72% at 48% 46%,transparent 52%,rgba(6,9,10,.55) 100%);
+    pointer-events:none;
+  }
+  @keyframes breathe{from{opacity:.72}to{opacity:1}}
+
+  /* ---------- escena ---------- */
+  .scene{position:absolute;inset:0}
+  #ring{position:absolute;inset:0;width:100%;height:100%;display:block}
+  .contact{
+    position:absolute;
+    left:38.5%;top:66.5%;
+    width:30%;height:7%;
+    background:radial-gradient(50% 50% at 50% 50%,rgba(0,0,0,.62) 0%,rgba(0,0,0,.28) 45%,transparent 78%);
+    filter:blur(10px);
+    transform:rotate(-3deg);
+  }
+
+  /* ---------- vidrio esmerilado ---------- */
+  .glass{
+    position:absolute;
+    left:55.2%;top:46.5%;
+    width:26.5%;height:38%;
+    padding:6.5% 5.6% 6%;
+    border-radius:10px;
+    background:linear-gradient(150deg,rgba(214,228,226,.16) 0%,rgba(120,160,158,.10) 55%,rgba(80,120,118,.12) 100%);
+    backdrop-filter:blur(13px) saturate(126%);
+    -webkit-backdrop-filter:blur(13px) saturate(126%);
+    border:1px solid rgba(232,240,236,.26);
+    box-shadow:
+      0 24px 48px -18px rgba(0,0,0,.65),
+      inset 0 1px 0 rgba(255,255,255,.32),
+      inset 0 -1px 0 rgba(0,0,0,.18);
+    animation:settle 1.4s var(--ease) both;
+    display:flex;flex-direction:column;justify-content:flex-end;
+  }
+  .glass::after{
+    content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+    background:linear-gradient(118deg,rgba(255,255,255,.20) 0%,transparent 34%,transparent 72%,rgba(255,255,255,.06) 100%);
+  }
+  .bar{
+    flex:0 0 auto;
+    height:6px;border-radius:3px;
+    background:linear-gradient(90deg,rgba(239,230,214,.92),rgba(239,230,214,.58));
+    margin-bottom:16px;
+    transform-origin:left center;
+    animation:draw .9s var(--ease) both;
+  }
+  .bar:nth-child(1){width:100%;animation-delay:.35s}
+  .bar:nth-child(2){width:74%;animation-delay:.48s}
+  .bar:nth-child(3){width:88%;animation-delay:.61s}
+  .glass .caption{
+    margin-top:14px;
+    font-size:clamp(9px,1.05vw,13px);
+    letter-spacing:.055em;
+    color:rgba(239,230,214,.78);
+    font-variant-numeric:tabular-nums;
+  }
+  @keyframes draw{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @keyframes settle{from{opacity:0;transform:translateY(14px) scale(.985)}to{opacity:1;transform:none}}
+
+  /* ---------- etiqueta de papel ---------- */
+  .label{
+    position:absolute;left:-2.2%;bottom:-14%;
+    width:29%;height:34%;
+    background:
+      radial-gradient(120% 90% at 20% 10%,#f6efe2 0%,#e9ddc9 58%,#d9cbb4 100%);
+    color:#5c5346;
+    transform:rotate(-1.2deg);
+    box-shadow:0 18px 32px -14px rgba(0,0,0,.7);
+    display:flex;align-items:center;justify-content:center;
+    font-size:clamp(18px,2.6vw,34px);
+    letter-spacing:.08em;
+    font-weight:600;
+    text-shadow:0 1px 0 rgba(255,255,255,.55),0 -1px 0 rgba(0,0,0,.16);
+    animation:settle 1.2s var(--ease) .2s both;
+  }
+  .label::before{
+    content:"";position:absolute;inset:0;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='p'><feTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2'/><feColorMatrix type='saturate' values='0'/></filter><rect width='200' height='200' filter='url(%23p)' opacity='0.22'/></svg>");
+    mix-blend-mode:multiply;opacity:.5;
+  }
+
+  /* ---------- controles (fuera de la composición al capturar) ---------- */
+  .chrome{
+    position:absolute;left:50%;bottom:3.4%;transform:translateX(-50%);
+    display:flex;gap:6px;align-items:center;
+    padding:7px 10px;border-radius:999px;
+    background:rgba(12,16,18,.72);
+    border:1px solid rgba(239,230,214,.16);
+    backdrop-filter:blur(8px);
+    font-size:12px;letter-spacing:.02em;
+    transition:opacity .35s var(--ease);
+    z-index:5;
+  }
+  .chrome.idle{opacity:0}
+  .chrome button{
+    font:inherit;color:rgba(239,230,214,.82);
+    background:transparent;border:1px solid rgba(239,230,214,.20);
+    border-radius:999px;padding:4px 10px;cursor:pointer;
+  }
+  .chrome button[aria-pressed="true"]{background:rgba(239,230,214,.92);color:#1b1f21;border-color:transparent}
+  .chrome button:focus-visible{outline:2px solid var(--teal-lit);outline-offset:2px}
+  .chrome .sep{width:1px;height:18px;background:rgba(239,230,214,.16);margin:0 2px}
+  body.clean .chrome{display:none}
+
+  @media (prefers-reduced-motion:reduce){
+    .fiber,.key,.glass,.bar,.label{animation:none}
+    .fiber{opacity:.12}
+  }
+</style>
+</head>
+<body>
+<main class="stage" id="stage">
+  <div class="paper"></div>
+  <div class="fiber" aria-hidden="true"></div>
+  <div class="key" aria-hidden="true"></div>
+  <div class="rim" aria-hidden="true"></div>
+
+  <div class="scene">
+    <div class="contact" aria-hidden="true"></div>
+    <canvas id="ring" role="img" aria-label="Anillo de latón cepillado con reflejo cálido y canto interior verde azulado"></canvas>
+    <section class="glass" aria-label="Tarjeta de vidrio esmerilado con tres barras de texto">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <p class="caption">Latón cepillado · 0,4 mm</p>
+    </section>
+    <div class="label" aria-hidden="true">SEÑAL 01</div>
+  </div>
+
+  <div class="vignette" aria-hidden="true"></div>
+
+  <div class="chrome" id="chrome" role="toolbar" aria-label="Controles de la demostración">
+    <button id="b-shader" aria-pressed="true">Shader</button>
+    <button id="b-dust" aria-pressed="true">Polvo</button>
+    <button id="b-light" aria-pressed="true">Luz</button>
+    <span class="sep" aria-hidden="true"></span>
+    <button id="b-pause" aria-pressed="false">Pausa</button>
+  </div>
+</main>
+
+<script>
+(() => {
+  const stage = document.getElementById('stage');
+  const canvas = document.getElementById('ring');
+  const gl = canvas.getContext('webgl', { antialias: true, alpha: true, premultipliedAlpha: false });
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const state = { shader: true, dust: true, light: true, paused: reduce };
+
+  const VERT = `
+    attribute vec2 a;
+    void main(){ gl_Position = vec4(a, 0.0, 1.0); }
+  `;
+
+  const FRAG = `
+    precision highp float;
+    uniform vec2 uRes;
+    uniform float uTime;
+    uniform vec2 uRing;
+    uniform float uRadius;
+    uniform float uThickness;
+    uniform float uDust;
+    uniform float uLight;
+
+    float hash(vec2 p){ return fract(sin(dot(p, vec2(41.3, 289.1))) * 43758.5453); }
+    float noise(vec2 p){
+      vec2 i = floor(p), f = fract(p);
+      f = f*f*(3.0-2.0*f);
+      return mix(mix(hash(i), hash(i+vec2(1,0)), f.x),
+                 mix(hash(i+vec2(0,1)), hash(i+vec2(1,1)), f.x), f.y);
+    }
+
+    void main(){
+      vec2 frag = gl_FragCoord.xy;
+      vec2 uv = (frag - uRes*0.5) / uRes.y;
+
+      vec2 c = (uRing - uRes*0.5) / uRes.y;
+      vec2 p = uv - c;
+      float d = length(p);
+      float ringSdf = abs(d - uRadius) - uThickness*0.5;
+      float aa = 1.6 / uRes.y; // sin fwidth: no requiere GL_OES_standard_derivatives
+      float ring = 1.0 - smoothstep(-aa, aa, ringSdf);
+      if (ring <= 0.001) { gl_FragColor = vec4(0.0); return; }
+
+      float ang = atan(p.y, p.x);
+      // radios finos: latón cepillado en sentido radial
+      float brush = noise(vec2(ang*260.0, d*3.0));
+      float micro = 0.55 + 0.45*sin(ang*420.0 + brush*7.0);
+      float band = exp(-pow((ang - 2.45)*1.55, 2.0));      // franja del reflejo
+      float band2 = exp(-pow((ang + 0.55)*3.2, 2.0))*0.45;
+
+      vec3 n = normalize(vec3(cos(ang), sin(ang), 0.55));
+      vec3 L = normalize(vec3(-0.55, 0.62, 0.56));
+      float diff = clamp(dot(n, L), 0.0, 1.0);
+
+      vec3 brassDark = vec3(0.42, 0.33, 0.20);
+      vec3 brassLit  = vec3(0.88, 0.76, 0.58);
+      vec3 base = mix(brassDark, brassLit, 0.28 + 0.42*diff);
+      base *= 0.86 + 0.20*brush;
+      base *= 0.86 + 0.14*micro;
+
+      float spec = pow(max(0.0, 1.0 - abs(ang - 2.45)*0.75), 5.0);
+      base += vec3(1.0, 0.93, 0.80) * spec * 0.55 * uLight;
+      base += vec3(1.0, 0.86, 0.66) * band * 0.16 * uLight;
+      base += vec3(0.95, 0.82, 0.62) * band2 * 0.10 * uLight;
+
+      // canto interior verde azulado + fresnel
+      float inner = 1.0 - smoothstep(uRadius - uThickness, uRadius - uThickness*0.18, d);
+      float fres = pow(1.0 - n.z, 3.0);
+      base = mix(base, vec3(0.10, 0.30, 0.29), inner*0.55);
+      base += vec3(0.20, 0.55, 0.50) * fres * 0.55 * uLight;
+
+      // sombra propia del tubo
+      base *= 0.72 + 0.28*smoothstep(0.55, 1.0, abs(cos(ang + 0.4)));
+
+      // polvo suspendido
+      float dust = 0.0;
+      if (uDust > 0.5) {
+        for (int i = 0; i < 3; i++) {
+          float fi = float(i);
+          vec2 cell = floor(frag / (uRes.y * (0.055 + fi*0.03)));
+          float h = hash(cell + fi*13.7);
+          vec2 jitter = vec2(hash(cell+3.1), hash(cell+9.4)) * 0.8 + 0.1;
+          vec2 pos = (cell + jitter) * uRes.y * (0.055 + fi*0.03);
+          pos.y += sin(uTime*0.35 + h*6.28 + fi) * 5.0;
+          float dist = length(frag - pos);
+          float mote = smoothstep(1.6 + fi*0.5, 0.0, dist) * step(0.86, h);
+          dust += mote * (0.35 - fi*0.08);
+        }
+      }
+      base += vec3(0.95, 0.88, 0.74) * dust * uDust;
+
+      gl_FragColor = vec4(base, ring);
+    }
+  `;
+
+  function compile(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) {
+      console.error('shader', gl.getShaderInfoLog(s));
+    }
+    return s;
+  }
+
+  let prog, loc, vbo, dpr = 1;
+  if (gl) {
+    prog = gl.createProgram();
+    gl.attachShader(prog, compile(gl.VERTEX_SHADER, VERT));
+    gl.attachShader(prog, compile(gl.FRAGMENT_SHADER, FRAG));
+    gl.linkProgram(prog);
+    gl.useProgram(prog);
+    vbo = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, vbo);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 3,-1, -1,3]), gl.STATIC_DRAW);
+    const a = gl.getAttribLocation(prog, 'a');
+    gl.enableVertexAttribArray(a);
+    gl.vertexAttribPointer(a, 2, gl.FLOAT, false, 0, 0);
+    loc = n => gl.getUniformLocation(prog, n);
+    gl.enable(gl.BLEND);
+    gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+  }
+
+  function resize() {
+    const r = stage.getBoundingClientRect();
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    canvas.width = Math.round(r.width * dpr);
+    canvas.height = Math.round(r.height * dpr);
+    if (gl) gl.viewport(0, 0, canvas.width, canvas.height);
+  }
+
+  const t0 = performance.now();
+  let raf = 0;
+
+  function frame(now) {
+    const t = state.paused ? 0 : (now - t0) / 1000;
+    if (gl && state.shader) {
+      const w = canvas.width, h = canvas.height;
+      gl.clearColor(0, 0, 0, 0);
+      gl.clear(gl.COLOR_BUFFER_BIT);
+      gl.uniform2f(loc('uRes'), w, h);
+      gl.uniform1f(loc('uTime'), t);
+      gl.uniform2f(loc('uRing'), w * 0.50, h * 0.42);
+      // p está normalizado por la altura: radio y grosor también
+      gl.uniform1f(loc('uRadius'), 0.269);
+      gl.uniform1f(loc('uThickness'), 0.129);
+      gl.uniform1f(loc('uDust'), state.dust ? 1 : 0);
+      gl.uniform1f(loc('uLight'), state.light ? 1 : 0.35);
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
+    }
+    if (!state.paused) raf = requestAnimationFrame(frame);
+  }
+
+  function start() {
+    cancelAnimationFrame(raf);
+    canvas.style.opacity = state.shader ? '1' : '0';
+    if (!state.paused) raf = requestAnimationFrame(frame);
+    else if (gl) { resize(); frame(0); }
+  }
+
+  addEventListener('resize', () => { resize(); if (state.paused) start(); });
+
+  const bind = (id, key) => {
+    const el = document.getElementById(id);
+    el.addEventListener('click', () => {
+      state[key] = !state[key];
+      el.setAttribute('aria-pressed', String(state[key]));
+      if (key === 'shader') canvas.style.opacity = state.shader ? '1' : '0';
+      if (key === 'light') document.documentElement.style.setProperty('--light', state.light ? '1' : '.35');
+      start();
+    });
+  };
+  bind('b-shader', 'shader');
+  bind('b-dust', 'dust');
+  bind('b-light', 'light');
+
+  const pause = document.getElementById('b-pause');
+  pause.addEventListener('click', () => {
+    state.paused = !state.paused;
+    pause.setAttribute('aria-pressed', String(state.paused));
+    pause.textContent = state.paused ? 'Reanudar' : 'Pausa';
+    start();
+  });
+
+  // barra discreta: se oculta y vuelve con el teclado o el ratón
+  const chrome = document.getElementById('chrome');
+  let idle;
+  const wake = () => {
+    chrome.classList.remove('idle');
+    clearTimeout(idle);
+    idle = setTimeout(() => chrome.classList.add('idle'), 4200);
+  };
+  addEventListener('pointermove', wake);
+  addEventListener('focusin', wake);
+  wake();
+
+  // ?clean=1 oculta los controles para las capturas de evidencia
+  if (new URLSearchParams(location.search).get('clean') === '1') {
+    document.body.classList.add('clean');
+  }
+
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) { cancelAnimationFrame(raf); }
+    else if (!state.paused) { raf = requestAnimationFrame(frame); }
+  });
+
+  resize();
+  start();
+  if (reduce) { state.paused = true; pause.setAttribute('aria-pressed', 'true'); pause.textContent = 'Reanudar'; }
+})();
+</script>
+</body>
+</html>

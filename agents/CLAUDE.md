@@ -6,6 +6,12 @@
 Tienes el servidor MCP `visual-engine` disponible (CLI: `ve`). Úsalo para cualquier tarea
 con componente visual: hero, landing, animación, 3D, HUD, vídeo o "mejora el diseño".
 
+## Perfil y activación
+
+Perfil por defecto: **professional** (6000 tokens, 7 herramientas, 2 correcciones); `cinematic`
+sólo para la pieza principal, con referencia y coste asumido. No actives el motor en tareas sin
+salida visual (backend, datos, documentación, tests, refactors). «Sin Visual Engine» manda.
+
 ## Reference First
 
 La intención del usuario y la referencia mandan sobre los estilos. Antes de diseñar:

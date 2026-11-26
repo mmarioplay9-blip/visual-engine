@@ -203,12 +203,14 @@ instalador con respaldos y desinstalación, handshake MCP, activación, perfiles
 - **Referencias:** obras CC0 del MET como dirección visual, no capturas de producto. El vídeo de
   referencia es un montaje derivado, no una pieza externa licenciada.
 - **Tokens** estimados por caracteres; no hay telemetría del proveedor.
-- **`npm audit`:** una alerta alta en `zod` (<4.6.6, agotamiento de memoria con colecciones
-  enormes). El SDK de MCP usa zod 3; subir a 4 es incompatible y no se ha hecho. El servidor es
-  local, por stdio y con esquemas estáticos. Ver [SECURITY.md](SECURITY.md).
+- **`npm audit`:** 0 vulnerabilidades en producción con **zod 4.6.7**; el SDK de MCP 1.32.2
+  admite `^4.0` y el handshake se verificó tras la migración. El aviso GHSA-mrhx-c7xc-m3w5 se
+  apoya en CVE-2023-54404, **rechazado** el 2026-10-28. Ver [SECURITY.md](SECURITY.md).
 - **Publicación:** no se ha publicado en GitHub ni se ha ejecutado `git push`.
 
 Lista completa y honesta: [docs/CAPABILITIES.md](docs/CAPABILITIES.md).
+Instalación global verificada por agente e instrucciones de uso:
+[docs/INTEGRACION-RC2.md](docs/INTEGRACION-RC2.md).
 
 ## Licencias
 

@@ -1,6 +1,6 @@
 ---
 name: visual-engine
-description: Motor local y gratuito de calidad visual. Prioriza la referencia y la intención del usuario sobre cualquier estilo, mide composición, paleta, luz y tipografía, critica con evidencia, depura el DOM, aplica gates y ejecuta un ciclo con reversión. Úsala para diseño, motion graphics, 3D, HUD, vídeo o cualquier petición de "que se vea profesional".
+description: Motor local y gratuito de calidad visual. Prioriza la referencia y la intención del usuario sobre cualquier estilo, mide composición, paleta, luz y tipografía, critica con evidencia, depura el DOM, aplica gates y ejecuta un ciclo con reversión. Úsala sólo cuando la tarea produzca o evalúe una salida visual (diseño, web, motion graphics, 3D, HUD, vídeo, imagen); no para backend, datos, documentación, tests ni refactors sin interfaz.
 ---
 
 # Visual Engine 1.0.0-rc.2
@@ -48,6 +48,18 @@ Una tarea termina cuando hay captura real, crítica/gate ejecutados y los defect
 declarados con su gravedad. Si un control visual falla y el presupuesto se agotó, dilo; no lo
 maquilles ni bajes el umbral.
 
+## Activación y perfiles
+
+Perfil por defecto: **professional** (`--profile professional`): 6000 tokens de presupuesto,
+7 herramientas como máximo, 2 correcciones y 15 minutos. Escala a **cinematic** sólo cuando la
+pieza sea la principal del proyecto, exista referencia y el usuario asuma el coste; usa **lite**
+para comprobaciones rápidas. No cambies de perfil para "aprobarlo todo": el perfil cambia el
+alcance, no los umbrales.
+
+No actives esta skill para backend, datos, documentación, tests, refactors ni scripts sin salida
+visual. Si la tarea no produce ni evalúa una imagen, una interfaz o un movimiento, no ejecutes
+`ve`. Una petición explícita de «sin Visual Engine» manda sobre todo lo anterior.
+
 ## Herramientas sin cargar 45
 
 El servidor MCP agrupa las herramientas: `analysis`, `direction`, `build`, `verify`, `agents`.
@@ -59,7 +71,7 @@ VE_MCP_TOOLS=visual_plan,visual_capture ve mcp
 ```
 
 `visual_plan` es la puerta de entrada: devuelve el brief medido y el paso siguiente con sus
-herramientas. La CLI (49 comandos) y `ve serve` conservan todas las capacidades.
+herramientas. La CLI (48 comandos) y `ve serve` conservan todas las capacidades.
 
 ## Comandos que importan
 

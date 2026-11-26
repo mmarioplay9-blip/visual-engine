@@ -41,7 +41,8 @@ export interface AgentSpec {
     globalPath?: string;
     note: string;
   };
-  instructions: { projectPath: string; template: string };
+  /** `globalPath` es la ruta real que lee el agente en ámbito global; si falta, no se escribe nada global. */
+  instructions: { projectPath: string; template: string; globalPath?: string | null };
   skill?: { projectPath: string; template: string };
   activation: ActivationMode;
   activationNote: string;
@@ -70,7 +71,11 @@ export const AGENTS: AgentSpec[] = [
       globalPath: path.join(os.homedir(), '.codex', 'config.toml'),
       note: 'Codex lee [mcp_servers.<id>] en ~/.codex/config.toml; se añade el bloque sin sobrescribir el resto.',
     },
-    instructions: { projectPath: 'AGENTS.md', template: template('agents/AGENTS.md') },
+    instructions: {
+      projectPath: 'AGENTS.md',
+      globalPath: path.join(os.homedir(), '.codex', 'AGENTS.md'),
+      template: template('agents/AGENTS.md'),
+    },
     skill: { projectPath: path.join('.codex', 'skills', 'visual-engine', 'SKILL.md'), template: template('skills/visual-engine/SKILL.md') },
     activation: 'conditional',
     activationNote: 'AGENTS.md se carga como contexto; la skill se invoca cuando la tarea coincide. No hay activación automática garantizada.',
@@ -91,7 +96,11 @@ export const AGENTS: AgentSpec[] = [
       globalPath: path.join(os.homedir(), '.claude.json'),
       note: 'Claude Code usa mcpServers en .mcp.json del proyecto; el archivo global no se toca sin --global.',
     },
-    instructions: { projectPath: 'CLAUDE.md', template: template('agents/CLAUDE.md') },
+    instructions: {
+      projectPath: 'CLAUDE.md',
+      globalPath: path.join(os.homedir(), '.claude', 'CLAUDE.md'),
+      template: template('agents/CLAUDE.md'),
+    },
     skill: { projectPath: path.join('.claude', 'skills', 'visual-engine', 'SKILL.md'), template: template('skills/visual-engine/SKILL.md') },
     activation: 'automatic',
     activationNote: 'La skill declara cuándo usarse y Claude Code la invoca por coincidencia semántica; las reglas del proyecto mandan.',
@@ -109,9 +118,14 @@ export const AGENTS: AgentSpec[] = [
       supported: true,
       format: 'json-mcpServers',
       projectPath: path.join('.cursor', 'mcp.json'),
-      note: 'Cursor usa .cursor/mcp.json con mcpServers; las reglas .mdc se activan por descripción/globs.',
+      globalPath: path.join(os.homedir(), '.cursor', 'mcp.json'),
+      note: 'Cursor usa .cursor/mcp.json con mcpServers; en global, ~/.cursor/mcp.json. Las reglas .mdc se activan por descripción/globs.',
     },
-    instructions: { projectPath: path.join('.cursor', 'rules', 'visual-engine.mdc'), template: template('agents/cursor-visual-engine.mdc') },
+    instructions: {
+      projectPath: path.join('.cursor', 'rules', 'visual-engine.mdc'),
+      globalPath: path.join(os.homedir(), '.cursor', 'rules', 'visual-engine.mdc'),
+      template: template('agents/cursor-visual-engine.mdc'),
+    },
     activation: 'conditional',
     activationNote: 'La regla .mdc se adjunta cuando su descripción coincide; el agente decide si ejecuta las herramientas.',
     verification: 'binario + .cursor/mcp.json válido + handshake MCP por stdio.',
@@ -149,7 +163,9 @@ export const AGENTS: AgentSpec[] = [
       format: 'none',
       note: 'Freebuff consume skills y AGENTS.md del proyecto; no se declara una ruta MCP que no esté documentada.',
     },
-    instructions: { projectPath: 'AGENTS.md', template: template('agents/AGENTS.md') },
+    // Sin instrucciones globales: Freebuff lee AGENTS.md por proyecto y evitar
+    // un AGENTS.md en el home que active reglas visuales en tareas ajenas.
+    instructions: { projectPath: 'AGENTS.md', globalPath: null, template: template('agents/AGENTS.md') },
     skill: { projectPath: path.join('.agents', 'skills', 'visual-engine', 'SKILL.md'), template: template('skills/visual-engine/SKILL.md') },
     activation: 'automatic',
     activationNote: 'La skill .agents/skills se descubre por nombre/descripción; el agente la carga cuando la tarea es visual.',
@@ -170,7 +186,11 @@ export const AGENTS: AgentSpec[] = [
       globalPath: path.join(os.homedir(), '.config', 'opencode', 'opencode.json'),
       note: 'OpenCode usa mcp.<id> con type local y command en array dentro de opencode.json.',
     },
-    instructions: { projectPath: 'AGENTS.md', template: template('agents/AGENTS.md') },
+    instructions: {
+      projectPath: 'AGENTS.md',
+      globalPath: path.join(os.homedir(), '.config', 'opencode', 'AGENTS.md'),
+      template: template('agents/AGENTS.md'),
+    },
     activation: 'conditional',
     activationNote: 'AGENTS.md se carga siempre; las herramientas MCP están disponibles y el agente decide usarlas.',
     verification: 'binario + opencode.json válido + handshake MCP por stdio.',
@@ -189,7 +209,11 @@ export const AGENTS: AgentSpec[] = [
       globalPath: path.join(os.homedir(), '.maex', 'config.toml'),
       note: 'Diseñado como compatible con el formato TOML de Codex; al no estar instalado aquí no se escribe ni se afirma verificado.',
     },
-    instructions: { projectPath: 'AGENTS.md', template: template('agents/AGENTS.md') },
+    instructions: {
+      projectPath: 'AGENTS.md',
+      globalPath: path.join(os.homedir(), '.maex', 'AGENTS.md'),
+      template: template('agents/AGENTS.md'),
+    },
     activation: 'manual',
     activationNote: 'Invocación manual: no se ha comprobado activación automática en esta máquina.',
     verification: 'binario y configuración ausentes en esta máquina: estado designed, no verificado.',
@@ -225,7 +249,11 @@ export const AGENTS: AgentSpec[] = [
       projectPath: path.join('.visual-engine', 'mcp.json'),
       note: 'Bloque mcpServers genérico; el cliente debe apuntar a este archivo o copiar la entrada.',
     },
-    instructions: { projectPath: 'AGENTS.md', template: template('agents/AGENTS.md') },
+    instructions: {
+      projectPath: 'AGENTS.md',
+      globalPath: path.join(os.homedir(), '.visual-engine', 'AGENTS.md'),
+      template: template('agents/AGENTS.md'),
+    },
     activation: 'manual',
     activationNote: 'Depende del cliente: se entrega el bloque y las instrucciones, sin afirmar activación.',
     verification: 'handshake MCP por stdio con el binario de este paquete.',

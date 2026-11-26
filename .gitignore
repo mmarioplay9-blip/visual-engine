@@ -1,5 +1,6 @@
 node_modules/
 dist/
+.visual-engine/
 demo/out/
 demo/reference/
 demo/site/vendor/

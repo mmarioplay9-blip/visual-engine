@@ -9,6 +9,15 @@ Comprueba la integración con `ve agents`. No confundas **diseñado** con **inst
 no escribe. El perfil (`--profile lite|professional|cinematic`) cambia capacidades y presupuesto,
 nunca la estética.
 
+## Perfil y activación
+
+Perfil por defecto: **professional** (6000 tokens, 7 herramientas, 2 correcciones). Sube a
+**cinematic** sólo para la pieza principal de un proyecto, con referencia y coste asumido; `lite`
+para comprobaciones rápidas. El perfil cambia el alcance, nunca los umbrales.
+
+No actives Visual Engine en tareas sin salida visual (backend, datos, documentación, tests,
+refactors, scripts). Si el usuario pide «sin Visual Engine», no lo uses.
+
 ## Regla cero
 
 La **intención del usuario** y la **referencia** mandan sobre los estilos y sobre tu gusto. Antes
@@ -51,7 +60,7 @@ VE_MCP_GROUPS=analysis,verify ve mcp     # exposición selectiva, sin perder cap
 VE_MCP_TOOLS=visual_plan,visual_capture ve mcp
 ```
 
-La CLI (49 comandos) y `ve serve` ofrecen todo. La galería es opcional.
+La CLI (48 comandos) y `ve serve` ofrecen todo. La galería es opcional.
 
 ## Estados
 

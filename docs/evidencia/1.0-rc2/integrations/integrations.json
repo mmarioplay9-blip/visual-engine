@@ -1,0 +1,115 @@
+{
+  "generatedAt": "2026-11-26T02:58:06.054Z",
+  "home": "<home>",
+  "agents": [
+    {
+      "agent": "codex",
+      "skill": {
+        "path": "<home>\\.codex\\skills\\visual-engine\\SKILL.md",
+        "frontmatter": true,
+        "visualOnly": true,
+        "bytes": 6587
+      },
+      "instructions": {
+        "path": "<home>\\.codex\\AGENTS.md",
+        "referenceFirst": false,
+        "professionalDefault": false,
+        "bytes": 1901
+      },
+      "mcp": {
+        "ok": true,
+        "tools": 38,
+        "doctor": {
+          "ok": true,
+          "sample": "{\n  \"projectDir\": \"D:\\\\<home>\\\\visual-engine\",\n  \"ready\": \"8/9\",\n  \"tools\": [\n    {\n      \"id\": \"ffmpeg\",\n      \"disponible\": true,\n      \"version"
+        },
+        "env": {
+          "VE_MCP_GROUPS": "analysis,direction,build,verify"
+        },
+        "command": "node.exe"
+      }
+    },
+    {
+      "agent": "claude",
+      "skill": {
+        "path": "<home>\\.claude\\skills\\visual-engine\\SKILL.md",
+        "frontmatter": true,
+        "visualOnly": true,
+        "bytes": 6587
+      },
+      "instructions": {
+        "path": "<home>\\.claude\\CLAUDE.md",
+        "referenceFirst": true,
+        "professionalDefault": true,
+        "bytes": 2284
+      },
+      "mcp": {
+        "ok": true,
+        "tools": 38,
+        "doctor": {
+          "ok": true,
+          "sample": "{\n  \"projectDir\": \"D:\\\\<home>\\\\visual-engine\",\n  \"ready\": \"8/9\",\n  \"tools\": [\n    {\n      \"id\": \"ffmpeg\",\n      \"disponible\": true,\n      \"version"
+        },
+        "env": {
+          "VE_MCP_GROUPS": "analysis,direction,build,verify"
+        },
+        "command": "node.exe"
+      }
+    },
+    {
+      "agent": "cursor",
+      "skill": null,
+      "instructions": {
+        "path": "<home>\\.cursor\\rules\\visual-engine.mdc",
+        "referenceFirst": true,
+        "professionalDefault": false,
+        "bytes": 1640
+      },
+      "mcp": {
+        "ok": true,
+        "tools": 38,
+        "doctor": {
+          "ok": true,
+          "sample": "{\n  \"projectDir\": \"D:\\\\<home>\\\\visual-engine\",\n  \"ready\": \"8/9\",\n  \"tools\": [\n    {\n      \"id\": \"ffmpeg\",\n      \"disponible\": true,\n      \"version"
+        },
+        "env": {
+          "VE_MCP_GROUPS": "analysis,direction,build,verify"
+        },
+        "command": "node.exe"
+      }
+    },
+    {
+      "agent": "freebuff",
+      "skill": {
+        "path": "<home>\\.agents\\skills\\visual-engine\\SKILL.md",
+        "frontmatter": true,
+        "visualOnly": true,
+        "bytes": 6587
+      },
+      "instructions": null,
+      "mcp": null
+    },
+    {
+      "agent": "opencode",
+      "skill": null,
+      "instructions": {
+        "path": "<home>\\.config\\opencode\\AGENTS.md",
+        "referenceFirst": true,
+        "professionalDefault": true,
+        "bytes": 4228
+      },
+      "mcp": {
+        "ok": true,
+        "tools": 38,
+        "doctor": {
+          "ok": true,
+          "sample": "{\n  \"projectDir\": \"D:\\\\<home>\\\\visual-engine\",\n  \"ready\": \"8/9\",\n  \"tools\": [\n    {\n      \"id\": \"ffmpeg\",\n      \"disponible\": true,\n      \"version"
+        },
+        "env": {
+          "VE_MCP_GROUPS": "analysis,direction,build,verify"
+        },
+        "command": "node.exe"
+      }
+    }
+  ]
+}

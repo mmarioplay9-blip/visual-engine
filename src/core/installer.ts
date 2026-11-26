@@ -153,7 +153,13 @@ function envHome(opts: InstallOptions): string {
 function resolveTargets(spec: AgentSpec, projectDir: string, scope: InstallScope, home: string): { kind: InstallKind; target: string; manual: boolean }[] {
   const out: { kind: InstallKind; target: string; manual: boolean }[] = [];
   const base = scope === 'global' ? home : projectDir;
-  out.push({ kind: 'instructions', target: path.join(base, spec.instructions.projectPath), manual: false });
+  if (scope === 'global') {
+    // Sólo se escribe donde el agente lee de verdad; nunca un AGENTS.md suelto
+    // en el home que se cuele en proyectos sin relación con lo visual.
+    if (spec.instructions.globalPath) out.push({ kind: 'instructions', target: spec.instructions.globalPath, manual: false });
+  } else {
+    out.push({ kind: 'instructions', target: path.join(projectDir, spec.instructions.projectPath), manual: false });
+  }
   if (spec.skill) out.push({ kind: 'skill', target: path.join(base, spec.skill.projectPath), manual: false });
   if (spec.mcp.supported) {
     // Agentes con configuración global (Codex): en ámbito de proyecto no se
@@ -174,17 +180,28 @@ function readTemplate(spec: AgentSpec, kind: InstallKind): string {
   return '';
 }
 
+function mcpGroups(): string | undefined {
+  const groups = process.env.VE_MCP_GROUPS?.trim();
+  return groups ? groups : undefined;
+}
+
 function tomlBlock(): string {
   const { command, args } = mcpCommand();
-  return `\n# Visual Engine 1.0 — servidor MCP local\n[mcp_servers.visual-engine]\ncommand = ${JSON.stringify(command)}\nargs = ${JSON.stringify(args)}\n`;
+  const groups = mcpGroups();
+  const env = groups ? `\n[mcp_servers.visual-engine.env]\nVE_MCP_GROUPS = ${JSON.stringify(groups)}\n` : '';
+  return `\n# Visual Engine 1.0 — servidor MCP local\n[mcp_servers.visual-engine]\ncommand = ${JSON.stringify(command)}\nargs = ${JSON.stringify(args)}\n${env}`;
 }
 
 function jsonPatch(spec: AgentSpec): { key: string; value: unknown } {
   const { command, args } = mcpCommand();
+  const groups = mcpGroups();
+  const env = groups ? { VE_MCP_GROUPS: groups } : undefined;
   if (spec.mcp.format === 'json-opencode') {
-    return { key: 'mcp', value: { 'visual-engine': { type: 'local', command: [command, ...args], enabled: true } } };
+    const entry: Record<string, unknown> = { type: 'local', command: [command, ...args], enabled: true };
+    if (env) entry.environment = env;
+    return { key: 'mcp', value: { 'visual-engine': entry } };
   }
-  return { key: 'mcpServers', value: { 'visual-engine': { command, args } } };
+  return { key: 'mcpServers', value: { 'visual-engine': env ? { command, args, env } : { command, args } } };
 }
 
 function readJson(file: string): any {
@@ -206,11 +223,23 @@ function mergeEntry(base: any, key: string, value: unknown): any {
 }
 
 function planAction(spec: AgentSpec, kind: InstallKind, target: string, manual: boolean, force: boolean, managed: Set<string>): InstallAction {
-  if (!fs.existsSync(target)) {
-    return { agent: spec.id, kind, target, action: 'write', reason: 'No existe; se crea.', backupRequired: false };
-  }
   if (kind === 'mcp' && manual) {
     return { agent: spec.id, kind, target, action: 'write', reason: 'Se genera un bloque manual; no se toca la configuración global del agente.', backupRequired: false };
+  }
+  if (kind === 'mcp' && !fs.existsSync(target)) {
+    // Un cliente recién instalado no tiene archivo de configuración: se crea con
+    // la entrada visual-engine en vez de omitirlo.
+    return {
+      agent: spec.id,
+      kind,
+      target,
+      action: spec.mcp.format === 'toml-codex' ? 'append-toml' : 'merge-json',
+      reason: 'No existe; se crea con la entrada visual-engine.',
+      backupRequired: false,
+    };
+  }
+  if (!fs.existsSync(target)) {
+    return { agent: spec.id, kind, target, action: 'write', reason: 'No existe; se crea.', backupRequired: false };
   }
   if (kind === 'mcp') {
     const raw = fs.readFileSync(target, 'utf8');
