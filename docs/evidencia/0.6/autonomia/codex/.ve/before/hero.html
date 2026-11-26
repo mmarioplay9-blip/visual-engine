@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Umbral — Arquitectura para habitar</title>
+<link rel="stylesheet" href=".ve/art/design-system.css">
+<style>
+html,body{margin:0;background:#363b30;color:var(--ve-bg)}
+.hero{height:720px;min-height:100svh;position:relative;overflow:hidden;isolation:isolate}
+.art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-3}
+.shade{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(23,26,20,.91),rgba(23,26,20,.70) 32%,rgba(23,26,20,.12) 68%),linear-gradient(0deg,rgba(23,26,20,.55),transparent 42%)}
+header{position:absolute;left:48px;right:48px;top:30px;display:flex;justify-content:space-between;align-items:center;padding-bottom:21px;border-bottom:1px solid #f3eee255}
+.brand{font-family:var(--ve-display);font-size:34.3px;line-height:1;letter-spacing:-1.6px;font-weight:500}
+.descriptor,.eyebrow,footer{font-family:var(--ve-mono);font-size:12.8px;letter-spacing:.09em;text-transform:uppercase}
+.descriptor{letter-spacing:.14em}
+main{position:absolute;left:64px;top:175px;width:570px}
+.eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 25px}
+.eyebrow:before{content:"";width:24px;height:2px;background:#b55a45}
+h1{font-family:var(--ve-display);font-size:88px;font-weight:400;letter-spacing:-.055em;line-height:.99;margin:0 0 27px}
+h1 em{font-weight:400;color:#e7dfcf}
+.intro{font-size:17px;line-height:1.65;max-width:370px;margin:0 0 30px;color:var(--ve-bg)}
+details{position:relative;max-width:410px}
+summary{width:max-content;display:flex;align-items:center;gap:32px;background:var(--ve-bg);color:var(--ve-text);padding:15px 21px;cursor:pointer;list-style:none;font-size:14.9px;font-weight:500;transition:background var(--ve-fast)}
+summary::-webkit-details-marker{display:none}
+summary:hover{background:var(--ve-elevated)}
+summary:focus-visible{outline:2px solid var(--ve-bg);outline-offset:5px}
+.arrow{font-size:22px;line-height:1}
+details[open] .arrow{transform:rotate(90deg)}
+.proposal{position:absolute;bottom:61px;left:0;margin:0;background:var(--ve-bg);color:var(--ve-text);padding:24px;font-size:17px;line-height:1.6;box-shadow:0 12px 40px #17140f44}
+footer{position:absolute;left:48px;right:48px;bottom:26px;display:flex;justify-content:space-between;align-items:end;font-size:11px;letter-spacing:.08em}
+.note{font-family:var(--ve-display);text-transform:none;font-size:19px;font-style:italic;letter-spacing:0}
+@media(max-width:700px){.hero{height:850px}header{left:24px;right:24px}.descriptor{font-size:9px;max-width:120px;text-align:right}main{left:24px;right:24px;top:195px;width:auto}h1{font-size:clamp(58px,12vw,88px)}.shade{background:linear-gradient(90deg,#171a14ed,#171a1477)}footer{left:24px;right:24px;gap:20px}.note{font-size:15px;max-width:145px}}
+</style>
+</head>
+<body>
+<div class="hero">
+<img class="art" src="reference.jpg" alt="" aria-hidden="true">
+<div class="shade"></div>
+<header><span class="brand">umbral.</span><span class="descriptor">Estudio de arquitectura</span></header>
+<main>
+<p class="eyebrow">Materia · luz · sensibilidad</p>
+<h1>El arte de<br><em>habitar.</em></h1>
+<p class="intro">Espacios que se sienten antes de explicarse. Una mirada sensible a la luz, la materia y tu forma de vivir.</p>
+<details><summary>Descubrir nuestra mirada <span class="arrow" aria-hidden="true">↗</span></summary><p class="proposal">Todo comienza por escuchar cómo quieres vivir. Desde esa conversación, pensamos la luz, elegimos los materiales y damos forma a cada espacio.</p></details>
+</main>
+<footer><span>Arquitectura &amp; interiores</span><span class="note">La vida da sentido al espacio.</span></footer>
+</div>
+</body>
+</html>

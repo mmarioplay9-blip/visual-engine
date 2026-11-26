@@ -1,0 +1,525 @@
+{
+  "url": "http://127.0.0.1:52155/baseline.html",
+  "title": "Tres planos. Un pulso. — A",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "reducedMotion": false,
+  "scroll": {
+    "width": 1280,
+    "height": 720,
+    "overflowX": 0,
+    "overflowY": 0
+  },
+  "elements": [
+    {
+      "selector": "html > body > main.shell > h1",
+      "tag": "h1",
+      "role": null,
+      "text": "Tres planos. Un pulso.",
+      "box": {
+        "x": 82,
+        "y": 143,
+        "width": 720,
+        "height": 46
+      },
+      "region": "top-left",
+      "classes": [],
+      "id": null,
+      "effects": [],
+      "motion": null,
+      "contrast": 16.41,
+      "styles": {
+        "display": "block",
+        "visibility": "visible",
+        "opacity": 1,
+        "position": "static",
+        "zIndex": "auto",
+        "color": "rgb(234, 240, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "Inter, system-ui, sans-serif",
+        "fontSize": 44,
+        "fontWeight": 700,
+        "lineHeight": "46.2px",
+        "letterSpacing": "-1.76px",
+        "borderRadius": "0px",
+        "boxShadow": "none",
+        "filter": "none",
+        "backdropFilter": "none",
+        "transform": "none",
+        "transition": "all",
+        "animation": "none",
+        "overflow": "visible"
+      },
+      "source": null
+    },
+    {
+      "selector": "html > body > nav.nav",
+      "tag": "nav",
+      "role": null,
+      "text": "SIGNAL",
+      "box": {
+        "x": 0,
+        "y": 0,
+        "width": 1280,
+        "height": 53
+      },
+      "region": "top-right",
+      "classes": [
+        "nav"
+      ],
+      "id": null,
+      "effects": [],
+      "motion": null,
+      "contrast": 9.18,
+      "styles": {
+        "display": "flex",
+        "visibility": "visible",
+        "opacity": 1,
+        "position": "static",
+        "zIndex": "auto",
+        "color": "rgb(170, 182, 207)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "Inter, system-ui, sans-serif",
+        "fontSize": 12,
+        "fontWeight": 400,
+        "lineHeight": "normal",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "boxShadow": "none",
+        "filter": "none",
+        "backdropFilter": "none",
+        "transform": "none",
+        "transition": "all",
+        "animation": "none",
+        "overflow": "visible"
+      },
+      "source": {
+        "file": "baseline.html",
+        "line": 3,
+        "match": ".nav",
+        "confidence": 0.9,
+        "status": "verified"
+      }
+    },
+    {
+      "selector": "html > body > main.shell",
+      "tag": "main",
+      "role": null,
+      "text": "Reel 00:06Tres planos. Un pulso.undefinedTres planos. Un pulso.PLANO 01 · PLANO 02 · PLANO 03",
+      "box": {
+        "x": 50,
+        "y": 53,
+        "width": 1180,
+        "height": 568
+      },
+      "region": "center",
+      "classes": [
+        "shell"
+      ],
+      "id": null,
+      "effects": [],
+      "motion": null,
+      "contrast": 16.41,
+      "styles": {
+        "display": "block",
+        "visibility": "visible",
+        "opacity": 1,
+        "position": "static",
+        "zIndex": "auto",
+        "color": "rgb(234, 240, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "Inter, system-ui, sans-serif",
+        "fontSize": 16,
+        "fontWeight": 400,
+        "lineHeight": "normal",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "boxShadow": "none",
+        "filter": "none",
+        "backdropFilter": "none",
+        "transform": "none",
+        "transition": "all",
+        "animation": "none",
+        "overflow": "visible"
+      },
+      "source": {
+        "file": "baseline.html",
+        "line": 4,
+        "match": ".shell",
+        "confidence": 0.9,
+        "status": "verified"
+      }
+    },
+    {
+      "selector": "html > body > nav.nav > span.brand:nth-of-type(1)",
+      "tag": "span",
+      "role": null,
+      "text": "SIGNAL",
+      "box": {
+        "x": 32,
+        "y": 18,
+        "width": 51,
+        "height": 16
+      },
+      "region": "top-left",
+      "classes": [
+        "brand"
+      ],
+      "id": null,
+      "effects": [],
+      "motion": null,
+      "contrast": 12.28,
+      "styles": {
+        "display": "block",
+        "visibility": "visible",
+        "opacity": 1,
+        "position": "static",
+        "zIndex": "auto",
+        "color": "rgb(110, 231, 183)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "Inter, system-ui, sans-serif",
+        "fontSize": 12,
+        "fontWeight": 800,
+        "lineHeight": "normal",
+        "letterSpacing": "0.96px",
+        "borderRadius": "0px",
+        "boxShadow": "none",
+        "filter": "none",
+        "backdropFilter": "none",
+        "transform": "none",
+        "transition": "all",
+        "animation": "none",
+        "overflow": "visible"
+      },
+      "source": {
+        "file": "baseline.html",
+        "line": 4,
+        "match": ".brand",
+        "confidence": 0.9,
+        "status": "verified"
+      }
+    },
+    {
+      "selector": "html > body > main.shell > p.kicker:nth-of-type(1)",
+      "tag": "p",
+      "role": null,
+      "text": "Reel 00:06",
+      "box": {
+        "x": 82,
+        "y": 112,
+        "width": 1116,
+        "height": 15
+      },
+      "region": "top-right",
+      "classes": [
+        "kicker"
+      ],
+      "id": null,
+      "effects": [],
+      "motion": null,
+      "contrast": 12.28,
+      "styles": {
+        "display": "block",
+        "visibility": "visible",
+        "opacity": 1,
+        "position": "static",
+        "zIndex": "auto",
+        "color": "rgb(110, 231, 183)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "Inter, system-ui, sans-serif",
+        "fontSize": 11,
+        "fontWeight": 400,
+        "lineHeight": "normal",
+        "letterSpacing": "1.76px",
+        "borderRadius": "0px",
+        "boxShadow": "none",
+        "filter": "none",
+        "backdropFilter": "none",
+        "transform": "none",
+        "transition": "all",
+        "animation": "none",
+        "overflow": "visible"
+      },
+      "source": {
+        "file": "baseline.html",
+        "line": 5,
+        "match": ".kicker",
+        "confidence": 0.9,
+        "status": "verified"
+      }
+    },
+    {
+      "selector": "html > body > main.shell > p.lead:nth-of-type(2)",
+      "tag": "p",
+      "role": null,
+      "text": "undefined",
+      "box": {
+        "x": 82,
+        "y": 205,
+        "width": 660,
+        "height": 24
+      },
+      "region": "top-left",
+      "classes": [
+        "lead"
+      ],
+      "id": null,
+      "effects": [],
+      "motion": null,
+      "contrast": 9.18,
+      "styles": {
+        "display": "block",
+        "visibility": "visible",
+        "opacity": 1,
+        "position": "static",
+        "zIndex": "auto",
+        "color": "rgb(170, 182, 207)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "Inter, system-ui, sans-serif",
+        "fontSize": 15,
+        "fontWeight": 400,
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "boxShadow": "none",
+        "filter": "none",
+        "backdropFilter": "none",
+        "transform": "none",
+        "transition": "all",
+        "animation": "none",
+        "overflow": "visible"
+      },
+      "source": {
+        "file": "baseline.html",
+        "line": 7,
+        "match": ".lead",
+        "confidence": 0.9,
+        "status": "verified"
+      }
+    },
+    {
+      "selector": "html > body > main.shell > div.scene:nth-of-type(2)",
+      "tag": "div",
+      "role": null,
+      "text": "Tres planos. Un pulso.PLANO 01 · PLANO 02 · PLANO 03",
+      "box": {
+        "x": 82,
+        "y": 293,
+        "width": 1116,
+        "height": 280
+      },
+      "region": "center",
+      "classes": [
+        "scene"
+      ],
+      "id": null,
+      "effects": [],
+      "motion": null,
+      "contrast": 16.41,
+      "styles": {
+        "display": "block",
+        "visibility": "visible",
+        "opacity": 1,
+        "position": "relative",
+        "zIndex": "auto",
+        "color": "rgb(234, 240, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "Inter, system-ui, sans-serif",
+        "fontSize": 16,
+        "fontWeight": 400,
+        "lineHeight": "normal",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "boxShadow": "none",
+        "filter": "none",
+        "backdropFilter": "none",
+        "transform": "none",
+        "transition": "all",
+        "animation": "none",
+        "overflow": "hidden"
+      },
+      "source": {
+        "file": "baseline.html",
+        "line": 14,
+        "match": ".scene",
+        "confidence": 0.9,
+        "status": "verified"
+      }
+    },
+    {
+      "selector": "body > main.shell > div.scene:nth-of-type(2) > div.hud:nth-of-type(2)",
+      "tag": "div",
+      "role": null,
+      "text": "PLANO 01 · PLANO 02 · PLANO 03",
+      "box": {
+        "x": 101,
+        "y": 540,
+        "width": 198,
+        "height": 14
+      },
+      "region": "bottom-left",
+      "classes": [
+        "hud"
+      ],
+      "id": null,
+      "effects": [],
+      "motion": null,
+      "contrast": 12.28,
+      "styles": {
+        "display": "block",
+        "visibility": "visible",
+        "opacity": 1,
+        "position": "absolute",
+        "zIndex": "auto",
+        "color": "rgb(110, 231, 183)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "monospace",
+        "fontSize": 12,
+        "fontWeight": 400,
+        "lineHeight": "normal",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "boxShadow": "none",
+        "filter": "none",
+        "backdropFilter": "none",
+        "transform": "none",
+        "transition": "all",
+        "animation": "none",
+        "overflow": "visible"
+      },
+      "source": {
+        "file": "baseline.html",
+        "line": 16,
+        "match": ".hud",
+        "confidence": 0.9,
+        "status": "verified"
+      }
+    },
+    {
+      "selector": "html > body > footer.footer",
+      "tag": "footer",
+      "role": null,
+      "text": "Sin Visual Engine · mismo copy · 1280×720",
+      "box": {
+        "x": 0,
+        "y": 621,
+        "width": 1280,
+        "height": 64
+      },
+      "region": "bottom-right",
+      "classes": [
+        "footer"
+      ],
+      "id": null,
+      "effects": [],
+      "motion": null,
+      "contrast": 5.78,
+      "styles": {
+        "display": "block",
+        "visibility": "visible",
+        "opacity": 1,
+        "position": "static",
+        "zIndex": "auto",
+        "color": "rgb(129, 144, 168)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "Inter, system-ui, sans-serif",
+        "fontSize": 11,
+        "fontWeight": 400,
+        "lineHeight": "normal",
+        "letterSpacing": "normal",
+        "borderRadius": "0px",
+        "boxShadow": "none",
+        "filter": "none",
+        "backdropFilter": "none",
+        "transform": "none",
+        "transition": "all",
+        "animation": "none",
+        "overflow": "visible"
+      },
+      "source": {
+        "file": "baseline.html",
+        "line": 17,
+        "match": ".footer",
+        "confidence": 0.9,
+        "status": "verified"
+      }
+    },
+    {
+      "selector": "body > main.shell > div.scene:nth-of-type(2) > div:nth-of-type(1)",
+      "tag": "div",
+      "role": null,
+      "text": "Tres planos. Un pulso.",
+      "box": {
+        "x": 83,
+        "y": 294,
+        "width": 1114,
+        "height": 278
+      },
+      "region": "center",
+      "classes": [],
+      "id": null,
+      "effects": [],
+      "motion": null,
+      "contrast": 16.41,
+      "styles": {
+        "display": "grid",
+        "visibility": "visible",
+        "opacity": 1,
+        "position": "absolute",
+        "zIndex": "auto",
+        "color": "rgb(234, 240, 255)",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "fontFamily": "system-ui",
+        "fontSize": 58,
+        "fontWeight": 800,
+        "lineHeight": "58px",
+        "letterSpacing": "-3.48px",
+        "borderRadius": "0px",
+        "boxShadow": "none",
+        "filter": "none",
+        "backdropFilter": "none",
+        "transform": "none",
+        "transition": "all",
+        "animation": "none",
+        "overflow": "visible"
+      },
+      "source": null
+    }
+  ],
+  "animations": [],
+  "canvases": [],
+  "brokenImages": [],
+  "buttonsWithoutName": [],
+  "imagesWithoutAlt": [],
+  "consoleErrors": [],
+  "pageErrors": [],
+  "requestFailures": [],
+  "counts": {
+    "elements": 10,
+    "headings": 1,
+    "buttons": 0,
+    "links": 0,
+    "images": 0,
+    "canvases": 0,
+    "effects": 0,
+    "layers": 2,
+    "materials": 0,
+    "transitions": 0,
+    "animations": 0
+  },
+  "contrast": {
+    "checked": 4,
+    "violations": 0,
+    "worst": 9.18,
+    "average": 12.54
+  },
+  "sourceIndex": {
+    "files": 2,
+    "bytes": 8105,
+    "truncated": false
+  },
+  "warnings": [],
+  "screenshot": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\motion-graphics\\measure-a\\dom\\dom.png"
+}

@@ -1,0 +1,6415 @@
+{
+  "version": "0.5",
+  "review": {
+    "outDir": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\desktop-app\\measure-b\\review",
+    "score": 80.2,
+    "grade": "B",
+    "reference": {
+      "path": "<repo>\\docs\\evidencia\\1.0-rc\\references\\professional-app.jpg",
+      "profile": {
+        "source": "<repo>\\docs\\evidencia\\1.0-rc\\references\\professional-app.jpg",
+        "kind": "video",
+        "width": 3593,
+        "height": 2482,
+        "aspect": 1.448,
+        "duration": 0.04,
+        "fps": 25,
+        "frameCount": 10,
+        "aggregate": {
+          "luma": 0.77,
+          "contrast": 0.067,
+          "saturation": 0.199,
+          "colorfulness": 0.151,
+          "edgeDensity": 0.284,
+          "darkRatio": 0
+        },
+        "palette": [
+          {
+            "hex": "#d3c7ae",
+            "rgb": [
+              211,
+              199,
+              174
+            ],
+            "share": 0.8088
+          },
+          {
+            "hex": "#b5a488",
+            "rgb": [
+              181,
+              164,
+              136
+            ],
+            "share": 0.1349
+          },
+          {
+            "hex": "#eee8c8",
+            "rgb": [
+              238,
+              232,
+              200
+            ],
+            "share": 0.0506
+          },
+          {
+            "hex": "#998667",
+            "rgb": [
+              153,
+              134,
+              103
+            ],
+            "share": 0.0056
+          },
+          {
+            "hex": "#786858",
+            "rgb": [
+              120,
+              104,
+              88
+            ],
+            "share": 0
+          }
+        ],
+        "motion": 0,
+        "motionCurve": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "cuts": [],
+        "pace": 0,
+        "hueHistogram": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "frames": [
+          {
+            "t": 0.001,
+            "luma": 0.77,
+            "contrast": 0.067,
+            "saturation": 0.199,
+            "colorfulness": 0.151,
+            "edgeDensity": 0.284,
+            "darkRatio": 0,
+            "brightRatio": 0.021,
+            "quadrants": [
+              0.246,
+              0.249,
+              0.255,
+              0.249
+            ],
+            "palette": [
+              {
+                "hex": "#d3c7ae",
+                "rgb": [
+                  211,
+                  199,
+                  174
+                ],
+                "share": 0.8088
+              },
+              {
+                "hex": "#b5a488",
+                "rgb": [
+                  181,
+                  164,
+                  136
+                ],
+                "share": 0.1349
+              },
+              {
+                "hex": "#eee8c8",
+                "rgb": [
+                  238,
+                  232,
+                  200
+                ],
+                "share": 0.0506
+              },
+              {
+                "hex": "#998667",
+                "rgb": [
+                  153,
+                  134,
+                  103
+                ],
+                "share": 0.0056
+              }
+            ]
+          },
+          {
+            "t": 0.005,
+            "luma": 0.77,
+            "contrast": 0.067,
+            "saturation": 0.199,
+            "colorfulness": 0.151,
+            "edgeDensity": 0.284,
+            "darkRatio": 0,
+            "brightRatio": 0.021,
+            "quadrants": [
+              0.246,
+              0.249,
+              0.255,
+              0.249
+            ],
+            "palette": [
+              {
+                "hex": "#d3c7ae",
+                "rgb": [
+                  211,
+                  199,
+                  174
+                ],
+                "share": 0.8088
+              },
+              {
+                "hex": "#b5a488",
+                "rgb": [
+                  181,
+                  164,
+                  136
+                ],
+                "share": 0.1349
+              },
+              {
+                "hex": "#eee8c8",
+                "rgb": [
+                  238,
+                  232,
+                  200
+                ],
+                "share": 0.0506
+              },
+              {
+                "hex": "#998667",
+                "rgb": [
+                  153,
+                  134,
+                  103
+                ],
+                "share": 0.0056
+              }
+            ]
+          },
+          {
+            "t": 0.01,
+            "luma": 0.77,
+            "contrast": 0.067,
+            "saturation": 0.199,
+            "colorfulness": 0.151,
+            "edgeDensity": 0.284,
+            "darkRatio": 0,
+            "brightRatio": 0.021,
+            "quadrants": [
+              0.246,
+              0.249,
+              0.255,
+              0.249
+            ],
+            "palette": [
+              {
+                "hex": "#d3c7ae",
+                "rgb": [
+                  211,
+                  199,
+                  174
+                ],
+                "share": 0.8088
+              },
+              {
+                "hex": "#b5a488",
+                "rgb": [
+                  181,
+                  164,
+                  136
+                ],
+                "share": 0.1349
+              },
+              {
+                "hex": "#eee8c8",
+                "rgb": [
+                  238,
+                  232,
+                  200
+                ],
+                "share": 0.0506
+              },
+              {
+                "hex": "#998667",
+                "rgb": [
+                  153,
+                  134,
+                  103
+                ],
+                "share": 0.0056
+              }
+            ]
+          },
+          {
+            "t": 0.014,
+            "luma": 0.77,
+            "contrast": 0.067,
+            "saturation": 0.199,
+            "colorfulness": 0.151,
+            "edgeDensity": 0.284,
+            "darkRatio": 0,
+            "brightRatio": 0.021,
+            "quadrants": [
+              0.246,
+              0.249,
+              0.255,
+              0.249
+            ],
+            "palette": [
+              {
+                "hex": "#d3c7ae",
+                "rgb": [
+                  211,
+                  199,
+                  174
+                ],
+                "share": 0.8088
+              },
+              {
+                "hex": "#b5a488",
+                "rgb": [
+                  181,
+                  164,
+                  136
+                ],
+                "share": 0.1349
+              },
+              {
+                "hex": "#eee8c8",
+                "rgb": [
+                  238,
+                  232,
+                  200
+                ],
+                "share": 0.0506
+              },
+              {
+                "hex": "#998667",
+                "rgb": [
+                  153,
+                  134,
+                  103
+                ],
+                "share": 0.0056
+              }
+            ]
+          },
+          {
+            "t": 0.018,
+            "luma": 0.77,
+            "contrast": 0.067,
+            "saturation": 0.199,
+            "colorfulness": 0.151,
+            "edgeDensity": 0.284,
+            "darkRatio": 0,
+            "brightRatio": 0.021,
+            "quadrants": [
+              0.246,
+              0.249,
+              0.255,
+              0.249
+            ],
+            "palette": [
+              {
+                "hex": "#d3c7ae",
+                "rgb": [
+                  211,
+                  199,
+                  174
+                ],
+                "share": 0.8088
+              },
+              {
+                "hex": "#b5a488",
+                "rgb": [
+                  181,
+                  164,
+                  136
+                ],
+                "share": 0.1349
+              },
+              {
+                "hex": "#eee8c8",
+                "rgb": [
+                  238,
+                  232,
+                  200
+                ],
+                "share": 0.0506
+              },
+              {
+                "hex": "#998667",
+                "rgb": [
+                  153,
+                  134,
+                  103
+                ],
+                "share": 0.0056
+              }
+            ]
+          },
+          {
+            "t": 0.022,
+            "luma": 0.77,
+            "contrast": 0.067,
+            "saturation": 0.199,
+            "colorfulness": 0.151,
+            "edgeDensity": 0.284,
+            "darkRatio": 0,
+            "brightRatio": 0.021,
+            "quadrants": [
+              0.246,
+              0.249,
+              0.255,
+              0.249
+            ],
+            "palette": [
+              {
+                "hex": "#d3c7ae",
+                "rgb": [
+                  211,
+                  199,
+                  174
+                ],
+                "share": 0.8088
+              },
+              {
+                "hex": "#b5a488",
+                "rgb": [
+                  181,
+                  164,
+                  136
+                ],
+                "share": 0.1349
+              },
+              {
+                "hex": "#eee8c8",
+                "rgb": [
+                  238,
+                  232,
+                  200
+                ],
+                "share": 0.0506
+              },
+              {
+                "hex": "#998667",
+                "rgb": [
+                  153,
+                  134,
+                  103
+                ],
+                "share": 0.0056
+              }
+            ]
+          },
+          {
+            "t": 0.026,
+            "luma": 0.77,
+            "contrast": 0.067,
+            "saturation": 0.199,
+            "colorfulness": 0.151,
+            "edgeDensity": 0.284,
+            "darkRatio": 0,
+            "brightRatio": 0.021,
+            "quadrants": [
+              0.246,
+              0.249,
+              0.255,
+              0.249
+            ],
+            "palette": [
+              {
+                "hex": "#d3c7ae",
+                "rgb": [
+                  211,
+                  199,
+                  174
+                ],
+                "share": 0.8088
+              },
+              {
+                "hex": "#b5a488",
+                "rgb": [
+                  181,
+                  164,
+                  136
+                ],
+                "share": 0.1349
+              },
+              {
+                "hex": "#eee8c8",
+                "rgb": [
+                  238,
+                  232,
+                  200
+                ],
+                "share": 0.0506
+              },
+              {
+                "hex": "#998667",
+                "rgb": [
+                  153,
+                  134,
+                  103
+                ],
+                "share": 0.0056
+              }
+            ]
+          },
+          {
+            "t": 0.03,
+            "luma": 0.77,
+            "contrast": 0.067,
+            "saturation": 0.199,
+            "colorfulness": 0.151,
+            "edgeDensity": 0.284,
+            "darkRatio": 0,
+            "brightRatio": 0.021,
+            "quadrants": [
+              0.246,
+              0.249,
+              0.255,
+              0.249
+            ],
+            "palette": [
+              {
+                "hex": "#d3c7ae",
+                "rgb": [
+                  211,
+                  199,
+                  174
+                ],
+                "share": 0.8088
+              },
+              {
+                "hex": "#b5a488",
+                "rgb": [
+                  181,
+                  164,
+                  136
+                ],
+                "share": 0.1349
+              },
+              {
+                "hex": "#eee8c8",
+                "rgb": [
+                  238,
+                  232,
+                  200
+                ],
+                "share": 0.0506
+              },
+              {
+                "hex": "#998667",
+                "rgb": [
+                  153,
+                  134,
+                  103
+                ],
+                "share": 0.0056
+              }
+            ]
+          },
+          {
+            "t": 0.035,
+            "luma": 0.77,
+            "contrast": 0.067,
+            "saturation": 0.199,
+            "colorfulness": 0.151,
+            "edgeDensity": 0.284,
+            "darkRatio": 0,
+            "brightRatio": 0.021,
+            "quadrants": [
+              0.246,
+              0.249,
+              0.255,
+              0.249
+            ],
+            "palette": [
+              {
+                "hex": "#d3c7ae",
+                "rgb": [
+                  211,
+                  199,
+                  174
+                ],
+                "share": 0.8088
+              },
+              {
+                "hex": "#b5a488",
+                "rgb": [
+                  181,
+                  164,
+                  136
+                ],
+                "share": 0.1349
+              },
+              {
+                "hex": "#eee8c8",
+                "rgb": [
+                  238,
+                  232,
+                  200
+                ],
+                "share": 0.0506
+              },
+              {
+                "hex": "#998667",
+                "rgb": [
+                  153,
+                  134,
+                  103
+                ],
+                "share": 0.0056
+              }
+            ]
+          },
+          {
+            "t": 0.039,
+            "luma": 0.77,
+            "contrast": 0.067,
+            "saturation": 0.199,
+            "colorfulness": 0.151,
+            "edgeDensity": 0.284,
+            "darkRatio": 0,
+            "brightRatio": 0.021,
+            "quadrants": [
+              0.246,
+              0.249,
+              0.255,
+              0.249
+            ],
+            "palette": [
+              {
+                "hex": "#d3c7ae",
+                "rgb": [
+                  211,
+                  199,
+                  174
+                ],
+                "share": 0.8088
+              },
+              {
+                "hex": "#b5a488",
+                "rgb": [
+                  181,
+                  164,
+                  136
+                ],
+                "share": 0.1349
+              },
+              {
+                "hex": "#eee8c8",
+                "rgb": [
+                  238,
+                  232,
+                  200
+                ],
+                "share": 0.0506
+              },
+              {
+                "hex": "#998667",
+                "rgb": [
+                  153,
+                  134,
+                  103
+                ],
+                "share": 0.0056
+              }
+            ]
+          }
+        ],
+        "createdAt": "2026-11-26T00:04:02.564Z",
+        "warnings": [
+          "El detector de escenas de FFmpeg no encontró cortes por encima de 0.2."
+        ]
+      },
+      "description": [
+        "Fuente: <repo>\\docs\\evidencia\\1.0-rc\\references\\professional-app.jpg",
+        "Formato: 3593x2482 (1.45:1), video, 0.04 s, 25 fps",
+        "Luminancia media 77.0%, contraste 6.7%, saturación 19.9%",
+        "Colorido 15.1%, densidad de bordes 28.4%, zona oscura 0.0%",
+        "Paleta: #d3c7ae 81% · #b5a488 13% · #eee8c8 5% · #998667 1% · #786858 0%",
+        "Movimiento medio 0.00 · cortes 0 · ritmo 0 cortes/min",
+        "Pico de movimiento (p90) 0.00",
+        "Aviso: El detector de escenas de FFmpeg no encontró cortes por encima de 0.2."
+      ]
+    },
+    "target": {
+      "url": "http://127.0.0.1:53897/index.html",
+      "title": "Toda la operación, en una lectura. — B",
+      "frames": [
+        "<repo>\\docs\\evidencia\\1.0-rc\\projects\\desktop-app\\measure-b\\review\\captures\\capture-01.png",
+        "<repo>\\docs\\evidencia\\1.0-rc\\projects\\desktop-app\\measure-b\\review\\captures\\capture-02.png",
+        "<repo>\\docs\\evidencia\\1.0-rc\\projects\\desktop-app\\measure-b\\review\\captures\\capture-03.png",
+        "<repo>\\docs\\evidencia\\1.0-rc\\projects\\desktop-app\\measure-b\\review\\captures\\capture-04.png",
+        "<repo>\\docs\\evidencia\\1.0-rc\\projects\\desktop-app\\measure-b\\review\\captures\\capture-05.png",
+        "<repo>\\docs\\evidencia\\1.0-rc\\projects\\desktop-app\\measure-b\\review\\captures\\capture-06.png"
+      ],
+      "errors": [],
+      "consoleErrors": [],
+      "profile": {
+        "source": "captura:http://127.0.0.1:53897/index.html",
+        "kind": "sequence",
+        "width": 1280,
+        "height": 720,
+        "aspect": 1.778,
+        "duration": 0,
+        "fps": 0,
+        "frameCount": 6,
+        "aggregate": {
+          "luma": 0.799,
+          "contrast": 0.107,
+          "saturation": 0.115,
+          "colorfulness": 0.087,
+          "edgeDensity": 0.124,
+          "darkRatio": 0
+        },
+        "palette": [
+          {
+            "hex": "#e3e1ce",
+            "rgb": [
+              227,
+              225,
+              206
+            ],
+            "share": 0.6109
+          },
+          {
+            "hex": "#b9b6a4",
+            "rgb": [
+              185,
+              182,
+              164
+            ],
+            "share": 0.3315
+          },
+          {
+            "hex": "#979181",
+            "rgb": [
+              151,
+              145,
+              129
+            ],
+            "share": 0.0514
+          },
+          {
+            "hex": "#736c5a",
+            "rgb": [
+              115,
+              108,
+              90
+            ],
+            "share": 0.006
+          },
+          {
+            "hex": "#584b3b",
+            "rgb": [
+              88,
+              75,
+              59
+            ],
+            "share": 0.0002
+          }
+        ],
+        "motion": 0,
+        "motionCurve": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "cuts": [],
+        "pace": 0,
+        "hueHistogram": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "frames": [
+          {
+            "t": 0,
+            "luma": 0.799,
+            "contrast": 0.107,
+            "saturation": 0.115,
+            "colorfulness": 0.087,
+            "edgeDensity": 0.124,
+            "darkRatio": 0,
+            "brightRatio": 0.213,
+            "quadrants": [
+              0.251,
+              0.244,
+              0.252,
+              0.253
+            ],
+            "palette": [
+              {
+                "hex": "#e3e1ce",
+                "rgb": [
+                  227,
+                  225,
+                  206
+                ],
+                "share": 0.6109
+              },
+              {
+                "hex": "#b9b6a4",
+                "rgb": [
+                  185,
+                  182,
+                  164
+                ],
+                "share": 0.3315
+              },
+              {
+                "hex": "#979181",
+                "rgb": [
+                  151,
+                  145,
+                  129
+                ],
+                "share": 0.0514
+              },
+              {
+                "hex": "#736c5a",
+                "rgb": [
+                  115,
+                  108,
+                  90
+                ],
+                "share": 0.006
+              }
+            ]
+          },
+          {
+            "t": 0.25,
+            "luma": 0.799,
+            "contrast": 0.107,
+            "saturation": 0.115,
+            "colorfulness": 0.087,
+            "edgeDensity": 0.124,
+            "darkRatio": 0,
+            "brightRatio": 0.213,
+            "quadrants": [
+              0.251,
+              0.244,
+              0.252,
+              0.253
+            ],
+            "palette": [
+              {
+                "hex": "#e3e1ce",
+                "rgb": [
+                  227,
+                  225,
+                  206
+                ],
+                "share": 0.6109
+              },
+              {
+                "hex": "#b9b6a4",
+                "rgb": [
+                  185,
+                  182,
+                  164
+                ],
+                "share": 0.3315
+              },
+              {
+                "hex": "#979181",
+                "rgb": [
+                  151,
+                  145,
+                  129
+                ],
+                "share": 0.0514
+              },
+              {
+                "hex": "#736c5a",
+                "rgb": [
+                  115,
+                  108,
+                  90
+                ],
+                "share": 0.006
+              }
+            ]
+          },
+          {
+            "t": 0.5,
+            "luma": 0.799,
+            "contrast": 0.107,
+            "saturation": 0.115,
+            "colorfulness": 0.087,
+            "edgeDensity": 0.124,
+            "darkRatio": 0,
+            "brightRatio": 0.213,
+            "quadrants": [
+              0.251,
+              0.244,
+              0.252,
+              0.253
+            ],
+            "palette": [
+              {
+                "hex": "#e3e1ce",
+                "rgb": [
+                  227,
+                  225,
+                  206
+                ],
+                "share": 0.6109
+              },
+              {
+                "hex": "#b9b6a4",
+                "rgb": [
+                  185,
+                  182,
+                  164
+                ],
+                "share": 0.3315
+              },
+              {
+                "hex": "#979181",
+                "rgb": [
+                  151,
+                  145,
+                  129
+                ],
+                "share": 0.0514
+              },
+              {
+                "hex": "#736c5a",
+                "rgb": [
+                  115,
+                  108,
+                  90
+                ],
+                "share": 0.006
+              }
+            ]
+          },
+          {
+            "t": 0.75,
+            "luma": 0.799,
+            "contrast": 0.107,
+            "saturation": 0.115,
+            "colorfulness": 0.087,
+            "edgeDensity": 0.124,
+            "darkRatio": 0,
+            "brightRatio": 0.213,
+            "quadrants": [
+              0.251,
+              0.244,
+              0.252,
+              0.253
+            ],
+            "palette": [
+              {
+                "hex": "#e3e1ce",
+                "rgb": [
+                  227,
+                  225,
+                  206
+                ],
+                "share": 0.6109
+              },
+              {
+                "hex": "#b9b6a4",
+                "rgb": [
+                  185,
+                  182,
+                  164
+                ],
+                "share": 0.3315
+              },
+              {
+                "hex": "#979181",
+                "rgb": [
+                  151,
+                  145,
+                  129
+                ],
+                "share": 0.0514
+              },
+              {
+                "hex": "#736c5a",
+                "rgb": [
+                  115,
+                  108,
+                  90
+                ],
+                "share": 0.006
+              }
+            ]
+          },
+          {
+            "t": 1,
+            "luma": 0.799,
+            "contrast": 0.107,
+            "saturation": 0.115,
+            "colorfulness": 0.087,
+            "edgeDensity": 0.124,
+            "darkRatio": 0,
+            "brightRatio": 0.213,
+            "quadrants": [
+              0.251,
+              0.244,
+              0.252,
+              0.253
+            ],
+            "palette": [
+              {
+                "hex": "#e3e1ce",
+                "rgb": [
+                  227,
+                  225,
+                  206
+                ],
+                "share": 0.6109
+              },
+              {
+                "hex": "#b9b6a4",
+                "rgb": [
+                  185,
+                  182,
+                  164
+                ],
+                "share": 0.3315
+              },
+              {
+                "hex": "#979181",
+                "rgb": [
+                  151,
+                  145,
+                  129
+                ],
+                "share": 0.0514
+              },
+              {
+                "hex": "#736c5a",
+                "rgb": [
+                  115,
+                  108,
+                  90
+                ],
+                "share": 0.006
+              }
+            ]
+          },
+          {
+            "t": 1.25,
+            "luma": 0.799,
+            "contrast": 0.107,
+            "saturation": 0.115,
+            "colorfulness": 0.087,
+            "edgeDensity": 0.124,
+            "darkRatio": 0,
+            "brightRatio": 0.213,
+            "quadrants": [
+              0.251,
+              0.244,
+              0.252,
+              0.253
+            ],
+            "palette": [
+              {
+                "hex": "#e3e1ce",
+                "rgb": [
+                  227,
+                  225,
+                  206
+                ],
+                "share": 0.6109
+              },
+              {
+                "hex": "#b9b6a4",
+                "rgb": [
+                  185,
+                  182,
+                  164
+                ],
+                "share": 0.3315
+              },
+              {
+                "hex": "#979181",
+                "rgb": [
+                  151,
+                  145,
+                  129
+                ],
+                "share": 0.0514
+              },
+              {
+                "hex": "#736c5a",
+                "rgb": [
+                  115,
+                  108,
+                  90
+                ],
+                "share": 0.006
+              }
+            ]
+          }
+        ],
+        "createdAt": "2026-11-26T00:04:10.266Z",
+        "warnings": []
+      },
+      "accessibility": {
+        "checked": 3,
+        "violations": 0,
+        "averageContrast": 7.22,
+        "worstContrast": 7.22,
+        "samples": [
+          {
+            "text": "Colas",
+            "contrast": 7.22,
+            "fontSize": 13,
+            "required": 4.5
+          },
+          {
+            "text": "12",
+            "contrast": 7.22,
+            "fontSize": 13,
+            "required": 4.5
+          },
+          {
+            "text": "Cola de trabajo",
+            "contrast": 7.22,
+            "fontSize": 22,
+            "required": 4.5
+          }
+        ],
+        "note": "Contraste calculado en Chromium contra el primer ancestro con fondo opaco; aproximación orientativa, no certificación WCAG."
+      },
+      "typography": {
+        "elements": 3,
+        "headings": 1,
+        "distinctSizes": 2,
+        "averageFontSize": 16,
+        "hierarchyRatio": 1.7,
+        "note": "Tamaños y pesos leídos del DOM; no evalúa calidad artística de la elección tipográfica."
+      }
+    },
+    "comparison": {
+      "score": 80.2,
+      "grade": "B",
+      "metrics": [
+        {
+          "metric": "luminancia",
+          "reference": 0.77,
+          "candidate": 0.799,
+          "delta": 0.029,
+          "similarity": 0.9033,
+          "weight": 0.14
+        },
+        {
+          "metric": "contraste",
+          "reference": 0.067,
+          "candidate": 0.107,
+          "delta": 0.04,
+          "similarity": 0.8,
+          "weight": 0.14
+        },
+        {
+          "metric": "saturación",
+          "reference": 0.199,
+          "candidate": 0.115,
+          "delta": 0.084,
+          "similarity": 0.76,
+          "weight": 0.1
+        },
+        {
+          "metric": "colorido",
+          "reference": 0.151,
+          "candidate": 0.087,
+          "delta": 0.064,
+          "similarity": 0.872,
+          "weight": 0.07
+        },
+        {
+          "metric": "densidad de bordes",
+          "reference": 0.284,
+          "candidate": 0.124,
+          "delta": 0.16,
+          "similarity": 0.36,
+          "weight": 0.12
+        },
+        {
+          "metric": "movimiento",
+          "reference": 0,
+          "candidate": 0,
+          "delta": 0,
+          "similarity": 1,
+          "weight": 0.13
+        }
+      ],
+      "palette": {
+        "reference": [
+          "#d3c7ae",
+          "#b5a488",
+          "#eee8c8",
+          "#998667",
+          "#786858"
+        ],
+        "candidate": [
+          "#e3e1ce",
+          "#b9b6a4",
+          "#979181",
+          "#736c5a",
+          "#584b3b"
+        ],
+        "meanDeltaE": 8.58,
+        "similarity": 0.8441,
+        "missing": [],
+        "extra": []
+      },
+      "recommendations": [
+        "Poca densidad de detalle (12.4% frente a 28.4%). Introduce micro-detalle: grano, retícula, líneas guía o partículas pequeñas."
+      ],
+      "summary": "Fidelidad 80.2/100 (B). ΔE paleta 8.6, Δ luminancia 2.9%, Δ contraste 4.0%, Δ movimiento 0.00."
+    },
+    "quality": {
+      "overall": 89.7,
+      "grade": "A",
+      "dimensions": [
+        {
+          "id": "fidelity",
+          "label": "Fidelidad a la referencia",
+          "score": 80.2,
+          "weight": 0.3,
+          "evidence": {
+            "puntuacion": 80.2
+          },
+          "available": true
+        },
+        {
+          "id": "composition",
+          "label": "Composición",
+          "score": 99.6,
+          "weight": 0.12,
+          "evidence": {
+            "referencia": 0.995,
+            "resultado": 0.992,
+            "equilibrio": "masa por cuadrantes"
+          },
+          "available": true
+        },
+        {
+          "id": "hierarchy",
+          "label": "Jerarquía visual",
+          "score": 86.7,
+          "weight": 0.08,
+          "evidence": {
+            "referencia": 0.478,
+            "resultado": 0.545,
+            "base": "contraste, detalle y foco"
+          },
+          "available": true
+        },
+        {
+          "id": "typography",
+          "label": "Tipografía y legibilidad",
+          "score": 65.6,
+          "weight": 0.06,
+          "evidence": {
+            "elements": 3,
+            "headings": 1,
+            "distinctSizes": 2,
+            "averageFontSize": 16,
+            "hierarchyRatio": 1.7,
+            "note": "Tamaños y pesos leídos del DOM; no evalúa calidad artística de la elección tipográfica.",
+            "fuente": "DOM real (capture)"
+          },
+          "available": true
+        },
+        {
+          "id": "depth",
+          "label": "Profundidad",
+          "score": 99.9,
+          "weight": 0.05,
+          "evidence": {
+            "referencia": 0.357,
+            "resultado": 0.357,
+            "nota": "proxy de cuadrantes y detalle; no mapa métrico"
+          },
+          "available": true
+        },
+        {
+          "id": "lighting",
+          "label": "Iluminación",
+          "score": 89,
+          "weight": 0.07,
+          "evidence": {
+            "lumaReferencia": 0.77,
+            "lumaResultado": 0.799,
+            "contrasteReferencia": 0.067,
+            "contrasteResultado": 0.107
+          },
+          "available": true
+        },
+        {
+          "id": "animation",
+          "label": "Animación",
+          "score": 100,
+          "weight": 0.1,
+          "evidence": {
+            "movimientoReferencia": 0,
+            "movimientoResultado": 0,
+            "cortesReferencia": 0,
+            "cortesResultado": 0,
+            "ritmoReferencia": 0,
+            "ritmoResultado": 0
+          },
+          "available": true
+        },
+        {
+          "id": "transitions",
+          "label": "Transiciones y ritmo",
+          "score": 100,
+          "weight": 0.04,
+          "evidence": {
+            "cortesReferencia": 0,
+            "cortesResultado": 0,
+            "ritmoReferencia": 0,
+            "ritmoResultado": 0
+          },
+          "available": true
+        },
+        {
+          "id": "coherence",
+          "label": "Coherencia estética",
+          "score": 100,
+          "weight": 0.05,
+          "evidence": {
+            "histogramaDeMatiz": "coseno entre referencias y resultado",
+            "valor": 1
+          },
+          "available": true
+        },
+        {
+          "id": "accessibility",
+          "label": "Accesibilidad de contraste",
+          "score": 100,
+          "weight": 0.07,
+          "evidence": {
+            "checked": 3,
+            "violations": 0,
+            "averageContrast": 7.22,
+            "worstContrast": 7.22,
+            "samples": [
+              {
+                "text": "Colas",
+                "contrast": 7.22,
+                "fontSize": 13,
+                "required": 4.5
+              },
+              {
+                "text": "12",
+                "contrast": 7.22,
+                "fontSize": 13,
+                "required": 4.5
+              },
+              {
+                "text": "Cola de trabajo",
+                "contrast": 7.22,
+                "fontSize": 22,
+                "required": 4.5
+              }
+            ],
+            "note": "Contraste calculado en Chromium contra el primer ancestro con fondo opaco; aproximación orientativa, no certificación WCAG.",
+            "norma": "WCAG AA orientativo (4.5:1; 3:1 texto grande)"
+          },
+          "available": true
+        },
+        {
+          "id": "fluidity",
+          "label": "Fluidez",
+          "score": 100,
+          "weight": 0.03,
+          "evidence": {
+            "jerk": 0,
+            "parpadeo": 0,
+            "muestras": 5
+          },
+          "available": true
+        },
+        {
+          "id": "performance",
+          "label": "Rendimiento",
+          "score": 86.6,
+          "weight": 0.03,
+          "evidence": {
+            "intervaloMedioMs": 313,
+            "intervaloTargetMs": 250,
+            "jitterRelativo": 0.005,
+            "capturas": 6
+          },
+          "available": true
+        },
+        {
+          "id": "restraint",
+          "label": "Contención decorativa",
+          "score": null,
+          "weight": 0.02,
+          "evidence": {
+            "nota": "sin recuento de efectos"
+          },
+          "available": false
+        }
+      ],
+      "summary": "Calidad 89.7/100 (A) · fidelidad 80.2 · composición 99.6 · jerarquía 86.7 · animación 100.0 · tipografía 65.6 · profundidad 99.9 · iluminación 89.0 · transiciones 100.0 · coherencia 100.0 · accesibilidad 100.0 · fluidez 100.0 · rendimiento 86.6.",
+      "weightsUsed": {
+        "fidelity": 0.3,
+        "composition": 0.12,
+        "hierarchy": 0.08,
+        "typography": 0.06,
+        "depth": 0.05,
+        "lighting": 0.07,
+        "animation": 0.1,
+        "transitions": 0.04,
+        "coherence": 0.05,
+        "accessibility": 0.07,
+        "fluidity": 0.03,
+        "performance": 0.03
+      }
+    },
+    "image": {
+      "width": 240,
+      "height": 135,
+      "mae": 0.1243,
+      "rmse": 0.1509,
+      "deltaE": 13.5,
+      "ssim": 0.2574,
+      "paletteDeltaE": 13.5,
+      "heatmap": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\desktop-app\\measure-b\\review\\diff\\heatmap.png",
+      "score": 46.9
+    },
+    "heatmap": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\desktop-app\\measure-b\\review\\diff\\heatmap.png",
+    "referenceFrame": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\desktop-app\\measure-b\\review\\reference-frame.png",
+    "warnings": [
+      "La relación de aspecto no coincide (referencia 1.45:1, captura 1.78:1). La comparación de color y contraste sigue siendo válida, pero la composición se estira en el mapa de calor."
+    ],
+    "id": "review",
+    "report": {
+      "md": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\desktop-app\\measure-b\\review\\report.md",
+      "json": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\desktop-app\\measure-b\\review\\review.json"
+    }
+  },
+  "dom": {
+    "url": "http://127.0.0.1:53900/index.html",
+    "title": "Toda la operación, en una lectura. — B",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "reducedMotion": false,
+    "scroll": {
+      "width": 1280,
+      "height": 720,
+      "overflowX": 0,
+      "overflowY": 0
+    },
+    "elements": [
+      {
+        "selector": "body > div.app > header.top > h1",
+        "tag": "h1",
+        "role": null,
+        "text": "Cola de trabajo",
+        "box": {
+          "x": 236,
+          "y": 16,
+          "width": 145,
+          "height": 22
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 22,
+          "fontWeight": 600,
+          "lineHeight": "21.56px",
+          "letterSpacing": "-0.44px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "body > div.app > aside.insp:nth-of-type(2) > h2",
+        "tag": "h2",
+        "role": null,
+        "text": "Capacidad",
+        "box": {
+          "x": 1003,
+          "y": 72,
+          "width": 259,
+          "height": 16
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 14,
+          "fontWeight": 600,
+          "lineHeight": "normal",
+          "letterSpacing": "0.84px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "html > body > div.app > header.top",
+        "tag": "header",
+        "role": null,
+        "text": "Cola de trabajoBuscar en la operación…",
+        "box": {
+          "x": 214,
+          "y": 0,
+          "width": 1066,
+          "height": 54
+        },
+        "region": "top-right",
+        "classes": [
+          "top"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "color(srgb 0.941176 0.921569 0.858824 / 0.4)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": "20.3px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 24,
+          "match": ".top",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "html > body > div.app > main.main",
+        "tag": "main",
+        "role": null,
+        "text": "peticiones/min12.4kdisponibilidad98.2 %latencia p95142 msalertas3 ColaEquipoPrioridadEsperaIngesta de eventosPlataformaAlta2 minReconciliaci",
+        "box": {
+          "x": 214,
+          "y": 54,
+          "width": 770,
+          "height": 636
+        },
+        "region": "center",
+        "classes": [
+          "main"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": "20.3px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "hidden"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 27,
+          "match": ".main",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "html > body > div.app",
+        "tag": "div",
+        "role": null,
+        "text": "MERIDIANResumenColas12IncidentesCapacidadFacturaciónOperaciones / turno de tarde Cola de trabajoBuscar en la operación… peticiones/min12.4kd",
+        "box": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720
+        },
+        "region": "center",
+        "classes": [
+          "app"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "grid",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgb(231, 224, 200)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": "20.3px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 18,
+          "match": ".app",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "html > body > div.app > aside.side:nth-of-type(1)",
+        "tag": "aside",
+        "role": null,
+        "text": "MERIDIANResumenColas12IncidentesCapacidadFacturaciónOperaciones / turno de tarde",
+        "box": {
+          "x": 0,
+          "y": 0,
+          "width": 214,
+          "height": 690
+        },
+        "region": "top-left",
+        "classes": [
+          "side"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": "20.3px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 19,
+          "match": ".side",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > div.app > aside.side:nth-of-type(1) > div.brand:nth-of-type(1)",
+        "tag": "div",
+        "role": null,
+        "text": "MERIDIAN",
+        "box": {
+          "x": 14,
+          "y": 16,
+          "width": 185,
+          "height": 38
+        },
+        "region": "top-left",
+        "classes": [
+          "brand"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 14,
+          "fontWeight": 700,
+          "lineHeight": "normal",
+          "letterSpacing": "1.68px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "baseline.html",
+          "line": 4,
+          "match": ".brand",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > div.app > aside.side:nth-of-type(1) > div.navitem:nth-of-type(2)",
+        "tag": "div",
+        "role": null,
+        "text": "Resumen",
+        "box": {
+          "x": 14,
+          "y": 58,
+          "width": 185,
+          "height": 39
+        },
+        "region": "top-left",
+        "classes": [
+          "navitem"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "4px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 21,
+          "match": ".navitem",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > div.app > aside.side:nth-of-type(1) > div.navitem.on:nth-of-type(3)",
+        "tag": "div",
+        "role": null,
+        "text": "Colas12",
+        "box": {
+          "x": 14,
+          "y": 101,
+          "width": 185,
+          "height": 39
+        },
+        "region": "top-left",
+        "classes": [
+          "navitem",
+          "on"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "color(srgb 0.396078 0.345098 0.270588 / 0.14)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "4px",
+          "boxShadow": "rgb(101, 88, 69) 2px 0px 0px 0px inset",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 21,
+          "match": ".navitem",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > div.app > aside.side:nth-of-type(1) > div.navitem:nth-of-type(4)",
+        "tag": "div",
+        "role": null,
+        "text": "Incidentes",
+        "box": {
+          "x": 14,
+          "y": 144,
+          "width": 185,
+          "height": 39
+        },
+        "region": "top-left",
+        "classes": [
+          "navitem"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "4px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 21,
+          "match": ".navitem",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > div.app > aside.side:nth-of-type(1) > div.navitem:nth-of-type(5)",
+        "tag": "div",
+        "role": null,
+        "text": "Capacidad",
+        "box": {
+          "x": 14,
+          "y": 187,
+          "width": 185,
+          "height": 39
+        },
+        "region": "top-left",
+        "classes": [
+          "navitem"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "4px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 21,
+          "match": ".navitem",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > div.app > aside.side:nth-of-type(1) > div.navitem:nth-of-type(6)",
+        "tag": "div",
+        "role": null,
+        "text": "Facturación",
+        "box": {
+          "x": 14,
+          "y": 229,
+          "width": 185,
+          "height": 39
+        },
+        "region": "top-left",
+        "classes": [
+          "navitem"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "4px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 21,
+          "match": ".navitem",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > div.app > aside.side:nth-of-type(1) > div.foot:nth-of-type(7)",
+        "tag": "div",
+        "role": null,
+        "text": "Operaciones / turno de tarde",
+        "box": {
+          "x": 14,
+          "y": 642,
+          "width": 185,
+          "height": 32
+        },
+        "region": "bottom-left",
+        "classes": [
+          "foot"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "baseline.html",
+          "line": 17,
+          "match": ".foot",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > div.app > header.top > div.search",
+        "tag": "div",
+        "role": null,
+        "text": "Buscar en la operación…",
+        "box": {
+          "x": 1038,
+          "y": 11,
+          "width": 220,
+          "height": 31
+        },
+        "region": "top-right",
+        "classes": [
+          "search"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 12,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "4px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 26,
+          "match": ".search",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > div.app > main.main > div.kpis:nth-of-type(1)",
+        "tag": "div",
+        "role": null,
+        "text": "peticiones/min12.4kdisponibilidad98.2 %latencia p95142 msalertas3",
+        "box": {
+          "x": 234,
+          "y": 72,
+          "width": 730,
+          "height": 84
+        },
+        "region": "top-left",
+        "classes": [
+          "kpis"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "grid",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": "20.3px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 28,
+          "match": ".kpis",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "div.app > main.main > div.kpis:nth-of-type(1) > div.kpi:nth-of-type(1)",
+        "tag": "div",
+        "role": null,
+        "text": "peticiones/min12.4k",
+        "box": {
+          "x": 234,
+          "y": 72,
+          "width": 175,
+          "height": 84
+        },
+        "region": "top-left",
+        "classes": [
+          "kpi"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": "20.3px",
+          "letterSpacing": "normal",
+          "borderRadius": "8px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 28,
+          "match": ".kpi",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "div.app > main.main > div.kpis:nth-of-type(1) > div.kpi:nth-of-type(2)",
+        "tag": "div",
+        "role": null,
+        "text": "disponibilidad98.2 %",
+        "box": {
+          "x": 419,
+          "y": 72,
+          "width": 175,
+          "height": 84
+        },
+        "region": "top-left",
+        "classes": [
+          "kpi"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": "20.3px",
+          "letterSpacing": "normal",
+          "borderRadius": "8px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 28,
+          "match": ".kpi",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "div.app > main.main > div.kpis:nth-of-type(1) > div.kpi:nth-of-type(3)",
+        "tag": "div",
+        "role": null,
+        "text": "latencia p95142 ms",
+        "box": {
+          "x": 604,
+          "y": 72,
+          "width": 175,
+          "height": 84
+        },
+        "region": "top-right",
+        "classes": [
+          "kpi"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": "20.3px",
+          "letterSpacing": "normal",
+          "borderRadius": "8px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 28,
+          "match": ".kpi",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "div.app > main.main > div.kpis:nth-of-type(1) > div.kpi:nth-of-type(4)",
+        "tag": "div",
+        "role": null,
+        "text": "alertas3",
+        "box": {
+          "x": 789,
+          "y": 72,
+          "width": 175,
+          "height": 84
+        },
+        "region": "top-right",
+        "classes": [
+          "kpi"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": "20.3px",
+          "letterSpacing": "normal",
+          "borderRadius": "8px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 28,
+          "match": ".kpi",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > div.app > main.main > div.tablewrap:nth-of-type(2)",
+        "tag": "div",
+        "role": null,
+        "text": "ColaEquipoPrioridadEsperaIngesta de eventosPlataformaAlta2 minReconciliaciónFinanzasNormal9 minExportacionesDatosNormal14 minWebhooksPlatafo",
+        "box": {
+          "x": 234,
+          "y": 170,
+          "width": 730,
+          "height": 502
+        },
+        "region": "center",
+        "classes": [
+          "tablewrap"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "color(srgb 0.941176 0.921569 0.858824 / 0.6)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": "20.3px",
+          "letterSpacing": "normal",
+          "borderRadius": "8px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "hidden"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 31,
+          "match": ".tablewrap",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "tbody > tr:nth-of-type(1) > td:nth-of-type(3) > i.dot.hot",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 672,
+          "y": 224,
+          "width": 6,
+          "height": 6
+        },
+        "region": "top-right",
+        "classes": [
+          "dot",
+          "hot"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 1.38,
+        "styles": {
+          "display": "inline-block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgb(101, 88, 69)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "50%",
+          "boxShadow": "rgb(101, 88, 69) 0px 0px 8px 0px",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 34,
+          "match": ".dot",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "table > tbody > tr:nth-of-type(1) > td.num:nth-of-type(4)",
+        "tag": "td",
+        "role": null,
+        "text": "2 min",
+        "box": {
+          "x": 830,
+          "y": 204,
+          "width": 133,
+          "height": 44
+        },
+        "region": "top-right",
+        "classes": [
+          "num"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "table-cell",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 33,
+          "match": ".num",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "tbody > tr:nth-of-type(2) > td:nth-of-type(3) > i.dot",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 672,
+          "y": 268,
+          "width": 6,
+          "height": 6
+        },
+        "region": "center",
+        "classes": [
+          "dot"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 2.17,
+        "styles": {
+          "display": "inline-block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgb(135, 118, 91)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "50%",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 34,
+          "match": ".dot",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "table > tbody > tr:nth-of-type(2) > td.num:nth-of-type(4)",
+        "tag": "td",
+        "role": null,
+        "text": "9 min",
+        "box": {
+          "x": 830,
+          "y": 248,
+          "width": 133,
+          "height": 44
+        },
+        "region": "top-right",
+        "classes": [
+          "num"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "table-cell",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 33,
+          "match": ".num",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "tbody > tr:nth-of-type(3) > td:nth-of-type(3) > i.dot",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 672,
+          "y": 312,
+          "width": 6,
+          "height": 6
+        },
+        "region": "center",
+        "classes": [
+          "dot"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 2.17,
+        "styles": {
+          "display": "inline-block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgb(135, 118, 91)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "50%",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 34,
+          "match": ".dot",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "table > tbody > tr:nth-of-type(3) > td.num:nth-of-type(4)",
+        "tag": "td",
+        "role": null,
+        "text": "14 min",
+        "box": {
+          "x": 830,
+          "y": 291,
+          "width": 133,
+          "height": 44
+        },
+        "region": "top-right",
+        "classes": [
+          "num"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "table-cell",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 33,
+          "match": ".num",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "tbody > tr:nth-of-type(4) > td:nth-of-type(3) > i.dot.hot",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 672,
+          "y": 356,
+          "width": 6,
+          "height": 6
+        },
+        "region": "center",
+        "classes": [
+          "dot",
+          "hot"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 1.38,
+        "styles": {
+          "display": "inline-block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgb(101, 88, 69)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "50%",
+          "boxShadow": "rgb(101, 88, 69) 0px 0px 8px 0px",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 34,
+          "match": ".dot",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "table > tbody > tr:nth-of-type(4) > td.num:nth-of-type(4)",
+        "tag": "td",
+        "role": null,
+        "text": "1 min",
+        "box": {
+          "x": 830,
+          "y": 335,
+          "width": 133,
+          "height": 44
+        },
+        "region": "top-right",
+        "classes": [
+          "num"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "table-cell",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 33,
+          "match": ".num",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "tbody > tr:nth-of-type(5) > td:nth-of-type(3) > i.dot",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 672,
+          "y": 399,
+          "width": 6,
+          "height": 6
+        },
+        "region": "center",
+        "classes": [
+          "dot"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 2.17,
+        "styles": {
+          "display": "inline-block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgb(135, 118, 91)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "50%",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 34,
+          "match": ".dot",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "table > tbody > tr:nth-of-type(5) > td.num:nth-of-type(4)",
+        "tag": "td",
+        "role": null,
+        "text": "31 min",
+        "box": {
+          "x": 830,
+          "y": 379,
+          "width": 133,
+          "height": 43
+        },
+        "region": "bottom-right",
+        "classes": [
+          "num"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "table-cell",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 33,
+          "match": ".num",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "html > body > div.app > aside.insp:nth-of-type(2)",
+        "tag": "aside",
+        "role": null,
+        "text": "Capacidad78 %Dos nodos al límite; el tercero absorbe el pico.Últimos 10 minutos · nodo EU-West",
+        "box": {
+          "x": 984,
+          "y": 54,
+          "width": 296,
+          "height": 636
+        },
+        "region": "bottom-right",
+        "classes": [
+          "insp"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "color(srgb 0.941176 0.921569 0.858824 / 0.3)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": "20.3px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 35,
+          "match": ".insp",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > div.app > aside.insp:nth-of-type(2) > div.big:nth-of-type(1)",
+        "tag": "div",
+        "role": null,
+        "text": "78 %",
+        "box": {
+          "x": 1003,
+          "y": 104,
+          "width": 259,
+          "height": 53
+        },
+        "region": "top-right",
+        "classes": [
+          "big"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 46,
+          "fontWeight": 600,
+          "lineHeight": "normal",
+          "letterSpacing": "-2.3px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 38,
+          "match": ".big",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > div.app > aside.insp:nth-of-type(2) > div.gauge:nth-of-type(2)",
+        "tag": "div",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 1003,
+          "y": 173,
+          "width": 259,
+          "height": 8
+        },
+        "region": "top-right",
+        "classes": [
+          "gauge"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "color(srgb 0.807843 0.780392 0.717647 / 0.7)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": "20.3px",
+          "letterSpacing": "normal",
+          "borderRadius": "99px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "hidden"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 37,
+          "match": ".gauge",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > div.app > aside.insp:nth-of-type(2) > div.spark:nth-of-type(3)",
+        "tag": "div",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 1003,
+          "y": 256,
+          "width": 259,
+          "height": 74
+        },
+        "region": "top-right",
+        "classes": [
+          "spark"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": "20.3px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 39,
+          "match": ".spark",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "html > body > div.app > footer.status",
+        "tag": "footer",
+        "role": null,
+        "text": "ConectadoEU-Westv4.18.2Sincronizado hace 12 s",
+        "box": {
+          "x": 0,
+          "y": 690,
+          "width": 1280,
+          "height": 30
+        },
+        "region": "bottom-right",
+        "classes": [
+          "status"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgb(231, 224, 200)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 40,
+          "match": ".status",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "div.app > aside.side:nth-of-type(1) > div.navitem:nth-of-type(2) > span:nth-of-type(1)",
+        "tag": "span",
+        "role": null,
+        "text": "Resumen",
+        "box": {
+          "x": 24,
+          "y": 68,
+          "width": 52,
+          "height": 19
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.app > aside.side:nth-of-type(1) > div.navitem.on:nth-of-type(3) > span:nth-of-type(1)",
+        "tag": "span",
+        "role": null,
+        "text": "Colas",
+        "box": {
+          "x": 24,
+          "y": 111,
+          "width": 31,
+          "height": 19
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.app > aside.side:nth-of-type(1) > div.navitem.on:nth-of-type(3) > span:nth-of-type(2)",
+        "tag": "span",
+        "role": null,
+        "text": "12",
+        "box": {
+          "x": 175,
+          "y": 111,
+          "width": 14,
+          "height": 19
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.app > aside.side:nth-of-type(1) > div.navitem:nth-of-type(4) > span:nth-of-type(1)",
+        "tag": "span",
+        "role": null,
+        "text": "Incidentes",
+        "box": {
+          "x": 24,
+          "y": 154,
+          "width": 59,
+          "height": 19
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.app > aside.side:nth-of-type(1) > div.navitem:nth-of-type(5) > span:nth-of-type(1)",
+        "tag": "span",
+        "role": null,
+        "text": "Capacidad",
+        "box": {
+          "x": 24,
+          "y": 197,
+          "width": 60,
+          "height": 19
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.app > aside.side:nth-of-type(1) > div.navitem:nth-of-type(6) > span:nth-of-type(1)",
+        "tag": "span",
+        "role": null,
+        "text": "Facturación",
+        "box": {
+          "x": 24,
+          "y": 239,
+          "width": 66,
+          "height": 19
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.main > div.kpis:nth-of-type(1) > div.kpi:nth-of-type(1) > small",
+        "tag": "small",
+        "role": null,
+        "text": "peticiones/min",
+        "box": {
+          "x": 249,
+          "y": 90,
+          "width": 97,
+          "height": 12
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "inline",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "0.66px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.main > div.kpis:nth-of-type(1) > div.kpi:nth-of-type(1) > b",
+        "tag": "b",
+        "role": null,
+        "text": "12.4k",
+        "box": {
+          "x": 249,
+          "y": 109,
+          "width": 145,
+          "height": 34
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 30,
+          "fontWeight": 600,
+          "lineHeight": "normal",
+          "letterSpacing": "-1.2px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.main > div.kpis:nth-of-type(1) > div.kpi:nth-of-type(2) > small",
+        "tag": "small",
+        "role": null,
+        "text": "disponibilidad",
+        "box": {
+          "x": 434,
+          "y": 90,
+          "width": 98,
+          "height": 12
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "inline",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "0.66px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.main > div.kpis:nth-of-type(1) > div.kpi:nth-of-type(2) > b",
+        "tag": "b",
+        "role": null,
+        "text": "98.2 %",
+        "box": {
+          "x": 434,
+          "y": 109,
+          "width": 145,
+          "height": 34
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 30,
+          "fontWeight": 600,
+          "lineHeight": "normal",
+          "letterSpacing": "-1.2px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.main > div.kpis:nth-of-type(1) > div.kpi:nth-of-type(3) > small",
+        "tag": "small",
+        "role": null,
+        "text": "latencia p95",
+        "box": {
+          "x": 619,
+          "y": 90,
+          "width": 81,
+          "height": 12
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "inline",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "0.66px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.main > div.kpis:nth-of-type(1) > div.kpi:nth-of-type(3) > b",
+        "tag": "b",
+        "role": null,
+        "text": "142 ms",
+        "box": {
+          "x": 619,
+          "y": 109,
+          "width": 145,
+          "height": 34
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 30,
+          "fontWeight": 600,
+          "lineHeight": "normal",
+          "letterSpacing": "-1.2px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.main > div.kpis:nth-of-type(1) > div.kpi:nth-of-type(4) > small",
+        "tag": "small",
+        "role": null,
+        "text": "alertas",
+        "box": {
+          "x": 804,
+          "y": 90,
+          "width": 53,
+          "height": 12
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "inline",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "0.66px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.main > div.kpis:nth-of-type(1) > div.kpi:nth-of-type(4) > b",
+        "tag": "b",
+        "role": null,
+        "text": "3",
+        "box": {
+          "x": 804,
+          "y": 109,
+          "width": 145,
+          "height": 34
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 30,
+          "fontWeight": 600,
+          "lineHeight": "normal",
+          "letterSpacing": "-1.2px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.app > main.main > div.tablewrap:nth-of-type(2) > table",
+        "tag": "table",
+        "role": null,
+        "text": "ColaEquipoPrioridadEsperaIngesta de eventosPlataformaAlta2 minReconciliaciónFinanzasNormal9 minExportacionesDatosNormal14 minWebhooksPlatafo",
+        "box": {
+          "x": 235,
+          "y": 171,
+          "width": 728,
+          "height": 251
+        },
+        "region": "center",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "table",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.main > div.tablewrap:nth-of-type(2) > table > thead",
+        "tag": "thead",
+        "role": null,
+        "text": "ColaEquipoPrioridadEspera",
+        "box": {
+          "x": 235,
+          "y": 171,
+          "width": 728,
+          "height": 33
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "table-header-group",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.tablewrap:nth-of-type(2) > table > thead > tr",
+        "tag": "tr",
+        "role": null,
+        "text": "ColaEquipoPrioridadEspera",
+        "box": {
+          "x": 235,
+          "y": 171,
+          "width": 728,
+          "height": 33
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "table-row",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "table > thead > tr > th:nth-of-type(1)",
+        "tag": "th",
+        "role": null,
+        "text": "Cola",
+        "box": {
+          "x": 235,
+          "y": 171,
+          "width": 244,
+          "height": 33
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "table-cell",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "color(srgb 0.941176 0.921569 0.858823 / 0.8)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "0.88px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "table > thead > tr > th:nth-of-type(2)",
+        "tag": "th",
+        "role": null,
+        "text": "Equipo",
+        "box": {
+          "x": 479,
+          "y": 171,
+          "width": 179,
+          "height": 33
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "table-cell",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "color(srgb 0.941176 0.921569 0.858823 / 0.8)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "0.88px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "table > thead > tr > th:nth-of-type(3)",
+        "tag": "th",
+        "role": null,
+        "text": "Prioridad",
+        "box": {
+          "x": 658,
+          "y": 171,
+          "width": 172,
+          "height": 33
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "table-cell",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "color(srgb 0.941176 0.921569 0.858823 / 0.8)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "0.88px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "table > thead > tr > th:nth-of-type(4)",
+        "tag": "th",
+        "role": null,
+        "text": "Espera",
+        "box": {
+          "x": 830,
+          "y": 171,
+          "width": 133,
+          "height": 33
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "table-cell",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "color(srgb 0.941176 0.921569 0.858823 / 0.8)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "0.88px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.main > div.tablewrap:nth-of-type(2) > table > tbody",
+        "tag": "tbody",
+        "role": null,
+        "text": "Ingesta de eventosPlataformaAlta2 minReconciliaciónFinanzasNormal9 minExportacionesDatosNormal14 minWebhooksPlataformaAlta1 minCierresOperac",
+        "box": {
+          "x": 235,
+          "y": 204,
+          "width": 728,
+          "height": 219
+        },
+        "region": "center",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "table-row-group",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.tablewrap:nth-of-type(2) > table > tbody > tr:nth-of-type(1)",
+        "tag": "tr",
+        "role": null,
+        "text": "Ingesta de eventosPlataformaAlta2 min",
+        "box": {
+          "x": 235,
+          "y": 204,
+          "width": 728,
+          "height": 44
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "table-row",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "table > tbody > tr:nth-of-type(1) > td:nth-of-type(1)",
+        "tag": "td",
+        "role": null,
+        "text": "Ingesta de eventos",
+        "box": {
+          "x": 235,
+          "y": 204,
+          "width": 244,
+          "height": 44
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "table-cell",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "table > tbody > tr:nth-of-type(1) > td:nth-of-type(2)",
+        "tag": "td",
+        "role": null,
+        "text": "Plataforma",
+        "box": {
+          "x": 479,
+          "y": 204,
+          "width": 179,
+          "height": 44
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "table-cell",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "table > tbody > tr:nth-of-type(1) > td:nth-of-type(3)",
+        "tag": "td",
+        "role": null,
+        "text": "Alta",
+        "box": {
+          "x": 658,
+          "y": 204,
+          "width": 172,
+          "height": 44
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "table-cell",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.tablewrap:nth-of-type(2) > table > tbody > tr:nth-of-type(2)",
+        "tag": "tr",
+        "role": null,
+        "text": "ReconciliaciónFinanzasNormal9 min",
+        "box": {
+          "x": 235,
+          "y": 248,
+          "width": 728,
+          "height": 44
+        },
+        "region": "center",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "table-row",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "table > tbody > tr:nth-of-type(2) > td:nth-of-type(1)",
+        "tag": "td",
+        "role": null,
+        "text": "Reconciliación",
+        "box": {
+          "x": 235,
+          "y": 248,
+          "width": 244,
+          "height": 44
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "table-cell",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "table > tbody > tr:nth-of-type(2) > td:nth-of-type(2)",
+        "tag": "td",
+        "role": null,
+        "text": "Finanzas",
+        "box": {
+          "x": 479,
+          "y": 248,
+          "width": 179,
+          "height": 44
+        },
+        "region": "center",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "table-cell",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "table > tbody > tr:nth-of-type(2) > td:nth-of-type(3)",
+        "tag": "td",
+        "role": null,
+        "text": "Normal",
+        "box": {
+          "x": 658,
+          "y": 248,
+          "width": 172,
+          "height": 44
+        },
+        "region": "center",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "table-cell",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.tablewrap:nth-of-type(2) > table > tbody > tr:nth-of-type(3)",
+        "tag": "tr",
+        "role": null,
+        "text": "ExportacionesDatosNormal14 min",
+        "box": {
+          "x": 235,
+          "y": 291,
+          "width": 728,
+          "height": 44
+        },
+        "region": "center",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "table-row",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "table > tbody > tr:nth-of-type(3) > td:nth-of-type(1)",
+        "tag": "td",
+        "role": null,
+        "text": "Exportaciones",
+        "box": {
+          "x": 235,
+          "y": 291,
+          "width": 244,
+          "height": 44
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "table-cell",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "table > tbody > tr:nth-of-type(3) > td:nth-of-type(2)",
+        "tag": "td",
+        "role": null,
+        "text": "Datos",
+        "box": {
+          "x": 479,
+          "y": 291,
+          "width": 179,
+          "height": 44
+        },
+        "region": "center",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "table-cell",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "table > tbody > tr:nth-of-type(3) > td:nth-of-type(3)",
+        "tag": "td",
+        "role": null,
+        "text": "Normal",
+        "box": {
+          "x": 658,
+          "y": 291,
+          "width": 172,
+          "height": 44
+        },
+        "region": "center",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "table-cell",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.tablewrap:nth-of-type(2) > table > tbody > tr:nth-of-type(4)",
+        "tag": "tr",
+        "role": null,
+        "text": "WebhooksPlataformaAlta1 min",
+        "box": {
+          "x": 235,
+          "y": 335,
+          "width": 728,
+          "height": 44
+        },
+        "region": "center",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "table-row",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "table > tbody > tr:nth-of-type(4) > td:nth-of-type(1)",
+        "tag": "td",
+        "role": null,
+        "text": "Webhooks",
+        "box": {
+          "x": 235,
+          "y": 335,
+          "width": 244,
+          "height": 44
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "table-cell",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "table > tbody > tr:nth-of-type(4) > td:nth-of-type(2)",
+        "tag": "td",
+        "role": null,
+        "text": "Plataforma",
+        "box": {
+          "x": 479,
+          "y": 335,
+          "width": 179,
+          "height": 44
+        },
+        "region": "center",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "table-cell",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "table > tbody > tr:nth-of-type(4) > td:nth-of-type(3)",
+        "tag": "td",
+        "role": null,
+        "text": "Alta",
+        "box": {
+          "x": 658,
+          "y": 335,
+          "width": 172,
+          "height": 44
+        },
+        "region": "center",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "table-cell",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.tablewrap:nth-of-type(2) > table > tbody > tr:nth-of-type(5)",
+        "tag": "tr",
+        "role": null,
+        "text": "CierresOperacionesBaja31 min",
+        "box": {
+          "x": 235,
+          "y": 379,
+          "width": 728,
+          "height": 43
+        },
+        "region": "center",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "table-row",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "table > tbody > tr:nth-of-type(5) > td:nth-of-type(1)",
+        "tag": "td",
+        "role": null,
+        "text": "Cierres",
+        "box": {
+          "x": 235,
+          "y": 379,
+          "width": 244,
+          "height": 43
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "table-cell",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "table > tbody > tr:nth-of-type(5) > td:nth-of-type(2)",
+        "tag": "td",
+        "role": null,
+        "text": "Operaciones",
+        "box": {
+          "x": 479,
+          "y": 379,
+          "width": 179,
+          "height": 43
+        },
+        "region": "center",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "table-cell",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "table > tbody > tr:nth-of-type(5) > td:nth-of-type(3)",
+        "tag": "td",
+        "role": null,
+        "text": "Baja",
+        "box": {
+          "x": 658,
+          "y": 379,
+          "width": 172,
+          "height": 43
+        },
+        "region": "center",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "table-cell",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "18.85px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.app > aside.insp:nth-of-type(2) > div.gauge:nth-of-type(2) > i",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 1003,
+          "y": 173,
+          "width": 202,
+          "height": 8
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": "20.3px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "body > div.app > aside.insp:nth-of-type(2) > p:nth-of-type(1)",
+        "tag": "p",
+        "role": null,
+        "text": "Dos nodos al límite; el tercero absorbe el pico.",
+        "box": {
+          "x": 1003,
+          "y": 197,
+          "width": 259,
+          "height": 39
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "19.5px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.app > aside.insp:nth-of-type(2) > div.spark:nth-of-type(3) > i:nth-of-type(1)",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 1003,
+          "y": 302,
+          "width": 22,
+          "height": 28
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "color(srgb 0.396078 0.345098 0.270588 / 0.7)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": "20.3px",
+          "letterSpacing": "normal",
+          "borderRadius": "1px 1px 0px 0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.app > aside.insp:nth-of-type(2) > div.spark:nth-of-type(3) > i:nth-of-type(2)",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 1029,
+          "y": 292,
+          "width": 22,
+          "height": 38
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "color(srgb 0.396078 0.345098 0.270588 / 0.7)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": "20.3px",
+          "letterSpacing": "normal",
+          "borderRadius": "1px 1px 0px 0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.app > aside.insp:nth-of-type(2) > div.spark:nth-of-type(3) > i:nth-of-type(3)",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 1056,
+          "y": 297,
+          "width": 22,
+          "height": 33
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "color(srgb 0.396078 0.345098 0.270588 / 0.7)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": "20.3px",
+          "letterSpacing": "normal",
+          "borderRadius": "1px 1px 0px 0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.app > aside.insp:nth-of-type(2) > div.spark:nth-of-type(3) > i:nth-of-type(4)",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 1082,
+          "y": 281,
+          "width": 22,
+          "height": 49
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "color(srgb 0.396078 0.345098 0.270588 / 0.7)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": "20.3px",
+          "letterSpacing": "normal",
+          "borderRadius": "1px 1px 0px 0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.app > aside.insp:nth-of-type(2) > div.spark:nth-of-type(3) > i:nth-of-type(5)",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 1108,
+          "y": 287,
+          "width": 22,
+          "height": 43
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "color(srgb 0.396078 0.345098 0.270588 / 0.7)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": "20.3px",
+          "letterSpacing": "normal",
+          "borderRadius": "1px 1px 0px 0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.app > aside.insp:nth-of-type(2) > div.spark:nth-of-type(3) > i:nth-of-type(6)",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 1135,
+          "y": 275,
+          "width": 22,
+          "height": 55
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "color(srgb 0.396078 0.345098 0.270588 / 0.7)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": "20.3px",
+          "letterSpacing": "normal",
+          "borderRadius": "1px 1px 0px 0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.app > aside.insp:nth-of-type(2) > div.spark:nth-of-type(3) > i:nth-of-type(7)",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 1161,
+          "y": 284,
+          "width": 22,
+          "height": 46
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "color(srgb 0.396078 0.345098 0.270588 / 0.7)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": "20.3px",
+          "letterSpacing": "normal",
+          "borderRadius": "1px 1px 0px 0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.app > aside.insp:nth-of-type(2) > div.spark:nth-of-type(3) > i:nth-of-type(8)",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 1187,
+          "y": 272,
+          "width": 22,
+          "height": 58
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "color(srgb 0.396078 0.345098 0.270588 / 0.7)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": "20.3px",
+          "letterSpacing": "normal",
+          "borderRadius": "1px 1px 0px 0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.app > aside.insp:nth-of-type(2) > div.spark:nth-of-type(3) > i:nth-of-type(9)",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 1213,
+          "y": 278,
+          "width": 22,
+          "height": 52
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "color(srgb 0.396078 0.345098 0.270588 / 0.7)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": "20.3px",
+          "letterSpacing": "normal",
+          "borderRadius": "1px 1px 0px 0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.app > aside.insp:nth-of-type(2) > div.spark:nth-of-type(3) > i:nth-of-type(10)",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 1240,
+          "y": 268,
+          "width": 22,
+          "height": 62
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.22,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(78, 68, 53)",
+          "backgroundColor": "color(srgb 0.396078 0.345098 0.270588 / 0.7)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 14,
+          "fontWeight": 400,
+          "lineHeight": "20.3px",
+          "letterSpacing": "normal",
+          "borderRadius": "1px 1px 0px 0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "body > div.app > aside.insp:nth-of-type(2) > p:nth-of-type(2)",
+        "tag": "p",
+        "role": null,
+        "text": "Últimos 10 minutos · nodo EU-West",
+        "box": {
+          "x": 1003,
+          "y": 346,
+          "width": 259,
+          "height": 20
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "19.5px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "body > div.app > footer.status > span:nth-of-type(1)",
+        "tag": "span",
+        "role": null,
+        "text": "Conectado",
+        "box": {
+          "x": 18,
+          "y": 700,
+          "width": 50,
+          "height": 12
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.app > footer.status > span:nth-of-type(1) > b",
+        "tag": "b",
+        "role": null,
+        "text": "Conectado",
+        "box": {
+          "x": 18,
+          "y": 700,
+          "width": 50,
+          "height": 12
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 3.33,
+        "styles": {
+          "display": "inline",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(135, 118, 91)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 11,
+          "fontWeight": 600,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "body > div.app > footer.status > span:nth-of-type(2)",
+        "tag": "span",
+        "role": null,
+        "text": "EU-West",
+        "box": {
+          "x": 88,
+          "y": 700,
+          "width": 40,
+          "height": 12
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "body > div.app > footer.status > span:nth-of-type(3)",
+        "tag": "span",
+        "role": null,
+        "text": "v4.18.2",
+        "box": {
+          "x": 148,
+          "y": 700,
+          "width": 33,
+          "height": 12
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "body > div.app > footer.status > span:nth-of-type(4)",
+        "tag": "span",
+        "role": null,
+        "text": "Sincronizado hace 12 s",
+        "box": {
+          "x": 201,
+          "y": 700,
+          "width": 102,
+          "height": 12
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.401882 0.364549 0.300078)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      }
+    ],
+    "animations": [],
+    "canvases": [],
+    "brokenImages": [],
+    "buttonsWithoutName": [],
+    "imagesWithoutAlt": [],
+    "consoleErrors": [],
+    "pageErrors": [],
+    "requestFailures": [],
+    "counts": {
+      "elements": 95,
+      "headings": 2,
+      "buttons": 0,
+      "links": 0,
+      "images": 0,
+      "canvases": 0,
+      "effects": 0,
+      "layers": 0,
+      "materials": 12,
+      "transitions": 0,
+      "animations": 0
+    },
+    "contrast": {
+      "checked": 3,
+      "violations": 0,
+      "worst": 7.22,
+      "average": 7.22
+    },
+    "sourceIndex": {
+      "files": 2,
+      "bytes": 11998,
+      "truncated": false
+    },
+    "warnings": [],
+    "screenshot": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\desktop-app\\measure-b\\dom\\dom.png"
+  },
+  "critic": {
+    "version": "0.5",
+    "score": 100,
+    "grade": "A",
+    "findings": [],
+    "counts": {
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "summary": "Crítica 100/100 (A): no se detectaron defectos con los datos disponibles.",
+    "agentTask": "# Tarea visual priorizada\n\nBrief: Aplicación de escritorio profesional para operaciones: densa, legible, con jerarquía de estado y lectura rápida.\nEstilo: professional-app\nCrítica: Crítica 100/100 (A): no se detectaron defectos con los datos disponibles.\n\n## Corrige sólo estos defectos medidos\n\nNo hay defectos medidos. No reescribas el proyecto; solicita revisión artística humana.\n## Reglas de la iteración\n\n1. No reescribas todo: aplica el cambio mínimo en la ubicación indicada.\n2. No añadas un efecto si no hay evidencia de que falta y una función que cumplir.\n3. Conserva las decisiones que ya pasan los umbrales.\n4. Vuelve a capturar y compara antes/después; revierte si no mejora.\n5. La aprobación artística final es humana.\n\n## Límites\n\n- Sin animaciones observadas no se afirma rigidez temporal.\n- La crítica detecta defectos estructurales; no sustituye la aprobación artística humana.",
+    "limitations": [
+      "Sin animaciones observadas no se afirma rigidez temporal.",
+      "La crítica detecta defectos estructurales; no sustituye la aprobación artística humana."
+    ],
+    "measured": {
+      "quality": 89.7,
+      "fidelity": 80.2,
+      "composition": 99.6,
+      "hierarchy": 86.7,
+      "typography": 65.6,
+      "depth": 99.9,
+      "lighting": 89,
+      "coherence": 100,
+      "transitions": 100,
+      "performance": 86.6
+    },
+    "artisticJudgment": false
+  },
+  "fidelity": {
+    "version": "0.5",
+    "score": 93.4,
+    "grade": "A",
+    "dimensions": [
+      {
+        "id": "composition",
+        "label": "Posición y proporción de la composición",
+        "score": 99.6,
+        "weight": 0.14,
+        "status": "verified",
+        "evidence": {
+          "medicion": "masa por cuadrantes",
+          "nota": "proxy, no cajas de objetos"
+        },
+        "note": "La composición se mide por distribución de masa."
+      },
+      {
+        "id": "layout",
+        "label": "Layout y equilibrio",
+        "score": 99.5,
+        "weight": 0.1,
+        "status": "verified",
+        "evidence": {
+          "metodo": "balance horizontal/vertical del primer fotograma"
+        },
+        "note": "No se comparan posiciones de elementos individuales sin un mapa de referencia."
+      },
+      {
+        "id": "typography",
+        "label": "Tipografía y proporción",
+        "score": null,
+        "weight": 0.12,
+        "status": "unavailable",
+        "evidence": {
+          "nota": "requiere especificación y DOM"
+        },
+        "note": "Se compara escala relativa; la familia no se identifica."
+      },
+      {
+        "id": "palette",
+        "label": "Paleta y coherencia cromática",
+        "score": 100,
+        "weight": 0.1,
+        "status": "verified",
+        "evidence": {
+          "metodo": "histograma de matiz",
+          "nota": "no evalúa si el color es apropiado"
+        },
+        "note": "La similitud cromática no implica calidad artística."
+      },
+      {
+        "id": "lighting",
+        "label": "Iluminación",
+        "score": 89,
+        "weight": 0.09,
+        "status": "verified",
+        "evidence": {
+          "metodo": "luma, contraste y proporción oscura"
+        },
+        "note": "Medida global, no dirección de luz por objeto."
+      },
+      {
+        "id": "depth",
+        "label": "Profundidad",
+        "score": 99.9,
+        "weight": 0.08,
+        "status": "verified",
+        "evidence": {
+          "metodo": "dispersión de cuadrantes y detalle"
+        },
+        "note": "Proxy declarado; no es un mapa de profundidad."
+      },
+      {
+        "id": "materials",
+        "label": "Texturas y materiales",
+        "score": 70,
+        "weight": 0.07,
+        "status": "estimated",
+        "evidence": {
+          "materialDeclarado": "flat",
+          "señales": 12,
+          "blur": "no",
+          "sombra": "sí",
+          "estado": "estimated desde CSS computado"
+        },
+        "note": "Se infiere del CSS computado; no hay mapa de textura de referencia."
+      },
+      {
+        "id": "effects",
+        "label": "Efectos",
+        "score": null,
+        "weight": 0.08,
+        "status": "unavailable",
+        "evidence": {
+          "nota": "referencia sin efectos declarados"
+        },
+        "note": "La correspondencia es por etiqueta, no por píxel."
+      },
+      {
+        "id": "motion",
+        "label": "Trayectorias de movimiento",
+        "score": null,
+        "weight": 0.06,
+        "status": "unavailable",
+        "evidence": {
+          "nota": "sin cámara de referencia y animaciones comparables"
+        },
+        "note": "No se reconstruye la trayectoria exacta desde CSS."
+      },
+      {
+        "id": "rhythm",
+        "label": "Duración y ritmo",
+        "score": null,
+        "weight": 0.04,
+        "status": "unavailable",
+        "evidence": {
+          "nota": "sin escenas y animaciones comparables"
+        },
+        "note": "Ritmo global; no alineación escena a escena."
+      },
+      {
+        "id": "transitions",
+        "label": "Transiciones",
+        "score": 100,
+        "weight": 0.04,
+        "status": "verified",
+        "evidence": {
+          "nota": "sólo disponible con referencia temporal"
+        },
+        "note": "Sin vídeo de referencia no se afirma la transición."
+      },
+      {
+        "id": "frameCoherence",
+        "label": "Coherencia entre fotogramas",
+        "score": 82.5,
+        "weight": 0.08,
+        "status": "verified",
+        "evidence": {
+          "metodo": "estabilidad de luminancia",
+          "nota": "detecta parpadeo, no intención artística"
+        },
+        "note": "La estabilidad no equivale a buena dirección."
+      }
+    ],
+    "pixelSimilarity": 80.2,
+    "structuralVsPixel": "Estructura 93.4/100 · píxel 80.2/100. No son intercambiables: una imagen puede parecerse y seguir siendo un mal diseño.",
+    "warnings": [
+      "La similitud de píxeles se informa aparte y no se usa para aprobar calidad artística.",
+      "Layout, tipografía, materiales y movimiento se estiman con los datos disponibles; las dimensiones sin datos quedan fuera.",
+      "Sin especificación de referencia no se afirma fidelidad de posición, textura o trayectoria."
+    ],
+    "summary": "Fidelidad estructural 93.4/100 (A) · 8/12 dimensiones disponibles · similitud de píxeles 80.2 (informativa)."
+  },
+  "gates": {
+    "version": "0.5",
+    "pass": true,
+    "decision": "accept",
+    "checks": [
+      {
+        "id": "quality",
+        "label": "Calidad visual global",
+        "status": "pass",
+        "actual": 89.7,
+        "threshold": 72,
+        "blocking": true,
+        "detail": "Puntuación ponderada de las dimensiones disponibles."
+      },
+      {
+        "id": "fidelity",
+        "label": "Fidelidad estructural",
+        "status": "pass",
+        "actual": 93.4,
+        "threshold": 70,
+        "blocking": true,
+        "detail": "No usa la similitud de píxeles como sustituto."
+      },
+      {
+        "id": "composition",
+        "label": "Composición",
+        "status": "pass",
+        "actual": 99.6,
+        "threshold": 62,
+        "blocking": true,
+        "detail": "Balance de masa medido."
+      },
+      {
+        "id": "typography",
+        "label": "Tipografía y legibilidad",
+        "status": "pass",
+        "actual": 65.6,
+        "threshold": 62,
+        "blocking": true,
+        "detail": "Auditoría DOM + escala."
+      },
+      {
+        "id": "performance",
+        "label": "Rendimiento",
+        "status": "pass",
+        "actual": 61.4,
+        "threshold": 55,
+        "blocking": true,
+        "detail": "FPS medidos."
+      },
+      {
+        "id": "critical-findings",
+        "label": "Defectos críticos",
+        "status": "pass",
+        "actual": 0,
+        "threshold": 0,
+        "blocking": true,
+        "detail": "Un defecto crítico bloquea aunque la media sea alta."
+      },
+      {
+        "id": "high-findings",
+        "label": "Defectos de gravedad alta",
+        "status": "pass",
+        "actual": 0,
+        "threshold": 0,
+        "blocking": true,
+        "detail": "Los defectos altos también bloquean por defecto."
+      },
+      {
+        "id": "contrast",
+        "label": "Contraste DOM",
+        "status": "pass",
+        "actual": 0,
+        "threshold": 0,
+        "blocking": true,
+        "detail": "Peor contraste 7.22:1; 3 textos."
+      },
+      {
+        "id": "runtime",
+        "label": "Funcionamiento sin errores",
+        "status": "pass",
+        "actual": 0,
+        "threshold": 0,
+        "blocking": true,
+        "detail": "Consola, pageerror, recursos fallidos e imágenes rotas."
+      },
+      {
+        "id": "human-art",
+        "label": "Aprobación artística humana",
+        "status": "pending",
+        "actual": "pendiente",
+        "threshold": "recomendada",
+        "blocking": false,
+        "detail": "No bloquea por configuración, pero queda pendiente y se declara."
+      }
+    ],
+    "blockers": [],
+    "warnings": [
+      "La calidad artística final aún no ha sido aprobada por una persona."
+    ],
+    "humanApproval": {
+      "required": false,
+      "approved": false
+    },
+    "summary": "Aceptado: 9/10 gates en verde; arte pendiente de revisión humana."
+  },
+  "art": {
+    "version": "0.4",
+    "id": "professional-app-app-ctwvm",
+    "brief": "Aplicación de escritorio profesional para operaciones: densa, legible, con jerarquía de estado y lectura rápida.",
+    "projectType": "app",
+    "style": {
+      "id": "professional-app",
+      "name": "Aplicaciones profesionales",
+      "description": "Densidad controlada, familiaridad y foco en la tarea; la interfaz desaparece.",
+      "keywords": [
+        "profesional",
+        "app",
+        "productividad",
+        "herramienta",
+        "saas",
+        "empresa"
+      ],
+      "mode": "light",
+      "colors": {
+        "bg": "#f4f6f9",
+        "surface": "#ffffff",
+        "elevated": "#eef2f7",
+        "text": "#17202e",
+        "muted": "#59677a",
+        "accent": "#2457d6",
+        "accent2": "#0f766e",
+        "border": "#d9e0e9",
+        "success": "#2f6b4f",
+        "warning": "#8a5a12",
+        "danger": "#a52a3b",
+        "focus": "#1742a8"
+      },
+      "typography": {
+        "display": "sans",
+        "body": "sans",
+        "mono": "mono",
+        "displayWeight": 620,
+        "bodyWeight": 430,
+        "scaleRatio": 1.2,
+        "bodyPx": 14,
+        "lineHeight": 1.45,
+        "displayLineHeight": 0.98,
+        "tracking": "-0.01em",
+        "displayTracking": "-0.025em",
+        "measure": 60
+      },
+      "layout": {
+        "maxWidth": 1440,
+        "gutter": 20,
+        "spacing": 6,
+        "radius": 8,
+        "borderWidth": 1,
+        "columns": 12,
+        "shadow": "0 16px 40px -32px rgba(23,32,46,.45)"
+      },
+      "materials": {
+        "surface": "flat",
+        "grain": 0,
+        "glassBlur": 0,
+        "gradient": "none",
+        "texture": "ninguna"
+      },
+      "motion": {
+        "level": "restrained",
+        "fastMs": 120,
+        "baseMs": 260,
+        "slowMs": 600,
+        "easeOut": "cubic-bezier(.16,1,.3,1)",
+        "easeInOut": "cubic-bezier(.65,0,.35,1)",
+        "spring": "cubic-bezier(.34,1.56,.64,1)",
+        "staggerMs": 30,
+        "camera": "sin cámara"
+      },
+      "composition": {
+        "focal": "contenido principal",
+        "alignment": "left",
+        "negativeSpace": 0.28,
+        "density": "compact",
+        "contrast": "balanced",
+        "headlineChars": 46,
+        "imageRatio": "16:9",
+        "notes": [
+          "La acción primaria compite con una sola cosa",
+          "Estados vacíos útiles"
+        ]
+      },
+      "effects": [
+        {
+          "id": "mesh-gradient",
+          "role": "fondo de marca sutil"
+        }
+      ],
+      "signature": [
+        "Radio 8 px",
+        "Borde 1 px",
+        "Azul de acción",
+        "Densidad 32 px"
+      ],
+      "avoid": [
+        "Efectos animados en el área de trabajo",
+        "Tipografía decorativa",
+        "Sombras profundas"
+      ]
+    },
+    "palette": {
+      "bg": "#f4f6f9",
+      "surface": "#ffffff",
+      "elevated": "#eef2f7",
+      "text": "#17202e",
+      "muted": "#59677a",
+      "accent": "#2457d6",
+      "accent2": "#0f766e",
+      "border": "#d9e0e9",
+      "success": "#2f6b4f",
+      "warning": "#8a5a12",
+      "danger": "#a52a3b",
+      "focus": "#1742a8"
+    },
+    "typography": {
+      "display": "sans",
+      "body": "sans",
+      "mono": "mono",
+      "displayWeight": 620,
+      "bodyWeight": 430,
+      "scaleRatio": 1.2,
+      "bodyPx": 14,
+      "lineHeight": 1.45,
+      "displayLineHeight": 0.98,
+      "tracking": "-0.01em",
+      "displayTracking": "-0.025em",
+      "measure": 60,
+      "sizes": {
+        "caption": 10.5,
+        "small": 12.3,
+        "body": 14,
+        "lead": 17.5,
+        "h3": 16.8,
+        "h2": 20.2,
+        "h1": 24.2,
+        "display": 29,
+        "hero": 34.8
+      },
+      "responsive": {
+        "caption": "clamp(12px, 0.82vw, 11px)",
+        "small": "clamp(12px, 0.96vw, 12px)",
+        "body": "clamp(12px, 1.09vw, 14px)",
+        "lead": "clamp(13px, 1.37vw, 18px)",
+        "h3": "clamp(12px, 1.31vw, 17px)",
+        "h2": "clamp(15px, 1.58vw, 20px)",
+        "h1": "clamp(17px, 1.89vw, 24px)",
+        "display": "clamp(21px, 2.27vw, 29px)",
+        "hero": "clamp(25px, 2.72vw, 35px)"
+      },
+      "families": {
+        "display": "VE Inter",
+        "body": "VE Inter",
+        "mono": "VE JetBrains Mono"
+      }
+    },
+    "layout": {
+      "maxWidth": 1440,
+      "gutter": 15,
+      "spacing": 4,
+      "radius": 8,
+      "borderWidth": 1,
+      "columns": 12,
+      "shadow": "0 16px 40px -32px rgba(23,32,46,.45)"
+    },
+    "materials": {
+      "surface": "flat",
+      "grain": 0,
+      "glassBlur": 0,
+      "gradient": "none",
+      "texture": "ninguna"
+    },
+    "motion": {
+      "level": "restrained",
+      "fastMs": 120,
+      "baseMs": 260,
+      "slowMs": 600,
+      "easeOut": "cubic-bezier(.16,1,.3,1)",
+      "easeInOut": "cubic-bezier(.65,0,.35,1)",
+      "spring": "cubic-bezier(.34,1.56,.64,1)",
+      "staggerMs": 30,
+      "camera": "sin cámara"
+    },
+    "composition": {
+      "focal": "contenido principal",
+      "alignment": "left",
+      "negativeSpace": 0.28,
+      "density": "compact",
+      "contrast": "balanced",
+      "headlineChars": 46,
+      "imageRatio": "16:9",
+      "notes": [
+        "La acción primaria compite con una sola cosa",
+        "Estados vacíos útiles"
+      ]
+    },
+    "effects": [
+      {
+        "id": "mesh-gradient",
+        "role": "fondo de marca sutil",
+        "reason": "Compatible con Aplicaciones profesionales (fondos; MIT (propio))."
+      },
+      {
+        "id": "chrome-text",
+        "role": "materiales",
+        "reason": "Categoría adecuada para app (materiales; MIT (propio))."
+      }
+    ],
+    "components": [
+      "Rail",
+      "Workspace",
+      "CommandBar",
+      "Inspector",
+      "EmptyState",
+      "Toast"
+    ],
+    "tokenSet": {
+      "color.bg": {
+        "$value": "#f4f6f9",
+        "$type": "color"
+      },
+      "color.surface": {
+        "$value": "#ffffff",
+        "$type": "color"
+      },
+      "color.elevated": {
+        "$value": "#eef2f7",
+        "$type": "color"
+      },
+      "color.text": {
+        "$value": "#17202e",
+        "$type": "color"
+      },
+      "color.muted": {
+        "$value": "#59677a",
+        "$type": "color"
+      },
+      "color.accent": {
+        "$value": "#2457d6",
+        "$type": "color"
+      },
+      "color.accent2": {
+        "$value": "#0f766e",
+        "$type": "color"
+      },
+      "color.border": {
+        "$value": "#d9e0e9",
+        "$type": "color"
+      },
+      "color.success": {
+        "$value": "#2f6b4f",
+        "$type": "color"
+      },
+      "color.warning": {
+        "$value": "#8a5a12",
+        "$type": "color"
+      },
+      "color.danger": {
+        "$value": "#a52a3b",
+        "$type": "color"
+      },
+      "color.focus": {
+        "$value": "#1742a8",
+        "$type": "color"
+      },
+      "color.accentInk": {
+        "$value": "#f4f6f9",
+        "$type": "color"
+      },
+      "font.size.caption": {
+        "$value": 10.5,
+        "$type": "dimension"
+      },
+      "font.size.small": {
+        "$value": 12.3,
+        "$type": "dimension"
+      },
+      "font.size.body": {
+        "$value": 14,
+        "$type": "dimension"
+      },
+      "font.size.lead": {
+        "$value": 17.5,
+        "$type": "dimension"
+      },
+      "font.size.h3": {
+        "$value": 16.8,
+        "$type": "dimension"
+      },
+      "font.size.h2": {
+        "$value": 20.2,
+        "$type": "dimension"
+      },
+      "font.size.h1": {
+        "$value": 24.2,
+        "$type": "dimension"
+      },
+      "font.size.display": {
+        "$value": 29,
+        "$type": "dimension"
+      },
+      "font.size.hero": {
+        "$value": 34.8,
+        "$type": "dimension"
+      },
+      "font.display": {
+        "$value": "VE Inter",
+        "$type": "fontFamily"
+      },
+      "font.body": {
+        "$value": "VE Inter",
+        "$type": "fontFamily"
+      },
+      "font.mono": {
+        "$value": "VE JetBrains Mono",
+        "$type": "fontFamily"
+      },
+      "font.scaleRatio": {
+        "$value": 1.2,
+        "$type": "number"
+      },
+      "space.base": {
+        "$value": 4,
+        "$type": "dimension"
+      },
+      "space.gutter": {
+        "$value": 15,
+        "$type": "dimension"
+      },
+      "radius.card": {
+        "$value": 8,
+        "$type": "dimension"
+      },
+      "border.width": {
+        "$value": 1,
+        "$type": "dimension"
+      },
+      "motion.fast": {
+        "$value": "120ms",
+        "$type": "duration"
+      },
+      "motion.base": {
+        "$value": "260ms",
+        "$type": "duration"
+      },
+      "motion.slow": {
+        "$value": "600ms",
+        "$type": "duration"
+      },
+      "motion.easeOut": {
+        "$value": "cubic-bezier(.16,1,.3,1)",
+        "$type": "cubicBezier"
+      },
+      "motion.stagger": {
+        "$value": "30ms",
+        "$type": "duration"
+      }
+    },
+    "rationale": [
+      "Proyecto app: Rail, Workspace, CommandBar antes de decorar.",
+      "Estilo Aplicaciones profesionales: Densidad controlada, familiaridad y foco en la tarea; la interfaz desaparece.",
+      "Tipografía sans + sans + mono; escala 1.2.",
+      "Densidad compact; espacio base 4 px y radio 8 px.",
+      "Movimiento restrained; transiciones de 120/260/600 ms.",
+      "Efectos elegidos por función: mesh-gradient (fondo de marca sutil), chrome-text (materiales).",
+      "Contraste de texto sobre fondo: 15.12:1."
+    ],
+    "warnings": [],
+    "fonts": [
+      {
+        "id": "inter",
+        "family": "VE Inter",
+        "file": "Inter_opsz,wght_.ttf",
+        "license": "OFL-1.1"
+      },
+      {
+        "id": "jetbrains-mono",
+        "family": "VE JetBrains Mono",
+        "file": "JetBrainsMono_wght_.ttf",
+        "license": "OFL-1.1"
+      }
+    ],
+    "audit": {
+      "structuralScore": 88.9,
+      "dimensions": [
+        {
+          "id": "contrast",
+          "score": 100,
+          "evidence": "15.12:1 OK; 16.37:1 OK; 5.32:1 OK; 5.69:1 OK"
+        },
+        {
+          "id": "type-scale",
+          "score": 55,
+          "evidence": "9 pasos, cuerpo 14px, ratio 1.2"
+        },
+        {
+          "id": "spacing",
+          "score": 100,
+          "evidence": "base 4px, gutter 15px"
+        },
+        {
+          "id": "hierarchy",
+          "score": 67,
+          "evidence": "ratio 1.2, display 29px"
+        },
+        {
+          "id": "restraint",
+          "score": 100,
+          "evidence": "2 efecto(s) para app"
+        },
+        {
+          "id": "motion-accessibility",
+          "score": 100,
+          "evidence": "restrained; base 260ms; stagger 30ms"
+        },
+        {
+          "id": "identity",
+          "score": 100,
+          "evidence": "4 reglas de firma; 3 anti-patrones"
+        }
+      ],
+      "contrastPairs": [
+        {
+          "fg": "#17202e",
+          "bg": "#f4f6f9",
+          "ratio": 15.12,
+          "pass": true
+        },
+        {
+          "fg": "#17202e",
+          "bg": "#ffffff",
+          "ratio": 16.37,
+          "pass": true
+        },
+        {
+          "fg": "#59677a",
+          "bg": "#f4f6f9",
+          "ratio": 5.32,
+          "pass": true
+        },
+        {
+          "fg": "#f4f6f9",
+          "bg": "#2457d6",
+          "ratio": 5.69,
+          "pass": true
+        }
+      ],
+      "warnings": [],
+      "note": "Auditoría estructural, no juicio artístico. Comprueba contraste, escala, ritmo, mesura y accesibilidad; la evaluación humana es independiente."
+    }
+  },
+  "paths": {
+    "outDir": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\desktop-app\\measure-b",
+    "intelligence": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\desktop-app\\measure-b\\intelligence.json",
+    "critic": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\desktop-app\\measure-b\\critic.json",
+    "criticMd": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\desktop-app\\measure-b\\critic.md",
+    "fidelity": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\desktop-app\\measure-b\\fidelity.json",
+    "fidelityMd": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\desktop-app\\measure-b\\fidelity.md",
+    "gates": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\desktop-app\\measure-b\\gates.json",
+    "gatesMd": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\desktop-app\\measure-b\\gates.md",
+    "dom": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\desktop-app\\measure-b\\dom\\dom.json",
+    "agentTask": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\desktop-app\\measure-b\\agent-task.md"
+  },
+  "description": [
+    "Calidad 89.7/100; fidelidad estructural 93.4/100; crítica 100/100.",
+    "Crítica 100/100 (A): no se detectaron defectos con los datos disponibles.",
+    "  Límite: Sin animaciones observadas no se afirma rigidez temporal.",
+    "  Límite: La crítica detecta defectos estructurales; no sustituye la aprobación artística humana.",
+    "Aceptado: 9/10 gates en verde; arte pendiente de revisión humana.",
+    "DOM Toda la operación, en una lectura. — B · 95 elementos visibles, 2 cabeceras, 0 botones.",
+    "Capas: 0; materiales: 12; animaciones: 0; efectos declarados: 0.",
+    "Contraste DOM: 0 incumplimiento(s) de 3; peor 7.22:1.",
+    "Overflow: 0×0 px; imágenes rotas: 0; botones sin nombre: 0.",
+    "Código fuente indexado: 2 archivo(s).",
+    "Tarea del agente: <repo>\\docs\\evidencia\\1.0-rc\\projects\\desktop-app\\measure-b\\agent-task.md",
+    "Límite: Sin animaciones observadas no se afirma rigidez temporal.",
+    "Límite: La crítica detecta defectos estructurales; no sustituye la aprobación artística humana."
+  ]
+}

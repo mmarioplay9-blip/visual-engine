@@ -58,6 +58,11 @@ import {
   describeContext,
   describeLoop,
 } from '../core/intelligence-ops.js';
+import { planInstall, applyInstall, uninstall, repair, inventory } from '../core/installer.js';
+import { PROFILES, getProfile, describeProfile, profileIds, type ProfileId } from '../core/profiles.js';
+import { detectActivation, activationSupport, activationGuidance } from '../core/activation.js';
+import { auditSecurity } from '../core/security.js';
+import { recordUsage, describeUsage } from '../core/usage.js';
 
 interface Parsed {
   _: string[];
@@ -155,6 +160,14 @@ COMANDOS
   deps                   Plan de dependencias por capacidad
   deps install <pkgs...> Instala paquetes gratuitos (requiere --yes)
   init                   Instala instrucciones, skills y config MCP en el proyecto
+  agents                 Detecta agentes y su estado real (diseñado/instalado/verificado)
+  install                Planifica la integración; --yes la aplica con respaldos
+  uninstall              Desinstala sólo lo gestionado (--yes, --restore)
+  repair                 Detecta y repara configuraciones dañadas (--yes)
+  profile [id]           Perfiles lite, professional y cinematic
+  activation "<texto>"   Decide si la tarea necesita criterio visual
+  security               Auditoría local de API, rutas, shell, permisos y copias
+  usage                  Consumo medido o estimado, sin confundirlos
   serve                  API local (127.0.0.1:4747)
   mcp                    Servidor MCP por stdio
   update                 Actualiza desde GitHub (git pull + instalación + build)
@@ -186,6 +199,12 @@ EJEMPLOS
   ve effects apply aurora-hero --out ./mi-web --set accent=#12e0c8
   ve adapters scaffold three --out ./mi-web/visual/three
   ve init --agents all --clients claude,cursor
+  ve agents --json
+  ve install --agents claude,opencode,freebuff --profile professional
+  ve install --yes --profile cinematic --verify
+  ve activation "HUD de videojuego con glitch" --agent claude
+  ve profile lite
+  ve security --json
 
 Todo funciona en local y gratis. Sin claves ni APIs de pago.`;
 
@@ -950,6 +969,148 @@ async function cmdBackup(p: Parsed) {
   throw new Error(`Subcomando desconocido: ${sub}. Usa list o restore.`);
 }
 
+async function cmdAgents(p: Parsed) {
+  const items = await inventory(s(p, 'project') ?? process.cwd());
+  if (jsonOut(p)) {
+    console.log(JSON.stringify(items, null, 2));
+    return;
+  }
+  console.log('Diseñado ≠ instalado ≠ verificado. La verificación MCP se ejecuta al instalar.\n');
+  for (const a of items) {
+    console.log(`${pad(a.id, 13)} ${pad(a.available ? 'OK' : 'FALTA', 6)} ${pad(a.version ?? '—', 22)} ${pad(a.integration, 10)} config ${a.configFound ? 'sí' : 'no'} · skill ${a.skillFound === null ? '—' : a.skillFound ? 'sí' : 'no'} · ${a.activation}`);
+  }
+  console.log('\nInstalar: ve install --yes --agents <ids> [--profile lite|professional|cinematic]');
+}
+
+function installOptions(p: Parsed) {
+  return {
+    projectDir: s(p, 'project') ?? process.cwd(),
+    agents: multi(p, 'agents'),
+    scope: (b(p, 'global') ? 'global' : 'project') as 'project' | 'global',
+    profile: (s(p, 'profile') ?? 'professional') as ProfileId,
+    confirm: b(p, 'yes') || b(p, 'confirm'),
+    force: b(p, 'force'),
+    allowGlobal: b(p, 'allow-global'),
+    verify: !b(p, 'no-verify'),
+  };
+}
+
+async function cmdInstall(p: Parsed) {
+  const opts = installOptions(p);
+  if (opts.confirm) {
+    const r = await applyInstall(opts);
+    if (jsonOut(p)) {
+      console.log(JSON.stringify(r, null, 2));
+      if (!r.ok) process.exitCode = 1;
+      return;
+    }
+    console.log(`Instalación ${r.ok ? 'aplicada' : 'no aplicada'} · perfil ${r.profile} · ${r.projectDir}`);
+    r.applied.forEach((f) => console.log(`  escrito   ${f}`));
+    r.skipped.forEach((f) => console.log(`  omitido   ${f}`));
+    r.backups.forEach((b) => console.log(`  respaldo  ${b.backup}`));
+    if (r.verification) console.log(`  MCP: ${r.verification.ok ? `verificado, ${r.verification.tools} herramientas en ${r.verification.durationMs} ms` : `sin verificar (${r.verification.error})`}`);
+    r.notes.forEach((n) => console.log(`  Nota: ${n}`));
+    if (!r.ok) process.exitCode = 1;
+    return;
+  }
+  const plan = await planInstall(opts);
+  if (jsonOut(p)) {
+    console.log(JSON.stringify(plan, null, 2));
+    return;
+  }
+  console.log(`Plan sin escribir · ${plan.projectDir} · perfil ${plan.profile} · ámbito ${plan.scope}`);
+  for (const a of plan.agents) console.log(`  ${pad(a.id, 13)} ${pad(a.available ? 'disponible' : 'ausente', 11)} ${a.integration}`);
+  for (const act of plan.actions) console.log(`  ${pad(act.action, 11)} ${act.target} — ${act.reason}`);
+  if (plan.heavyModels.length) console.log(`\nModelos Ollama presentes (no se instalan): ${plan.heavyModels.join(', ')}`);
+  console.log('\nPara escribir: ve install --yes [--agents ...] [--profile ...]');
+}
+
+function cmdUninstall(p: Parsed) {
+  const r = uninstall({ projectDir: s(p, 'project') ?? process.cwd(), confirm: b(p, 'yes'), restoreBackups: b(p, 'restore') });
+  if (jsonOut(p)) {
+    console.log(JSON.stringify(r, null, 2));
+    return;
+  }
+  r.removed.forEach((f) => console.log(`  eliminado ${f}`));
+  r.kept.forEach((f) => console.log(`  conservado ${f}`));
+  r.restored.forEach((f) => console.log(`  restaurado ${f}`));
+  r.notes.forEach((n) => console.log(`  ${n}`));
+}
+
+function cmdRepair(p: Parsed) {
+  const r = repair({ projectDir: s(p, 'project') ?? process.cwd(), confirm: b(p, 'yes') });
+  if (jsonOut(p)) {
+    console.log(JSON.stringify(r, null, 2));
+    return;
+  }
+  r.issues.forEach((i) => console.log(`  ${i.target}: ${i.problem} → ${i.fix}`));
+  r.fixed.forEach((f) => console.log(`  reparado ${f}`));
+  r.notes.forEach((n) => console.log(`  ${n}`));
+  if (r.issues.length && !b(p, 'yes')) console.log('\nPara aplicar reparaciones con copia: ve repair --yes');
+}
+
+function cmdProfile(p: Parsed) {
+  const id = p._[0];
+  if (!id) {
+    if (jsonOut(p)) {
+      console.log(JSON.stringify(Object.values(PROFILES), null, 2));
+      return;
+    }
+    for (const x of profileIds().map((k) => PROFILES[k])) console.log(`\n${describeProfile(x).join('\n  ')}`);
+    return;
+  }
+  const profile = getProfile(id);
+  if (jsonOut(p)) console.log(JSON.stringify(profile, null, 2));
+  else console.log(describeProfile(profile).join('\n'));
+}
+
+function cmdActivation(p: Parsed) {
+  const text = p._.join(' ').trim() || s(p, 'text');
+  if (!text) throw new Error('Uso: ve activation "solicitud" [--agent claude] [--profile lite]');
+  const r = detectActivation(text);
+  const agent = s(p, 'agent');
+  if (jsonOut(p)) {
+    console.log(JSON.stringify({ ...r, guidanceProfile: activationGuidance(s(p, 'profile') ?? 'professional'), agentSupport: agent ? activationSupport(agent) : undefined }, null, 2));
+    return;
+  }
+  console.log(`Activar: ${r.activate ? 'SÍ' : 'NO'} · confianza ${(r.confidence * 100).toFixed(0)}% · recomendación, no imposición`);
+  r.reasons.forEach((x) => console.log(`  ${x}`));
+  r.negatives.forEach((n) => console.log(`  Contra: ${n}`));
+  console.log(r.guidance);
+  if (agent) {
+    const a = activationSupport(agent);
+    console.log(`Agente ${a.agent}: ${a.mode} — ${a.note}`);
+  }
+}
+
+function cmdSecurity(p: Parsed) {
+  const r = auditSecurity({ projectDir: s(p, 'project') ?? process.cwd(), apiAllowsInstall: b(p, 'allow-install') });
+  if (jsonOut(p)) {
+    console.log(JSON.stringify(r, null, 2));
+    return;
+  }
+  console.log(r.summary);
+  r.checks.forEach((c) => console.log(`  ${c.status === 'pass' ? 'OK' : c.status === 'fail' ? 'FALLA' : 'N/A'} ${c.label}: ${c.detail}`));
+  r.limitations.forEach((l) => console.log(`  Límite: ${l}`));
+  if (!r.pass) process.exitCode = 1;
+}
+
+function cmdUsage(p: Parsed) {
+  const reported = b(p, 'reported');
+  const input = n(p, 'input');
+  const output = n(p, 'output');
+  if (input === undefined && output === undefined) throw new Error('Uso: ve usage --input N --output N [--reported] [--source agente]');
+  const r = reported
+    ? recordUsage({ reported: { inputTokens: input, outputTokens: output, source: s(p, 'source') ?? 'agente' } })
+    : recordUsage({ inputText: ' '.repeat(Math.max(0, (input ?? 0) * 4)), outputText: ' '.repeat(Math.max(0, (output ?? 0) * 4)) });
+  if (jsonOut(p)) {
+    console.log(JSON.stringify(r, null, 2));
+    return;
+  }
+  console.log(describeUsage(r));
+  r.limits.forEach((l) => console.log(`  Límite: ${l}`));
+}
+
 async function main() {
   const p = parse(process.argv.slice(2));
   const cmd = p._[0] ?? 'help';
@@ -1073,6 +1234,31 @@ async function main() {
       return;
     case 'init':
       await cmdInit(rest);
+      return;
+    case 'agents':
+      await cmdAgents(rest);
+      return;
+    case 'install':
+      await cmdInstall(rest);
+      return;
+    case 'uninstall':
+      cmdUninstall(rest);
+      return;
+    case 'repair':
+      cmdRepair(rest);
+      return;
+    case 'profile':
+    case 'profiles':
+      cmdProfile(rest);
+      return;
+    case 'activation':
+      cmdActivation(rest);
+      return;
+    case 'security':
+      cmdSecurity(rest);
+      return;
+    case 'usage':
+      cmdUsage(rest);
       return;
     case 'serve':
       await cmdServe(rest);

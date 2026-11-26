@@ -1,0 +1,98 @@
+{
+  "version": "0.5",
+  "score": 58,
+  "grade": "C",
+  "findings": [
+    {
+      "id": "composition-low",
+      "category": "composition",
+      "title": "Composición desequilibrada o con focos en competencia",
+      "severity": "high",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "source": "quality",
+          "metric": "composición",
+          "value": 52.9,
+          "threshold": 62,
+          "note": "balance de masa por cuadrantes"
+        }
+      ],
+      "location": {
+        "region": "center",
+        "component": "layout"
+      },
+      "fix": {
+        "kind": "css",
+        "summary": "Reequilibra la masa horizontal/vertical y deja un único punto de entrada.",
+        "property": "grid / align / max-width"
+      },
+      "status": "measured"
+    },
+    {
+      "id": "contrast",
+      "category": "accessibility",
+      "title": "Texto por debajo del contraste mínimo en el DOM",
+      "severity": "critical",
+      "confidence": 0.95,
+      "evidence": [
+        {
+          "source": "dom",
+          "metric": "incumplimientos",
+          "value": 6,
+          "threshold": 0
+        },
+        {
+          "source": "dom",
+          "metric": "peor contraste",
+          "value": "3.33:1",
+          "threshold": "4.5:1 (3:1 texto grande)"
+        }
+      ],
+      "location": {
+        "selector": "body > main.hero > header.masthead > p.issue:nth-of-type(2)",
+        "region": "top-right",
+        "box": {
+          "x": 983,
+          "y": 46,
+          "width": 221,
+          "height": 14
+        }
+      },
+      "fix": {
+        "kind": "css",
+        "summary": "Ajusta color/fondo del texto con peor contraste (3.33:1).",
+        "target": "body > main.hero > header.masthead > p.issue:nth-of-type(2)",
+        "property": "color / background-color",
+        "to": "≥4.5:1 o ≥3:1 si es texto grande"
+      },
+      "status": "measured"
+    }
+  ],
+  "counts": {
+    "critical": 1,
+    "high": 1,
+    "medium": 0,
+    "low": 0
+  },
+  "summary": "Crítica 58/100 (C): 1 crítico(s), 1 alto(s), 0 medio(s), 0 bajo(s).",
+  "agentTask": "# Tarea visual priorizada\n\nBrief: Analizar y mejorar hero.html\nEstilo: minimal-premium\nCrítica: Crítica 58/100 (C): 1 crítico(s), 1 alto(s), 0 medio(s), 0 bajo(s).\n\n## Corrige sólo estos defectos medidos\n\n### [CRITICAL] Texto por debajo del contraste mínimo en el DOM\n- Evidencia: incumplimientos=6 (objetivo 0); peor contraste=3.33:1 (objetivo 4.5:1 (3:1 texto grande))\n- Ubicación: body > main.hero > header.masthead > p.issue:nth-of-type(2) · top-right\n- Corrección: Ajusta color/fondo del texto con peor contraste (3.33:1).\n- Objetivo: body > main.hero > header.masthead > p.issue:nth-of-type(2)\n- Propiedad: color / background-color\n- Acción base: Sube el contraste del texto o cambia el fondo; no ocultes el foco.\n\n### [HIGH] Composición desequilibrada o con focos en competencia\n- Evidencia: composición=52.9 (objetivo 62)\n- Ubicación: center\n- Corrección: Reequilibra la masa horizontal/vertical y deja un único punto de entrada.\n- Propiedad: grid / align / max-width\n- Acción base: Reequilibra la masa y reduce la competencia entre focos; conserva un punto de entrada.\n\n## Reglas de la iteración\n\n1. No reescribas todo: aplica el cambio mínimo en la ubicación indicada.\n2. No añadas un efecto si no hay evidencia de que falta y una función que cumplir.\n3. Conserva las decisiones que ya pasan los umbrales.\n4. Vuelve a capturar y compara antes/después; revierte si no mejora.\n5. La aprobación artística final es humana.\n\n## Límites\n\n- Sin medición de rendimiento no se afirma FPS ni carga.\n- Sin animaciones observadas no se afirma rigidez temporal.\n- La crítica detecta defectos estructurales; no sustituye la aprobación artística humana.",
+  "limitations": [
+    "Sin medición de rendimiento no se afirma FPS ni carga.",
+    "Sin animaciones observadas no se afirma rigidez temporal.",
+    "La crítica detecta defectos estructurales; no sustituye la aprobación artística humana."
+  ],
+  "measured": {
+    "quality": 81.3,
+    "fidelity": 83.3,
+    "composition": 52.9,
+    "hierarchy": 87.4,
+    "typography": 100,
+    "depth": 65.4,
+    "lighting": 86.4,
+    "coherence": 100,
+    "transitions": 100,
+    "performance": 74.5
+  },
+  "artisticJudgment": false
+}

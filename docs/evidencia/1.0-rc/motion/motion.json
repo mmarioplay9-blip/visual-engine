@@ -1,0 +1,81 @@
+{
+  "videos": {
+    "reference": "references/motion-reference.mp4",
+    "before": "motion/before.mp4",
+    "after": "motion/after.mp4"
+  },
+  "info": {
+    "reference": {
+      "path": "<repo>\\docs\\evidencia\\1.0-rc\\references\\motion-reference.mp4",
+      "kind": "video",
+      "width": 1280,
+      "height": 720,
+      "duration": 6,
+      "fps": 25,
+      "frames": 150,
+      "codec": "h264",
+      "hasAudio": false
+    },
+    "before": {
+      "path": "<repo>\\docs\\evidencia\\1.0-rc\\motion\\before.mp4",
+      "kind": "video",
+      "width": 1280,
+      "height": 720,
+      "duration": 5.8,
+      "fps": 25,
+      "frames": 145,
+      "codec": "h264",
+      "hasAudio": false
+    },
+    "after": {
+      "path": "<repo>\\docs\\evidencia\\1.0-rc\\motion\\after.mp4",
+      "kind": "video",
+      "width": 1280,
+      "height": 720,
+      "duration": 5.8,
+      "fps": 25,
+      "frames": 145,
+      "codec": "h264",
+      "hasAudio": false
+    }
+  },
+  "referenceCuts": [
+    2,
+    4
+  ],
+  "afterCuts": [
+    0.08,
+    1.84,
+    3.84
+  ],
+  "afterPace": 31.03,
+  "temporal": {
+    "before": {
+      "score": 37.6,
+      "grade": "D",
+      "curves": {
+        "luma": 0.178,
+        "lumaCurve": 0,
+        "motionCorrelation": 0.403,
+        "cutF1": 0,
+        "driftSeconds": 0
+      }
+    },
+    "after": {
+      "score": 76.6,
+      "grade": "B",
+      "curves": {
+        "luma": 0.694,
+        "lumaCurve": -0.331,
+        "motionCorrelation": 0.508,
+        "cutF1": 0.8,
+        "driftSeconds": 0
+      },
+      "warnings": [
+        "Rendimiento no medido: no se aportaron tiempos de captura. La dimensión queda fuera del total."
+      ]
+    }
+  },
+  "correction": null,
+  "note": "Vídeo real grabado con Playwright a 1280×720 y convertido a 25 fps. Se recortan 0,2 s de arranque y 0,4 s de cola del contexto de grabación. La referencia es un montaje de tres planos de una obra CC0 del MET, no una pieza externa licenciada. La corrección de exposición, si se aplica, es un ajuste de vídeo declarado y no un cambio de métrica."
+}

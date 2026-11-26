@@ -1,0 +1,76 @@
+# Seguridad · Visual Engine 1.0.0-rc.1
+
+## Modelo
+
+La herramienta se ejecuta con los permisos del usuario y opera sobre archivos del proyecto. La
+superficie sensible es: instalación de configuraciones, ejecución de procesos, API local,
+restauración de copias y dependencias de terceros.
+
+## Controles implementados
+
+| Área | Control | Verificación |
+| --- | --- | --- |
+| API | Loopback por defecto; otro host exige `--allow-remote` | `auditSecurity` y prueba de host externo |
+| Instalación | Sin `confirm` no escribe; `--global` exige `--allow-global` | plan/apply y pruebas de instalador |
+| Configuraciones | Respaldo previo y manifiesto; no sobrescribe archivos ajenos | prueba con `CLAUDE.md` y `.mcp.json` previos |
+| Rutas | Contención con `path.relative`, no prefijos de cadena | `withinRoot` y auditoría del manifiesto |
+| Procesos | `spawn` con argumentos en array; sin `shell:true` | escaneo de `src/` |
+| Timeouts | El hijo se mata, se cierran sus tuberías y se comprueba que no queda vivo | prueba `1.0 · un timeout no deja procesos hijos vivos` |
+| `.cmd` de Windows | `cmd.exe /d /s /c` sólo con binario y argumentos del registro | detección de Cursor/OpenCode/Freebuff |
+| Lanzadores interactivos | Cursor, Freebuff y MAEX se localizan en PATH y **no se ejecutan** | inventario de 9 agentes |
+| Dependencias | Instalación opt-in con `--allow-install`/`--yes`; nada de pago | rutas y CLI |
+| Copias | Se conservan; restaurar es una acción explícita | `uninstall --restore`, `repair --yes` |
+| Desinstalación | Sólo archivos del manifiesto; no borra configuración compartida | prueba de ciclo completo |
+
+## Auditoría local
+
+```bash
+ve security --json
+```
+
+Comprueba host, contención, ausencia de shell, permisos POSIX (no aplica en Windows), gate de
+instalación y existencia de copias. Devuelve `pass: false` si hay un bloqueo.
+
+Resultado en esta máquina: **sin bloqueos, 0 avisos**; 5 comprobaciones `OK`, 3 `N/A` (permisos
+POSIX, manifiesto aún no creado, copias aún no creadas) y 3 límites declarados.
+
+## Dependencias y licencias
+
+`npm audit --omit=dev`:
+
+| Paquete | Severidad | Aviso | Decisión |
+| --- | --- | --- | --- |
+| `zod` < 4.6.6 | alta | GHSA-mrhx-c7xc-m3w5: agotamiento de memoria con colecciones enormes | **No se actualiza**: el SDK de MCP 1.20 usa la API de zod 3 y el salto a 4 es incompatible. El servidor es local, por stdio y con esquemas estáticos; no acepta colecciones de un cliente remoto. Se documenta y se revisará cuando el SDK soporte zod 4. |
+
+Inventario de licencias de `node_modules`: MIT (247), ISC (17), BSD-2 (9), Apache-2.0 (7),
+BSD-3 (5), MPL-2.0 (4, `mediabunny`), Unlicense (2), 0BSD, BlueOak, CC-BY-4.0 (`caniuse-lite`),
+Python-2.0, Remotion License (11) y GSAP standard license. Ninguna licencia copyleft fuerte en
+código que se distribuya; MPL-2.0 es a nivel de archivo y no se modifica.
+
+## Secretos y rutas personales
+
+Revisión de todos los archivos versionados:
+
+```bash
+git grep -n -I -E "sk-[A-Za-z0-9]{16,}|ghp_[A-Za-z0-9]{20,}|AKIA[0-9A-Z]{16}|BEGIN (RSA|OPENSSH|EC) PRIVATE KEY"
+git grep -n -I -E "D:\\\\proyectos|C:\\\\Users|/Users/|/home/"
+```
+
+Resultado: **0 coincidencias**. No hay `.env`, credenciales ni claves. Las rutas absolutas que
+quedaban en el metadato de referencias de 0.6 se convirtieron a rutas relativas. Los JSONL del
+A/B con Codex se publican saneados (`<repo>`, `<home>`).
+
+## Límites
+
+- No es un pentest ni revisa NTFS, cortafuegos o el sandbox de cada agente.
+- Los agentes de terceros tienen sus propios permisos y riesgos.
+- El contenido de referencias y proyectos puede ser sensible: todo queda local, pero el agente
+  conectado decide qué envía a su proveedor.
+- No hay autenticación en la API local; no la expongas fuera de loopback.
+- La auditoría de dependencias es la de `npm audit`; no sustituye una revisión de código de cada
+  paquete.
+
+## Reportar
+
+Abre un issue privado o escribe al mantenedor antes de publicar detalles. Incluye versión,
+sistema, comando y traza sin datos personales.

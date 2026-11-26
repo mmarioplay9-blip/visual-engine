@@ -1,6 +1,6 @@
-# Capacidades de Visual Engine 0.5
+# Capacidades de Visual Engine 1.0.0-rc.1
 
-Fecha: 2026-11-25 · Windows 11 · Node 26.13.1 · FFmpeg 9.1 · Playwright 1.65.1 ·
+Fecha: 2026-11-26 · Windows 11 · Node 26.13.1 · FFmpeg 9.1 · Playwright 1.65.1 ·
 Tesseract 5.4 · Ollama con `llava:7b` · RTX 4060 Ti (16.380 MB VRAM).
 
 Tres estados, sin mezclarlos:
@@ -9,6 +9,65 @@ Tres estados, sin mezclarlos:
 - **Estimado**: hay una señal medida, pero la interpretación es un proxy; se devuelve como
   `estimated` con su evidencia.
 - **No disponible**: falta una herramienta o un modelo; se devuelve el motivo exacto.
+
+## 1.0.0-rc.1 · release candidate
+
+| Requisito | Implementación | Estado |
+| --- | --- | --- |
+| Suite | 62 pruebas anteriores + procesos huérfanos | **63/63**, exit 0, 221 s |
+| Estabilización | sonda de agentes 6,63 s → 0,98 s; timeout 124; EPIPE; estado de instalación | **Verificado** con pruebas y medición |
+| Calidad visual | 5 proyectos nuevos A/B con referencias CC0 | **4/5 accept** sin tocar gates; 1 rechazo publicado |
+| Fidelidad temporal | vídeo de 3 planos contra referencia de 6 s | **76,6/100** (0.6: 59,2) |
+| WebGL | escena Three.js interactiva | **1,49° / 1,5°**, error 0,01°, 184 frames |
+| Agente real | Codex `exec` en dos directorios limpios | **Invocó 9 comandos `ve`**; calidad B 62,3 < A 77,1: resultado negativo publicado |
+| Instalación | clon limpio → instalar, reparar, desinstalar, actualizar | **Verificado** en Windows, exit 0 |
+| Seguridad | `ve security`, `npm audit`, licencias, secretos y rutas | Sin bloqueos; **1 alerta alta de zod** documentada; 0 secretos |
+| Plataformas | Windows ejecutado; Linux/macOS con CI preparado | **No verificado** fuera de Windows |
+
+Suite: **63/63** pruebas. MCP: **44 herramientas**. CLI: **47 comandos**. Agentes: **9**.
+Detalle: `docs/VERIFICACION-1.0.md`.
+
+### Causas corregidas en 1.0-rc
+
+- `maex` es un lanzador interactivo: se localiza sin ejecutarse; el inventario baja de 6,63 s a
+  0,98 s y deja de abrir sesiones.
+- Un timeout se confundía con el código 1; ahora es 124 y hay prueba de que no quedan hijos vivos.
+- Instalar marcaba el agente como «diseñado» y Codex no recibía bloque MCP de proyecto.
+- `AGENTS.md` declaraba 39 comandos; son 47.
+
+### Límites de la RC
+
+- Sin ejecución en Linux/macOS.
+- El proxy de composición/coherencia penalizó una página válida en el A/B con Codex; falta
+  revisión artística humana.
+- `zod` 3 con alerta alta y sin actualización compatible con el SDK de MCP.
+- Freebuff (sin modo no interactivo) y Claude Code (`api_error`) no verificados como consumidores.
+
+## 0.6 · extensión universal
+
+| Requisito | Implementación | Estado |
+| --- | --- | --- |
+| Universal Installer | detección, plan, instalación, actualización, reparación, desinstalación y respaldos | **Verificado** en Windows, con ciclo completo y manifiesto |
+| Compatibilidad | Codex, Claude Code, Cursor, Gemini, Freebuff, OpenCode, MAEX, Ollama y MCP genérico | **Diseñado** 9/9; **verificado** por handshake MCP; autonomía real en OpenCode y Codex |
+| Activación | señales, confianza, opt-out y mecanismo real por agente | **Verificado** (12 casos positivos/negativos) |
+| Tokens | `reported`, `estimated`, `unavailable` | **Verificado**; nunca se mezclan |
+| Perfiles | Lite, Professional, Cinematic | **Verificado**; `aesthetic: none` |
+| Seguridad | loopback, contención, sin shell libre, copias | **Verificado**; sólo Windows |
+| A/B 0.6 | siete casos, cinco repetidos y dos con referencia local | **Verificado**: los siete `accept` sin relajar gates |
+
+Suite: **62/62** pruebas (54 anteriores + 8 de 0.6). MCP: **44 herramientas**.
+CLI: **47 comandos**. Detalle: `docs/VERIFICACION-0.6.md`.
+
+### Causas corregidas en 0.6
+
+- Paleta derivada de la referencia con contraste WCAG (antes 0–14,5 de coherencia).
+- Luz clave/relleno/viñeta y materiales; HUD y 3D con tokens (antes colores fijos).
+- Debugger lee `animation-timing-function` real, no `getTiming().easing`.
+- El A/B pasa FPS medidos al gate en lugar de un proxy.
+
+Límites: aprobación artística humana pendiente; references de motion siguen
+siendo un montaje derivado; Linux/macOS preparados pero no ejecutados; Claude
+Code devolvió `api_error` en la prueba no interactiva.
 
 ## 0.5 · Visual Intelligence Loop
 

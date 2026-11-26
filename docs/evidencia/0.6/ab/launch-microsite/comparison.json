@@ -1,0 +1,50 @@
+{
+  "id": "launch-microsite",
+  "reference": {
+    "title": "Orbital (render propio)",
+    "artist": "Visual Engine",
+    "date": "2026",
+    "url": "library/showcase/orbital/preview.png",
+    "license": "CC0 / Public Domain"
+  },
+  "source": {
+    "aChars": 2992,
+    "bChars": 5321,
+    "aTokensEstimate": 748,
+    "bTokensEstimate": 1331,
+    "modelTokens": null,
+    "iterations": 0
+  },
+  "a": {
+    "quality": 87.1,
+    "fidelity": 71.8,
+    "pixelSimilarity": 84.7,
+    "accessibility": 100,
+    "composition": 90.5,
+    "typography": 100,
+    "performance": 86.3,
+    "fps": 61.5,
+    "loadMs": 820,
+    "critic": 88,
+    "critical": 0,
+    "high": 1,
+    "gates": "reject",
+    "webgl": null
+  },
+  "b": {
+    "quality": 92,
+    "fidelity": 79.9,
+    "pixelSimilarity": 90.6,
+    "accessibility": 100,
+    "composition": 79.1,
+    "typography": 100,
+    "performance": 83.5,
+    "fps": 60.9,
+    "loadMs": 824,
+    "critic": 94,
+    "critical": 0,
+    "high": 0,
+    "gates": "accept",
+    "webgl": null
+  }
+}

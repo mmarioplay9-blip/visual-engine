@@ -1,0 +1,31 @@
+{
+  "version": "0.5",
+  "score": 100,
+  "grade": "A",
+  "findings": [],
+  "counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "summary": "Crítica 100/100 (A): no se detectaron defectos con los datos disponibles.",
+  "agentTask": "# Tarea visual priorizada\n\nBrief: Escena 3D inmersiva con Three.js, cámara real y reduced motion.\nEstilo: immersive-3d\nCrítica: Crítica 100/100 (A): no se detectaron defectos con los datos disponibles.\n\n## Corrige sólo estos defectos medidos\n\nNo hay defectos medidos. No reescribas el proyecto; solicita revisión artística humana.\n## Reglas de la iteración\n\n1. No reescribas todo: aplica el cambio mínimo en la ubicación indicada.\n2. No añadas un efecto si no hay evidencia de que falta y una función que cumplir.\n3. Conserva las decisiones que ya pasan los umbrales.\n4. Vuelve a capturar y compara antes/después; revierte si no mejora.\n5. La aprobación artística final es humana.\n\n## Límites\n\n- Sin animaciones observadas no se afirma rigidez temporal.\n- La crítica detecta defectos estructurales; no sustituye la aprobación artística humana.",
+  "limitations": [
+    "Sin animaciones observadas no se afirma rigidez temporal.",
+    "La crítica detecta defectos estructurales; no sustituye la aprobación artística humana."
+  ],
+  "measured": {
+    "quality": 87.2,
+    "fidelity": 77.6,
+    "composition": 90.2,
+    "hierarchy": 95.3,
+    "typography": 100,
+    "depth": 90.3,
+    "lighting": 62.1,
+    "coherence": 100,
+    "transitions": 100,
+    "performance": 54.9
+  },
+  "artisticJudgment": false
+}

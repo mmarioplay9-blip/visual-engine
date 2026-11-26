@@ -1,0 +1,5251 @@
+{
+  "version": "0.5",
+  "review": {
+    "outDir": "<repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\measure-a\\review",
+    "score": 41.9,
+    "grade": "D",
+    "reference": {
+      "path": "<repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\reference.jpg",
+      "profile": {
+        "source": "<repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\reference.jpg",
+        "kind": "video",
+        "width": 1280,
+        "height": 720,
+        "aspect": 1.778,
+        "duration": 0.04,
+        "fps": 25,
+        "frameCount": 10,
+        "aggregate": {
+          "luma": 0.761,
+          "contrast": 0.067,
+          "saturation": 0.202,
+          "colorfulness": 0.15,
+          "edgeDensity": 0.298,
+          "darkRatio": 0
+        },
+        "palette": [
+          {
+            "hex": "#d4c6ac",
+            "rgb": [
+              212,
+              198,
+              172
+            ],
+            "share": 0.8065
+          },
+          {
+            "hex": "#b5a489",
+            "rgb": [
+              181,
+              164,
+              137
+            ],
+            "share": 0.161
+          },
+          {
+            "hex": "#f4e8c8",
+            "rgb": [
+              244,
+              232,
+              200
+            ],
+            "share": 0.027
+          },
+          {
+            "hex": "#988567",
+            "rgb": [
+              152,
+              133,
+              103
+            ],
+            "share": 0.0054
+          },
+          {
+            "hex": "#786850",
+            "rgb": [
+              120,
+              104,
+              80
+            ],
+            "share": 0.0001
+          }
+        ],
+        "motion": 0,
+        "motionCurve": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "cuts": [],
+        "pace": 0,
+        "hueHistogram": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "frames": [
+          {
+            "t": 0.001,
+            "luma": 0.761,
+            "contrast": 0.067,
+            "saturation": 0.202,
+            "colorfulness": 0.15,
+            "edgeDensity": 0.298,
+            "darkRatio": 0,
+            "brightRatio": 0.021,
+            "quadrants": [
+              0.244,
+              0.247,
+              0.258,
+              0.25
+            ],
+            "palette": [
+              {
+                "hex": "#d4c6ac",
+                "rgb": [
+                  212,
+                  198,
+                  172
+                ],
+                "share": 0.8065
+              },
+              {
+                "hex": "#b5a489",
+                "rgb": [
+                  181,
+                  164,
+                  137
+                ],
+                "share": 0.161
+              },
+              {
+                "hex": "#f4e8c8",
+                "rgb": [
+                  244,
+                  232,
+                  200
+                ],
+                "share": 0.027
+              },
+              {
+                "hex": "#988567",
+                "rgb": [
+                  152,
+                  133,
+                  103
+                ],
+                "share": 0.0054
+              }
+            ]
+          },
+          {
+            "t": 0.005,
+            "luma": 0.761,
+            "contrast": 0.067,
+            "saturation": 0.202,
+            "colorfulness": 0.15,
+            "edgeDensity": 0.298,
+            "darkRatio": 0,
+            "brightRatio": 0.021,
+            "quadrants": [
+              0.244,
+              0.247,
+              0.258,
+              0.25
+            ],
+            "palette": [
+              {
+                "hex": "#d4c6ac",
+                "rgb": [
+                  212,
+                  198,
+                  172
+                ],
+                "share": 0.8065
+              },
+              {
+                "hex": "#b5a489",
+                "rgb": [
+                  181,
+                  164,
+                  137
+                ],
+                "share": 0.161
+              },
+              {
+                "hex": "#f4e8c8",
+                "rgb": [
+                  244,
+                  232,
+                  200
+                ],
+                "share": 0.027
+              },
+              {
+                "hex": "#988567",
+                "rgb": [
+                  152,
+                  133,
+                  103
+                ],
+                "share": 0.0054
+              }
+            ]
+          },
+          {
+            "t": 0.01,
+            "luma": 0.761,
+            "contrast": 0.067,
+            "saturation": 0.202,
+            "colorfulness": 0.15,
+            "edgeDensity": 0.298,
+            "darkRatio": 0,
+            "brightRatio": 0.021,
+            "quadrants": [
+              0.244,
+              0.247,
+              0.258,
+              0.25
+            ],
+            "palette": [
+              {
+                "hex": "#d4c6ac",
+                "rgb": [
+                  212,
+                  198,
+                  172
+                ],
+                "share": 0.8065
+              },
+              {
+                "hex": "#b5a489",
+                "rgb": [
+                  181,
+                  164,
+                  137
+                ],
+                "share": 0.161
+              },
+              {
+                "hex": "#f4e8c8",
+                "rgb": [
+                  244,
+                  232,
+                  200
+                ],
+                "share": 0.027
+              },
+              {
+                "hex": "#988567",
+                "rgb": [
+                  152,
+                  133,
+                  103
+                ],
+                "share": 0.0054
+              }
+            ]
+          },
+          {
+            "t": 0.014,
+            "luma": 0.761,
+            "contrast": 0.067,
+            "saturation": 0.202,
+            "colorfulness": 0.15,
+            "edgeDensity": 0.298,
+            "darkRatio": 0,
+            "brightRatio": 0.021,
+            "quadrants": [
+              0.244,
+              0.247,
+              0.258,
+              0.25
+            ],
+            "palette": [
+              {
+                "hex": "#d4c6ac",
+                "rgb": [
+                  212,
+                  198,
+                  172
+                ],
+                "share": 0.8065
+              },
+              {
+                "hex": "#b5a489",
+                "rgb": [
+                  181,
+                  164,
+                  137
+                ],
+                "share": 0.161
+              },
+              {
+                "hex": "#f4e8c8",
+                "rgb": [
+                  244,
+                  232,
+                  200
+                ],
+                "share": 0.027
+              },
+              {
+                "hex": "#988567",
+                "rgb": [
+                  152,
+                  133,
+                  103
+                ],
+                "share": 0.0054
+              }
+            ]
+          },
+          {
+            "t": 0.018,
+            "luma": 0.761,
+            "contrast": 0.067,
+            "saturation": 0.202,
+            "colorfulness": 0.15,
+            "edgeDensity": 0.298,
+            "darkRatio": 0,
+            "brightRatio": 0.021,
+            "quadrants": [
+              0.244,
+              0.247,
+              0.258,
+              0.25
+            ],
+            "palette": [
+              {
+                "hex": "#d4c6ac",
+                "rgb": [
+                  212,
+                  198,
+                  172
+                ],
+                "share": 0.8065
+              },
+              {
+                "hex": "#b5a489",
+                "rgb": [
+                  181,
+                  164,
+                  137
+                ],
+                "share": 0.161
+              },
+              {
+                "hex": "#f4e8c8",
+                "rgb": [
+                  244,
+                  232,
+                  200
+                ],
+                "share": 0.027
+              },
+              {
+                "hex": "#988567",
+                "rgb": [
+                  152,
+                  133,
+                  103
+                ],
+                "share": 0.0054
+              }
+            ]
+          },
+          {
+            "t": 0.022,
+            "luma": 0.761,
+            "contrast": 0.067,
+            "saturation": 0.202,
+            "colorfulness": 0.15,
+            "edgeDensity": 0.298,
+            "darkRatio": 0,
+            "brightRatio": 0.021,
+            "quadrants": [
+              0.244,
+              0.247,
+              0.258,
+              0.25
+            ],
+            "palette": [
+              {
+                "hex": "#d4c6ac",
+                "rgb": [
+                  212,
+                  198,
+                  172
+                ],
+                "share": 0.8065
+              },
+              {
+                "hex": "#b5a489",
+                "rgb": [
+                  181,
+                  164,
+                  137
+                ],
+                "share": 0.161
+              },
+              {
+                "hex": "#f4e8c8",
+                "rgb": [
+                  244,
+                  232,
+                  200
+                ],
+                "share": 0.027
+              },
+              {
+                "hex": "#988567",
+                "rgb": [
+                  152,
+                  133,
+                  103
+                ],
+                "share": 0.0054
+              }
+            ]
+          },
+          {
+            "t": 0.026,
+            "luma": 0.761,
+            "contrast": 0.067,
+            "saturation": 0.202,
+            "colorfulness": 0.15,
+            "edgeDensity": 0.298,
+            "darkRatio": 0,
+            "brightRatio": 0.021,
+            "quadrants": [
+              0.244,
+              0.247,
+              0.258,
+              0.25
+            ],
+            "palette": [
+              {
+                "hex": "#d4c6ac",
+                "rgb": [
+                  212,
+                  198,
+                  172
+                ],
+                "share": 0.8065
+              },
+              {
+                "hex": "#b5a489",
+                "rgb": [
+                  181,
+                  164,
+                  137
+                ],
+                "share": 0.161
+              },
+              {
+                "hex": "#f4e8c8",
+                "rgb": [
+                  244,
+                  232,
+                  200
+                ],
+                "share": 0.027
+              },
+              {
+                "hex": "#988567",
+                "rgb": [
+                  152,
+                  133,
+                  103
+                ],
+                "share": 0.0054
+              }
+            ]
+          },
+          {
+            "t": 0.03,
+            "luma": 0.761,
+            "contrast": 0.067,
+            "saturation": 0.202,
+            "colorfulness": 0.15,
+            "edgeDensity": 0.298,
+            "darkRatio": 0,
+            "brightRatio": 0.021,
+            "quadrants": [
+              0.244,
+              0.247,
+              0.258,
+              0.25
+            ],
+            "palette": [
+              {
+                "hex": "#d4c6ac",
+                "rgb": [
+                  212,
+                  198,
+                  172
+                ],
+                "share": 0.8065
+              },
+              {
+                "hex": "#b5a489",
+                "rgb": [
+                  181,
+                  164,
+                  137
+                ],
+                "share": 0.161
+              },
+              {
+                "hex": "#f4e8c8",
+                "rgb": [
+                  244,
+                  232,
+                  200
+                ],
+                "share": 0.027
+              },
+              {
+                "hex": "#988567",
+                "rgb": [
+                  152,
+                  133,
+                  103
+                ],
+                "share": 0.0054
+              }
+            ]
+          },
+          {
+            "t": 0.035,
+            "luma": 0.761,
+            "contrast": 0.067,
+            "saturation": 0.202,
+            "colorfulness": 0.15,
+            "edgeDensity": 0.298,
+            "darkRatio": 0,
+            "brightRatio": 0.021,
+            "quadrants": [
+              0.244,
+              0.247,
+              0.258,
+              0.25
+            ],
+            "palette": [
+              {
+                "hex": "#d4c6ac",
+                "rgb": [
+                  212,
+                  198,
+                  172
+                ],
+                "share": 0.8065
+              },
+              {
+                "hex": "#b5a489",
+                "rgb": [
+                  181,
+                  164,
+                  137
+                ],
+                "share": 0.161
+              },
+              {
+                "hex": "#f4e8c8",
+                "rgb": [
+                  244,
+                  232,
+                  200
+                ],
+                "share": 0.027
+              },
+              {
+                "hex": "#988567",
+                "rgb": [
+                  152,
+                  133,
+                  103
+                ],
+                "share": 0.0054
+              }
+            ]
+          },
+          {
+            "t": 0.039,
+            "luma": 0.761,
+            "contrast": 0.067,
+            "saturation": 0.202,
+            "colorfulness": 0.15,
+            "edgeDensity": 0.298,
+            "darkRatio": 0,
+            "brightRatio": 0.021,
+            "quadrants": [
+              0.244,
+              0.247,
+              0.258,
+              0.25
+            ],
+            "palette": [
+              {
+                "hex": "#d4c6ac",
+                "rgb": [
+                  212,
+                  198,
+                  172
+                ],
+                "share": 0.8065
+              },
+              {
+                "hex": "#b5a489",
+                "rgb": [
+                  181,
+                  164,
+                  137
+                ],
+                "share": 0.161
+              },
+              {
+                "hex": "#f4e8c8",
+                "rgb": [
+                  244,
+                  232,
+                  200
+                ],
+                "share": 0.027
+              },
+              {
+                "hex": "#988567",
+                "rgb": [
+                  152,
+                  133,
+                  103
+                ],
+                "share": 0.0054
+              }
+            ]
+          }
+        ],
+        "createdAt": "2026-11-25T21:13:29.044Z",
+        "warnings": [
+          "El detector de escenas de FFmpeg no encontró cortes por encima de 0.2."
+        ]
+      },
+      "description": [
+        "Fuente: <repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\reference.jpg",
+        "Formato: 1280x720 (1.78:1), video, 0.04 s, 25 fps",
+        "Luminancia media 76.1%, contraste 6.7%, saturación 20.2%",
+        "Colorido 15.0%, densidad de bordes 29.8%, zona oscura 0.0%",
+        "Paleta: #d4c6ac 81% · #b5a489 16% · #f4e8c8 3% · #988567 1% · #786850 0%",
+        "Movimiento medio 0.00 · cortes 0 · ritmo 0 cortes/min",
+        "Pico de movimiento (p90) 0.00",
+        "Aviso: El detector de escenas de FFmpeg no encontró cortes por encima de 0.2."
+      ]
+    },
+    "target": {
+      "url": "http://127.0.0.1:60184/a.html",
+      "title": "Toda la operación, en una sola lectura. — A",
+      "frames": [
+        "<repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\measure-a\\review\\captures\\capture-01.png",
+        "<repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\measure-a\\review\\captures\\capture-02.png",
+        "<repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\measure-a\\review\\captures\\capture-03.png",
+        "<repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\measure-a\\review\\captures\\capture-04.png",
+        "<repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\measure-a\\review\\captures\\capture-05.png",
+        "<repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\measure-a\\review\\captures\\capture-06.png"
+      ],
+      "errors": [],
+      "consoleErrors": [],
+      "profile": {
+        "source": "captura:http://127.0.0.1:60184/a.html",
+        "kind": "sequence",
+        "width": 1280,
+        "height": 720,
+        "aspect": 1.778,
+        "duration": 0,
+        "fps": 0,
+        "frameCount": 6,
+        "aggregate": {
+          "luma": 0.118,
+          "contrast": 0.124,
+          "saturation": 0.619,
+          "colorfulness": 0.207,
+          "edgeDensity": 0.129,
+          "darkRatio": 0.523
+        },
+        "palette": [
+          {
+            "hex": "#0f192f",
+            "rgb": [
+              15,
+              25,
+              47
+            ],
+            "share": 0.9335
+          },
+          {
+            "hex": "#69e7b8",
+            "rgb": [
+              105,
+              231,
+              184
+            ],
+            "share": 0.0163
+          },
+          {
+            "hex": "#405361",
+            "rgb": [
+              64,
+              83,
+              97
+            ],
+            "share": 0.0245
+          },
+          {
+            "hex": "#273947",
+            "rgb": [
+              39,
+              57,
+              71
+            ],
+            "share": 0.0033
+          },
+          {
+            "hex": "#6d7385",
+            "rgb": [
+              109,
+              115,
+              133
+            ],
+            "share": 0.0057
+          },
+          {
+            "hex": "#51ad8d",
+            "rgb": [
+              81,
+              173,
+              141
+            ],
+            "share": 0.0025
+          }
+        ],
+        "motion": 0,
+        "motionCurve": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "cuts": [],
+        "pace": 0,
+        "hueHistogram": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0.019,
+          0.028,
+          0.939,
+          0,
+          0,
+          0,
+          0
+        ],
+        "frames": [
+          {
+            "t": 0,
+            "luma": 0.118,
+            "contrast": 0.124,
+            "saturation": 0.619,
+            "colorfulness": 0.207,
+            "edgeDensity": 0.129,
+            "darkRatio": 0.523,
+            "brightRatio": 0.001,
+            "quadrants": [
+              0.259,
+              0.172,
+              0.228,
+              0.341
+            ],
+            "palette": [
+              {
+                "hex": "#0f192f",
+                "rgb": [
+                  15,
+                  25,
+                  47
+                ],
+                "share": 0.9335
+              },
+              {
+                "hex": "#69e7b8",
+                "rgb": [
+                  105,
+                  231,
+                  184
+                ],
+                "share": 0.0163
+              },
+              {
+                "hex": "#405361",
+                "rgb": [
+                  64,
+                  83,
+                  97
+                ],
+                "share": 0.0245
+              },
+              {
+                "hex": "#273947",
+                "rgb": [
+                  39,
+                  57,
+                  71
+                ],
+                "share": 0.0033
+              }
+            ]
+          },
+          {
+            "t": 0.25,
+            "luma": 0.118,
+            "contrast": 0.124,
+            "saturation": 0.619,
+            "colorfulness": 0.207,
+            "edgeDensity": 0.129,
+            "darkRatio": 0.523,
+            "brightRatio": 0.001,
+            "quadrants": [
+              0.259,
+              0.172,
+              0.228,
+              0.341
+            ],
+            "palette": [
+              {
+                "hex": "#0f192f",
+                "rgb": [
+                  15,
+                  25,
+                  47
+                ],
+                "share": 0.9335
+              },
+              {
+                "hex": "#69e7b8",
+                "rgb": [
+                  105,
+                  231,
+                  184
+                ],
+                "share": 0.0163
+              },
+              {
+                "hex": "#405361",
+                "rgb": [
+                  64,
+                  83,
+                  97
+                ],
+                "share": 0.0245
+              },
+              {
+                "hex": "#273947",
+                "rgb": [
+                  39,
+                  57,
+                  71
+                ],
+                "share": 0.0033
+              }
+            ]
+          },
+          {
+            "t": 0.5,
+            "luma": 0.118,
+            "contrast": 0.124,
+            "saturation": 0.619,
+            "colorfulness": 0.207,
+            "edgeDensity": 0.129,
+            "darkRatio": 0.523,
+            "brightRatio": 0.001,
+            "quadrants": [
+              0.259,
+              0.172,
+              0.228,
+              0.341
+            ],
+            "palette": [
+              {
+                "hex": "#0f192f",
+                "rgb": [
+                  15,
+                  25,
+                  47
+                ],
+                "share": 0.9335
+              },
+              {
+                "hex": "#69e7b8",
+                "rgb": [
+                  105,
+                  231,
+                  184
+                ],
+                "share": 0.0163
+              },
+              {
+                "hex": "#405361",
+                "rgb": [
+                  64,
+                  83,
+                  97
+                ],
+                "share": 0.0245
+              },
+              {
+                "hex": "#273947",
+                "rgb": [
+                  39,
+                  57,
+                  71
+                ],
+                "share": 0.0033
+              }
+            ]
+          },
+          {
+            "t": 0.75,
+            "luma": 0.118,
+            "contrast": 0.124,
+            "saturation": 0.619,
+            "colorfulness": 0.207,
+            "edgeDensity": 0.129,
+            "darkRatio": 0.523,
+            "brightRatio": 0.001,
+            "quadrants": [
+              0.259,
+              0.172,
+              0.228,
+              0.341
+            ],
+            "palette": [
+              {
+                "hex": "#0f192f",
+                "rgb": [
+                  15,
+                  25,
+                  47
+                ],
+                "share": 0.9335
+              },
+              {
+                "hex": "#69e7b8",
+                "rgb": [
+                  105,
+                  231,
+                  184
+                ],
+                "share": 0.0163
+              },
+              {
+                "hex": "#405361",
+                "rgb": [
+                  64,
+                  83,
+                  97
+                ],
+                "share": 0.0245
+              },
+              {
+                "hex": "#273947",
+                "rgb": [
+                  39,
+                  57,
+                  71
+                ],
+                "share": 0.0033
+              }
+            ]
+          },
+          {
+            "t": 1,
+            "luma": 0.118,
+            "contrast": 0.124,
+            "saturation": 0.619,
+            "colorfulness": 0.207,
+            "edgeDensity": 0.129,
+            "darkRatio": 0.523,
+            "brightRatio": 0.001,
+            "quadrants": [
+              0.259,
+              0.172,
+              0.228,
+              0.341
+            ],
+            "palette": [
+              {
+                "hex": "#0f192f",
+                "rgb": [
+                  15,
+                  25,
+                  47
+                ],
+                "share": 0.9335
+              },
+              {
+                "hex": "#69e7b8",
+                "rgb": [
+                  105,
+                  231,
+                  184
+                ],
+                "share": 0.0163
+              },
+              {
+                "hex": "#405361",
+                "rgb": [
+                  64,
+                  83,
+                  97
+                ],
+                "share": 0.0245
+              },
+              {
+                "hex": "#273947",
+                "rgb": [
+                  39,
+                  57,
+                  71
+                ],
+                "share": 0.0033
+              }
+            ]
+          },
+          {
+            "t": 1.25,
+            "luma": 0.118,
+            "contrast": 0.124,
+            "saturation": 0.619,
+            "colorfulness": 0.207,
+            "edgeDensity": 0.129,
+            "darkRatio": 0.523,
+            "brightRatio": 0.001,
+            "quadrants": [
+              0.259,
+              0.172,
+              0.228,
+              0.341
+            ],
+            "palette": [
+              {
+                "hex": "#0f192f",
+                "rgb": [
+                  15,
+                  25,
+                  47
+                ],
+                "share": 0.9335
+              },
+              {
+                "hex": "#69e7b8",
+                "rgb": [
+                  105,
+                  231,
+                  184
+                ],
+                "share": 0.0163
+              },
+              {
+                "hex": "#405361",
+                "rgb": [
+                  64,
+                  83,
+                  97
+                ],
+                "share": 0.0245
+              },
+              {
+                "hex": "#273947",
+                "rgb": [
+                  39,
+                  57,
+                  71
+                ],
+                "share": 0.0033
+              }
+            ]
+          }
+        ],
+        "createdAt": "2026-11-25T21:13:35.869Z",
+        "warnings": []
+      },
+      "accessibility": {
+        "checked": 27,
+        "violations": 0,
+        "averageContrast": 11.46,
+        "worstContrast": 9.18,
+        "samples": [
+          {
+            "text": "Atlas",
+            "contrast": 12.28,
+            "fontSize": 12,
+            "required": 4.5
+          },
+          {
+            "text": "Producto · Precios · Contacto",
+            "contrast": 9.18,
+            "fontSize": 12,
+            "required": 4.5
+          },
+          {
+            "text": "Atlas / operaciones",
+            "contrast": 12.28,
+            "fontSize": 11,
+            "required": 4.5
+          },
+          {
+            "text": "Toda la operación, en una sola lectura.",
+            "contrast": 16.41,
+            "fontSize": 44,
+            "required": 3
+          },
+          {
+            "text": "Un panel profesional para decidir rápido: estado, capacidad y riesgo en el mismo",
+            "contrast": 9.18,
+            "fontSize": 15,
+            "required": 4.5
+          },
+          {
+            "text": "12.4k",
+            "contrast": 14.79,
+            "fontSize": 26,
+            "required": 3
+          },
+          {
+            "text": "98.2 %",
+            "contrast": 14.79,
+            "fontSize": 26,
+            "required": 3
+          },
+          {
+            "text": "4 min",
+            "contrast": 14.79,
+            "fontSize": 26,
+            "required": 3
+          },
+          {
+            "text": "3 alertas",
+            "contrast": 14.79,
+            "fontSize": 26,
+            "required": 3
+          },
+          {
+            "text": "Cola de trabajo",
+            "contrast": 11.63,
+            "fontSize": 13,
+            "required": 4.5
+          },
+          {
+            "text": "alta",
+            "contrast": 9.56,
+            "fontSize": 11,
+            "required": 4.5
+          },
+          {
+            "text": "Propietario",
+            "contrast": 11.63,
+            "fontSize": 13,
+            "required": 4.5
+          }
+        ],
+        "note": "Contraste calculado en Chromium contra el primer ancestro con fondo opaco; aproximación orientativa, no certificación WCAG."
+      },
+      "typography": {
+        "elements": 27,
+        "headings": 1,
+        "distinctSizes": 6,
+        "averageFontSize": 15.3,
+        "hierarchyRatio": 4,
+        "note": "Tamaños y pesos leídos del DOM; no evalúa calidad artística de la elección tipográfica."
+      }
+    },
+    "comparison": {
+      "score": 41.9,
+      "grade": "D",
+      "metrics": [
+        {
+          "metric": "luminancia",
+          "reference": 0.761,
+          "candidate": 0.118,
+          "delta": 0.643,
+          "similarity": 0,
+          "weight": 0.14
+        },
+        {
+          "metric": "contraste",
+          "reference": 0.067,
+          "candidate": 0.124,
+          "delta": 0.057,
+          "similarity": 0.715,
+          "weight": 0.14
+        },
+        {
+          "metric": "saturación",
+          "reference": 0.202,
+          "candidate": 0.619,
+          "delta": 0.417,
+          "similarity": 0,
+          "weight": 0.1
+        },
+        {
+          "metric": "colorido",
+          "reference": 0.15,
+          "candidate": 0.207,
+          "delta": 0.057,
+          "similarity": 0.886,
+          "weight": 0.07
+        },
+        {
+          "metric": "densidad de bordes",
+          "reference": 0.298,
+          "candidate": 0.129,
+          "delta": 0.169,
+          "similarity": 0.324,
+          "weight": 0.12
+        },
+        {
+          "metric": "movimiento",
+          "reference": 0,
+          "candidate": 0,
+          "delta": 0,
+          "similarity": 1,
+          "weight": 0.13
+        }
+      ],
+      "palette": {
+        "reference": [
+          "#d4c6ac",
+          "#b5a489",
+          "#f4e8c8",
+          "#988567",
+          "#786850"
+        ],
+        "candidate": [
+          "#0f192f",
+          "#69e7b8",
+          "#405361",
+          "#273947",
+          "#6d7385",
+          "#51ad8d"
+        ],
+        "meanDeltaE": 38.82,
+        "similarity": 0.2941,
+        "missing": [
+          {
+            "hex": "#d4c6ac",
+            "share": 0.8065,
+            "nearest": "#51ad8d"
+          },
+          {
+            "hex": "#b5a489",
+            "share": 0.161,
+            "nearest": "#6d7385"
+          },
+          {
+            "hex": "#f4e8c8",
+            "share": 0.027,
+            "nearest": "#51ad8d"
+          },
+          {
+            "hex": "#988567",
+            "share": 0.0054,
+            "nearest": "#6d7385"
+          },
+          {
+            "hex": "#786850",
+            "share": 0.0001,
+            "nearest": "#6d7385"
+          }
+        ],
+        "extra": [
+          {
+            "hex": "#0f192f",
+            "share": 0.9335
+          }
+        ]
+      },
+      "recommendations": [
+        "Paleta: la referencia usa #d4c6ac, #b5a489, #f4e8c8; el resultado #0f192f, #69e7b8, #405361. Cambia los colores base (fondo, acento, texto) a los hex de referencia; no añadas tonos nuevos.",
+        "Faltan acentos de la referencia: #d4c6ac (81%), #b5a489 (16%), #f4e8c8 (3%), #988567 (1%), #786850 (0%). Úsalos en elementos pequeños (bordes, indicadores, brillos), no como fondo completo.",
+        "Sobran colores ajenos a la referencia: #0f192f. Reduce su área o elimínalos.",
+        "El resultado es 64.3 puntos más oscuro. Aclara la base o sube el brillo de las capas grandes.",
+        "Poca densidad de detalle (12.9% frente a 29.8%). Introduce micro-detalle: grano, retícula, líneas guía o partículas pequeñas."
+      ],
+      "summary": "Fidelidad 41.9/100 (D). ΔE paleta 38.8, Δ luminancia -64.3%, Δ contraste 5.7%, Δ movimiento 0.00."
+    },
+    "quality": {
+      "overall": 66.4,
+      "grade": "C",
+      "dimensions": [
+        {
+          "id": "fidelity",
+          "label": "Fidelidad a la referencia",
+          "score": 41.9,
+          "weight": 0.3,
+          "evidence": {
+            "puntuacion": 41.9
+          },
+          "available": true
+        },
+        {
+          "id": "composition",
+          "label": "Composición",
+          "score": 87.8,
+          "weight": 0.12,
+          "evidence": {
+            "referencia": 0.99,
+            "resultado": 0.929,
+            "equilibrio": "masa por cuadrantes"
+          },
+          "available": true
+        },
+        {
+          "id": "hierarchy",
+          "label": "Jerarquía visual",
+          "score": 62.5,
+          "weight": 0.08,
+          "evidence": {
+            "referencia": 0.478,
+            "resultado": 0.666,
+            "base": "contraste, detalle y foco"
+          },
+          "available": true
+        },
+        {
+          "id": "typography",
+          "label": "Tipografía y legibilidad",
+          "score": 94.8,
+          "weight": 0.06,
+          "evidence": {
+            "elements": 27,
+            "headings": 1,
+            "distinctSizes": 6,
+            "averageFontSize": 15.3,
+            "hierarchyRatio": 4,
+            "note": "Tamaños y pesos leídos del DOM; no evalúa calidad artística de la elección tipográfica.",
+            "fuente": "DOM real (capture)"
+          },
+          "available": true
+        },
+        {
+          "id": "depth",
+          "label": "Profundidad",
+          "score": 76.8,
+          "weight": 0.05,
+          "evidence": {
+            "referencia": 0.361,
+            "resultado": 0.477,
+            "nota": "proxy de cuadrantes y detalle; no mapa métrico"
+          },
+          "available": true
+        },
+        {
+          "id": "lighting",
+          "label": "Iluminación",
+          "score": 29.6,
+          "weight": 0.07,
+          "evidence": {
+            "lumaReferencia": 0.761,
+            "lumaResultado": 0.118,
+            "contrasteReferencia": 0.067,
+            "contrasteResultado": 0.124
+          },
+          "available": true
+        },
+        {
+          "id": "animation",
+          "label": "Animación",
+          "score": 100,
+          "weight": 0.1,
+          "evidence": {
+            "movimientoReferencia": 0,
+            "movimientoResultado": 0,
+            "cortesReferencia": 0,
+            "cortesResultado": 0,
+            "ritmoReferencia": 0,
+            "ritmoResultado": 0
+          },
+          "available": true
+        },
+        {
+          "id": "transitions",
+          "label": "Transiciones y ritmo",
+          "score": 100,
+          "weight": 0.04,
+          "evidence": {
+            "cortesReferencia": 0,
+            "cortesResultado": 0,
+            "ritmoReferencia": 0,
+            "ritmoResultado": 0
+          },
+          "available": true
+        },
+        {
+          "id": "coherence",
+          "label": "Coherencia estética",
+          "score": 0,
+          "weight": 0.05,
+          "evidence": {
+            "histogramaDeMatiz": "coseno entre referencias y resultado",
+            "valor": 0
+          },
+          "available": true
+        },
+        {
+          "id": "accessibility",
+          "label": "Accesibilidad de contraste",
+          "score": 100,
+          "weight": 0.07,
+          "evidence": {
+            "checked": 27,
+            "violations": 0,
+            "averageContrast": 11.46,
+            "worstContrast": 9.18,
+            "samples": [
+              {
+                "text": "Atlas",
+                "contrast": 12.28,
+                "fontSize": 12,
+                "required": 4.5
+              },
+              {
+                "text": "Producto · Precios · Contacto",
+                "contrast": 9.18,
+                "fontSize": 12,
+                "required": 4.5
+              },
+              {
+                "text": "Atlas / operaciones",
+                "contrast": 12.28,
+                "fontSize": 11,
+                "required": 4.5
+              },
+              {
+                "text": "Toda la operación, en una sola lectura.",
+                "contrast": 16.41,
+                "fontSize": 44,
+                "required": 3
+              },
+              {
+                "text": "Un panel profesional para decidir rápido: estado, capacidad y riesgo en el mismo",
+                "contrast": 9.18,
+                "fontSize": 15,
+                "required": 4.5
+              },
+              {
+                "text": "12.4k",
+                "contrast": 14.79,
+                "fontSize": 26,
+                "required": 3
+              },
+              {
+                "text": "98.2 %",
+                "contrast": 14.79,
+                "fontSize": 26,
+                "required": 3
+              },
+              {
+                "text": "4 min",
+                "contrast": 14.79,
+                "fontSize": 26,
+                "required": 3
+              },
+              {
+                "text": "3 alertas",
+                "contrast": 14.79,
+                "fontSize": 26,
+                "required": 3
+              },
+              {
+                "text": "Cola de trabajo",
+                "contrast": 11.63,
+                "fontSize": 13,
+                "required": 4.5
+              },
+              {
+                "text": "alta",
+                "contrast": 9.56,
+                "fontSize": 11,
+                "required": 4.5
+              },
+              {
+                "text": "Propietario",
+                "contrast": 11.63,
+                "fontSize": 13,
+                "required": 4.5
+              }
+            ],
+            "note": "Contraste calculado en Chromium contra el primer ancestro con fondo opaco; aproximación orientativa, no certificación WCAG.",
+            "norma": "WCAG AA orientativo (4.5:1; 3:1 texto grande)"
+          },
+          "available": true
+        },
+        {
+          "id": "fluidity",
+          "label": "Fluidez",
+          "score": 100,
+          "weight": 0.03,
+          "evidence": {
+            "jerk": 0,
+            "parpadeo": 0,
+            "muestras": 5
+          },
+          "available": true
+        },
+        {
+          "id": "performance",
+          "label": "Rendimiento",
+          "score": 91.3,
+          "weight": 0.03,
+          "evidence": {
+            "intervaloMedioMs": 274.6,
+            "intervaloTargetMs": 250,
+            "jitterRelativo": 0.025,
+            "capturas": 6
+          },
+          "available": true
+        },
+        {
+          "id": "restraint",
+          "label": "Contención decorativa",
+          "score": null,
+          "weight": 0.02,
+          "evidence": {
+            "nota": "sin recuento de efectos"
+          },
+          "available": false
+        }
+      ],
+      "summary": "Calidad 66.4/100 (C) · fidelidad 41.9 · composición 87.8 · jerarquía 62.5 · animación 100.0 · tipografía 94.8 · profundidad 76.8 · iluminación 29.6 · transiciones 100.0 · coherencia 0.0 · accesibilidad 100.0 · fluidez 100.0 · rendimiento 91.3.",
+      "weightsUsed": {
+        "fidelity": 0.3,
+        "composition": 0.12,
+        "hierarchy": 0.08,
+        "typography": 0.06,
+        "depth": 0.05,
+        "lighting": 0.07,
+        "animation": 0.1,
+        "transitions": 0.04,
+        "coherence": 0.05,
+        "accessibility": 0.07,
+        "fluidity": 0.03,
+        "performance": 0.03
+      }
+    },
+    "image": {
+      "width": 240,
+      "height": 135,
+      "mae": 0.6171,
+      "rmse": 0.6373,
+      "deltaE": 74.04,
+      "ssim": 0.0764,
+      "paletteDeltaE": 74.04,
+      "heatmap": "<repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\measure-a\\review\\diff\\heatmap.png",
+      "score": 0
+    },
+    "heatmap": "<repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\measure-a\\review\\diff\\heatmap.png",
+    "referenceFrame": "<repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\measure-a\\review\\reference-frame.png",
+    "warnings": [],
+    "id": "review",
+    "report": {
+      "md": "<repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\measure-a\\review\\report.md",
+      "json": "<repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\measure-a\\review\\review.json"
+    }
+  },
+  "dom": {
+    "url": "http://127.0.0.1:60187/a.html",
+    "title": "Toda la operación, en una sola lectura. — A",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "reducedMotion": false,
+    "scroll": {
+      "width": 1280,
+      "height": 1026,
+      "overflowX": 0,
+      "overflowY": 306
+    },
+    "elements": [
+      {
+        "selector": "html > body > main.shell > h1",
+        "tag": "h1",
+        "role": null,
+        "text": "Toda la operación, en una sola lectura.",
+        "box": {
+          "x": 82,
+          "y": 143,
+          "width": 700,
+          "height": 92
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 16.41,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(234, 240, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 44,
+          "fontWeight": 700,
+          "lineHeight": "46.2px",
+          "letterSpacing": "-1.76px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "html > body > nav.nav",
+        "tag": "nav",
+        "role": null,
+        "text": "Atlas Producto · Precios · Contacto",
+        "box": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 53
+        },
+        "region": "top-right",
+        "classes": [
+          "nav"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 9.18,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(170, 182, 207)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 12,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 3,
+          "match": ".nav",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "html > body > main.shell",
+        "tag": "main",
+        "role": null,
+        "text": "Atlas / operacionesToda la operación, en una sola lectura.Un panel profesional para decidir rápido: estado, capacidad y riesgo en el mismo p",
+        "box": {
+          "x": 50,
+          "y": 53,
+          "width": 1180,
+          "height": 909
+        },
+        "region": "bottom-right",
+        "classes": [
+          "shell"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 16.41,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(234, 240, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 4,
+          "match": ".shell",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > main.shell > div.grid:nth-of-type(2) > section.panel",
+        "tag": "section",
+        "role": null,
+        "text": "Cola de trabajoaltaPropietarionormalEstadoaltaPrioridadnormalFacturaciónaltaOperacionesnormalAltaaltaIngresosnormalSoportealta",
+        "box": {
+          "x": 82,
+          "y": 437,
+          "width": 767,
+          "height": 477
+        },
+        "region": "bottom-left",
+        "classes": [
+          "panel"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 14.79,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(234, 240, 255)",
+          "backgroundColor": "rgb(18, 29, 48)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "8px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 10,
+          "match": ".panel",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "html > body > nav.nav > span.brand:nth-of-type(1)",
+        "tag": "span",
+        "role": null,
+        "text": "Atlas",
+        "box": {
+          "x": 32,
+          "y": 18,
+          "width": 35,
+          "height": 16
+        },
+        "region": "top-left",
+        "classes": [
+          "brand"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 12.28,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(110, 231, 183)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 12,
+          "fontWeight": 800,
+          "lineHeight": "normal",
+          "letterSpacing": "0.96px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 4,
+          "match": ".brand",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "html > body > main.shell > p.kicker:nth-of-type(1)",
+        "tag": "p",
+        "role": null,
+        "text": "Atlas / operaciones",
+        "box": {
+          "x": 82,
+          "y": 112,
+          "width": 1116,
+          "height": 15
+        },
+        "region": "top-right",
+        "classes": [
+          "kicker"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 12.28,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(110, 231, 183)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "1.76px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 5,
+          "match": ".kicker",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "html > body > main.shell > p.lead:nth-of-type(2)",
+        "tag": "p",
+        "role": null,
+        "text": "Un panel profesional para decidir rápido: estado, capacidad y riesgo en el mismo plano.",
+        "box": {
+          "x": 82,
+          "y": 251,
+          "width": 650,
+          "height": 24
+        },
+        "region": "top-left",
+        "classes": [
+          "lead"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 9.18,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(170, 182, 207)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 15,
+          "fontWeight": 400,
+          "lineHeight": "24px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 7,
+          "match": ".lead",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "html > body > main.shell > div.metrics:nth-of-type(1)",
+        "tag": "div",
+        "role": null,
+        "text": "12.4kpeticiones/min98.2 %disponibilidad4 minlatencia p953 alertasincidentes",
+        "box": {
+          "x": 82,
+          "y": 309,
+          "width": 1116,
+          "height": 94
+        },
+        "region": "center",
+        "classes": [
+          "metrics"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 16.41,
+        "styles": {
+          "display": "grid",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(234, 240, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 8,
+          "match": ".metrics",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > main.shell > div.metrics:nth-of-type(1) > div.metric:nth-of-type(1)",
+        "tag": "div",
+        "role": null,
+        "text": "12.4kpeticiones/min",
+        "box": {
+          "x": 82,
+          "y": 309,
+          "width": 270,
+          "height": 94
+        },
+        "region": "top-left",
+        "classes": [
+          "metric"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 14.79,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(234, 240, 255)",
+          "backgroundColor": "rgb(18, 29, 48)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "8px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 8,
+          "match": ".metric",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > main.shell > div.metrics:nth-of-type(1) > div.metric:nth-of-type(2)",
+        "tag": "div",
+        "role": null,
+        "text": "98.2 %disponibilidad",
+        "box": {
+          "x": 364,
+          "y": 309,
+          "width": 270,
+          "height": 94
+        },
+        "region": "center",
+        "classes": [
+          "metric"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 14.79,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(234, 240, 255)",
+          "backgroundColor": "rgb(18, 29, 48)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "8px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 8,
+          "match": ".metric",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > main.shell > div.metrics:nth-of-type(1) > div.metric:nth-of-type(3)",
+        "tag": "div",
+        "role": null,
+        "text": "4 minlatencia p95",
+        "box": {
+          "x": 646,
+          "y": 309,
+          "width": 270,
+          "height": 94
+        },
+        "region": "center",
+        "classes": [
+          "metric"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 14.79,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(234, 240, 255)",
+          "backgroundColor": "rgb(18, 29, 48)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "8px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 8,
+          "match": ".metric",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > main.shell > div.metrics:nth-of-type(1) > div.metric:nth-of-type(4)",
+        "tag": "div",
+        "role": null,
+        "text": "3 alertasincidentes",
+        "box": {
+          "x": 928,
+          "y": 309,
+          "width": 270,
+          "height": 94
+        },
+        "region": "top-right",
+        "classes": [
+          "metric"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 14.79,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(234, 240, 255)",
+          "backgroundColor": "rgb(18, 29, 48)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "8px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 8,
+          "match": ".metric",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "html > body > main.shell > div.grid:nth-of-type(2)",
+        "tag": "div",
+        "role": null,
+        "text": "Cola de trabajoaltaPropietarionormalEstadoaltaPrioridadnormalFacturaciónaltaOperacionesnormalAltaaltaIngresosnormalSoportealtaCapacidad",
+        "box": {
+          "x": 82,
+          "y": 437,
+          "width": 1116,
+          "height": 477
+        },
+        "region": "bottom-right",
+        "classes": [
+          "grid"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 16.41,
+        "styles": {
+          "display": "grid",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(234, 240, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 13,
+          "match": ".grid",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "main.shell > div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(1)",
+        "tag": "div",
+        "role": null,
+        "text": "Cola de trabajoalta",
+        "box": {
+          "x": 105,
+          "y": 460,
+          "width": 721,
+          "height": 48
+        },
+        "region": "center",
+        "classes": [
+          "row"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 11.63,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 11,
+          "match": ".row",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(1) > span.chip:nth-of-type(2)",
+        "tag": "span",
+        "role": null,
+        "text": "alta",
+        "box": {
+          "x": 793,
+          "y": 472,
+          "width": 34,
+          "height": 23
+        },
+        "region": "center",
+        "classes": [
+          "chip"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 9.56,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgb(27, 45, 71)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "99px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 12,
+          "match": ".chip",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "main.shell > div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(2)",
+        "tag": "div",
+        "role": null,
+        "text": "Propietarionormal",
+        "box": {
+          "x": 105,
+          "y": 508,
+          "width": 721,
+          "height": 48
+        },
+        "region": "bottom-left",
+        "classes": [
+          "row"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 11.63,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 11,
+          "match": ".row",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(2) > span.chip:nth-of-type(2)",
+        "tag": "span",
+        "role": null,
+        "text": "normal",
+        "box": {
+          "x": 776,
+          "y": 520,
+          "width": 50,
+          "height": 23
+        },
+        "region": "bottom-right",
+        "classes": [
+          "chip"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 9.56,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgb(27, 45, 71)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "99px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 12,
+          "match": ".chip",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "main.shell > div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(3)",
+        "tag": "div",
+        "role": null,
+        "text": "Estadoalta",
+        "box": {
+          "x": 105,
+          "y": 556,
+          "width": 721,
+          "height": 48
+        },
+        "region": "bottom-left",
+        "classes": [
+          "row"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 11.63,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 11,
+          "match": ".row",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(3) > span.chip:nth-of-type(2)",
+        "tag": "span",
+        "role": null,
+        "text": "alta",
+        "box": {
+          "x": 793,
+          "y": 568,
+          "width": 34,
+          "height": 23
+        },
+        "region": "bottom-right",
+        "classes": [
+          "chip"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 9.56,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgb(27, 45, 71)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "99px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 12,
+          "match": ".chip",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "main.shell > div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(4)",
+        "tag": "div",
+        "role": null,
+        "text": "Prioridadnormal",
+        "box": {
+          "x": 105,
+          "y": 604,
+          "width": 721,
+          "height": 48
+        },
+        "region": "bottom-left",
+        "classes": [
+          "row"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 11.63,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 11,
+          "match": ".row",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(4) > span.chip:nth-of-type(2)",
+        "tag": "span",
+        "role": null,
+        "text": "normal",
+        "box": {
+          "x": 776,
+          "y": 616,
+          "width": 50,
+          "height": 23
+        },
+        "region": "bottom-right",
+        "classes": [
+          "chip"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 9.56,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgb(27, 45, 71)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "99px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 12,
+          "match": ".chip",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "main.shell > div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(5)",
+        "tag": "div",
+        "role": null,
+        "text": "Facturaciónalta",
+        "box": {
+          "x": 105,
+          "y": 652,
+          "width": 721,
+          "height": 48
+        },
+        "region": "bottom-left",
+        "classes": [
+          "row"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 11.63,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 11,
+          "match": ".row",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(5) > span.chip:nth-of-type(2)",
+        "tag": "span",
+        "role": null,
+        "text": "alta",
+        "box": {
+          "x": 793,
+          "y": 664,
+          "width": 34,
+          "height": 23
+        },
+        "region": "bottom-right",
+        "classes": [
+          "chip"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 9.56,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgb(27, 45, 71)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "99px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 12,
+          "match": ".chip",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "main.shell > div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(6)",
+        "tag": "div",
+        "role": null,
+        "text": "Operacionesnormal",
+        "box": {
+          "x": 105,
+          "y": 700,
+          "width": 721,
+          "height": 48
+        },
+        "region": "bottom-left",
+        "classes": [
+          "row"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 11.63,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 11,
+          "match": ".row",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(6) > span.chip:nth-of-type(2)",
+        "tag": "span",
+        "role": null,
+        "text": "normal",
+        "box": {
+          "x": 776,
+          "y": 712,
+          "width": 50,
+          "height": 23
+        },
+        "region": "bottom-right",
+        "classes": [
+          "chip"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 9.56,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgb(27, 45, 71)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "99px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 12,
+          "match": ".chip",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "main.shell > div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(7)",
+        "tag": "div",
+        "role": null,
+        "text": "Altaalta",
+        "box": {
+          "x": 105,
+          "y": 748,
+          "width": 721,
+          "height": 48
+        },
+        "region": "bottom-left",
+        "classes": [
+          "row"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 11.63,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 11,
+          "match": ".row",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(7) > span.chip:nth-of-type(2)",
+        "tag": "span",
+        "role": null,
+        "text": "alta",
+        "box": {
+          "x": 793,
+          "y": 760,
+          "width": 34,
+          "height": 23
+        },
+        "region": "bottom-right",
+        "classes": [
+          "chip"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 9.56,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgb(27, 45, 71)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "99px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 12,
+          "match": ".chip",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "main.shell > div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(8)",
+        "tag": "div",
+        "role": null,
+        "text": "Ingresosnormal",
+        "box": {
+          "x": 105,
+          "y": 796,
+          "width": 721,
+          "height": 48
+        },
+        "region": "bottom-left",
+        "classes": [
+          "row"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 11.63,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 11,
+          "match": ".row",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(8) > span.chip:nth-of-type(2)",
+        "tag": "span",
+        "role": null,
+        "text": "normal",
+        "box": {
+          "x": 776,
+          "y": 808,
+          "width": 50,
+          "height": 23
+        },
+        "region": "bottom-right",
+        "classes": [
+          "chip"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 9.56,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgb(27, 45, 71)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "99px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 12,
+          "match": ".chip",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "main.shell > div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(9)",
+        "tag": "div",
+        "role": null,
+        "text": "Soportealta",
+        "box": {
+          "x": 105,
+          "y": 844,
+          "width": 721,
+          "height": 47
+        },
+        "region": "bottom-left",
+        "classes": [
+          "row"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 11.63,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 11,
+          "match": ".row",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(9) > span.chip:nth-of-type(2)",
+        "tag": "span",
+        "role": null,
+        "text": "alta",
+        "box": {
+          "x": 793,
+          "y": 856,
+          "width": 34,
+          "height": 23
+        },
+        "region": "bottom-right",
+        "classes": [
+          "chip"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 9.56,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgb(27, 45, 71)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "99px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 12,
+          "match": ".chip",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > main.shell > div.grid:nth-of-type(2) > aside.panel",
+        "tag": "aside",
+        "role": null,
+        "text": "Capacidad",
+        "box": {
+          "x": 869,
+          "y": 437,
+          "width": 329,
+          "height": 477
+        },
+        "region": "bottom-right",
+        "classes": [
+          "panel"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 14.79,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(234, 240, 255)",
+          "backgroundColor": "rgb(18, 29, 48)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "8px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 10,
+          "match": ".panel",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "main.shell > div.grid:nth-of-type(2) > aside.panel > div.bars",
+        "tag": "div",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 892,
+          "y": 499,
+          "width": 283,
+          "height": 130
+        },
+        "region": "bottom-right",
+        "classes": [
+          "bars"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 14.79,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(234, 240, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 13,
+          "match": ".bars",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "html > body > footer.footer",
+        "tag": "footer",
+        "role": null,
+        "text": "Generado sin Visual Engine · mismo copy · 1280×720",
+        "box": {
+          "x": 0,
+          "y": 962,
+          "width": 1280,
+          "height": 64
+        },
+        "region": "bottom-right",
+        "classes": [
+          "footer"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 5.78,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(129, 144, 168)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 17,
+          "match": ".footer",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "html > body > nav.nav > span:nth-of-type(2)",
+        "tag": "span",
+        "role": null,
+        "text": "Producto · Precios · Contacto",
+        "box": {
+          "x": 1095,
+          "y": 18,
+          "width": 153,
+          "height": 16
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 9.18,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(170, 182, 207)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 12,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.shell > div.metrics:nth-of-type(1) > div.metric:nth-of-type(1) > strong",
+        "tag": "strong",
+        "role": null,
+        "text": "12.4k",
+        "box": {
+          "x": 101,
+          "y": 328,
+          "width": 232,
+          "height": 35
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 14.79,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(234, 240, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 26,
+          "fontWeight": 700,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.shell > div.metrics:nth-of-type(1) > div.metric:nth-of-type(1) > small",
+        "tag": "small",
+        "role": null,
+        "text": "peticiones/min",
+        "box": {
+          "x": 101,
+          "y": 366,
+          "width": 87,
+          "height": 17
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 8.28,
+        "styles": {
+          "display": "inline",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(170, 182, 207)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 13.3333,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.shell > div.metrics:nth-of-type(1) > div.metric:nth-of-type(2) > strong",
+        "tag": "strong",
+        "role": null,
+        "text": "98.2 %",
+        "box": {
+          "x": 383,
+          "y": 328,
+          "width": 232,
+          "height": 35
+        },
+        "region": "center",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 14.79,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(234, 240, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 26,
+          "fontWeight": 700,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.shell > div.metrics:nth-of-type(1) > div.metric:nth-of-type(2) > small",
+        "tag": "small",
+        "role": null,
+        "text": "disponibilidad",
+        "box": {
+          "x": 383,
+          "y": 366,
+          "width": 83,
+          "height": 17
+        },
+        "region": "center",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 8.28,
+        "styles": {
+          "display": "inline",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(170, 182, 207)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 13.3333,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.shell > div.metrics:nth-of-type(1) > div.metric:nth-of-type(3) > strong",
+        "tag": "strong",
+        "role": null,
+        "text": "4 min",
+        "box": {
+          "x": 665,
+          "y": 328,
+          "width": 232,
+          "height": 35
+        },
+        "region": "center",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 14.79,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(234, 240, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 26,
+          "fontWeight": 700,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.shell > div.metrics:nth-of-type(1) > div.metric:nth-of-type(3) > small",
+        "tag": "small",
+        "role": null,
+        "text": "latencia p95",
+        "box": {
+          "x": 665,
+          "y": 366,
+          "width": 71,
+          "height": 17
+        },
+        "region": "center",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 8.28,
+        "styles": {
+          "display": "inline",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(170, 182, 207)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 13.3333,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.shell > div.metrics:nth-of-type(1) > div.metric:nth-of-type(4) > strong",
+        "tag": "strong",
+        "role": null,
+        "text": "3 alertas",
+        "box": {
+          "x": 947,
+          "y": 328,
+          "width": 232,
+          "height": 35
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 14.79,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(234, 240, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 26,
+          "fontWeight": 700,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.shell > div.metrics:nth-of-type(1) > div.metric:nth-of-type(4) > small",
+        "tag": "small",
+        "role": null,
+        "text": "incidentes",
+        "box": {
+          "x": 947,
+          "y": 366,
+          "width": 60,
+          "height": 17
+        },
+        "region": "bottom-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 8.28,
+        "styles": {
+          "display": "inline",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(170, 182, 207)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 13.3333,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(1) > span:nth-of-type(1)",
+        "tag": "span",
+        "role": null,
+        "text": "Cola de trabajo",
+        "box": {
+          "x": 105,
+          "y": 472,
+          "width": 88,
+          "height": 23
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 11.63,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(2) > span:nth-of-type(1)",
+        "tag": "span",
+        "role": null,
+        "text": "Propietario",
+        "box": {
+          "x": 105,
+          "y": 520,
+          "width": 63,
+          "height": 23
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 11.63,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(3) > span:nth-of-type(1)",
+        "tag": "span",
+        "role": null,
+        "text": "Estado",
+        "box": {
+          "x": 105,
+          "y": 568,
+          "width": 38,
+          "height": 23
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 11.63,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(4) > span:nth-of-type(1)",
+        "tag": "span",
+        "role": null,
+        "text": "Prioridad",
+        "box": {
+          "x": 105,
+          "y": 616,
+          "width": 52,
+          "height": 23
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 11.63,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(5) > span:nth-of-type(1)",
+        "tag": "span",
+        "role": null,
+        "text": "Facturación",
+        "box": {
+          "x": 105,
+          "y": 664,
+          "width": 66,
+          "height": 23
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 11.63,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(6) > span:nth-of-type(1)",
+        "tag": "span",
+        "role": null,
+        "text": "Operaciones",
+        "box": {
+          "x": 105,
+          "y": 712,
+          "width": 72,
+          "height": 23
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 11.63,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(7) > span:nth-of-type(1)",
+        "tag": "span",
+        "role": null,
+        "text": "Alta",
+        "box": {
+          "x": 105,
+          "y": 760,
+          "width": 23,
+          "height": 23
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 11.63,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(8) > span:nth-of-type(1)",
+        "tag": "span",
+        "role": null,
+        "text": "Ingresos",
+        "box": {
+          "x": 105,
+          "y": 808,
+          "width": 48,
+          "height": 23
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 11.63,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > section.panel > div.row:nth-of-type(9) > span:nth-of-type(1)",
+        "tag": "span",
+        "role": null,
+        "text": "Soporte",
+        "box": {
+          "x": 105,
+          "y": 856,
+          "width": 46,
+          "height": 23
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 11.63,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(203, 215, 236)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 13,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.shell > div.grid:nth-of-type(2) > aside.panel > small",
+        "tag": "small",
+        "role": null,
+        "text": "Capacidad",
+        "box": {
+          "x": 892,
+          "y": 463,
+          "width": 62,
+          "height": 17
+        },
+        "region": "bottom-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 14.79,
+        "styles": {
+          "display": "inline",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(234, 240, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 13.3333,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > aside.panel > div.bars > i:nth-of-type(1)",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 892,
+          "y": 577,
+          "width": 30,
+          "height": 52
+        },
+        "region": "bottom-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 1.34,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(234, 240, 255)",
+          "backgroundColor": "rgb(110, 231, 183)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "2px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > aside.panel > div.bars > i:nth-of-type(2)",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 928,
+          "y": 546,
+          "width": 30,
+          "height": 83
+        },
+        "region": "bottom-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 1.34,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(234, 240, 255)",
+          "backgroundColor": "rgb(110, 231, 183)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "2px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > aside.panel > div.bars > i:nth-of-type(3)",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 964,
+          "y": 580,
+          "width": 30,
+          "height": 49
+        },
+        "region": "bottom-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 1.34,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(234, 240, 255)",
+          "backgroundColor": "rgb(110, 231, 183)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "2px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > aside.panel > div.bars > i:nth-of-type(4)",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 1000,
+          "y": 528,
+          "width": 30,
+          "height": 101
+        },
+        "region": "bottom-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 1.34,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(234, 240, 255)",
+          "backgroundColor": "rgb(110, 231, 183)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "2px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > aside.panel > div.bars > i:nth-of-type(5)",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 1037,
+          "y": 557,
+          "width": 30,
+          "height": 73
+        },
+        "region": "bottom-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 1.34,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(234, 240, 255)",
+          "backgroundColor": "rgb(110, 231, 183)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "2px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > aside.panel > div.bars > i:nth-of-type(6)",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 1073,
+          "y": 518,
+          "width": 30,
+          "height": 112
+        },
+        "region": "bottom-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 1.34,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(234, 240, 255)",
+          "backgroundColor": "rgb(110, 231, 183)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "2px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > aside.panel > div.bars > i:nth-of-type(7)",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 1109,
+          "y": 567,
+          "width": 30,
+          "height": 62
+        },
+        "region": "bottom-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 1.34,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(234, 240, 255)",
+          "backgroundColor": "rgb(110, 231, 183)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "2px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "div.grid:nth-of-type(2) > aside.panel > div.bars > i:nth-of-type(8)",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 1145,
+          "y": 538,
+          "width": 30,
+          "height": 91
+        },
+        "region": "bottom-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 1.34,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(234, 240, 255)",
+          "backgroundColor": "rgb(110, 231, 183)",
+          "fontFamily": "Inter, system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "2px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      }
+    ],
+    "animations": [],
+    "canvases": [],
+    "brokenImages": [],
+    "buttonsWithoutName": [],
+    "imagesWithoutAlt": [],
+    "consoleErrors": [],
+    "pageErrors": [],
+    "requestFailures": [],
+    "counts": {
+      "elements": 61,
+      "headings": 1,
+      "buttons": 0,
+      "links": 0,
+      "images": 0,
+      "canvases": 0,
+      "effects": 0,
+      "layers": 0,
+      "materials": 15,
+      "transitions": 0,
+      "animations": 0
+    },
+    "contrast": {
+      "checked": 27,
+      "violations": 0,
+      "worst": 9.18,
+      "average": 11.45
+    },
+    "sourceIndex": {
+      "files": 2,
+      "bytes": 9870,
+      "truncated": false
+    },
+    "warnings": [],
+    "screenshot": "<repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\measure-a\\dom\\dom.png"
+  },
+  "critic": {
+    "version": "0.5",
+    "score": 76,
+    "grade": "B",
+    "findings": [
+      {
+        "id": "coherence-low",
+        "category": "coherence",
+        "title": "Incoherencia estética entre la intención y el resultado",
+        "severity": "high",
+        "confidence": 0.75,
+        "evidence": [
+          {
+            "source": "quality",
+            "metric": "coherencia de matiz",
+            "value": 0,
+            "threshold": 58
+          }
+        ],
+        "location": {
+          "component": "palette"
+        },
+        "fix": {
+          "kind": "css",
+          "summary": "Reduce la paleta a tokens semánticos y elimina acentos que no tengan un rol.",
+          "property": "color tokens"
+        },
+        "status": "measured"
+      },
+      {
+        "id": "lighting-low",
+        "category": "lighting",
+        "title": "Iluminación plana o contradictoria",
+        "severity": "high",
+        "confidence": 0.7,
+        "evidence": [
+          {
+            "source": "quality",
+            "metric": "iluminación",
+            "value": 29.6,
+            "threshold": 58
+          }
+        ],
+        "location": {
+          "layer": "superficies"
+        },
+        "fix": {
+          "kind": "css",
+          "summary": "Define una dirección de luz principal y una sombra de contacto; evita halos sin fuente.",
+          "property": "box-shadow / gradient"
+        },
+        "status": "measured"
+      }
+    ],
+    "counts": {
+      "critical": 0,
+      "high": 2,
+      "medium": 0,
+      "low": 0
+    },
+    "summary": "Crítica 76/100 (B): 0 crítico(s), 2 alto(s), 0 medio(s), 0 bajo(s).",
+    "agentTask": "# Tarea visual priorizada\n\nBrief: Aplicación profesional de operaciones, densa pero legible, inspirada en la referencia arquitectónica.\nEstilo: professional-app\nCrítica: Crítica 76/100 (B): 0 crítico(s), 2 alto(s), 0 medio(s), 0 bajo(s).\n\n## Corrige sólo estos defectos medidos\n\n### [HIGH] Incoherencia estética entre la intención y el resultado\n- Evidencia: coherencia de matiz=0 (objetivo 58)\n- Ubicación: sin selector; componente palette\n- Corrección: Reduce la paleta a tokens semánticos y elimina acentos que no tengan un rol.\n- Propiedad: color tokens\n- Acción base: Reduce la paleta y reutiliza tokens; elimina acentos y materiales que no pertenecen al sistema.\n\n### [HIGH] Iluminación plana o contradictoria\n- Evidencia: iluminación=29.6 (objetivo 58)\n- Ubicación: sin selector; componente global\n- Corrección: Define una dirección de luz principal y una sombra de contacto; evita halos sin fuente.\n- Propiedad: box-shadow / gradient\n- Acción base: Unifica la dirección de luz y el contraste; evita sombras contradictorias.\n\n## Reglas de la iteración\n\n1. No reescribas todo: aplica el cambio mínimo en la ubicación indicada.\n2. No añadas un efecto si no hay evidencia de que falta y una función que cumplir.\n3. Conserva las decisiones que ya pasan los umbrales.\n4. Vuelve a capturar y compara antes/después; revierte si no mejora.\n5. La aprobación artística final es humana.\n\n## Límites\n\n- Sin animaciones observadas no se afirma rigidez temporal.\n- La crítica detecta defectos estructurales; no sustituye la aprobación artística humana.",
+    "limitations": [
+      "Sin animaciones observadas no se afirma rigidez temporal.",
+      "La crítica detecta defectos estructurales; no sustituye la aprobación artística humana."
+    ],
+    "measured": {
+      "quality": 66.4,
+      "fidelity": 41.9,
+      "composition": 87.8,
+      "hierarchy": 62.5,
+      "typography": 94.8,
+      "depth": 76.8,
+      "lighting": 29.6,
+      "coherence": 0,
+      "transitions": 100,
+      "performance": 91.3
+    },
+    "artisticJudgment": false
+  },
+  "fidelity": {
+    "version": "0.5",
+    "score": 64.6,
+    "grade": "C",
+    "dimensions": [
+      {
+        "id": "composition",
+        "label": "Posición y proporción de la composición",
+        "score": 87.8,
+        "weight": 0.14,
+        "status": "verified",
+        "evidence": {
+          "medicion": "masa por cuadrantes",
+          "nota": "proxy, no cajas de objetos"
+        },
+        "note": "La composición se mide por distribución de masa."
+      },
+      {
+        "id": "layout",
+        "label": "Layout y equilibrio",
+        "score": 86.4,
+        "weight": 0.1,
+        "status": "verified",
+        "evidence": {
+          "metodo": "balance horizontal/vertical del primer fotograma"
+        },
+        "note": "No se comparan posiciones de elementos individuales sin un mapa de referencia."
+      },
+      {
+        "id": "typography",
+        "label": "Tipografía y proporción",
+        "score": null,
+        "weight": 0.12,
+        "status": "unavailable",
+        "evidence": {
+          "nota": "requiere especificación y DOM"
+        },
+        "note": "Se compara escala relativa; la familia no se identifica."
+      },
+      {
+        "id": "palette",
+        "label": "Paleta y coherencia cromática",
+        "score": 0,
+        "weight": 0.1,
+        "status": "verified",
+        "evidence": {
+          "metodo": "histograma de matiz",
+          "nota": "no evalúa si el color es apropiado"
+        },
+        "note": "La similitud cromática no implica calidad artística."
+      },
+      {
+        "id": "lighting",
+        "label": "Iluminación",
+        "score": 29.6,
+        "weight": 0.09,
+        "status": "verified",
+        "evidence": {
+          "metodo": "luma, contraste y proporción oscura"
+        },
+        "note": "Medida global, no dirección de luz por objeto."
+      },
+      {
+        "id": "depth",
+        "label": "Profundidad",
+        "score": 76.8,
+        "weight": 0.08,
+        "status": "verified",
+        "evidence": {
+          "metodo": "dispersión de cuadrantes y detalle"
+        },
+        "note": "Proxy declarado; no es un mapa de profundidad."
+      },
+      {
+        "id": "materials",
+        "label": "Texturas y materiales",
+        "score": 70,
+        "weight": 0.07,
+        "status": "estimated",
+        "evidence": {
+          "materialDeclarado": "flat",
+          "señales": 15,
+          "blur": "no",
+          "sombra": "no",
+          "estado": "estimated desde CSS computado"
+        },
+        "note": "Se infiere del CSS computado; no hay mapa de textura de referencia."
+      },
+      {
+        "id": "effects",
+        "label": "Efectos",
+        "score": null,
+        "weight": 0.08,
+        "status": "unavailable",
+        "evidence": {
+          "nota": "referencia sin efectos declarados"
+        },
+        "note": "La correspondencia es por etiqueta, no por píxel."
+      },
+      {
+        "id": "motion",
+        "label": "Trayectorias de movimiento",
+        "score": null,
+        "weight": 0.06,
+        "status": "unavailable",
+        "evidence": {
+          "nota": "sin cámara de referencia y animaciones comparables"
+        },
+        "note": "No se reconstruye la trayectoria exacta desde CSS."
+      },
+      {
+        "id": "rhythm",
+        "label": "Duración y ritmo",
+        "score": null,
+        "weight": 0.04,
+        "status": "unavailable",
+        "evidence": {
+          "nota": "sin escenas y animaciones comparables"
+        },
+        "note": "Ritmo global; no alineación escena a escena."
+      },
+      {
+        "id": "transitions",
+        "label": "Transiciones",
+        "score": 100,
+        "weight": 0.04,
+        "status": "verified",
+        "evidence": {
+          "nota": "sólo disponible con referencia temporal"
+        },
+        "note": "Sin vídeo de referencia no se afirma la transición."
+      },
+      {
+        "id": "frameCoherence",
+        "label": "Coherencia entre fotogramas",
+        "score": 82.6,
+        "weight": 0.08,
+        "status": "verified",
+        "evidence": {
+          "metodo": "estabilidad de luminancia",
+          "nota": "detecta parpadeo, no intención artística"
+        },
+        "note": "La estabilidad no equivale a buena dirección."
+      }
+    ],
+    "pixelSimilarity": 41.9,
+    "structuralVsPixel": "Estructura 64.6/100 · píxel 41.9/100. No son intercambiables: una imagen puede parecerse y seguir siendo un mal diseño.",
+    "warnings": [
+      "La similitud de píxeles se informa aparte y no se usa para aprobar calidad artística.",
+      "Layout, tipografía, materiales y movimiento se estiman con los datos disponibles; las dimensiones sin datos quedan fuera.",
+      "Sin especificación de referencia no se afirma fidelidad de posición, textura o trayectoria."
+    ],
+    "summary": "Fidelidad estructural 64.6/100 (C) · 8/12 dimensiones disponibles · similitud de píxeles 41.9 (informativa)."
+  },
+  "gates": {
+    "version": "0.5",
+    "pass": false,
+    "decision": "reject",
+    "checks": [
+      {
+        "id": "quality",
+        "label": "Calidad visual global",
+        "status": "fail",
+        "actual": 66.4,
+        "threshold": 72,
+        "blocking": true,
+        "detail": "Puntuación ponderada de las dimensiones disponibles."
+      },
+      {
+        "id": "fidelity",
+        "label": "Fidelidad estructural",
+        "status": "fail",
+        "actual": 64.6,
+        "threshold": 70,
+        "blocking": true,
+        "detail": "No usa la similitud de píxeles como sustituto."
+      },
+      {
+        "id": "composition",
+        "label": "Composición",
+        "status": "pass",
+        "actual": 87.8,
+        "threshold": 62,
+        "blocking": true,
+        "detail": "Balance de masa medido."
+      },
+      {
+        "id": "typography",
+        "label": "Tipografía y legibilidad",
+        "status": "pass",
+        "actual": 94.8,
+        "threshold": 62,
+        "blocking": true,
+        "detail": "Auditoría DOM + escala."
+      },
+      {
+        "id": "performance",
+        "label": "Rendimiento",
+        "status": "pass",
+        "actual": 60.8,
+        "threshold": 55,
+        "blocking": true,
+        "detail": "FPS medidos."
+      },
+      {
+        "id": "critical-findings",
+        "label": "Defectos críticos",
+        "status": "pass",
+        "actual": 0,
+        "threshold": 0,
+        "blocking": true,
+        "detail": "Un defecto crítico bloquea aunque la media sea alta."
+      },
+      {
+        "id": "high-findings",
+        "label": "Defectos de gravedad alta",
+        "status": "fail",
+        "actual": 2,
+        "threshold": 0,
+        "blocking": true,
+        "detail": "Los defectos altos también bloquean por defecto."
+      },
+      {
+        "id": "contrast",
+        "label": "Contraste DOM",
+        "status": "pass",
+        "actual": 0,
+        "threshold": 0,
+        "blocking": true,
+        "detail": "Peor contraste 9.18:1; 27 textos."
+      },
+      {
+        "id": "runtime",
+        "label": "Funcionamiento sin errores",
+        "status": "pass",
+        "actual": 0,
+        "threshold": 0,
+        "blocking": true,
+        "detail": "Consola, pageerror, recursos fallidos e imágenes rotas."
+      },
+      {
+        "id": "human-art",
+        "label": "Aprobación artística humana",
+        "status": "pending",
+        "actual": "pendiente",
+        "threshold": "recomendada",
+        "blocking": false,
+        "detail": "No bloquea por configuración, pero queda pendiente y se declara."
+      }
+    ],
+    "blockers": [
+      {
+        "id": "quality",
+        "label": "Calidad visual global",
+        "status": "fail",
+        "actual": 66.4,
+        "threshold": 72,
+        "blocking": true,
+        "detail": "Puntuación ponderada de las dimensiones disponibles."
+      },
+      {
+        "id": "fidelity",
+        "label": "Fidelidad estructural",
+        "status": "fail",
+        "actual": 64.6,
+        "threshold": 70,
+        "blocking": true,
+        "detail": "No usa la similitud de píxeles como sustituto."
+      },
+      {
+        "id": "high-findings",
+        "label": "Defectos de gravedad alta",
+        "status": "fail",
+        "actual": 2,
+        "threshold": 0,
+        "blocking": true,
+        "detail": "Los defectos altos también bloquean por defecto."
+      }
+    ],
+    "warnings": [
+      "La calidad artística final aún no ha sido aprobada por una persona."
+    ],
+    "humanApproval": {
+      "required": false,
+      "approved": false
+    },
+    "summary": "Rechazado: 3 bloqueo(s). Una media alta no compensa un defecto crítico."
+  },
+  "art": {
+    "version": "0.4",
+    "id": "professional-app-app-zf3ug",
+    "brief": "Aplicación profesional de operaciones, densa pero legible, inspirada en la referencia arquitectónica.",
+    "projectType": "app",
+    "style": {
+      "id": "professional-app",
+      "name": "Aplicaciones profesionales",
+      "description": "Densidad controlada, familiaridad y foco en la tarea; la interfaz desaparece.",
+      "keywords": [
+        "profesional",
+        "app",
+        "productividad",
+        "herramienta",
+        "saas",
+        "empresa"
+      ],
+      "mode": "light",
+      "colors": {
+        "bg": "#f4f6f9",
+        "surface": "#ffffff",
+        "elevated": "#eef2f7",
+        "text": "#17202e",
+        "muted": "#59677a",
+        "accent": "#2457d6",
+        "accent2": "#0f766e",
+        "border": "#d9e0e9",
+        "success": "#2f6b4f",
+        "warning": "#8a5a12",
+        "danger": "#a52a3b",
+        "focus": "#1742a8"
+      },
+      "typography": {
+        "display": "sans",
+        "body": "sans",
+        "mono": "mono",
+        "displayWeight": 620,
+        "bodyWeight": 430,
+        "scaleRatio": 1.2,
+        "bodyPx": 14,
+        "lineHeight": 1.45,
+        "displayLineHeight": 0.98,
+        "tracking": "-0.01em",
+        "displayTracking": "-0.025em",
+        "measure": 60
+      },
+      "layout": {
+        "maxWidth": 1440,
+        "gutter": 20,
+        "spacing": 6,
+        "radius": 8,
+        "borderWidth": 1,
+        "columns": 12,
+        "shadow": "0 16px 40px -32px rgba(23,32,46,.45)"
+      },
+      "materials": {
+        "surface": "flat",
+        "grain": 0,
+        "glassBlur": 0,
+        "gradient": "none",
+        "texture": "ninguna"
+      },
+      "motion": {
+        "level": "restrained",
+        "fastMs": 120,
+        "baseMs": 260,
+        "slowMs": 600,
+        "easeOut": "cubic-bezier(.16,1,.3,1)",
+        "easeInOut": "cubic-bezier(.65,0,.35,1)",
+        "spring": "cubic-bezier(.34,1.56,.64,1)",
+        "staggerMs": 30,
+        "camera": "sin cámara"
+      },
+      "composition": {
+        "focal": "contenido principal",
+        "alignment": "left",
+        "negativeSpace": 0.28,
+        "density": "compact",
+        "contrast": "balanced",
+        "headlineChars": 46,
+        "imageRatio": "16:9",
+        "notes": [
+          "La acción primaria compite con una sola cosa",
+          "Estados vacíos útiles"
+        ]
+      },
+      "effects": [
+        {
+          "id": "mesh-gradient",
+          "role": "fondo de marca sutil"
+        }
+      ],
+      "signature": [
+        "Radio 8 px",
+        "Borde 1 px",
+        "Azul de acción",
+        "Densidad 32 px"
+      ],
+      "avoid": [
+        "Efectos animados en el área de trabajo",
+        "Tipografía decorativa",
+        "Sombras profundas"
+      ]
+    },
+    "palette": {
+      "bg": "#f4f6f9",
+      "surface": "#ffffff",
+      "elevated": "#eef2f7",
+      "text": "#17202e",
+      "muted": "#59677a",
+      "accent": "#2457d6",
+      "accent2": "#0f766e",
+      "border": "#d9e0e9",
+      "success": "#2f6b4f",
+      "warning": "#8a5a12",
+      "danger": "#a52a3b",
+      "focus": "#1742a8"
+    },
+    "typography": {
+      "display": "sans",
+      "body": "sans",
+      "mono": "mono",
+      "displayWeight": 620,
+      "bodyWeight": 430,
+      "scaleRatio": 1.2,
+      "bodyPx": 14,
+      "lineHeight": 1.45,
+      "displayLineHeight": 0.98,
+      "tracking": "-0.01em",
+      "displayTracking": "-0.025em",
+      "measure": 60,
+      "sizes": {
+        "caption": 10.5,
+        "small": 12.3,
+        "body": 14,
+        "lead": 17.5,
+        "h3": 16.8,
+        "h2": 20.2,
+        "h1": 24.2,
+        "display": 29,
+        "hero": 34.8
+      },
+      "responsive": {
+        "caption": "clamp(12px, 0.82vw, 11px)",
+        "small": "clamp(12px, 0.96vw, 12px)",
+        "body": "clamp(12px, 1.09vw, 14px)",
+        "lead": "clamp(13px, 1.37vw, 18px)",
+        "h3": "clamp(12px, 1.31vw, 17px)",
+        "h2": "clamp(15px, 1.58vw, 20px)",
+        "h1": "clamp(17px, 1.89vw, 24px)",
+        "display": "clamp(21px, 2.27vw, 29px)",
+        "hero": "clamp(25px, 2.72vw, 35px)"
+      },
+      "families": {
+        "display": "VE Inter",
+        "body": "VE Inter",
+        "mono": "VE JetBrains Mono"
+      }
+    },
+    "layout": {
+      "maxWidth": 1440,
+      "gutter": 15,
+      "spacing": 4,
+      "radius": 8,
+      "borderWidth": 1,
+      "columns": 12,
+      "shadow": "0 16px 40px -32px rgba(23,32,46,.45)"
+    },
+    "materials": {
+      "surface": "flat",
+      "grain": 0,
+      "glassBlur": 0,
+      "gradient": "none",
+      "texture": "ninguna"
+    },
+    "motion": {
+      "level": "restrained",
+      "fastMs": 120,
+      "baseMs": 260,
+      "slowMs": 600,
+      "easeOut": "cubic-bezier(.16,1,.3,1)",
+      "easeInOut": "cubic-bezier(.65,0,.35,1)",
+      "spring": "cubic-bezier(.34,1.56,.64,1)",
+      "staggerMs": 30,
+      "camera": "sin cámara"
+    },
+    "composition": {
+      "focal": "contenido principal",
+      "alignment": "left",
+      "negativeSpace": 0.28,
+      "density": "compact",
+      "contrast": "balanced",
+      "headlineChars": 46,
+      "imageRatio": "16:9",
+      "notes": [
+        "La acción primaria compite con una sola cosa",
+        "Estados vacíos útiles"
+      ]
+    },
+    "effects": [
+      {
+        "id": "mesh-gradient",
+        "role": "fondo de marca sutil",
+        "reason": "Compatible con Aplicaciones profesionales (fondos; MIT (propio))."
+      },
+      {
+        "id": "chrome-text",
+        "role": "materiales",
+        "reason": "Categoría adecuada para app (materiales; MIT (propio))."
+      }
+    ],
+    "components": [
+      "Rail",
+      "Workspace",
+      "CommandBar",
+      "Inspector",
+      "EmptyState",
+      "Toast"
+    ],
+    "tokenSet": {
+      "color.bg": {
+        "$value": "#f4f6f9",
+        "$type": "color"
+      },
+      "color.surface": {
+        "$value": "#ffffff",
+        "$type": "color"
+      },
+      "color.elevated": {
+        "$value": "#eef2f7",
+        "$type": "color"
+      },
+      "color.text": {
+        "$value": "#17202e",
+        "$type": "color"
+      },
+      "color.muted": {
+        "$value": "#59677a",
+        "$type": "color"
+      },
+      "color.accent": {
+        "$value": "#2457d6",
+        "$type": "color"
+      },
+      "color.accent2": {
+        "$value": "#0f766e",
+        "$type": "color"
+      },
+      "color.border": {
+        "$value": "#d9e0e9",
+        "$type": "color"
+      },
+      "color.success": {
+        "$value": "#2f6b4f",
+        "$type": "color"
+      },
+      "color.warning": {
+        "$value": "#8a5a12",
+        "$type": "color"
+      },
+      "color.danger": {
+        "$value": "#a52a3b",
+        "$type": "color"
+      },
+      "color.focus": {
+        "$value": "#1742a8",
+        "$type": "color"
+      },
+      "color.accentInk": {
+        "$value": "#f4f6f9",
+        "$type": "color"
+      },
+      "font.size.caption": {
+        "$value": 10.5,
+        "$type": "dimension"
+      },
+      "font.size.small": {
+        "$value": 12.3,
+        "$type": "dimension"
+      },
+      "font.size.body": {
+        "$value": 14,
+        "$type": "dimension"
+      },
+      "font.size.lead": {
+        "$value": 17.5,
+        "$type": "dimension"
+      },
+      "font.size.h3": {
+        "$value": 16.8,
+        "$type": "dimension"
+      },
+      "font.size.h2": {
+        "$value": 20.2,
+        "$type": "dimension"
+      },
+      "font.size.h1": {
+        "$value": 24.2,
+        "$type": "dimension"
+      },
+      "font.size.display": {
+        "$value": 29,
+        "$type": "dimension"
+      },
+      "font.size.hero": {
+        "$value": 34.8,
+        "$type": "dimension"
+      },
+      "font.display": {
+        "$value": "VE Inter",
+        "$type": "fontFamily"
+      },
+      "font.body": {
+        "$value": "VE Inter",
+        "$type": "fontFamily"
+      },
+      "font.mono": {
+        "$value": "VE JetBrains Mono",
+        "$type": "fontFamily"
+      },
+      "font.scaleRatio": {
+        "$value": 1.2,
+        "$type": "number"
+      },
+      "space.base": {
+        "$value": 4,
+        "$type": "dimension"
+      },
+      "space.gutter": {
+        "$value": 15,
+        "$type": "dimension"
+      },
+      "radius.card": {
+        "$value": 8,
+        "$type": "dimension"
+      },
+      "border.width": {
+        "$value": 1,
+        "$type": "dimension"
+      },
+      "motion.fast": {
+        "$value": "120ms",
+        "$type": "duration"
+      },
+      "motion.base": {
+        "$value": "260ms",
+        "$type": "duration"
+      },
+      "motion.slow": {
+        "$value": "600ms",
+        "$type": "duration"
+      },
+      "motion.easeOut": {
+        "$value": "cubic-bezier(.16,1,.3,1)",
+        "$type": "cubicBezier"
+      },
+      "motion.stagger": {
+        "$value": "30ms",
+        "$type": "duration"
+      }
+    },
+    "rationale": [
+      "Proyecto app: Rail, Workspace, CommandBar antes de decorar.",
+      "Estilo Aplicaciones profesionales: Densidad controlada, familiaridad y foco en la tarea; la interfaz desaparece.",
+      "Tipografía sans + sans + mono; escala 1.2.",
+      "Densidad compact; espacio base 4 px y radio 8 px.",
+      "Movimiento restrained; transiciones de 120/260/600 ms.",
+      "Efectos elegidos por función: mesh-gradient (fondo de marca sutil), chrome-text (materiales).",
+      "Contraste de texto sobre fondo: 15.12:1."
+    ],
+    "warnings": [],
+    "fonts": [
+      {
+        "id": "inter",
+        "family": "VE Inter",
+        "file": "Inter_opsz,wght_.ttf",
+        "license": "OFL-1.1"
+      },
+      {
+        "id": "jetbrains-mono",
+        "family": "VE JetBrains Mono",
+        "file": "JetBrainsMono_wght_.ttf",
+        "license": "OFL-1.1"
+      }
+    ],
+    "audit": {
+      "structuralScore": 88.9,
+      "dimensions": [
+        {
+          "id": "contrast",
+          "score": 100,
+          "evidence": "15.12:1 OK; 16.37:1 OK; 5.32:1 OK; 5.69:1 OK"
+        },
+        {
+          "id": "type-scale",
+          "score": 55,
+          "evidence": "9 pasos, cuerpo 14px, ratio 1.2"
+        },
+        {
+          "id": "spacing",
+          "score": 100,
+          "evidence": "base 4px, gutter 15px"
+        },
+        {
+          "id": "hierarchy",
+          "score": 67,
+          "evidence": "ratio 1.2, display 29px"
+        },
+        {
+          "id": "restraint",
+          "score": 100,
+          "evidence": "2 efecto(s) para app"
+        },
+        {
+          "id": "motion-accessibility",
+          "score": 100,
+          "evidence": "restrained; base 260ms; stagger 30ms"
+        },
+        {
+          "id": "identity",
+          "score": 100,
+          "evidence": "4 reglas de firma; 3 anti-patrones"
+        }
+      ],
+      "contrastPairs": [
+        {
+          "fg": "#17202e",
+          "bg": "#f4f6f9",
+          "ratio": 15.12,
+          "pass": true
+        },
+        {
+          "fg": "#17202e",
+          "bg": "#ffffff",
+          "ratio": 16.37,
+          "pass": true
+        },
+        {
+          "fg": "#59677a",
+          "bg": "#f4f6f9",
+          "ratio": 5.32,
+          "pass": true
+        },
+        {
+          "fg": "#f4f6f9",
+          "bg": "#2457d6",
+          "ratio": 5.69,
+          "pass": true
+        }
+      ],
+      "warnings": [],
+      "note": "Auditoría estructural, no juicio artístico. Comprueba contraste, escala, ritmo, mesura y accesibilidad; la evaluación humana es independiente."
+    }
+  },
+  "paths": {
+    "outDir": "<repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\measure-a",
+    "intelligence": "<repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\measure-a\\intelligence.json",
+    "critic": "<repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\measure-a\\critic.json",
+    "criticMd": "<repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\measure-a\\critic.md",
+    "fidelity": "<repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\measure-a\\fidelity.json",
+    "fidelityMd": "<repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\measure-a\\fidelity.md",
+    "gates": "<repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\measure-a\\gates.json",
+    "gatesMd": "<repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\measure-a\\gates.md",
+    "dom": "<repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\measure-a\\dom\\dom.json",
+    "agentTask": "<repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\measure-a\\agent-task.md"
+  },
+  "description": [
+    "Calidad 66.4/100; fidelidad estructural 64.6/100; crítica 76/100.",
+    "Crítica 76/100 (B): 0 crítico(s), 2 alto(s), 0 medio(s), 0 bajo(s).",
+    "  [high] Incoherencia estética entre la intención y el resultado (palette, confianza 75%)",
+    "  [high] Iluminación plana o contradictoria (global, confianza 70%)",
+    "  Límite: Sin animaciones observadas no se afirma rigidez temporal.",
+    "  Límite: La crítica detecta defectos estructurales; no sustituye la aprobación artística humana.",
+    "Rechazado: 3 bloqueo(s). Una media alta no compensa un defecto crítico.",
+    "Bloqueo: Calidad visual global = 66.4 (72)",
+    "Bloqueo: Fidelidad estructural = 64.6 (70)",
+    "Bloqueo: Defectos de gravedad alta = 2 (0)",
+    "DOM Toda la operación, en una sola lectura. — A · 61 elementos visibles, 1 cabeceras, 0 botones.",
+    "Capas: 0; materiales: 15; animaciones: 0; efectos declarados: 0.",
+    "Contraste DOM: 0 incumplimiento(s) de 27; peor 9.18:1.",
+    "Overflow: 0×306 px; imágenes rotas: 0; botones sin nombre: 0.",
+    "Código fuente indexado: 2 archivo(s).",
+    "Tarea del agente: <repo>\\docs\\evidencia\\0.6\\ab\\professional-app\\measure-a\\agent-task.md",
+    "Límite: Sin animaciones observadas no se afirma rigidez temporal.",
+    "Límite: La crítica detecta defectos estructurales; no sustituye la aprobación artística humana."
+  ]
+}

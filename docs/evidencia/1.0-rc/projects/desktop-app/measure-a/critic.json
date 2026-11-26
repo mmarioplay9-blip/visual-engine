@@ -1,0 +1,80 @@
+{
+  "version": "0.5",
+  "score": 76,
+  "grade": "B",
+  "findings": [
+    {
+      "id": "coherence-low",
+      "category": "coherence",
+      "title": "Incoherencia estética entre la intención y el resultado",
+      "severity": "high",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "source": "quality",
+          "metric": "coherencia de matiz",
+          "value": 0,
+          "threshold": 58
+        }
+      ],
+      "location": {
+        "component": "palette"
+      },
+      "fix": {
+        "kind": "css",
+        "summary": "Reduce la paleta a tokens semánticos y elimina acentos que no tengan un rol.",
+        "property": "color tokens"
+      },
+      "status": "measured"
+    },
+    {
+      "id": "lighting-low",
+      "category": "lighting",
+      "title": "Iluminación plana o contradictoria",
+      "severity": "high",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "source": "quality",
+          "metric": "iluminación",
+          "value": 30,
+          "threshold": 58
+        }
+      ],
+      "location": {
+        "layer": "superficies"
+      },
+      "fix": {
+        "kind": "css",
+        "summary": "Define una dirección de luz principal y una sombra de contacto; evita halos sin fuente.",
+        "property": "box-shadow / gradient"
+      },
+      "status": "measured"
+    }
+  ],
+  "counts": {
+    "critical": 0,
+    "high": 2,
+    "medium": 0,
+    "low": 0
+  },
+  "summary": "Crítica 76/100 (B): 0 crítico(s), 2 alto(s), 0 medio(s), 0 bajo(s).",
+  "agentTask": "# Tarea visual priorizada\n\nBrief: Aplicación de escritorio profesional para operaciones: densa, legible, con jerarquía de estado y lectura rápida.\nEstilo: professional-app\nCrítica: Crítica 76/100 (B): 0 crítico(s), 2 alto(s), 0 medio(s), 0 bajo(s).\n\n## Corrige sólo estos defectos medidos\n\n### [HIGH] Incoherencia estética entre la intención y el resultado\n- Evidencia: coherencia de matiz=0 (objetivo 58)\n- Ubicación: sin selector; componente palette\n- Corrección: Reduce la paleta a tokens semánticos y elimina acentos que no tengan un rol.\n- Propiedad: color tokens\n- Acción base: Reduce la paleta y reutiliza tokens; elimina acentos y materiales que no pertenecen al sistema.\n\n### [HIGH] Iluminación plana o contradictoria\n- Evidencia: iluminación=30 (objetivo 58)\n- Ubicación: sin selector; componente global\n- Corrección: Define una dirección de luz principal y una sombra de contacto; evita halos sin fuente.\n- Propiedad: box-shadow / gradient\n- Acción base: Unifica la dirección de luz y el contraste; evita sombras contradictorias.\n\n## Reglas de la iteración\n\n1. No reescribas todo: aplica el cambio mínimo en la ubicación indicada.\n2. No añadas un efecto si no hay evidencia de que falta y una función que cumplir.\n3. Conserva las decisiones que ya pasan los umbrales.\n4. Vuelve a capturar y compara antes/después; revierte si no mejora.\n5. La aprobación artística final es humana.\n\n## Límites\n\n- Sin animaciones observadas no se afirma rigidez temporal.\n- La crítica detecta defectos estructurales; no sustituye la aprobación artística humana.",
+  "limitations": [
+    "Sin animaciones observadas no se afirma rigidez temporal.",
+    "La crítica detecta defectos estructurales; no sustituye la aprobación artística humana."
+  ],
+  "measured": {
+    "quality": 68.1,
+    "fidelity": 46.6,
+    "composition": 87.7,
+    "hierarchy": 62.7,
+    "typography": 96.1,
+    "depth": 79.4,
+    "lighting": 30,
+    "coherence": 0,
+    "transitions": 100,
+    "performance": 92.6
+  },
+  "artisticJudgment": false
+}

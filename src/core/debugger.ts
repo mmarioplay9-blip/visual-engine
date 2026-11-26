@@ -335,12 +335,29 @@ export async function inspectDom(opts: InspectDomOptions): Promise<DomSnapshot> 
         const effect = a.effect as KeyframeEffect | null;
         const timing = effect?.getTiming();
         const target = effect?.target as Element | null;
+        // getTiming().easing es 'linear' para animaciones CSS: la curva real
+        // vive en animation-timing-function / transition-timing-function.
+        let easing = String(timing?.easing ?? 'linear');
+        if (target) {
+          const cs = getComputedStyle(target);
+          if (a instanceof CSSAnimation) {
+            const names = cs.animationName.split(',').map((s) => s.trim());
+            const idx = Math.max(0, names.indexOf(a.animationName));
+            const list = cs.animationTimingFunction.split(',').map((s) => s.trim());
+            if (list[idx]) easing = list[idx];
+          } else if (a instanceof CSSTransition) {
+            const props = cs.transitionProperty.split(',').map((s) => s.trim());
+            const idx = Math.max(0, props.indexOf(a.transitionProperty));
+            const list = cs.transitionTimingFunction.split(',').map((s) => s.trim());
+            if (list[idx]) easing = list[idx];
+          }
+        }
         return {
           name: (a as any).animationName ?? (a as any).transitionProperty ?? 'animation',
           target: target ? selector(target) : null,
           duration: typeof timing?.duration === 'number' ? timing.duration : 0,
           delay: typeof timing?.delay === 'number' ? timing.delay : 0,
-          easing: String(timing?.easing ?? 'linear'),
+          easing,
           iterations: timing?.iterations ?? 1,
           playState: a.playState,
         };

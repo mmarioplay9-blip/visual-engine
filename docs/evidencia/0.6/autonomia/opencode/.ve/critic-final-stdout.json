@@ -1,0 +1,294 @@
+﻿{
+  "critic": {
+    "version": "0.5",
+    "score": 100,
+    "grade": "A",
+    "findings": [],
+    "counts": {
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "summary": "Cr├¡tica 100/100 (A): no se detectaron defectos con los datos disponibles.",
+    "agentTask": "# Tarea visual priorizada\n\nBrief: Analizar y mejorar hero.html\nEstilo: minimal-premium\nCr├¡tica: Cr├¡tica 100/100 (A): no se detectaron defectos con los datos disponibles.\n\n## Corrige s├│lo estos defectos medidos\n\nNo hay defectos medidos. No reescribas el proyecto; solicita revisi├│n art├¡stica humana.\n## Reglas de la iteraci├│n\n\n1. No reescribas todo: aplica el cambio m├¡nimo en la ubicaci├│n indicada.\n2. No a├▒adas un efecto si no hay evidencia de que falta y una funci├│n que cumplir.\n3. Conserva las decisiones que ya pasan los umbrales.\n4. Vuelve a capturar y compara antes/despu├⌐s; revierte si no mejora.\n5. La aprobaci├│n art├¡stica final es humana.\n\n## L├¡mites\n\n- Sin medici├│n de rendimiento no se afirma FPS ni carga.\n- Sin animaciones observadas no se afirma rigidez temporal.\n- La cr├¡tica detecta defectos estructurales; no sustituye la aprobaci├│n art├¡stica humana.",
+    "limitations": [
+      "Sin medici├│n de rendimiento no se afirma FPS ni carga.",
+      "Sin animaciones observadas no se afirma rigidez temporal.",
+      "La cr├¡tica detecta defectos estructurales; no sustituye la aprobaci├│n art├¡stica humana."
+    ],
+    "measured": {
+      "quality": 90.2,
+      "fidelity": 85.4,
+      "composition": 74.4,
+      "hierarchy": 98.9,
+      "typography": 100,
+      "depth": 80.6,
+      "lighting": 92.7,
+      "coherence": 99.8,
+      "transitions": 100,
+      "performance": 73.2
+    },
+    "artisticJudgment": false
+  },
+  "fidelity": {
+    "version": "0.5",
+    "score": 84.9,
+    "grade": "B",
+    "dimensions": [
+      {
+        "id": "composition",
+        "label": "Posici├│n y proporci├│n de la composici├│n",
+        "score": 74.4,
+        "weight": 0.14,
+        "status": "verified",
+        "evidence": {
+          "medicion": "masa por cuadrantes",
+          "nota": "proxy, no cajas de objetos"
+        },
+        "note": "La composici├│n se mide por distribuci├│n de masa."
+      },
+      {
+        "id": "layout",
+        "label": "Layout y equilibrio",
+        "score": 71.6,
+        "weight": 0.1,
+        "status": "verified",
+        "evidence": {
+          "metodo": "balance horizontal/vertical del primer fotograma"
+        },
+        "note": "No se comparan posiciones de elementos individuales sin un mapa de referencia."
+      },
+      {
+        "id": "typography",
+        "label": "Tipograf├¡a y proporci├│n",
+        "score": null,
+        "weight": 0.12,
+        "status": "unavailable",
+        "evidence": {
+          "nota": "requiere especificaci├│n y DOM"
+        },
+        "note": "Se compara escala relativa; la familia no se identifica."
+      },
+      {
+        "id": "palette",
+        "label": "Paleta y coherencia crom├ítica",
+        "score": 99.8,
+        "weight": 0.1,
+        "status": "verified",
+        "evidence": {
+          "metodo": "histograma de matiz",
+          "nota": "no eval├║a si el color es apropiado"
+        },
+        "note": "La similitud crom├ítica no implica calidad art├¡stica."
+      },
+      {
+        "id": "lighting",
+        "label": "Iluminaci├│n",
+        "score": 92.7,
+        "weight": 0.09,
+        "status": "verified",
+        "evidence": {
+          "metodo": "luma, contraste y proporci├│n oscura"
+        },
+        "note": "Medida global, no direcci├│n de luz por objeto."
+      },
+      {
+        "id": "depth",
+        "label": "Profundidad",
+        "score": 80.6,
+        "weight": 0.08,
+        "status": "verified",
+        "evidence": {
+          "metodo": "dispersi├│n de cuadrantes y detalle"
+        },
+        "note": "Proxy declarado; no es un mapa de profundidad."
+      },
+      {
+        "id": "materials",
+        "label": "Texturas y materiales",
+        "score": 90,
+        "weight": 0.07,
+        "status": "estimated",
+        "evidence": {
+          "materialDeclarado": "flat",
+          "se├▒ales": 5,
+          "blur": "no",
+          "sombra": "s├¡",
+          "estado": "estimated desde CSS computado"
+        },
+        "note": "Se infiere del CSS computado; no hay mapa de textura de referencia."
+      },
+      {
+        "id": "effects",
+        "label": "Efectos",
+        "score": null,
+        "weight": 0.08,
+        "status": "unavailable",
+        "evidence": {
+          "nota": "referencia sin efectos declarados"
+        },
+        "note": "La correspondencia es por etiqueta, no por p├¡xel."
+      },
+      {
+        "id": "motion",
+        "label": "Trayectorias de movimiento",
+        "score": null,
+        "weight": 0.06,
+        "status": "unavailable",
+        "evidence": {
+          "nota": "sin c├ímara de referencia y animaciones comparables"
+        },
+        "note": "No se reconstruye la trayectoria exacta desde CSS."
+      },
+      {
+        "id": "rhythm",
+        "label": "Duraci├│n y ritmo",
+        "score": null,
+        "weight": 0.04,
+        "status": "unavailable",
+        "evidence": {
+          "nota": "sin escenas y animaciones comparables"
+        },
+        "note": "Ritmo global; no alineaci├│n escena a escena."
+      },
+      {
+        "id": "transitions",
+        "label": "Transiciones",
+        "score": 100,
+        "weight": 0.04,
+        "status": "verified",
+        "evidence": {
+          "nota": "s├│lo disponible con referencia temporal"
+        },
+        "note": "Sin v├¡deo de referencia no se afirma la transici├│n."
+      },
+      {
+        "id": "frameCoherence",
+        "label": "Coherencia entre fotogramas",
+        "score": 84.4,
+        "weight": 0.08,
+        "status": "verified",
+        "evidence": {
+          "metodo": "estabilidad de luminancia",
+          "nota": "detecta parpadeo, no intenci├│n art├¡stica"
+        },
+        "note": "La estabilidad no equivale a buena direcci├│n."
+      }
+    ],
+    "pixelSimilarity": 85.4,
+    "structuralVsPixel": "Estructura 84.9/100 ┬╖ p├¡xel 85.4/100. No son intercambiables: una imagen puede parecerse y seguir siendo un mal dise├▒o.",
+    "warnings": [
+      "La similitud de p├¡xeles se informa aparte y no se usa para aprobar calidad art├¡stica.",
+      "Layout, tipograf├¡a, materiales y movimiento se estiman con los datos disponibles; las dimensiones sin datos quedan fuera.",
+      "Sin especificaci├│n de referencia no se afirma fidelidad de posici├│n, textura o trayectoria."
+    ],
+    "summary": "Fidelidad estructural 84.9/100 (B) ┬╖ 8/12 dimensiones disponibles ┬╖ similitud de p├¡xeles 85.4 (informativa)."
+  },
+  "gates": {
+    "version": "0.5",
+    "pass": true,
+    "decision": "accept",
+    "checks": [
+      {
+        "id": "quality",
+        "label": "Calidad visual global",
+        "status": "pass",
+        "actual": 90.2,
+        "threshold": 72,
+        "blocking": true,
+        "detail": "Puntuaci├│n ponderada de las dimensiones disponibles."
+      },
+      {
+        "id": "fidelity",
+        "label": "Fidelidad estructural",
+        "status": "pass",
+        "actual": 84.9,
+        "threshold": 70,
+        "blocking": true,
+        "detail": "No usa la similitud de p├¡xeles como sustituto."
+      },
+      {
+        "id": "composition",
+        "label": "Composici├│n",
+        "status": "pass",
+        "actual": 74.4,
+        "threshold": 62,
+        "blocking": true,
+        "detail": "Balance de masa medido."
+      },
+      {
+        "id": "typography",
+        "label": "Tipograf├¡a y legibilidad",
+        "status": "pass",
+        "actual": 100,
+        "threshold": 62,
+        "blocking": true,
+        "detail": "Auditor├¡a DOM + escala."
+      },
+      {
+        "id": "performance",
+        "label": "Rendimiento",
+        "status": "pass",
+        "actual": 73.2,
+        "threshold": 55,
+        "blocking": true,
+        "detail": "Estabilidad de captura; no son FPS."
+      },
+      {
+        "id": "critical-findings",
+        "label": "Defectos cr├¡ticos",
+        "status": "pass",
+        "actual": 0,
+        "threshold": 0,
+        "blocking": true,
+        "detail": "Un defecto cr├¡tico bloquea aunque la media sea alta."
+      },
+      {
+        "id": "high-findings",
+        "label": "Defectos de gravedad alta",
+        "status": "pass",
+        "actual": 0,
+        "threshold": 0,
+        "blocking": true,
+        "detail": "Los defectos altos tambi├⌐n bloquean por defecto."
+      },
+      {
+        "id": "contrast",
+        "label": "Contraste DOM",
+        "status": "pass",
+        "actual": 0,
+        "threshold": 0,
+        "blocking": true,
+        "detail": "Peor contraste 5.95:1; 9 textos."
+      },
+      {
+        "id": "runtime",
+        "label": "Funcionamiento sin errores",
+        "status": "pass",
+        "actual": 0,
+        "threshold": 0,
+        "blocking": true,
+        "detail": "Consola, pageerror, recursos fallidos e im├ígenes rotas."
+      },
+      {
+        "id": "human-art",
+        "label": "Aprobaci├│n art├¡stica humana",
+        "status": "pending",
+        "actual": "pendiente",
+        "threshold": "recomendada",
+        "blocking": false,
+        "detail": "No bloquea por configuraci├│n, pero queda pendiente y se declara."
+      }
+    ],
+    "blockers": [],
+    "warnings": [
+      "La calidad art├¡stica final a├║n no ha sido aprobada por una persona."
+    ],
+    "humanApproval": {
+      "required": false,
+      "approved": false
+    },
+    "summary": "Aceptado: 9/10 gates en verde; arte pendiente de revisi├│n humana."
+  }
+}

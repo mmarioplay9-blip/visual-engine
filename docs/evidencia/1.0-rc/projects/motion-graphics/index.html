@@ -1,0 +1,40 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Tres planos. Un pulso. — B</title><style>
+:root{--bg:#110d0a;--surface:#312d21;--elevated:#403c2e;--ink:#dad8cc;--text:#dad8cc;--muted:#a5a299;--muted-strong:color-mix(in srgb,#dad8cc 84%,#110d0a);--accent:#ba9c85;--accent2:#957552;--border:#59564a;--mono:VE JetBrains Mono;--display:VE Space Grotesk;--body:VE Inter;--radius:0px;--shadow:none}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:radial-gradient(120% 90% at 16% -10%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 56%),radial-gradient(80% 60% at 100% 100%,color-mix(in srgb,var(--accent2) 10%,transparent),transparent 62%),var(--bg);color:var(--text);font-family:var(--body),system-ui,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;box-shadow:inset 0 0 200px #0009;z-index:40}
+a{color:inherit}.nav{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:18px clamp(20px,5vw,60px);border-bottom:1px solid var(--border);font-size:11px;color:var(--muted);letter-spacing:.05em}
+.brand{font-family:var(--mono);font-weight:700;color:var(--ink);letter-spacing:.1em}
+.eyebrow{font:11px var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display),system-ui,sans-serif;font-size:clamp(46px,6.2vw,90px);line-height:0.88;letter-spacing:-0.065em;margin:14px 0 18px;font-weight:800}
+.lead{color:var(--muted);max-width:56ch;font-size:20px;line-height:1.55}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin:30px 0}
+.stat{background:linear-gradient(160deg,color-mix(in srgb,var(--surface) 86%,#fff 14%),var(--surface));padding:18px;box-shadow:inset 0 1px 0 #ffffff18,0 20px 44px -34px #000}
+.stat strong{display:block;font:600 clamp(24px,3vw,36px) var(--mono);letter-spacing:-.04em}.stat small{color:var(--muted-strong);font-size:11px}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+body{background:#070708;color:#fff;height:100vh;overflow:hidden}
+.reel{position:relative;height:calc(100vh - 52px);overflow:hidden;background:#070708}
+.scene{position:absolute;inset:0;opacity:0;animation:cut 6s cubic-bezier(.4,0,.2,1) infinite}
+.scene.s1{animation-delay:0s}.scene.s2{animation-delay:2s}.scene.s3{animation-delay:4s}
+@keyframes cut{0%{opacity:1}33.2%{opacity:1}33.4%{opacity:0}100%{opacity:0}}
+.scene img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.82) contrast(1.04) brightness(1.12)}
+.scene.s1 img{object-position:50% 50%;transform:scale(1)}
+.scene.s2 img{object-position:46% 42%;transform:scale(1.55)}
+.scene.s3 img{object-position:52% 46%;transform:scale(2.05)}
+.shade{position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,7,8,.84) 0,rgba(7,7,8,.36) 38%,rgba(7,7,8,.06) 74%);animation:shade 2.2s cubic-bezier(.4,0,.2,1) infinite alternate}
+@keyframes shade{from{opacity:.92}to{opacity:1}}
+.txt{position:absolute;left:clamp(28px,5vw,62px);right:clamp(28px,5vw,62px);bottom:clamp(40px,8vh,84px);text-shadow:0 2px 26px #000b}
+.num{font:11px var(--mono);letter-spacing:.22em;color:var(--accent);margin:0 0 10px}
+.txt h2{font-family:var(--display),system-ui,sans-serif;font-size:clamp(54px,7.6vw,112px);line-height:.86;letter-spacing:-.07em;margin:0 0 14px;max-width:12ch;font-weight:800}
+.txt p:last-child{max-width:46ch;color:color-mix(in srgb,var(--text) 86%,#fff);font-size:15px;line-height:1.5;margin:0}
+.timeline{position:absolute;z-index:4;left:clamp(28px,5vw,62px);right:clamp(28px,5vw,62px);bottom:22px;display:flex;gap:6px}
+.timeline i{height:2px;flex:1;background:#ffffff2e}.timeline i.on{background:var(--accent)}
+.bar{height:52px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5vw,60px);border-top:1px solid #ffffff1a;font:10px var(--mono);letter-spacing:.16em;color:#b9b9b9}
+.bar b{color:var(--accent)}
+@media(prefers-reduced-motion:reduce){.scene{animation:none}.scene.s1{opacity:1}.scene.s2,.scene.s3{opacity:0}}
+</style></head><body><nav class="nav" style="border-color:#ffffff1a"><span class="brand">SIGNAL / 24</span><span>Reel 00:06</span><span>1.0-rc.1</span></nav>
+<main class="reel"><section class="scene s1"><img src="reference.jpg" alt="Referencia CC0: The Dance Class, Edgar Degas (CC0)"><div class="shade"></div><div class="txt"><p class="num">PLANO 01</p><h2>La luz entra primero.</h2><p>El encuadre amplio abre la pieza; el corte llega cuando el ojo ya leyó el espacio.</p></div></section><section class="scene s2"><img src="reference.jpg" alt="Referencia CC0: The Dance Class, Edgar Degas (CC0)"><div class="shade"></div><div class="txt"><p class="num">PLANO 02</p><h2>Después, el detalle.</h2><p>El segundo plano cierra la escala y sostiene el ritmo sin añadir adornos.</p></div></section><section class="scene s3"><img src="reference.jpg" alt="Referencia CC0: The Dance Class, Edgar Degas (CC0)"><div class="shade"></div><div class="txt"><p class="num">PLANO 03</p><h2>Y el pulso.</h2><p>El cierre vuelve al gesto: una sola línea y el tiempo justo.</p></div></section><div class="timeline"><i class="on"></i><i></i><i></i></div></main>
+<footer class="bar"><span><b>SIGNAL</b> · 1280×720 · 25 fps</span><span>tres planos · dos cortes</span></footer></body></html>

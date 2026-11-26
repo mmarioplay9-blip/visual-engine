@@ -1,0 +1,50 @@
+{
+  "id": "desktop-app",
+  "reference": {
+    "title": "Architecture",
+    "artist": "Michelangelo Colonna",
+    "year": "17th century",
+    "objectId": 399581,
+    "url": "https://www.metmuseum.org/art/collection/search/399581"
+  },
+  "source": {
+    "aChars": 3591,
+    "bChars": 8382,
+    "aTokensEstimate": 898,
+    "bTokensEstimate": 2096,
+    "modelTokens": null,
+    "iterations": 0
+  },
+  "a": {
+    "quality": 68.1,
+    "fidelity": 65,
+    "pixelSimilarity": 46.6,
+    "accessibility": 100,
+    "composition": 87.7,
+    "typography": 96.1,
+    "performance": 92.6,
+    "fps": 61.2,
+    "loadMs": 716,
+    "critic": 76,
+    "critical": 0,
+    "high": 2,
+    "gates": "reject",
+    "webgl": null
+  },
+  "b": {
+    "quality": 89.7,
+    "fidelity": 93.4,
+    "pixelSimilarity": 80.2,
+    "accessibility": 100,
+    "composition": 99.6,
+    "typography": 65.6,
+    "performance": 86.6,
+    "fps": 61.4,
+    "loadMs": 720,
+    "critic": 100,
+    "critical": 0,
+    "high": 0,
+    "gates": "accept",
+    "webgl": null
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "generatedAt": "2026-11-26T00:28:25.765Z",
+  "agent": "Codex CLI 0.172.0 (codex exec, no interactivo)",
+  "task": "Landing nueva de HALO FOUNDRY, 1280×720, CSS autocontenido. Prompt idéntico en los dos brazos.",
+  "isolation": "Ambos brazos: --ignore-user-config --ignore-rules --dangerously-bypass-approvals-and-sandbox en un directorio temporal. Mismo modelo y mismo prompt. B recibe además `ve install --agents codex` y el servidor MCP por -c.",
+  "environmentNote": "El agente puede leer archivos del HOME por shell. Ambos brazos encontraron y usaron la skill global design-taste-frontend; por tanto A no es un agente \"en blanco\", sino un agente sin Visual Engine.",
+  "a": {
+    "quality": 77.1,
+    "fidelity": 72.8,
+    "composition": 93.9,
+    "typography": 91.2,
+    "accessibility": 100,
+    "lighting": 36.3,
+    "coherence": 22.9,
+    "performance": 80.4,
+    "fps": 61.4,
+    "loadMs": 722,
+    "critic": 76,
+    "critical": 0,
+    "high": 2,
+    "gates": "reject",
+    "bytes": 5471,
+    "ms": 108966,
+    "veCommands": 0,
+    "mcpCalls": []
+  },
+  "b": {
+    "quality": 62.3,
+    "fidelity": 48.4,
+    "composition": 40.6,
+    "typography": 82.5,
+    "accessibility": 100,
+    "lighting": 35.4,
+    "coherence": 14,
+    "performance": 74,
+    "fps": 61.7,
+    "loadMs": 719,
+    "critic": 40,
+    "critical": 0,
+    "high": 5,
+    "gates": "reject",
+    "bytes": 4781,
+    "ms": 111366,
+    "veCommands": 9,
+    "mcpCalls": []
+  },
+  "invocation": {
+    "a": "Sin Visual Engine: 0 comandos `ve`, 0 llamadas MCP.",
+    "b": "Visual Engine invocado: 9 comandos `ve` (doctor, context, effects list, vision status, agents, art, capture) y lectura de `.codex/skills/visual-engine/SKILL.md`. En una ejecución previa del mismo montaje también invocó `visual_agents` por MCP; `codex exec` exige `default_tools_approval_mode=\"approve\"` o deniega la llamada."
+  }
+}

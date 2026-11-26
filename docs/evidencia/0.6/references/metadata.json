@@ -1,0 +1,80 @@
+{
+  "downloadedAt": "2026-11-25T21:13:23.141Z",
+  "references": [
+    {
+      "id": "professional-app",
+      "objectId": 399581,
+      "title": "Architecture",
+      "artist": "Michelangelo Colonna",
+      "date": "17th century",
+      "image": "https://images.metmuseum.org/CRDImages/dp/original/DP841055.jpg",
+      "url": "https://www.metmuseum.org/art/collection/search/399581",
+      "file": "references/professional-app.jpg",
+      "license": "CC0 / Public Domain, The Metropolitan Museum of Art Open Access"
+    },
+    {
+      "id": "premium-landing",
+      "objectId": 438817,
+      "title": "The Dance Class",
+      "artist": "Edgar Degas",
+      "date": "1874",
+      "image": "https://images.metmuseum.org/CRDImages/ep/original/DP-20101-001.jpg",
+      "url": "https://www.metmuseum.org/art/collection/search/438817",
+      "file": "references/premium-landing.jpg",
+      "license": "CC0 / Public Domain, The Metropolitan Museum of Art Open Access"
+    },
+    {
+      "id": "game-ui",
+      "objectId": 23206,
+      "title": "Armor",
+      "artist": "Anonymous",
+      "date": "ca. 1540–50 and later",
+      "image": "https://images.metmuseum.org/CRDImages/aa/original/DP-36206-003.jpg",
+      "url": "https://www.metmuseum.org/art/collection/search/23206",
+      "file": "references/game-ui.jpg",
+      "license": "CC0 / Public Domain, The Metropolitan Museum of Art Open Access"
+    },
+    {
+      "id": "scene-3d",
+      "objectId": 203938,
+      "title": "Astronomy",
+      "artist": "Giambologna",
+      "date": "17th century",
+      "image": "https://images.metmuseum.org/CRDImages/es/original/DP-915-001.jpg",
+      "url": "https://www.metmuseum.org/art/collection/search/203938",
+      "file": "references/scene-3d.jpg",
+      "license": "CC0 / Public Domain, The Metropolitan Museum of Art Open Access"
+    },
+    {
+      "id": "motion-graphics",
+      "objectId": 438817,
+      "title": "The Dance Class",
+      "artist": "Edgar Degas",
+      "date": "1874",
+      "image": "https://images.metmuseum.org/CRDImages/ep/original/DP-20101-001.jpg",
+      "url": "https://www.metmuseum.org/art/collection/search/438817",
+      "file": "references/motion-graphics.jpg",
+      "license": "CC0 / Public Domain, The Metropolitan Museum of Art Open Access"
+    },
+    {
+      "id": "analytics-dashboard",
+      "title": "Lumen (render propio)",
+      "artist": "Visual Engine",
+      "date": "2026",
+      "url": "library/showcase/lumen/preview.png",
+      "license": "Obra propia del repositorio (no MET)",
+      "file": "library/showcase/lumen/preview.png",
+      "independent": true
+    },
+    {
+      "id": "launch-microsite",
+      "title": "Orbital (render propio)",
+      "artist": "Visual Engine",
+      "date": "2026",
+      "url": "library/showcase/orbital/preview.png",
+      "license": "Obra propia del repositorio (no MET)",
+      "file": "library/showcase/orbital/preview.png",
+      "independent": true
+    }
+  ]
+}

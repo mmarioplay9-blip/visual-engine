@@ -1,5 +1,7 @@
 # Visual Engine · contexto para Gemini CLI
 
+> Visual Engine 1.0.0-rc.1: comprueba  (diseñado ≠ instalado ≠ verificado).  sin  sólo planifica;  cambia capacidades, no estética.
+
 Este repositorio usa Visual Engine (`ve`), un motor local y gratuito de calidad visual.
 
 ## Uso

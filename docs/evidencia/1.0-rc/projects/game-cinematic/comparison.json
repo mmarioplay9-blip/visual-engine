@@ -1,0 +1,50 @@
+{
+  "id": "game-cinematic",
+  "reference": {
+    "title": "Armor",
+    "artist": "Anonymous",
+    "year": "ca. 1540–50",
+    "objectId": 23206,
+    "url": "https://www.metmuseum.org/art/collection/search/23206"
+  },
+  "source": {
+    "aChars": 3111,
+    "bChars": 7581,
+    "aTokensEstimate": 778,
+    "bTokensEstimate": 1896,
+    "modelTokens": null,
+    "iterations": 0
+  },
+  "a": {
+    "quality": 73.3,
+    "fidelity": 63.5,
+    "pixelSimilarity": 58.7,
+    "accessibility": 100,
+    "composition": 86.5,
+    "typography": 100,
+    "performance": 85.1,
+    "fps": 61.7,
+    "loadMs": 730,
+    "critic": 76,
+    "critical": 0,
+    "high": 2,
+    "gates": "reject",
+    "webgl": null
+  },
+  "b": {
+    "quality": 77.7,
+    "fidelity": 71.6,
+    "pixelSimilarity": 72.8,
+    "accessibility": 98.7,
+    "composition": 82.3,
+    "typography": 91.2,
+    "performance": 51.5,
+    "fps": 60.4,
+    "loadMs": 734,
+    "critic": 88,
+    "critical": 0,
+    "high": 1,
+    "gates": "reject",
+    "webgl": null
+  }
+}

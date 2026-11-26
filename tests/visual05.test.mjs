@@ -270,5 +270,5 @@ test('0.5 · se conservan 58 efectos, 15 estilos, 20 composiciones y el contrato
   assert.equal(STYLE_IDS.length, 15);
   assert.equal(SHOWCASE_SPECS.length, 20);
   const pkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'));
-  assert.equal(pkg.version, '0.5.0');
+  assert.equal(pkg.version, '1.0.0-rc.1');
 });

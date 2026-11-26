@@ -1,0 +1,50 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Toda la operación, en una lectura. — B</title><style>
+:root{--bg:#e7e0c8;--surface:#f0ebdb;--elevated:#f6f3ea;--ink:#4e4435;--text:#4e4435;--muted:#6c5f4b;--muted-strong:color-mix(in srgb,#4e4435 84%,#e7e0c8);--accent:#655845;--accent2:#87765b;--border:#cec7b7;--mono:VE JetBrains Mono;--display:VE Inter;--body:VE Inter;--radius:8px;--shadow:0 16px 40px -32px rgba(23,32,46,.45)}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:radial-gradient(120% 90% at 16% -10%,color-mix(in srgb,var(--accent) 16%,transparent),transparent 56%),radial-gradient(80% 60% at 100% 100%,color-mix(in srgb,var(--accent2) 10%,transparent),transparent 62%),var(--bg);color:var(--text);font-family:var(--body),system-ui,sans-serif;font-size:14px;line-height:1.45;-webkit-font-smoothing:antialiased}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;box-shadow:inset 0 0 200px #0009;z-index:40}
+a{color:inherit}.nav{position:relative;z-index:3;display:flex;justify-content:space-between;align-items:center;gap:24px;padding:18px clamp(20px,5vw,60px);border-bottom:1px solid var(--border);font-size:11px;color:var(--muted);letter-spacing:.05em}
+.brand{font-family:var(--mono);font-weight:700;color:var(--ink);letter-spacing:.1em}
+.eyebrow{font:11px var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+h1{font-family:var(--display),system-ui,sans-serif;font-size:clamp(46px,6.2vw,90px);line-height:0.98;letter-spacing:-0.025em;margin:14px 0 18px;font-weight:620}
+.lead{color:var(--muted);max-width:56ch;font-size:17.5px;line-height:1.55}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin:30px 0}
+.stat{background:linear-gradient(160deg,color-mix(in srgb,var(--surface) 86%,#fff 14%),var(--surface));padding:18px;box-shadow:inset 0 1px 0 #ffffff18,0 20px 44px -34px #000}
+.stat strong{display:block;font:600 clamp(24px,3vw,36px) var(--mono);letter-spacing:-.04em}.stat small{color:var(--muted-strong);font-size:11px}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+body{height:100vh;overflow:hidden}.app{height:100vh;display:grid;grid-template-columns:214px 1fr 296px;grid-template-rows:54px 1fr 30px;grid-template-areas:"side top top" "side main insp" "status status status";background:var(--bg)}
+.side{grid-area:side;border-right:1px solid var(--border);background:linear-gradient(180deg,color-mix(in srgb,var(--surface) 70%,transparent),transparent);padding:16px 14px;display:flex;flex-direction:column;gap:4px}
+.side .brand{font:700 14px var(--mono);letter-spacing:.12em;padding:6px 10px 16px;color:var(--ink)}
+.navitem{display:flex;justify-content:space-between;padding:10px;border-radius:4px;font-size:13px;color:var(--muted-strong)}
+.navitem.on{background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--ink);box-shadow:inset 2px 0 0 var(--accent)}
+.side .foot{margin-top:auto;font:11px var(--mono);color:var(--muted-strong);padding:10px}
+.top{grid-area:top;display:flex;align-items:center;justify-content:space-between;padding:0 22px;border-bottom:1px solid var(--border);background:color-mix(in srgb,var(--surface) 40%,transparent)}
+.top h1{font-family:var(--display),system-ui,sans-serif;font-size:22px;letter-spacing:-.02em;margin:0;font-weight:600}
+.top .search{font:12px var(--mono);color:var(--muted-strong);border:1px solid var(--border);padding:7px 10px;border-radius:4px;min-width:220px}
+.main{grid-area:main;overflow:hidden;padding:18px 20px;display:flex;flex-direction:column;gap:14px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.kpi{background:linear-gradient(160deg,color-mix(in srgb,var(--surface) 88%,#fff 12%),var(--surface));border:1px solid var(--border);border-radius:var(--radius);padding:12px 14px}
+.kpi small{font:11px var(--mono);color:var(--muted-strong);letter-spacing:.06em;text-transform:uppercase}.kpi b{display:block;font:600 30px var(--mono);letter-spacing:-.04em;margin-top:4px}
+.tablewrap{flex:1;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:color-mix(in srgb,var(--surface) 60%,transparent)}
+table{width:100%;border-collapse:collapse;font-size:13px}th{text-align:left;font:11px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted-strong);padding:10px 14px;border-bottom:1px solid var(--border);background:color-mix(in srgb,var(--surface) 80%,transparent)}
+td{padding:12px 14px;border-bottom:1px solid color-mix(in srgb,var(--border) 70%,transparent);color:var(--ink)}tr:last-child td{border:0}td.num{font-family:var(--mono);color:var(--muted-strong);text-align:right}
+.dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent2);margin-right:7px;vertical-align:middle}.dot.hot{background:var(--accent);box-shadow:0 0 8px var(--accent)}
+.insp{grid-area:insp;border-left:1px solid var(--border);padding:18px 18px;background:color-mix(in srgb,var(--surface) 30%,transparent);display:flex;flex-direction:column;gap:16px}
+.insp h2{font:600 14px var(--mono);letter-spacing:.06em;margin:0;color:var(--muted-strong);text-transform:uppercase}
+.gauge{height:8px;background:color-mix(in srgb,var(--border) 70%,transparent);border-radius:99px;overflow:hidden}.gauge i{display:block;height:100%;width:78%;background:linear-gradient(90deg,var(--accent2),var(--accent))}
+.big{font:600 46px var(--mono);letter-spacing:-.05em}.insp p{color:var(--muted-strong);font-size:13px;line-height:1.5;margin:0}
+.spark{display:flex;align-items:end;gap:4px;height:74px;margin-top:4px}.spark i{flex:1;background:color-mix(in srgb,var(--accent) 70%,transparent);border-radius:1px 1px 0 0}
+.status{grid-area:status;display:flex;align-items:center;gap:20px;padding:0 18px;border-top:1px solid var(--border);font:11px var(--mono);color:var(--muted-strong);background:var(--bg)}
+.status b{color:var(--accent2);font-weight:600}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+</style></head><body><div class="app">
+<aside class="side"><div class="brand">MERIDIAN</div><div class="navitem "><span>Resumen</span><span></span></div><div class="navitem on"><span>Colas</span><span>12</span></div><div class="navitem "><span>Incidentes</span><span></span></div><div class="navitem "><span>Capacidad</span><span></span></div><div class="navitem "><span>Facturación</span><span></span></div><div class="foot">Operaciones / turno de tarde</div></aside>
+<header class="top"><h1>Cola de trabajo</h1><div class="search">Buscar en la operación…</div></header>
+<main class="main"><div class="kpis"><div class="kpi"><small>peticiones/min</small><b>12.4k</b></div><div class="kpi"><small>disponibilidad</small><b>98.2 %</b></div><div class="kpi"><small>latencia p95</small><b>142 ms</b></div><div class="kpi"><small>alertas</small><b>3</b></div></div>
+<div class="tablewrap"><table><thead><tr><th>Cola</th><th>Equipo</th><th>Prioridad</th><th>Espera</th></tr></thead><tbody><tr><td>Ingesta de eventos</td><td>Plataforma</td><td><i class="dot hot"></i>Alta</td><td class="num">2 min</td></tr><tr><td>Reconciliación</td><td>Finanzas</td><td><i class="dot "></i>Normal</td><td class="num">9 min</td></tr><tr><td>Exportaciones</td><td>Datos</td><td><i class="dot "></i>Normal</td><td class="num">14 min</td></tr><tr><td>Webhooks</td><td>Plataforma</td><td><i class="dot hot"></i>Alta</td><td class="num">1 min</td></tr><tr><td>Cierres</td><td>Operaciones</td><td><i class="dot "></i>Baja</td><td class="num">31 min</td></tr></tbody></table></div></main>
+<aside class="insp"><h2>Capacidad</h2><div class="big">78 %</div><div class="gauge"><i></i></div><p>Dos nodos al límite; el tercero absorbe el pico.</p><div class="spark"><i style="height:38%"></i><i style="height:52%"></i><i style="height:44%"></i><i style="height:66%"></i><i style="height:58%"></i><i style="height:74%"></i><i style="height:62%"></i><i style="height:78%"></i><i style="height:70%"></i><i style="height:84%"></i></div><p>Últimos 10 minutos · nodo EU-West</p></aside>
+<footer class="status"><span><b>Conectado</b></span><span>EU-West</span><span>v4.18.2</span><span>Sincronizado hace 12 s</span></footer>
+</div></body></html>

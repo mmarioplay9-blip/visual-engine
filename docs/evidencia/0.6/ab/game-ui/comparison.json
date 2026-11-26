@@ -1,0 +1,51 @@
+{
+  "id": "game-ui",
+  "reference": {
+    "title": "Armor",
+    "artist": "Anonymous",
+    "date": "ca. 1540–50 and later",
+    "objectId": 23206,
+    "url": "https://www.metmuseum.org/art/collection/search/23206",
+    "license": "CC0 / Public Domain"
+  },
+  "source": {
+    "aChars": 3321,
+    "bChars": 4872,
+    "aTokensEstimate": 831,
+    "bTokensEstimate": 1218,
+    "modelTokens": null,
+    "iterations": 0
+  },
+  "a": {
+    "quality": 71.6,
+    "fidelity": 63.3,
+    "pixelSimilarity": 53,
+    "accessibility": 100,
+    "composition": 84,
+    "typography": 100,
+    "performance": 90,
+    "fps": 60.9,
+    "loadMs": 822,
+    "critic": 76,
+    "critical": 0,
+    "high": 2,
+    "gates": "reject",
+    "webgl": null
+  },
+  "b": {
+    "quality": 86.5,
+    "fidelity": 82.8,
+    "pixelSimilarity": 80.9,
+    "accessibility": 100,
+    "composition": 83.2,
+    "typography": 100,
+    "performance": 66.4,
+    "fps": 61.3,
+    "loadMs": 815,
+    "critic": 100,
+    "critical": 0,
+    "high": 0,
+    "gates": "accept",
+    "webgl": null
+  }
+}

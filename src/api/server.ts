@@ -30,6 +30,11 @@ import {
   opLoops,
   opRestoreLoop,
 } from '../core/intelligence-ops.js';
+import { planInstall, applyInstall, uninstall, repair, inventory, verifyMcpServer } from '../core/installer.js';
+import { PROFILES, describeProfile } from '../core/profiles.js';
+import { detectActivation, activationSupport } from '../core/activation.js';
+import { auditSecurity, isLoopback } from '../core/security.js';
+import { recordUsage } from '../core/usage.js';
 import {
   opAdapters,
   opAnalyze,
@@ -52,6 +57,8 @@ export interface ApiOptions {
   host?: string;
   /** Permite POST /v1/deps/install. Desactivado por defecto. */
   allowInstall?: boolean;
+  /** Permite escuchar fuera de loopback. Desactivado por defecto. */
+  allowRemote?: boolean;
 }
 
 export interface ApiServer {
@@ -88,6 +95,10 @@ async function readBody(req: http.IncomingMessage): Promise<any> {
  */
 export async function startApi(opts: ApiOptions = {}): Promise<ApiServer> {
   const allowInstall = opts.allowInstall === true;
+  const host = opts.host ?? '127.0.0.1';
+  if (!isLoopback(host) && opts.allowRemote !== true) {
+    throw new Error(`La API sólo escucha en localhost por defecto (${host}). Usa --allow-remote sólo si asumes el riesgo.`);
+  }
   const routes: { method: string; pattern: RegExp; handler: Handler }[] = [
     { method: 'GET', pattern: /^\/v1\/health$/, handler: async () => ({ ok: true, ...opVersion(), install: allowInstall ? 'permitido' : 'bloqueado' }) },
     { method: 'GET', pattern: /^\/v1\/capabilities$/, handler: async () => capabilities() },
@@ -151,6 +162,32 @@ export async function startApi(opts: ApiOptions = {}): Promise<ApiServer> {
     } },
     { method: 'GET', pattern: /^\/v1\/backups$/, handler: async (_b, q) => opBackups(q.get('project') ?? undefined) },
     { method: 'POST', pattern: /^\/v1\/backups\/restore$/, handler: async (b) => opRestoreBackup(b.project, b.id) },
+    { method: 'GET', pattern: /^\/v1\/agents$/, handler: async (_b, q) => inventory(q.get('project') ?? undefined) },
+    { method: 'GET', pattern: /^\/v1\/profiles$/, handler: async () => Object.values(PROFILES) },
+    { method: 'GET', pattern: /^\/v1\/profiles\/([\w-]+)$/, handler: async (_b, _q, req) => {
+      const id = new URL(req.url ?? '/', 'http://127.0.0.1').pathname.split('/').pop()!;
+      const p = PROFILES[id as keyof typeof PROFILES];
+      if (!p) throw new Error(`Perfil desconocido: ${id}`);
+      return { profile: p, description: describeProfile(p) };
+    } },
+    { method: 'POST', pattern: /^\/v1\/install\/plan$/, handler: async (b) => planInstall(b) },
+    { method: 'POST', pattern: /^\/v1\/install$/, handler: async (b) => {
+      if (b.confirm !== true) throw new Error('Instalación no confirmada: envía confirm=true (escribe archivos y respaldos).');
+      return applyInstall({ ...b, confirm: true });
+    } },
+    { method: 'POST', pattern: /^\/v1\/uninstall$/, handler: async (b) => {
+      if (b.confirm !== true) throw new Error('Desinstalación no confirmada: envía confirm=true.');
+      return uninstall(b);
+    } },
+    { method: 'POST', pattern: /^\/v1\/repair$/, handler: async (b) => repair(b) },
+    { method: 'GET', pattern: /^\/v1\/install\/verify$/, handler: async () => verifyMcpServer() },
+    { method: 'POST', pattern: /^\/v1\/activation$/, handler: async (b) => {
+      if (!b.request) throw new Error('Falta request (texto de la solicitud).');
+      const r = detectActivation(b.request);
+      return { ...r, agentSupport: b.agent ? activationSupport(b.agent) : undefined };
+    } },
+    { method: 'GET', pattern: /^\/v1\/security$/, handler: async (_b, q) => auditSecurity({ projectDir: q.get('project') ?? undefined, apiAllowsInstall: allowInstall }) },
+    { method: 'POST', pattern: /^\/v1\/usage$/, handler: async (b) => recordUsage(b) },
   ];
 
   const server = http.createServer(async (req, res) => {
@@ -206,11 +243,11 @@ export async function startApi(opts: ApiOptions = {}): Promise<ApiServer> {
 
   return new Promise((resolve, reject) => {
     server.on('error', reject);
-    server.listen(opts.port ?? 4747, opts.host ?? '127.0.0.1', () => {
+    server.listen(opts.port ?? 4747, host, () => {
       const addr = server.address();
       const port = typeof addr === 'object' && addr ? addr.port : (opts.port ?? 4747);
       resolve({
-        url: `http://${opts.host ?? '127.0.0.1'}:${port}`,
+        url: `http://${host}:${port}`,
         port,
         close: () => new Promise<void>((done) => server.close(() => done())),
       });

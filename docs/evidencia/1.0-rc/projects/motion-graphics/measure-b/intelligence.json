@@ -1,0 +1,3909 @@
+{
+  "version": "0.5",
+  "review": {
+    "outDir": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\motion-graphics\\measure-b\\review",
+    "score": 85.3,
+    "grade": "B",
+    "reference": {
+      "path": "<repo>\\docs\\evidencia\\1.0-rc\\references\\motion-graphics.jpg",
+      "profile": {
+        "source": "<repo>\\docs\\evidencia\\1.0-rc\\references\\motion-graphics.jpg",
+        "kind": "video",
+        "width": 3710,
+        "height": 4000,
+        "aspect": 0.927,
+        "duration": 0.04,
+        "fps": 25,
+        "frameCount": 10,
+        "aggregate": {
+          "luma": 0.321,
+          "contrast": 0.135,
+          "saturation": 0.302,
+          "colorfulness": 0.22,
+          "edgeDensity": 0.301,
+          "darkRatio": 0.092
+        },
+        "palette": [
+          {
+            "hex": "#615f44",
+            "rgb": [
+              97,
+              95,
+              68
+            ],
+            "share": 0.631
+          },
+          {
+            "hex": "#14100d",
+            "rgb": [
+              20,
+              16,
+              13
+            ],
+            "share": 0.1201
+          },
+          {
+            "hex": "#3f3324",
+            "rgb": [
+              63,
+              51,
+              36
+            ],
+            "share": 0.1288
+          },
+          {
+            "hex": "#89846f",
+            "rgb": [
+              137,
+              132,
+              111
+            ],
+            "share": 0.0984
+          },
+          {
+            "hex": "#aca88e",
+            "rgb": [
+              172,
+              168,
+              142
+            ],
+            "share": 0.0054
+          },
+          {
+            "hex": "#986848",
+            "rgb": [
+              152,
+              104,
+              72
+            ],
+            "share": 0.0005
+          }
+        ],
+        "motion": 0,
+        "motionCurve": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "cuts": [],
+        "pace": 0,
+        "hueHistogram": [
+          0.121,
+          0.864,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "frames": [
+          {
+            "t": 0.001,
+            "luma": 0.321,
+            "contrast": 0.135,
+            "saturation": 0.302,
+            "colorfulness": 0.22,
+            "edgeDensity": 0.301,
+            "darkRatio": 0.092,
+            "brightRatio": 0,
+            "quadrants": [
+              0.25,
+              0.28,
+              0.215,
+              0.255
+            ],
+            "palette": [
+              {
+                "hex": "#615f44",
+                "rgb": [
+                  97,
+                  95,
+                  68
+                ],
+                "share": 0.631
+              },
+              {
+                "hex": "#14100d",
+                "rgb": [
+                  20,
+                  16,
+                  13
+                ],
+                "share": 0.1201
+              },
+              {
+                "hex": "#3f3324",
+                "rgb": [
+                  63,
+                  51,
+                  36
+                ],
+                "share": 0.1288
+              },
+              {
+                "hex": "#89846f",
+                "rgb": [
+                  137,
+                  132,
+                  111
+                ],
+                "share": 0.0984
+              }
+            ]
+          },
+          {
+            "t": 0.005,
+            "luma": 0.321,
+            "contrast": 0.135,
+            "saturation": 0.302,
+            "colorfulness": 0.22,
+            "edgeDensity": 0.301,
+            "darkRatio": 0.092,
+            "brightRatio": 0,
+            "quadrants": [
+              0.25,
+              0.28,
+              0.215,
+              0.255
+            ],
+            "palette": [
+              {
+                "hex": "#615f44",
+                "rgb": [
+                  97,
+                  95,
+                  68
+                ],
+                "share": 0.631
+              },
+              {
+                "hex": "#14100d",
+                "rgb": [
+                  20,
+                  16,
+                  13
+                ],
+                "share": 0.1201
+              },
+              {
+                "hex": "#3f3324",
+                "rgb": [
+                  63,
+                  51,
+                  36
+                ],
+                "share": 0.1288
+              },
+              {
+                "hex": "#89846f",
+                "rgb": [
+                  137,
+                  132,
+                  111
+                ],
+                "share": 0.0984
+              }
+            ]
+          },
+          {
+            "t": 0.01,
+            "luma": 0.321,
+            "contrast": 0.135,
+            "saturation": 0.302,
+            "colorfulness": 0.22,
+            "edgeDensity": 0.301,
+            "darkRatio": 0.092,
+            "brightRatio": 0,
+            "quadrants": [
+              0.25,
+              0.28,
+              0.215,
+              0.255
+            ],
+            "palette": [
+              {
+                "hex": "#615f44",
+                "rgb": [
+                  97,
+                  95,
+                  68
+                ],
+                "share": 0.631
+              },
+              {
+                "hex": "#14100d",
+                "rgb": [
+                  20,
+                  16,
+                  13
+                ],
+                "share": 0.1201
+              },
+              {
+                "hex": "#3f3324",
+                "rgb": [
+                  63,
+                  51,
+                  36
+                ],
+                "share": 0.1288
+              },
+              {
+                "hex": "#89846f",
+                "rgb": [
+                  137,
+                  132,
+                  111
+                ],
+                "share": 0.0984
+              }
+            ]
+          },
+          {
+            "t": 0.014,
+            "luma": 0.321,
+            "contrast": 0.135,
+            "saturation": 0.302,
+            "colorfulness": 0.22,
+            "edgeDensity": 0.301,
+            "darkRatio": 0.092,
+            "brightRatio": 0,
+            "quadrants": [
+              0.25,
+              0.28,
+              0.215,
+              0.255
+            ],
+            "palette": [
+              {
+                "hex": "#615f44",
+                "rgb": [
+                  97,
+                  95,
+                  68
+                ],
+                "share": 0.631
+              },
+              {
+                "hex": "#14100d",
+                "rgb": [
+                  20,
+                  16,
+                  13
+                ],
+                "share": 0.1201
+              },
+              {
+                "hex": "#3f3324",
+                "rgb": [
+                  63,
+                  51,
+                  36
+                ],
+                "share": 0.1288
+              },
+              {
+                "hex": "#89846f",
+                "rgb": [
+                  137,
+                  132,
+                  111
+                ],
+                "share": 0.0984
+              }
+            ]
+          },
+          {
+            "t": 0.018,
+            "luma": 0.321,
+            "contrast": 0.135,
+            "saturation": 0.302,
+            "colorfulness": 0.22,
+            "edgeDensity": 0.301,
+            "darkRatio": 0.092,
+            "brightRatio": 0,
+            "quadrants": [
+              0.25,
+              0.28,
+              0.215,
+              0.255
+            ],
+            "palette": [
+              {
+                "hex": "#615f44",
+                "rgb": [
+                  97,
+                  95,
+                  68
+                ],
+                "share": 0.631
+              },
+              {
+                "hex": "#14100d",
+                "rgb": [
+                  20,
+                  16,
+                  13
+                ],
+                "share": 0.1201
+              },
+              {
+                "hex": "#3f3324",
+                "rgb": [
+                  63,
+                  51,
+                  36
+                ],
+                "share": 0.1288
+              },
+              {
+                "hex": "#89846f",
+                "rgb": [
+                  137,
+                  132,
+                  111
+                ],
+                "share": 0.0984
+              }
+            ]
+          },
+          {
+            "t": 0.022,
+            "luma": 0.321,
+            "contrast": 0.135,
+            "saturation": 0.302,
+            "colorfulness": 0.22,
+            "edgeDensity": 0.301,
+            "darkRatio": 0.092,
+            "brightRatio": 0,
+            "quadrants": [
+              0.25,
+              0.28,
+              0.215,
+              0.255
+            ],
+            "palette": [
+              {
+                "hex": "#615f44",
+                "rgb": [
+                  97,
+                  95,
+                  68
+                ],
+                "share": 0.631
+              },
+              {
+                "hex": "#14100d",
+                "rgb": [
+                  20,
+                  16,
+                  13
+                ],
+                "share": 0.1201
+              },
+              {
+                "hex": "#3f3324",
+                "rgb": [
+                  63,
+                  51,
+                  36
+                ],
+                "share": 0.1288
+              },
+              {
+                "hex": "#89846f",
+                "rgb": [
+                  137,
+                  132,
+                  111
+                ],
+                "share": 0.0984
+              }
+            ]
+          },
+          {
+            "t": 0.026,
+            "luma": 0.321,
+            "contrast": 0.135,
+            "saturation": 0.302,
+            "colorfulness": 0.22,
+            "edgeDensity": 0.301,
+            "darkRatio": 0.092,
+            "brightRatio": 0,
+            "quadrants": [
+              0.25,
+              0.28,
+              0.215,
+              0.255
+            ],
+            "palette": [
+              {
+                "hex": "#615f44",
+                "rgb": [
+                  97,
+                  95,
+                  68
+                ],
+                "share": 0.631
+              },
+              {
+                "hex": "#14100d",
+                "rgb": [
+                  20,
+                  16,
+                  13
+                ],
+                "share": 0.1201
+              },
+              {
+                "hex": "#3f3324",
+                "rgb": [
+                  63,
+                  51,
+                  36
+                ],
+                "share": 0.1288
+              },
+              {
+                "hex": "#89846f",
+                "rgb": [
+                  137,
+                  132,
+                  111
+                ],
+                "share": 0.0984
+              }
+            ]
+          },
+          {
+            "t": 0.03,
+            "luma": 0.321,
+            "contrast": 0.135,
+            "saturation": 0.302,
+            "colorfulness": 0.22,
+            "edgeDensity": 0.301,
+            "darkRatio": 0.092,
+            "brightRatio": 0,
+            "quadrants": [
+              0.25,
+              0.28,
+              0.215,
+              0.255
+            ],
+            "palette": [
+              {
+                "hex": "#615f44",
+                "rgb": [
+                  97,
+                  95,
+                  68
+                ],
+                "share": 0.631
+              },
+              {
+                "hex": "#14100d",
+                "rgb": [
+                  20,
+                  16,
+                  13
+                ],
+                "share": 0.1201
+              },
+              {
+                "hex": "#3f3324",
+                "rgb": [
+                  63,
+                  51,
+                  36
+                ],
+                "share": 0.1288
+              },
+              {
+                "hex": "#89846f",
+                "rgb": [
+                  137,
+                  132,
+                  111
+                ],
+                "share": 0.0984
+              }
+            ]
+          },
+          {
+            "t": 0.035,
+            "luma": 0.321,
+            "contrast": 0.135,
+            "saturation": 0.302,
+            "colorfulness": 0.22,
+            "edgeDensity": 0.301,
+            "darkRatio": 0.092,
+            "brightRatio": 0,
+            "quadrants": [
+              0.25,
+              0.28,
+              0.215,
+              0.255
+            ],
+            "palette": [
+              {
+                "hex": "#615f44",
+                "rgb": [
+                  97,
+                  95,
+                  68
+                ],
+                "share": 0.631
+              },
+              {
+                "hex": "#14100d",
+                "rgb": [
+                  20,
+                  16,
+                  13
+                ],
+                "share": 0.1201
+              },
+              {
+                "hex": "#3f3324",
+                "rgb": [
+                  63,
+                  51,
+                  36
+                ],
+                "share": 0.1288
+              },
+              {
+                "hex": "#89846f",
+                "rgb": [
+                  137,
+                  132,
+                  111
+                ],
+                "share": 0.0984
+              }
+            ]
+          },
+          {
+            "t": 0.039,
+            "luma": 0.321,
+            "contrast": 0.135,
+            "saturation": 0.302,
+            "colorfulness": 0.22,
+            "edgeDensity": 0.301,
+            "darkRatio": 0.092,
+            "brightRatio": 0,
+            "quadrants": [
+              0.25,
+              0.28,
+              0.215,
+              0.255
+            ],
+            "palette": [
+              {
+                "hex": "#615f44",
+                "rgb": [
+                  97,
+                  95,
+                  68
+                ],
+                "share": 0.631
+              },
+              {
+                "hex": "#14100d",
+                "rgb": [
+                  20,
+                  16,
+                  13
+                ],
+                "share": 0.1201
+              },
+              {
+                "hex": "#3f3324",
+                "rgb": [
+                  63,
+                  51,
+                  36
+                ],
+                "share": 0.1288
+              },
+              {
+                "hex": "#89846f",
+                "rgb": [
+                  137,
+                  132,
+                  111
+                ],
+                "share": 0.0984
+              }
+            ]
+          }
+        ],
+        "createdAt": "2026-11-26T00:05:47.209Z",
+        "warnings": [
+          "El detector de escenas de FFmpeg no encontró cortes por encima de 0.2."
+        ]
+      },
+      "description": [
+        "Fuente: <repo>\\docs\\evidencia\\1.0-rc\\references\\motion-graphics.jpg",
+        "Formato: 3710x4000 (0.93:1), video, 0.04 s, 25 fps",
+        "Luminancia media 32.1%, contraste 13.5%, saturación 30.2%",
+        "Colorido 22.0%, densidad de bordes 30.1%, zona oscura 9.2%",
+        "Paleta: #615f44 63% · #14100d 12% · #3f3324 13% · #89846f 10% · #aca88e 1% · #986848 0%",
+        "Movimiento medio 0.00 · cortes 0 · ritmo 0 cortes/min",
+        "Pico de movimiento (p90) 0.00",
+        "Aviso: El detector de escenas de FFmpeg no encontró cortes por encima de 0.2."
+      ]
+    },
+    "target": {
+      "url": "http://127.0.0.1:55086/index.html",
+      "title": "Tres planos. Un pulso. — B",
+      "frames": [
+        "<repo>\\docs\\evidencia\\1.0-rc\\projects\\motion-graphics\\measure-b\\review\\captures\\capture-01.png",
+        "<repo>\\docs\\evidencia\\1.0-rc\\projects\\motion-graphics\\measure-b\\review\\captures\\capture-02.png",
+        "<repo>\\docs\\evidencia\\1.0-rc\\projects\\motion-graphics\\measure-b\\review\\captures\\capture-03.png",
+        "<repo>\\docs\\evidencia\\1.0-rc\\projects\\motion-graphics\\measure-b\\review\\captures\\capture-04.png",
+        "<repo>\\docs\\evidencia\\1.0-rc\\projects\\motion-graphics\\measure-b\\review\\captures\\capture-05.png",
+        "<repo>\\docs\\evidencia\\1.0-rc\\projects\\motion-graphics\\measure-b\\review\\captures\\capture-06.png"
+      ],
+      "errors": [],
+      "consoleErrors": [],
+      "profile": {
+        "source": "captura:http://127.0.0.1:55086/index.html",
+        "kind": "sequence",
+        "width": 1280,
+        "height": 720,
+        "aspect": 1.778,
+        "duration": 0,
+        "fps": 0,
+        "frameCount": 6,
+        "aggregate": {
+          "luma": 0.271,
+          "contrast": 0.187,
+          "saturation": 0.236,
+          "colorfulness": 0.169,
+          "edgeDensity": 0.327,
+          "darkRatio": 0.196
+        },
+        "palette": [
+          {
+            "hex": "#171411",
+            "rgb": [
+              23,
+              20,
+              17
+            ],
+            "share": 0.3019
+          },
+          {
+            "hex": "#3f3d31",
+            "rgb": [
+              63,
+              61,
+              49
+            ],
+            "share": 0.3296
+          },
+          {
+            "hex": "#666353",
+            "rgb": [
+              102,
+              99,
+              83
+            ],
+            "share": 0.2406
+          },
+          {
+            "hex": "#908b7b",
+            "rgb": [
+              144,
+              139,
+              123
+            ],
+            "share": 0.0782
+          },
+          {
+            "hex": "#ededed",
+            "rgb": [
+              237,
+              237,
+              237
+            ],
+            "share": 0.0189
+          },
+          {
+            "hex": "#aead9f",
+            "rgb": [
+              174,
+              173,
+              159
+            ],
+            "share": 0.0103
+          }
+        ],
+        "motion": 0.028,
+        "motionCurve": [
+          0.0038,
+          0.0034,
+          0.1313,
+          0,
+          0
+        ],
+        "cuts": [],
+        "pace": 0,
+        "hueHistogram": [
+          0,
+          0.961,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "frames": [
+          {
+            "t": 0,
+            "luma": 0.287,
+            "contrast": 0.18,
+            "saturation": 0.237,
+            "colorfulness": 0.175,
+            "edgeDensity": 0.267,
+            "darkRatio": 0.147,
+            "brightRatio": 0.008,
+            "quadrants": [
+              0.193,
+              0.35,
+              0.254,
+              0.204
+            ],
+            "palette": [
+              {
+                "hex": "#171411",
+                "rgb": [
+                  23,
+                  20,
+                  17
+                ],
+                "share": 0.3019
+              },
+              {
+                "hex": "#3f3d31",
+                "rgb": [
+                  63,
+                  61,
+                  49
+                ],
+                "share": 0.3296
+              },
+              {
+                "hex": "#666353",
+                "rgb": [
+                  102,
+                  99,
+                  83
+                ],
+                "share": 0.2406
+              },
+              {
+                "hex": "#908b7b",
+                "rgb": [
+                  144,
+                  139,
+                  123
+                ],
+                "share": 0.0782
+              }
+            ]
+          },
+          {
+            "t": 0.25,
+            "luma": 0.283,
+            "contrast": 0.181,
+            "saturation": 0.237,
+            "colorfulness": 0.174,
+            "edgeDensity": 0.265,
+            "darkRatio": 0.158,
+            "brightRatio": 0.008,
+            "quadrants": [
+              0.194,
+              0.353,
+              0.252,
+              0.202
+            ],
+            "palette": [
+              {
+                "hex": "#171411",
+                "rgb": [
+                  23,
+                  20,
+                  17
+                ],
+                "share": 0.3019
+              },
+              {
+                "hex": "#3f3d31",
+                "rgb": [
+                  63,
+                  61,
+                  49
+                ],
+                "share": 0.3296
+              },
+              {
+                "hex": "#666353",
+                "rgb": [
+                  102,
+                  99,
+                  83
+                ],
+                "share": 0.2406
+              },
+              {
+                "hex": "#908b7b",
+                "rgb": [
+                  144,
+                  139,
+                  123
+                ],
+                "share": 0.0782
+              }
+            ]
+          },
+          {
+            "t": 0.5,
+            "luma": 0.28,
+            "contrast": 0.181,
+            "saturation": 0.236,
+            "colorfulness": 0.173,
+            "edgeDensity": 0.263,
+            "darkRatio": 0.171,
+            "brightRatio": 0.008,
+            "quadrants": [
+              0.196,
+              0.356,
+              0.249,
+              0.198
+            ],
+            "palette": [
+              {
+                "hex": "#171411",
+                "rgb": [
+                  23,
+                  20,
+                  17
+                ],
+                "share": 0.3019
+              },
+              {
+                "hex": "#3f3d31",
+                "rgb": [
+                  63,
+                  61,
+                  49
+                ],
+                "share": 0.3296
+              },
+              {
+                "hex": "#666353",
+                "rgb": [
+                  102,
+                  99,
+                  83
+                ],
+                "share": 0.2406
+              },
+              {
+                "hex": "#908b7b",
+                "rgb": [
+                  144,
+                  139,
+                  123
+                ],
+                "share": 0.0782
+              }
+            ]
+          },
+          {
+            "t": 0.75,
+            "luma": 0.258,
+            "contrast": 0.193,
+            "saturation": 0.235,
+            "colorfulness": 0.164,
+            "edgeDensity": 0.388,
+            "darkRatio": 0.234,
+            "brightRatio": 0.02,
+            "quadrants": [
+              0.239,
+              0.3,
+              0.278,
+              0.183
+            ],
+            "palette": [
+              {
+                "hex": "#171411",
+                "rgb": [
+                  23,
+                  20,
+                  17
+                ],
+                "share": 0.3019
+              },
+              {
+                "hex": "#3f3d31",
+                "rgb": [
+                  63,
+                  61,
+                  49
+                ],
+                "share": 0.3296
+              },
+              {
+                "hex": "#666353",
+                "rgb": [
+                  102,
+                  99,
+                  83
+                ],
+                "share": 0.2406
+              },
+              {
+                "hex": "#908b7b",
+                "rgb": [
+                  144,
+                  139,
+                  123
+                ],
+                "share": 0.0782
+              }
+            ]
+          },
+          {
+            "t": 1,
+            "luma": 0.258,
+            "contrast": 0.193,
+            "saturation": 0.235,
+            "colorfulness": 0.164,
+            "edgeDensity": 0.388,
+            "darkRatio": 0.234,
+            "brightRatio": 0.02,
+            "quadrants": [
+              0.239,
+              0.3,
+              0.278,
+              0.183
+            ],
+            "palette": [
+              {
+                "hex": "#171411",
+                "rgb": [
+                  23,
+                  20,
+                  17
+                ],
+                "share": 0.3019
+              },
+              {
+                "hex": "#3f3d31",
+                "rgb": [
+                  63,
+                  61,
+                  49
+                ],
+                "share": 0.3296
+              },
+              {
+                "hex": "#666353",
+                "rgb": [
+                  102,
+                  99,
+                  83
+                ],
+                "share": 0.2406
+              },
+              {
+                "hex": "#908b7b",
+                "rgb": [
+                  144,
+                  139,
+                  123
+                ],
+                "share": 0.0782
+              }
+            ]
+          },
+          {
+            "t": 1.25,
+            "luma": 0.258,
+            "contrast": 0.193,
+            "saturation": 0.235,
+            "colorfulness": 0.164,
+            "edgeDensity": 0.388,
+            "darkRatio": 0.234,
+            "brightRatio": 0.02,
+            "quadrants": [
+              0.239,
+              0.3,
+              0.278,
+              0.183
+            ],
+            "palette": [
+              {
+                "hex": "#171411",
+                "rgb": [
+                  23,
+                  20,
+                  17
+                ],
+                "share": 0.3019
+              },
+              {
+                "hex": "#3f3d31",
+                "rgb": [
+                  63,
+                  61,
+                  49
+                ],
+                "share": 0.3296
+              },
+              {
+                "hex": "#666353",
+                "rgb": [
+                  102,
+                  99,
+                  83
+                ],
+                "share": 0.2406
+              },
+              {
+                "hex": "#908b7b",
+                "rgb": [
+                  144,
+                  139,
+                  123
+                ],
+                "share": 0.0782
+              }
+            ]
+          }
+        ],
+        "createdAt": "2026-11-26T00:05:56.213Z",
+        "warnings": []
+      },
+      "accessibility": {
+        "checked": 11,
+        "violations": 0,
+        "averageContrast": 12.21,
+        "worstContrast": 7.85,
+        "samples": [
+          {
+            "text": "SIGNAL / 24",
+            "contrast": 14.07,
+            "fontSize": 11,
+            "required": 4.5
+          },
+          {
+            "text": "Reel 00:06",
+            "contrast": 7.89,
+            "fontSize": 11,
+            "required": 4.5
+          },
+          {
+            "text": "1.0-rc.1",
+            "contrast": 7.89,
+            "fontSize": 11,
+            "required": 4.5
+          },
+          {
+            "text": "PLANO 01",
+            "contrast": 7.85,
+            "fontSize": 11,
+            "required": 4.5
+          },
+          {
+            "text": "La luz entra primero.",
+            "contrast": 20.14,
+            "fontSize": 97.28,
+            "required": 3
+          },
+          {
+            "text": "PLANO 02",
+            "contrast": 7.85,
+            "fontSize": 11,
+            "required": 4.5
+          },
+          {
+            "text": "Después, el detalle.",
+            "contrast": 20.14,
+            "fontSize": 97.28,
+            "required": 3
+          },
+          {
+            "text": "PLANO 03",
+            "contrast": 7.85,
+            "fontSize": 11,
+            "required": 4.5
+          },
+          {
+            "text": "Y el pulso.",
+            "contrast": 20.14,
+            "fontSize": 97.28,
+            "required": 3
+          },
+          {
+            "text": "SIGNAL · 1280×720 · 25 fps",
+            "contrast": 10.26,
+            "fontSize": 10,
+            "required": 4.5
+          },
+          {
+            "text": "tres planos · dos cortes",
+            "contrast": 10.26,
+            "fontSize": 10,
+            "required": 4.5
+          }
+        ],
+        "note": "Contraste calculado en Chromium contra el primer ancestro con fondo opaco; aproximación orientativa, no certificación WCAG."
+      },
+      "typography": {
+        "elements": 11,
+        "headings": 3,
+        "distinctSizes": 3,
+        "averageFontSize": 34.3,
+        "hierarchyRatio": 9.7,
+        "note": "Tamaños y pesos leídos del DOM; no evalúa calidad artística de la elección tipográfica."
+      }
+    },
+    "comparison": {
+      "score": 85.3,
+      "grade": "B",
+      "metrics": [
+        {
+          "metric": "luminancia",
+          "reference": 0.321,
+          "candidate": 0.271,
+          "delta": 0.05,
+          "similarity": 0.8333,
+          "weight": 0.14
+        },
+        {
+          "metric": "contraste",
+          "reference": 0.135,
+          "candidate": 0.187,
+          "delta": 0.052,
+          "similarity": 0.74,
+          "weight": 0.14
+        },
+        {
+          "metric": "saturación",
+          "reference": 0.302,
+          "candidate": 0.236,
+          "delta": 0.066,
+          "similarity": 0.8114,
+          "weight": 0.1
+        },
+        {
+          "metric": "colorido",
+          "reference": 0.22,
+          "candidate": 0.169,
+          "delta": 0.051,
+          "similarity": 0.898,
+          "weight": 0.07
+        },
+        {
+          "metric": "densidad de bordes",
+          "reference": 0.301,
+          "candidate": 0.327,
+          "delta": 0.026,
+          "similarity": 0.896,
+          "weight": 0.12
+        },
+        {
+          "metric": "movimiento",
+          "reference": 0,
+          "candidate": 0.028,
+          "delta": 0.028,
+          "similarity": 0.8727,
+          "weight": 0.13
+        }
+      ],
+      "palette": {
+        "reference": [
+          "#615f44",
+          "#14100d",
+          "#3f3324",
+          "#89846f",
+          "#aca88e",
+          "#986848"
+        ],
+        "candidate": [
+          "#171411",
+          "#3f3d31",
+          "#666353",
+          "#908b7b",
+          "#ededed",
+          "#aead9f"
+        ],
+        "meanDeltaE": 5.98,
+        "similarity": 0.8912,
+        "missing": [
+          {
+            "hex": "#986848",
+            "share": 0.0005,
+            "nearest": "#666353"
+          }
+        ],
+        "extra": []
+      },
+      "recommendations": [
+        "Faltan acentos de la referencia: #986848 (0%). Úsalos en elementos pequeños (bordes, indicadores, brillos), no como fondo completo."
+      ],
+      "summary": "Fidelidad 85.3/100 (B). ΔE paleta 6.0, Δ luminancia -5.0%, Δ contraste 5.2%, Δ movimiento 2.80."
+    },
+    "quality": {
+      "overall": 86.9,
+      "grade": "A",
+      "dimensions": [
+        {
+          "id": "fidelity",
+          "label": "Fidelidad a la referencia",
+          "score": 85.3,
+          "weight": 0.3,
+          "evidence": {
+            "puntuacion": 85.3
+          },
+          "available": true
+        },
+        {
+          "id": "composition",
+          "label": "Composición",
+          "score": 97.8,
+          "weight": 0.12,
+          "evidence": {
+            "referencia": 0.934,
+            "resultado": 0.923,
+            "equilibrio": "masa por cuadrantes"
+          },
+          "available": true
+        },
+        {
+          "id": "hierarchy",
+          "label": "Jerarquía visual",
+          "score": 75.7,
+          "weight": 0.08,
+          "evidence": {
+            "referencia": 0.622,
+            "resultado": 0.744,
+            "base": "contraste, detalle y foco"
+          },
+          "available": true
+        },
+        {
+          "id": "typography",
+          "label": "Tipografía y legibilidad",
+          "score": 91.2,
+          "weight": 0.06,
+          "evidence": {
+            "elements": 11,
+            "headings": 3,
+            "distinctSizes": 3,
+            "averageFontSize": 34.3,
+            "hierarchyRatio": 9.7,
+            "note": "Tamaños y pesos leídos del DOM; no evalúa calidad artística de la elección tipográfica.",
+            "fuente": "DOM real (capture)"
+          },
+          "available": true
+        },
+        {
+          "id": "depth",
+          "label": "Profundidad",
+          "score": 87.2,
+          "weight": 0.05,
+          "evidence": {
+            "referencia": 0.398,
+            "resultado": 0.462,
+            "nota": "proxy de cuadrantes y detalle; no mapa métrico"
+          },
+          "available": true
+        },
+        {
+          "id": "lighting",
+          "label": "Iluminación",
+          "score": 80.7,
+          "weight": 0.07,
+          "evidence": {
+            "lumaReferencia": 0.321,
+            "lumaResultado": 0.271,
+            "contrasteReferencia": 0.135,
+            "contrasteResultado": 0.187
+          },
+          "available": true
+        },
+        {
+          "id": "animation",
+          "label": "Animación",
+          "score": 94.4,
+          "weight": 0.1,
+          "evidence": {
+            "movimientoReferencia": 0,
+            "movimientoResultado": 0.028,
+            "cortesReferencia": 0,
+            "cortesResultado": 0,
+            "ritmoReferencia": 0,
+            "ritmoResultado": 0
+          },
+          "available": true
+        },
+        {
+          "id": "transitions",
+          "label": "Transiciones y ritmo",
+          "score": 100,
+          "weight": 0.04,
+          "evidence": {
+            "cortesReferencia": 0,
+            "cortesResultado": 0,
+            "ritmoReferencia": 0,
+            "ritmoResultado": 0
+          },
+          "available": true
+        },
+        {
+          "id": "coherence",
+          "label": "Coherencia estética",
+          "score": 99,
+          "weight": 0.05,
+          "evidence": {
+            "histogramaDeMatiz": "coseno entre referencias y resultado",
+            "valor": 0.99
+          },
+          "available": true
+        },
+        {
+          "id": "accessibility",
+          "label": "Accesibilidad de contraste",
+          "score": 100,
+          "weight": 0.07,
+          "evidence": {
+            "checked": 11,
+            "violations": 0,
+            "averageContrast": 12.21,
+            "worstContrast": 7.85,
+            "samples": [
+              {
+                "text": "SIGNAL / 24",
+                "contrast": 14.07,
+                "fontSize": 11,
+                "required": 4.5
+              },
+              {
+                "text": "Reel 00:06",
+                "contrast": 7.89,
+                "fontSize": 11,
+                "required": 4.5
+              },
+              {
+                "text": "1.0-rc.1",
+                "contrast": 7.89,
+                "fontSize": 11,
+                "required": 4.5
+              },
+              {
+                "text": "PLANO 01",
+                "contrast": 7.85,
+                "fontSize": 11,
+                "required": 4.5
+              },
+              {
+                "text": "La luz entra primero.",
+                "contrast": 20.14,
+                "fontSize": 97.28,
+                "required": 3
+              },
+              {
+                "text": "PLANO 02",
+                "contrast": 7.85,
+                "fontSize": 11,
+                "required": 4.5
+              },
+              {
+                "text": "Después, el detalle.",
+                "contrast": 20.14,
+                "fontSize": 97.28,
+                "required": 3
+              },
+              {
+                "text": "PLANO 03",
+                "contrast": 7.85,
+                "fontSize": 11,
+                "required": 4.5
+              },
+              {
+                "text": "Y el pulso.",
+                "contrast": 20.14,
+                "fontSize": 97.28,
+                "required": 3
+              },
+              {
+                "text": "SIGNAL · 1280×720 · 25 fps",
+                "contrast": 10.26,
+                "fontSize": 10,
+                "required": 4.5
+              },
+              {
+                "text": "tres planos · dos cortes",
+                "contrast": 10.26,
+                "fontSize": 10,
+                "required": 4.5
+              }
+            ],
+            "note": "Contraste calculado en Chromium contra el primer ancestro con fondo opaco; aproximación orientativa, no certificación WCAG.",
+            "norma": "WCAG AA orientativo (4.5:1; 3:1 texto grande)"
+          },
+          "available": true
+        },
+        {
+          "id": "fluidity",
+          "label": "Fluidez",
+          "score": 35,
+          "weight": 0.03,
+          "evidence": {
+            "jerk": 0.1729,
+            "parpadeo": 0.0083,
+            "muestras": 5
+          },
+          "available": true
+        },
+        {
+          "id": "performance",
+          "label": "Rendimiento",
+          "score": 54.9,
+          "weight": 0.03,
+          "evidence": {
+            "intervaloMedioMs": 465,
+            "intervaloTargetMs": 250,
+            "jitterRelativo": 0.014,
+            "capturas": 6
+          },
+          "available": true
+        },
+        {
+          "id": "restraint",
+          "label": "Contención decorativa",
+          "score": null,
+          "weight": 0.02,
+          "evidence": {
+            "nota": "sin recuento de efectos"
+          },
+          "available": false
+        }
+      ],
+      "summary": "Calidad 86.9/100 (A) · fidelidad 85.3 · composición 97.8 · jerarquía 75.7 · animación 94.4 · tipografía 91.2 · profundidad 87.2 · iluminación 80.7 · transiciones 100.0 · coherencia 99.0 · accesibilidad 100.0 · fluidez 35.0 · rendimiento 54.9.",
+      "weightsUsed": {
+        "fidelity": 0.3,
+        "composition": 0.12,
+        "hierarchy": 0.08,
+        "typography": 0.06,
+        "depth": 0.05,
+        "lighting": 0.07,
+        "animation": 0.1,
+        "transitions": 0.04,
+        "coherence": 0.05,
+        "accessibility": 0.07,
+        "fluidity": 0.03,
+        "performance": 0.03
+      }
+    },
+    "image": {
+      "width": 240,
+      "height": 135,
+      "mae": 0.1649,
+      "rmse": 0.2106,
+      "deltaE": 22.06,
+      "ssim": 0.1884,
+      "paletteDeltaE": 22.06,
+      "heatmap": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\motion-graphics\\measure-b\\review\\diff\\heatmap.png",
+      "score": 37.3
+    },
+    "heatmap": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\motion-graphics\\measure-b\\review\\diff\\heatmap.png",
+    "referenceFrame": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\motion-graphics\\measure-b\\review\\reference-frame.png",
+    "warnings": [
+      "La relación de aspecto no coincide (referencia 0.93:1, captura 1.78:1). La comparación de color y contraste sigue siendo válida, pero la composición se estira en el mapa de calor."
+    ],
+    "id": "review",
+    "report": {
+      "md": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\motion-graphics\\measure-b\\review\\report.md",
+      "json": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\motion-graphics\\measure-b\\review\\review.json"
+    }
+  },
+  "dom": {
+    "url": "http://127.0.0.1:55088/index.html",
+    "title": "Tres planos. Un pulso. — B",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "reducedMotion": false,
+    "scroll": {
+      "width": 1280,
+      "height": 774,
+      "overflowX": 0,
+      "overflowY": 54
+    },
+    "elements": [
+      {
+        "selector": "main.reel > section.scene.s1:nth-of-type(1) > div.txt:nth-of-type(2) > h2",
+        "tag": "h2",
+        "role": null,
+        "text": "La luz entra primero.",
+        "box": {
+          "x": 62,
+          "y": 438,
+          "width": 699,
+          "height": 167
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 20.14,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Space Grotesk\", system-ui, sans-serif",
+          "fontSize": 97.28,
+          "fontWeight": 800,
+          "lineHeight": "83.6608px",
+          "letterSpacing": "-6.8096px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.reel > section.scene.s2:nth-of-type(2) > div.txt:nth-of-type(2) > h2",
+        "tag": "h2",
+        "role": null,
+        "text": "Después, el detalle.",
+        "box": {
+          "x": 62,
+          "y": 438,
+          "width": 699,
+          "height": 167
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 20.14,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Space Grotesk\", system-ui, sans-serif",
+          "fontSize": 97.28,
+          "fontWeight": 800,
+          "lineHeight": "83.6608px",
+          "letterSpacing": "-6.8096px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.reel > section.scene.s3:nth-of-type(3) > div.txt:nth-of-type(2) > h2",
+        "tag": "h2",
+        "role": null,
+        "text": "Y el pulso.",
+        "box": {
+          "x": 62,
+          "y": 544,
+          "width": 699,
+          "height": 84
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 20.14,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Space Grotesk\", system-ui, sans-serif",
+          "fontSize": 97.28,
+          "fontWeight": 800,
+          "lineHeight": "83.6608px",
+          "letterSpacing": "-6.8096px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "html > body > nav.nav",
+        "tag": "nav",
+        "role": null,
+        "text": "SIGNAL / 24Reel 00:061.0-rc.1",
+        "box": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 54
+        },
+        "region": "top-right",
+        "classes": [
+          "nav"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.89,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "relative",
+          "zIndex": "3",
+          "color": "rgb(165, 162, 153)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "17.05px",
+          "letterSpacing": "0.55px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "baseline.html",
+          "line": 3,
+          "match": ".nav",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "html > body > main.reel",
+        "tag": "main",
+        "role": null,
+        "text": "PLANO 01La luz entra primero.El encuadre amplio abre la pieza; el corte llega cuando el ojo ya leyó el espacio.PLANO 02Después, el detalle.E",
+        "box": {
+          "x": 0,
+          "y": 54,
+          "width": 1280,
+          "height": 668
+        },
+        "region": "center",
+        "classes": [
+          "reel"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 20.14,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "relative",
+          "zIndex": "auto",
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgb(7, 7, 8)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "hidden"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 19,
+          "match": ".reel",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > main.reel > section.scene.s1:nth-of-type(1) > img",
+        "tag": "img",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 0,
+          "y": 54,
+          "width": 1280,
+          "height": 668
+        },
+        "region": "center",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 20.14,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "absolute",
+          "zIndex": "auto",
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "saturate(0.82) contrast(1.04) brightness(1.12)",
+          "backdropFilter": "none",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "clip"
+        },
+        "source": null
+      },
+      {
+        "selector": "body > main.reel > section.scene.s2:nth-of-type(2) > img",
+        "tag": "img",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": -352,
+          "y": -130,
+          "width": 1984,
+          "height": 1035
+        },
+        "region": "center",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 20.14,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "absolute",
+          "zIndex": "auto",
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "saturate(0.82) contrast(1.04) brightness(1.12)",
+          "backdropFilter": "none",
+          "transform": "matrix(1.55, 0, 0, 1.55, 0, 0)",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "clip"
+        },
+        "source": null
+      },
+      {
+        "selector": "html > body > main.reel > section.scene.s3:nth-of-type(3)",
+        "tag": "section",
+        "role": null,
+        "text": "PLANO 03Y el pulso.El cierre vuelve al gesto: una sola línea y el tiempo justo.",
+        "box": {
+          "x": 0,
+          "y": 54,
+          "width": 1280,
+          "height": 668
+        },
+        "region": "center",
+        "classes": [
+          "scene",
+          "s3"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 20.14,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "absolute",
+          "zIndex": "auto",
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "6s cubic-bezier(0.4, 0, 0.2, 1) 4s infinite cut",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "baseline.html",
+          "line": 14,
+          "match": ".scene",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > main.reel > section.scene.s3:nth-of-type(3) > img",
+        "tag": "img",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": -672,
+          "y": -297,
+          "width": 2624,
+          "height": 1369
+        },
+        "region": "center",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 20.14,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "absolute",
+          "zIndex": "auto",
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "saturate(0.82) contrast(1.04) brightness(1.12)",
+          "backdropFilter": "none",
+          "transform": "matrix(2.05, 0, 0, 2.05, 0, 0)",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "clip"
+        },
+        "source": null
+      },
+      {
+        "selector": "html > body > nav.nav > span.brand:nth-of-type(1)",
+        "tag": "span",
+        "role": null,
+        "text": "SIGNAL / 24",
+        "box": {
+          "x": 60,
+          "y": 18,
+          "width": 73,
+          "height": 17
+        },
+        "region": "top-left",
+        "classes": [
+          "brand"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 14.07,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(218, 216, 204)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 11,
+          "fontWeight": 700,
+          "lineHeight": "17.05px",
+          "letterSpacing": "1.1px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "baseline.html",
+          "line": 4,
+          "match": ".brand",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > main.reel > section.scene.s1:nth-of-type(1) > div.shade:nth-of-type(1)",
+        "tag": "div",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 0,
+          "y": 54,
+          "width": 1280,
+          "height": 668
+        },
+        "region": "center",
+        "classes": [
+          "shade"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 20.14,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 0.921669,
+          "position": "absolute",
+          "zIndex": "auto",
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate shade",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 27,
+          "match": ".shade",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > main.reel > section.scene.s1:nth-of-type(1) > div.txt:nth-of-type(2)",
+        "tag": "div",
+        "role": null,
+        "text": "PLANO 01La luz entra primero.El encuadre amplio abre la pieza; el corte llega cuando el ojo ya leyó el espacio.",
+        "box": {
+          "x": 62,
+          "y": 416,
+          "width": 1156,
+          "height": 248
+        },
+        "region": "bottom-right",
+        "classes": [
+          "txt"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 20.14,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "absolute",
+          "zIndex": "auto",
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 29,
+          "match": ".txt",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "main.reel > section.scene.s1:nth-of-type(1) > div.txt:nth-of-type(2) > p.num:nth-of-type(1)",
+        "tag": "p",
+        "role": null,
+        "text": "PLANO 01",
+        "box": {
+          "x": 62,
+          "y": 416,
+          "width": 1156,
+          "height": 12
+        },
+        "region": "center",
+        "classes": [
+          "num"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.85,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(186, 156, 133)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "2.42px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 30,
+          "match": ".num",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > main.reel > section.scene.s2:nth-of-type(2) > div.shade:nth-of-type(1)",
+        "tag": "div",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 0,
+          "y": 54,
+          "width": 1280,
+          "height": 668
+        },
+        "region": "center",
+        "classes": [
+          "shade"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 20.14,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 0.921669,
+          "position": "absolute",
+          "zIndex": "auto",
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate shade",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 27,
+          "match": ".shade",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > main.reel > section.scene.s2:nth-of-type(2) > div.txt:nth-of-type(2)",
+        "tag": "div",
+        "role": null,
+        "text": "PLANO 02Después, el detalle.El segundo plano cierra la escala y sostiene el ritmo sin añadir adornos.",
+        "box": {
+          "x": 62,
+          "y": 416,
+          "width": 1156,
+          "height": 248
+        },
+        "region": "bottom-right",
+        "classes": [
+          "txt"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 20.14,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "absolute",
+          "zIndex": "auto",
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 29,
+          "match": ".txt",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "main.reel > section.scene.s2:nth-of-type(2) > div.txt:nth-of-type(2) > p.num:nth-of-type(1)",
+        "tag": "p",
+        "role": null,
+        "text": "PLANO 02",
+        "box": {
+          "x": 62,
+          "y": 416,
+          "width": 1156,
+          "height": 12
+        },
+        "region": "center",
+        "classes": [
+          "num"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.85,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(186, 156, 133)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "2.42px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 30,
+          "match": ".num",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > main.reel > section.scene.s3:nth-of-type(3) > div.shade:nth-of-type(1)",
+        "tag": "div",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 0,
+          "y": 54,
+          "width": 1280,
+          "height": 668
+        },
+        "region": "center",
+        "classes": [
+          "shade"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 20.14,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 0.921669,
+          "position": "absolute",
+          "zIndex": "auto",
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate shade",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 27,
+          "match": ".shade",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > main.reel > section.scene.s3:nth-of-type(3) > div.txt:nth-of-type(2)",
+        "tag": "div",
+        "role": null,
+        "text": "PLANO 03Y el pulso.El cierre vuelve al gesto: una sola línea y el tiempo justo.",
+        "box": {
+          "x": 62,
+          "y": 522,
+          "width": 1156,
+          "height": 142
+        },
+        "region": "bottom-right",
+        "classes": [
+          "txt"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 20.14,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "absolute",
+          "zIndex": "auto",
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 29,
+          "match": ".txt",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "main.reel > section.scene.s3:nth-of-type(3) > div.txt:nth-of-type(2) > p.num:nth-of-type(1)",
+        "tag": "p",
+        "role": null,
+        "text": "PLANO 03",
+        "box": {
+          "x": 62,
+          "y": 522,
+          "width": 1156,
+          "height": 12
+        },
+        "region": "bottom-right",
+        "classes": [
+          "num"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.85,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(186, 156, 133)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "2.42px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 30,
+          "match": ".num",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "html > body > main.reel > div.timeline",
+        "tag": "div",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 62,
+          "y": 698,
+          "width": 1156,
+          "height": 2
+        },
+        "region": "bottom-right",
+        "classes": [
+          "timeline"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 20.14,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "absolute",
+          "zIndex": "4",
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 33,
+          "match": ".timeline",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > main.reel > div.timeline > i.on:nth-of-type(1)",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 62,
+          "y": 698,
+          "width": 381,
+          "height": 2
+        },
+        "region": "bottom-left",
+        "classes": [
+          "on"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 2.57,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgb(186, 156, 133)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 34,
+          "match": ".on",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "html > body > footer.bar",
+        "tag": "footer",
+        "role": null,
+        "text": "SIGNAL · 1280×720 · 25 fpstres planos · dos cortes",
+        "box": {
+          "x": 0,
+          "y": 722,
+          "width": 1280,
+          "height": 52
+        },
+        "region": "bottom-right",
+        "classes": [
+          "bar"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 10.26,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(185, 185, 185)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 10,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "1.6px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "baseline.html",
+          "line": 13,
+          "match": ".bar",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "html > body > nav.nav > span:nth-of-type(2)",
+        "tag": "span",
+        "role": null,
+        "text": "Reel 00:06",
+        "box": {
+          "x": 629,
+          "y": 18,
+          "width": 55,
+          "height": 17
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.89,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(165, 162, 153)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "17.05px",
+          "letterSpacing": "0.55px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "html > body > nav.nav > span:nth-of-type(3)",
+        "tag": "span",
+        "role": null,
+        "text": "1.0-rc.1",
+        "box": {
+          "x": 1180,
+          "y": 18,
+          "width": 40,
+          "height": 17
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.89,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(165, 162, 153)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "17.05px",
+          "letterSpacing": "0.55px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.reel > section.scene.s1:nth-of-type(1) > div.txt:nth-of-type(2) > p:nth-of-type(2)",
+        "tag": "p",
+        "role": null,
+        "text": "El encuadre amplio abre la pieza; el corte llega cuando el ojo ya leyó el espacio.",
+        "box": {
+          "x": 62,
+          "y": 619,
+          "width": 372,
+          "height": 45
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.875216 0.868471 0.828)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 15,
+          "fontWeight": 400,
+          "lineHeight": "22.5px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.reel > section.scene.s2:nth-of-type(2) > div.txt:nth-of-type(2) > p:nth-of-type(2)",
+        "tag": "p",
+        "role": null,
+        "text": "El segundo plano cierra la escala y sostiene el ritmo sin añadir adornos.",
+        "box": {
+          "x": 62,
+          "y": 619,
+          "width": 372,
+          "height": 45
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.875216 0.868471 0.828)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 15,
+          "fontWeight": 400,
+          "lineHeight": "22.5px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.reel > section.scene.s3:nth-of-type(3) > div.txt:nth-of-type(2) > p:nth-of-type(2)",
+        "tag": "p",
+        "role": null,
+        "text": "El cierre vuelve al gesto: una sola línea y el tiempo justo.",
+        "box": {
+          "x": 62,
+          "y": 642,
+          "width": 372,
+          "height": 23
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": null,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "color(srgb 0.875216 0.868471 0.828)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 15,
+          "fontWeight": 400,
+          "lineHeight": "22.5px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "body > main.reel > div.timeline > i:nth-of-type(2)",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 449,
+          "y": 698,
+          "width": 381,
+          "height": 2
+        },
+        "region": "bottom-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 20.14,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(255, 255, 255, 0.18)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "body > main.reel > div.timeline > i:nth-of-type(3)",
+        "tag": "i",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 837,
+          "y": 698,
+          "width": 381,
+          "height": 2
+        },
+        "region": "bottom-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 20.14,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(255, 255, 255)",
+          "backgroundColor": "rgba(255, 255, 255, 0.18)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "html > body > footer.bar > span:nth-of-type(1)",
+        "tag": "span",
+        "role": null,
+        "text": "SIGNAL · 1280×720 · 25 fps",
+        "box": {
+          "x": 60,
+          "y": 743,
+          "width": 162,
+          "height": 11
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 10.26,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(185, 185, 185)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 10,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "1.6px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "body > footer.bar > span:nth-of-type(1) > b",
+        "tag": "b",
+        "role": null,
+        "text": "SIGNAL",
+        "box": {
+          "x": 60,
+          "y": 743,
+          "width": 48,
+          "height": 11
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 7.85,
+        "styles": {
+          "display": "inline",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(186, 156, 133)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 10,
+          "fontWeight": 700,
+          "lineHeight": "normal",
+          "letterSpacing": "1.6px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "html > body > footer.bar > span:nth-of-type(2)",
+        "tag": "span",
+        "role": null,
+        "text": "tres planos · dos cortes",
+        "box": {
+          "x": 1090,
+          "y": 743,
+          "width": 130,
+          "height": 11
+        },
+        "region": "bottom-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 10.26,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(185, 185, 185)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 10,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "1.6px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      }
+    ],
+    "animations": [
+      {
+        "name": "cut",
+        "target": "html > body > main.reel > section.scene.s1:nth-of-type(1)",
+        "duration": 6000,
+        "delay": 0,
+        "easing": "cubic-bezier(0.4",
+        "iterations": null,
+        "playState": "running",
+        "source": null
+      },
+      {
+        "name": "shade",
+        "target": "body > main.reel > section.scene.s1:nth-of-type(1) > div.shade:nth-of-type(1)",
+        "duration": 2200,
+        "delay": 0,
+        "easing": "cubic-bezier(0.4",
+        "iterations": null,
+        "playState": "running",
+        "source": {
+          "file": "index.html",
+          "line": 27,
+          "match": ".shade",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "name": "cut",
+        "target": "html > body > main.reel > section.scene.s2:nth-of-type(2)",
+        "duration": 6000,
+        "delay": 2000,
+        "easing": "cubic-bezier(0.4",
+        "iterations": null,
+        "playState": "running",
+        "source": null
+      },
+      {
+        "name": "shade",
+        "target": "body > main.reel > section.scene.s2:nth-of-type(2) > div.shade:nth-of-type(1)",
+        "duration": 2200,
+        "delay": 0,
+        "easing": "cubic-bezier(0.4",
+        "iterations": null,
+        "playState": "running",
+        "source": {
+          "file": "index.html",
+          "line": 27,
+          "match": ".shade",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "name": "cut",
+        "target": "html > body > main.reel > section.scene.s3:nth-of-type(3)",
+        "duration": 6000,
+        "delay": 4000,
+        "easing": "cubic-bezier(0.4",
+        "iterations": null,
+        "playState": "running",
+        "source": {
+          "file": "baseline.html",
+          "line": 14,
+          "match": ".scene",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "name": "shade",
+        "target": "body > main.reel > section.scene.s3:nth-of-type(3) > div.shade:nth-of-type(1)",
+        "duration": 2200,
+        "delay": 0,
+        "easing": "cubic-bezier(0.4",
+        "iterations": null,
+        "playState": "running",
+        "source": {
+          "file": "index.html",
+          "line": 27,
+          "match": ".shade",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      }
+    ],
+    "canvases": [],
+    "brokenImages": [],
+    "buttonsWithoutName": [],
+    "imagesWithoutAlt": [],
+    "consoleErrors": [],
+    "pageErrors": [],
+    "requestFailures": [],
+    "counts": {
+      "elements": 32,
+      "headings": 3,
+      "buttons": 0,
+      "links": 0,
+      "images": 3,
+      "canvases": 0,
+      "effects": 0,
+      "layers": 13,
+      "materials": 3,
+      "transitions": 6,
+      "animations": 6
+    },
+    "contrast": {
+      "checked": 11,
+      "violations": 0,
+      "worst": 7.85,
+      "average": 12.21
+    },
+    "sourceIndex": {
+      "files": 2,
+      "bytes": 8105,
+      "truncated": false
+    },
+    "warnings": [],
+    "screenshot": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\motion-graphics\\measure-b\\dom\\dom.png"
+  },
+  "critic": {
+    "version": "0.5",
+    "score": 100,
+    "grade": "A",
+    "findings": [],
+    "counts": {
+      "critical": 0,
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "summary": "Crítica 100/100 (A): no se detectaron defectos con los datos disponibles.",
+    "agentTask": "# Tarea visual priorizada\n\nBrief: Pieza de motion graphics de seis segundos: tres planos, cortes en el tiempo medido de la referencia.\nEstilo: motion-graphics\nCrítica: Crítica 100/100 (A): no se detectaron defectos con los datos disponibles.\n\n## Corrige sólo estos defectos medidos\n\nNo hay defectos medidos. No reescribas el proyecto; solicita revisión artística humana.\n## Reglas de la iteración\n\n1. No reescribas todo: aplica el cambio mínimo en la ubicación indicada.\n2. No añadas un efecto si no hay evidencia de que falta y una función que cumplir.\n3. Conserva las decisiones que ya pasan los umbrales.\n4. Vuelve a capturar y compara antes/después; revierte si no mejora.\n5. La aprobación artística final es humana.\n\n## Límites\n\n- La crítica detecta defectos estructurales; no sustituye la aprobación artística humana.",
+    "limitations": [
+      "La crítica detecta defectos estructurales; no sustituye la aprobación artística humana."
+    ],
+    "measured": {
+      "quality": 86.9,
+      "fidelity": 85.3,
+      "composition": 97.8,
+      "hierarchy": 75.7,
+      "typography": 91.2,
+      "depth": 87.2,
+      "lighting": 80.7,
+      "coherence": 99,
+      "transitions": 100,
+      "performance": 54.9
+    },
+    "artisticJudgment": false
+  },
+  "fidelity": {
+    "version": "0.5",
+    "score": 90.5,
+    "grade": "A",
+    "dimensions": [
+      {
+        "id": "composition",
+        "label": "Posición y proporción de la composición",
+        "score": 97.8,
+        "weight": 0.14,
+        "status": "verified",
+        "evidence": {
+          "medicion": "masa por cuadrantes",
+          "nota": "proxy, no cajas de objetos"
+        },
+        "note": "La composición se mide por distribución de masa."
+      },
+      {
+        "id": "layout",
+        "label": "Layout y equilibrio",
+        "score": 92.9,
+        "weight": 0.1,
+        "status": "verified",
+        "evidence": {
+          "metodo": "balance horizontal/vertical del primer fotograma"
+        },
+        "note": "No se comparan posiciones de elementos individuales sin un mapa de referencia."
+      },
+      {
+        "id": "typography",
+        "label": "Tipografía y proporción",
+        "score": null,
+        "weight": 0.12,
+        "status": "unavailable",
+        "evidence": {
+          "nota": "requiere especificación y DOM"
+        },
+        "note": "Se compara escala relativa; la familia no se identifica."
+      },
+      {
+        "id": "palette",
+        "label": "Paleta y coherencia cromática",
+        "score": 99,
+        "weight": 0.1,
+        "status": "verified",
+        "evidence": {
+          "metodo": "histograma de matiz",
+          "nota": "no evalúa si el color es apropiado"
+        },
+        "note": "La similitud cromática no implica calidad artística."
+      },
+      {
+        "id": "lighting",
+        "label": "Iluminación",
+        "score": 80.7,
+        "weight": 0.09,
+        "status": "verified",
+        "evidence": {
+          "metodo": "luma, contraste y proporción oscura"
+        },
+        "note": "Medida global, no dirección de luz por objeto."
+      },
+      {
+        "id": "depth",
+        "label": "Profundidad",
+        "score": 87.2,
+        "weight": 0.08,
+        "status": "verified",
+        "evidence": {
+          "metodo": "dispersión de cuadrantes y detalle"
+        },
+        "note": "Proxy declarado; no es un mapa de profundidad."
+      },
+      {
+        "id": "materials",
+        "label": "Texturas y materiales",
+        "score": 90,
+        "weight": 0.07,
+        "status": "estimated",
+        "evidence": {
+          "materialDeclarado": "flat",
+          "señales": 3,
+          "blur": "no",
+          "sombra": "no",
+          "estado": "estimated desde CSS computado"
+        },
+        "note": "Se infiere del CSS computado; no hay mapa de textura de referencia."
+      },
+      {
+        "id": "effects",
+        "label": "Efectos",
+        "score": null,
+        "weight": 0.08,
+        "status": "unavailable",
+        "evidence": {
+          "nota": "referencia sin efectos declarados"
+        },
+        "note": "La correspondencia es por etiqueta, no por píxel."
+      },
+      {
+        "id": "motion",
+        "label": "Trayectorias de movimiento",
+        "score": null,
+        "weight": 0.06,
+        "status": "unavailable",
+        "evidence": {
+          "nota": "sin cámara de referencia y animaciones comparables"
+        },
+        "note": "No se reconstruye la trayectoria exacta desde CSS."
+      },
+      {
+        "id": "rhythm",
+        "label": "Duración y ritmo",
+        "score": null,
+        "weight": 0.04,
+        "status": "unavailable",
+        "evidence": {
+          "nota": "sin escenas y animaciones comparables"
+        },
+        "note": "Ritmo global; no alineación escena a escena."
+      },
+      {
+        "id": "transitions",
+        "label": "Transiciones",
+        "score": 100,
+        "weight": 0.04,
+        "status": "verified",
+        "evidence": {
+          "nota": "sólo disponible con referencia temporal"
+        },
+        "note": "Sin vídeo de referencia no se afirma la transición."
+      },
+      {
+        "id": "frameCoherence",
+        "label": "Coherencia entre fotogramas",
+        "score": 73.7,
+        "weight": 0.08,
+        "status": "verified",
+        "evidence": {
+          "metodo": "estabilidad de luminancia",
+          "nota": "detecta parpadeo, no intención artística"
+        },
+        "note": "La estabilidad no equivale a buena dirección."
+      }
+    ],
+    "pixelSimilarity": 85.3,
+    "structuralVsPixel": "Estructura 90.5/100 · píxel 85.3/100. No son intercambiables: una imagen puede parecerse y seguir siendo un mal diseño.",
+    "warnings": [
+      "La similitud de píxeles se informa aparte y no se usa para aprobar calidad artística.",
+      "Layout, tipografía, materiales y movimiento se estiman con los datos disponibles; las dimensiones sin datos quedan fuera.",
+      "Sin especificación de referencia no se afirma fidelidad de posición, textura o trayectoria."
+    ],
+    "summary": "Fidelidad estructural 90.5/100 (A) · 8/12 dimensiones disponibles · similitud de píxeles 85.3 (informativa)."
+  },
+  "gates": {
+    "version": "0.5",
+    "pass": true,
+    "decision": "accept",
+    "checks": [
+      {
+        "id": "quality",
+        "label": "Calidad visual global",
+        "status": "pass",
+        "actual": 86.9,
+        "threshold": 72,
+        "blocking": true,
+        "detail": "Puntuación ponderada de las dimensiones disponibles."
+      },
+      {
+        "id": "fidelity",
+        "label": "Fidelidad estructural",
+        "status": "pass",
+        "actual": 90.5,
+        "threshold": 70,
+        "blocking": true,
+        "detail": "No usa la similitud de píxeles como sustituto."
+      },
+      {
+        "id": "composition",
+        "label": "Composición",
+        "status": "pass",
+        "actual": 97.8,
+        "threshold": 62,
+        "blocking": true,
+        "detail": "Balance de masa medido."
+      },
+      {
+        "id": "typography",
+        "label": "Tipografía y legibilidad",
+        "status": "pass",
+        "actual": 91.2,
+        "threshold": 62,
+        "blocking": true,
+        "detail": "Auditoría DOM + escala."
+      },
+      {
+        "id": "performance",
+        "label": "Rendimiento",
+        "status": "pass",
+        "actual": 60.6,
+        "threshold": 55,
+        "blocking": true,
+        "detail": "FPS medidos."
+      },
+      {
+        "id": "critical-findings",
+        "label": "Defectos críticos",
+        "status": "pass",
+        "actual": 0,
+        "threshold": 0,
+        "blocking": true,
+        "detail": "Un defecto crítico bloquea aunque la media sea alta."
+      },
+      {
+        "id": "high-findings",
+        "label": "Defectos de gravedad alta",
+        "status": "pass",
+        "actual": 0,
+        "threshold": 0,
+        "blocking": true,
+        "detail": "Los defectos altos también bloquean por defecto."
+      },
+      {
+        "id": "contrast",
+        "label": "Contraste DOM",
+        "status": "pass",
+        "actual": 0,
+        "threshold": 0,
+        "blocking": true,
+        "detail": "Peor contraste 7.85:1; 11 textos."
+      },
+      {
+        "id": "runtime",
+        "label": "Funcionamiento sin errores",
+        "status": "pass",
+        "actual": 0,
+        "threshold": 0,
+        "blocking": true,
+        "detail": "Consola, pageerror, recursos fallidos e imágenes rotas."
+      },
+      {
+        "id": "human-art",
+        "label": "Aprobación artística humana",
+        "status": "pending",
+        "actual": "pendiente",
+        "threshold": "recomendada",
+        "blocking": false,
+        "detail": "No bloquea por configuración, pero queda pendiente y se declara."
+      }
+    ],
+    "blockers": [],
+    "warnings": [
+      "La calidad artística final aún no ha sido aprobada por una persona."
+    ],
+    "humanApproval": {
+      "required": false,
+      "approved": false
+    },
+    "summary": "Aceptado: 9/10 gates en verde; arte pendiente de revisión humana."
+  },
+  "art": {
+    "version": "0.4",
+    "id": "motion-graphics-motion-i8wmf",
+    "brief": "Pieza de motion graphics de seis segundos: tres planos, cortes en el tiempo medido de la referencia.",
+    "projectType": "motion",
+    "style": {
+      "id": "motion-graphics",
+      "name": "Motion graphics",
+      "description": "Tiempo, ritmo y tipografía en movimiento; cada frame tiene una función.",
+      "keywords": [
+        "motion",
+        "animación",
+        "kinético",
+        "vídeo",
+        "after effects",
+        "título"
+      ],
+      "mode": "dark",
+      "colors": {
+        "bg": "#090909",
+        "surface": "#141414",
+        "elevated": "#1e1e1e",
+        "text": "#ffffff",
+        "muted": "#b6b6b6",
+        "accent": "#ff6b35",
+        "accent2": "#7cf5ff",
+        "border": "#333333",
+        "success": "#4ade80",
+        "warning": "#fbbf24",
+        "danger": "#fb7185",
+        "focus": "#7dd3fc"
+      },
+      "typography": {
+        "display": "display",
+        "body": "sans",
+        "mono": "mono",
+        "displayWeight": 800,
+        "bodyWeight": 430,
+        "scaleRatio": 1.45,
+        "bodyPx": 16,
+        "lineHeight": 1.55,
+        "displayLineHeight": 0.88,
+        "tracking": "-0.01em",
+        "displayTracking": "-0.065em",
+        "measure": 42
+      },
+      "layout": {
+        "maxWidth": 1400,
+        "gutter": 24,
+        "spacing": 8,
+        "radius": 0,
+        "borderWidth": 1,
+        "columns": 12,
+        "shadow": "none"
+      },
+      "materials": {
+        "surface": "flat",
+        "grain": 0.05,
+        "glassBlur": 0,
+        "gradient": "linear-gradient(90deg, #ff6b35, transparent 35%)",
+        "texture": "grano de película"
+      },
+      "motion": {
+        "level": "expressive",
+        "fastMs": 150,
+        "baseMs": 500,
+        "slowMs": 1200,
+        "easeOut": "cubic-bezier(.16,1,.3,1)",
+        "easeInOut": "cubic-bezier(.65,0,.35,1)",
+        "spring": "cubic-bezier(.34,1.56,.64,1)",
+        "staggerMs": 80,
+        "camera": "zoom 1.12, rotación 1.2° en transición"
+      },
+      "composition": {
+        "focal": "titular a sangre",
+        "alignment": "asymmetric",
+        "negativeSpace": 0.3,
+        "density": "balanced",
+        "contrast": "high",
+        "headlineChars": 20,
+        "imageRatio": "16:9",
+        "notes": [
+          "Corte en el pico de movimiento",
+          "Nunca animar todo a la vez"
+        ]
+      },
+      "effects": [
+        {
+          "id": "volumetric-rays",
+          "role": "haz de luz"
+        },
+        {
+          "id": "split-reveal",
+          "role": "revelado tipográfico"
+        }
+      ],
+      "signature": [
+        "Tipografía 100–240 px",
+        "Naranja de señal",
+        "Cortes secos",
+        "Timeline visible"
+      ],
+      "avoid": [
+        "Efectos sin ritmo",
+        "Fondos recargados",
+        "Transiciones genéricas"
+      ]
+    },
+    "palette": {
+      "bg": "#090909",
+      "surface": "#141414",
+      "elevated": "#1e1e1e",
+      "text": "#ffffff",
+      "muted": "#b6b6b6",
+      "accent": "#ff6b35",
+      "accent2": "#7cf5ff",
+      "border": "#333333",
+      "success": "#4ade80",
+      "warning": "#fbbf24",
+      "danger": "#fb7185",
+      "focus": "#7dd3fc"
+    },
+    "typography": {
+      "display": "display",
+      "body": "sans",
+      "mono": "mono",
+      "displayWeight": 800,
+      "bodyWeight": 430,
+      "scaleRatio": 1.45,
+      "bodyPx": 16,
+      "lineHeight": 1.55,
+      "displayLineHeight": 0.88,
+      "tracking": "-0.01em",
+      "displayTracking": "-0.065em",
+      "measure": 42,
+      "sizes": {
+        "caption": 12,
+        "small": 14,
+        "body": 16,
+        "lead": 20,
+        "h3": 23.2,
+        "h2": 33.6,
+        "h1": 48.8,
+        "display": 70.7,
+        "hero": 102.6
+      },
+      "responsive": {
+        "caption": "clamp(12px, 0.94vw, 12px)",
+        "small": "clamp(12px, 1.09vw, 14px)",
+        "body": "clamp(12px, 1.25vw, 16px)",
+        "lead": "clamp(14px, 1.56vw, 20px)",
+        "h3": "clamp(17px, 1.81vw, 23px)",
+        "h2": "clamp(24px, 2.63vw, 34px)",
+        "h1": "clamp(35px, 3.81vw, 49px)",
+        "display": "clamp(51px, 5.52vw, 71px)",
+        "hero": "clamp(74px, 8.02vw, 103px)"
+      },
+      "families": {
+        "display": "VE Space Grotesk",
+        "body": "VE Inter",
+        "mono": "VE JetBrains Mono"
+      }
+    },
+    "layout": {
+      "maxWidth": 1400,
+      "gutter": 24,
+      "spacing": 8,
+      "radius": 0,
+      "borderWidth": 1,
+      "columns": 12,
+      "shadow": "none"
+    },
+    "materials": {
+      "surface": "flat",
+      "grain": 0.05,
+      "glassBlur": 0,
+      "gradient": "linear-gradient(90deg, #ff6b35, transparent 35%)",
+      "texture": "grano de película"
+    },
+    "motion": {
+      "level": "expressive",
+      "fastMs": 150,
+      "baseMs": 500,
+      "slowMs": 1200,
+      "easeOut": "cubic-bezier(.16,1,.3,1)",
+      "easeInOut": "cubic-bezier(.65,0,.35,1)",
+      "spring": "cubic-bezier(.34,1.56,.64,1)",
+      "staggerMs": 80,
+      "camera": "zoom 1.12, rotación 1.2° en transición"
+    },
+    "composition": {
+      "focal": "titular a sangre",
+      "alignment": "asymmetric",
+      "negativeSpace": 0.3,
+      "density": "balanced",
+      "contrast": "high",
+      "headlineChars": 20,
+      "imageRatio": "16:9",
+      "notes": [
+        "Corte en el pico de movimiento",
+        "Nunca animar todo a la vez"
+      ]
+    },
+    "effects": [
+      {
+        "id": "volumetric-rays",
+        "role": "haz de luz",
+        "reason": "Compatible con Motion graphics (iluminacion; MIT (propio))."
+      },
+      {
+        "id": "split-reveal",
+        "role": "revelado tipográfico",
+        "reason": "Compatible con Motion graphics (tipografia; MIT (propio))."
+      }
+    ],
+    "components": [
+      "TypeStage",
+      "TimelineMarkers",
+      "SceneLabel",
+      "SafeArea",
+      "Progress"
+    ],
+    "tokenSet": {
+      "color.bg": {
+        "$value": "#090909",
+        "$type": "color"
+      },
+      "color.surface": {
+        "$value": "#141414",
+        "$type": "color"
+      },
+      "color.elevated": {
+        "$value": "#1e1e1e",
+        "$type": "color"
+      },
+      "color.text": {
+        "$value": "#ffffff",
+        "$type": "color"
+      },
+      "color.muted": {
+        "$value": "#b6b6b6",
+        "$type": "color"
+      },
+      "color.accent": {
+        "$value": "#ff6b35",
+        "$type": "color"
+      },
+      "color.accent2": {
+        "$value": "#7cf5ff",
+        "$type": "color"
+      },
+      "color.border": {
+        "$value": "#333333",
+        "$type": "color"
+      },
+      "color.success": {
+        "$value": "#4ade80",
+        "$type": "color"
+      },
+      "color.warning": {
+        "$value": "#fbbf24",
+        "$type": "color"
+      },
+      "color.danger": {
+        "$value": "#fb7185",
+        "$type": "color"
+      },
+      "color.focus": {
+        "$value": "#7dd3fc",
+        "$type": "color"
+      },
+      "color.accentInk": {
+        "$value": "#04100f",
+        "$type": "color"
+      },
+      "font.size.caption": {
+        "$value": 12,
+        "$type": "dimension"
+      },
+      "font.size.small": {
+        "$value": 14,
+        "$type": "dimension"
+      },
+      "font.size.body": {
+        "$value": 16,
+        "$type": "dimension"
+      },
+      "font.size.lead": {
+        "$value": 20,
+        "$type": "dimension"
+      },
+      "font.size.h3": {
+        "$value": 23.2,
+        "$type": "dimension"
+      },
+      "font.size.h2": {
+        "$value": 33.6,
+        "$type": "dimension"
+      },
+      "font.size.h1": {
+        "$value": 48.8,
+        "$type": "dimension"
+      },
+      "font.size.display": {
+        "$value": 70.7,
+        "$type": "dimension"
+      },
+      "font.size.hero": {
+        "$value": 102.6,
+        "$type": "dimension"
+      },
+      "font.display": {
+        "$value": "VE Space Grotesk",
+        "$type": "fontFamily"
+      },
+      "font.body": {
+        "$value": "VE Inter",
+        "$type": "fontFamily"
+      },
+      "font.mono": {
+        "$value": "VE JetBrains Mono",
+        "$type": "fontFamily"
+      },
+      "font.scaleRatio": {
+        "$value": 1.45,
+        "$type": "number"
+      },
+      "space.base": {
+        "$value": 8,
+        "$type": "dimension"
+      },
+      "space.gutter": {
+        "$value": 24,
+        "$type": "dimension"
+      },
+      "radius.card": {
+        "$value": 0,
+        "$type": "dimension"
+      },
+      "border.width": {
+        "$value": 1,
+        "$type": "dimension"
+      },
+      "motion.fast": {
+        "$value": "150ms",
+        "$type": "duration"
+      },
+      "motion.base": {
+        "$value": "500ms",
+        "$type": "duration"
+      },
+      "motion.slow": {
+        "$value": "1200ms",
+        "$type": "duration"
+      },
+      "motion.easeOut": {
+        "$value": "cubic-bezier(.16,1,.3,1)",
+        "$type": "cubicBezier"
+      },
+      "motion.stagger": {
+        "$value": "80ms",
+        "$type": "duration"
+      }
+    },
+    "rationale": [
+      "Proyecto motion: TypeStage, TimelineMarkers, SceneLabel antes de decorar.",
+      "Estilo Motion graphics: Tiempo, ritmo y tipografía en movimiento; cada frame tiene una función.",
+      "Tipografía display + sans + mono; escala 1.45.",
+      "Densidad balanced; espacio base 8 px y radio 0 px.",
+      "Movimiento expressive; transiciones de 150/500/1200 ms.",
+      "Efectos elegidos por función: volumetric-rays (haz de luz), split-reveal (revelado tipográfico).",
+      "Contraste de texto sobre fondo: 19.91:1."
+    ],
+    "warnings": [
+      "Movimiento expresivo: verifica prefers-reduced-motion y no bloquees la lectura."
+    ],
+    "fonts": [
+      {
+        "id": "space-grotesk",
+        "family": "VE Space Grotesk",
+        "file": "SpaceGrotesk_wght_.ttf",
+        "license": "OFL-1.1"
+      },
+      {
+        "id": "inter",
+        "family": "VE Inter",
+        "file": "Inter_opsz,wght_.ttf",
+        "license": "OFL-1.1"
+      },
+      {
+        "id": "jetbrains-mono",
+        "family": "VE JetBrains Mono",
+        "file": "JetBrainsMono_wght_.ttf",
+        "license": "OFL-1.1"
+      }
+    ],
+    "audit": {
+      "structuralScore": 99.2,
+      "dimensions": [
+        {
+          "id": "contrast",
+          "score": 100,
+          "evidence": "19.91:1 OK; 18.42:1 OK; 9.82:1 OK; 6.82:1 OK"
+        },
+        {
+          "id": "type-scale",
+          "score": 100,
+          "evidence": "9 pasos, cuerpo 16px, ratio 1.45"
+        },
+        {
+          "id": "spacing",
+          "score": 100,
+          "evidence": "base 8px, gutter 24px"
+        },
+        {
+          "id": "hierarchy",
+          "score": 94.5,
+          "evidence": "ratio 1.45, display 70.7px"
+        },
+        {
+          "id": "restraint",
+          "score": 100,
+          "evidence": "2 efecto(s) para motion"
+        },
+        {
+          "id": "motion-accessibility",
+          "score": 100,
+          "evidence": "expressive; base 500ms; stagger 80ms"
+        },
+        {
+          "id": "identity",
+          "score": 100,
+          "evidence": "4 reglas de firma; 3 anti-patrones"
+        }
+      ],
+      "contrastPairs": [
+        {
+          "fg": "#ffffff",
+          "bg": "#090909",
+          "ratio": 19.91,
+          "pass": true
+        },
+        {
+          "fg": "#ffffff",
+          "bg": "#141414",
+          "ratio": 18.42,
+          "pass": true
+        },
+        {
+          "fg": "#b6b6b6",
+          "bg": "#090909",
+          "ratio": 9.82,
+          "pass": true
+        },
+        {
+          "fg": "#04100f",
+          "bg": "#ff6b35",
+          "ratio": 6.82,
+          "pass": true
+        }
+      ],
+      "warnings": [],
+      "note": "Auditoría estructural, no juicio artístico. Comprueba contraste, escala, ritmo, mesura y accesibilidad; la evaluación humana es independiente."
+    }
+  },
+  "paths": {
+    "outDir": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\motion-graphics\\measure-b",
+    "intelligence": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\motion-graphics\\measure-b\\intelligence.json",
+    "critic": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\motion-graphics\\measure-b\\critic.json",
+    "criticMd": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\motion-graphics\\measure-b\\critic.md",
+    "fidelity": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\motion-graphics\\measure-b\\fidelity.json",
+    "fidelityMd": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\motion-graphics\\measure-b\\fidelity.md",
+    "gates": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\motion-graphics\\measure-b\\gates.json",
+    "gatesMd": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\motion-graphics\\measure-b\\gates.md",
+    "dom": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\motion-graphics\\measure-b\\dom\\dom.json",
+    "agentTask": "<repo>\\docs\\evidencia\\1.0-rc\\projects\\motion-graphics\\measure-b\\agent-task.md"
+  },
+  "description": [
+    "Calidad 86.9/100; fidelidad estructural 90.5/100; crítica 100/100.",
+    "Crítica 100/100 (A): no se detectaron defectos con los datos disponibles.",
+    "  Límite: La crítica detecta defectos estructurales; no sustituye la aprobación artística humana.",
+    "Aceptado: 9/10 gates en verde; arte pendiente de revisión humana.",
+    "DOM Tres planos. Un pulso. — B · 32 elementos visibles, 3 cabeceras, 0 botones.",
+    "Capas: 13; materiales: 3; animaciones: 6; efectos declarados: 0.",
+    "Contraste DOM: 0 incumplimiento(s) de 11; peor 7.85:1.",
+    "Overflow: 0×54 px; imágenes rotas: 0; botones sin nombre: 0.",
+    "Código fuente indexado: 2 archivo(s).",
+    "Tarea del agente: <repo>\\docs\\evidencia\\1.0-rc\\projects\\motion-graphics\\measure-b\\agent-task.md",
+    "Límite: La crítica detecta defectos estructurales; no sustituye la aprobación artística humana."
+  ]
+}

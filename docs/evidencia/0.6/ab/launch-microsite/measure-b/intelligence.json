@@ -1,0 +1,3994 @@
+{
+  "version": "0.5",
+  "review": {
+    "outDir": "<repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\measure-b\\review",
+    "score": 90.6,
+    "grade": "A",
+    "reference": {
+      "path": "<repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\reference.jpg",
+      "profile": {
+        "source": "<repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\reference.jpg",
+        "kind": "video",
+        "width": 1280,
+        "height": 720,
+        "aspect": 1.778,
+        "duration": 0.04,
+        "fps": 25,
+        "frameCount": 10,
+        "aggregate": {
+          "luma": 0.106,
+          "contrast": 0.127,
+          "saturation": 0.679,
+          "colorfulness": 0.252,
+          "edgeDensity": 0.217,
+          "darkRatio": 0.842
+        },
+        "palette": [
+          {
+            "hex": "#081419",
+            "rgb": [
+              8,
+              20,
+              25
+            ],
+            "share": 0.8777
+          },
+          {
+            "hex": "#58f8d8",
+            "rgb": [
+              88,
+              248,
+              216
+            ],
+            "share": 0.0085
+          },
+          {
+            "hex": "#263f48",
+            "rgb": [
+              38,
+              63,
+              72
+            ],
+            "share": 0.0501
+          },
+          {
+            "hex": "#386b6f",
+            "rgb": [
+              56,
+              107,
+              111
+            ],
+            "share": 0.0247
+          },
+          {
+            "hex": "#42ae9b",
+            "rgb": [
+              66,
+              174,
+              155
+            ],
+            "share": 0.0154
+          },
+          {
+            "hex": "#73838b",
+            "rgb": [
+              115,
+              131,
+              139
+            ],
+            "share": 0.0123
+          }
+        ],
+        "motion": 0,
+        "motionCurve": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "cuts": [],
+        "pace": 0,
+        "hueHistogram": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0.024,
+          0.965,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "frames": [
+          {
+            "t": 0.001,
+            "luma": 0.106,
+            "contrast": 0.127,
+            "saturation": 0.679,
+            "colorfulness": 0.252,
+            "edgeDensity": 0.217,
+            "darkRatio": 0.842,
+            "brightRatio": 0,
+            "quadrants": [
+              0.232,
+              0.288,
+              0.215,
+              0.266
+            ],
+            "palette": [
+              {
+                "hex": "#081419",
+                "rgb": [
+                  8,
+                  20,
+                  25
+                ],
+                "share": 0.8777
+              },
+              {
+                "hex": "#58f8d8",
+                "rgb": [
+                  88,
+                  248,
+                  216
+                ],
+                "share": 0.0085
+              },
+              {
+                "hex": "#263f48",
+                "rgb": [
+                  38,
+                  63,
+                  72
+                ],
+                "share": 0.0501
+              },
+              {
+                "hex": "#386b6f",
+                "rgb": [
+                  56,
+                  107,
+                  111
+                ],
+                "share": 0.0247
+              }
+            ]
+          },
+          {
+            "t": 0.005,
+            "luma": 0.106,
+            "contrast": 0.127,
+            "saturation": 0.679,
+            "colorfulness": 0.252,
+            "edgeDensity": 0.217,
+            "darkRatio": 0.842,
+            "brightRatio": 0,
+            "quadrants": [
+              0.232,
+              0.288,
+              0.215,
+              0.266
+            ],
+            "palette": [
+              {
+                "hex": "#081419",
+                "rgb": [
+                  8,
+                  20,
+                  25
+                ],
+                "share": 0.8777
+              },
+              {
+                "hex": "#58f8d8",
+                "rgb": [
+                  88,
+                  248,
+                  216
+                ],
+                "share": 0.0085
+              },
+              {
+                "hex": "#263f48",
+                "rgb": [
+                  38,
+                  63,
+                  72
+                ],
+                "share": 0.0501
+              },
+              {
+                "hex": "#386b6f",
+                "rgb": [
+                  56,
+                  107,
+                  111
+                ],
+                "share": 0.0247
+              }
+            ]
+          },
+          {
+            "t": 0.01,
+            "luma": 0.106,
+            "contrast": 0.127,
+            "saturation": 0.679,
+            "colorfulness": 0.252,
+            "edgeDensity": 0.217,
+            "darkRatio": 0.842,
+            "brightRatio": 0,
+            "quadrants": [
+              0.232,
+              0.288,
+              0.215,
+              0.266
+            ],
+            "palette": [
+              {
+                "hex": "#081419",
+                "rgb": [
+                  8,
+                  20,
+                  25
+                ],
+                "share": 0.8777
+              },
+              {
+                "hex": "#58f8d8",
+                "rgb": [
+                  88,
+                  248,
+                  216
+                ],
+                "share": 0.0085
+              },
+              {
+                "hex": "#263f48",
+                "rgb": [
+                  38,
+                  63,
+                  72
+                ],
+                "share": 0.0501
+              },
+              {
+                "hex": "#386b6f",
+                "rgb": [
+                  56,
+                  107,
+                  111
+                ],
+                "share": 0.0247
+              }
+            ]
+          },
+          {
+            "t": 0.014,
+            "luma": 0.106,
+            "contrast": 0.127,
+            "saturation": 0.679,
+            "colorfulness": 0.252,
+            "edgeDensity": 0.217,
+            "darkRatio": 0.842,
+            "brightRatio": 0,
+            "quadrants": [
+              0.232,
+              0.288,
+              0.215,
+              0.266
+            ],
+            "palette": [
+              {
+                "hex": "#081419",
+                "rgb": [
+                  8,
+                  20,
+                  25
+                ],
+                "share": 0.8777
+              },
+              {
+                "hex": "#58f8d8",
+                "rgb": [
+                  88,
+                  248,
+                  216
+                ],
+                "share": 0.0085
+              },
+              {
+                "hex": "#263f48",
+                "rgb": [
+                  38,
+                  63,
+                  72
+                ],
+                "share": 0.0501
+              },
+              {
+                "hex": "#386b6f",
+                "rgb": [
+                  56,
+                  107,
+                  111
+                ],
+                "share": 0.0247
+              }
+            ]
+          },
+          {
+            "t": 0.018,
+            "luma": 0.106,
+            "contrast": 0.127,
+            "saturation": 0.679,
+            "colorfulness": 0.252,
+            "edgeDensity": 0.217,
+            "darkRatio": 0.842,
+            "brightRatio": 0,
+            "quadrants": [
+              0.232,
+              0.288,
+              0.215,
+              0.266
+            ],
+            "palette": [
+              {
+                "hex": "#081419",
+                "rgb": [
+                  8,
+                  20,
+                  25
+                ],
+                "share": 0.8777
+              },
+              {
+                "hex": "#58f8d8",
+                "rgb": [
+                  88,
+                  248,
+                  216
+                ],
+                "share": 0.0085
+              },
+              {
+                "hex": "#263f48",
+                "rgb": [
+                  38,
+                  63,
+                  72
+                ],
+                "share": 0.0501
+              },
+              {
+                "hex": "#386b6f",
+                "rgb": [
+                  56,
+                  107,
+                  111
+                ],
+                "share": 0.0247
+              }
+            ]
+          },
+          {
+            "t": 0.022,
+            "luma": 0.106,
+            "contrast": 0.127,
+            "saturation": 0.679,
+            "colorfulness": 0.252,
+            "edgeDensity": 0.217,
+            "darkRatio": 0.842,
+            "brightRatio": 0,
+            "quadrants": [
+              0.232,
+              0.288,
+              0.215,
+              0.266
+            ],
+            "palette": [
+              {
+                "hex": "#081419",
+                "rgb": [
+                  8,
+                  20,
+                  25
+                ],
+                "share": 0.8777
+              },
+              {
+                "hex": "#58f8d8",
+                "rgb": [
+                  88,
+                  248,
+                  216
+                ],
+                "share": 0.0085
+              },
+              {
+                "hex": "#263f48",
+                "rgb": [
+                  38,
+                  63,
+                  72
+                ],
+                "share": 0.0501
+              },
+              {
+                "hex": "#386b6f",
+                "rgb": [
+                  56,
+                  107,
+                  111
+                ],
+                "share": 0.0247
+              }
+            ]
+          },
+          {
+            "t": 0.026,
+            "luma": 0.106,
+            "contrast": 0.127,
+            "saturation": 0.679,
+            "colorfulness": 0.252,
+            "edgeDensity": 0.217,
+            "darkRatio": 0.842,
+            "brightRatio": 0,
+            "quadrants": [
+              0.232,
+              0.288,
+              0.215,
+              0.266
+            ],
+            "palette": [
+              {
+                "hex": "#081419",
+                "rgb": [
+                  8,
+                  20,
+                  25
+                ],
+                "share": 0.8777
+              },
+              {
+                "hex": "#58f8d8",
+                "rgb": [
+                  88,
+                  248,
+                  216
+                ],
+                "share": 0.0085
+              },
+              {
+                "hex": "#263f48",
+                "rgb": [
+                  38,
+                  63,
+                  72
+                ],
+                "share": 0.0501
+              },
+              {
+                "hex": "#386b6f",
+                "rgb": [
+                  56,
+                  107,
+                  111
+                ],
+                "share": 0.0247
+              }
+            ]
+          },
+          {
+            "t": 0.03,
+            "luma": 0.106,
+            "contrast": 0.127,
+            "saturation": 0.679,
+            "colorfulness": 0.252,
+            "edgeDensity": 0.217,
+            "darkRatio": 0.842,
+            "brightRatio": 0,
+            "quadrants": [
+              0.232,
+              0.288,
+              0.215,
+              0.266
+            ],
+            "palette": [
+              {
+                "hex": "#081419",
+                "rgb": [
+                  8,
+                  20,
+                  25
+                ],
+                "share": 0.8777
+              },
+              {
+                "hex": "#58f8d8",
+                "rgb": [
+                  88,
+                  248,
+                  216
+                ],
+                "share": 0.0085
+              },
+              {
+                "hex": "#263f48",
+                "rgb": [
+                  38,
+                  63,
+                  72
+                ],
+                "share": 0.0501
+              },
+              {
+                "hex": "#386b6f",
+                "rgb": [
+                  56,
+                  107,
+                  111
+                ],
+                "share": 0.0247
+              }
+            ]
+          },
+          {
+            "t": 0.035,
+            "luma": 0.106,
+            "contrast": 0.127,
+            "saturation": 0.679,
+            "colorfulness": 0.252,
+            "edgeDensity": 0.217,
+            "darkRatio": 0.842,
+            "brightRatio": 0,
+            "quadrants": [
+              0.232,
+              0.288,
+              0.215,
+              0.266
+            ],
+            "palette": [
+              {
+                "hex": "#081419",
+                "rgb": [
+                  8,
+                  20,
+                  25
+                ],
+                "share": 0.8777
+              },
+              {
+                "hex": "#58f8d8",
+                "rgb": [
+                  88,
+                  248,
+                  216
+                ],
+                "share": 0.0085
+              },
+              {
+                "hex": "#263f48",
+                "rgb": [
+                  38,
+                  63,
+                  72
+                ],
+                "share": 0.0501
+              },
+              {
+                "hex": "#386b6f",
+                "rgb": [
+                  56,
+                  107,
+                  111
+                ],
+                "share": 0.0247
+              }
+            ]
+          },
+          {
+            "t": 0.039,
+            "luma": 0.106,
+            "contrast": 0.127,
+            "saturation": 0.679,
+            "colorfulness": 0.252,
+            "edgeDensity": 0.217,
+            "darkRatio": 0.842,
+            "brightRatio": 0,
+            "quadrants": [
+              0.232,
+              0.288,
+              0.215,
+              0.266
+            ],
+            "palette": [
+              {
+                "hex": "#081419",
+                "rgb": [
+                  8,
+                  20,
+                  25
+                ],
+                "share": 0.8777
+              },
+              {
+                "hex": "#58f8d8",
+                "rgb": [
+                  88,
+                  248,
+                  216
+                ],
+                "share": 0.0085
+              },
+              {
+                "hex": "#263f48",
+                "rgb": [
+                  38,
+                  63,
+                  72
+                ],
+                "share": 0.0501
+              },
+              {
+                "hex": "#386b6f",
+                "rgb": [
+                  56,
+                  107,
+                  111
+                ],
+                "share": 0.0247
+              }
+            ]
+          }
+        ],
+        "createdAt": "2026-11-25T21:16:37.062Z",
+        "warnings": [
+          "El detector de escenas de FFmpeg no encontró cortes por encima de 0.2."
+        ]
+      },
+      "description": [
+        "Fuente: <repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\reference.jpg",
+        "Formato: 1280x720 (1.78:1), video, 0.04 s, 25 fps",
+        "Luminancia media 10.6%, contraste 12.7%, saturación 67.9%",
+        "Colorido 25.2%, densidad de bordes 21.7%, zona oscura 84.2%",
+        "Paleta: #081419 88% · #58f8d8 1% · #263f48 5% · #386b6f 2% · #42ae9b 2% · #73838b 1%",
+        "Movimiento medio 0.00 · cortes 0 · ritmo 0 cortes/min",
+        "Pico de movimiento (p90) 0.00",
+        "Aviso: El detector de escenas de FFmpeg no encontró cortes por encima de 0.2."
+      ]
+    },
+    "target": {
+      "url": "http://127.0.0.1:55008/b.html",
+      "title": "Una órbita, una acción. — B",
+      "frames": [
+        "<repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\measure-b\\review\\captures\\capture-01.png",
+        "<repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\measure-b\\review\\captures\\capture-02.png",
+        "<repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\measure-b\\review\\captures\\capture-03.png",
+        "<repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\measure-b\\review\\captures\\capture-04.png",
+        "<repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\measure-b\\review\\captures\\capture-05.png",
+        "<repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\measure-b\\review\\captures\\capture-06.png"
+      ],
+      "errors": [],
+      "consoleErrors": [],
+      "profile": {
+        "source": "captura:http://127.0.0.1:55008/b.html",
+        "kind": "sequence",
+        "width": 1280,
+        "height": 720,
+        "aspect": 1.778,
+        "duration": 0,
+        "fps": 0,
+        "frameCount": 6,
+        "aggregate": {
+          "luma": 0.1,
+          "contrast": 0.122,
+          "saturation": 0.588,
+          "colorfulness": 0.148,
+          "edgeDensity": 0.178,
+          "darkRatio": 0.731
+        },
+        "palette": [
+          {
+            "hex": "#090e0f",
+            "rgb": [
+              9,
+              14,
+              15
+            ],
+            "share": 0.8127
+          },
+          {
+            "hex": "#274545",
+            "rgb": [
+              39,
+              69,
+              69
+            ],
+            "share": 0.1581
+          },
+          {
+            "hex": "#4d7371",
+            "rgb": [
+              77,
+              115,
+              113
+            ],
+            "share": 0.0098
+          },
+          {
+            "hex": "#a5e5d9",
+            "rgb": [
+              165,
+              229,
+              217
+            ],
+            "share": 0.0097
+          },
+          {
+            "hex": "#85b9b0",
+            "rgb": [
+              133,
+              185,
+              176
+            ],
+            "share": 0.0065
+          },
+          {
+            "hex": "#67918d",
+            "rgb": [
+              103,
+              145,
+              141
+            ],
+            "share": 0.0032
+          }
+        ],
+        "motion": 0,
+        "motionCurve": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "cuts": [],
+        "pace": 0,
+        "hueHistogram": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0.029,
+          0.971,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "frames": [
+          {
+            "t": 0,
+            "luma": 0.1,
+            "contrast": 0.122,
+            "saturation": 0.588,
+            "colorfulness": 0.148,
+            "edgeDensity": 0.178,
+            "darkRatio": 0.731,
+            "brightRatio": 0.002,
+            "quadrants": [
+              0.376,
+              0.113,
+              0.27,
+              0.241
+            ],
+            "palette": [
+              {
+                "hex": "#090e0f",
+                "rgb": [
+                  9,
+                  14,
+                  15
+                ],
+                "share": 0.8127
+              },
+              {
+                "hex": "#274545",
+                "rgb": [
+                  39,
+                  69,
+                  69
+                ],
+                "share": 0.1581
+              },
+              {
+                "hex": "#4d7371",
+                "rgb": [
+                  77,
+                  115,
+                  113
+                ],
+                "share": 0.0098
+              },
+              {
+                "hex": "#a5e5d9",
+                "rgb": [
+                  165,
+                  229,
+                  217
+                ],
+                "share": 0.0097
+              }
+            ]
+          },
+          {
+            "t": 0.25,
+            "luma": 0.1,
+            "contrast": 0.122,
+            "saturation": 0.588,
+            "colorfulness": 0.148,
+            "edgeDensity": 0.178,
+            "darkRatio": 0.731,
+            "brightRatio": 0.002,
+            "quadrants": [
+              0.376,
+              0.113,
+              0.27,
+              0.241
+            ],
+            "palette": [
+              {
+                "hex": "#090e0f",
+                "rgb": [
+                  9,
+                  14,
+                  15
+                ],
+                "share": 0.8127
+              },
+              {
+                "hex": "#274545",
+                "rgb": [
+                  39,
+                  69,
+                  69
+                ],
+                "share": 0.1581
+              },
+              {
+                "hex": "#4d7371",
+                "rgb": [
+                  77,
+                  115,
+                  113
+                ],
+                "share": 0.0098
+              },
+              {
+                "hex": "#a5e5d9",
+                "rgb": [
+                  165,
+                  229,
+                  217
+                ],
+                "share": 0.0097
+              }
+            ]
+          },
+          {
+            "t": 0.5,
+            "luma": 0.1,
+            "contrast": 0.122,
+            "saturation": 0.588,
+            "colorfulness": 0.148,
+            "edgeDensity": 0.178,
+            "darkRatio": 0.731,
+            "brightRatio": 0.002,
+            "quadrants": [
+              0.376,
+              0.113,
+              0.27,
+              0.241
+            ],
+            "palette": [
+              {
+                "hex": "#090e0f",
+                "rgb": [
+                  9,
+                  14,
+                  15
+                ],
+                "share": 0.8127
+              },
+              {
+                "hex": "#274545",
+                "rgb": [
+                  39,
+                  69,
+                  69
+                ],
+                "share": 0.1581
+              },
+              {
+                "hex": "#4d7371",
+                "rgb": [
+                  77,
+                  115,
+                  113
+                ],
+                "share": 0.0098
+              },
+              {
+                "hex": "#a5e5d9",
+                "rgb": [
+                  165,
+                  229,
+                  217
+                ],
+                "share": 0.0097
+              }
+            ]
+          },
+          {
+            "t": 0.75,
+            "luma": 0.1,
+            "contrast": 0.122,
+            "saturation": 0.588,
+            "colorfulness": 0.148,
+            "edgeDensity": 0.178,
+            "darkRatio": 0.731,
+            "brightRatio": 0.002,
+            "quadrants": [
+              0.376,
+              0.113,
+              0.27,
+              0.241
+            ],
+            "palette": [
+              {
+                "hex": "#090e0f",
+                "rgb": [
+                  9,
+                  14,
+                  15
+                ],
+                "share": 0.8127
+              },
+              {
+                "hex": "#274545",
+                "rgb": [
+                  39,
+                  69,
+                  69
+                ],
+                "share": 0.1581
+              },
+              {
+                "hex": "#4d7371",
+                "rgb": [
+                  77,
+                  115,
+                  113
+                ],
+                "share": 0.0098
+              },
+              {
+                "hex": "#a5e5d9",
+                "rgb": [
+                  165,
+                  229,
+                  217
+                ],
+                "share": 0.0097
+              }
+            ]
+          },
+          {
+            "t": 1,
+            "luma": 0.1,
+            "contrast": 0.122,
+            "saturation": 0.588,
+            "colorfulness": 0.148,
+            "edgeDensity": 0.178,
+            "darkRatio": 0.731,
+            "brightRatio": 0.002,
+            "quadrants": [
+              0.376,
+              0.113,
+              0.27,
+              0.241
+            ],
+            "palette": [
+              {
+                "hex": "#090e0f",
+                "rgb": [
+                  9,
+                  14,
+                  15
+                ],
+                "share": 0.8127
+              },
+              {
+                "hex": "#274545",
+                "rgb": [
+                  39,
+                  69,
+                  69
+                ],
+                "share": 0.1581
+              },
+              {
+                "hex": "#4d7371",
+                "rgb": [
+                  77,
+                  115,
+                  113
+                ],
+                "share": 0.0098
+              },
+              {
+                "hex": "#a5e5d9",
+                "rgb": [
+                  165,
+                  229,
+                  217
+                ],
+                "share": 0.0097
+              }
+            ]
+          },
+          {
+            "t": 1.25,
+            "luma": 0.1,
+            "contrast": 0.122,
+            "saturation": 0.588,
+            "colorfulness": 0.148,
+            "edgeDensity": 0.178,
+            "darkRatio": 0.731,
+            "brightRatio": 0.002,
+            "quadrants": [
+              0.376,
+              0.113,
+              0.27,
+              0.241
+            ],
+            "palette": [
+              {
+                "hex": "#090e0f",
+                "rgb": [
+                  9,
+                  14,
+                  15
+                ],
+                "share": 0.8127
+              },
+              {
+                "hex": "#274545",
+                "rgb": [
+                  39,
+                  69,
+                  69
+                ],
+                "share": 0.1581
+              },
+              {
+                "hex": "#4d7371",
+                "rgb": [
+                  77,
+                  115,
+                  113
+                ],
+                "share": 0.0098
+              },
+              {
+                "hex": "#a5e5d9",
+                "rgb": [
+                  165,
+                  229,
+                  217
+                ],
+                "share": 0.0097
+              }
+            ]
+          }
+        ],
+        "createdAt": "2026-11-25T21:16:44.163Z",
+        "warnings": []
+      },
+      "accessibility": {
+        "checked": 19,
+        "violations": 0,
+        "averageContrast": 13.11,
+        "worstContrast": 5.35,
+        "samples": [
+          {
+            "text": "ORBITAL",
+            "contrast": 16.85,
+            "fontSize": 11,
+            "required": 4.5
+          },
+          {
+            "text": "LANZAMIENTO",
+            "contrast": 8.76,
+            "fontSize": 11,
+            "required": 4.5
+          },
+          {
+            "text": "Visual Engine / 0.5",
+            "contrast": 8.76,
+            "fontSize": 11,
+            "required": 4.5
+          },
+          {
+            "text": "ORBITAL / LANZAMIENTO",
+            "contrast": 15.99,
+            "fontSize": 11,
+            "required": 4.5
+          },
+          {
+            "text": "Una órbita, una acción.",
+            "contrast": 16.85,
+            "fontSize": 81.92,
+            "required": 3
+          },
+          {
+            "text": "Micrositio de lanzamiento con profundidad real, una sola llamada y el material d",
+            "contrast": 8.76,
+            "fontSize": 20,
+            "required": 4.5
+          },
+          {
+            "text": "01",
+            "contrast": 5.35,
+            "fontSize": 38,
+            "required": 3
+          },
+          {
+            "text": "6°",
+            "contrast": 5.35,
+            "fontSize": 38,
+            "required": 3
+          },
+          {
+            "text": "3",
+            "contrast": 5.35,
+            "fontSize": 38,
+            "required": 3
+          },
+          {
+            "text": "WebGL",
+            "contrast": 5.35,
+            "fontSize": 38,
+            "required": 3
+          },
+          {
+            "text": "01",
+            "contrast": 16.85,
+            "fontSize": 16,
+            "required": 4.5
+          },
+          {
+            "text": "Una órbita, una acción.",
+            "contrast": 16.85,
+            "fontSize": 24,
+            "required": 3
+          }
+        ],
+        "note": "Contraste calculado en Chromium contra el primer ancestro con fondo opaco; aproximación orientativa, no certificación WCAG."
+      },
+      "typography": {
+        "elements": 19,
+        "headings": 4,
+        "distinctSizes": 6,
+        "averageFontSize": 24.5,
+        "hierarchyRatio": 7.5,
+        "note": "Tamaños y pesos leídos del DOM; no evalúa calidad artística de la elección tipográfica."
+      }
+    },
+    "comparison": {
+      "score": 90.6,
+      "grade": "A",
+      "metrics": [
+        {
+          "metric": "luminancia",
+          "reference": 0.106,
+          "candidate": 0.1,
+          "delta": 0.006,
+          "similarity": 0.98,
+          "weight": 0.14
+        },
+        {
+          "metric": "contraste",
+          "reference": 0.127,
+          "candidate": 0.122,
+          "delta": 0.005,
+          "similarity": 0.975,
+          "weight": 0.14
+        },
+        {
+          "metric": "saturación",
+          "reference": 0.679,
+          "candidate": 0.588,
+          "delta": 0.091,
+          "similarity": 0.74,
+          "weight": 0.1
+        },
+        {
+          "metric": "colorido",
+          "reference": 0.252,
+          "candidate": 0.148,
+          "delta": 0.104,
+          "similarity": 0.792,
+          "weight": 0.07
+        },
+        {
+          "metric": "densidad de bordes",
+          "reference": 0.217,
+          "candidate": 0.178,
+          "delta": 0.039,
+          "similarity": 0.844,
+          "weight": 0.12
+        },
+        {
+          "metric": "movimiento",
+          "reference": 0,
+          "candidate": 0,
+          "delta": 0,
+          "similarity": 1,
+          "weight": 0.13
+        }
+      ],
+      "palette": {
+        "reference": [
+          "#081419",
+          "#58f8d8",
+          "#263f48",
+          "#386b6f",
+          "#42ae9b",
+          "#73838b"
+        ],
+        "candidate": [
+          "#090e0f",
+          "#274545",
+          "#4d7371",
+          "#a5e5d9",
+          "#85b9b0",
+          "#67918d"
+        ],
+        "meanDeltaE": 5.15,
+        "similarity": 0.9063,
+        "missing": [
+          {
+            "hex": "#58f8d8",
+            "share": 0.0085,
+            "nearest": "#a5e5d9"
+          }
+        ],
+        "extra": []
+      },
+      "recommendations": [
+        "Faltan acentos de la referencia: #58f8d8 (1%). Úsalos en elementos pequeños (bordes, indicadores, brillos), no como fondo completo.",
+        "Poca densidad de detalle (17.8% frente a 21.7%). Introduce micro-detalle: grano, retícula, líneas guía o partículas pequeñas."
+      ],
+      "summary": "Fidelidad 90.6/100 (A). ΔE paleta 5.2, Δ luminancia -0.6%, Δ contraste -0.5%, Δ movimiento 0.00."
+    },
+    "quality": {
+      "overall": 92,
+      "grade": "A",
+      "dimensions": [
+        {
+          "id": "fidelity",
+          "label": "Fidelidad a la referencia",
+          "score": 90.6,
+          "weight": 0.3,
+          "evidence": {
+            "puntuacion": 90.6
+          },
+          "available": true
+        },
+        {
+          "id": "composition",
+          "label": "Composición",
+          "score": 79.1,
+          "weight": 0.12,
+          "evidence": {
+            "referencia": 0.92,
+            "resultado": 0.816,
+            "equilibrio": "masa por cuadrantes"
+          },
+          "available": true
+        },
+        {
+          "id": "hierarchy",
+          "label": "Jerarquía visual",
+          "score": 94.3,
+          "weight": 0.08,
+          "evidence": {
+            "referencia": 0.564,
+            "resultado": 0.593,
+            "base": "contraste, detalle y foco"
+          },
+          "available": true
+        },
+        {
+          "id": "typography",
+          "label": "Tipografía y legibilidad",
+          "score": 100,
+          "weight": 0.06,
+          "evidence": {
+            "elements": 19,
+            "headings": 4,
+            "distinctSizes": 6,
+            "averageFontSize": 24.5,
+            "hierarchyRatio": 7.5,
+            "note": "Tamaños y pesos leídos del DOM; no evalúa calidad artística de la elección tipográfica.",
+            "fuente": "DOM real (capture)"
+          },
+          "available": true
+        },
+        {
+          "id": "depth",
+          "label": "Profundidad",
+          "score": 72.9,
+          "weight": 0.05,
+          "evidence": {
+            "referencia": 0.409,
+            "resultado": 0.545,
+            "nota": "proxy de cuadrantes y detalle; no mapa métrico"
+          },
+          "available": true
+        },
+        {
+          "id": "lighting",
+          "label": "Iluminación",
+          "score": 94.6,
+          "weight": 0.07,
+          "evidence": {
+            "lumaReferencia": 0.106,
+            "lumaResultado": 0.1,
+            "contrasteReferencia": 0.127,
+            "contrasteResultado": 0.122
+          },
+          "available": true
+        },
+        {
+          "id": "animation",
+          "label": "Animación",
+          "score": 100,
+          "weight": 0.1,
+          "evidence": {
+            "movimientoReferencia": 0,
+            "movimientoResultado": 0,
+            "cortesReferencia": 0,
+            "cortesResultado": 0,
+            "ritmoReferencia": 0,
+            "ritmoResultado": 0
+          },
+          "available": true
+        },
+        {
+          "id": "transitions",
+          "label": "Transiciones y ritmo",
+          "score": 100,
+          "weight": 0.04,
+          "evidence": {
+            "cortesReferencia": 0,
+            "cortesResultado": 0,
+            "ritmoReferencia": 0,
+            "ritmoResultado": 0
+          },
+          "available": true
+        },
+        {
+          "id": "coherence",
+          "label": "Coherencia estética",
+          "score": 100,
+          "weight": 0.05,
+          "evidence": {
+            "histogramaDeMatiz": "coseno entre referencias y resultado",
+            "valor": 1
+          },
+          "available": true
+        },
+        {
+          "id": "accessibility",
+          "label": "Accesibilidad de contraste",
+          "score": 100,
+          "weight": 0.07,
+          "evidence": {
+            "checked": 19,
+            "violations": 0,
+            "averageContrast": 13.11,
+            "worstContrast": 5.35,
+            "samples": [
+              {
+                "text": "ORBITAL",
+                "contrast": 16.85,
+                "fontSize": 11,
+                "required": 4.5
+              },
+              {
+                "text": "LANZAMIENTO",
+                "contrast": 8.76,
+                "fontSize": 11,
+                "required": 4.5
+              },
+              {
+                "text": "Visual Engine / 0.5",
+                "contrast": 8.76,
+                "fontSize": 11,
+                "required": 4.5
+              },
+              {
+                "text": "ORBITAL / LANZAMIENTO",
+                "contrast": 15.99,
+                "fontSize": 11,
+                "required": 4.5
+              },
+              {
+                "text": "Una órbita, una acción.",
+                "contrast": 16.85,
+                "fontSize": 81.92,
+                "required": 3
+              },
+              {
+                "text": "Micrositio de lanzamiento con profundidad real, una sola llamada y el material d",
+                "contrast": 8.76,
+                "fontSize": 20,
+                "required": 4.5
+              },
+              {
+                "text": "01",
+                "contrast": 5.35,
+                "fontSize": 38,
+                "required": 3
+              },
+              {
+                "text": "6°",
+                "contrast": 5.35,
+                "fontSize": 38,
+                "required": 3
+              },
+              {
+                "text": "3",
+                "contrast": 5.35,
+                "fontSize": 38,
+                "required": 3
+              },
+              {
+                "text": "WebGL",
+                "contrast": 5.35,
+                "fontSize": 38,
+                "required": 3
+              },
+              {
+                "text": "01",
+                "contrast": 16.85,
+                "fontSize": 16,
+                "required": 4.5
+              },
+              {
+                "text": "Una órbita, una acción.",
+                "contrast": 16.85,
+                "fontSize": 24,
+                "required": 3
+              }
+            ],
+            "note": "Contraste calculado en Chromium contra el primer ancestro con fondo opaco; aproximación orientativa, no certificación WCAG.",
+            "norma": "WCAG AA orientativo (4.5:1; 3:1 texto grande)"
+          },
+          "available": true
+        },
+        {
+          "id": "fluidity",
+          "label": "Fluidez",
+          "score": 100,
+          "weight": 0.03,
+          "evidence": {
+            "jerk": 0,
+            "parpadeo": 0,
+            "muestras": 5
+          },
+          "available": true
+        },
+        {
+          "id": "performance",
+          "label": "Rendimiento",
+          "score": 83.5,
+          "weight": 0.03,
+          "evidence": {
+            "intervaloMedioMs": 320.6,
+            "intervaloTargetMs": 250,
+            "jitterRelativo": 0.016,
+            "capturas": 6
+          },
+          "available": true
+        },
+        {
+          "id": "restraint",
+          "label": "Contención decorativa",
+          "score": null,
+          "weight": 0.02,
+          "evidence": {
+            "nota": "sin recuento de efectos"
+          },
+          "available": false
+        }
+      ],
+      "summary": "Calidad 92.0/100 (A) · fidelidad 90.6 · composición 79.1 · jerarquía 94.3 · animación 100.0 · tipografía 100.0 · profundidad 72.9 · iluminación 94.6 · transiciones 100.0 · coherencia 100.0 · accesibilidad 100.0 · fluidez 100.0 · rendimiento 83.5.",
+      "weightsUsed": {
+        "fidelity": 0.3,
+        "composition": 0.12,
+        "hierarchy": 0.08,
+        "typography": 0.06,
+        "depth": 0.05,
+        "lighting": 0.07,
+        "animation": 0.1,
+        "transitions": 0.04,
+        "coherence": 0.05,
+        "accessibility": 0.07,
+        "fluidity": 0.03,
+        "performance": 0.03
+      }
+    },
+    "image": {
+      "width": 240,
+      "height": 135,
+      "mae": 0.0995,
+      "rmse": 0.1774,
+      "deltaE": 15.26,
+      "ssim": 0.3271,
+      "paletteDeltaE": 15.26,
+      "heatmap": "<repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\measure-b\\review\\diff\\heatmap.png",
+      "score": 51.2
+    },
+    "heatmap": "<repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\measure-b\\review\\diff\\heatmap.png",
+    "referenceFrame": "<repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\measure-b\\review\\reference-frame.png",
+    "warnings": [],
+    "id": "review",
+    "report": {
+      "md": "<repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\measure-b\\review\\report.md",
+      "json": "<repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\measure-b\\review\\review.json"
+    }
+  },
+  "dom": {
+    "url": "http://127.0.0.1:55010/b.html",
+    "title": "Una órbita, una acción. — B",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "reducedMotion": false,
+    "scroll": {
+      "width": 1280,
+      "height": 1107,
+      "overflowX": 0,
+      "overflowY": 387
+    },
+    "elements": [
+      {
+        "selector": "html > body > main.shell > h1",
+        "tag": "h1",
+        "role": null,
+        "text": "Una órbita, una acción.",
+        "box": {
+          "x": 64,
+          "y": 155,
+          "width": 500,
+          "height": 161
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 16.85,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(180, 251, 237)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Space Grotesk\", system-ui, sans-serif",
+          "fontSize": 81.92,
+          "fontWeight": 600,
+          "lineHeight": "80.2816px",
+          "letterSpacing": "-4.096px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.shell > div.reel:nth-of-type(2) > div.scene.s1:nth-of-type(1) > h2",
+        "tag": "h2",
+        "role": null,
+        "text": "Una órbita, una acción.",
+        "box": {
+          "x": 64,
+          "y": 609,
+          "width": 1152,
+          "height": 37
+        },
+        "region": "bottom-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 16.85,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(180, 251, 237)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 24,
+          "fontWeight": 700,
+          "lineHeight": "37.2px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.shell > div.reel:nth-of-type(2) > div.scene.s2:nth-of-type(2) > h2",
+        "tag": "h2",
+        "role": null,
+        "text": "Detalle",
+        "box": {
+          "x": 64,
+          "y": 752,
+          "width": 1152,
+          "height": 37
+        },
+        "region": "bottom-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 16.85,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(180, 251, 237)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 24,
+          "fontWeight": 700,
+          "lineHeight": "37.2px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.shell > div.reel:nth-of-type(2) > div.scene.s3:nth-of-type(3) > h2",
+        "tag": "h2",
+        "role": null,
+        "text": "Cierre",
+        "box": {
+          "x": 64,
+          "y": 894,
+          "width": 1152,
+          "height": 37
+        },
+        "region": "bottom-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 16.85,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(180, 251, 237)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 24,
+          "fontWeight": 700,
+          "lineHeight": "37.2px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "html > body > nav.nav",
+        "tag": "nav",
+        "role": null,
+        "text": "ORBITAL LANZAMIENTOVisual Engine / 0.5",
+        "box": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 58
+        },
+        "region": "top-right",
+        "classes": [
+          "nav"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 8.76,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(130, 183, 174)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "17.05px",
+          "letterSpacing": "0.44px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 3,
+          "match": ".nav",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "html > body > main.shell",
+        "tag": "main",
+        "role": null,
+        "text": "ORBITAL / LANZAMIENTOUna órbita, una acción.Micrositio de lanzamiento con profundidad real, una sola llamada y el material de referencia com",
+        "box": {
+          "x": 0,
+          "y": 58,
+          "width": 1280,
+          "height": 992
+        },
+        "region": "bottom-right",
+        "classes": [
+          "shell"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 16.85,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(180, 251, 237)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 4,
+          "match": ".shell",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "html > body > nav.nav > span.brand:nth-of-type(1)",
+        "tag": "span",
+        "role": null,
+        "text": "ORBITAL",
+        "box": {
+          "x": 64,
+          "y": 20,
+          "width": 56,
+          "height": 17
+        },
+        "region": "top-left",
+        "classes": [
+          "brand"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 16.85,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(180, 251, 237)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 11,
+          "fontWeight": 700,
+          "lineHeight": "17.05px",
+          "letterSpacing": "0.88px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 4,
+          "match": ".brand",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "html > body > main.shell > p.eyebrow:nth-of-type(1)",
+        "tag": "p",
+        "role": null,
+        "text": "ORBITAL / LANZAMIENTO",
+        "box": {
+          "x": 64,
+          "y": 127,
+          "width": 1152,
+          "height": 12
+        },
+        "region": "top-right",
+        "classes": [
+          "eyebrow"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 15.99,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(146, 250, 230)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "1.76px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "b.html",
+          "line": 7,
+          "match": ".eyebrow",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "html > body > main.shell > p.lead:nth-of-type(2)",
+        "tag": "p",
+        "role": null,
+        "text": "Micrositio de lanzamiento con profundidad real, una sola llamada y el material de referencia como identidad.",
+        "box": {
+          "x": 64,
+          "y": 336,
+          "width": 604,
+          "height": 62
+        },
+        "region": "bottom-left",
+        "classes": [
+          "lead"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 8.76,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(130, 183, 174)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 20,
+          "fontWeight": 400,
+          "lineHeight": "31px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 7,
+          "match": ".lead",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "html > body > main.shell > div.metrics:nth-of-type(1)",
+        "tag": "div",
+        "role": null,
+        "text": "01cuerpo6°órbita3planosWebGLrender",
+        "box": {
+          "x": 64,
+          "y": 428,
+          "width": 1152,
+          "height": 107
+        },
+        "region": "center",
+        "classes": [
+          "metrics"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 5.35,
+        "styles": {
+          "display": "grid",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(180, 251, 237)",
+          "backgroundColor": "rgb(60, 104, 101)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 8,
+          "match": ".metrics",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > main.shell > div.metrics:nth-of-type(1) > div.metric:nth-of-type(1)",
+        "tag": "div",
+        "role": null,
+        "text": "01cuerpo",
+        "box": {
+          "x": 65,
+          "y": 429,
+          "width": 287,
+          "height": 105
+        },
+        "region": "bottom-left",
+        "classes": [
+          "metric"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 5.35,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(180, 251, 237)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 8,
+          "match": ".metric",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > main.shell > div.metrics:nth-of-type(1) > div.metric:nth-of-type(2)",
+        "tag": "div",
+        "role": null,
+        "text": "6°órbita",
+        "box": {
+          "x": 353,
+          "y": 429,
+          "width": 287,
+          "height": 105
+        },
+        "region": "center",
+        "classes": [
+          "metric"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 5.35,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(180, 251, 237)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 8,
+          "match": ".metric",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > main.shell > div.metrics:nth-of-type(1) > div.metric:nth-of-type(3)",
+        "tag": "div",
+        "role": null,
+        "text": "3planos",
+        "box": {
+          "x": 641,
+          "y": 429,
+          "width": 287,
+          "height": 105
+        },
+        "region": "center",
+        "classes": [
+          "metric"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 5.35,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(180, 251, 237)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 8,
+          "match": ".metric",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > main.shell > div.metrics:nth-of-type(1) > div.metric:nth-of-type(4)",
+        "tag": "div",
+        "role": null,
+        "text": "WebGLrender",
+        "box": {
+          "x": 928,
+          "y": 429,
+          "width": 287,
+          "height": 105
+        },
+        "region": "bottom-right",
+        "classes": [
+          "metric"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 5.35,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(180, 251, 237)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 8,
+          "match": ".metric",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "html > body > main.shell > div.reel:nth-of-type(2)",
+        "tag": "div",
+        "role": null,
+        "text": "01Una órbita, una acción.Micrositio de lanzamiento con profundidad real, una sola llamada y el material de referencia como identidad.02Detal",
+        "box": {
+          "x": 64,
+          "y": 564,
+          "width": 1152,
+          "height": 412
+        },
+        "region": "bottom-right",
+        "classes": [
+          "reel"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 16.85,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(180, 251, 237)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "b.html",
+          "line": 22,
+          "match": ".reel",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > main.shell > div.reel:nth-of-type(2) > div.scene.s1:nth-of-type(1)",
+        "tag": "div",
+        "role": null,
+        "text": "01Una órbita, una acción.Micrositio de lanzamiento con profundidad real, una sola llamada y el material de referencia como identidad.",
+        "box": {
+          "x": 64,
+          "y": 564,
+          "width": 1152,
+          "height": 127
+        },
+        "region": "bottom-right",
+        "classes": [
+          "scene",
+          "s1",
+          "active"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 16.85,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(180, 251, 237)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 14,
+          "match": ".scene",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "main.shell > div.reel:nth-of-type(2) > div.scene.s1:nth-of-type(1) > span.num",
+        "tag": "span",
+        "role": null,
+        "text": "01",
+        "box": {
+          "x": 64,
+          "y": 565,
+          "width": 17,
+          "height": 21
+        },
+        "region": "bottom-left",
+        "classes": [
+          "num"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 16.85,
+        "styles": {
+          "display": "inline",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(180, 251, 237)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "body > main.shell > div.reel:nth-of-type(2) > div.scene.s2:nth-of-type(2)",
+        "tag": "div",
+        "role": null,
+        "text": "02DetalleEl corte llega en el pico del movimiento.",
+        "box": {
+          "x": 64,
+          "y": 707,
+          "width": 1152,
+          "height": 127
+        },
+        "region": "bottom-right",
+        "classes": [
+          "scene",
+          "s2"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 16.85,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(180, 251, 237)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 14,
+          "match": ".scene",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "main.shell > div.reel:nth-of-type(2) > div.scene.s2:nth-of-type(2) > span.num",
+        "tag": "span",
+        "role": null,
+        "text": "02",
+        "box": {
+          "x": 64,
+          "y": 708,
+          "width": 17,
+          "height": 21
+        },
+        "region": "bottom-left",
+        "classes": [
+          "num"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 16.85,
+        "styles": {
+          "display": "inline",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(180, 251, 237)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "body > main.shell > div.reel:nth-of-type(2) > div.scene.s3:nth-of-type(3)",
+        "tag": "div",
+        "role": null,
+        "text": "03CierreUn pulso, no una colección de adornos.",
+        "box": {
+          "x": 64,
+          "y": 850,
+          "width": 1152,
+          "height": 127
+        },
+        "region": "bottom-right",
+        "classes": [
+          "scene",
+          "s3"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 16.85,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(180, 251, 237)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 14,
+          "match": ".scene",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "main.shell > div.reel:nth-of-type(2) > div.scene.s3:nth-of-type(3) > span.num",
+        "tag": "span",
+        "role": null,
+        "text": "03",
+        "box": {
+          "x": 64,
+          "y": 851,
+          "width": 17,
+          "height": 21
+        },
+        "region": "bottom-left",
+        "classes": [
+          "num"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 16.85,
+        "styles": {
+          "display": "inline",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(180, 251, 237)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "html > body > footer.footer",
+        "tag": "footer",
+        "role": null,
+        "text": "Con Visual Engine · tokens, contraste, jerarquía y motion · 1280×720",
+        "box": {
+          "x": 0,
+          "y": 1050,
+          "width": 1280,
+          "height": 57
+        },
+        "region": "bottom-right",
+        "classes": [
+          "footer"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 8.76,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(130, 183, 174)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "a.html",
+          "line": 17,
+          "match": ".footer",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "html > body > nav.nav > span:nth-of-type(2)",
+        "tag": "span",
+        "role": null,
+        "text": "LANZAMIENTO",
+        "box": {
+          "x": 580,
+          "y": 20,
+          "width": 79,
+          "height": 17
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 8.76,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(130, 183, 174)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "17.05px",
+          "letterSpacing": "0.44px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "html > body > nav.nav > span:nth-of-type(3)",
+        "tag": "span",
+        "role": null,
+        "text": "Visual Engine / 0.5",
+        "box": {
+          "x": 1119,
+          "y": 20,
+          "width": 98,
+          "height": 17
+        },
+        "region": "top-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 8.76,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(130, 183, 174)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "17.05px",
+          "letterSpacing": "0.44px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.shell > div.metrics:nth-of-type(1) > div.metric:nth-of-type(1) > strong",
+        "tag": "strong",
+        "role": null,
+        "text": "01",
+        "box": {
+          "x": 83,
+          "y": 447,
+          "width": 251,
+          "height": 44
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 5.35,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(180, 251, 237)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 38,
+          "fontWeight": 600,
+          "lineHeight": "normal",
+          "letterSpacing": "-1.52px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.shell > div.metrics:nth-of-type(1) > div.metric:nth-of-type(1) > small",
+        "tag": "small",
+        "role": null,
+        "text": "cuerpo",
+        "box": {
+          "x": 83,
+          "y": 497,
+          "width": 34,
+          "height": 15
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 2.78,
+        "styles": {
+          "display": "inline",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(130, 183, 174)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "17.05px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.shell > div.metrics:nth-of-type(1) > div.metric:nth-of-type(2) > strong",
+        "tag": "strong",
+        "role": null,
+        "text": "6°",
+        "box": {
+          "x": 371,
+          "y": 447,
+          "width": 251,
+          "height": 44
+        },
+        "region": "center",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 5.35,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(180, 251, 237)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 38,
+          "fontWeight": 600,
+          "lineHeight": "normal",
+          "letterSpacing": "-1.52px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.shell > div.metrics:nth-of-type(1) > div.metric:nth-of-type(2) > small",
+        "tag": "small",
+        "role": null,
+        "text": "órbita",
+        "box": {
+          "x": 371,
+          "y": 497,
+          "width": 29,
+          "height": 15
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 2.78,
+        "styles": {
+          "display": "inline",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(130, 183, 174)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "17.05px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.shell > div.metrics:nth-of-type(1) > div.metric:nth-of-type(3) > strong",
+        "tag": "strong",
+        "role": null,
+        "text": "3",
+        "box": {
+          "x": 659,
+          "y": 447,
+          "width": 251,
+          "height": 44
+        },
+        "region": "center",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 5.35,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(180, 251, 237)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 38,
+          "fontWeight": 600,
+          "lineHeight": "normal",
+          "letterSpacing": "-1.52px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.shell > div.metrics:nth-of-type(1) > div.metric:nth-of-type(3) > small",
+        "tag": "small",
+        "role": null,
+        "text": "planos",
+        "box": {
+          "x": 659,
+          "y": 497,
+          "width": 32,
+          "height": 15
+        },
+        "region": "bottom-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 2.78,
+        "styles": {
+          "display": "inline",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(130, 183, 174)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "17.05px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.shell > div.metrics:nth-of-type(1) > div.metric:nth-of-type(4) > strong",
+        "tag": "strong",
+        "role": null,
+        "text": "WebGL",
+        "box": {
+          "x": 946,
+          "y": 447,
+          "width": 251,
+          "height": 44
+        },
+        "region": "bottom-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 5.35,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(180, 251, 237)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE JetBrains Mono\"",
+          "fontSize": 38,
+          "fontWeight": 600,
+          "lineHeight": "normal",
+          "letterSpacing": "-1.52px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.shell > div.metrics:nth-of-type(1) > div.metric:nth-of-type(4) > small",
+        "tag": "small",
+        "role": null,
+        "text": "render",
+        "box": {
+          "x": 946,
+          "y": 497,
+          "width": 32,
+          "height": 15
+        },
+        "region": "bottom-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 2.78,
+        "styles": {
+          "display": "inline",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(130, 183, 174)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 11,
+          "fontWeight": 400,
+          "lineHeight": "17.05px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.shell > div.reel:nth-of-type(2) > div.scene.s1:nth-of-type(1) > p",
+        "tag": "p",
+        "role": null,
+        "text": "Micrositio de lanzamiento con profundidad real, una sola llamada y el material de referencia como identidad.",
+        "box": {
+          "x": 64,
+          "y": 666,
+          "width": 1152,
+          "height": 25
+        },
+        "region": "bottom-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 16.85,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(180, 251, 237)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.shell > div.reel:nth-of-type(2) > div.scene.s2:nth-of-type(2) > p",
+        "tag": "p",
+        "role": null,
+        "text": "El corte llega en el pico del movimiento.",
+        "box": {
+          "x": 64,
+          "y": 809,
+          "width": 1152,
+          "height": 25
+        },
+        "region": "bottom-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 16.85,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(180, 251, 237)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "main.shell > div.reel:nth-of-type(2) > div.scene.s3:nth-of-type(3) > p",
+        "tag": "p",
+        "role": null,
+        "text": "Un pulso, no una colección de adornos.",
+        "box": {
+          "x": 64,
+          "y": 951,
+          "width": 1152,
+          "height": 25
+        },
+        "region": "bottom-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 16.85,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(180, 251, 237)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"VE Inter\", system-ui, sans-serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "24.8px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      }
+    ],
+    "animations": [],
+    "canvases": [],
+    "brokenImages": [],
+    "buttonsWithoutName": [],
+    "imagesWithoutAlt": [],
+    "consoleErrors": [],
+    "pageErrors": [],
+    "requestFailures": [],
+    "counts": {
+      "elements": 35,
+      "headings": 4,
+      "buttons": 0,
+      "links": 0,
+      "images": 0,
+      "canvases": 0,
+      "effects": 0,
+      "layers": 0,
+      "materials": 0,
+      "transitions": 0,
+      "animations": 0
+    },
+    "contrast": {
+      "checked": 19,
+      "violations": 0,
+      "worst": 5.35,
+      "average": 13.11
+    },
+    "sourceIndex": {
+      "files": 2,
+      "bytes": 8351,
+      "truncated": false
+    },
+    "warnings": [],
+    "screenshot": "<repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\measure-b\\dom\\dom.png"
+  },
+  "critic": {
+    "version": "0.5",
+    "score": 94,
+    "grade": "A",
+    "findings": [
+      {
+        "id": "materials-missing",
+        "category": "materials",
+        "title": "El material declarado no aparece en el render",
+        "severity": "medium",
+        "confidence": 0.65,
+        "evidence": [
+          {
+            "source": "dom",
+            "metric": "señales de material",
+            "value": 0,
+            "threshold": 2
+          },
+          {
+            "source": "art-direction",
+            "metric": "material declarado",
+            "value": "glass"
+          }
+        ],
+        "location": {
+          "component": "superficies"
+        },
+        "fix": {
+          "kind": "css",
+          "summary": "Materializa glass: borde, sombra, transparencia o rugosidad coherentes.",
+          "property": "background / box-shadow / border"
+        },
+        "status": "measured"
+      }
+    ],
+    "counts": {
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "low": 0
+    },
+    "summary": "Crítica 94/100 (A): 0 crítico(s), 0 alto(s), 1 medio(s), 0 bajo(s).",
+    "agentTask": "# Tarea visual priorizada\n\nBrief: Micrositio de lanzamiento inmersivo con profundidad, luz y una única acción.\nEstilo: immersive-3d\nCrítica: Crítica 94/100 (A): 0 crítico(s), 0 alto(s), 1 medio(s), 0 bajo(s).\n\n## Corrige sólo estos defectos medidos\n\n### [MEDIUM] El material declarado no aparece en el render\n- Evidencia: señales de material=0 (objetivo 2); material declarado=glass\n- Ubicación: sin selector; componente superficies\n- Corrección: Materializa glass: borde, sombra, transparencia o rugosidad coherentes.\n- Propiedad: background / box-shadow / border\n- Acción base: Haz explícito el material: borde, sombra, rugosidad o transparencia; no lo simules con ruido aleatorio.\n\n## Reglas de la iteración\n\n1. No reescribas todo: aplica el cambio mínimo en la ubicación indicada.\n2. No añadas un efecto si no hay evidencia de que falta y una función que cumplir.\n3. Conserva las decisiones que ya pasan los umbrales.\n4. Vuelve a capturar y compara antes/después; revierte si no mejora.\n5. La aprobación artística final es humana.\n\n## Límites\n\n- Sin animaciones observadas no se afirma rigidez temporal.\n- La crítica detecta defectos estructurales; no sustituye la aprobación artística humana.",
+    "limitations": [
+      "Sin animaciones observadas no se afirma rigidez temporal.",
+      "La crítica detecta defectos estructurales; no sustituye la aprobación artística humana."
+    ],
+    "measured": {
+      "quality": 92,
+      "fidelity": 90.6,
+      "composition": 79.1,
+      "hierarchy": 94.3,
+      "typography": 100,
+      "depth": 72.9,
+      "lighting": 94.6,
+      "coherence": 100,
+      "transitions": 100,
+      "performance": 83.5
+    },
+    "artisticJudgment": false
+  },
+  "fidelity": {
+    "version": "0.5",
+    "score": 79.9,
+    "grade": "B",
+    "dimensions": [
+      {
+        "id": "composition",
+        "label": "Posición y proporción de la composición",
+        "score": 79.1,
+        "weight": 0.14,
+        "status": "verified",
+        "evidence": {
+          "medicion": "masa por cuadrantes",
+          "nota": "proxy, no cajas de objetos"
+        },
+        "note": "La composición se mide por distribución de masa."
+      },
+      {
+        "id": "layout",
+        "label": "Layout y equilibrio",
+        "score": 73.8,
+        "weight": 0.1,
+        "status": "verified",
+        "evidence": {
+          "metodo": "balance horizontal/vertical del primer fotograma"
+        },
+        "note": "No se comparan posiciones de elementos individuales sin un mapa de referencia."
+      },
+      {
+        "id": "typography",
+        "label": "Tipografía y proporción",
+        "score": null,
+        "weight": 0.12,
+        "status": "unavailable",
+        "evidence": {
+          "nota": "requiere especificación y DOM"
+        },
+        "note": "Se compara escala relativa; la familia no se identifica."
+      },
+      {
+        "id": "palette",
+        "label": "Paleta y coherencia cromática",
+        "score": 100,
+        "weight": 0.1,
+        "status": "verified",
+        "evidence": {
+          "metodo": "histograma de matiz",
+          "nota": "no evalúa si el color es apropiado"
+        },
+        "note": "La similitud cromática no implica calidad artística."
+      },
+      {
+        "id": "lighting",
+        "label": "Iluminación",
+        "score": 94.6,
+        "weight": 0.09,
+        "status": "verified",
+        "evidence": {
+          "metodo": "luma, contraste y proporción oscura"
+        },
+        "note": "Medida global, no dirección de luz por objeto."
+      },
+      {
+        "id": "depth",
+        "label": "Profundidad",
+        "score": 72.9,
+        "weight": 0.08,
+        "status": "verified",
+        "evidence": {
+          "metodo": "dispersión de cuadrantes y detalle"
+        },
+        "note": "Proxy declarado; no es un mapa de profundidad."
+      },
+      {
+        "id": "materials",
+        "label": "Texturas y materiales",
+        "score": 35,
+        "weight": 0.07,
+        "status": "estimated",
+        "evidence": {
+          "materialDeclarado": "glass",
+          "señales": 0,
+          "blur": "no",
+          "sombra": "no",
+          "estado": "estimated desde CSS computado"
+        },
+        "note": "Se infiere del CSS computado; no hay mapa de textura de referencia."
+      },
+      {
+        "id": "effects",
+        "label": "Efectos",
+        "score": null,
+        "weight": 0.08,
+        "status": "unavailable",
+        "evidence": {
+          "nota": "referencia sin efectos declarados"
+        },
+        "note": "La correspondencia es por etiqueta, no por píxel."
+      },
+      {
+        "id": "motion",
+        "label": "Trayectorias de movimiento",
+        "score": null,
+        "weight": 0.06,
+        "status": "unavailable",
+        "evidence": {
+          "nota": "sin cámara de referencia y animaciones comparables"
+        },
+        "note": "No se reconstruye la trayectoria exacta desde CSS."
+      },
+      {
+        "id": "rhythm",
+        "label": "Duración y ritmo",
+        "score": null,
+        "weight": 0.04,
+        "status": "unavailable",
+        "evidence": {
+          "nota": "sin escenas y animaciones comparables"
+        },
+        "note": "Ritmo global; no alineación escena a escena."
+      },
+      {
+        "id": "transitions",
+        "label": "Transiciones",
+        "score": 100,
+        "weight": 0.04,
+        "status": "verified",
+        "evidence": {
+          "nota": "sólo disponible con referencia temporal"
+        },
+        "note": "Sin vídeo de referencia no se afirma la transición."
+      },
+      {
+        "id": "frameCoherence",
+        "label": "Coherencia entre fotogramas",
+        "score": 83.6,
+        "weight": 0.08,
+        "status": "verified",
+        "evidence": {
+          "metodo": "estabilidad de luminancia",
+          "nota": "detecta parpadeo, no intención artística"
+        },
+        "note": "La estabilidad no equivale a buena dirección."
+      }
+    ],
+    "pixelSimilarity": 90.6,
+    "structuralVsPixel": "Estructura 79.9/100 · píxel 90.6/100. No son intercambiables: una imagen puede parecerse y seguir siendo un mal diseño.",
+    "warnings": [
+      "La similitud de píxeles se informa aparte y no se usa para aprobar calidad artística.",
+      "Layout, tipografía, materiales y movimiento se estiman con los datos disponibles; las dimensiones sin datos quedan fuera.",
+      "Sin especificación de referencia no se afirma fidelidad de posición, textura o trayectoria."
+    ],
+    "summary": "Fidelidad estructural 79.9/100 (B) · 8/12 dimensiones disponibles · similitud de píxeles 90.6 (informativa)."
+  },
+  "gates": {
+    "version": "0.5",
+    "pass": true,
+    "decision": "accept",
+    "checks": [
+      {
+        "id": "quality",
+        "label": "Calidad visual global",
+        "status": "pass",
+        "actual": 92,
+        "threshold": 72,
+        "blocking": true,
+        "detail": "Puntuación ponderada de las dimensiones disponibles."
+      },
+      {
+        "id": "fidelity",
+        "label": "Fidelidad estructural",
+        "status": "pass",
+        "actual": 79.9,
+        "threshold": 70,
+        "blocking": true,
+        "detail": "No usa la similitud de píxeles como sustituto."
+      },
+      {
+        "id": "composition",
+        "label": "Composición",
+        "status": "pass",
+        "actual": 79.1,
+        "threshold": 62,
+        "blocking": true,
+        "detail": "Balance de masa medido."
+      },
+      {
+        "id": "typography",
+        "label": "Tipografía y legibilidad",
+        "status": "pass",
+        "actual": 100,
+        "threshold": 62,
+        "blocking": true,
+        "detail": "Auditoría DOM + escala."
+      },
+      {
+        "id": "performance",
+        "label": "Rendimiento",
+        "status": "pass",
+        "actual": 60.9,
+        "threshold": 55,
+        "blocking": true,
+        "detail": "FPS medidos."
+      },
+      {
+        "id": "critical-findings",
+        "label": "Defectos críticos",
+        "status": "pass",
+        "actual": 0,
+        "threshold": 0,
+        "blocking": true,
+        "detail": "Un defecto crítico bloquea aunque la media sea alta."
+      },
+      {
+        "id": "high-findings",
+        "label": "Defectos de gravedad alta",
+        "status": "pass",
+        "actual": 0,
+        "threshold": 0,
+        "blocking": true,
+        "detail": "Los defectos altos también bloquean por defecto."
+      },
+      {
+        "id": "contrast",
+        "label": "Contraste DOM",
+        "status": "pass",
+        "actual": 0,
+        "threshold": 0,
+        "blocking": true,
+        "detail": "Peor contraste 5.35:1; 19 textos."
+      },
+      {
+        "id": "runtime",
+        "label": "Funcionamiento sin errores",
+        "status": "pass",
+        "actual": 0,
+        "threshold": 0,
+        "blocking": true,
+        "detail": "Consola, pageerror, recursos fallidos e imágenes rotas."
+      },
+      {
+        "id": "human-art",
+        "label": "Aprobación artística humana",
+        "status": "pending",
+        "actual": "pendiente",
+        "threshold": "recomendada",
+        "blocking": false,
+        "detail": "No bloquea por configuración, pero queda pendiente y se declara."
+      }
+    ],
+    "blockers": [],
+    "warnings": [
+      "La calidad artística final aún no ha sido aprobada por una persona."
+    ],
+    "humanApproval": {
+      "required": false,
+      "approved": false
+    },
+    "summary": "Aceptado: 9/10 gates en verde; arte pendiente de revisión humana."
+  },
+  "art": {
+    "version": "0.4",
+    "id": "immersive-3d-landing-s7je2",
+    "brief": "Micrositio de lanzamiento inmersivo con profundidad, luz y una única acción.",
+    "projectType": "landing",
+    "style": {
+      "id": "immersive-3d",
+      "name": "Diseño 3D inmersivo",
+      "description": "Espacio, profundidad y capas; la cámara es parte de la composición.",
+      "keywords": [
+        "3d",
+        "inmersivo",
+        "espacial",
+        "profundidad",
+        "realidad virtual",
+        "webgl"
+      ],
+      "mode": "dark",
+      "colors": {
+        "bg": "#05060f",
+        "surface": "#0d1224",
+        "elevated": "#141c36",
+        "text": "#f3f5ff",
+        "muted": "#a5b0d0",
+        "accent": "#8b7bff",
+        "accent2": "#4ee1d0",
+        "border": "#27335a",
+        "success": "#4ade80",
+        "warning": "#fbbf24",
+        "danger": "#fb7185",
+        "focus": "#7dd3fc"
+      },
+      "typography": {
+        "display": "display",
+        "body": "sans",
+        "mono": "mono",
+        "displayWeight": 600,
+        "bodyWeight": 430,
+        "scaleRatio": 1.35,
+        "bodyPx": 16,
+        "lineHeight": 1.55,
+        "displayLineHeight": 0.98,
+        "tracking": "-0.01em",
+        "displayTracking": "-0.05em",
+        "measure": 62
+      },
+      "layout": {
+        "maxWidth": 1360,
+        "gutter": 30,
+        "spacing": 8,
+        "radius": 20,
+        "borderWidth": 1,
+        "columns": 12,
+        "shadow": "0 40px 100px -40px rgba(0,0,0,.85)"
+      },
+      "materials": {
+        "surface": "glass",
+        "grain": 0.025,
+        "glassBlur": 16,
+        "gradient": "radial-gradient(circle at 70% 20%, rgba(139,123,255,.22), transparent 45%)",
+        "texture": "profundidad volumétrica"
+      },
+      "motion": {
+        "level": "expressive",
+        "fastMs": 140,
+        "baseMs": 520,
+        "slowMs": 1400,
+        "easeOut": "cubic-bezier(.16,1,.3,1)",
+        "easeInOut": "cubic-bezier(.65,0,.35,1)",
+        "spring": "cubic-bezier(.34,1.56,.64,1)",
+        "staggerMs": 60,
+        "camera": "órbita 6°, dolly-in 1.08, parallax 3 capas"
+      },
+      "composition": {
+        "focal": "objeto central desplazado",
+        "alignment": "center",
+        "negativeSpace": 0.45,
+        "density": "airy",
+        "contrast": "balanced",
+        "headlineChars": 30,
+        "imageRatio": "1:1",
+        "notes": [
+          "Máximo tres planos de profundidad",
+          "La cámara respeta reduced-motion"
+        ]
+      },
+      "effects": [
+        {
+          "id": "cube-field",
+          "role": "campo 3D"
+        },
+        {
+          "id": "starfield-warp",
+          "role": "profundidad estelar"
+        }
+      ],
+      "signature": [
+        "Violeta profundo",
+        "Tarjetas flotantes",
+        "Sombras de contacto",
+        "Cámara orbital"
+      ],
+      "avoid": [
+        "UI plana sin profundidad",
+        "Exceso de blur",
+        "Texto sobre zona de alto detalle"
+      ]
+    },
+    "palette": {
+      "bg": "#05060f",
+      "surface": "#0d1224",
+      "elevated": "#141c36",
+      "text": "#f3f5ff",
+      "muted": "#a5b0d0",
+      "accent": "#8b7bff",
+      "accent2": "#4ee1d0",
+      "border": "#27335a",
+      "success": "#4ade80",
+      "warning": "#fbbf24",
+      "danger": "#fb7185",
+      "focus": "#7dd3fc"
+    },
+    "typography": {
+      "display": "display",
+      "body": "sans",
+      "mono": "mono",
+      "displayWeight": 600,
+      "bodyWeight": 430,
+      "scaleRatio": 1.35,
+      "bodyPx": 16,
+      "lineHeight": 1.55,
+      "displayLineHeight": 0.98,
+      "tracking": "-0.01em",
+      "displayTracking": "-0.05em",
+      "measure": 62,
+      "sizes": {
+        "caption": 12,
+        "small": 14,
+        "body": 16,
+        "lead": 20,
+        "h3": 21.6,
+        "h2": 29.2,
+        "h1": 39.4,
+        "display": 53.1,
+        "hero": 71.7
+      },
+      "responsive": {
+        "caption": "clamp(12px, 0.94vw, 12px)",
+        "small": "clamp(12px, 1.09vw, 14px)",
+        "body": "clamp(12px, 1.25vw, 16px)",
+        "lead": "clamp(14px, 1.56vw, 20px)",
+        "h3": "clamp(16px, 1.69vw, 22px)",
+        "h2": "clamp(21px, 2.28vw, 29px)",
+        "h1": "clamp(28px, 3.08vw, 39px)",
+        "display": "clamp(38px, 4.15vw, 53px)",
+        "hero": "clamp(52px, 5.6vw, 72px)"
+      },
+      "families": {
+        "display": "VE Space Grotesk",
+        "body": "VE Inter",
+        "mono": "VE JetBrains Mono"
+      }
+    },
+    "layout": {
+      "maxWidth": 1360,
+      "gutter": 38,
+      "spacing": 10,
+      "radius": 20,
+      "borderWidth": 1,
+      "columns": 12,
+      "shadow": "0 40px 100px -40px rgba(0,0,0,.85)"
+    },
+    "materials": {
+      "surface": "glass",
+      "grain": 0.025,
+      "glassBlur": 16,
+      "gradient": "radial-gradient(circle at 70% 20%, rgba(139,123,255,.22), transparent 45%)",
+      "texture": "profundidad volumétrica"
+    },
+    "motion": {
+      "level": "expressive",
+      "fastMs": 140,
+      "baseMs": 520,
+      "slowMs": 1400,
+      "easeOut": "cubic-bezier(.16,1,.3,1)",
+      "easeInOut": "cubic-bezier(.65,0,.35,1)",
+      "spring": "cubic-bezier(.34,1.56,.64,1)",
+      "staggerMs": 60,
+      "camera": "órbita 6°, dolly-in 1.08, parallax 3 capas"
+    },
+    "composition": {
+      "focal": "objeto central desplazado",
+      "alignment": "center",
+      "negativeSpace": 0.45,
+      "density": "airy",
+      "contrast": "balanced",
+      "headlineChars": 30,
+      "imageRatio": "1:1",
+      "notes": [
+        "Máximo tres planos de profundidad",
+        "La cámara respeta reduced-motion"
+      ]
+    },
+    "effects": [
+      {
+        "id": "cube-field",
+        "role": "campo 3D",
+        "reason": "Compatible con Diseño 3D inmersivo (3d; MIT (propio))."
+      },
+      {
+        "id": "starfield-warp",
+        "role": "profundidad estelar",
+        "reason": "Compatible con Diseño 3D inmersivo (particulas; MIT (propio))."
+      }
+    ],
+    "components": [
+      "NavBar",
+      "Hero",
+      "PrimaryCTA",
+      "ProofStrip",
+      "FeatureGrid",
+      "Footer"
+    ],
+    "tokenSet": {
+      "color.bg": {
+        "$value": "#05060f",
+        "$type": "color"
+      },
+      "color.surface": {
+        "$value": "#0d1224",
+        "$type": "color"
+      },
+      "color.elevated": {
+        "$value": "#141c36",
+        "$type": "color"
+      },
+      "color.text": {
+        "$value": "#f3f5ff",
+        "$type": "color"
+      },
+      "color.muted": {
+        "$value": "#a5b0d0",
+        "$type": "color"
+      },
+      "color.accent": {
+        "$value": "#8b7bff",
+        "$type": "color"
+      },
+      "color.accent2": {
+        "$value": "#4ee1d0",
+        "$type": "color"
+      },
+      "color.border": {
+        "$value": "#27335a",
+        "$type": "color"
+      },
+      "color.success": {
+        "$value": "#4ade80",
+        "$type": "color"
+      },
+      "color.warning": {
+        "$value": "#fbbf24",
+        "$type": "color"
+      },
+      "color.danger": {
+        "$value": "#fb7185",
+        "$type": "color"
+      },
+      "color.focus": {
+        "$value": "#7dd3fc",
+        "$type": "color"
+      },
+      "color.accentInk": {
+        "$value": "#04100f",
+        "$type": "color"
+      },
+      "font.size.caption": {
+        "$value": 12,
+        "$type": "dimension"
+      },
+      "font.size.small": {
+        "$value": 14,
+        "$type": "dimension"
+      },
+      "font.size.body": {
+        "$value": 16,
+        "$type": "dimension"
+      },
+      "font.size.lead": {
+        "$value": 20,
+        "$type": "dimension"
+      },
+      "font.size.h3": {
+        "$value": 21.6,
+        "$type": "dimension"
+      },
+      "font.size.h2": {
+        "$value": 29.2,
+        "$type": "dimension"
+      },
+      "font.size.h1": {
+        "$value": 39.4,
+        "$type": "dimension"
+      },
+      "font.size.display": {
+        "$value": 53.1,
+        "$type": "dimension"
+      },
+      "font.size.hero": {
+        "$value": 71.7,
+        "$type": "dimension"
+      },
+      "font.display": {
+        "$value": "VE Space Grotesk",
+        "$type": "fontFamily"
+      },
+      "font.body": {
+        "$value": "VE Inter",
+        "$type": "fontFamily"
+      },
+      "font.mono": {
+        "$value": "VE JetBrains Mono",
+        "$type": "fontFamily"
+      },
+      "font.scaleRatio": {
+        "$value": 1.35,
+        "$type": "number"
+      },
+      "space.base": {
+        "$value": 10,
+        "$type": "dimension"
+      },
+      "space.gutter": {
+        "$value": 38,
+        "$type": "dimension"
+      },
+      "radius.card": {
+        "$value": 20,
+        "$type": "dimension"
+      },
+      "border.width": {
+        "$value": 1,
+        "$type": "dimension"
+      },
+      "motion.fast": {
+        "$value": "140ms",
+        "$type": "duration"
+      },
+      "motion.base": {
+        "$value": "520ms",
+        "$type": "duration"
+      },
+      "motion.slow": {
+        "$value": "1400ms",
+        "$type": "duration"
+      },
+      "motion.easeOut": {
+        "$value": "cubic-bezier(.16,1,.3,1)",
+        "$type": "cubicBezier"
+      },
+      "motion.stagger": {
+        "$value": "60ms",
+        "$type": "duration"
+      }
+    },
+    "rationale": [
+      "Proyecto landing: NavBar, Hero, PrimaryCTA antes de decorar.",
+      "Estilo Diseño 3D inmersivo: Espacio, profundidad y capas; la cámara es parte de la composición.",
+      "Tipografía display + sans + mono; escala 1.35.",
+      "Densidad airy; espacio base 10 px y radio 20 px.",
+      "Movimiento expressive; transiciones de 140/520/1400 ms.",
+      "Efectos elegidos por función: cube-field (campo 3D), starfield-warp (profundidad estelar).",
+      "Contraste de texto sobre fondo: 18.58:1."
+    ],
+    "warnings": [
+      "Movimiento expresivo: verifica prefers-reduced-motion y no bloquees la lectura."
+    ],
+    "fonts": [
+      {
+        "id": "space-grotesk",
+        "family": "VE Space Grotesk",
+        "file": "SpaceGrotesk_wght_.ttf",
+        "license": "OFL-1.1"
+      },
+      {
+        "id": "inter",
+        "family": "VE Inter",
+        "file": "Inter_opsz,wght_.ttf",
+        "license": "OFL-1.1"
+      },
+      {
+        "id": "jetbrains-mono",
+        "family": "VE JetBrains Mono",
+        "file": "JetBrainsMono_wght_.ttf",
+        "license": "OFL-1.1"
+      }
+    ],
+    "audit": {
+      "structuralScore": 97.6,
+      "dimensions": [
+        {
+          "id": "contrast",
+          "score": 100,
+          "evidence": "18.58:1 OK; 17.11:1 OK; 9.35:1 OK; 5.87:1 OK"
+        },
+        {
+          "id": "type-scale",
+          "score": 100,
+          "evidence": "9 pasos, cuerpo 16px, ratio 1.35"
+        },
+        {
+          "id": "spacing",
+          "score": 100,
+          "evidence": "base 10px, gutter 38px"
+        },
+        {
+          "id": "hierarchy",
+          "score": 83.5,
+          "evidence": "ratio 1.35, display 53.1px"
+        },
+        {
+          "id": "restraint",
+          "score": 100,
+          "evidence": "2 efecto(s) para landing"
+        },
+        {
+          "id": "motion-accessibility",
+          "score": 100,
+          "evidence": "expressive; base 520ms; stagger 60ms"
+        },
+        {
+          "id": "identity",
+          "score": 100,
+          "evidence": "4 reglas de firma; 3 anti-patrones"
+        }
+      ],
+      "contrastPairs": [
+        {
+          "fg": "#f3f5ff",
+          "bg": "#05060f",
+          "ratio": 18.58,
+          "pass": true
+        },
+        {
+          "fg": "#f3f5ff",
+          "bg": "#0d1224",
+          "ratio": 17.11,
+          "pass": true
+        },
+        {
+          "fg": "#a5b0d0",
+          "bg": "#05060f",
+          "ratio": 9.35,
+          "pass": true
+        },
+        {
+          "fg": "#04100f",
+          "bg": "#8b7bff",
+          "ratio": 5.87,
+          "pass": true
+        }
+      ],
+      "warnings": [],
+      "note": "Auditoría estructural, no juicio artístico. Comprueba contraste, escala, ritmo, mesura y accesibilidad; la evaluación humana es independiente."
+    }
+  },
+  "paths": {
+    "outDir": "<repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\measure-b",
+    "intelligence": "<repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\measure-b\\intelligence.json",
+    "critic": "<repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\measure-b\\critic.json",
+    "criticMd": "<repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\measure-b\\critic.md",
+    "fidelity": "<repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\measure-b\\fidelity.json",
+    "fidelityMd": "<repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\measure-b\\fidelity.md",
+    "gates": "<repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\measure-b\\gates.json",
+    "gatesMd": "<repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\measure-b\\gates.md",
+    "dom": "<repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\measure-b\\dom\\dom.json",
+    "agentTask": "<repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\measure-b\\agent-task.md"
+  },
+  "description": [
+    "Calidad 92/100; fidelidad estructural 79.9/100; crítica 94/100.",
+    "Crítica 94/100 (A): 0 crítico(s), 0 alto(s), 1 medio(s), 0 bajo(s).",
+    "  [medium] El material declarado no aparece en el render (superficies, confianza 65%)",
+    "  Límite: Sin animaciones observadas no se afirma rigidez temporal.",
+    "  Límite: La crítica detecta defectos estructurales; no sustituye la aprobación artística humana.",
+    "Aceptado: 9/10 gates en verde; arte pendiente de revisión humana.",
+    "DOM Una órbita, una acción. — B · 35 elementos visibles, 4 cabeceras, 0 botones.",
+    "Capas: 0; materiales: 0; animaciones: 0; efectos declarados: 0.",
+    "Contraste DOM: 0 incumplimiento(s) de 19; peor 5.35:1.",
+    "Overflow: 0×387 px; imágenes rotas: 0; botones sin nombre: 0.",
+    "Código fuente indexado: 2 archivo(s).",
+    "Tarea del agente: <repo>\\docs\\evidencia\\0.6\\ab\\launch-microsite\\measure-b\\agent-task.md",
+    "Límite: Sin animaciones observadas no se afirma rigidez temporal.",
+    "Límite: La crítica detecta defectos estructurales; no sustituye la aprobación artística humana."
+  ]
+}

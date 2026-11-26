@@ -1,0 +1,385 @@
+{
+  "reference": "<repo>\\docs\\evidencia\\1.0-rc\\references\\motion-reference.mp4",
+  "candidate": "<repo>\\docs\\evidencia\\1.0-rc\\motion\\before.mp4",
+  "durationRef": 6,
+  "durationCand": 5.8,
+  "samples": 16,
+  "points": [
+    {
+      "index": 0,
+      "tRef": 0.18,
+      "tCand": 0.174,
+      "lumaRef": 0.342,
+      "lumaCand": 0.097,
+      "deltaLuma": -0.245,
+      "contrastRef": 0.136,
+      "contrastCand": 0.101,
+      "edgeRef": 0.457,
+      "edgeCand": 0.098
+    },
+    {
+      "index": 1,
+      "tRef": 0.556,
+      "tCand": 0.537,
+      "lumaRef": 0.342,
+      "lumaCand": 0.097,
+      "deltaLuma": -0.245,
+      "contrastRef": 0.136,
+      "contrastCand": 0.101,
+      "edgeRef": 0.457,
+      "edgeCand": 0.098
+    },
+    {
+      "index": 2,
+      "tRef": 0.932,
+      "tCand": 0.901,
+      "lumaRef": 0.342,
+      "lumaCand": 0.097,
+      "deltaLuma": -0.245,
+      "contrastRef": 0.136,
+      "contrastCand": 0.101,
+      "edgeRef": 0.457,
+      "edgeCand": 0.098
+    },
+    {
+      "index": 3,
+      "tRef": 1.308,
+      "tCand": 1.264,
+      "lumaRef": 0.342,
+      "lumaCand": 0.097,
+      "deltaLuma": -0.245,
+      "contrastRef": 0.136,
+      "contrastCand": 0.101,
+      "edgeRef": 0.457,
+      "edgeCand": 0.098
+    },
+    {
+      "index": 4,
+      "tRef": 1.684,
+      "tCand": 1.628,
+      "lumaRef": 0.342,
+      "lumaCand": 0.097,
+      "deltaLuma": -0.245,
+      "contrastRef": 0.136,
+      "contrastCand": 0.101,
+      "edgeRef": 0.457,
+      "edgeCand": 0.098
+    },
+    {
+      "index": 5,
+      "tRef": 2.06,
+      "tCand": 1.991,
+      "lumaRef": 0.346,
+      "lumaCand": 0.097,
+      "deltaLuma": -0.249,
+      "contrastRef": 0.129,
+      "contrastCand": 0.101,
+      "edgeRef": 0.4,
+      "edgeCand": 0.098
+    },
+    {
+      "index": 6,
+      "tRef": 2.436,
+      "tCand": 2.355,
+      "lumaRef": 0.346,
+      "lumaCand": 0.097,
+      "deltaLuma": -0.249,
+      "contrastRef": 0.129,
+      "contrastCand": 0.101,
+      "edgeRef": 0.4,
+      "edgeCand": 0.098
+    },
+    {
+      "index": 7,
+      "tRef": 2.812,
+      "tCand": 2.718,
+      "lumaRef": 0.346,
+      "lumaCand": 0.097,
+      "deltaLuma": -0.249,
+      "contrastRef": 0.129,
+      "contrastCand": 0.101,
+      "edgeRef": 0.4,
+      "edgeCand": 0.098
+    },
+    {
+      "index": 8,
+      "tRef": 3.188,
+      "tCand": 3.082,
+      "lumaRef": 0.346,
+      "lumaCand": 0.097,
+      "deltaLuma": -0.249,
+      "contrastRef": 0.129,
+      "contrastCand": 0.101,
+      "edgeRef": 0.4,
+      "edgeCand": 0.098
+    },
+    {
+      "index": 9,
+      "tRef": 3.564,
+      "tCand": 3.445,
+      "lumaRef": 0.346,
+      "lumaCand": 0.097,
+      "deltaLuma": -0.249,
+      "contrastRef": 0.129,
+      "contrastCand": 0.101,
+      "edgeRef": 0.4,
+      "edgeCand": 0.098
+    },
+    {
+      "index": 10,
+      "tRef": 3.94,
+      "tCand": 3.809,
+      "lumaRef": 0.346,
+      "lumaCand": 0.097,
+      "deltaLuma": -0.249,
+      "contrastRef": 0.129,
+      "contrastCand": 0.101,
+      "edgeRef": 0.4,
+      "edgeCand": 0.098
+    },
+    {
+      "index": 11,
+      "tRef": 4.316,
+      "tCand": 4.172,
+      "lumaRef": 0.342,
+      "lumaCand": 0.097,
+      "deltaLuma": -0.245,
+      "contrastRef": 0.143,
+      "contrastCand": 0.101,
+      "edgeRef": 0.41,
+      "edgeCand": 0.098
+    },
+    {
+      "index": 12,
+      "tRef": 4.692,
+      "tCand": 4.536,
+      "lumaRef": 0.342,
+      "lumaCand": 0.097,
+      "deltaLuma": -0.245,
+      "contrastRef": 0.143,
+      "contrastCand": 0.101,
+      "edgeRef": 0.41,
+      "edgeCand": 0.098
+    },
+    {
+      "index": 13,
+      "tRef": 5.068,
+      "tCand": 4.899,
+      "lumaRef": 0.342,
+      "lumaCand": 0.097,
+      "deltaLuma": -0.245,
+      "contrastRef": 0.143,
+      "contrastCand": 0.101,
+      "edgeRef": 0.41,
+      "edgeCand": 0.098
+    },
+    {
+      "index": 14,
+      "tRef": 5.444,
+      "tCand": 5.263,
+      "lumaRef": 0.342,
+      "lumaCand": 0.097,
+      "deltaLuma": -0.245,
+      "contrastRef": 0.143,
+      "contrastCand": 0.101,
+      "edgeRef": 0.41,
+      "edgeCand": 0.098
+    },
+    {
+      "index": 15,
+      "tRef": 5.82,
+      "tCand": 5.626,
+      "lumaRef": 0.342,
+      "lumaCand": 0.097,
+      "deltaLuma": -0.245,
+      "contrastRef": 0.143,
+      "contrastCand": 0.101,
+      "edgeRef": 0.41,
+      "edgeCand": 0.098
+    }
+  ],
+  "curves": {
+    "luma": 0.178,
+    "lumaCurve": 0,
+    "motionCorrelation": 0.403,
+    "cutF1": 0,
+    "driftSeconds": 0
+  },
+  "fidelity": {
+    "score": 47.7,
+    "paletteDeltaE": 24.4,
+    "summary": "Fidelidad 47.7/100 (D). ΔE paleta 24.4, Δ luminancia -24.7%, Δ contraste -3.1%, Δ movimiento -2.90."
+  },
+  "quality": {
+    "overall": 55,
+    "grade": "D",
+    "dimensions": [
+      {
+        "id": "fidelity",
+        "label": "Fidelidad a la referencia",
+        "score": 47.7,
+        "weight": 0.3,
+        "evidence": {
+          "puntuacion": 47.7
+        },
+        "available": true
+      },
+      {
+        "id": "composition",
+        "label": "Composición",
+        "score": 87.8,
+        "weight": 0.12,
+        "evidence": {
+          "referencia": 0.934,
+          "resultado": 0.873,
+          "equilibrio": "masa por cuadrantes"
+        },
+        "available": true
+      },
+      {
+        "id": "hierarchy",
+        "label": "Jerarquía visual",
+        "score": 72,
+        "weight": 0.08,
+        "evidence": {
+          "referencia": 0.613,
+          "resultado": 0.473,
+          "base": "contraste, detalle y foco"
+        },
+        "available": true
+      },
+      {
+        "id": "typography",
+        "label": "Tipografía y legibilidad",
+        "score": 47.3,
+        "weight": 0.06,
+        "evidence": {
+          "nota": "proxy estructural: sin auditoría DOM, no se afirma tipografía real"
+        },
+        "available": true
+      },
+      {
+        "id": "depth",
+        "label": "Profundidad",
+        "score": 89.8,
+        "weight": 0.05,
+        "evidence": {
+          "referencia": 0.408,
+          "resultado": 0.357,
+          "nota": "proxy de cuadrantes y detalle; no mapa métrico"
+        },
+        "available": true
+      },
+      {
+        "id": "lighting",
+        "label": "Iluminación",
+        "score": 47.6,
+        "weight": 0.07,
+        "evidence": {
+          "lumaReferencia": 0.344,
+          "lumaResultado": 0.097,
+          "contrasteReferencia": 0.137,
+          "contrasteResultado": 0.106
+        },
+        "available": true
+      },
+      {
+        "id": "animation",
+        "label": "Animación",
+        "score": 44.2,
+        "weight": 0.1,
+        "evidence": {
+          "movimientoReferencia": 0.029,
+          "movimientoResultado": 0,
+          "cortesReferencia": 2,
+          "cortesResultado": 0,
+          "ritmoReferencia": 20,
+          "ritmoResultado": 0
+        },
+        "available": true
+      },
+      {
+        "id": "transitions",
+        "label": "Transiciones y ritmo",
+        "score": 20,
+        "weight": 0.04,
+        "evidence": {
+          "cortesReferencia": 2,
+          "cortesResultado": 0,
+          "ritmoReferencia": 20,
+          "ritmoResultado": 0
+        },
+        "available": true
+      },
+      {
+        "id": "coherence",
+        "label": "Coherencia estética",
+        "score": 0,
+        "weight": 0.05,
+        "evidence": {
+          "histogramaDeMatiz": "coseno entre referencias y resultado",
+          "valor": 0
+        },
+        "available": true
+      },
+      {
+        "id": "accessibility",
+        "label": "Accesibilidad de contraste",
+        "score": null,
+        "weight": 0.07,
+        "evidence": {
+          "nota": "sin auditoría DOM; no se inventa una puntuación"
+        },
+        "available": false
+      },
+      {
+        "id": "fluidity",
+        "label": "Fluidez",
+        "score": 100,
+        "weight": 0.03,
+        "evidence": {
+          "jerk": 0.0001,
+          "parpadeo": 0,
+          "muestras": 9
+        },
+        "available": true
+      },
+      {
+        "id": "performance",
+        "label": "Rendimiento",
+        "score": null,
+        "weight": 0.03,
+        "evidence": {},
+        "available": false
+      },
+      {
+        "id": "restraint",
+        "label": "Contención decorativa",
+        "score": null,
+        "weight": 0.02,
+        "evidence": {
+          "nota": "sin recuento de efectos"
+        },
+        "available": false
+      }
+    ],
+    "summary": "Calidad 55.0/100 (D) · fidelidad 47.7 · composición 87.8 · jerarquía 72.0 · animación 44.2 · tipografía 47.3 · profundidad 89.8 · iluminación 47.6 · transiciones 20.0 · coherencia 0.0 · fluidez 100.0.",
+    "weightsUsed": {
+      "fidelity": 0.333,
+      "composition": 0.133,
+      "hierarchy": 0.089,
+      "typography": 0.067,
+      "depth": 0.056,
+      "lighting": 0.078,
+      "animation": 0.111,
+      "transitions": 0.044,
+      "coherence": 0.056,
+      "fluidity": 0.033
+    }
+  },
+  "score": 37.6,
+  "grade": "D",
+  "warnings": [
+    "Rendimiento no medido: no se aportaron tiempos de captura. La dimensión queda fuera del total."
+  ]
+}

@@ -6,6 +6,7 @@ import { analyzeFile, type VisualProfile } from './analysis.js';
 import { listEffects } from './library.js';
 import type { ReviewResult } from './review.js';
 import { selectSmartEffects, compactRecipe } from './smart-effects.js';
+import { getProfile, type ProfileId } from './profiles.js';
 
 /**
  * Contexto para agentes 0.5.
@@ -134,7 +135,9 @@ export function clearAnalysisCache(cacheDir = cacheRoot()): number {
 }
 
 export interface ContextSelection {
-  version: '0.5';
+  version: '1.0';
+  profile: ProfileId;
+  tokenBudget: number;
   task: string;
   kind: TaskKind;
   tools: ToolHint[];
@@ -155,10 +158,11 @@ export function estimateTokens(value: unknown): number {
  * Selecciona el contexto mínimo suficiente. No devuelve código de efectos;
  * para eso se llama a `loadRecipe` con un id concreto.
  */
-export function selectContext(task: string, opts: { maxTools?: number; maxRecipes?: number; style?: string; projectType?: string } = {}): ContextSelection {
+export function selectContext(task: string, opts: { profile?: string; maxTools?: number; maxRecipes?: number; style?: string; projectType?: string } = {}): ContextSelection {
   const kind = classify(task);
-  const maxTools = Math.max(2, Math.min(8, opts.maxTools ?? 5));
-  const maxRecipes = Math.max(0, Math.min(5, opts.maxRecipes ?? 3));
+  const profile = getProfile(opts.profile);
+  const maxTools = Math.max(2, Math.min(12, opts.maxTools ?? profile.maxTools));
+  const maxRecipes = Math.max(0, Math.min(5, opts.maxRecipes ?? profile.maxRecipes));
   const tools = TOOLS.filter((t) => t.kind.includes(kind) || t.name === 'visual_context').slice(0, maxTools);
   let recipes: ReturnType<typeof compactRecipe>[] = [];
   if (kind === 'design' || kind === 'effects') {
@@ -174,7 +178,7 @@ export function selectContext(task: string, opts: { maxTools?: number; maxRecipe
       .slice(0, maxRecipes)
       .map((e) => compactRecipe(e.id));
   }
-  const docs = DOCS[kind].slice(0, 2);
+  const docs = DOCS[kind].slice(0, Math.max(0, Math.min(2, profile.maxDocs)));
   const compact = [
     `TAREA: ${task}`,
     `TIPO: ${kind}`,
@@ -184,14 +188,15 @@ export function selectContext(task: string, opts: { maxTools?: number; maxRecipe
     `REGLAS: no cargar los 58 efectos; pedir un id; verificar antes de afirmar.`,
   ].join('\n');
   return {
-    version: '0.5', task, kind, tools, recipes, docs,
+    version: '1.0', profile: profile.id, tokenBudget: profile.tokenBudget, task, kind, tools, recipes, docs,
     estimatedTokens: estimateTokens(compact),
     cache: { root: cacheRoot(), note: 'Caché local por contenido y opciones; se puede borrar con ve context --clear-cache.' },
     compact,
     limits: [
       'El contexto seleccionado no contiene el código de los efectos; se recupera sólo el id necesario.',
       'Las recetas son sugerencias; no sustituyen la medición del resultado.',
-      'La estimación de tokens es aproximada (caracteres/4), no un recuento del proveedor.',
+      'La estimación de tokens es aproximada (caracteres/4), no un recuento del proveedor; el presupuesto es un límite local.',
+      `Perfil ${profile.id}: selecciona capacidades y presupuesto, nunca una estética.`,
     ],
   };
 }

@@ -1,0 +1,50 @@
+{
+  "id": "motion-graphics",
+  "reference": {
+    "title": "The Dance Class",
+    "artist": "Edgar Degas",
+    "year": "1874",
+    "objectId": 438817,
+    "url": "https://www.metmuseum.org/art/collection/search/438817"
+  },
+  "source": {
+    "aChars": 2515,
+    "bChars": 5573,
+    "aTokensEstimate": 629,
+    "bTokensEstimate": 1394,
+    "modelTokens": null,
+    "iterations": 0
+  },
+  "a": {
+    "quality": 73.2,
+    "fidelity": 71.4,
+    "pixelSimilarity": 53.4,
+    "accessibility": 100,
+    "composition": 88.9,
+    "typography": 100,
+    "performance": 86.8,
+    "fps": 60.8,
+    "loadMs": 727,
+    "critic": 82,
+    "critical": 0,
+    "high": 1,
+    "gates": "reject",
+    "webgl": null
+  },
+  "b": {
+    "quality": 86.9,
+    "fidelity": 90.5,
+    "pixelSimilarity": 85.3,
+    "accessibility": 100,
+    "composition": 97.8,
+    "typography": 91.2,
+    "performance": 54.9,
+    "fps": 60.6,
+    "loadMs": 745,
+    "critic": 100,
+    "critical": 0,
+    "high": 0,
+    "gates": "accept",
+    "webgl": null
+  }
+}

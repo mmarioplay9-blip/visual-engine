@@ -1,0 +1,50 @@
+{
+  "id": "analytics-dashboard",
+  "reference": {
+    "title": "Lumen (render propio)",
+    "artist": "Visual Engine",
+    "date": "2026",
+    "url": "library/showcase/lumen/preview.png",
+    "license": "CC0 / Public Domain"
+  },
+  "source": {
+    "aChars": 3028,
+    "bChars": 5273,
+    "aTokensEstimate": 757,
+    "bTokensEstimate": 1319,
+    "modelTokens": null,
+    "iterations": 0
+  },
+  "a": {
+    "quality": 76.2,
+    "fidelity": 65.6,
+    "pixelSimilarity": 65.9,
+    "accessibility": 100,
+    "composition": 79,
+    "typography": 100,
+    "performance": 86.1,
+    "fps": 61,
+    "loadMs": 817,
+    "critic": 76,
+    "critical": 0,
+    "high": 2,
+    "gates": "reject",
+    "webgl": null
+  },
+  "b": {
+    "quality": 91.7,
+    "fidelity": 91.8,
+    "pixelSimilarity": 83.4,
+    "accessibility": 100,
+    "composition": 96,
+    "typography": 100,
+    "performance": 83.1,
+    "fps": 61.4,
+    "loadMs": 820,
+    "critic": 100,
+    "critical": 0,
+    "high": 0,
+    "gates": "accept",
+    "webgl": null
+  }
+}

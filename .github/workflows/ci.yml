@@ -1,0 +1,43 @@
+# Preparado para 1.0.0-rc.1. Sólo Windows se ha ejecutado localmente; Linux y
+# macOS quedan como comprobación pendiente y no se declaran verificados.
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install chromium
+      - run: npm run build
+      - run: node --test --test-concurrency=1 tests/
+
+  linux-macos-preview:
+    # Preparado, no ejecutado en la entrega 1.0.0-rc.1. No bloquea hasta verificarlo.
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: sudo apt-get update && sudo apt-get install -y ffmpeg || brew install ffmpeg
+        if: runner.os != 'Windows'
+      - run: npm run build
+      - run: node --test tests/visual06.test.mjs tests/mcp.test.mjs

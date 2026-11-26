@@ -1,0 +1,56 @@
+{
+  "version": "0.5",
+  "score": 88,
+  "grade": "A",
+  "findings": [
+    {
+      "id": "coherence-low",
+      "category": "coherence",
+      "title": "Incoherencia estética entre la intención y el resultado",
+      "severity": "high",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "source": "quality",
+          "metric": "coherencia de matiz",
+          "value": 0.6,
+          "threshold": 58
+        }
+      ],
+      "location": {
+        "component": "palette"
+      },
+      "fix": {
+        "kind": "css",
+        "summary": "Reduce la paleta a tokens semánticos y elimina acentos que no tengan un rol.",
+        "property": "color tokens"
+      },
+      "status": "measured"
+    }
+  ],
+  "counts": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 0
+  },
+  "summary": "Crítica 88/100 (A): 0 crítico(s), 1 alto(s), 0 medio(s), 0 bajo(s).",
+  "agentTask": "# Tarea visual priorizada\n\nBrief: Micrositio de lanzamiento inmersivo con profundidad, luz y una única acción.\nEstilo: immersive-3d\nCrítica: Crítica 88/100 (A): 0 crítico(s), 1 alto(s), 0 medio(s), 0 bajo(s).\n\n## Corrige sólo estos defectos medidos\n\n### [HIGH] Incoherencia estética entre la intención y el resultado\n- Evidencia: coherencia de matiz=0.6 (objetivo 58)\n- Ubicación: sin selector; componente palette\n- Corrección: Reduce la paleta a tokens semánticos y elimina acentos que no tengan un rol.\n- Propiedad: color tokens\n- Acción base: Reduce la paleta y reutiliza tokens; elimina acentos y materiales que no pertenecen al sistema.\n\n## Reglas de la iteración\n\n1. No reescribas todo: aplica el cambio mínimo en la ubicación indicada.\n2. No añadas un efecto si no hay evidencia de que falta y una función que cumplir.\n3. Conserva las decisiones que ya pasan los umbrales.\n4. Vuelve a capturar y compara antes/después; revierte si no mejora.\n5. La aprobación artística final es humana.\n\n## Límites\n\n- Sin animaciones observadas no se afirma rigidez temporal.\n- La crítica detecta defectos estructurales; no sustituye la aprobación artística humana.",
+  "limitations": [
+    "Sin animaciones observadas no se afirma rigidez temporal.",
+    "La crítica detecta defectos estructurales; no sustituye la aprobación artística humana."
+  ],
+  "measured": {
+    "quality": 87.1,
+    "fidelity": 84.7,
+    "composition": 90.5,
+    "hierarchy": 91,
+    "typography": 100,
+    "depth": 92.8,
+    "lighting": 90,
+    "coherence": 0.6,
+    "transitions": 100,
+    "performance": 86.3
+  },
+  "artisticJudgment": false
+}

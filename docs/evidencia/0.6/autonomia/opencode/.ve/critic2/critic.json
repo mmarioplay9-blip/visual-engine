@@ -1,0 +1,32 @@
+{
+  "version": "0.5",
+  "score": 100,
+  "grade": "A",
+  "findings": [],
+  "counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "summary": "Crítica 100/100 (A): no se detectaron defectos con los datos disponibles.",
+  "agentTask": "# Tarea visual priorizada\n\nBrief: Analizar y mejorar hero.html\nEstilo: minimal-premium\nCrítica: Crítica 100/100 (A): no se detectaron defectos con los datos disponibles.\n\n## Corrige sólo estos defectos medidos\n\nNo hay defectos medidos. No reescribas el proyecto; solicita revisión artística humana.\n## Reglas de la iteración\n\n1. No reescribas todo: aplica el cambio mínimo en la ubicación indicada.\n2. No añadas un efecto si no hay evidencia de que falta y una función que cumplir.\n3. Conserva las decisiones que ya pasan los umbrales.\n4. Vuelve a capturar y compara antes/después; revierte si no mejora.\n5. La aprobación artística final es humana.\n\n## Límites\n\n- Sin medición de rendimiento no se afirma FPS ni carga.\n- Sin animaciones observadas no se afirma rigidez temporal.\n- La crítica detecta defectos estructurales; no sustituye la aprobación artística humana.",
+  "limitations": [
+    "Sin medición de rendimiento no se afirma FPS ni carga.",
+    "Sin animaciones observadas no se afirma rigidez temporal.",
+    "La crítica detecta defectos estructurales; no sustituye la aprobación artística humana."
+  ],
+  "measured": {
+    "quality": 90.2,
+    "fidelity": 85.4,
+    "composition": 74.4,
+    "hierarchy": 98.9,
+    "typography": 100,
+    "depth": 80.6,
+    "lighting": 92.7,
+    "coherence": 99.8,
+    "transitions": 100,
+    "performance": 73.2
+  },
+  "artisticJudgment": false
+}

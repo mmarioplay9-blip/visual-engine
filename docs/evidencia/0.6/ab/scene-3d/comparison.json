@@ -1,0 +1,59 @@
+{
+  "id": "scene-3d",
+  "reference": {
+    "title": "Astronomy",
+    "artist": "Giambologna",
+    "date": "17th century",
+    "objectId": 203938,
+    "url": "https://www.metmuseum.org/art/collection/search/203938",
+    "license": "CC0 / Public Domain"
+  },
+  "source": {
+    "aChars": 2992,
+    "bChars": 6338,
+    "aTokensEstimate": 748,
+    "bTokensEstimate": 1585,
+    "modelTokens": null,
+    "iterations": 0
+  },
+  "a": {
+    "quality": 75,
+    "fidelity": 64.6,
+    "pixelSimilarity": 60.9,
+    "accessibility": 100,
+    "composition": 91.9,
+    "typography": 100,
+    "performance": 85.3,
+    "fps": 61.3,
+    "loadMs": 822,
+    "critic": 76,
+    "critical": 0,
+    "high": 2,
+    "gates": "reject",
+    "webgl": null
+  },
+  "b": {
+    "quality": 87.2,
+    "fidelity": 87.7,
+    "pixelSimilarity": 77.6,
+    "accessibility": 100,
+    "composition": 90.2,
+    "typography": 100,
+    "performance": 54.9,
+    "fps": 58.7,
+    "loadMs": 898,
+    "critic": 100,
+    "critical": 0,
+    "high": 0,
+    "gates": "accept",
+    "webgl": {
+      "available": true,
+      "expectedDeg": 1.5,
+      "measuredMaxDeg": 1.41,
+      "errorDeg": 0.09,
+      "frames": 214,
+      "reducedMotion": false,
+      "status": "verified"
+    }
+  }
+}

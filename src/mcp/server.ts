@@ -48,6 +48,11 @@ import {
   opLoops,
   opRestoreLoop,
 } from '../core/intelligence-ops.js';
+import { planInstall, applyInstall, uninstall, repair, inventory, verifyMcpServer } from '../core/installer.js';
+import { PROFILES, describeProfile } from '../core/profiles.js';
+import { detectActivation, activationSupport } from '../core/activation.js';
+import { auditSecurity } from '../core/security.js';
+import { recordUsage } from '../core/usage.js';
 
 const json = (v: unknown) => JSON.stringify(v, null, 2);
 
@@ -104,6 +109,14 @@ Visual Intelligence Loop (0.5):
 - visual_smart_effects → selección contextual; no añade efectos indiscriminadamente.
 - visual_loop → copia, aplica un cambio del agente, mide, conserva o revierte con límites.
 - visual_loops → historial y restauración de copias.
+
+Intalación y compatibilidad (0.6):
+- visual_agents → detecta agentes reales y distingue diseñado / instalado / verificado.
+- visual_install → planifica (action=plan) o aplica (action=apply, confirm=true) con respaldos y manifiesto.
+- visual_profile → lite, professional o cinematic; cambian capacidades y presupuesto, no la estética.
+- visual_activation → decide si la solicitud necesita criterio visual y respeta el mecanismo del agente.
+- visual_security → audita localhost, rutas, shell, permisos y copias.
+- visual_usage → consumo medido por el agente o estimado caracteres/4; nunca los mezcles.
 
 Reglas:
 - Distingue siempre "verified" de "estimated": el OCR/objetos necesitan Tesseract o un modelo local; si no están, dilo.
@@ -947,6 +960,101 @@ export function createServer(): McpServer {
         return ok(opRestoreLoop(args.project, args.id, args.outDir));
       } catch (e) { return fail(e); }
     },
+  );
+
+  server.registerTool(
+    'visual_agents',
+    {
+      title: 'Agentes instalados y estado de integración',
+      description: 'Detecta agentes reales por binario y archivos. Distingue diseñado, instalado y verificado; no afirma activación automática donde no existe.',
+      inputSchema: { project: z.string().optional() },
+    },
+    async (args) => { try { return ok(await inventory(args.project)); } catch (e) { return fail(e); } },
+  );
+
+  server.registerTool(
+    'visual_install',
+    {
+      title: 'Universal Installer',
+      description: 'Planifica o instala Skills, instrucciones y MCP por agente con respaldos y manifiesto. No sobrescribe archivos no gestionados ni toca configuración global sin autorización.',
+      inputSchema: {
+        action: z.enum(['plan', 'apply', 'uninstall', 'repair', 'verify']),
+        project: z.string().optional(),
+        agents: z.array(z.string()).optional(),
+        scope: z.enum(['project', 'global']).optional(),
+        profile: z.enum(['lite', 'professional', 'cinematic']).optional(),
+        confirm: z.boolean().optional().describe('Obligatorio para apply/uninstall/repair: escribe o borra archivos.'),
+        force: z.boolean().optional(),
+        allowGlobal: z.boolean().optional(),
+        restoreBackups: z.boolean().optional(),
+        verify: z.boolean().optional(),
+      },
+    },
+    async (args) => {
+      try {
+        const opts = { ...args, projectDir: args.project, confirm: args.confirm };
+        if (args.action === 'plan') return ok(await planInstall(opts));
+        if (args.action === 'verify') return ok(await verifyMcpServer());
+        if (args.action === 'uninstall') return ok(uninstall(opts));
+        if (args.action === 'repair') return ok(repair(opts));
+        if (args.confirm !== true) return fail(new Error('Instalación no confirmada: envía confirm=true.'));
+        return ok(await applyInstall(opts));
+      } catch (e) { return fail(e); }
+    },
+  );
+
+  server.registerTool(
+    'visual_profile',
+    {
+      title: 'Perfiles Lite, Professional y Cinematic',
+      description: 'Devuelve capacidades, etapas y presupuestos del perfil. No impone estética: sólo selecciona herramientas y límites.',
+      inputSchema: { id: z.enum(['lite', 'professional', 'cinematic']).optional() },
+    },
+    async (args) => {
+      try {
+        if (!args.id) return ok(Object.values(PROFILES));
+        return ok({ profile: PROFILES[args.id], description: describeProfile(PROFILES[args.id]) });
+      } catch (e) { return fail(e); }
+    },
+  );
+
+  server.registerTool(
+    'visual_activation',
+    {
+      title: 'Activación inteligente',
+      description: 'Decide si una solicitud necesita criterio visual (UI, web, vídeo, VFX, animación, juego, motion, 3D) y evita activarse en backend, datos o documentación.',
+      inputSchema: { request: z.string(), agent: z.string().optional() },
+    },
+    async (args) => {
+      try {
+        const r = detectActivation(args.request);
+        return ok({ ...r, agentSupport: args.agent ? activationSupport(args.agent) : undefined });
+      } catch (e) { return fail(e); }
+    },
+  );
+
+  server.registerTool(
+    'visual_security',
+    {
+      title: 'Auditoría de seguridad',
+      description: 'Comprueba API en localhost, contención de rutas, ausencia de shell, permisos de estado y presencia de copias. No es un pentest.',
+      inputSchema: { project: z.string().optional() },
+    },
+    async (args) => { try { return ok(auditSecurity({ projectDir: args.project })); } catch (e) { return fail(e); } },
+  );
+
+  server.registerTool(
+    'visual_usage',
+    {
+      title: 'Consumo de tokens medido o estimado',
+      description: 'Normaliza estadísticas del agente como reported o una estimación caracteres/4 como estimated. Nunca presenta una estimación como medición real.',
+      inputSchema: {
+        reported: z.object({ inputTokens: z.number().optional(), outputTokens: z.number().optional(), cachedTokens: z.number().optional(), source: z.string().optional() }).optional(),
+        inputText: z.string().optional(),
+        outputText: z.string().optional(),
+      },
+    },
+    async (args) => { try { return ok(recordUsage(args)); } catch (e) { return fail(e); } },
   );
 
   server.registerResource(

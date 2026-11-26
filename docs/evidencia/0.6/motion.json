@@ -1,0 +1,52 @@
+{
+  "videos": {
+    "a": "motion-a.mp4",
+    "b": "motion-b.mp4",
+    "reference": "references\\motion-reference.mp4"
+  },
+  "videoInfo": {
+    "a": {
+      "path": "<repo>\\docs\\evidencia\\0.6\\motion-a.mp4",
+      "kind": "video",
+      "width": 1280,
+      "height": 720,
+      "duration": 6.44,
+      "fps": 25,
+      "frames": 161,
+      "codec": "h264",
+      "hasAudio": false
+    },
+    "b": {
+      "path": "<repo>\\docs\\evidencia\\0.6\\motion-b.mp4",
+      "kind": "video",
+      "width": 1280,
+      "height": 720,
+      "duration": 7.12,
+      "fps": 25,
+      "frames": 178,
+      "codec": "h264",
+      "hasAudio": false
+    },
+    "reference": {
+      "path": "<repo>\\docs\\evidencia\\0.6\\references\\motion-reference.mp4",
+      "kind": "video",
+      "width": 1280,
+      "height": 720,
+      "duration": 6,
+      "fps": 25,
+      "frames": 150,
+      "codec": "h264",
+      "hasAudio": false
+    }
+  },
+  "bCuts": [
+    2.04,
+    4.04,
+    6.04
+  ],
+  "bPace": 25.28,
+  "temporal": {
+    "score": 59.2
+  },
+  "note": "Vídeo real grabado con Playwright. La referencia es un montaje de tres planos de la obra CC0, no una grabación externa."
+}

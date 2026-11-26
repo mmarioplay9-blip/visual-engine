@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="HALO FOUNDRY, estudio de cerámica de autor.">
+  <title>HALO FOUNDRY — Cerámica de autor</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222820;
+      background: #f1eee5;
+      --gutter: clamp(22px, 4.4vw, 68px);
+    }
+
+    * { box-sizing: border-box; }
+    body, h1, p, figure, dl, dd { margin: 0; }
+
+    .landing {
+      max-width: 1680px;
+      min-height: 100svh;
+      padding: 0 var(--gutter) 30px;
+      margin-inline: auto;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 94px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-weight: 800;
+      font-size: 16px;
+      letter-spacing: .075em;
+    }
+
+    .mark {
+      width: 24px;
+      aspect-ratio: 1;
+      border: 6px solid currentColor;
+      border-radius: 54% 46% 51% 49%;
+      transform: rotate(-24deg);
+    }
+
+    .discipline { font-size: 14px; }
+
+    main {
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      align-items: stretch;
+      min-height: 460px;
+    }
+
+    .intro {
+      align-self: center;
+      padding: 25px 26px 36px 0;
+    }
+
+    h1 {
+      font: 400 clamp(59px, 7.55vw, 118px)/.91 Georgia, serif;
+      letter-spacing: -.05em;
+    }
+
+    h1 span { display: block; }
+
+    .intro p {
+      max-width: 365px;
+      margin-top: 29px;
+      font-size: 17px;
+      line-height: 1.58;
+    }
+
+    .composition {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      background: radial-gradient(ellipse at 31% 19%, #dfbb9b, transparent 66%),
+                  linear-gradient(151deg, #c79a7d 14%, #b38166 70%, #99664f);
+    }
+
+    .composition::after, .vessel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: repeating-radial-gradient(circle at 27% 39%, #20160e55 0 .55px, transparent .8px 3px),
+                  repeating-radial-gradient(circle at 67% 73%, #ffefd350 0 .45px, transparent .7px 4px);
+      background-size: 7px 11px, 13px 9px;
+      opacity: .26;
+      mix-blend-mode: multiply;
+    }
+
+    .cast-shadow {
+      position: absolute;
+      width: 72%;
+      height: 14%;
+      left: 22%;
+      top: 77%;
+      transform: rotate(-8deg);
+      background: radial-gradient(ellipse, #4a2b22a6, transparent 69%);
+      filter: blur(12px);
+    }
+
+    .vessel {
+      position: absolute;
+      width: min(64%, 410px);
+      aspect-ratio: 1.12;
+      top: 49%;
+      left: 51%;
+      transform: translate(-50%, -50%) rotate(-23deg);
+      border-radius: 53% 47% 48% 52% / 53% 46% 54% 47%;
+      overflow: hidden;
+      mask-image: radial-gradient(ellipse 14% 22% at 52% 47%, transparent 94%, #000 100%);
+      background:
+        repeating-radial-gradient(ellipse at 52% 47%, transparent 0 8px, #f2df9520 9px, #0c1b141a 10px, transparent 12px 17px),
+        radial-gradient(ellipse 37% 46% at 52% 47%, #181f17 38%, #364430 49%, #8a8c57 68%, transparent 100%),
+        radial-gradient(ellipse at 25% 16%, #b5ad75, #797e50 32%, #444e34 59%, #212c21 80%, #161d17);
+      box-shadow: inset 13px 9px 20px #e3c98a50, inset -16px -21px 28px #10191099;
+    }
+
+    .vessel::after { opacity: .62; }
+
+    figcaption {
+      position: absolute;
+      inset: auto 21px 18px auto;
+      color: #281d17;
+      font: italic 17px Georgia, serif;
+    }
+
+    dl {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      padding-top: 25px;
+    }
+
+    dt { font-size: 13px; color: #4e5549; margin-bottom: 5px; }
+    dd { font: 22px/1.2 Georgia, serif; }
+
+    @media (max-width: 850px) {
+      h1 { font-size: clamp(44px, 8.1vw, 72px); }
+      main { min-height: 395px; }
+    }
+
+    @media (max-width: 620px) {
+      header { min-height: 75px; }
+      main { grid-template-columns: 1fr; }
+      .intro { padding: 24px 0 29px; }
+      h1 { font-size: clamp(53px, 12vw, 74px); }
+      .intro p { margin-top: 21px; }
+      .composition { aspect-ratio: 1.08; }
+      dl { gap: 12px; }
+      dd { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="landing">
+    <header>
+      <div class="brand"><span class="mark" aria-hidden="true"></span>HALO FOUNDRY</div>
+      <p class="discipline">Cerámica de autor</p>
+    </header>
+    <main>
+      <div class="intro">
+        <h1><span>La forma</span> <span>del barro.</span></h1>
+        <p>Trabajamos el barro en pequeñas series. La huella de la mano y las variaciones del esmalte hacen de cada pieza una forma singular.</p>
+      </div>
+      <figure class="composition">
+        <div class="cast-shadow" aria-hidden="true"></div>
+        <div class="vessel" role="img" aria-label="Forma anular de cerámica verde oliva sobre un fondo de arcilla rosada"></div>
+        <figcaption>Estudio de forma anular</figcaption>
+      </figure>
+    </main>
+    <footer>
+      <dl aria-label="Datos del estudio">
+        <div><dt>Material</dt><dd>Barro esmaltado</dd></div>
+        <div><dt>Proceso</dt><dd>Modelado a mano</dd></div>
+        <div><dt>Producción</dt><dd>Pequeñas series</dd></div>
+      </dl>
+    </footer>
+  </div>
+</body>
+</html>

@@ -3,7 +3,7 @@ name: visual-engine
 description: Motor local y gratuito de calidad visual. Analiza referencias, dirige arte con 15 estilos, critica con evidencia, depura el DOM, mide fidelidad, aplica gates y ejecuta un loop con reversión. Úsala para diseño, motion graphics, 3D, HUD, vídeo o cualquier petición de "que se vea profesional".
 ---
 
-# Visual Engine 0.5
+# Visual Engine 1.0.0-rc.1
 
 Convierte una referencia en **dirección artística**, **especificación medida**, **composición
 ejecutable** y resultado verificado: referencia → identidad/tokens → escenas/cámara/efectos →
@@ -13,6 +13,9 @@ pago.
 ## Antes de empezar
 
 ```bash
+ve agents                       # diseñado ≠ instalado ≠ verificado
+ve install --agents claude,opencode --profile professional   # plan; --yes aplica
+ve profile lite                 # capacidades y presupuesto, sin estética
 ve doctor
 ve vision status
 ve context "tarea visual concreta" --max-recipes 3
@@ -150,12 +153,13 @@ llama a un proveedor: el cambio lo aporta el agente. Los parches exigen un repos
 
 ## MCP
 
-**38 herramientas**. Las de 0.5: `visual_context`, `visual_debug`, `visual_critic`,
+**44 herramientas**. Las de 0.6: `visual_agents`, `visual_install`, `visual_profile`,
+`visual_activation`, `visual_security`, `visual_usage`; las de 0.5: `visual_context`, `visual_debug`, `visual_critic`,
 `visual_fidelity`, `visual_gate`, `visual_smart_effects`, `visual_loop` y `visual_loops`; más
 las de 0.1–0.4 (`visual_art_direction`, `visual_reference_design`, `visual_motion_director`,
 `visual_showcase`, `visual_compose`, `visual_reference_effects`, `visual_benchmark`,
 `visual_iterate` con `confirm=true`, etc.). Recurso `visual://effects`, prompt
-`visual-quality-review`. CLI (39 comandos) y `ve serve` ofrecen las mismas operaciones.
+`visual-quality-review`. CLI (47 comandos) y `ve serve` ofrecen las mismas operaciones.
 
 ## Límites conocidos
 

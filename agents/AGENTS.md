@@ -1,8 +1,13 @@
 # Visual Engine · instrucciones para agentes
 
-Este proyecto tiene instalado **Visual Engine 0.5**: un motor local que dirige arte, critica,
+Este proyecto tiene instalado **Visual Engine 1.0.0-rc.1**: un motor local que dirige arte, critica,
 depura, mide, compone y verifica calidad visual. No es una guía de estilo: ejecuta herramientas
 reales y devuelve evidencia.
+
+Antes de usarlo, comprueba la integración con `ve agents`. No confundas **diseñado** con
+**instalado** ni con **verificado**: sólo el handshake MCP real marca verificado. `ve install`
+sin `--yes` es un plan y no escribe. Respeta el perfil (`--profile lite|professional|cinematic`):
+cambia capacidades y presupuesto, nunca la estética.
 
 ## Cuándo usarlo
 
@@ -76,11 +81,12 @@ Three.js/Motion/Playwright son permisivas. No instales nada de pago.
 
 ## Herramientas MCP
 
-**38 herramientas**. Las 0.5: `visual_context`, `visual_debug`, `visual_critic`,
+**44 herramientas**. Las 0.6: `visual_agents`, `visual_install`, `visual_profile`,
+`visual_activation`, `visual_security`, `visual_usage`; las 0.5: `visual_context`, `visual_debug`, `visual_critic`,
 `visual_fidelity`, `visual_gate`, `visual_smart_effects`, `visual_loop`, `visual_loops`; además
 de `visual_art_direction`, `visual_reference_design`, `visual_motion_director`,
 `visual_showcase`, `visual_compose`, `visual_reference_effects`, `visual_benchmark`,
 `visual_iterate` (confirm=true), etc.
 
-La CLI (39 comandos) y la API local (`ve serve`, `http://127.0.0.1:4747`) ofrecen lo mismo.
+La CLI (47 comandos) y la API local (`ve serve`, `http://127.0.0.1:4747`) ofrecen lo mismo.
 La galería (`ve gallery`) es opcional; el núcleo funciona sin interfaz.

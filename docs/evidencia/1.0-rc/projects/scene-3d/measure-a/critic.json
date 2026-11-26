@@ -1,0 +1,56 @@
+{
+  "version": "0.5",
+  "score": 88,
+  "grade": "A",
+  "findings": [
+    {
+      "id": "lighting-low",
+      "category": "lighting",
+      "title": "Iluminación plana o contradictoria",
+      "severity": "high",
+      "confidence": 0.7,
+      "evidence": [
+        {
+          "source": "quality",
+          "metric": "iluminación",
+          "value": 24.2,
+          "threshold": 58
+        }
+      ],
+      "location": {
+        "layer": "superficies"
+      },
+      "fix": {
+        "kind": "css",
+        "summary": "Define una dirección de luz principal y una sombra de contacto; evita halos sin fuente.",
+        "property": "box-shadow / gradient"
+      },
+      "status": "measured"
+    }
+  ],
+  "counts": {
+    "critical": 0,
+    "high": 1,
+    "medium": 0,
+    "low": 0
+  },
+  "summary": "Crítica 88/100 (A): 0 crítico(s), 1 alto(s), 0 medio(s), 0 bajo(s).",
+  "agentTask": "# Tarea visual priorizada\n\nBrief: Escena 3D interactiva con Three.js: órbita con arrastre, cámara real y lectura de ángulos.\nEstilo: immersive-3d\nCrítica: Crítica 88/100 (A): 0 crítico(s), 1 alto(s), 0 medio(s), 0 bajo(s).\n\n## Corrige sólo estos defectos medidos\n\n### [HIGH] Iluminación plana o contradictoria\n- Evidencia: iluminación=24.2 (objetivo 58)\n- Ubicación: sin selector; componente global\n- Corrección: Define una dirección de luz principal y una sombra de contacto; evita halos sin fuente.\n- Propiedad: box-shadow / gradient\n- Acción base: Unifica la dirección de luz y el contraste; evita sombras contradictorias.\n\n## Reglas de la iteración\n\n1. No reescribas todo: aplica el cambio mínimo en la ubicación indicada.\n2. No añadas un efecto si no hay evidencia de que falta y una función que cumplir.\n3. Conserva las decisiones que ya pasan los umbrales.\n4. Vuelve a capturar y compara antes/después; revierte si no mejora.\n5. La aprobación artística final es humana.\n\n## Límites\n\n- Sin animaciones observadas no se afirma rigidez temporal.\n- La crítica detecta defectos estructurales; no sustituye la aprobación artística humana.",
+  "limitations": [
+    "Sin animaciones observadas no se afirma rigidez temporal.",
+    "La crítica detecta defectos estructurales; no sustituye la aprobación artística humana."
+  ],
+  "measured": {
+    "quality": 80.5,
+    "fidelity": 63.5,
+    "composition": 97.6,
+    "hierarchy": 82.8,
+    "typography": 100,
+    "depth": 99.8,
+    "lighting": 24.2,
+    "coherence": 77.5,
+    "transitions": 100,
+    "performance": 86.1
+  },
+  "artisticJudgment": false
+}

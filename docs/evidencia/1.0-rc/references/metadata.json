@@ -1,0 +1,55 @@
+{
+  "downloadedAt": "2026-11-26T00:13:21.571Z",
+  "references": [
+    {
+      "id": "premium-landing",
+      "title": "The Dance Class",
+      "artist": "Edgar Degas",
+      "year": "1874",
+      "objectId": 438817,
+      "url": "https://www.metmuseum.org/art/collection/search/438817",
+      "file": "references/premium-landing.jpg",
+      "license": "CC0 / Public Domain, The Metropolitan Museum of Art Open Access"
+    },
+    {
+      "id": "desktop-app",
+      "title": "Architecture",
+      "artist": "Michelangelo Colonna",
+      "year": "17th century",
+      "objectId": 399581,
+      "url": "https://www.metmuseum.org/art/collection/search/399581",
+      "file": "references/professional-app.jpg",
+      "license": "CC0 / Public Domain, The Metropolitan Museum of Art Open Access"
+    },
+    {
+      "id": "game-cinematic",
+      "title": "Armor",
+      "artist": "Anonymous",
+      "year": "ca. 1540–50",
+      "objectId": 23206,
+      "url": "https://www.metmuseum.org/art/collection/search/23206",
+      "file": "references/game-ui.jpg",
+      "license": "CC0 / Public Domain, The Metropolitan Museum of Art Open Access"
+    },
+    {
+      "id": "scene-3d",
+      "title": "Astronomy",
+      "artist": "Giambologna",
+      "year": "17th century",
+      "objectId": 203938,
+      "url": "https://www.metmuseum.org/art/collection/search/203938",
+      "file": "references/scene-3d.jpg",
+      "license": "CC0 / Public Domain, The Metropolitan Museum of Art Open Access"
+    },
+    {
+      "id": "motion-graphics",
+      "title": "The Dance Class",
+      "artist": "Edgar Degas",
+      "year": "1874",
+      "objectId": 438817,
+      "url": "https://www.metmuseum.org/art/collection/search/438817",
+      "file": "references/motion-graphics.jpg",
+      "license": "CC0 / Public Domain, The Metropolitan Museum of Art Open Access"
+    }
+  ]
+}

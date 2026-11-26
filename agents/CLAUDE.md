@@ -1,5 +1,7 @@
 # Visual Engine
 
+> Visual Engine 1.0.0-rc.1: comprueba  (diseñado ≠ instalado ≠ verificado).  sin  sólo planifica;  cambia capacidades, no estética.
+
 Tienes el servidor MCP `visual-engine` disponible (CLI: `ve`). Úsalo para cualquier tarea
 con componente visual: hero, landing, animación, 3D, HUD, vídeo o "mejora el diseño".
 

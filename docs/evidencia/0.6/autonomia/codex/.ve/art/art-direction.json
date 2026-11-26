@@ -1,0 +1,461 @@
+{
+  "version": "0.4",
+  "id": "editorial-editorial-kybgj",
+  "brief": "landing premium editorial de arquitectura",
+  "projectType": "editorial",
+  "style": {
+    "id": "editorial",
+    "name": "Diseño editorial",
+    "description": "Jerarquía periodística, retícula asimétrica y tensión entre serif y sans.",
+    "keywords": [
+      "editorial",
+      "revista",
+      "periódico",
+      "magazine",
+      "tipografía",
+      "cultural"
+    ],
+    "mode": "light",
+    "colors": {
+      "bg": "#f3eee2",
+      "surface": "#faf6ec",
+      "elevated": "#e7dfcf",
+      "text": "#17140f",
+      "muted": "#5c554a",
+      "accent": "#a62f24",
+      "accent2": "#1f4f46",
+      "border": "#cfc4b0",
+      "success": "#2f6b4f",
+      "warning": "#8a5a12",
+      "danger": "#a52a3b",
+      "focus": "#1d4ed8"
+    },
+    "typography": {
+      "display": "serif",
+      "body": "sans",
+      "mono": "mono",
+      "displayWeight": 600,
+      "bodyWeight": 420,
+      "scaleRatio": 1.42,
+      "bodyPx": 17,
+      "lineHeight": 1.6,
+      "displayLineHeight": 0.94,
+      "tracking": "-0.01em",
+      "displayTracking": "-0.045em",
+      "measure": 58
+    },
+    "layout": {
+      "maxWidth": 1300,
+      "gutter": 36,
+      "spacing": 10,
+      "radius": 0,
+      "borderWidth": 1,
+      "columns": 12,
+      "shadow": "none"
+    },
+    "materials": {
+      "surface": "paper",
+      "grain": 0.05,
+      "glassBlur": 0,
+      "gradient": "none",
+      "texture": "papel 120 g"
+    },
+    "motion": {
+      "level": "restrained",
+      "fastMs": 140,
+      "baseMs": 440,
+      "slowMs": 950,
+      "easeOut": "cubic-bezier(.16,1,.3,1)",
+      "easeInOut": "cubic-bezier(.65,0,.35,1)",
+      "spring": "cubic-bezier(.34,1.56,.64,1)",
+      "staggerMs": 45,
+      "camera": "sin cámara; entrada por líneas"
+    },
+    "composition": {
+      "focal": "titular izquierdo",
+      "alignment": "asymmetric",
+      "negativeSpace": 0.4,
+      "density": "balanced",
+      "contrast": "high",
+      "headlineChars": 38,
+      "imageRatio": "4:5",
+      "notes": [
+        "Reglas horizontales como puntuación",
+        "Un solo acento rojo"
+      ]
+    },
+    "effects": [
+      {
+        "id": "ink-diffusion",
+        "role": "tinta sobre papel"
+      }
+    ],
+    "signature": [
+      "Serif de 72–160 px",
+      "Filetes negros",
+      "Columna estrecha de datos",
+      "Rojo de imprenta"
+    ],
+    "avoid": [
+      "Sombras",
+      "Gradientes llamativos",
+      "Texto justificado sin control"
+    ]
+  },
+  "palette": {
+    "bg": "#f3eee2",
+    "surface": "#faf6ec",
+    "elevated": "#e7dfcf",
+    "text": "#17140f",
+    "muted": "#5c554a",
+    "accent": "#a62f24",
+    "accent2": "#1f4f46",
+    "border": "#cfc4b0",
+    "success": "#2f6b4f",
+    "warning": "#8a5a12",
+    "danger": "#a52a3b",
+    "focus": "#1d4ed8"
+  },
+  "typography": {
+    "display": "serif",
+    "body": "sans",
+    "mono": "mono",
+    "displayWeight": 600,
+    "bodyWeight": 420,
+    "scaleRatio": 1.42,
+    "bodyPx": 17,
+    "lineHeight": 1.6,
+    "displayLineHeight": 0.94,
+    "tracking": "-0.01em",
+    "displayTracking": "-0.045em",
+    "measure": 58,
+    "sizes": {
+      "caption": 12.8,
+      "small": 14.9,
+      "body": 17,
+      "lead": 21.3,
+      "h3": 24.1,
+      "h2": 34.3,
+      "h1": 48.7,
+      "display": 69.1,
+      "hero": 98.2
+    },
+    "responsive": {
+      "caption": "clamp(12px, 1vw, 13px)",
+      "small": "clamp(12px, 1.16vw, 15px)",
+      "body": "clamp(12px, 1.33vw, 17px)",
+      "lead": "clamp(15px, 1.66vw, 21px)",
+      "h3": "clamp(17px, 1.88vw, 24px)",
+      "h2": "clamp(25px, 2.68vw, 34px)",
+      "h1": "clamp(35px, 3.8vw, 49px)",
+      "display": "clamp(50px, 5.4vw, 69px)",
+      "hero": "clamp(71px, 7.67vw, 98px)"
+    },
+    "families": {
+      "display": "VE Source Serif 4",
+      "body": "VE Inter",
+      "mono": "VE JetBrains Mono"
+    }
+  },
+  "layout": {
+    "maxWidth": 1300,
+    "gutter": 36,
+    "spacing": 10,
+    "radius": 0,
+    "borderWidth": 1,
+    "columns": 12,
+    "shadow": "none"
+  },
+  "materials": {
+    "surface": "paper",
+    "grain": 0.05,
+    "glassBlur": 0,
+    "gradient": "none",
+    "texture": "papel 120 g"
+  },
+  "motion": {
+    "level": "restrained",
+    "fastMs": 140,
+    "baseMs": 440,
+    "slowMs": 950,
+    "easeOut": "cubic-bezier(.16,1,.3,1)",
+    "easeInOut": "cubic-bezier(.65,0,.35,1)",
+    "spring": "cubic-bezier(.34,1.56,.64,1)",
+    "staggerMs": 45,
+    "camera": "sin cámara; entrada por líneas"
+  },
+  "composition": {
+    "focal": "titular izquierdo",
+    "alignment": "asymmetric",
+    "negativeSpace": 0.4,
+    "density": "balanced",
+    "contrast": "high",
+    "headlineChars": 38,
+    "imageRatio": "4:5",
+    "notes": [
+      "Reglas horizontales como puntuación",
+      "Un solo acento rojo"
+    ]
+  },
+  "effects": [
+    {
+      "id": "ink-diffusion",
+      "role": "tinta sobre papel",
+      "reason": "Compatible con Diseño editorial (distorsion; MIT (propio))."
+    },
+    {
+      "id": "chrome-text",
+      "role": "materiales",
+      "reason": "Categoría adecuada para editorial (materiales; MIT (propio))."
+    }
+  ],
+  "components": [
+    "Masthead",
+    "IssueLine",
+    "FeatureHeadline",
+    "Standfirst",
+    "ArticleGrid",
+    "PullQuote",
+    "Caption"
+  ],
+  "tokenSet": {
+    "color.bg": {
+      "$value": "#f3eee2",
+      "$type": "color"
+    },
+    "color.surface": {
+      "$value": "#faf6ec",
+      "$type": "color"
+    },
+    "color.elevated": {
+      "$value": "#e7dfcf",
+      "$type": "color"
+    },
+    "color.text": {
+      "$value": "#17140f",
+      "$type": "color"
+    },
+    "color.muted": {
+      "$value": "#5c554a",
+      "$type": "color"
+    },
+    "color.accent": {
+      "$value": "#a62f24",
+      "$type": "color"
+    },
+    "color.accent2": {
+      "$value": "#1f4f46",
+      "$type": "color"
+    },
+    "color.border": {
+      "$value": "#cfc4b0",
+      "$type": "color"
+    },
+    "color.success": {
+      "$value": "#2f6b4f",
+      "$type": "color"
+    },
+    "color.warning": {
+      "$value": "#8a5a12",
+      "$type": "color"
+    },
+    "color.danger": {
+      "$value": "#a52a3b",
+      "$type": "color"
+    },
+    "color.focus": {
+      "$value": "#1d4ed8",
+      "$type": "color"
+    },
+    "color.accentInk": {
+      "$value": "#f3eee2",
+      "$type": "color"
+    },
+    "font.size.caption": {
+      "$value": 12.8,
+      "$type": "dimension"
+    },
+    "font.size.small": {
+      "$value": 14.9,
+      "$type": "dimension"
+    },
+    "font.size.body": {
+      "$value": 17,
+      "$type": "dimension"
+    },
+    "font.size.lead": {
+      "$value": 21.3,
+      "$type": "dimension"
+    },
+    "font.size.h3": {
+      "$value": 24.1,
+      "$type": "dimension"
+    },
+    "font.size.h2": {
+      "$value": 34.3,
+      "$type": "dimension"
+    },
+    "font.size.h1": {
+      "$value": 48.7,
+      "$type": "dimension"
+    },
+    "font.size.display": {
+      "$value": 69.1,
+      "$type": "dimension"
+    },
+    "font.size.hero": {
+      "$value": 98.2,
+      "$type": "dimension"
+    },
+    "font.display": {
+      "$value": "VE Source Serif 4",
+      "$type": "fontFamily"
+    },
+    "font.body": {
+      "$value": "VE Inter",
+      "$type": "fontFamily"
+    },
+    "font.mono": {
+      "$value": "VE JetBrains Mono",
+      "$type": "fontFamily"
+    },
+    "font.scaleRatio": {
+      "$value": 1.42,
+      "$type": "number"
+    },
+    "space.base": {
+      "$value": 10,
+      "$type": "dimension"
+    },
+    "space.gutter": {
+      "$value": 36,
+      "$type": "dimension"
+    },
+    "radius.card": {
+      "$value": 0,
+      "$type": "dimension"
+    },
+    "border.width": {
+      "$value": 1,
+      "$type": "dimension"
+    },
+    "motion.fast": {
+      "$value": "140ms",
+      "$type": "duration"
+    },
+    "motion.base": {
+      "$value": "440ms",
+      "$type": "duration"
+    },
+    "motion.slow": {
+      "$value": "950ms",
+      "$type": "duration"
+    },
+    "motion.easeOut": {
+      "$value": "cubic-bezier(.16,1,.3,1)",
+      "$type": "cubicBezier"
+    },
+    "motion.stagger": {
+      "$value": "45ms",
+      "$type": "duration"
+    }
+  },
+  "rationale": [
+    "Proyecto editorial: Masthead, IssueLine, FeatureHeadline antes de decorar.",
+    "Estilo Diseño editorial: Jerarquía periodística, retícula asimétrica y tensión entre serif y sans.",
+    "Tipografía serif + sans + mono; escala 1.42.",
+    "Densidad balanced; espacio base 10 px y radio 0 px.",
+    "Movimiento restrained; transiciones de 140/440/950 ms.",
+    "Efectos elegidos por función: ink-diffusion (tinta sobre papel), chrome-text (materiales).",
+    "Contraste de texto sobre fondo: 15.86:1."
+  ],
+  "warnings": [],
+  "fonts": [
+    {
+      "id": "source-serif-4",
+      "family": "VE Source Serif 4",
+      "file": "SourceSerif4_opsz,wght_.ttf",
+      "license": "OFL-1.1"
+    },
+    {
+      "id": "inter",
+      "family": "VE Inter",
+      "file": "Inter_opsz,wght_.ttf",
+      "license": "OFL-1.1"
+    },
+    {
+      "id": "jetbrains-mono",
+      "family": "VE JetBrains Mono",
+      "file": "JetBrainsMono_wght_.ttf",
+      "license": "OFL-1.1"
+    }
+  ],
+  "audit": {
+    "structuralScore": 98.7,
+    "dimensions": [
+      {
+        "id": "contrast",
+        "score": 100,
+        "evidence": "15.86:1 OK; 17.02:1 OK; 6.36:1 OK; 5.94:1 OK"
+      },
+      {
+        "id": "type-scale",
+        "score": 100,
+        "evidence": "9 pasos, cuerpo 17px, ratio 1.42"
+      },
+      {
+        "id": "spacing",
+        "score": 100,
+        "evidence": "base 10px, gutter 36px"
+      },
+      {
+        "id": "hierarchy",
+        "score": 91.19999999999999,
+        "evidence": "ratio 1.42, display 69.1px"
+      },
+      {
+        "id": "restraint",
+        "score": 100,
+        "evidence": "2 efecto(s) para editorial"
+      },
+      {
+        "id": "motion-accessibility",
+        "score": 100,
+        "evidence": "restrained; base 440ms; stagger 45ms"
+      },
+      {
+        "id": "identity",
+        "score": 100,
+        "evidence": "4 reglas de firma; 3 anti-patrones"
+      }
+    ],
+    "contrastPairs": [
+      {
+        "fg": "#17140f",
+        "bg": "#f3eee2",
+        "ratio": 15.86,
+        "pass": true
+      },
+      {
+        "fg": "#17140f",
+        "bg": "#faf6ec",
+        "ratio": 17.02,
+        "pass": true
+      },
+      {
+        "fg": "#5c554a",
+        "bg": "#f3eee2",
+        "ratio": 6.36,
+        "pass": true
+      },
+      {
+        "fg": "#f3eee2",
+        "bg": "#a62f24",
+        "ratio": 5.94,
+        "pass": true
+      }
+    ],
+    "warnings": [],
+    "note": "Auditoría estructural, no juicio artístico. Comprueba contraste, escala, ritmo, mesura y accesibilidad; la evaluación humana es independiente."
+  }
+}
