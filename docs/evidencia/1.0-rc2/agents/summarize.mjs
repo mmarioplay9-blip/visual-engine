@@ -65,7 +65,7 @@ ${flags.length ? flags.map((x) => `- ${x}`).join('\n') : '- Sin diferencias rele
 
 ## Límites
 
-- **professional-app**: la carpeta cruda de ejecución (\`work/professional-app/{a,b}\`) se eliminó en una limpieza de directorios no referenciados. Se conservan el HTML de cada rama, las capturas, los artefactos de revisión, \`results.json\`, \`runs.json\` y \`evidence/professional-app/*-agent.json\`, que contienen comandos, invocaciones y consumo reales. El JSONL crudo de Codex de ese caso es el único artefacto perdido.
+- **professional-app**: la carpeta cruda de ejecución (\`work/professional-app/{a,b}\`) se eliminó en una limpieza de directorios no referenciados. Se conservan el HTML de cada rama, las capturas, los artefactos de revisión y \`results.json\` con las métricas. Los registros crudos de invocación (comandos, salidas y JSONL de Codex) se retiraron antes de publicar por privacidad; \`runs.json\` conserva consumo, tiempos y recuentos.
 - Una pasada por rama y caso: no se estima varianza; un empate no demuestra equivalencia.
 - El agente B puede leer el código fuente del motor desde su ruta de instalación; A no. Asimetría de información declarada.
 - El modelo es el de por defecto de la cuenta, el mismo en las dos ramas; no se fija versión exacta del modelo.

@@ -136,13 +136,14 @@ Coste y correcciones:
   pero 97–99 % son lecturas de caché; el incremento de entrada no cacheada es pequeño
   (≈ 62,7 k vs 60,1 k en `game-hud`). No hay telemetría de facturación del proveedor.
 
-Datos crudos, JSONL de Codex, capturas y artefactos de revisión:
-[`docs/evidencia/1.0-rc2/agents`](evidencia/1.0-rc2/agents/README.md).
+Métricas agregadas, capturas y artefactos de revisión:
+[`docs/evidencia/1.0-rc2/agents`](evidencia/1.0-rc2/agents/README.md). Los registros crudos de
+invocación (comandos, salidas y JSONL de Codex) se retiraron antes de publicar por privacidad.
 
 **Pérdida declarada:** al limpiar directorios de ejecución no referenciados se borró
 `work/professional-app/{a,b}`. Se conservan el HTML de ambas ramas, las capturas, los artefactos
-de revisión, `runs.json` y `evidence/professional-app/*-agent.json` con comandos, invocaciones y
-consumo reales; el único artefacto perdido es el JSONL crudo de Codex de ese caso.
+de revisión y `results.json`; `runs.json` mantiene consumo, tiempos y recuentos sin los registros
+crudos de invocación. Los JSONL de Codex no se distribuyen.
 
 ## 7. Quality gates: el caso de la referencia casi gris
 

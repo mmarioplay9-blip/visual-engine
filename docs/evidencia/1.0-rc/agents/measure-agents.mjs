@@ -123,7 +123,7 @@ Tarea nueva e idéntica: landing de **HALO FOUNDRY** a 1280×720, CSS autoconten
 
 - **A**: 0 comandos \`ve\`, 0 llamadas MCP. Usó su skill global de diseño y Chrome para revisar su página.
 - **B**: **9 comandos \`ve\`** con salida real — \`doctor\`, \`context\`, \`effects list\`, \`vision status\`, \`agents\`, \`art\`, \`capture\` — y leyó la skill instalada en \`.codex/skills/visual-engine/SKILL.md\`.
-- El detalle de cada llamada está en \`b.jsonl\` (JSONL de Codex, saneado). Las capturas son \`a.png\` y \`b.png\`.
+- Las capturas son \`a.png\` y \`b.png\`; \`comparison.json\` conserva las métricas agregadas. Los registros crudos de invocación (JSONL de Codex) se retiraron antes de publicar por privacidad.
 
 ## Límites
 

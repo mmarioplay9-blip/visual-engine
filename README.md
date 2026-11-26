@@ -94,10 +94,10 @@ atribuirlo al motor. Análisis completo en [docs/INVESTIGACION-RC2.md](docs/INVE
 
 ## Instalación
 
-El repositorio **no está publicado**. Los instaladores aceptan la URL del remoto.
+El repositorio público es [github.com/mmarioplay9-blip/visual-engine](https://github.com/mmarioplay9-blip/visual-engine).
 
 ```bash
-git clone <url-del-repositorio> visual-engine
+git clone https://github.com/mmarioplay9-blip/visual-engine.git visual-engine
 cd visual-engine
 npm ci
 npm run build
@@ -107,8 +107,8 @@ ve doctor
 ```
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File install\install.ps1 -Repo <url> -Ref main
-# Linux/macOS: VE_REPO=<url> ./install/install.sh --no-link
+powershell -ExecutionPolicy Bypass -File install\install.ps1 -Ref main
+# Linux/macOS: ./install/install.sh --no-link
 ve update
 ```
 
@@ -177,7 +177,7 @@ src/api    API HTTP local (loopback)
 src/cli    comandos `ve` (47)
 library/   58 recetas, 20 composiciones, fuentes OFL, benchmarks
 docs/      guías, verificación por versión y evidencia medida
-tests/     63 pruebas (núcleo, 0.3, 0.4, 0.5, 0.6, 1.0, CLI, API, MCP, E2E)
+tests/     69 pruebas (núcleo, 0.3, 0.4, 0.5, 0.6, 1.0, CLI, API, MCP, E2E)
 ```
 
 Detalle y decisiones: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
@@ -185,7 +185,7 @@ Detalle y decisiones: [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 ## Pruebas
 
 ```bash
-npm test        # build + 63 pruebas, ~3 min
+npm test        # build + 69 pruebas, ~3 min
 ```
 
 Cubren análisis y cortes, comparación, CLI, 58 efectos, composición, galería, OCR, API, MCP real,

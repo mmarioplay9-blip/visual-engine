@@ -29,7 +29,7 @@ function Require-Command([string]$Name, [string]$Hint) {
 Write-Host "Visual Engine · instalación" -ForegroundColor Cyan
 
 if (-not $Repo) {
-  throw "Indica el repositorio con -Repo <url> o la variable VE_REPO. La publicación en GitHub aún no se ha realizado."
+  $Repo = "https://github.com/mmarioplay9-blip/visual-engine.git"
 }
 Require-Command git "Instala Git: https://git-scm.com/downloads"
 Require-Command node "Instala Node.js 20 o superior: https://nodejs.org"

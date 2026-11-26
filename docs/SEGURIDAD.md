@@ -69,8 +69,9 @@ git grep -n -I -E "D:\\\\proyectos|C:\\\\Users|/Users/|/home/"
 ```
 
 Resultado: **0 coincidencias**. No hay `.env`, credenciales ni claves. Las rutas absolutas que
-quedaban en el metadato de referencias de 0.6 se convirtieron a rutas relativas. Los JSONL del
-A/B con Codex se publican saneados (`<repo>`, `<home>`).
+quedaban en el metadato de referencias de 0.6 se convirtieron a rutas relativas. Los registros
+crudos del A/B con Codex se retiraron antes de publicar; las métricas agregadas se conservan con
+las rutas saneadas (`<repo>`, `<home>`).
 
 ## Límites
 

@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # Visual Engine · instalador para Linux/macOS
-# Uso: VE_REPO=https://github.com/<usuario>/visual-engine.git ./install/install.sh
-#      VE_REF=v0.1.0 VE_DEST="$HOME/visual-engine" ./install/install.sh --no-link
+# Uso: ./install/install.sh
+#      VE_REPO=https://github.com/mmarioplay9-blip/visual-engine.git VE_REF=v0.1.0 ./install/install.sh --no-link
 set -euo pipefail
 
-REPO="${VE_REPO:-}"
+REPO="${VE_REPO:-https://github.com/mmarioplay9-blip/visual-engine.git}"
 DEST="${VE_DEST:-$HOME/.local/share/visual-engine}"
 REF="${VE_REF:-main}"
 LINK=1
@@ -27,11 +27,6 @@ need() {
 }
 
 echo "Visual Engine · instalación"
-
-if [ -z "$REPO" ]; then
-  echo "Indica el repositorio con VE_REPO=<url>. La publicación en GitHub aún no se ha realizado." >&2
-  exit 1
-fi
 
 need git "Instala Git con el gestor de paquetes de tu sistema."
 need node "Instala Node.js 20 o superior: https://nodejs.org"

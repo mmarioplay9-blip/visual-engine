@@ -84,8 +84,8 @@ powershell -NoProfile -ExecutionPolicy Bypass -File install\install.ps1 `
   verificó como `node dist/cli/index.js`.
 - `ve update --dir <clon>`: `git pull` + `npm install` + `npm run build`, **exit 0**.
 - `install/install.sh`: sólo comprobación sintáctica (`bash -n`), **no ejecutado** en Linux/macOS.
-- El remoto probado es un repositorio git local; la actualización desde GitHub no se ha podido
-  verificar porque el proyecto aún no está publicado.
+- El remoto probado es un repositorio git local; la actualización desde GitHub no se pudo
+  verificar entonces porque el proyecto aún no estaba publicado.
 
 ## Errores encontrados y corregidos durante la verificación
 

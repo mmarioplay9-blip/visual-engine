@@ -18,7 +18,7 @@ Sin las dependencias opcionales el motor funciona y declara la ausencia.
 ## Instalar desde el repositorio
 
 ```bash
-git clone <url-del-repositorio> visual-engine
+git clone https://github.com/mmarioplay9-blip/visual-engine.git visual-engine
 cd visual-engine
 npm ci
 npm run build
@@ -30,13 +30,13 @@ ve doctor
 Windows:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File install\install.ps1 -Repo <url> -Ref main
+powershell -ExecutionPolicy Bypass -File install\install.ps1 -Ref main
 ```
 
 Linux/macOS:
 
 ```bash
-VE_REPO=<url> ./install/install.sh --no-link
+./install/install.sh --no-link
 ```
 
 Los instaladores clonan (o actualizan) en `%LOCALAPPDATA%\visual-engine` o
@@ -86,7 +86,7 @@ ve doctor --json
 ve agents
 ve install verify          # initialize + tools/list contra el servidor MCP (45 herramientas)
 ve security
-npm test                   # 63 pruebas
+npm test                   # 69 pruebas
 ```
 
 ## Instalación desde un clon limpio
