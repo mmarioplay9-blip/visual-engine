@@ -1,0 +1,61 @@
+{
+  "version": "0.5",
+  "score": 94,
+  "grade": "A",
+  "findings": [
+    {
+      "id": "materials-missing",
+      "category": "materials",
+      "title": "El material declarado no aparece en el render",
+      "severity": "medium",
+      "confidence": 0.65,
+      "evidence": [
+        {
+          "source": "dom",
+          "metric": "señales de material",
+          "value": 1,
+          "threshold": 2
+        },
+        {
+          "source": "art-direction",
+          "metric": "material declarado",
+          "value": "glass"
+        }
+      ],
+      "location": {
+        "component": "superficies"
+      },
+      "fix": {
+        "kind": "css",
+        "summary": "Materializa glass: borde, sombra, transparencia o rugosidad coherentes.",
+        "property": "background / box-shadow / border"
+      },
+      "status": "measured"
+    }
+  ],
+  "counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 1,
+    "low": 0
+  },
+  "summary": "Crítica 94/100 (A): 0 crítico(s), 0 alto(s), 1 medio(s), 0 bajo(s).",
+  "agentTask": "# Tarea visual priorizada\n\nBrief: Página inmersiva 3D con un objeto cromado flotante sobre fondo violeta, 1280×720.\nEstilo: immersive-3d\nCrítica: Crítica 94/100 (A): 0 crítico(s), 0 alto(s), 1 medio(s), 0 bajo(s).\n\n## Corrige sólo estos defectos medidos\n\n### [MEDIUM] El material declarado no aparece en el render\n- Evidencia: señales de material=1 (objetivo 2); material declarado=glass\n- Ubicación: sin selector; componente superficies\n- Corrección: Materializa glass: borde, sombra, transparencia o rugosidad coherentes.\n- Propiedad: background / box-shadow / border\n- Acción base: Haz explícito el material: borde, sombra, rugosidad o transparencia; no lo simules con ruido aleatorio.\n\n## Reglas de la iteración\n\n1. No reescribas todo: aplica el cambio mínimo en la ubicación indicada.\n2. No añadas un efecto si no hay evidencia de que falta y una función que cumplir.\n3. Conserva las decisiones que ya pasan los umbrales.\n4. Vuelve a capturar y compara antes/después; revierte si no mejora.\n5. La aprobación artística final es humana.\n\n## Límites\n\n- Sin animaciones observadas no se afirma rigidez temporal.\n- La crítica detecta defectos estructurales; no sustituye la aprobación artística humana.",
+  "limitations": [
+    "Sin animaciones observadas no se afirma rigidez temporal.",
+    "La crítica detecta defectos estructurales; no sustituye la aprobación artística humana."
+  ],
+  "measured": {
+    "quality": 95.8,
+    "fidelity": 95.8,
+    "composition": 94.1,
+    "hierarchy": 96.6,
+    "typography": 85.1,
+    "depth": 90.9,
+    "lighting": 97.7,
+    "coherence": 100,
+    "transitions": 100,
+    "performance": 85.3
+  },
+  "artisticJudgment": false
+}

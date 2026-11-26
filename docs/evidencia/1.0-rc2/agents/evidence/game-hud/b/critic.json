@@ -1,0 +1,105 @@
+{
+  "version": "0.5",
+  "score": 88,
+  "grade": "A",
+  "findings": [
+    {
+      "id": "typography-structure",
+      "category": "typography",
+      "title": "Escala tipográfica insuficiente o cuerpo por debajo del mínimo legible",
+      "severity": "medium",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "source": "dom",
+          "metric": "pasos tipográficos",
+          "value": 3,
+          "threshold": 3
+        },
+        {
+          "source": "dom",
+          "metric": "cuerpo medio px",
+          "value": 15.6,
+          "threshold": 12
+        },
+        {
+          "source": "dom",
+          "metric": "ratio máximo/mínimo",
+          "value": 1.13,
+          "threshold": 1.8
+        }
+      ],
+      "location": {
+        "selector": "html > body > main > h1.mission",
+        "region": "top-left",
+        "box": {
+          "x": 96,
+          "y": 56,
+          "width": 233,
+          "height": 20
+        }
+      },
+      "fix": {
+        "kind": "typography",
+        "summary": "Define una escala modular de al menos tres pasos y un cuerpo de 16 px cuando el espacio lo permita.",
+        "property": "font-size / line-height",
+        "to": "clamp(16px, 1.25vw, 20px)"
+      },
+      "status": "measured"
+    },
+    {
+      "id": "materials-missing",
+      "category": "materials",
+      "title": "El material declarado no aparece en el render",
+      "severity": "medium",
+      "confidence": 0.65,
+      "evidence": [
+        {
+          "source": "dom",
+          "metric": "señales de material",
+          "value": 1,
+          "threshold": 2
+        },
+        {
+          "source": "art-direction",
+          "metric": "material declarado",
+          "value": "metal"
+        }
+      ],
+      "location": {
+        "component": "superficies"
+      },
+      "fix": {
+        "kind": "css",
+        "summary": "Materializa metal: borde, sombra, transparencia o rugosidad coherentes.",
+        "property": "background / box-shadow / border"
+      },
+      "status": "measured"
+    }
+  ],
+  "counts": {
+    "critical": 0,
+    "high": 0,
+    "medium": 2,
+    "low": 0
+  },
+  "summary": "Crítica 88/100 (A): 0 crítico(s), 0 alto(s), 2 medio(s), 0 bajo(s).",
+  "agentTask": "# Tarea visual priorizada\n\nBrief: HUD de videojuego sobre un cañón desértico al atardecer, 1280×720, CSS/SVG local.\nEstilo: game-ui\nCrítica: Crítica 88/100 (A): 0 crítico(s), 0 alto(s), 2 medio(s), 0 bajo(s).\n\n## Corrige sólo estos defectos medidos\n\n### [MEDIUM] Escala tipográfica insuficiente o cuerpo por debajo del mínimo legible\n- Evidencia: pasos tipográficos=3 (objetivo 3); cuerpo medio px=15.6 (objetivo 12); ratio máximo/mínimo=1.13 (objetivo 1.8)\n- Ubicación: html > body > main > h1.mission · top-left\n- Corrección: Define una escala modular de al menos tres pasos y un cuerpo de 16 px cuando el espacio lo permita.\n- Propiedad: font-size / line-height\n- Acción base: Ajusta la escala modular, el cuerpo mínimo y el interlineado antes de cambiar la familia.\n\n### [MEDIUM] El material declarado no aparece en el render\n- Evidencia: señales de material=1 (objetivo 2); material declarado=metal\n- Ubicación: sin selector; componente superficies\n- Corrección: Materializa metal: borde, sombra, transparencia o rugosidad coherentes.\n- Propiedad: background / box-shadow / border\n- Acción base: Haz explícito el material: borde, sombra, rugosidad o transparencia; no lo simules con ruido aleatorio.\n\n## Reglas de la iteración\n\n1. No reescribas todo: aplica el cambio mínimo en la ubicación indicada.\n2. No añadas un efecto si no hay evidencia de que falta y una función que cumplir.\n3. Conserva las decisiones que ya pasan los umbrales.\n4. Vuelve a capturar y compara antes/después; revierte si no mejora.\n5. La aprobación artística final es humana.\n\n## Límites\n\n- Sin animaciones observadas no se afirma rigidez temporal.\n- La crítica detecta defectos estructurales; no sustituye la aprobación artística humana.",
+  "limitations": [
+    "Sin animaciones observadas no se afirma rigidez temporal.",
+    "La crítica detecta defectos estructurales; no sustituye la aprobación artística humana."
+  ],
+  "measured": {
+    "quality": 92.6,
+    "fidelity": 96.9,
+    "composition": 86.6,
+    "hierarchy": 94.2,
+    "typography": 68.7,
+    "depth": 87.2,
+    "lighting": 94.5,
+    "coherence": 99.6,
+    "transitions": 100,
+    "performance": 51.4
+  },
+  "artisticJudgment": false
+}

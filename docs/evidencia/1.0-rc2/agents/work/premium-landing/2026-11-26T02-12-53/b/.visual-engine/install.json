@@ -1,0 +1,75 @@
+{
+  "version": "1.0",
+  "installedAt": "2026-11-26T02:13:51.995Z",
+  "packageRoot": "<repo>",
+  "scope": "project",
+  "profile": "professional",
+  "agents": [
+    {
+      "id": "codex",
+      "title": "OpenAI Codex CLI",
+      "status": "installed"
+    }
+  ],
+  "files": [
+    {
+      "path": "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\work\\premium-landing\\2026-11-26T02-12-53\\b\\AGENTS.md",
+      "agent": "codex",
+      "kind": "instructions",
+      "sha256": "6147f5fd85f3f558ba9e4dc5a95a1e432aca69455dc15efed5ae9e0c538794b5"
+    },
+    {
+      "path": "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\work\\premium-landing\\2026-11-26T02-12-53\\b\\.codex\\skills\\visual-engine\\SKILL.md",
+      "agent": "codex",
+      "kind": "skill",
+      "sha256": "eda80c70c7cdd6cce4d81bfb0cafdf7330374f065451af820698595832f9b4ef"
+    },
+    {
+      "path": "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\work\\premium-landing\\2026-11-26T02-12-53\\b\\.visual-engine\\codex-mcp.toml",
+      "agent": "codex",
+      "kind": "snippet",
+      "sha256": "15f18d2d374f97049fb22353d3c575384158c2a94d2781dbaa7d7bab7dad4647"
+    }
+  ],
+  "backups": [],
+  "optionalTools": [
+    {
+      "id": "ffmpeg",
+      "available": true
+    },
+    {
+      "id": "ffprobe",
+      "available": true
+    },
+    {
+      "id": "git",
+      "available": true
+    },
+    {
+      "id": "playwright",
+      "available": true,
+      "detail": "Navegadores: chromium-1255, chromium_headless_shell-1255"
+    },
+    {
+      "id": "three",
+      "available": true
+    },
+    {
+      "id": "gsap",
+      "available": true
+    },
+    {
+      "id": "motion",
+      "available": true
+    },
+    {
+      "id": "remotion",
+      "available": true
+    },
+    {
+      "id": "react-bits",
+      "available": false,
+      "detail": "Sin paquete npm: se integra copiando componentes (revisa la licencia y la atribución)."
+    }
+  ]
+}

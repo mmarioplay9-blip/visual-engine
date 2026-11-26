@@ -160,6 +160,73 @@ export interface DesignAudit {
   note: string;
 }
 
+/** Medición mínima de la referencia que basta para no contradecirla. */
+export interface ReferenceSignal {
+  source?: string;
+  luma: number;
+  contrast: number;
+  darkRatio: number;
+  saturation: number;
+  aspect?: number;
+  palette?: { hex: string; share: number; role?: string }[];
+}
+
+export interface ReferenceConflict {
+  id: string;
+  severity: 'blocker' | 'warning';
+  detail: string;
+}
+
+/**
+ * Reference First aplicado en el punto donde se elige estética.
+ *
+ * La referencia no es una sugerencia. Si el perfil pedido invierte su luz o su
+ * saturación, el sistema lo dice antes de generar tokens: un bloqueo cuando
+ * contradice la luminancia medida y un aviso cuando el acento no está sostenido
+ * por la referencia. No se refuerza ningún estilo: se impide el error silencioso.
+ */
+export function checkStyleAgainstReference(style: StyleProfile, reference: ReferenceSignal): ReferenceConflict[] {
+  const conflicts: ReferenceConflict[] = [];
+  const styleDark = style.mode === 'dark';
+  const refLight = reference.luma >= 0.45;
+  const refDark = reference.luma <= 0.2 || reference.darkRatio >= 0.6;
+  if (styleDark && refLight) {
+    conflicts.push({
+      id: 'dark-inversion', severity: 'blocker',
+      detail: `El estilo ${style.id} es oscuro y la referencia tiene luminancia ${reference.luma} (clara, oscuro ${reference.darkRatio}). Invertir el tono es una decisión del usuario, no del estilo.`,
+    });
+  }
+  if (!styleDark && refDark) {
+    conflicts.push({
+      id: 'light-inversion', severity: 'blocker',
+      detail: `El estilo ${style.id} es claro y la referencia es oscura (luminancia ${reference.luma}, oscuro ${reference.darkRatio}).`,
+    });
+  }
+  if (reference.saturation < 0.12 && chromaOfHex(style.colors.accent) >= 0.3) {
+    conflicts.push({
+      id: 'accent-unsupported', severity: 'warning',
+      detail: `La referencia es casi neutra (saturación ${reference.saturation}) y el estilo ${style.id} propone el acento ${style.colors.accent}. No se sustituye por decoración.`,
+    });
+  }
+  if (typeof reference.aspect === 'number' && reference.aspect > 0) {
+    const ratio = Math.max(reference.aspect, 1 / reference.aspect);
+    if (ratio >= 2) {
+      conflicts.push({
+        id: 'aspect-extreme', severity: 'warning',
+        detail: `La referencia tiene proporción ${reference.aspect}. Adapta la composición a la proporción del destino en vez de recortarla.`,
+      });
+    }
+  }
+  return conflicts;
+}
+
+function chromaOfHex(hex: string): number {
+  if (!/^#[0-9a-f]{6}$/i.test(hex)) return 0;
+  const [r, g, b] = hexToRgb(hex).map((v) => v / 255);
+  const mx = Math.max(r, g, b);
+  return mx > 0 ? (mx - Math.min(r, g, b)) / mx : 0;
+}
+
 export interface ArtDirection {
   version: '0.4';
   id: string;
@@ -183,6 +250,8 @@ export interface ArtDirection {
   warnings: string[];
   fonts: { id: string; family: string; file: string; license: string }[];
   audit: DesignAudit;
+  /** Procedencia medible de la paleta cuando se pasó una referencia. */
+  reference?: { measured: ReferenceSignal; conflicts: ReferenceConflict[]; adoptedMode: 'dark' | 'light' | null };
 }
 
 const FONTS = {
@@ -576,12 +645,21 @@ export function buildArtDirection(input: {
   projectType?: string;
   preferences?: ArtPreferences;
   seed?: number;
+  /** Medición de la referencia. Si existe, el modo del estilo se subordina a ella. */
+  reference?: ReferenceSignal;
 }): ArtDirection {
   const brief = input.brief.trim();
   if (!brief) throw new Error('El brief no puede estar vacío.');
   const projectType = resolveProjectType(brief, input.projectType);
   const style = input.style ? getStyle(input.style) : inferStyle(brief, projectType);
-  const prefs = input.preferences ?? {};
+  const prefs = { ...(input.preferences ?? {}) };
+  const referenceConflicts = input.reference ? checkStyleAgainstReference(style, input.reference) : [];
+  let adoptedMode: 'dark' | 'light' | null = null;
+  if (input.reference && !prefs.mode) {
+    const inverted = referenceConflicts.find((c) => c.id === 'dark-inversion' || c.id === 'light-inversion');
+    if (inverted) adoptedMode = input.reference.luma >= 0.45 ? 'light' : 'dark';
+    if (adoptedMode) prefs.mode = adoptedMode;
+  }
   const density = prefs.density ?? style.composition.density;
   const motionLevel = prefs.motion ?? style.motion.level;
   const colors: Palette = {
@@ -626,6 +704,8 @@ export function buildArtDirection(input: {
   if (effects.length > 2 && (projectType === 'dashboard' || projectType === 'app')) warnings.push('Se limitaron efectos para no competir con la tarea principal.');
   if (motion.level === 'expressive') warnings.push('Movimiento expresivo: verifica prefers-reduced-motion y no bloquees la lectura.');
   if (prefs.mode && prefs.mode !== style.mode) warnings.push('El modo solicitado se aproxima con una paleta neutra; no se ha rediseñado el perfil completo.');
+  if (adoptedMode) warnings.push(`Modo ${adoptedMode} adoptado de la referencia medida; el estilo ${style.id} pedía ${style.mode}. La referencia manda.`);
+  for (const conflict of referenceConflicts) warnings.push(`${conflict.severity === 'blocker' ? 'Conflicto' : 'Aviso'} (${conflict.id}): ${conflict.detail}`);
   if (style.id === 'glassmorphism' || style.id === 'neumorphism') warnings.push('Los materiales requieren contraste explícito; no uses texto pequeño sobre superficies translúcidas sin auditar.');
 
   const audit = auditArtDirection({ style, colors, typography: { ...style.typography, ...typography, sizes: typography.sizes }, layout, motion, effects, projectType, accentInk });
@@ -656,6 +736,7 @@ export function buildArtDirection(input: {
     typography: { ...style.typography, ...typography, responsive, families: { display: family(typography.display), body: family(typography.body), mono: family(typography.mono) } },
     layout, materials: style.materials, motion, composition: { ...style.composition, density },
     effects, components: PROJECT_COMPONENTS[projectType], tokenSet, rationale, warnings, fonts, audit,
+    ...(input.reference ? { reference: { measured: input.reference, conflicts: referenceConflicts, adoptedMode } } : {}),
   };
 }
 

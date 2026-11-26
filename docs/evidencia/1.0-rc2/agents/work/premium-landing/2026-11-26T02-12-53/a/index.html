@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>La forma del barro</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #faf7e7; color: #1c110b; font-family: 'Times New Roman', serif; }
+  main { position: relative; width: min(100%, 1280px); aspect-ratio: 16 / 9; margin: auto; container-type: inline-size; }
+  h1, p, figure, ul { margin: 0; }
+  h1 { position: absolute; left: 8.34%; top: 16.65%; font-weight: 400; font-size: 9.45cqw; line-height: .88; letter-spacing: -.048em; }
+  h1 span { display: inline-block; transform: scaleX(1.055); transform-origin: left; }
+  .intro { position: absolute; left: 8.51%; top: 53.3%; width: 32%; font-size: 1.32cqw; line-height: 1.29; }
+  .rule { position: absolute; left: 8.51%; top: 74.85%; width: 10.63%; height: max(1px, .12cqw); background: #251d13; }
+  ul { position: absolute; left: 8.61%; top: 85.25%; display: flex; align-items: center; gap: 1.55cqw; padding: 0; list-style: none; font-size: 1.12cqw; }
+  li + li::before { content: ''; display: inline-block; width: 1px; height: .54cqw; margin-right: 1.55cqw; background: currentColor; }
+  figure { position: absolute; left: 54.02%; top: 14.36%; width: 38.51%; height: 72.34%; background: #965b42; }
+  canvas { display: block; width: 100%; height: 100%; }
+  @media (max-width: 640px) {
+    main { aspect-ratio: auto; display: grid; gap: 24px; padding: 38px 8.5%; }
+    h1, .intro, figure, .rule, ul { position: static; }
+    h1 { font-size: 15cqw; }
+    .intro { width: min(100%, 410px); font-size: 17px; }
+    figure { width: 100%; height: auto; aspect-ratio: 536 / 545; }
+    .rule { width: 28%; margin-top: 4px; }
+    ul { font-size: 13px; gap: 16px; }
+    li + li::before { height: 6px; margin-right: 16px; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>La forma<br><span>del barro</span></h1>
+  <p class="intro">El barro toma forma en el torno y el fuego fija el esmalte. Sobre la superficie verde quedan las huellas del giro y los matices que deja la cocción.</p>
+  <figure>
+    <canvas width="536" height="545" role="img" aria-label="Vasija de cerámica verde vidriada sobre un fondo terracota, iluminada desde la izquierda"></canvas>
+  </figure>
+  <div class="rule" aria-hidden="true"></div>
+  <ul aria-label="Temas"><li>MATERIAL</li><li>PROCESO</li><li>PRODUCCIÓN</li></ul>
+</main>
+<script>
+  const canvas = document.querySelector('canvas');
+  const context = canvas.getContext('2d');
+  const {width, height} = canvas;
+  const image = context.createImageData(width, height);
+  const clamp = (value, min = 0, max = 1) => Math.max(min, Math.min(max, value));
+  const mix = (a, b, t) => a + (b - a) * t;
+  const smooth = (a, b, value) => {
+    const t = clamp((value - a) / (b - a));
+    return t * t * (3 - 2 * t);
+  };
+  const glow = (x, y, cx, cy, rx, ry) => Math.exp(-(((x - cx) / rx) ** 2 + ((y - cy) / ry) ** 2));
+  function noise(x, y) {
+    let n = Math.imul(x, 1597334677) ^ Math.imul(y, 3812015801);
+    n = Math.imul(n ^ (n >>> 16), 2246822519);
+    return ((n ^ (n >>> 13)) >>> 0) / 4294967296;
+  }
+  function cloud(x, y, scale) {
+    const ix = Math.floor(x / scale);
+    const iy = Math.floor(y / scale);
+    const fx = smooth(0, 1, x / scale - ix);
+    const fy = smooth(0, 1, y / scale - iy);
+    const top = mix(noise(ix, iy), noise(ix + 1, iy), fx);
+    const bottom = mix(noise(ix, iy + 1), noise(ix + 1, iy + 1), fx);
+    return mix(top, bottom, fy) - .5;
+  }
+  // Left and right silhouettes through the rim, shoulder, belly and foot.
+  const profile = [
+    [113, 162, 398], [122, 168, 392], [137, 172, 386], [155, 165, 393],
+    [180, 145, 412], [210, 129, 428], [250, 121, 437], [287, 123, 436],
+    [327, 132, 427], [366, 146, 414], [407, 164, 396], [444, 185, 374],
+    [476, 208, 353], [491, 218, 347]
+  ];
+  function edge(y, side) {
+    const i = Math.max(0, Math.min(profile.length - 2, profile.findIndex(row => row[0] > y) - 1));
+    const a = profile[i];
+    const b = profile[i + 1];
+    const p = profile[Math.max(0, i - 1)];
+    const q = profile[Math.min(profile.length - 1, i + 2)];
+    const span = b[0] - a[0];
+    const t = clamp((y - a[0]) / span);
+    const m = (b[side] - p[side]) * span / (b[0] - p[0]);
+    const n = (q[side] - a[side]) * span / (q[0] - a[0]);
+    return mix(a[side], b[side], t * t * (3 - 2 * t)) + t * (1 - t) * (m * (1 - t) - n * t);
+  }
+  for (let y = 0; y < height; y++) {
+    const bodyY = Math.min(y, 490.99);
+    const left = edge(bodyY, 1);
+    const right = edge(bodyY, 2);
+    for (let x = 0; x < width; x++) {
+      const grain = noise(x, y) - .5;
+      const wallLight = clamp(.16 + .67 * x / width + .31 * y / height - .43 * glow(x,y,0,0,170,215));
+      const floor = smooth(421, 485, y + 18 * x / width);
+      const floorLight = glow(x,y,120,530,430,100);
+      const shade = .76 * smooth(269, 365, x) *
+        Math.exp(-(((y - (494 - (x - 286) * .079)) / (11 + (x - 260) * .056)) ** 4)) +
+        .68 * glow(x,y,289,500,99,8);
+      let r = mix(mix(59,165,wallLight), 167 + 39 * floorLight, floor) * (1 - clamp(shade,0,.88));
+      let g = mix(mix(24,92,wallLight), 83 + 36 * floorLight, floor) * (1 - clamp(shade,0,.89));
+      let b = mix(mix(12,66,wallLight), 57 + 34 * floorLight, floor) * (1 - clamp(shade,0,.9));
+
+      const u = (2 * x - left - right) / (right - left);
+      const base = 505 - 14 * clamp((x - 281) / 67, -1, 1) ** 2;
+      const coverage = clamp(Math.min(x - left, right - x, y - 112, base - y) + .5);
+      if (coverage > 0) {
+        const front = Math.sqrt(Math.max(0, 1 - u * u));
+        const slope = (edge(Math.min(490.99, bodyY + 1), 2) - edge(Math.max(113, bodyY - 1), 2)) * .5;
+        const light = clamp((-.76 * u + .55 * front + .30 * slope) / Math.hypot(1, slope));
+        const diffuse = smooth(-.16, .91, light);
+        const turn = y + 13 * front + 1.7 * Math.sin(x * .037);
+        const texture = 12 * grain + 11 * cloud(x,y,4) + 10 * cloud(x,y,21)
+          + .7 * Math.sin(turn * 1.04) + 1.1 * Math.sin(turn * .42);
+        const glaze = smooth(481, 303, turn + cloud(x,y,38) * 20);
+        const band = smooth(315, 309, turn + 8 * cloud(x,y,27)) * smooth(292, 303, turn);
+        const spec = (105 + 15 * grain) * glow(x,y,209,215,25,24) + 66 * glow(x,y,209,216,47,43)
+          + 139 * glow(x,y,231,140,13,3.9) + 38 * glow(x,y,231,140,31,7);
+        const bounce = .73 * glow(x,y,396,302,45,138);
+        const reflection = 23 * glow(x,y,382,264,10,26) * (.5 + .5 * Math.cos((y - 260) * .19) ** 2);
+        const foot = smooth(base - 8, base - 2, y) * smooth(472, 494, y);
+        const oxide = smooth(469, 495, y) * (1 - foot);
+        const pore = noise(x + 638, y + 719) > .9991 ? -20 : 0;
+        r = mix(r, 25 + diffuse * (105 - 17 * glaze) + 9 * bounce + texture + spec + reflection - 9 * band + 13 * oxide + foot * 68 + pore, coverage);
+        g = mix(g, 22 + diffuse * (115 + 24 * glaze) + 10 * bounce + texture + spec + reflection - 6 * band + foot * 40 + pore, coverage);
+        b = mix(b, 13 + diffuse * (83 + 24 * glaze) + 6 * bounce + texture + spec + reflection - 5 * band + foot * 30 + pore, coverage);
+      }
+      const i = (y * width + x) * 4;
+      image.data[i] = r + grain * 4;
+      image.data[i + 1] = g + grain * 4;
+      image.data[i + 2] = b + grain * 4;
+      image.data[i + 3] = 255;
+    }
+  }
+  context.putImageData(image, 0, 0);
+  // A shallow view into the mouth, with a reflected streak on its rolled lip.
+  context.save();
+  context.translate(280, 112);
+  context.rotate(-.015);
+  const lip = context.createLinearGradient(-113, -7, 95, 14);
+  lip.addColorStop(0, '#8e9673');
+  lip.addColorStop(.29, '#a4ac90');
+  lip.addColorStop(.58, '#6b7559');
+  lip.addColorStop(1, '#353324');
+  context.fillStyle = lip;
+  context.beginPath();
+  context.ellipse(0, 0, 119, 13, 0, 0, Math.PI * 2);
+  context.fill();
+  const mouth = context.createLinearGradient(-95, 0, 108, 11);
+  mouth.addColorStop(0, '#88977a');
+  mouth.addColorStop(.35, '#66735b');
+  mouth.addColorStop(.73, '#202318');
+  mouth.addColorStop(1, '#12130c');
+  context.fillStyle = mouth;
+  context.beginPath();
+  context.ellipse(2, -2, 111, 6.5, 0, 0, Math.PI * 2);
+  context.fill();
+  const glint = context.createLinearGradient(-111, 0, 39, 0);
+  glint.addColorStop(0, 'transparent');
+  glint.addColorStop(.25, '#d6dec1a0');
+  glint.addColorStop(.65, '#e2e7c2a9');
+  glint.addColorStop(1, 'transparent');
+  context.strokeStyle = glint;
+  context.lineWidth = 2;
+  context.beginPath();
+  context.moveTo(-110, -3);
+  context.bezierCurveTo(-86, -12, -19, -13, 38, -11);
+  context.stroke();
+  context.restore();
+</script>
+</body>
+</html>

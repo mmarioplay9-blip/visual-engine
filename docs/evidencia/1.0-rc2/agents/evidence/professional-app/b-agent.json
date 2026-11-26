@@ -1,0 +1,26 @@
+{
+  "run": {
+    "arm": "b",
+    "exit": 0,
+    "usage": {
+      "input_tokens": 1189664,
+      "cached_input_tokens": 1146240,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 9090,
+      "reasoning_output_tokens": 183
+    },
+    "mcpCalls": [],
+    "veCommands": [
+      "[registro privado omitido]",
+      "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$tmp=Join-Path $env:TEMP ('\"'ve-panel-b-'+[guid]::NewGuid()) New-Item -ItemType Directory \"'$tmp | Out-Null Set-Content (Join-Path $env:TEMP '\"'ve-panel-b-dir.",
+      "[registro privado omitido]",
+      "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command \"rg -n 'Uso: ve (capture|debug|critic|fidelity|review)|async function cmdCapture' <repo>/src/cli \"'$ve='\"'<repo>/dist/cli/index.js' \"'$tmp=Get-Content (Join-Path $e",
+      "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$tmp=Get-Content (Join-Path $env:TEMP '\"'ve-panel-b-dir.txt') \"'$ve='\"'<repo>/dist/cli/index.js' node \"'$ve debug index.html --serve . --source . --width 1280 --height 720 --out \"$tmp/debug\" nod",
+      "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$tmp=Get-Content (Join-Path $env:TEMP '\"'ve-panel-b-dir.txt') \"'$ve='\"'<repo>/dist/cli/index.js' Copy-Item index.html \\\"\"'$tmp/before.html\" $html=Get-Content index.html -Raw -Encoding UTF8 $html"
+    ],
+    "ms": 256887,
+    "bytes": 14124,
+    "hasHtml": true,
+    "embeddedReference": false
+  }
+}

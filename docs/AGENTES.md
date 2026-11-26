@@ -1,11 +1,11 @@
-# Compatibilidad por agente · Visual Engine 1.0.0-rc.1
+# Compatibilidad por agente · Visual Engine 1.0.0-rc.2
 
 Tres estados que no se mezclan:
 
 - **Diseñado**: el formato y los archivos están implementados en el registro.
 - **Instalado**: `ve install --yes` escribió los archivos y el manifiesto.
 - **Verificado**: además, el binario existe y el servidor MCP respondió a un `initialize` +
-  `tools/list` real (**44 herramientas**, versión 1.0.0-rc.1).
+  `tools/list` real (**45 herramientas**, versión 1.0.0-rc.2).
 
 | Agente | Detección real | Instrucciones | Skill / regla | MCP | Activación |
 | --- | --- | --- | --- | --- | --- |
@@ -21,7 +21,7 @@ Tres estados que no se mezclan:
 
 ## Qué se comprobó de verdad
 
-- **Handshake MCP**: 44 herramientas por stdio contra el binario de este paquete. Es la
+- **Handshake MCP**: 45 herramientas por stdio contra el binario de este paquete. Es la
   verificación que el instalador registra.
 - **Codex 1.0-rc**: sesión real no interactiva en un directorio limpio. Leyó la skill instalada e
   invocó `ve doctor`, `context`, `effects list`, `vision status`, `agents`, `art` y `capture`

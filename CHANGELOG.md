@@ -1,5 +1,60 @@
 # Changelog
 
+## 1.0.0-rc.2 · 2026-11-25
+
+Release candidate sobre 1.0.0-rc.1. No se añadieron efectos, estilos ni composiciones.
+
+### Añadido
+
+- **Reference First**: `ve plan` / `visual_plan` mide la referencia antes de diseñar y devuelve un
+  brief con las siete dimensiones a preservar, la paleta con roles y contraste, la composición,
+  la luz y la tipografía estimada, más un plan de 8 pasos con criterio de terminado y presupuesto
+  de 2 correcciones.
+- **Guardia de estilo** `ve art --from-plan`: si el estilo contradice la luminancia medida de la
+  referencia, se adopta el modo de la referencia y el conflicto se declara; nunca en silencio.
+- **A/B nuevo con Codex**: cinco parejas con la referencia 16:9 adjunta con `-i` a los dos brazos,
+  referencias sintéticas declaradas y prohibición de incrustar la imagen.
+- **Validación de la coherencia de matiz** con rotaciones controladas, casos negativos y
+  re-medición del caso rechazado en rc.1.
+- 6 pruebas nuevas (`tests/visual07.test.mjs`): Reference First, guardia de estilo, coherencia
+  circular, plan de 8 pasos y descubrimiento selectivo de MCP.
+- `docs/INVESTIGACION-RC2.md` y `docs/VERIFICACION-1.0-rc2.md`.
+
+### Corregido
+
+- **Coherencia de matiz**: el coseno directo sobre 12 sectores se hundía a 0 con 30° de diferencia
+  (no monótono: 93,0 a +15° y 94,6 a +30°) y puntuaba ruido con referencias casi grises. Ahora se
+  pondera por croma, se suaviza con un núcleo circular de von Mises (κ=4) y se exige cobertura
+  cromática ≥ 0,08; si no, la dimensión queda `available:false` con el motivo. Ningún umbral se
+  redujo.
+- **El gate que rechazaba una pieza válida**: `game-cinematic` B pasa de `reject` a `accept`
+  porque el hallazgo de coherencia era un artefacto; A, con el mismo motor, **sigue rechazando**
+  por iluminación.
+- **zod 4.6.7**: el SDK de MCP 1.32 admite zod 4, así que se migraron los esquemas y se eliminó la
+  alerta alta (`npm audit`: 0 vulnerabilidades).
+- La skill pedía siete comandos de preparación antes de diseñar y recomendaba elegir estilo antes
+  de medir; se sustituye por `ve plan` y por “la referencia manda”.
+
+### Cambiado
+
+- 45 herramientas MCP agrupadas (`analysis`, `direction`, `build`, `verify`, `agents`) con
+  descubrimiento selectivo por `VE_MCP_GROUPS` / `VE_MCP_TOOLS` (19 en vez de 45 sin perder
+  capacidades) y `visual_plan` como puerta de entrada.
+- CLI: 48 comandos (`plan`, con alias `brief`).
+
+### Conservado
+
+58 efectos, 15 estilos, 20 composiciones, la API local, la galería, los 9 adaptadores y las 63
+pruebas anteriores. Suite: **69/69** en 223 s, código de salida 0.
+
+### Límites de esta RC
+
+- El A/B nuevo no demuestra superioridad general: B mejora 2/5, empata 3/5 y baja tipografía 18,9
+  puntos en `professional-app`.
+- Linux no verificado (WSL sin distribución); macOS no se declara compatible.
+- Freebuff y Claude Code siguen sin verificación autónoma en esta máquina.
+- Revisión artística humana pendiente.
+
 ## 1.0.0-rc.1 · 2026-11-26
 
 Release candidate sobre 0.6. No se reconstruyó el proyecto ni se eliminó ninguna capacidad.

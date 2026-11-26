@@ -1,92 +1,79 @@
 # Visual Engine · instrucciones para agentes
 
-Este proyecto tiene instalado **Visual Engine 1.0.0-rc.1**: un motor local que dirige arte, critica,
-depura, mide, compone y verifica calidad visual. No es una guía de estilo: ejecuta herramientas
-reales y devuelve evidencia.
+Este proyecto tiene instalado **Visual Engine 1.0.0-rc.2**: un motor local que mide referencias,
+dirige arte, critica, depura, compone y verifica calidad visual. No es una guía de estilo: ejecuta
+herramientas reales y devuelve evidencia.
 
-Antes de usarlo, comprueba la integración con `ve agents`. No confundas **diseñado** con
-**instalado** ni con **verificado**: sólo el handshake MCP real marca verificado. `ve install`
-sin `--yes` es un plan y no escribe. Respeta el perfil (`--profile lite|professional|cinematic`):
-cambia capacidades y presupuesto, nunca la estética.
+Comprueba la integración con `ve agents`. No confundas **diseñado** con **instalado** ni con
+**verificado**: sólo el handshake MCP real marca verificado. `ve install` sin `--yes` es un plan y
+no escribe. El perfil (`--profile lite|professional|cinematic`) cambia capacidades y presupuesto,
+nunca la estética.
 
-## Cuándo usarlo
+## Regla cero
 
-Úsalo siempre que el usuario pida diseño, animación, 3D, HUD, vídeo, efectos, composición o
-mejorar un resultado visual. No lo uses para tareas sin componente visual.
+La **intención del usuario** y la **referencia** mandan sobre los estilos y sobre tu gusto. Antes
+de diseñar:
 
-## Ciclo obligatorio
+```bash
+ve plan "<intención tal cual>" --reference referencia.jpg --out ./sistema
+```
 
-0. **Pedir contexto, no el catálogo**: `ve context "<tarea>" --max-recipes 3`. No cargues los 58
-   efectos ni toda la documentación; pide una receta concreta con `ve effects show <id>`.
-1. **Comprobar** antes de prometer:
-   `ve doctor --json`, `ve vision status --json` y `ve effects list --json`.
-   Si falta ffmpeg, Playwright, Tesseract u Ollama, dilo y no simules esa capacidad.
-2. **Descomponer la referencia**:
-   `ve analyze`, `ve timeline`, `ve motion`, `ve inspect`, `ve detect`.
-   Para OCR/visión: `ve spec <ref> --vision --out <dir>` (escribe `ocr.json` y `semantic.json`).
-3. **Dirigir el arte y el movimiento**:
-   `ve art "brief" --style <id> --out <dir>`, `ve refdesign <ref> --out <dir>`,
-   `ve motiondirector --style <id> --out <dir>` y `ve showcase --measure`.
-   Usa tokens y escala; no inventes la fuente original ni la arquitectura de componentes.
-4. **Especificar y reconstruir**:
-   `ve spec <ref> --out <dir>` y `ve refeffects <ref> --spec <dir>/spec.json --out <dir>`.
-   Las correspondencias son hipótesis con estado y confianza; no son identificaciones exactas.
-5. **Componer o aplicar**:
-   `ve compose <composition.json> --out <dir>` para capas/mezclas/máscaras/curvas;
-   `ve effects apply <id> --out <dir>` para una receta. La biblioteca tiene 58 efectos.
-6. **Capturar, depurar y revisar**:
-   `ve capture <url|html> --serve <carpeta> --frames 6 --json`.
-   Revisa `consoleErrors` y `errors`. Después `ve debug`, `ve critic`, `ve fidelity` y
-   `ve gate`; con dos vídeos, `ve temporal <ref> <resultado>`. Un defecto crítico bloquea
-   aunque la media sea alta; `--require-human` exige aprobación artística.
-7. **Iterar con red**: prepara el cambio y usa `ve loop` o `ve iterate` con `--replace`/`--patch`.
-   El loop copia, mide, compara y revierte si no mejora; respeta iteraciones, minutos y tokens
-   estimados. No edites a mano sin copia ni inventes un cambio para el loop.
+Preserva las siete dimensiones del brief: composición, identidad, colores y materiales,
+tipografía y jerarquía, efectos existentes, animaciones y proporciones. **No impongas** oscuridad,
+futurismo, partículas, glow ni glassmorphism si la referencia no los tiene. Si falta la referencia,
+pídela: no inventes color ni composición.
 
-## Cómo leer los estados
+## Ciclo obligatorio (8 pasos)
 
-- `verified`: la señal se midió (halo, nitidez, partículas, cortes, luz, OCR).
-- `estimated`: hay proxy, no certeza (objetos, profundidad, parallax, glitch, transiciones suaves).
-- `available:false`: falta herramienta/modelo. Devuelve el motivo, no lo rellenes.
-- En Reference-to-Effects, muestra `status`, `confidence` y `warnings`; no ocultes la hipótesis.
+1. **Analizar**: `ve plan … --reference …`, `ve analyze`, `ve inspect`, `ve timeline`.
+2. **Comprender**: describe las 7 dimensiones con evidencia; marca lo estimado.
+3. **Diseñar**: `ve refdesign` o `ve art` sólo después del brief; no cargues los 58 efectos.
+4. **Implementar**: `ve effects apply`, `ve compose` o código propio, respetando lo medido.
+5. **Renderizar**: `ve capture <target> --serve <dir> --frames 6 --json`; revisa errores.
+6. **Inspeccionar**: `ve debug`, `ve critic`, `ve fidelity`.
+7. **Corregir**: `ve iterate` o `ve loop` con copia y reversión; **máximo 2** correcciones.
+8. **Verificar**: `ve gate`; con vídeo, `ve temporal`. Sin captura y gate no está terminado.
 
-## Reglas de calidad
+## Terminado
 
-- **Nada de diseños planos** si piden calidad avanzada: profundidad, jerarquía, foco y detalle.
-- **Una idea visual por pantalla**; quita lo que no suba fidelidad, calidad o legibilidad.
-- **Respeta la referencia** por encima del gusto: paleta, contraste, composición y ritmo.
-- **No añadas efectos** sólo para subir una puntuación; explica las dimensiones bajas.
-- **Rendimiento**: DPR ≤ 2, un canvas, pausa con `document.hidden`, `prefers-reduced-motion`.
-- **Accesibilidad**: contraste, foco visible, texto alternativo, `role="img"` en composiciones.
-- **Sin recursos externos** por defecto (CDNs, fuentes, stock dudoso).
-
-## Licencias
-
-GSAP Club no; Remotion no es MIT; React Bits CC-BY exige atribución; FFmpeg según build;
-Three.js/Motion/Playwright son permisivas. No instales nada de pago.
-
-## Honestidad
-
-- No declares un módulo funcionando sin ejecutar su comando y ver la salida.
-- Distingue implementado, medido, estimado y pendiente.
-- No inventes cifras: usa `review.json`, `benchmark.json`, `spec.json`, `measurements.json`, `ab-metrics.json` o la salida de la herramienta.
-- En Reference-to-Design, `confirmed` es medición y `estimated` es hipótesis. No los mezcles.
-- La rotación se validó en patrón sintético y en una escena Three.js real; no certifica cualquier WebGL.
-- El A/B de vídeo de 0.5 usa un montaje derivado de una obra CC0, no una pieza externa; el 56,9/100 se publica.
-- Los gates por defecto del A/B rechazan los cinco casos; no los relajes para convertirlos en aprobados.
-- El presupuesto de tokens del loop es estimado (caracteres/4), no telemetría del proveedor.
-- Si no hay OCR/modelo, el resultado correcto es "no disponible", no una descripción inventada.
-- Una puntuación automática no es un juicio artístico humano; la aprobación final es humana.
-- El repositorio no se publica en GitHub en esta fase.
+El código funcionando no es una entrega. Termina cuando hay captura real, gate ejecutado y los
+defectos pendientes declarados con su gravedad. Si el presupuesto se agotó, declara el defecto; no
+bajes el umbral ni ocultes la dimensión.
 
 ## Herramientas MCP
 
-**44 herramientas**. Las 0.6: `visual_agents`, `visual_install`, `visual_profile`,
-`visual_activation`, `visual_security`, `visual_usage`; las 0.5: `visual_context`, `visual_debug`, `visual_critic`,
-`visual_fidelity`, `visual_gate`, `visual_smart_effects`, `visual_loop`, `visual_loops`; además
-de `visual_art_direction`, `visual_reference_design`, `visual_motion_director`,
-`visual_showcase`, `visual_compose`, `visual_reference_effects`, `visual_benchmark`,
-`visual_iterate` (confirm=true), etc.
+**45 herramientas en 5 grupos**: `analysis` (medir), `direction` (intención y sistema), `build`
+(implementar), `verify` (comprobar), `agents` (instalar y auditar). `visual_plan` es la entrada y
+devuelve el brief más el paso siguiente.
 
-La CLI (47 comandos) y la API local (`ve serve`, `http://127.0.0.1:4747`) ofrecen lo mismo.
-La galería (`ve gallery`) es opcional; el núcleo funciona sin interfaz.
+```bash
+VE_MCP_GROUPS=analysis,verify ve mcp     # exposición selectiva, sin perder capacidades
+VE_MCP_TOOLS=visual_plan,visual_capture ve mcp
+```
+
+La CLI (49 comandos) y `ve serve` ofrecen todo. La galería es opcional.
+
+## Estados
+
+- `verified`: medido (halo, nitidez, cortes, luz, OCR, contraste DOM).
+- `estimated`: proxy (objetos, profundidad, tipografía, parallax).
+- `available:false`: falta herramienta o el dato no es interpretable (por ejemplo, matiz en una
+  imagen casi neutra). Devuelve el motivo; no lo rellenes.
+
+## Reglas
+
+- Respeta la referencia; no inviertas el tono ni sustituyas su material por uno de moda.
+- Una idea por pantalla; sin efectos decorativos que no estén en la referencia.
+- Rendimiento: DPR ≤ 2, un canvas, `prefers-reduced-motion`.
+- Accesibilidad: contraste AA, foco visible, alt y `role="img"`.
+- Sin recursos externos por defecto; todo local y gratuito.
+- Licencias: GSAP Club no; Remotion no es MIT; React Bits CC-BY exige atribución.
+
+## Honestidad
+
+- No declares nada funcionando sin ejecutar su comando y ver la salida.
+- Distingue implementado, medido, estimado y pendiente.
+- La tipografía se aproxima por alturas: no identifiques familia ni peso.
+- La coherencia de matiz no se puntúa si la imagen es casi neutra; se declara no disponible.
+- Una puntuación automática no es aprobación artística humana.
+- El repositorio no se publica en GitHub en esta fase.

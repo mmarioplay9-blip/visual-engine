@@ -1,4 +1,4 @@
-# Preparado para 1.0.0-rc.1. Sólo Windows se ha ejecutado localmente; Linux y
+# Preparado para 1.0.0-rc.2. Sólo Windows se ha ejecutado localmente; Linux y
 # macOS quedan como comprobación pendiente y no se declaran verificados.
 name: CI
 
@@ -22,7 +22,7 @@ jobs:
       - run: node --test --test-concurrency=1 tests/
 
   linux-macos-preview:
-    # Preparado, no ejecutado en la entrega 1.0.0-rc.1. No bloquea hasta verificarlo.
+    # Preparado, no ejecutado en la entrega 1.0.0-rc.2. No bloquea hasta verificarlo.
     continue-on-error: true
     strategy:
       fail-fast: false

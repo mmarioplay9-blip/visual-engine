@@ -1,6 +1,4 @@
 ---
-
-> Visual Engine 1.0.0-rc.1: comprueba  (diseñado ≠ instalado ≠ verificado).  sin  sólo planifica;  cambia capacidades, no estética.
 description: Visual Engine — medición y mejora de calidad visual con herramientas locales
 globs:
 alwaysApply: true
@@ -8,23 +6,32 @@ alwaysApply: true
 
 # Visual Engine en Cursor
 
+> 1.0.0-rc.2 · comprueba con `ve agents` (diseñado ≠ instalado ≠ verificado).
+
 Usa el servidor MCP `visual-engine` (o la CLI `ve`) cuando la tarea tenga componente visual.
+
+## Reference First
+
+La referencia y la intención del usuario mandan sobre los estilos. Empieza con
+`ve plan "<intención>" --reference <archivo> --out ./sistema` y preserva las siete dimensiones:
+composición, identidad, colores y materiales, tipografía, efectos, movimiento y proporciones.
+No impongas oscuridad, partículas, glow ni glassmorphism si no están.
 
 ## Secuencia
 
-1. `visual_doctor` — no prometas herramientas que falten.
-2. `visual_analyze` — extrae la paleta y métricas de la referencia.
-3. `visual_effects_list` / `visual_effect_apply` — base con intención, sin dependencias innecesarias.
-4. `visual_capture` — captura real con `frames >= 6`; revisa errores de consola.
-5. `visual_review` + `visual_debug` + `visual_critic` + `visual_fidelity` + `visual_gate` — evidencia localizada, fidelidad y aceptación.
-6. `visual_loop` con `confirm=true` — copia, aplica, mide y revierte. No inventes el cambio.
+1. `visual_plan` — brief medido y plan de 8 pasos.
+2. `visual_doctor` — no prometas herramientas que falten.
+3. `visual_analyze` — extrae la paleta y métricas de la referencia.
+4. `visual_effects_list` / `visual_effect_apply` — sólo lo que la referencia sostenga.
+5. `visual_capture` — captura real con `frames >= 6`; revisa errores de consola.
+6. `visual_critic` + `visual_fidelity` + `visual_gate` — evidencia y aceptación.
+7. `visual_loop` con `confirm=true` — copia, aplica, mide y revierte. Máximo 2 correcciones.
 
 ## Calidad
 
-- Evita fondos planos y tipografía sin jerarquía cuando se pide calidad avanzada.
-- Un foco de luz, profundidad real y micro-detalle (grano, retícula, partículas finas).
-- Nada de efectos gratuitos que bajen rendimiento o fidelidad.
+- Respeta composición, paleta, luz y proporciones; no "mejores" invirtiendo el tono.
+- Un minimalismo no es un defecto; un efecto ajeno a la referencia, sí.
 - Sin CDNs ni APIs de pago. DPR ≤ 2 y `prefers-reduced-motion`.
 - Licencias: GSAP Club de pago; Remotion no es MIT; React Bits CC-BY requiere atribución.
 
-Nunca afirmes que un módulo funciona sin haberlo ejecutado.
+Nunca afirmes que un módulo funciona sin haberlo ejecutado. Sin captura y gate no está terminado.

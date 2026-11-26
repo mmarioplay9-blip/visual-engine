@@ -1,0 +1,217 @@
+{
+  "properties": {
+    "massPreserved": true,
+    "monotonicDecay": true,
+    "circular": true
+  },
+  "rows": [
+    {
+      "case": "referencia rotada +0°",
+      "file": "docs\\evidencia\\1.0-rc2\\references\\premium-landing.jpg",
+      "refCoverage": 0.213,
+      "candCoverage": 0.213,
+      "old": 100,
+      "new": 100,
+      "available": true,
+      "evidence": {
+        "metodo": "coseno de histogramas suavizados con núcleo von Mises (κ=4, circular)",
+        "valor": 1,
+        "coberturaCromatica": 0.213,
+        "matizMedioReferencia": 4.8,
+        "matizMedioResultado": 4.8,
+        "desplazamientoMatizDeg": 0,
+        "maticesEfectivos": 1.37,
+        "neutroReferencia": 0.672,
+        "neutroResultado": 0.672
+      }
+    },
+    {
+      "case": "referencia rotada +15°",
+      "file": "docs\\evidencia\\1.0-rc2\\coherence\\fixtures\\hue-015.png",
+      "refCoverage": 0.213,
+      "candCoverage": 0.222,
+      "old": 93,
+      "new": 83.7,
+      "available": true,
+      "evidence": {
+        "metodo": "coseno de histogramas suavizados con núcleo von Mises (κ=4, circular)",
+        "valor": 0.837,
+        "coberturaCromatica": 0.213,
+        "matizMedioReferencia": 4.8,
+        "matizMedioResultado": 30,
+        "desplazamientoMatizDeg": 25.2,
+        "maticesEfectivos": 1,
+        "neutroReferencia": 0.672,
+        "neutroResultado": 0.673
+      }
+    },
+    {
+      "case": "referencia rotada +30°",
+      "file": "docs\\evidencia\\1.0-rc2\\coherence\\fixtures\\hue-030.png",
+      "refCoverage": 0.213,
+      "candCoverage": 0.22,
+      "old": 94.6,
+      "new": 79.3,
+      "available": true,
+      "evidence": {
+        "metodo": "coseno de histogramas suavizados con núcleo von Mises (κ=4, circular)",
+        "valor": 0.793,
+        "coberturaCromatica": 0.213,
+        "matizMedioReferencia": 4.8,
+        "matizMedioResultado": 35.4,
+        "desplazamientoMatizDeg": 30.6,
+        "maticesEfectivos": 1.37,
+        "neutroReferencia": 0.672,
+        "neutroResultado": 0.671
+      }
+    },
+    {
+      "case": "referencia rotada +60°",
+      "file": "docs\\evidencia\\1.0-rc2\\coherence\\fixtures\\hue-060.png",
+      "refCoverage": 0.213,
+      "candCoverage": 0.217,
+      "old": 24.8,
+      "new": 40.9,
+      "available": true,
+      "evidence": {
+        "metodo": "coseno de histogramas suavizados con núcleo von Mises (κ=4, circular)",
+        "valor": 0.409,
+        "coberturaCromatica": 0.213,
+        "matizMedioReferencia": 4.8,
+        "matizMedioResultado": 65.6,
+        "desplazamientoMatizDeg": 60.8,
+        "maticesEfectivos": 1.37,
+        "neutroReferencia": 0.672,
+        "neutroResultado": 0.672
+      }
+    },
+    {
+      "case": "referencia rotada +90°",
+      "file": "docs\\evidencia\\1.0-rc2\\coherence\\fixtures\\hue-090.png",
+      "refCoverage": 0.213,
+      "candCoverage": 0.215,
+      "old": 0,
+      "new": 14.5,
+      "available": true,
+      "evidence": {
+        "metodo": "coseno de histogramas suavizados con núcleo von Mises (κ=4, circular)",
+        "valor": 0.145,
+        "coberturaCromatica": 0.213,
+        "matizMedioReferencia": 4.8,
+        "matizMedioResultado": 95.3,
+        "desplazamientoMatizDeg": 90.5,
+        "maticesEfectivos": 1.37,
+        "neutroReferencia": 0.672,
+        "neutroResultado": 0.673
+      }
+    },
+    {
+      "case": "referencia rotada +120°",
+      "file": "docs\\evidencia\\1.0-rc2\\coherence\\fixtures\\hue-120.png",
+      "refCoverage": 0.213,
+      "candCoverage": 0.218,
+      "old": 0,
+      "new": 3.8,
+      "available": true,
+      "evidence": {
+        "metodo": "coseno de histogramas suavizados con núcleo von Mises (κ=4, circular)",
+        "valor": 0.038,
+        "coberturaCromatica": 0.213,
+        "matizMedioReferencia": 4.8,
+        "matizMedioResultado": 124.7,
+        "desplazamientoMatizDeg": 119.9,
+        "maticesEfectivos": 1.37,
+        "neutroReferencia": 0.672,
+        "neutroResultado": 0.673
+      }
+    },
+    {
+      "case": "referencia rotada +180°",
+      "file": "docs\\evidencia\\1.0-rc2\\coherence\\fixtures\\hue-180.png",
+      "refCoverage": 0.213,
+      "candCoverage": 0.216,
+      "old": 0,
+      "new": 0.3,
+      "available": true,
+      "evidence": {
+        "metodo": "coseno de histogramas suavizados con núcleo von Mises (κ=4, circular)",
+        "valor": 0.003,
+        "coberturaCromatica": 0.213,
+        "matizMedioReferencia": 4.8,
+        "matizMedioResultado": 185.4,
+        "desplazamientoMatizDeg": 179.4,
+        "maticesEfectivos": 1.37,
+        "neutroReferencia": 0.672,
+        "neutroResultado": 0.672
+      }
+    },
+    {
+      "case": "referencia gris + página con color",
+      "file": "docs\\evidencia\\1.0-rc2\\coherence\\fixtures\\desaturated.png",
+      "refCoverage": 0,
+      "candCoverage": 0.213,
+      "old": 0,
+      "new": null,
+      "available": false,
+      "evidence": {
+        "disponible": "no",
+        "motivo": "matiz no interpretable: cobertura cromática 0 < 0.08",
+        "coberturaReferencia": 0,
+        "coberturaResultado": 0.213,
+        "neutroReferencia": 0.993,
+        "neutroResultado": 0.672
+      }
+    },
+    {
+      "case": "referencia gris + página gris",
+      "file": "docs\\evidencia\\1.0-rc2\\coherence\\fixtures\\desaturated.png",
+      "refCoverage": 0,
+      "candCoverage": 0,
+      "old": 0,
+      "new": null,
+      "available": false,
+      "evidence": {
+        "disponible": "no",
+        "motivo": "matiz no interpretable: cobertura cromática 0 < 0.08",
+        "coberturaReferencia": 0,
+        "coberturaResultado": 0,
+        "neutroReferencia": 0.993,
+        "neutroResultado": 0.993
+      }
+    },
+    {
+      "case": "rc.1 game-cinematic B (rechazada): armadura gris vs HUD",
+      "file": "docs\\evidencia\\1.0-rc2\\coherence\\fixtures\\rc1-hud-b.png",
+      "refCoverage": 0.041,
+      "candCoverage": 0.054,
+      "old": 16.4,
+      "new": null,
+      "available": false,
+      "evidence": {
+        "disponible": "no",
+        "motivo": "matiz no interpretable: cobertura cromática 0.041 < 0.08",
+        "coberturaReferencia": 0.041,
+        "coberturaResultado": 0.054,
+        "neutroReferencia": 0.943,
+        "neutroResultado": 0.913
+      }
+    },
+    {
+      "case": "rc.1 game-cinematic A: armadura gris vs HUD",
+      "file": "docs\\evidencia\\1.0-rc2\\coherence\\fixtures\\rc1-hud-a.png",
+      "refCoverage": 0.041,
+      "candCoverage": 0.998,
+      "old": 0,
+      "new": null,
+      "available": false,
+      "evidence": {
+        "disponible": "no",
+        "motivo": "matiz no interpretable: cobertura cromática 0.041 < 0.08",
+        "coberturaReferencia": 0.041,
+        "coberturaResultado": 0.998,
+        "neutroReferencia": 0.943,
+        "neutroResultado": 0.002
+      }
+    }
+  ]
+}

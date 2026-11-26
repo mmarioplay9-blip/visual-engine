@@ -63,6 +63,7 @@ import { PROFILES, getProfile, describeProfile, profileIds, type ProfileId } fro
 import { detectActivation, activationSupport, activationGuidance } from '../core/activation.js';
 import { auditSecurity } from '../core/security.js';
 import { recordUsage, describeUsage } from '../core/usage.js';
+import { buildPlan, createReferenceBrief, describePlan, writeBrief } from '../core/plan.js';
 
 interface Parsed {
   _: string[];
@@ -144,6 +145,7 @@ COMANDOS
   critic                 Crítica con evidencia, gravedad, confianza y corrección
   fidelity               Fidelidad estructural, separada de la similitud de píxeles
   gate                   Quality Gates; una media alta no compensa un defecto crítico
+  plan "<tarea>"         Reference First: brief medido + plan de 8 pasos (--reference, --out)
   context <tarea>        Carga selectiva de herramientas/recetas y caché de análisis
   loop                   Ciclo con copia, límites, comparación y reversión
   loops [list|restore]   Historial de loops y restauración de una copia
@@ -183,6 +185,7 @@ EJEMPLOS
   ve temporal referencia.mp4 resultado.mp4 --out ./analisis
   ve compose composicion.json --out ./mi-composicion
   ve refeffects referencia.mp4 --out ./reconstruccion --vision --compare
+  ve plan "landing editorial" --reference referencia.jpg --out ./sistema
   ve art "panel financiero sobrio" --style financial-dashboard --out ./sistema
   ve refdesign referencia.png --out ./sistema --vision
   ve motiondirector --style cinematic --out ./motion
@@ -701,8 +704,8 @@ async function cmdReferenceEffects(p: Parsed) {
 
 async function cmdArt(p: Parsed) {
   const brief = p._.join(' ').trim() || s(p, 'brief');
-  if (!brief) throw new Error('Uso: ve art "brief del proyecto" [--style id] [--project tipo] [--out dir]');
-  const r = opArtDirection({ brief, style: s(p, 'style'), projectType: s(p, 'project'), outDir: s(p, 'out') });
+  if (!brief) throw new Error('Uso: ve art "brief del proyecto" [--style id] [--project tipo] [--from-plan reference-first.json] [--out dir]');
+  const r = opArtDirection({ brief, style: s(p, 'style'), projectType: s(p, 'project'), outDir: s(p, 'out'), fromPlan: s(p, 'from-plan') });
   if (jsonOut(p)) {
     console.log(JSON.stringify({ artDirection: r.artDirection, design: r.design }, null, 2));
     return;
@@ -806,6 +809,25 @@ async function cmdDebug(p: Parsed) {
   }
   r.warnings.forEach((w) => console.log(`  Límite: ${w}`));
   console.log(`\nDOM: ${r.warnings.length ? 'ver --out' : 'dom.json'}`);
+}
+
+async function cmdPlan(p: Parsed) {
+  const task = p._.join(' ').trim() || s(p, 'task');
+  if (!task) throw new Error('Uso: ve plan "tarea" [--reference archivo] [--phase paso] [--out dir] [--json]');
+  const plan = buildPlan({ task, phase: s(p, 'phase') });
+  const brief = await createReferenceBrief({ intent: task, reference: s(p, 'reference'), outDir: s(p, 'out') });
+  if (jsonOut(p)) {
+    console.log(JSON.stringify({ plan, brief }, null, 2));
+    return;
+  }
+  describePlan(plan).forEach((line) => console.log(line));
+  console.log('');
+  console.log(brief.nonNegotiables.map((r) => `Preserva: ${r}`).join('\n'));
+  if (brief.warnings.length) console.log(brief.warnings.map((w) => `Aviso: ${w}`).join('\n'));
+  if (s(p, 'out')) {
+    const files = writeBrief(brief, s(p, 'out')!);
+    console.log(`\nBrief: ${files.markdown}\nJSON: ${files.json}`);
+  }
 }
 
 function cmdContext(p: Parsed) {
@@ -1201,6 +1223,10 @@ async function main() {
       return;
     case 'gate':
       cmdGate(rest);
+      return;
+    case 'plan':
+    case 'brief':
+      await cmdPlan(rest);
       return;
     case 'context':
       cmdContext(rest);

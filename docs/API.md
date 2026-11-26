@@ -1,4 +1,4 @@
-# API local · Visual Engine 1.0.0-rc.1
+# API local · Visual Engine 1.0.0-rc.2
 
 ```bash
 ve serve                 # http://127.0.0.1:4747

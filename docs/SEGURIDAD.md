@@ -1,4 +1,4 @@
-# Seguridad · Visual Engine 1.0.0-rc.1
+# Seguridad · Visual Engine 1.0.0-rc.2
 
 ## Modelo
 
@@ -38,9 +38,21 @@ POSIX, manifiesto aún no creado, copias aún no creadas) y 3 límites declarado
 
 `npm audit --omit=dev`:
 
-| Paquete | Severidad | Aviso | Decisión |
+Resultado en rc.2: **0 vulnerabilidades** (`found 0 vulnerabilities`).
+
+| Paquete | Versión | Aviso | Decisión |
 | --- | --- | --- | --- |
-| `zod` < 4.6.6 | alta | GHSA-mrhx-c7xc-m3w5: agotamiento de memoria con colecciones enormes | **No se actualiza**: el SDK de MCP 1.20 usa la API de zod 3 y el salto a 4 es incompatible. El servidor es local, por stdio y con esquemas estáticos; no acepta colecciones de un cliente remoto. Se documenta y se revisará cuando el SDK soporte zod 4. |
+| `zod` | **4.6.7** | GHSA-mrhx-c7xc-m3w5 / CVE-2023-54404: agotamiento de memoria al validar arrays sin límite de longitud. Afecta a `< 4.6.6`; corregido en 4.6.6 | **Resuelto**: el SDK de MCP 1.32.2 declara `zod: ^3.25 \|\| ^4.0`, así que el salto es compatible. Se migraron los esquemas al API de zod 4 (`z.record(z.string(), …)`) y el handshake MCP real sigue pasando. |
+| `@modelcontextprotocol/sdk` | 1.32.2 | — | Es la versión que admite zod 4; el servidor se verifica por `tools/list` real. |
+
+**Estado del aviso (consultado el 2026-11-25).** El aviso está publicado como *high* (CVSS 7,5),
+pero su única fuente es el CVE-2023-54404, que **fue rechazado** el 2026-10-28: VulnCheck
+alega que el consumo de memoria crece sólo en proporción a la entrada ya asignada por
+`JSON.parse`, que sólo es alcanzable sin límite de tamaño de petición y que es el comportamiento
+esperado de un validador. Hay una petición abierta para retirar el GHSA. La decisión de rc.2 no
+depende de esa disputa: actualizar era posible y barato, así que se hizo. En este proyecto el
+riesgo era además bajo: el servidor es local, por stdio y con esquemas estáticos sin arrays de
+longitud libre expuestos a un cliente remoto.
 
 Inventario de licencias de `node_modules`: MIT (247), ISC (17), BSD-2 (9), Apache-2.0 (7),
 BSD-3 (5), MPL-2.0 (4, `mediabunny`), Unlicense (2), 0BSD, BlueOak, CC-BY-4.0 (`caniuse-lite`),

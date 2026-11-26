@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ORBIT · Secuencia orbital</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #363737; }
+  main { position: relative; width: min(100%, 1280px, calc(100vh * 16 / 9)); aspect-ratio: 16 / 9; margin-inline: auto; }
+  svg, canvas { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+  canvas { pointer-events: none; mix-blend-mode: soft-light; }
+  .labels { fill: #e7e4d7; font: 14px Consolas, "Courier New", monospace; }
+  .ticks { fill: #d9d7cd; font-size: 13px; text-anchor: middle; }
+</style>
+<main>
+  <svg viewBox="0 0 1392 752" preserveAspectRatio="none" role="img" aria-labelledby="title description">
+    <title id="title">ORBIT, cartela de movimiento orbital</title>
+    <desc id="description">Título marfil sobre una cuña naranja y un fondo carbón con grano. Abajo, la escala de tiempo señala aproximadamente diez segundos.</desc>
+    <defs>
+      <radialGradient id="paper" cx="50%" cy="49%" r="77%">
+        <stop stop-color="#393a3a"/>
+        <stop offset="1" stop-color="#343535"/>
+      </radialGradient>
+      <linearGradient id="wedge" x2="1" y2=".75">
+        <stop stop-color="#e2782b"/>
+        <stop offset=".65" stop-color="#db742a"/>
+        <stop offset="1" stop-color="#d16c26"/>
+      </linearGradient>
+      <linearGradient id="edge">
+        <stop offset=".68" stop-color="#b85d24"/>
+        <stop offset="1" stop-color="#784422"/>
+      </linearGradient>
+      <linearGradient id="playback" gradientUnits="userSpaceOnUse" x1="199" x2="653">
+        <stop stop-color="#d67a39"/>
+        <stop offset=".91" stop-color="#c87032"/>
+        <stop offset="1" stop-color="#c87032" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <path fill="url(#paper)" d="M0 0H1392V752H0Z"/>
+    <path fill="url(#edge)" d="M315 500 408 463 402 489Z"/>
+    <path fill="url(#wedge)" d="M0 241 378 371 428 468 0 590Z"/>
+    <g fill="#f6f4e4" fill-rule="evenodd">
+      <path d="M326 203C408 203 453 255 453 347S407 492 326 492 201 440 201 347 245 203 326 203ZM326 258C289 258 273 288 273 347S289 435 326 435 381 406 381 347 364 258 326 258Z"/>
+      <path d="M486 209H577C640 209 677 239 677 295 677 327 659 352 625 364L691 486H619L568 379H553V486H486ZM553 261V328H575C600 328 613 315 613 295 613 273 598 261 575 261Z"/>
+      <path d="M711 209H791C848 209 881 233 881 278 881 308 865 327 839 337 868 344 887 369 887 403 887 457 855 486 798 486H711ZM773 260V315H789C812 315 825 305 825 287 825 270 812 260 789 260ZM773 364V430H797C820 430 832 416 832 397 832 377 819 364 797 364Z"/>
+      <path d="M907 209H966V486H907Z"/>
+      <path d="M1003 209H1204V264H1136V486H1069V264H1003Z"/>
+    </g>
+    <g class="labels">
+      <text x="48" y="44">DISEÑO ORBITAL</text>
+      <text x="1343" y="44" text-anchor="end">SECUENCIA</text>
+      <path fill="#5c5d5a" d="M51 688H1341V694H51Z"/>
+      <path fill="#898981" d="M51 688H200V694H51Z"/>
+      <path fill="url(#playback)" d="M199 688H653V694H199Z"/>
+      <rect x="696" y="681" width="10" height="18" rx="5" fill="#f1efe6"/>
+      <text x="51" y="716">TOMA 01</text>
+      <g class="ticks">
+        <text x="276" y="714">03</text>
+        <text x="463" y="714">06</text>
+        <text x="644" y="714">09</text>
+        <text x="830" y="714">12</text>
+        <text x="1020" y="714">15</text>
+        <text x="1144" y="714">18</text>
+      </g>
+      <text x="1340" y="716" text-anchor="end" fill="#e08c4a">SEGUNDOS</text>
+    </g>
+  </svg>
+  <canvas width="1280" height="720" aria-hidden="true"></canvas>
+</main>
+<script>
+  const canvas = document.querySelector('canvas');
+  const context = canvas.getContext('2d');
+  const grain = context.createImageData(canvas.width, canvas.height);
+  let seed = 271828;
+  // A fixed seed keeps the printed grain still and reproducible.
+  for (let pixel = 0; pixel < grain.data.length; pixel += 4) {
+    seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0;
+    const shade = seed >>> 24;
+    grain.data[pixel] = shade;
+    grain.data[pixel + 1] = shade;
+    grain.data[pixel + 2] = shade;
+    grain.data[pixel + 3] = 22;
+  }
+  context.putImageData(grain, 0, 0);
+</script>
+</html>

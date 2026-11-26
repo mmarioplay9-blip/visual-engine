@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HUD del cañón</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #141317; }
+  main { position: relative; width: min(1280px, 100vw, calc(100vh * 16 / 9)); aspect-ratio: 16 / 9; overflow: hidden; container-type: inline-size; }
+  canvas, svg { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
+  svg { pointer-events: none; font-family: "Segoe UI", Arial, sans-serif; }
+  .mission, .instruction, .energy {
+    position: absolute;
+    z-index: 1;
+    margin: 0;
+    line-height: 1.15;
+    font-family: "Segoe UI", Arial, sans-serif;
+  }
+  .mission { left: 7.47%; top: 7.77%; color: #ffcd80; font-size: 1.36cqw; font-weight: 500; }
+  .instruction { left: 7.47%; top: 11.8%; color: #eee7dc; font-size: 1.16cqw; }
+  .energy { left: 9.34%; top: 77.06%; color: #ffcf85; font-size: 1.27cqw; }
+  .scope, .radar { fill: none; stroke: #ffbc5e; }
+  .scope { opacity: .49; stroke-width: 1.25; }
+  .radar { stroke-width: 2.1; filter: drop-shadow(0 0 5px #f58b3e77); }
+  .cells { fill: #a9ffe766; stroke: #c4fff2; stroke-width: 2.3; }
+</style>
+</head>
+<body>
+<main aria-label="Vista de un cañón al anochecer con interfaz de exploración">
+<canvas id="terrain" width="1280" height="720" aria-hidden="true"></canvas>
+<h1 class="mission">OBJETIVO: CRUZA EL CAÑÓN</h1>
+<p class="instruction">SIGUE LA RUTA AL ESTE.</p>
+<p class="energy">ENERGÍA</p>
+<svg viewBox="0 0 1392 752" preserveAspectRatio="none" role="img" aria-labelledby="hud-title">
+  <title id="hud-title">Retícula central, radar e indicador de energía</title>
+  <g class="scope">
+    <ellipse cx="699" cy="372" rx="116" ry="123"/>
+    <ellipse cx="699" cy="369" rx="40" ry="41"/>
+    <circle cx="699" cy="367" r="5"/>
+    <path d="M570 368H660 M738 368H826 M699 236V362 M699 373V507"/>
+  </g>
+  <g class="radar">
+    <circle cx="1162" cy="558" r="128"/>
+    <path d="M1165 430v14m0 225v17M1034 555h23m210 0h30"/>
+    <circle cx="1164" cy="555" r="9" stroke-width="1.2"/>
+    <circle cx="1164" cy="555" r="6.5" stroke-width=".6"/>
+  </g>
+  <g>
+    <circle cx="111" cy="588.5" r="11.5" fill="#34251e" stroke="#efbc75" stroke-width="2"/>
+    <circle cx="111" cy="588.5" r="8.3" fill="#ffce88" opacity=".76"/>
+    <path d="M104 612V683 M104 664H522V682H104" fill="none" stroke="#f4a747" stroke-width="2.2"/>
+    <path class="cells" d="M113 618h84v17h-84z m89 0h76v17h-76z m82 0h77v17h-77z m82 0h77v17h-77z m82 0h121v17H448z"/>
+    <path fill="#baf9ed" d="M112 643h77v14h-77z m79 0h81v14h-81z m83 0h155v14H274z"/>
+  </g>
+</svg>
+</main>
+<script>
+'use strict';
+
+const canvas = document.getElementById('terrain');
+const ctx = canvas.getContext('2d', { alpha: false });
+ctx.scale(1280 / 1392, 720 / 752);
+
+let seed = 12041;
+function random() {
+  seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0;
+  return seed / 4294967296;
+}
+
+function trace(points) {
+  ctx.beginPath();
+  points.forEach(([x, y], i) => i ? ctx.lineTo(x, y) : ctx.moveTo(x, y));
+  ctx.closePath();
+}
+
+function polygon(points, fill) {
+  trace(points);
+  ctx.fillStyle = fill;
+  ctx.fill();
+}
+
+function tone(rgb, multiplier) {
+  return 'rgb(' + rgb.map(value => Math.round(value * multiplier)).join(',') + ')';
+}
+
+function gradient(top, bottom, stops) {
+  const paint = ctx.createLinearGradient(0, top, 0, bottom);
+  stops.forEach(([position, color]) => paint.addColorStop(position, color));
+  return paint;
+}
+
+function noiseMap(width, height) {
+  const values = Array.from({ length: width * height }, random);
+  return (x, y) => {
+    const px = Math.min(width - 1.001, x * (width - 1));
+    const py = Math.min(height - 1.001, y * (height - 1));
+    const ix = Math.floor(px);
+    const iy = Math.floor(py);
+    const tx = px - ix;
+    const ty = py - iy;
+    const sx = tx * tx * (3 - 2 * tx);
+    const sy = ty * ty * (3 - 2 * ty);
+    const row = iy * width + ix;
+    return (values[row] * (1 - sx) + values[row + 1] * sx) * (1 - sy)
+      + (values[row + width] * (1 - sx) + values[row + width + 1] * sx) * sy;
+  };
+}
+
+ctx.fillStyle = gradient(0, 330, [[0, '#292c37'], [.41, '#373740'], [.73, '#494047'], [1, '#554548']]);
+ctx.fillRect(0, 0, 1392, 752);
+
+const clouds = document.createElement('canvas');
+clouds.width = 696;
+clouds.height = 190;
+const cloudCtx = clouds.getContext('2d');
+const cloudPixels = cloudCtx.createImageData(696, 190);
+const broad = noiseMap(15, 16);
+const medium = noiseMap(33, 20);
+const fine = noiseMap(83, 41);
+for (let y = 0; y < 190; y++) {
+  for (let x = 0; x < 696; x++) {
+    const u = x / 696;
+    const v = y / 190;
+    const density = broad(u, v) * .62 + medium(u, v) * .28 + fine(u, v) * .10;
+    const offset = (y * 696 + x) * 4;
+    cloudPixels.data.set([23, 26, 35, Math.min(110, Math.max(0, (density - .48) * 265))], offset);
+  }
+}
+cloudCtx.putImageData(cloudPixels, 0, 0);
+ctx.drawImage(clouds, 0, 0, 1392, 380);
+
+function cliff(rim, foot, color, facetWidth) {
+  const edge = rim.concat([...foot].reverse());
+  ctx.save();
+  trace(edge);
+  ctx.clip();
+  const middle = rim[Math.floor(rim.length / 2)][1];
+  ctx.fillStyle = gradient(middle - 100, middle + 260, [[0, tone(color, 1.12)], [.43, tone(color, 1)], [1, tone(color, .61)]]);
+  ctx.fillRect(0, 0, 1392, 752);
+
+  for (let i = 0; i < rim.length - 1; i++) {
+    const [x, y] = rim[i];
+    const [nextX, nextY] = rim[i + 1];
+    const count = Math.max(1, Math.round((nextX - x) / facetWidth));
+    for (let j = 0; j < count; j++) {
+      const portion = j / count;
+      const topX = x + (nextX - x) * portion;
+      const topY = y + (nextY - y) * portion;
+      const width = (nextX - x) / count + 2;
+      const slant = (random() - .5) * facetWidth * 2.6;
+      const depth = 140 + random() * 370;
+      const endX = topX + slant;
+      const seam = topY + depth * (.25 + random() * .23);
+      const paint = gradient(topY, topY + depth, [[0, tone(color, .73 + random() * .55)], [1, tone(color, .42 + random() * .32)]]);
+      polygon([[topX, topY - 12], [topX + width, topY - 8], [topX + width + slant * .35, seam], [endX + width * .72, topY + depth], [endX, topY + depth], [topX + slant * .22, seam]], paint);
+      polygon([[topX, topY], [topX + width * .17, topY + 10], [topX + slant * .25 + 2, seam], [endX + 2, topY + depth], [topX + slant * .16 - 4, seam + 5]], tone(color, .54 + random() * .20));
+      for (let k = 0; k < 8; k++) {
+        const distance = random() * depth;
+        const px = topX + random() * width + slant * distance / depth;
+        const py = topY + distance;
+        polygon([[px, py], [px + width * .27, py + 1], [px + slant * .13, py + 12 + random() * 43]], 'rgba(7,7,9,.14)');
+      }
+    }
+    polygon([[x, y], [nextX, nextY], [nextX - 2, nextY + 5], [x + 4, y + 7]], tone(color, .78));
+  }
+  // Uneven bedding planes interrupt the vertical fractures.
+  const strataColor = color[0] < 40 ? 'rgba(7,6,8,.20)' : 'rgba(30,32,43,.10)';
+  for (let layer = 0; layer < 12; layer++) {
+    const drop = 7 + layer * layer * 1.95;
+    const line = rim.map(([x, y]) => [x + 13 * Math.sin(layer + x / 180), y + drop + random() * (3 + drop * .065)]);
+    const underside = line.map(([x, y]) => [x + 7, y + 1 + random() * (2 + drop * .045)]).reverse();
+    polygon(line.concat(underside), strataColor);
+  }
+  ctx.restore();
+}
+
+function ground(outline, colors, stoneCount) {
+  ctx.save();
+  trace(outline);
+  ctx.clip();
+  ctx.fillStyle = gradient(340, 752, colors);
+  ctx.fillRect(0, 0, 1392, 752);
+  for (let i = 0; i < stoneCount; i++) {
+    const y = 320 + random() * 445;
+    const x = random() * 1392;
+    const size = (.8 + random() ** 5 * 17) * (.22 + (y - 320) / 380);
+    const lift = size * (.18 + random() * .38);
+    polygon([[x - size, y], [x - size * .36, y - lift], [x + size * .48, y - lift * .84], [x + size, y + size * .13], [x + size * .35, y + lift * .55]], 'rgba(16,17,19,.40)');
+    polygon([[x - size, y], [x - size * .36, y - lift], [x + size * .48, y - lift * .84], [x + size * .1, y - lift * .2]], 'rgba(126,111,101,.18)');
+  }
+  ctx.restore();
+}
+
+polygon([[444,349],[490,326],[542,341],[573,335],[610,350],[644,350],
+  [679,359],[717,353],[746,358],[783,347],[824,341],[891,369],[891,531],[444,531]],
+  gradient(347, 527, [[0,'#31323e'],[.58,'#2b2d39'],[1,'#292831']]));
+
+cliff([[0,180],[342,201],[421,224],[481,224],[506,230],[524,243],[565,247],[583,259],[603,273],[619,300],[643,308],[653,331],[662,383]], [[0,459],[515,474],[625,506],[662,498]], [48,52,65], 20);
+cliff([[747,387],[776,322],[791,267],[817,262],[859,252],[886,251],[907,238],[934,232],[956,219],[1007,215],[1085,195],[1392,136]], [[747,477],[790,493],[921,454],[1154,488],[1392,438]], [48,51,63], 22);
+
+ground([[0,310],[300,331],[405,362],[518,434],[593,480],[648,502],[690,514],[742,506],[805,472],[902,421],[1040,376],[1214,338],[1392,302],[1392,752],[0,752]], [[0,'#353138'],[.41,'#41322f'],[.76,'#40312e'],[1,'#372824']], 3300);
+
+cliff([[0,40],[90,58],[177,89],[235,96],[263,122],[300,139],[311,157],[339,189],[373,195],[395,209],[415,213],[435,236],[447,285],[451,338]], [[0,483],[198,445],[290,403],[371,365],[451,338]], [37,37,43], 22);
+cliff([[887,346],[902,281],[919,261],[939,255],[949,241],[984,224],[1026,221],[1063,205],[1091,189],[1144,168],[1209,150],[1255,136],[1308,111],[1392,96]], [[887,397],[977,392],[1062,369],[1174,403],[1295,367],[1392,337]], [32,32,37], 28);
+
+ground([[0,324],[177,349],[292,367],[380,364],[452,387],[534,461],[586,496],[656,538],[736,583],[776,752],[0,752]], [[0,'#453733'],[.35,'#40312d'],[1,'#412f29']], 2100);
+ground([[731,752],[757,585],[815,552],[873,492],[934,411],[1000,378],[1082,351],[1136,356],[1220,343],[1340,301],[1392,269],[1392,752]], [[0,'#453632'],[.45,'#40332e'],[1,'#3a2d29']], 2150);
+
+cliff([[0,406],[98,413],[174,424],[219,448],[245,453],[283,444],[318,437],[370,438],[404,423],[451,423],[470,410],[500,405],[527,409]], [[0,635],[135,611],[239,594],[326,558],[406,590],[451,572],[472,533],[503,550],[535,540]], [35,31,31], 27);
+cliff([[806,500],[830,474],[865,473],[897,448],[908,404],[947,403],[975,392],[1003,381],[1050,381],[1083,375],[1136,384],[1195,386],[1239,373],[1305,350],[1392,357]], [[806,522],[872,500],[912,534],[967,543],[1033,508],[1084,610],[1141,623],[1229,582],[1299,569],[1392,615]], [32,30,31], 25);
+
+cliff([[0,0],[33,6],[67,14],[104,17],[154,32],[194,52],[246,66],[269,103],[274,124],[304,145],[320,188],[341,192],[349,255],[354,310],[362,374]], [[0,397],[81,388],[122,393],[198,371],[242,356],[287,368],[321,386],[362,374]], [24,24,28], 31);
+cliff([[0,380],[23,390],[69,399],[96,393],[130,407],[161,405],[187,401],[214,415],[236,419],[234,479],[251,492],[272,523],[284,528],[296,567]], [[0,572],[64,597],[120,631],[183,656],[224,652],[269,632],[296,630]], [27,22,21], 31);
+cliff([[1050,366],[1059,261],[1075,223],[1084,215],[1089,192],[1110,188],[1144,171],[1180,161],[1222,153],[1254,141],[1304,126],[1340,104],[1363,90],[1392,80]], [[1050,366],[1118,366],[1168,378],[1246,349],[1307,332],[1392,297]], [25,24,27], 27);
+cliff([[1038,587],[1053,475],[1069,454],[1088,446],[1118,440],[1161,442],[1191,458],[1210,461],[1238,493],[1258,536]], [[1038,587],[1097,614],[1159,625],[1222,599],[1258,578]], [25,21,21], 26);
+cliff([[1235,353],[1286,353],[1323,357],[1359,349],[1392,351]], [[1235,353],[1261,481],[1298,539],[1303,713],[1392,742]], [23,19,19], 26);
+
+ground([[0,558],[57,578],[121,606],[213,630],[255,636],[323,629],[389,644],[459,635],[514,628],[579,650],[657,704],[716,721],[745,752],[0,752]], [[0,'#42332e'],[.58,'#392b26'],[1,'#302521']], 1100);
+
+function rock(x, y, width, height) {
+  polygon([[x-width,y],[x-width*.7,y-height*.8],[x-width*.21,y-height],[x+width*.5,y-height*.65],[x+width,y+height*.25],[x+width*.61,y+height*.57]], '#1a181a');
+  polygon([[x-width,y],[x-width*.7,y-height*.8],[x-width*.21,y-height],[x+width*.5,y-height*.65],[x+width*.66,y-height*.1],[x-width*.26,y-height*.25]], '#2c2828');
+  polygon([[x-width*.7,y-height*.8],[x-width*.21,y-height],[x+width*.5,y-height*.65],[x-width*.18,y-height*.63]], '#3d3534');
+}
+
+rock(598, 669, 75, 28);
+rock(672, 569, 58, 31);
+rock(439, 682, 23, 10);
+rock(949, 606, 21, 12);
+rock(885, 624, 14, 8);
+rock(1048, 679, 23, 12);
+rock(1170, 741, 44, 17);
+
+function shrub(x, y, size) {
+  ctx.fillStyle = 'rgba(13,15,15,.32)';
+  ctx.beginPath();
+  ctx.ellipse(x + size * .35, y + 2, size * 1.35, size * .36, .16, 0, Math.PI * 2);
+  ctx.fill();
+  for (let i = 0; i < 21; i++) {
+    const spread = (random() - .5) * size * 2;
+    const rise = (.3 + random() * .9) * (size - Math.abs(spread) * .35);
+    polygon([[x - 2, y], [x + spread, y - rise], [x + spread * .7 + 2,y - rise * .32], [x + 3,y + 1]], i % 4 ? '#242522' : '#32322b');
+  }
+}
+for (let i = 0; i < 145; i++) {
+  const distance = random();
+  const y = 490 + distance * 265;
+  const spread = 47 + distance * 520;
+  shrub(709 + (random() - .5) * spread * 1.9, y, 1.3 + random() * distance * 15);
+}
+shrub(156, 756, 65);
+shrub(824, 735, 37);
+shrub(928, 723, 25);
+shrub(970, 740, 30);
+
+const haze = ctx.createRadialGradient(701, 367, 25, 701, 367, 440);
+haze.addColorStop(0, 'rgba(67,72,87,.49)');
+haze.addColorStop(.46, 'rgba(58,63,76,.28)');
+haze.addColorStop(1, 'rgba(61,66,80,0)');
+ctx.fillStyle = haze;
+ctx.fillRect(0, 0, 1392, 752);
+
+const vignette = ctx.createRadialGradient(700, 360, 229, 700, 360, 806);
+vignette.addColorStop(0, 'rgba(4,5,8,0)');
+vignette.addColorStop(.58, 'rgba(4,5,8,.34)');
+vignette.addColorStop(1, 'rgba(3,3,5,.72)');
+ctx.fillStyle = vignette;
+ctx.fillRect(0, 0, 1392, 752);
+
+const pixels = ctx.getImageData(0, 0, canvas.width, canvas.height);
+const mottling = noiseMap(122, 77);
+for (let y = 0; y < canvas.height; y++) {
+  for (let x = 0; x < canvas.width; x++) {
+    const offset = (y * canvas.width + x) * 4;
+    const delta = (random() - .5) * 3.3 + (mottling(x / canvas.width, y / canvas.height) - .5) * 6;
+    for (let channel = 0; channel < 3; channel++) pixels.data[offset + channel] = pixels.data[offset + channel] * .88 + delta;
+  }
+}
+ctx.putImageData(pixels, 0, 0);
+</script>
+</body>
+</html>

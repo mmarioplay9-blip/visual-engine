@@ -178,7 +178,7 @@ test('0.6 · inventario y handshake MCP real del servidor instalado', async () =
   const verification = await verifyMcpServer();
   assert.equal(verification.ok, true, verification.error);
   assert.ok(verification.tools >= 44, `herramientas MCP: ${verification.tools}`);
-  assert.equal(verification.serverVersion, '1.0.0-rc.1');
+  assert.equal(verification.serverVersion, '1.0.0-rc.2');
   assert.match(verification.method, /tools\/list/);
 });
 
@@ -209,7 +209,7 @@ test('0.6 · se conservan 58 efectos, 15 estilos, 20 composiciones y 54 pruebas 
   assert.equal(STYLE_IDS.length, 15);
   assert.equal(SHOWCASE_SPECS.length, 20);
   const pkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'));
-  assert.equal(pkg.version, '1.0.0-rc.1');
+  assert.equal(pkg.version, '1.0.0-rc.2');
   const tests = fs.readdirSync(path.join(root, 'tests')).filter((f) => f.endsWith('.test.mjs'));
   assert.ok(tests.length >= 10);
   assert.ok(tests.includes('visual05.test.mjs'));

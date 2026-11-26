@@ -15,7 +15,7 @@ import { ensureDir, newRunDir } from './paths.js';
 import { renderComposition, validateComposition, compositionSummary, type VEComposition, type RenderedComposition } from './composition.js';
 import { referenceEffects, specToComposition, type ReferenceEffectsResult } from './refeffects.js';
 import { benchmarkEffects, type BenchmarkReport } from './benchmark.js';
-import { buildArtDirection, renderDesignSystem, designMarkdown, type ArtDirection } from './styles.js';
+import { buildArtDirection, renderDesignSystem, designMarkdown, type ArtDirection, type ReferenceSignal } from './styles.js';
 import { buildMotionDirector, renderMotionLab, type MotionDirectorPlan } from './motion-director.js';
 import { buildReferenceDesign, renderReferenceDesign, type ReferenceDesign } from './refdesign.js';
 import { renderShowcase, measureShowcase, type ShowcaseMeasurement, type RenderShowcaseResult } from './showcase.js';
@@ -344,9 +344,22 @@ export interface ArtDirectionOpResult {
   description: string[];
 }
 
-export function opArtDirection(input: { brief: string; style?: string; projectType?: string; outDir?: string }): ArtDirectionOpResult {
+/** Lee la medición escrita por `ve plan` sin volver a analizar la referencia. */
+function referenceFromBrief(file: string): ReferenceSignal {
+  const raw = JSON.parse(fs.readFileSync(path.resolve(file), 'utf8'));
+  const m = raw?.measured;
+  if (!m) throw new Error(`El brief ${file} no contiene medición. Ejecuta: ve plan "<intención>" --reference <archivo> --out <dir>`);
+  return {
+    source: raw.reference?.path,
+    luma: m.luma, contrast: m.contrast, darkRatio: m.darkRatio, saturation: m.saturation,
+    aspect: raw.reference?.aspect, palette: m.palette,
+  };
+}
+
+export function opArtDirection(input: { brief: string; style?: string; projectType?: string; outDir?: string; fromPlan?: string }): ArtDirectionOpResult {
   if (!input.brief?.trim()) throw new Error('Indica un brief para la dirección artística.');
-  const ad = buildArtDirection({ brief: input.brief, style: input.style, projectType: input.projectType });
+  const reference = input.fromPlan ? referenceFromBrief(input.fromPlan) : undefined;
+  const ad = buildArtDirection({ brief: input.brief, style: input.style, projectType: input.projectType, reference });
   const outDir = ensureDir(input.outDir ?? newRunDir('art-direction'));
   const design = renderDesignSystem(ad, outDir);
   fs.writeFileSync(path.join(outDir, 'art-direction.json'), JSON.stringify(ad, null, 2) + '\n', 'utf8');
@@ -359,6 +372,10 @@ export function opArtDirection(input: { brief: string; style?: string; projectTy
       `Efectos propuestos: ${ad.effects.map((e) => e.id).join(', ') || 'ninguno'}.`,
       `Sistema de diseño: ${design.html}`,
       `Tokens: ${design.tokens}`,
+      ...(ad.reference
+        ? [`Referencia medida: luminancia ${ad.reference.measured.luma} · oscuro ${ad.reference.measured.darkRatio} · saturación ${ad.reference.measured.saturation}.`]
+        : []),
+      ...ad.warnings.map((w) => `Aviso: ${w}`),
       'La auditoría es estructural; la calidad artística requiere revisión humana.',
     ],
   };

@@ -1,4 +1,4 @@
-# Instalación · Visual Engine 1.0.0-rc.1
+# Instalación · Visual Engine 1.0.0-rc.2
 
 Todo es local y gratuito. No hay cuentas, telemetría ni APIs de pago.
 
@@ -84,7 +84,7 @@ destruir configuración de otros servidores.
 ve version
 ve doctor --json
 ve agents
-ve install verify          # initialize + tools/list contra el servidor MCP (44 herramientas)
+ve install verify          # initialize + tools/list contra el servidor MCP (45 herramientas)
 ve security
 npm test                   # 63 pruebas
 ```

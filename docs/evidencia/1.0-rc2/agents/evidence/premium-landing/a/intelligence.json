@@ -1,0 +1,2827 @@
+{
+  "version": "0.5",
+  "review": {
+    "outDir": "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\evidence\\premium-landing\\a\\review",
+    "score": 96.9,
+    "grade": "A",
+    "reference": {
+      "path": "<repo>\\docs\\evidencia\\1.0-rc2\\references\\premium-landing.jpg",
+      "profile": {
+        "source": "<repo>\\docs\\evidencia\\1.0-rc2\\references\\premium-landing.jpg",
+        "kind": "video",
+        "width": 1392,
+        "height": 752,
+        "aspect": 1.851,
+        "duration": 0.04,
+        "fps": 25,
+        "frameCount": 10,
+        "aggregate": {
+          "luma": 0.79,
+          "contrast": 0.294,
+          "saturation": 0.22,
+          "colorfulness": 0.343,
+          "edgeDensity": 0.215,
+          "darkRatio": 0.019
+        },
+        "palette": [
+          {
+            "hex": "#f8f8e8",
+            "rgb": [
+              248,
+              248,
+              232
+            ],
+            "share": 0.6722
+          },
+          {
+            "hex": "#99573c",
+            "rgb": [
+              153,
+              87,
+              60
+            ],
+            "share": 0.0726
+          },
+          {
+            "hex": "#572e1b",
+            "rgb": [
+              87,
+              46,
+              27
+            ],
+            "share": 0.0623
+          },
+          {
+            "hex": "#c97b59",
+            "rgb": [
+              201,
+              123,
+              89
+            ],
+            "share": 0.0365
+          },
+          {
+            "hex": "#20160a",
+            "rgb": [
+              32,
+              22,
+              10
+            ],
+            "share": 0.0321
+          },
+          {
+            "hex": "#754a2a",
+            "rgb": [
+              117,
+              74,
+              42
+            ],
+            "share": 0.0097
+          }
+        ],
+        "motion": 0,
+        "motionCurve": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "cuts": [],
+        "pace": 0,
+        "hueHistogram": [
+          0.181,
+          0.032,
+          0.672,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "frames": [
+          {
+            "t": 0.001,
+            "luma": 0.79,
+            "contrast": 0.294,
+            "saturation": 0.22,
+            "colorfulness": 0.343,
+            "edgeDensity": 0.215,
+            "darkRatio": 0.019,
+            "brightRatio": 0.669,
+            "quadrants": [
+              0.288,
+              0.202,
+              0.305,
+              0.204
+            ],
+            "palette": [
+              {
+                "hex": "#f8f8e8",
+                "rgb": [
+                  248,
+                  248,
+                  232
+                ],
+                "share": 0.6722
+              },
+              {
+                "hex": "#99573c",
+                "rgb": [
+                  153,
+                  87,
+                  60
+                ],
+                "share": 0.0726
+              },
+              {
+                "hex": "#572e1b",
+                "rgb": [
+                  87,
+                  46,
+                  27
+                ],
+                "share": 0.0623
+              },
+              {
+                "hex": "#c97b59",
+                "rgb": [
+                  201,
+                  123,
+                  89
+                ],
+                "share": 0.0365
+              }
+            ]
+          },
+          {
+            "t": 0.005,
+            "luma": 0.79,
+            "contrast": 0.294,
+            "saturation": 0.22,
+            "colorfulness": 0.343,
+            "edgeDensity": 0.215,
+            "darkRatio": 0.019,
+            "brightRatio": 0.669,
+            "quadrants": [
+              0.288,
+              0.202,
+              0.305,
+              0.204
+            ],
+            "palette": [
+              {
+                "hex": "#f8f8e8",
+                "rgb": [
+                  248,
+                  248,
+                  232
+                ],
+                "share": 0.6722
+              },
+              {
+                "hex": "#99573c",
+                "rgb": [
+                  153,
+                  87,
+                  60
+                ],
+                "share": 0.0726
+              },
+              {
+                "hex": "#572e1b",
+                "rgb": [
+                  87,
+                  46,
+                  27
+                ],
+                "share": 0.0623
+              },
+              {
+                "hex": "#c97b59",
+                "rgb": [
+                  201,
+                  123,
+                  89
+                ],
+                "share": 0.0365
+              }
+            ]
+          },
+          {
+            "t": 0.01,
+            "luma": 0.79,
+            "contrast": 0.294,
+            "saturation": 0.22,
+            "colorfulness": 0.343,
+            "edgeDensity": 0.215,
+            "darkRatio": 0.019,
+            "brightRatio": 0.669,
+            "quadrants": [
+              0.288,
+              0.202,
+              0.305,
+              0.204
+            ],
+            "palette": [
+              {
+                "hex": "#f8f8e8",
+                "rgb": [
+                  248,
+                  248,
+                  232
+                ],
+                "share": 0.6722
+              },
+              {
+                "hex": "#99573c",
+                "rgb": [
+                  153,
+                  87,
+                  60
+                ],
+                "share": 0.0726
+              },
+              {
+                "hex": "#572e1b",
+                "rgb": [
+                  87,
+                  46,
+                  27
+                ],
+                "share": 0.0623
+              },
+              {
+                "hex": "#c97b59",
+                "rgb": [
+                  201,
+                  123,
+                  89
+                ],
+                "share": 0.0365
+              }
+            ]
+          },
+          {
+            "t": 0.014,
+            "luma": 0.79,
+            "contrast": 0.294,
+            "saturation": 0.22,
+            "colorfulness": 0.343,
+            "edgeDensity": 0.215,
+            "darkRatio": 0.019,
+            "brightRatio": 0.669,
+            "quadrants": [
+              0.288,
+              0.202,
+              0.305,
+              0.204
+            ],
+            "palette": [
+              {
+                "hex": "#f8f8e8",
+                "rgb": [
+                  248,
+                  248,
+                  232
+                ],
+                "share": 0.6722
+              },
+              {
+                "hex": "#99573c",
+                "rgb": [
+                  153,
+                  87,
+                  60
+                ],
+                "share": 0.0726
+              },
+              {
+                "hex": "#572e1b",
+                "rgb": [
+                  87,
+                  46,
+                  27
+                ],
+                "share": 0.0623
+              },
+              {
+                "hex": "#c97b59",
+                "rgb": [
+                  201,
+                  123,
+                  89
+                ],
+                "share": 0.0365
+              }
+            ]
+          },
+          {
+            "t": 0.018,
+            "luma": 0.79,
+            "contrast": 0.294,
+            "saturation": 0.22,
+            "colorfulness": 0.343,
+            "edgeDensity": 0.215,
+            "darkRatio": 0.019,
+            "brightRatio": 0.669,
+            "quadrants": [
+              0.288,
+              0.202,
+              0.305,
+              0.204
+            ],
+            "palette": [
+              {
+                "hex": "#f8f8e8",
+                "rgb": [
+                  248,
+                  248,
+                  232
+                ],
+                "share": 0.6722
+              },
+              {
+                "hex": "#99573c",
+                "rgb": [
+                  153,
+                  87,
+                  60
+                ],
+                "share": 0.0726
+              },
+              {
+                "hex": "#572e1b",
+                "rgb": [
+                  87,
+                  46,
+                  27
+                ],
+                "share": 0.0623
+              },
+              {
+                "hex": "#c97b59",
+                "rgb": [
+                  201,
+                  123,
+                  89
+                ],
+                "share": 0.0365
+              }
+            ]
+          },
+          {
+            "t": 0.022,
+            "luma": 0.79,
+            "contrast": 0.294,
+            "saturation": 0.22,
+            "colorfulness": 0.343,
+            "edgeDensity": 0.215,
+            "darkRatio": 0.019,
+            "brightRatio": 0.669,
+            "quadrants": [
+              0.288,
+              0.202,
+              0.305,
+              0.204
+            ],
+            "palette": [
+              {
+                "hex": "#f8f8e8",
+                "rgb": [
+                  248,
+                  248,
+                  232
+                ],
+                "share": 0.6722
+              },
+              {
+                "hex": "#99573c",
+                "rgb": [
+                  153,
+                  87,
+                  60
+                ],
+                "share": 0.0726
+              },
+              {
+                "hex": "#572e1b",
+                "rgb": [
+                  87,
+                  46,
+                  27
+                ],
+                "share": 0.0623
+              },
+              {
+                "hex": "#c97b59",
+                "rgb": [
+                  201,
+                  123,
+                  89
+                ],
+                "share": 0.0365
+              }
+            ]
+          },
+          {
+            "t": 0.026,
+            "luma": 0.79,
+            "contrast": 0.294,
+            "saturation": 0.22,
+            "colorfulness": 0.343,
+            "edgeDensity": 0.215,
+            "darkRatio": 0.019,
+            "brightRatio": 0.669,
+            "quadrants": [
+              0.288,
+              0.202,
+              0.305,
+              0.204
+            ],
+            "palette": [
+              {
+                "hex": "#f8f8e8",
+                "rgb": [
+                  248,
+                  248,
+                  232
+                ],
+                "share": 0.6722
+              },
+              {
+                "hex": "#99573c",
+                "rgb": [
+                  153,
+                  87,
+                  60
+                ],
+                "share": 0.0726
+              },
+              {
+                "hex": "#572e1b",
+                "rgb": [
+                  87,
+                  46,
+                  27
+                ],
+                "share": 0.0623
+              },
+              {
+                "hex": "#c97b59",
+                "rgb": [
+                  201,
+                  123,
+                  89
+                ],
+                "share": 0.0365
+              }
+            ]
+          },
+          {
+            "t": 0.03,
+            "luma": 0.79,
+            "contrast": 0.294,
+            "saturation": 0.22,
+            "colorfulness": 0.343,
+            "edgeDensity": 0.215,
+            "darkRatio": 0.019,
+            "brightRatio": 0.669,
+            "quadrants": [
+              0.288,
+              0.202,
+              0.305,
+              0.204
+            ],
+            "palette": [
+              {
+                "hex": "#f8f8e8",
+                "rgb": [
+                  248,
+                  248,
+                  232
+                ],
+                "share": 0.6722
+              },
+              {
+                "hex": "#99573c",
+                "rgb": [
+                  153,
+                  87,
+                  60
+                ],
+                "share": 0.0726
+              },
+              {
+                "hex": "#572e1b",
+                "rgb": [
+                  87,
+                  46,
+                  27
+                ],
+                "share": 0.0623
+              },
+              {
+                "hex": "#c97b59",
+                "rgb": [
+                  201,
+                  123,
+                  89
+                ],
+                "share": 0.0365
+              }
+            ]
+          },
+          {
+            "t": 0.035,
+            "luma": 0.79,
+            "contrast": 0.294,
+            "saturation": 0.22,
+            "colorfulness": 0.343,
+            "edgeDensity": 0.215,
+            "darkRatio": 0.019,
+            "brightRatio": 0.669,
+            "quadrants": [
+              0.288,
+              0.202,
+              0.305,
+              0.204
+            ],
+            "palette": [
+              {
+                "hex": "#f8f8e8",
+                "rgb": [
+                  248,
+                  248,
+                  232
+                ],
+                "share": 0.6722
+              },
+              {
+                "hex": "#99573c",
+                "rgb": [
+                  153,
+                  87,
+                  60
+                ],
+                "share": 0.0726
+              },
+              {
+                "hex": "#572e1b",
+                "rgb": [
+                  87,
+                  46,
+                  27
+                ],
+                "share": 0.0623
+              },
+              {
+                "hex": "#c97b59",
+                "rgb": [
+                  201,
+                  123,
+                  89
+                ],
+                "share": 0.0365
+              }
+            ]
+          },
+          {
+            "t": 0.039,
+            "luma": 0.79,
+            "contrast": 0.294,
+            "saturation": 0.22,
+            "colorfulness": 0.343,
+            "edgeDensity": 0.215,
+            "darkRatio": 0.019,
+            "brightRatio": 0.669,
+            "quadrants": [
+              0.288,
+              0.202,
+              0.305,
+              0.204
+            ],
+            "palette": [
+              {
+                "hex": "#f8f8e8",
+                "rgb": [
+                  248,
+                  248,
+                  232
+                ],
+                "share": 0.6722
+              },
+              {
+                "hex": "#99573c",
+                "rgb": [
+                  153,
+                  87,
+                  60
+                ],
+                "share": 0.0726
+              },
+              {
+                "hex": "#572e1b",
+                "rgb": [
+                  87,
+                  46,
+                  27
+                ],
+                "share": 0.0623
+              },
+              {
+                "hex": "#c97b59",
+                "rgb": [
+                  201,
+                  123,
+                  89
+                ],
+                "share": 0.0365
+              }
+            ]
+          }
+        ],
+        "createdAt": "2026-11-26T02:18:01.615Z",
+        "warnings": [
+          "El detector de escenas de FFmpeg no encontró cortes por encima de 0.2."
+        ]
+      },
+      "description": [
+        "Fuente: <repo>\\docs\\evidencia\\1.0-rc2\\references\\premium-landing.jpg",
+        "Formato: 1392x752 (1.85:1), video, 0.04 s, 25 fps",
+        "Luminancia media 79.0%, contraste 29.4%, saturación 22.0%",
+        "Colorido 34.3%, densidad de bordes 21.5%, zona oscura 1.9%",
+        "Paleta: #f8f8e8 67% · #99573c 7% · #572e1b 6% · #c97b59 4% · #20160a 3% · #754a2a 1%",
+        "Movimiento medio 0.00 · cortes 0 · ritmo 0 cortes/min",
+        "Pico de movimiento (p90) 0.00",
+        "Aviso: El detector de escenas de FFmpeg no encontró cortes por encima de 0.2."
+      ]
+    },
+    "target": {
+      "url": "http://127.0.0.1:54980/index.html",
+      "title": "La forma del barro",
+      "frames": [
+        "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\evidence\\premium-landing\\a\\review\\captures\\capture-01.png",
+        "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\evidence\\premium-landing\\a\\review\\captures\\capture-02.png",
+        "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\evidence\\premium-landing\\a\\review\\captures\\capture-03.png",
+        "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\evidence\\premium-landing\\a\\review\\captures\\capture-04.png",
+        "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\evidence\\premium-landing\\a\\review\\captures\\capture-05.png",
+        "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\evidence\\premium-landing\\a\\review\\captures\\capture-06.png"
+      ],
+      "errors": [],
+      "consoleErrors": [],
+      "profile": {
+        "source": "captura:http://127.0.0.1:54980/index.html",
+        "kind": "sequence",
+        "width": 1280,
+        "height": 720,
+        "aspect": 1.778,
+        "duration": 0,
+        "fps": 0,
+        "frameCount": 6,
+        "aggregate": {
+          "luma": 0.768,
+          "contrast": 0.302,
+          "saturation": 0.207,
+          "colorfulness": 0.33,
+          "edgeDensity": 0.205,
+          "darkRatio": 0.007
+        },
+        "palette": [
+          {
+            "hex": "#f8f8e8",
+            "rgb": [
+              248,
+              248,
+              232
+            ],
+            "share": 0.6659
+          },
+          {
+            "hex": "#98533b",
+            "rgb": [
+              152,
+              83,
+              59
+            ],
+            "share": 0.0735
+          },
+          {
+            "hex": "#593121",
+            "rgb": [
+              89,
+              49,
+              33
+            ],
+            "share": 0.0758
+          },
+          {
+            "hex": "#282014",
+            "rgb": [
+              40,
+              32,
+              20
+            ],
+            "share": 0.0512
+          },
+          {
+            "hex": "#c77358",
+            "rgb": [
+              199,
+              115,
+              88
+            ],
+            "share": 0.017
+          },
+          {
+            "hex": "#d4cfbf",
+            "rgb": [
+              212,
+              207,
+              191
+            ],
+            "share": 0.0146
+          }
+        ],
+        "motion": 0,
+        "motionCurve": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "cuts": [],
+        "pace": 0,
+        "hueHistogram": [
+          0.166,
+          0.066,
+          0.666,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "frames": [
+          {
+            "t": 0,
+            "luma": 0.768,
+            "contrast": 0.302,
+            "saturation": 0.207,
+            "colorfulness": 0.33,
+            "edgeDensity": 0.205,
+            "darkRatio": 0.007,
+            "brightRatio": 0.664,
+            "quadrants": [
+              0.292,
+              0.198,
+              0.31,
+              0.201
+            ],
+            "palette": [
+              {
+                "hex": "#f8f8e8",
+                "rgb": [
+                  248,
+                  248,
+                  232
+                ],
+                "share": 0.6659
+              },
+              {
+                "hex": "#98533b",
+                "rgb": [
+                  152,
+                  83,
+                  59
+                ],
+                "share": 0.0735
+              },
+              {
+                "hex": "#593121",
+                "rgb": [
+                  89,
+                  49,
+                  33
+                ],
+                "share": 0.0758
+              },
+              {
+                "hex": "#282014",
+                "rgb": [
+                  40,
+                  32,
+                  20
+                ],
+                "share": 0.0512
+              }
+            ]
+          },
+          {
+            "t": 0.25,
+            "luma": 0.768,
+            "contrast": 0.302,
+            "saturation": 0.207,
+            "colorfulness": 0.33,
+            "edgeDensity": 0.205,
+            "darkRatio": 0.007,
+            "brightRatio": 0.664,
+            "quadrants": [
+              0.292,
+              0.198,
+              0.31,
+              0.201
+            ],
+            "palette": [
+              {
+                "hex": "#f8f8e8",
+                "rgb": [
+                  248,
+                  248,
+                  232
+                ],
+                "share": 0.6659
+              },
+              {
+                "hex": "#98533b",
+                "rgb": [
+                  152,
+                  83,
+                  59
+                ],
+                "share": 0.0735
+              },
+              {
+                "hex": "#593121",
+                "rgb": [
+                  89,
+                  49,
+                  33
+                ],
+                "share": 0.0758
+              },
+              {
+                "hex": "#282014",
+                "rgb": [
+                  40,
+                  32,
+                  20
+                ],
+                "share": 0.0512
+              }
+            ]
+          },
+          {
+            "t": 0.5,
+            "luma": 0.768,
+            "contrast": 0.302,
+            "saturation": 0.207,
+            "colorfulness": 0.33,
+            "edgeDensity": 0.205,
+            "darkRatio": 0.007,
+            "brightRatio": 0.664,
+            "quadrants": [
+              0.292,
+              0.198,
+              0.31,
+              0.201
+            ],
+            "palette": [
+              {
+                "hex": "#f8f8e8",
+                "rgb": [
+                  248,
+                  248,
+                  232
+                ],
+                "share": 0.6659
+              },
+              {
+                "hex": "#98533b",
+                "rgb": [
+                  152,
+                  83,
+                  59
+                ],
+                "share": 0.0735
+              },
+              {
+                "hex": "#593121",
+                "rgb": [
+                  89,
+                  49,
+                  33
+                ],
+                "share": 0.0758
+              },
+              {
+                "hex": "#282014",
+                "rgb": [
+                  40,
+                  32,
+                  20
+                ],
+                "share": 0.0512
+              }
+            ]
+          },
+          {
+            "t": 0.75,
+            "luma": 0.768,
+            "contrast": 0.302,
+            "saturation": 0.207,
+            "colorfulness": 0.33,
+            "edgeDensity": 0.205,
+            "darkRatio": 0.007,
+            "brightRatio": 0.664,
+            "quadrants": [
+              0.292,
+              0.198,
+              0.31,
+              0.201
+            ],
+            "palette": [
+              {
+                "hex": "#f8f8e8",
+                "rgb": [
+                  248,
+                  248,
+                  232
+                ],
+                "share": 0.6659
+              },
+              {
+                "hex": "#98533b",
+                "rgb": [
+                  152,
+                  83,
+                  59
+                ],
+                "share": 0.0735
+              },
+              {
+                "hex": "#593121",
+                "rgb": [
+                  89,
+                  49,
+                  33
+                ],
+                "share": 0.0758
+              },
+              {
+                "hex": "#282014",
+                "rgb": [
+                  40,
+                  32,
+                  20
+                ],
+                "share": 0.0512
+              }
+            ]
+          },
+          {
+            "t": 1,
+            "luma": 0.768,
+            "contrast": 0.302,
+            "saturation": 0.207,
+            "colorfulness": 0.33,
+            "edgeDensity": 0.205,
+            "darkRatio": 0.007,
+            "brightRatio": 0.664,
+            "quadrants": [
+              0.292,
+              0.198,
+              0.31,
+              0.201
+            ],
+            "palette": [
+              {
+                "hex": "#f8f8e8",
+                "rgb": [
+                  248,
+                  248,
+                  232
+                ],
+                "share": 0.6659
+              },
+              {
+                "hex": "#98533b",
+                "rgb": [
+                  152,
+                  83,
+                  59
+                ],
+                "share": 0.0735
+              },
+              {
+                "hex": "#593121",
+                "rgb": [
+                  89,
+                  49,
+                  33
+                ],
+                "share": 0.0758
+              },
+              {
+                "hex": "#282014",
+                "rgb": [
+                  40,
+                  32,
+                  20
+                ],
+                "share": 0.0512
+              }
+            ]
+          },
+          {
+            "t": 1.25,
+            "luma": 0.768,
+            "contrast": 0.302,
+            "saturation": 0.207,
+            "colorfulness": 0.33,
+            "edgeDensity": 0.205,
+            "darkRatio": 0.007,
+            "brightRatio": 0.664,
+            "quadrants": [
+              0.292,
+              0.198,
+              0.31,
+              0.201
+            ],
+            "palette": [
+              {
+                "hex": "#f8f8e8",
+                "rgb": [
+                  248,
+                  248,
+                  232
+                ],
+                "share": 0.6659
+              },
+              {
+                "hex": "#98533b",
+                "rgb": [
+                  152,
+                  83,
+                  59
+                ],
+                "share": 0.0735
+              },
+              {
+                "hex": "#593121",
+                "rgb": [
+                  89,
+                  49,
+                  33
+                ],
+                "share": 0.0758
+              },
+              {
+                "hex": "#282014",
+                "rgb": [
+                  40,
+                  32,
+                  20
+                ],
+                "share": 0.0512
+              }
+            ]
+          }
+        ],
+        "createdAt": "2026-11-26T02:18:08.781Z",
+        "warnings": []
+      },
+      "accessibility": {
+        "checked": 6,
+        "violations": 0,
+        "averageContrast": 17.21,
+        "worstContrast": 17.21,
+        "samples": [
+          {
+            "text": "La formadel barro",
+            "contrast": 17.21,
+            "fontSize": 120.96,
+            "required": 3
+          },
+          {
+            "text": "del barro",
+            "contrast": 17.21,
+            "fontSize": 120.96,
+            "required": 3
+          },
+          {
+            "text": "El barro toma forma en el torno y el fuego fija el esmalte. Sobre la superficie ",
+            "contrast": 17.21,
+            "fontSize": 16.896,
+            "required": 4.5
+          },
+          {
+            "text": "MATERIAL",
+            "contrast": 17.21,
+            "fontSize": 14.336,
+            "required": 4.5
+          },
+          {
+            "text": "PROCESO",
+            "contrast": 17.21,
+            "fontSize": 14.336,
+            "required": 4.5
+          },
+          {
+            "text": "PRODUCCIÓN",
+            "contrast": 17.21,
+            "fontSize": 14.336,
+            "required": 4.5
+          }
+        ],
+        "note": "Contraste calculado en Chromium contra el primer ancestro con fondo opaco; aproximación orientativa, no certificación WCAG."
+      },
+      "typography": {
+        "elements": 6,
+        "headings": 1,
+        "distinctSizes": 3,
+        "averageFontSize": 50.3,
+        "hierarchyRatio": 8.6,
+        "note": "Tamaños y pesos leídos del DOM; no evalúa calidad artística de la elección tipográfica."
+      }
+    },
+    "comparison": {
+      "score": 96.9,
+      "grade": "A",
+      "metrics": [
+        {
+          "metric": "luminancia",
+          "reference": 0.79,
+          "candidate": 0.768,
+          "delta": 0.022,
+          "similarity": 0.9267,
+          "weight": 0.14
+        },
+        {
+          "metric": "contraste",
+          "reference": 0.294,
+          "candidate": 0.302,
+          "delta": 0.008,
+          "similarity": 0.96,
+          "weight": 0.14
+        },
+        {
+          "metric": "saturación",
+          "reference": 0.22,
+          "candidate": 0.207,
+          "delta": 0.013,
+          "similarity": 0.9629,
+          "weight": 0.1
+        },
+        {
+          "metric": "colorido",
+          "reference": 0.343,
+          "candidate": 0.33,
+          "delta": 0.013,
+          "similarity": 0.974,
+          "weight": 0.07
+        },
+        {
+          "metric": "densidad de bordes",
+          "reference": 0.215,
+          "candidate": 0.205,
+          "delta": 0.01,
+          "similarity": 0.96,
+          "weight": 0.12
+        },
+        {
+          "metric": "movimiento",
+          "reference": 0,
+          "candidate": 0,
+          "delta": 0,
+          "similarity": 1,
+          "weight": 0.13
+        }
+      ],
+      "palette": {
+        "reference": [
+          "#f8f8e8",
+          "#99573c",
+          "#572e1b",
+          "#c97b59",
+          "#20160a",
+          "#754a2a"
+        ],
+        "candidate": [
+          "#f8f8e8",
+          "#98533b",
+          "#593121",
+          "#282014",
+          "#c77358",
+          "#d4cfbf"
+        ],
+        "meanDeltaE": 0.89,
+        "similarity": 0.9839,
+        "missing": [],
+        "extra": []
+      },
+      "recommendations": [
+        "Sin diferencias medibles por encima del umbral. Revisa a ojo detalles de composición y legibilidad del texto."
+      ],
+      "summary": "Fidelidad 96.9/100 (A). ΔE paleta 0.9, Δ luminancia -2.2%, Δ contraste 0.8%, Δ movimiento 0.00."
+    },
+    "quality": {
+      "overall": 97.4,
+      "grade": "A",
+      "dimensions": [
+        {
+          "id": "fidelity",
+          "label": "Fidelidad a la referencia",
+          "score": 96.9,
+          "weight": 0.3,
+          "evidence": {
+            "puntuacion": 96.9
+          },
+          "available": true
+        },
+        {
+          "id": "composition",
+          "label": "Composición",
+          "score": 98,
+          "weight": 0.12,
+          "evidence": {
+            "referencia": 0.88,
+            "resultado": 0.87,
+            "equilibrio": "masa por cuadrantes"
+          },
+          "available": true
+        },
+        {
+          "id": "hierarchy",
+          "label": "Jerarquía visual",
+          "score": 98.8,
+          "weight": 0.08,
+          "evidence": {
+            "referencia": 0.863,
+            "resultado": 0.869,
+            "base": "contraste, detalle y foco"
+          },
+          "available": true
+        },
+        {
+          "id": "typography",
+          "label": "Tipografía y legibilidad",
+          "score": 91.2,
+          "weight": 0.06,
+          "evidence": {
+            "elements": 6,
+            "headings": 1,
+            "distinctSizes": 3,
+            "averageFontSize": 50.3,
+            "hierarchyRatio": 8.6,
+            "note": "Tamaños y pesos leídos del DOM; no evalúa calidad artística de la elección tipográfica.",
+            "fuente": "DOM real (capture)"
+          },
+          "available": true
+        },
+        {
+          "id": "depth",
+          "label": "Profundidad",
+          "score": 98.3,
+          "weight": 0.05,
+          "evidence": {
+            "referencia": 0.448,
+            "resultado": 0.456,
+            "nota": "proxy de cuadrantes y detalle; no mapa métrico"
+          },
+          "available": true
+        },
+        {
+          "id": "lighting",
+          "label": "Iluminación",
+          "score": 95.3,
+          "weight": 0.07,
+          "evidence": {
+            "lumaReferencia": 0.79,
+            "lumaResultado": 0.768,
+            "contrasteReferencia": 0.294,
+            "contrasteResultado": 0.302
+          },
+          "available": true
+        },
+        {
+          "id": "animation",
+          "label": "Animación",
+          "score": 100,
+          "weight": 0.1,
+          "evidence": {
+            "movimientoReferencia": 0,
+            "movimientoResultado": 0,
+            "cortesReferencia": 0,
+            "cortesResultado": 0,
+            "ritmoReferencia": 0,
+            "ritmoResultado": 0
+          },
+          "available": true
+        },
+        {
+          "id": "transitions",
+          "label": "Transiciones y ritmo",
+          "score": 100,
+          "weight": 0.04,
+          "evidence": {
+            "cortesReferencia": 0,
+            "cortesResultado": 0,
+            "ritmoReferencia": 0,
+            "ritmoResultado": 0
+          },
+          "available": true
+        },
+        {
+          "id": "coherence",
+          "label": "Coherencia estética",
+          "score": 100,
+          "weight": 0.05,
+          "evidence": {
+            "metodo": "coseno de histogramas suavizados con núcleo von Mises (κ=4, circular)",
+            "valor": 1,
+            "coberturaCromatica": 0.213,
+            "matizMedioReferencia": 4.8,
+            "matizMedioResultado": 5.9,
+            "desplazamientoMatizDeg": 1.1,
+            "maticesEfectivos": 1.37,
+            "neutroReferencia": 0.672,
+            "neutroResultado": 0.68
+          },
+          "available": true
+        },
+        {
+          "id": "accessibility",
+          "label": "Accesibilidad de contraste",
+          "score": 100,
+          "weight": 0.07,
+          "evidence": {
+            "checked": 6,
+            "violations": 0,
+            "averageContrast": 17.21,
+            "worstContrast": 17.21,
+            "samples": [
+              {
+                "text": "La formadel barro",
+                "contrast": 17.21,
+                "fontSize": 120.96,
+                "required": 3
+              },
+              {
+                "text": "del barro",
+                "contrast": 17.21,
+                "fontSize": 120.96,
+                "required": 3
+              },
+              {
+                "text": "El barro toma forma en el torno y el fuego fija el esmalte. Sobre la superficie ",
+                "contrast": 17.21,
+                "fontSize": 16.896,
+                "required": 4.5
+              },
+              {
+                "text": "MATERIAL",
+                "contrast": 17.21,
+                "fontSize": 14.336,
+                "required": 4.5
+              },
+              {
+                "text": "PROCESO",
+                "contrast": 17.21,
+                "fontSize": 14.336,
+                "required": 4.5
+              },
+              {
+                "text": "PRODUCCIÓN",
+                "contrast": 17.21,
+                "fontSize": 14.336,
+                "required": 4.5
+              }
+            ],
+            "note": "Contraste calculado en Chromium contra el primer ancestro con fondo opaco; aproximación orientativa, no certificación WCAG.",
+            "norma": "WCAG AA orientativo (4.5:1; 3:1 texto grande)"
+          },
+          "available": true
+        },
+        {
+          "id": "fluidity",
+          "label": "Fluidez",
+          "score": 100,
+          "weight": 0.03,
+          "evidence": {
+            "jerk": 0,
+            "parpadeo": 0,
+            "muestras": 5
+          },
+          "available": true
+        },
+        {
+          "id": "performance",
+          "label": "Rendimiento",
+          "score": 86.3,
+          "weight": 0.03,
+          "evidence": {
+            "intervaloMedioMs": 313.2,
+            "intervaloTargetMs": 250,
+            "jitterRelativo": 0.007,
+            "capturas": 6
+          },
+          "available": true
+        },
+        {
+          "id": "restraint",
+          "label": "Contención decorativa",
+          "score": null,
+          "weight": 0.02,
+          "evidence": {
+            "nota": "sin recuento de efectos"
+          },
+          "available": false
+        }
+      ],
+      "summary": "Calidad 97.4/100 (A) · fidelidad 96.9 · composición 98.0 · jerarquía 98.8 · animación 100.0 · tipografía 91.2 · profundidad 98.3 · iluminación 95.3 · transiciones 100.0 · coherencia 100.0 · accesibilidad 100.0 · fluidez 100.0 · rendimiento 86.3.",
+      "weightsUsed": {
+        "fidelity": 0.3,
+        "composition": 0.12,
+        "hierarchy": 0.08,
+        "typography": 0.06,
+        "depth": 0.05,
+        "lighting": 0.07,
+        "animation": 0.1,
+        "transitions": 0.04,
+        "coherence": 0.05,
+        "accessibility": 0.07,
+        "fluidity": 0.03,
+        "performance": 0.03
+      }
+    },
+    "image": {
+      "width": 240,
+      "height": 135,
+      "mae": 0.045,
+      "rmse": 0.1096,
+      "deltaE": 5.44,
+      "ssim": 0.8797,
+      "paletteDeltaE": 5.44,
+      "heatmap": "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\evidence\\premium-landing\\a\\review\\diff\\heatmap.png",
+      "score": 88.7
+    },
+    "heatmap": "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\evidence\\premium-landing\\a\\review\\diff\\heatmap.png",
+    "referenceFrame": "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\evidence\\premium-landing\\a\\review\\reference-frame.png",
+    "warnings": [
+      "La relación de aspecto no coincide (referencia 1.85:1, captura 1.78:1). La comparación de color y contraste sigue siendo válida, pero la composición se estira en el mapa de calor."
+    ],
+    "id": "review",
+    "report": {
+      "md": "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\evidence\\premium-landing\\a\\review\\report.md",
+      "json": "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\evidence\\premium-landing\\a\\review\\review.json"
+    }
+  },
+  "dom": {
+    "url": "http://127.0.0.1:54985/index.html",
+    "title": "La forma del barro",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "reducedMotion": false,
+    "scroll": {
+      "width": 1280,
+      "height": 720,
+      "overflowX": 0,
+      "overflowY": 0
+    },
+    "elements": [
+      {
+        "selector": "html > body > main > h1",
+        "tag": "h1",
+        "role": null,
+        "text": "La formadel barro",
+        "box": {
+          "x": 107,
+          "y": 120,
+          "width": 400,
+          "height": 213
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 17.21,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "absolute",
+          "zIndex": "auto",
+          "color": "rgb(28, 17, 11)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"Times New Roman\", serif",
+          "fontSize": 120.96,
+          "fontWeight": 400,
+          "lineHeight": "106.445px",
+          "letterSpacing": "-5.80608px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "body > main > figure > canvas",
+        "tag": "canvas",
+        "role": "img",
+        "text": "",
+        "box": {
+          "x": 691,
+          "y": 103,
+          "width": 493,
+          "height": 521
+        },
+        "region": "bottom-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 3.41,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(28, 17, 11)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"Times New Roman\", serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "clip"
+        },
+        "source": null
+      },
+      {
+        "selector": "html > body > main",
+        "tag": "main",
+        "role": null,
+        "text": "La formadel barro El barro toma forma en el torno y el fuego fija el esmalte. Sobre la superficie verde quedan las huellas del giro y los ma",
+        "box": {
+          "x": 0,
+          "y": 0,
+          "width": 1280,
+          "height": 720
+        },
+        "region": "center",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 17.21,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "relative",
+          "zIndex": "auto",
+          "color": "rgb(28, 17, 11)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"Times New Roman\", serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "html > body > main > p.intro",
+        "tag": "p",
+        "role": null,
+        "text": "El barro toma forma en el torno y el fuego fija el esmalte. Sobre la superficie verde quedan las huellas del giro y los matices que deja la ",
+        "box": {
+          "x": 109,
+          "y": 384,
+          "width": 410,
+          "height": 65
+        },
+        "region": "bottom-left",
+        "classes": [
+          "intro"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 17.21,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "absolute",
+          "zIndex": "auto",
+          "color": "rgb(28, 17, 11)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"Times New Roman\", serif",
+          "fontSize": 16.896,
+          "fontWeight": 400,
+          "lineHeight": "21.7958px",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 14,
+          "match": ".intro",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "html > body > main > div.rule",
+        "tag": "div",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 109,
+          "y": 539,
+          "width": 136,
+          "height": 2
+        },
+        "region": "bottom-left",
+        "classes": [
+          "rule"
+        ],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 1.11,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "absolute",
+          "zIndex": "auto",
+          "color": "rgb(28, 17, 11)",
+          "backgroundColor": "rgb(37, 29, 19)",
+          "fontFamily": "\"Times New Roman\", serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": {
+          "file": "index.html",
+          "line": 15,
+          "match": ".rule",
+          "confidence": 0.9,
+          "status": "verified"
+        }
+      },
+      {
+        "selector": "body > main > h1 > span",
+        "tag": "span",
+        "role": null,
+        "text": "del barro",
+        "box": {
+          "x": 107,
+          "y": 226,
+          "width": 402,
+          "height": 106
+        },
+        "region": "top-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 17.21,
+        "styles": {
+          "display": "inline-block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(28, 17, 11)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"Times New Roman\", serif",
+          "fontSize": 120.96,
+          "fontWeight": 400,
+          "lineHeight": "106.445px",
+          "letterSpacing": "-5.80608px",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "matrix(1.055, 0, 0, 1, 0, 0)",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "html > body > main > figure",
+        "tag": "figure",
+        "role": null,
+        "text": "",
+        "box": {
+          "x": 691,
+          "y": 103,
+          "width": 493,
+          "height": 521
+        },
+        "region": "bottom-right",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 3.41,
+        "styles": {
+          "display": "block",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "absolute",
+          "zIndex": "auto",
+          "color": "rgb(28, 17, 11)",
+          "backgroundColor": "rgb(150, 91, 66)",
+          "fontFamily": "\"Times New Roman\", serif",
+          "fontSize": 16,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "html > body > main > ul",
+        "tag": "ul",
+        "role": null,
+        "text": "MATERIALPROCESOPRODUCCIÓN",
+        "box": {
+          "x": 110,
+          "y": 614,
+          "width": 311,
+          "height": 17
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 17.21,
+        "styles": {
+          "display": "flex",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "absolute",
+          "zIndex": "auto",
+          "color": "rgb(28, 17, 11)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"Times New Roman\", serif",
+          "fontSize": 14.336,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "body > main > ul > li:nth-of-type(1)",
+        "tag": "li",
+        "role": null,
+        "text": "MATERIAL",
+        "box": {
+          "x": 110,
+          "y": 614,
+          "width": 72,
+          "height": 17
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 17.21,
+        "styles": {
+          "display": "list-item",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(28, 17, 11)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"Times New Roman\", serif",
+          "fontSize": 14.336,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "body > main > ul > li:nth-of-type(2)",
+        "tag": "li",
+        "role": null,
+        "text": "PROCESO",
+        "box": {
+          "x": 202,
+          "y": 614,
+          "width": 85,
+          "height": 17
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 17.21,
+        "styles": {
+          "display": "list-item",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(28, 17, 11)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"Times New Roman\", serif",
+          "fontSize": 14.336,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      },
+      {
+        "selector": "body > main > ul > li:nth-of-type(3)",
+        "tag": "li",
+        "role": null,
+        "text": "PRODUCCIÓN",
+        "box": {
+          "x": 308,
+          "y": 614,
+          "width": 114,
+          "height": 17
+        },
+        "region": "bottom-left",
+        "classes": [],
+        "id": null,
+        "effects": [],
+        "motion": null,
+        "contrast": 17.21,
+        "styles": {
+          "display": "list-item",
+          "visibility": "visible",
+          "opacity": 1,
+          "position": "static",
+          "zIndex": "auto",
+          "color": "rgb(28, 17, 11)",
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "fontFamily": "\"Times New Roman\", serif",
+          "fontSize": 14.336,
+          "fontWeight": 400,
+          "lineHeight": "normal",
+          "letterSpacing": "normal",
+          "borderRadius": "0px",
+          "boxShadow": "none",
+          "filter": "none",
+          "backdropFilter": "none",
+          "transform": "none",
+          "transition": "all",
+          "animation": "none",
+          "overflow": "visible"
+        },
+        "source": null
+      }
+    ],
+    "animations": [],
+    "canvases": [
+      {
+        "selector": "body > main > figure > canvas",
+        "width": 536,
+        "height": 545,
+        "effect": null
+      }
+    ],
+    "brokenImages": [],
+    "buttonsWithoutName": [],
+    "imagesWithoutAlt": [],
+    "consoleErrors": [],
+    "pageErrors": [],
+    "requestFailures": [],
+    "counts": {
+      "elements": 11,
+      "headings": 1,
+      "buttons": 0,
+      "links": 0,
+      "images": 0,
+      "canvases": 1,
+      "effects": 0,
+      "layers": 5,
+      "materials": 0,
+      "transitions": 0,
+      "animations": 0
+    },
+    "contrast": {
+      "checked": 6,
+      "violations": 0,
+      "worst": 17.21,
+      "average": 17.21
+    },
+    "sourceIndex": {
+      "files": 1,
+      "bytes": 8672,
+      "truncated": false
+    },
+    "warnings": [],
+    "screenshot": "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\evidence\\premium-landing\\a\\dom\\dom.png"
+  },
+  "critic": {
+    "version": "0.5",
+    "score": 94,
+    "grade": "A",
+    "findings": [
+      {
+        "id": "materials-missing",
+        "category": "materials",
+        "title": "El material declarado no aparece en el render",
+        "severity": "medium",
+        "confidence": 0.65,
+        "evidence": [
+          {
+            "source": "dom",
+            "metric": "señales de material",
+            "value": 0,
+            "threshold": 2
+          },
+          {
+            "source": "art-direction",
+            "metric": "material declarado",
+            "value": "paper"
+          }
+        ],
+        "location": {
+          "component": "superficies"
+        },
+        "fix": {
+          "kind": "css",
+          "summary": "Materializa paper: borde, sombra, transparencia o rugosidad coherentes.",
+          "property": "background / box-shadow / border"
+        },
+        "status": "measured"
+      }
+    ],
+    "counts": {
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "low": 0
+    },
+    "summary": "Crítica 94/100 (A): 0 crítico(s), 0 alto(s), 1 medio(s), 0 bajo(s).",
+    "agentTask": "# Tarea visual priorizada\n\nBrief: Landing editorial de un estudio de cerámica de autor, 1280×720, CSS local.\nEstilo: editorial\nCrítica: Crítica 94/100 (A): 0 crítico(s), 0 alto(s), 1 medio(s), 0 bajo(s).\n\n## Corrige sólo estos defectos medidos\n\n### [MEDIUM] El material declarado no aparece en el render\n- Evidencia: señales de material=0 (objetivo 2); material declarado=paper\n- Ubicación: sin selector; componente superficies\n- Corrección: Materializa paper: borde, sombra, transparencia o rugosidad coherentes.\n- Propiedad: background / box-shadow / border\n- Acción base: Haz explícito el material: borde, sombra, rugosidad o transparencia; no lo simules con ruido aleatorio.\n\n## Reglas de la iteración\n\n1. No reescribas todo: aplica el cambio mínimo en la ubicación indicada.\n2. No añadas un efecto si no hay evidencia de que falta y una función que cumplir.\n3. Conserva las decisiones que ya pasan los umbrales.\n4. Vuelve a capturar y compara antes/después; revierte si no mejora.\n5. La aprobación artística final es humana.\n\n## Límites\n\n- Sin animaciones observadas no se afirma rigidez temporal.\n- La crítica detecta defectos estructurales; no sustituye la aprobación artística humana.",
+    "limitations": [
+      "Sin animaciones observadas no se afirma rigidez temporal.",
+      "La crítica detecta defectos estructurales; no sustituye la aprobación artística humana."
+    ],
+    "measured": {
+      "quality": 97.4,
+      "fidelity": 96.9,
+      "composition": 98,
+      "hierarchy": 98.8,
+      "typography": 91.2,
+      "depth": 98.3,
+      "lighting": 95.3,
+      "coherence": 100,
+      "transitions": 100,
+      "performance": 86.3
+    },
+    "artisticJudgment": false
+  },
+  "fidelity": {
+    "version": "0.5",
+    "score": 91.7,
+    "grade": "A",
+    "dimensions": [
+      {
+        "id": "composition",
+        "label": "Posición y proporción de la composición",
+        "score": 98,
+        "weight": 0.14,
+        "status": "verified",
+        "evidence": {
+          "medicion": "masa por cuadrantes",
+          "nota": "proxy, no cajas de objetos"
+        },
+        "note": "La composición se mide por distribución de masa."
+      },
+      {
+        "id": "layout",
+        "label": "Layout y equilibrio",
+        "score": 97.7,
+        "weight": 0.1,
+        "status": "verified",
+        "evidence": {
+          "metodo": "balance horizontal/vertical del primer fotograma"
+        },
+        "note": "No se comparan posiciones de elementos individuales sin un mapa de referencia."
+      },
+      {
+        "id": "typography",
+        "label": "Tipografía y proporción",
+        "score": null,
+        "weight": 0.12,
+        "status": "unavailable",
+        "evidence": {
+          "nota": "requiere especificación y DOM"
+        },
+        "note": "Se compara escala relativa; la familia no se identifica."
+      },
+      {
+        "id": "palette",
+        "label": "Paleta y coherencia cromática",
+        "score": 100,
+        "weight": 0.1,
+        "status": "verified",
+        "evidence": {
+          "metodo": "histograma de matiz",
+          "nota": "no evalúa si el color es apropiado"
+        },
+        "note": "La similitud cromática no implica calidad artística."
+      },
+      {
+        "id": "lighting",
+        "label": "Iluminación",
+        "score": 95.3,
+        "weight": 0.09,
+        "status": "verified",
+        "evidence": {
+          "metodo": "luma, contraste y proporción oscura"
+        },
+        "note": "Medida global, no dirección de luz por objeto."
+      },
+      {
+        "id": "depth",
+        "label": "Profundidad",
+        "score": 98.3,
+        "weight": 0.08,
+        "status": "verified",
+        "evidence": {
+          "metodo": "dispersión de cuadrantes y detalle"
+        },
+        "note": "Proxy declarado; no es un mapa de profundidad."
+      },
+      {
+        "id": "materials",
+        "label": "Texturas y materiales",
+        "score": 50,
+        "weight": 0.07,
+        "status": "estimated",
+        "evidence": {
+          "materialDeclarado": "paper",
+          "señales": 0,
+          "blur": "no",
+          "sombra": "no",
+          "estado": "estimated desde CSS computado"
+        },
+        "note": "Se infiere del CSS computado; no hay mapa de textura de referencia."
+      },
+      {
+        "id": "effects",
+        "label": "Efectos",
+        "score": null,
+        "weight": 0.08,
+        "status": "unavailable",
+        "evidence": {
+          "nota": "referencia sin efectos declarados"
+        },
+        "note": "La correspondencia es por etiqueta, no por píxel."
+      },
+      {
+        "id": "motion",
+        "label": "Trayectorias de movimiento",
+        "score": null,
+        "weight": 0.06,
+        "status": "unavailable",
+        "evidence": {
+          "nota": "sin cámara de referencia y animaciones comparables"
+        },
+        "note": "No se reconstruye la trayectoria exacta desde CSS."
+      },
+      {
+        "id": "rhythm",
+        "label": "Duración y ritmo",
+        "score": null,
+        "weight": 0.04,
+        "status": "unavailable",
+        "evidence": {
+          "nota": "sin escenas y animaciones comparables"
+        },
+        "note": "Ritmo global; no alineación escena a escena."
+      },
+      {
+        "id": "transitions",
+        "label": "Transiciones",
+        "score": 100,
+        "weight": 0.04,
+        "status": "verified",
+        "evidence": {
+          "nota": "sólo disponible con referencia temporal"
+        },
+        "note": "Sin vídeo de referencia no se afirma la transición."
+      },
+      {
+        "id": "frameCoherence",
+        "label": "Coherencia entre fotogramas",
+        "score": 84.1,
+        "weight": 0.08,
+        "status": "verified",
+        "evidence": {
+          "metodo": "estabilidad de luminancia",
+          "nota": "detecta parpadeo, no intención artística"
+        },
+        "note": "La estabilidad no equivale a buena dirección."
+      }
+    ],
+    "pixelSimilarity": 96.9,
+    "structuralVsPixel": "Estructura 91.7/100 · píxel 96.9/100. No son intercambiables: una imagen puede parecerse y seguir siendo un mal diseño.",
+    "warnings": [
+      "La similitud de píxeles se informa aparte y no se usa para aprobar calidad artística.",
+      "Layout, tipografía, materiales y movimiento se estiman con los datos disponibles; las dimensiones sin datos quedan fuera.",
+      "Sin especificación de referencia no se afirma fidelidad de posición, textura o trayectoria."
+    ],
+    "summary": "Fidelidad estructural 91.7/100 (A) · 8/12 dimensiones disponibles · similitud de píxeles 96.9 (informativa)."
+  },
+  "gates": {
+    "version": "0.5",
+    "pass": true,
+    "decision": "accept",
+    "checks": [
+      {
+        "id": "quality",
+        "label": "Calidad visual global",
+        "status": "pass",
+        "actual": 97.4,
+        "threshold": 72,
+        "blocking": true,
+        "detail": "Puntuación ponderada de las dimensiones disponibles."
+      },
+      {
+        "id": "fidelity",
+        "label": "Fidelidad estructural",
+        "status": "pass",
+        "actual": 91.7,
+        "threshold": 70,
+        "blocking": true,
+        "detail": "No usa la similitud de píxeles como sustituto."
+      },
+      {
+        "id": "composition",
+        "label": "Composición",
+        "status": "pass",
+        "actual": 98,
+        "threshold": 62,
+        "blocking": true,
+        "detail": "Balance de masa medido."
+      },
+      {
+        "id": "typography",
+        "label": "Tipografía y legibilidad",
+        "status": "pass",
+        "actual": 91.2,
+        "threshold": 62,
+        "blocking": true,
+        "detail": "Auditoría DOM + escala."
+      },
+      {
+        "id": "performance",
+        "label": "Rendimiento",
+        "status": "pass",
+        "actual": 60.9,
+        "threshold": 55,
+        "blocking": true,
+        "detail": "FPS medidos."
+      },
+      {
+        "id": "critical-findings",
+        "label": "Defectos críticos",
+        "status": "pass",
+        "actual": 0,
+        "threshold": 0,
+        "blocking": true,
+        "detail": "Un defecto crítico bloquea aunque la media sea alta."
+      },
+      {
+        "id": "high-findings",
+        "label": "Defectos de gravedad alta",
+        "status": "pass",
+        "actual": 0,
+        "threshold": 0,
+        "blocking": true,
+        "detail": "Los defectos altos también bloquean por defecto."
+      },
+      {
+        "id": "contrast",
+        "label": "Contraste DOM",
+        "status": "pass",
+        "actual": 0,
+        "threshold": 0,
+        "blocking": true,
+        "detail": "Peor contraste 17.21:1; 6 textos."
+      },
+      {
+        "id": "runtime",
+        "label": "Funcionamiento sin errores",
+        "status": "pass",
+        "actual": 0,
+        "threshold": 0,
+        "blocking": true,
+        "detail": "Consola, pageerror, recursos fallidos e imágenes rotas."
+      },
+      {
+        "id": "human-art",
+        "label": "Aprobación artística humana",
+        "status": "pending",
+        "actual": "pendiente",
+        "threshold": "recomendada",
+        "blocking": false,
+        "detail": "No bloquea por configuración, pero queda pendiente y se declara."
+      }
+    ],
+    "blockers": [],
+    "warnings": [
+      "La calidad artística final aún no ha sido aprobada por una persona."
+    ],
+    "humanApproval": {
+      "required": false,
+      "approved": false
+    },
+    "summary": "Aceptado: 9/10 gates en verde; arte pendiente de revisión humana."
+  },
+  "art": {
+    "version": "0.4",
+    "id": "editorial-landing-ymnu3",
+    "brief": "Landing editorial de un estudio de cerámica de autor, 1280×720, CSS local.",
+    "projectType": "landing",
+    "style": {
+      "id": "editorial",
+      "name": "Diseño editorial",
+      "description": "Jerarquía periodística, retícula asimétrica y tensión entre serif y sans.",
+      "keywords": [
+        "editorial",
+        "revista",
+        "periódico",
+        "magazine",
+        "tipografía",
+        "cultural"
+      ],
+      "mode": "light",
+      "colors": {
+        "bg": "#f3eee2",
+        "surface": "#faf6ec",
+        "elevated": "#e7dfcf",
+        "text": "#17140f",
+        "muted": "#5c554a",
+        "accent": "#a62f24",
+        "accent2": "#1f4f46",
+        "border": "#cfc4b0",
+        "success": "#2f6b4f",
+        "warning": "#8a5a12",
+        "danger": "#a52a3b",
+        "focus": "#1d4ed8"
+      },
+      "typography": {
+        "display": "serif",
+        "body": "sans",
+        "mono": "mono",
+        "displayWeight": 600,
+        "bodyWeight": 420,
+        "scaleRatio": 1.42,
+        "bodyPx": 17,
+        "lineHeight": 1.6,
+        "displayLineHeight": 0.94,
+        "tracking": "-0.01em",
+        "displayTracking": "-0.045em",
+        "measure": 58
+      },
+      "layout": {
+        "maxWidth": 1300,
+        "gutter": 36,
+        "spacing": 10,
+        "radius": 0,
+        "borderWidth": 1,
+        "columns": 12,
+        "shadow": "none"
+      },
+      "materials": {
+        "surface": "paper",
+        "grain": 0.05,
+        "glassBlur": 0,
+        "gradient": "none",
+        "texture": "papel 120 g"
+      },
+      "motion": {
+        "level": "restrained",
+        "fastMs": 140,
+        "baseMs": 440,
+        "slowMs": 950,
+        "easeOut": "cubic-bezier(.16,1,.3,1)",
+        "easeInOut": "cubic-bezier(.65,0,.35,1)",
+        "spring": "cubic-bezier(.34,1.56,.64,1)",
+        "staggerMs": 45,
+        "camera": "sin cámara; entrada por líneas"
+      },
+      "composition": {
+        "focal": "titular izquierdo",
+        "alignment": "asymmetric",
+        "negativeSpace": 0.4,
+        "density": "balanced",
+        "contrast": "high",
+        "headlineChars": 38,
+        "imageRatio": "4:5",
+        "notes": [
+          "Reglas horizontales como puntuación",
+          "Un solo acento rojo"
+        ]
+      },
+      "effects": [
+        {
+          "id": "ink-diffusion",
+          "role": "tinta sobre papel"
+        }
+      ],
+      "signature": [
+        "Serif de 72–160 px",
+        "Filetes negros",
+        "Columna estrecha de datos",
+        "Rojo de imprenta"
+      ],
+      "avoid": [
+        "Sombras",
+        "Gradientes llamativos",
+        "Texto justificado sin control"
+      ]
+    },
+    "palette": {
+      "bg": "#f3eee2",
+      "surface": "#faf6ec",
+      "elevated": "#e7dfcf",
+      "text": "#17140f",
+      "muted": "#5c554a",
+      "accent": "#a62f24",
+      "accent2": "#1f4f46",
+      "border": "#cfc4b0",
+      "success": "#2f6b4f",
+      "warning": "#8a5a12",
+      "danger": "#a52a3b",
+      "focus": "#1d4ed8"
+    },
+    "typography": {
+      "display": "serif",
+      "body": "sans",
+      "mono": "mono",
+      "displayWeight": 600,
+      "bodyWeight": 420,
+      "scaleRatio": 1.42,
+      "bodyPx": 17,
+      "lineHeight": 1.6,
+      "displayLineHeight": 0.94,
+      "tracking": "-0.01em",
+      "displayTracking": "-0.045em",
+      "measure": 58,
+      "sizes": {
+        "caption": 12.8,
+        "small": 14.9,
+        "body": 17,
+        "lead": 21.3,
+        "h3": 24.1,
+        "h2": 34.3,
+        "h1": 48.7,
+        "display": 69.1,
+        "hero": 98.2
+      },
+      "responsive": {
+        "caption": "clamp(12px, 1vw, 13px)",
+        "small": "clamp(12px, 1.16vw, 15px)",
+        "body": "clamp(12px, 1.33vw, 17px)",
+        "lead": "clamp(15px, 1.66vw, 21px)",
+        "h3": "clamp(17px, 1.88vw, 24px)",
+        "h2": "clamp(25px, 2.68vw, 34px)",
+        "h1": "clamp(35px, 3.8vw, 49px)",
+        "display": "clamp(50px, 5.4vw, 69px)",
+        "hero": "clamp(71px, 7.67vw, 98px)"
+      },
+      "families": {
+        "display": "VE Source Serif 4",
+        "body": "VE Inter",
+        "mono": "VE JetBrains Mono"
+      }
+    },
+    "layout": {
+      "maxWidth": 1300,
+      "gutter": 36,
+      "spacing": 10,
+      "radius": 0,
+      "borderWidth": 1,
+      "columns": 12,
+      "shadow": "none"
+    },
+    "materials": {
+      "surface": "paper",
+      "grain": 0.05,
+      "glassBlur": 0,
+      "gradient": "none",
+      "texture": "papel 120 g"
+    },
+    "motion": {
+      "level": "restrained",
+      "fastMs": 140,
+      "baseMs": 440,
+      "slowMs": 950,
+      "easeOut": "cubic-bezier(.16,1,.3,1)",
+      "easeInOut": "cubic-bezier(.65,0,.35,1)",
+      "spring": "cubic-bezier(.34,1.56,.64,1)",
+      "staggerMs": 45,
+      "camera": "sin cámara; entrada por líneas"
+    },
+    "composition": {
+      "focal": "titular izquierdo",
+      "alignment": "asymmetric",
+      "negativeSpace": 0.4,
+      "density": "balanced",
+      "contrast": "high",
+      "headlineChars": 38,
+      "imageRatio": "4:5",
+      "notes": [
+        "Reglas horizontales como puntuación",
+        "Un solo acento rojo"
+      ]
+    },
+    "effects": [
+      {
+        "id": "ink-diffusion",
+        "role": "tinta sobre papel",
+        "reason": "Compatible con Diseño editorial (distorsion; MIT (propio))."
+      },
+      {
+        "id": "anamorphic-bloom",
+        "role": "iluminacion",
+        "reason": "Categoría adecuada para landing (iluminacion; MIT (propio))."
+      }
+    ],
+    "components": [
+      "NavBar",
+      "Hero",
+      "PrimaryCTA",
+      "ProofStrip",
+      "FeatureGrid",
+      "Footer"
+    ],
+    "tokenSet": {
+      "color.bg": {
+        "$value": "#f3eee2",
+        "$type": "color"
+      },
+      "color.surface": {
+        "$value": "#faf6ec",
+        "$type": "color"
+      },
+      "color.elevated": {
+        "$value": "#e7dfcf",
+        "$type": "color"
+      },
+      "color.text": {
+        "$value": "#17140f",
+        "$type": "color"
+      },
+      "color.muted": {
+        "$value": "#5c554a",
+        "$type": "color"
+      },
+      "color.accent": {
+        "$value": "#a62f24",
+        "$type": "color"
+      },
+      "color.accent2": {
+        "$value": "#1f4f46",
+        "$type": "color"
+      },
+      "color.border": {
+        "$value": "#cfc4b0",
+        "$type": "color"
+      },
+      "color.success": {
+        "$value": "#2f6b4f",
+        "$type": "color"
+      },
+      "color.warning": {
+        "$value": "#8a5a12",
+        "$type": "color"
+      },
+      "color.danger": {
+        "$value": "#a52a3b",
+        "$type": "color"
+      },
+      "color.focus": {
+        "$value": "#1d4ed8",
+        "$type": "color"
+      },
+      "color.accentInk": {
+        "$value": "#f3eee2",
+        "$type": "color"
+      },
+      "font.size.caption": {
+        "$value": 12.8,
+        "$type": "dimension"
+      },
+      "font.size.small": {
+        "$value": 14.9,
+        "$type": "dimension"
+      },
+      "font.size.body": {
+        "$value": 17,
+        "$type": "dimension"
+      },
+      "font.size.lead": {
+        "$value": 21.3,
+        "$type": "dimension"
+      },
+      "font.size.h3": {
+        "$value": 24.1,
+        "$type": "dimension"
+      },
+      "font.size.h2": {
+        "$value": 34.3,
+        "$type": "dimension"
+      },
+      "font.size.h1": {
+        "$value": 48.7,
+        "$type": "dimension"
+      },
+      "font.size.display": {
+        "$value": 69.1,
+        "$type": "dimension"
+      },
+      "font.size.hero": {
+        "$value": 98.2,
+        "$type": "dimension"
+      },
+      "font.display": {
+        "$value": "VE Source Serif 4",
+        "$type": "fontFamily"
+      },
+      "font.body": {
+        "$value": "VE Inter",
+        "$type": "fontFamily"
+      },
+      "font.mono": {
+        "$value": "VE JetBrains Mono",
+        "$type": "fontFamily"
+      },
+      "font.scaleRatio": {
+        "$value": 1.42,
+        "$type": "number"
+      },
+      "space.base": {
+        "$value": 10,
+        "$type": "dimension"
+      },
+      "space.gutter": {
+        "$value": 36,
+        "$type": "dimension"
+      },
+      "radius.card": {
+        "$value": 0,
+        "$type": "dimension"
+      },
+      "border.width": {
+        "$value": 1,
+        "$type": "dimension"
+      },
+      "motion.fast": {
+        "$value": "140ms",
+        "$type": "duration"
+      },
+      "motion.base": {
+        "$value": "440ms",
+        "$type": "duration"
+      },
+      "motion.slow": {
+        "$value": "950ms",
+        "$type": "duration"
+      },
+      "motion.easeOut": {
+        "$value": "cubic-bezier(.16,1,.3,1)",
+        "$type": "cubicBezier"
+      },
+      "motion.stagger": {
+        "$value": "45ms",
+        "$type": "duration"
+      }
+    },
+    "rationale": [
+      "Proyecto landing: NavBar, Hero, PrimaryCTA antes de decorar.",
+      "Estilo Diseño editorial: Jerarquía periodística, retícula asimétrica y tensión entre serif y sans.",
+      "Tipografía serif + sans + mono; escala 1.42.",
+      "Densidad balanced; espacio base 10 px y radio 0 px.",
+      "Movimiento restrained; transiciones de 140/440/950 ms.",
+      "Efectos elegidos por función: ink-diffusion (tinta sobre papel), anamorphic-bloom (iluminacion).",
+      "Contraste de texto sobre fondo: 15.86:1."
+    ],
+    "warnings": [],
+    "fonts": [
+      {
+        "id": "source-serif-4",
+        "family": "VE Source Serif 4",
+        "file": "SourceSerif4_opsz,wght_.ttf",
+        "license": "OFL-1.1"
+      },
+      {
+        "id": "inter",
+        "family": "VE Inter",
+        "file": "Inter_opsz,wght_.ttf",
+        "license": "OFL-1.1"
+      },
+      {
+        "id": "jetbrains-mono",
+        "family": "VE JetBrains Mono",
+        "file": "JetBrainsMono_wght_.ttf",
+        "license": "OFL-1.1"
+      }
+    ],
+    "audit": {
+      "structuralScore": 98.7,
+      "dimensions": [
+        {
+          "id": "contrast",
+          "score": 100,
+          "evidence": "15.86:1 OK; 17.02:1 OK; 6.36:1 OK; 5.94:1 OK"
+        },
+        {
+          "id": "type-scale",
+          "score": 100,
+          "evidence": "9 pasos, cuerpo 17px, ratio 1.42"
+        },
+        {
+          "id": "spacing",
+          "score": 100,
+          "evidence": "base 10px, gutter 36px"
+        },
+        {
+          "id": "hierarchy",
+          "score": 91.19999999999999,
+          "evidence": "ratio 1.42, display 69.1px"
+        },
+        {
+          "id": "restraint",
+          "score": 100,
+          "evidence": "2 efecto(s) para landing"
+        },
+        {
+          "id": "motion-accessibility",
+          "score": 100,
+          "evidence": "restrained; base 440ms; stagger 45ms"
+        },
+        {
+          "id": "identity",
+          "score": 100,
+          "evidence": "4 reglas de firma; 3 anti-patrones"
+        }
+      ],
+      "contrastPairs": [
+        {
+          "fg": "#17140f",
+          "bg": "#f3eee2",
+          "ratio": 15.86,
+          "pass": true
+        },
+        {
+          "fg": "#17140f",
+          "bg": "#faf6ec",
+          "ratio": 17.02,
+          "pass": true
+        },
+        {
+          "fg": "#5c554a",
+          "bg": "#f3eee2",
+          "ratio": 6.36,
+          "pass": true
+        },
+        {
+          "fg": "#f3eee2",
+          "bg": "#a62f24",
+          "ratio": 5.94,
+          "pass": true
+        }
+      ],
+      "warnings": [],
+      "note": "Auditoría estructural, no juicio artístico. Comprueba contraste, escala, ritmo, mesura y accesibilidad; la evaluación humana es independiente."
+    }
+  },
+  "paths": {
+    "outDir": "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\evidence\\premium-landing\\a",
+    "intelligence": "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\evidence\\premium-landing\\a\\intelligence.json",
+    "critic": "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\evidence\\premium-landing\\a\\critic.json",
+    "criticMd": "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\evidence\\premium-landing\\a\\critic.md",
+    "fidelity": "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\evidence\\premium-landing\\a\\fidelity.json",
+    "fidelityMd": "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\evidence\\premium-landing\\a\\fidelity.md",
+    "gates": "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\evidence\\premium-landing\\a\\gates.json",
+    "gatesMd": "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\evidence\\premium-landing\\a\\gates.md",
+    "dom": "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\evidence\\premium-landing\\a\\dom\\dom.json",
+    "agentTask": "<repo>\\docs\\evidencia\\1.0-rc2\\agents\\evidence\\premium-landing\\a\\agent-task.md"
+  },
+  "description": [
+    "Calidad 97.4/100; fidelidad estructural 91.7/100; crítica 94/100.",
+    "Crítica 94/100 (A): 0 crítico(s), 0 alto(s), 1 medio(s), 0 bajo(s).",
+    "  [medium] El material declarado no aparece en el render (superficies, confianza 65%)",
+    "  Límite: Sin animaciones observadas no se afirma rigidez temporal.",
+    "  Límite: La crítica detecta defectos estructurales; no sustituye la aprobación artística humana.",
+    "Aceptado: 9/10 gates en verde; arte pendiente de revisión humana.",
+    "DOM La forma del barro · 11 elementos visibles, 1 cabeceras, 0 botones.",
+    "Capas: 5; materiales: 0; animaciones: 0; efectos declarados: 0.",
+    "Contraste DOM: 0 incumplimiento(s) de 6; peor 17.21:1.",
+    "Overflow: 0×0 px; imágenes rotas: 0; botones sin nombre: 0.",
+    "Código fuente indexado: 1 archivo(s).",
+    "Tarea del agente: <repo>\\docs\\evidencia\\1.0-rc2\\agents\\evidence\\premium-landing\\a\\agent-task.md",
+    "Límite: Sin animaciones observadas no se afirma rigidez temporal.",
+    "Límite: La crítica detecta defectos estructurales; no sustituye la aprobación artística humana."
+  ]
+}

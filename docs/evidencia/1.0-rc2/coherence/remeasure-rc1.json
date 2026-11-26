@@ -1,0 +1,38 @@
+[
+  {
+    "arm": "A",
+    "target": "baseline.html",
+    "qualityBefore": 73.3,
+    "qualityAfter": 77.1,
+    "coherenceBefore": 0,
+    "coherenceAfter": null,
+    "coherenceAvailable": false,
+    "reason": "matiz no interpretable: cobertura cromática 0.041 < 0.08",
+    "highBefore": 2,
+    "highAfter": 1,
+    "findings": [
+      "lighting-low"
+    ],
+    "gatesBefore": "reject",
+    "gatesAfter": "reject",
+    "blockersAfter": [
+      "high-findings=1"
+    ]
+  },
+  {
+    "arm": "B",
+    "target": "index.html",
+    "qualityBefore": 77.7,
+    "qualityAfter": 80.6,
+    "coherenceBefore": 19.5,
+    "coherenceAfter": null,
+    "coherenceAvailable": false,
+    "reason": "matiz no interpretable: cobertura cromática 0.041 < 0.08",
+    "highBefore": 1,
+    "highAfter": 0,
+    "findings": [],
+    "gatesBefore": "reject",
+    "gatesAfter": "accept",
+    "blockersAfter": []
+  }
+]

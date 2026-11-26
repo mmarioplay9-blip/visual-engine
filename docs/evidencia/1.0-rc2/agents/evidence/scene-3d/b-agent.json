@@ -1,0 +1,28 @@
+{
+  "run": {
+    "arm": "b",
+    "exit": 0,
+    "usage": {
+      "input_tokens": 721550,
+      "cached_input_tokens": 677504,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 3343,
+      "reasoning_output_tokens": 34
+    },
+    "mcpCalls": [],
+    "veCommands": [
+      "[registro privado omitido]",
+      "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$v='\"'<repo>/dist/cli/index.js' \"'$t=Join-Path $env:TEMP ('\"'ve-ring-'+[guid]::NewGuid()) New-Item -ItemType Directory \"'$t | Out-Null $t node $v agents node $v plan '\"'Recrea la imagen adjunta ",
+      "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$v='\"'<repo>/dist/cli/index.js' \"'$t='\"'<home>/AppData/Local/Temp/ve-ring-7d897e21-bf6d-4d4a-bc06-d838825abda5' node \"'$v analyze reference.jpg > \"$t/analyze.txt\" node $v inspect referen",
+      "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$v='\"'<repo>/dist/cli/index.js' Copy-Item -LiteralPath ../a/index.html -Destination index.html rg -n 'case.*(capture|critic|debug|fidelity|review)|Uso: ve (capture|critic|debug|fidelity|review)'",
+      "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$t=\"$env:TEMP/ve-ring-7d897e21-bf6d-4d4a-bc06-d838825abda5\" Copy-Item index.html \"$t/baseline.html\" $p=(Resolve-Path index.html).Path $s=[IO.File]::ReadAllText($p).Replace('\"'vec2(646., 354.)','vec2(648., 354.)').Replace('vec",
+      "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$v='\"'<repo>/dist/cli/index.js' \"'$t='\"'<home>/AppData/Local/Temp/ve-ring-7d897e21-bf6d-4d4a-bc06-d838825abda5' @' const { chromium } = require('<repo>/nod",
+      "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$v='\"'<repo>/dist/cli/index.js' \"'$t='\"'<home>/AppData/Local/Temp/ve-ring-7d897e21-bf6d-4d4a-bc06-d838825abda5' node \"'$v debug index.html --serve . --width 1280 --height 720 --out \"$t/d",
+      "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$v='\"'<repo>/dist/cli/index.js' \"'$t='\"'<home>/AppData/Local/Temp/ve-ring-7d897e21-bf6d-4d4a-bc06-d838825abda5' node \"'$v critic --reference reference.jpg --target-dir . --width 1280 --h"
+    ],
+    "ms": 142810,
+    "bytes": 9801,
+    "hasHtml": true,
+    "embeddedReference": false
+  }
+}

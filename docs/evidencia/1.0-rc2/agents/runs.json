@@ -1,0 +1,258 @@
+{
+  "generatedAt": "2026-11-26T02:12:53.881Z",
+  "agent": "codex-cli 0.172.0",
+  "model": "por defecto de la cuenta (el mismo en las dos ramas)",
+  "cases": {
+    "professional-app": {
+      "projectType": "app",
+      "brief": "Panel de aplicación profesional con navegación, métricas, gráfico y tabla, 1280×720.",
+      "reference": "docs\\evidencia\\1.0-rc2\\references\\professional-app.jpg",
+      "a": {
+        "arm": "a",
+        "exit": 0,
+        "usage": {
+          "input_tokens": 370805,
+          "cached_input_tokens": 334720,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 7121,
+          "reasoning_output_tokens": 41
+        },
+        "mcpCalls": [],
+        "veCommands": [],
+        "ms": 163343,
+        "bytes": 14597,
+        "hasHtml": true,
+        "embeddedReference": false
+      },
+      "b": {
+        "arm": "b",
+        "exit": 0,
+        "usage": {
+          "input_tokens": 1189664,
+          "cached_input_tokens": 1146240,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 9090,
+          "reasoning_output_tokens": 183
+        },
+        "mcpCalls": [],
+        "veCommands": [
+          "[registro privado omitido]",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$tmp=Join-Path $env:TEMP ('\"'ve-panel-b-'+[guid]::NewGuid()) New-Item -ItemType Directory \"'$tmp | Out-Null Set-Content (Join-Path $env:TEMP '\"'ve-panel-b-dir.",
+          "[registro privado omitido]",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command \"rg -n 'Uso: ve (capture|debug|critic|fidelity|review)|async function cmdCapture' <repo>/src/cli \"'$ve='\"'<repo>/dist/cli/index.js' \"'$tmp=Get-Content (Join-Path $e",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$tmp=Get-Content (Join-Path $env:TEMP '\"'ve-panel-b-dir.txt') \"'$ve='\"'<repo>/dist/cli/index.js' node \"'$ve debug index.html --serve . --source . --width 1280 --height 720 --out \"$tmp/debug\" nod",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$tmp=Get-Content (Join-Path $env:TEMP '\"'ve-panel-b-dir.txt') \"'$ve='\"'<repo>/dist/cli/index.js' Copy-Item index.html \\\"\"'$tmp/before.html\" $html=Get-Content index.html -Raw -Encoding UTF8 $html"
+        ],
+        "ms": 256887,
+        "bytes": 14124,
+        "hasHtml": true,
+        "embeddedReference": false
+      }
+    },
+    "scene-3d": {
+      "projectType": "scene3d",
+      "brief": "Página inmersiva 3D con un objeto cromado flotante sobre fondo violeta, 1280×720.",
+      "reference": "docs\\evidencia\\1.0-rc2\\references\\scene-3d.jpg",
+      "a": {
+        "arm": "a",
+        "exit": 0,
+        "usage": {
+          "input_tokens": 440358,
+          "cached_input_tokens": 409728,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2202,
+          "reasoning_output_tokens": 47
+        },
+        "mcpCalls": [],
+        "veCommands": [],
+        "ms": 72020,
+        "bytes": 9800,
+        "hasHtml": true,
+        "embeddedReference": false
+      },
+      "b": {
+        "arm": "b",
+        "exit": 0,
+        "usage": {
+          "input_tokens": 721550,
+          "cached_input_tokens": 677504,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 3343,
+          "reasoning_output_tokens": 34
+        },
+        "mcpCalls": [],
+        "veCommands": [
+          "[registro privado omitido]",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$v='\"'<repo>/dist/cli/index.js' \"'$t=Join-Path $env:TEMP ('\"'ve-ring-'+[guid]::NewGuid()) New-Item -ItemType Directory \"'$t | Out-Null $t node $v agents node $v plan '\"'Recrea la imagen adjunta ",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$v='\"'<repo>/dist/cli/index.js' \"'$t='\"'<home>/AppData/Local/Temp/ve-ring-7d897e21-bf6d-4d4a-bc06-d838825abda5' node \"'$v analyze reference.jpg > \"$t/analyze.txt\" node $v inspect referen",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$v='\"'<repo>/dist/cli/index.js' Copy-Item -LiteralPath ../a/index.html -Destination index.html rg -n 'case.*(capture|critic|debug|fidelity|review)|Uso: ve (capture|critic|debug|fidelity|review)'",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$t=\"$env:TEMP/ve-ring-7d897e21-bf6d-4d4a-bc06-d838825abda5\" Copy-Item index.html \"$t/baseline.html\" $p=(Resolve-Path index.html).Path $s=[IO.File]::ReadAllText($p).Replace('\"'vec2(646., 354.)','vec2(648., 354.)').Replace('vec",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$v='\"'<repo>/dist/cli/index.js' \"'$t='\"'<home>/AppData/Local/Temp/ve-ring-7d897e21-bf6d-4d4a-bc06-d838825abda5' @' const { chromium } = require('<repo>/nod",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$v='\"'<repo>/dist/cli/index.js' \"'$t='\"'<home>/AppData/Local/Temp/ve-ring-7d897e21-bf6d-4d4a-bc06-d838825abda5' node \"'$v debug index.html --serve . --width 1280 --height 720 --out \"$t/d",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$v='\"'<repo>/dist/cli/index.js' \"'$t='\"'<home>/AppData/Local/Temp/ve-ring-7d897e21-bf6d-4d4a-bc06-d838825abda5' node \"'$v critic --reference reference.jpg --target-dir . --width 1280 --h"
+        ],
+        "ms": 142810,
+        "bytes": 9801,
+        "hasHtml": true,
+        "embeddedReference": false
+      }
+    },
+    "game-hud": {
+      "projectType": "game-hud",
+      "brief": "HUD de videojuego sobre un cañón desértico al atardecer, 1280×720, CSS/SVG local.",
+      "reference": "docs\\evidencia\\1.0-rc2\\references\\game-hud.jpg",
+      "a": {
+        "arm": "a",
+        "exit": 0,
+        "usage": {
+          "input_tokens": 419402,
+          "cached_input_tokens": 359296,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2652,
+          "reasoning_output_tokens": 80
+        },
+        "mcpCalls": [],
+        "veCommands": [],
+        "ms": 84076,
+        "bytes": 15501,
+        "hasHtml": true,
+        "embeddedReference": false
+      },
+      "b": {
+        "arm": "b",
+        "exit": 0,
+        "usage": {
+          "input_tokens": 2865608,
+          "cached_input_tokens": 2802944,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 5743,
+          "reasoning_output_tokens": 200
+        },
+        "mcpCalls": [],
+        "veCommands": [
+          "[registro privado omitido]",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$out=Join-Path $env:TEMP '\"'ve-hud-020401' New-Item -ItemType Directory -Force \"'$out | Out-Null Get-Content ../../game-hud/b/index.html -ErrorAction SilentlyC",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$out=Join-Path $env:TEMP '\"'ve-hud-020401' New-Item -ItemType Directory -Force \"'$out | Out-Null node $ve agents node $ve analyze reference.jpg > \"$out/analyze",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$out=Join-Path $env:TEMP '\"'ve-hud-020401' New-Item -ItemType Directory -Force \"'$out | Out-Null node $ve plan '\"'Recrea la imagen adjunta como una página auto",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$out=Join-Path $env:TEMP '\"'ve-hud-020401' New-Item -ItemType Directory -Force \"'$out | Out-Null Get-ChildItem \"$out/design\" -Name rg -n '\"'command === \\\"(capt",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$out=Join-Path $env:TEMP '\"'ve-hud-020401' New-Item -ItemType Directory -Force \"'$out | Out-Null rg -n '\"'target-dir|intelligence.json|case .critic.|case .iter",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$out=Join-Path $env:TEMP '\"'ve-hud-020401' New-Item -ItemType Directory -Force \"'$out | Out-Null node $ve debug --reference reference.jpg --target-dir . --widt",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$out=Join-Path $env:TEMP '\"'ve-hud-020401' New-Item -ItemType Directory -Force \"'$out | Out-Null Get-Content index.html -Encoding UTF8 | Select-Object -Skip 12",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$out=Join-Path $env:TEMP '\"'ve-hud-020401' New-Item -ItemType Directory -Force \"'$out | Out-Null node $ve critic --reference reference.jpg --target-dir . --wid",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$out=Join-Path $env:TEMP '\"'ve-hud-020401' New-Item -ItemType Directory -Force \"'$out | Out-Null node $ve fidelity --reference reference.jpg --target-dir . --w",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$out=Join-Path $env:TEMP '\"'ve-hud-020401' New-Item -ItemType Directory -Force \"'$out | Out-Null Get-ChildItem \"$out\" -Recurse -Filter intelligence.json | Sele",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$out=Join-Path $env:TEMP '\"'ve-hud-020401' New-Item -ItemType Directory -Force \"'$out | Out-Null Get-Content index.html -Tail 42 Get-Content D:/proyectos-perso",
+          "[registro privado omitido]",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$out=Join-Path $env:TEMP '\"'ve-hud-020401' New-Item -ItemType Directory -Force \"'$out | Out-Null Get-Content \"$out/iterate/iteration.json\" -TotalCount 35 Get-C",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$out=Join-Path $env:TEMP '\"'ve-hud-020401' New-Item -ItemType Directory -Force \"'$out | Out-Null $html=[IO.File]::ReadAllText((Resolve-Path index.html)) $html=",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$out=Join-Path $env:TEMP '\"'ve-hud-020401' New-Item -ItemType Directory -Force \"'$out | Out-Null Get-Content \"$out/iterate/iteration.json\" -Tail 20 Get-ChildIt",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$out=Join-Path $env:TEMP '\"'ve-hud-020401' New-Item -ItemType Directory -Force \"'$out | Out-Null node \"$out/offline.cjs\" (Resolve-Path index.html).Path \"$out/o",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$out=Join-Path $env:TEMP '\"'ve-hud-020401' New-Item -ItemType Directory -Force \"'$out | Out-Null Get-ChildItem \"$out/final\" -Name if(Test-Path \"$out/final/gate",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$out=Join-Path $env:TEMP '\"'ve-hud-020401' New-Item -ItemType Directory -Force \"'$out | Out-Null node $ve critic --reference reference.jpg --target-dir . --wid",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$out=Join-Path $env:TEMP '\"'ve-hud-020401' New-Item -ItemType Directory -Force \"'$out | Out-Null if(Test-Path \"$out/final/gates.json\"){Get-Content \"$out/final/",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$out=Join-Path $env:TEMP '\"'ve-hud-020401' New-Item -ItemType Directory -Force \"'$out | Out-Null Get-Content \"$out/iterate-2/iteration.json\" -Tail 13 Get-Conte",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$out=Join-Path $env:TEMP '\"'ve-hud-020401' New-Item -ItemType Directory -Force \"'$out | Out-Null Get-Content <repo>/src/core/qua",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$out=Join-Path $env:TEMP '\"'ve-hud-020401' New-Item -ItemType Directory -Force \"'$out | Out-Null $html=[IO.File]::ReadAllText((Resolve-Path index.html)) $html=",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$out=Join-Path $env:TEMP '\"'ve-hud-020401' New-Item -ItemType Directory -Force \"'$out | Out-Null Get-Content \"$out/iterate-2/iteration.json\" -Tail 14 rg -n '\"'",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$out=Join-Path $env:TEMP '\"'ve-hud-020401' New-Item -ItemType Directory -Force \"'$out | Out-Null Get-ChildItem \"$out/delivery\" -Name (Get-FileHash index.html).",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$out=Join-Path $env:TEMP '\"'ve-hud-020401' New-Item -ItemType Directory -Force \"'$out | Out-Null if(Test-Path \"$out/delivery/gates.json\"){ $g=Get-Content \"$out",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$ve='\"'<repo>/dist/cli/index.js' \"'$out=Join-Path $env:TEMP '\"'ve-hud-020401' New-Item -ItemType Directory -Force \"'$out | Out-Null Copy-Item \"$out/candidate-2.html\" index.html node \"$out/offlin"
+        ],
+        "ms": 248516,
+        "bytes": 14096,
+        "hasHtml": true,
+        "embeddedReference": false
+      }
+    },
+    "motion-title": {
+      "projectType": "motion",
+      "brief": "Tarjeta de título de motion graphics con la palabra ORBIT, 1280×720, CSS local.",
+      "reference": "docs\\evidencia\\1.0-rc2\\references\\motion-title.jpg",
+      "a": {
+        "arm": "a",
+        "exit": 0,
+        "usage": {
+          "input_tokens": 307545,
+          "cached_input_tokens": 278784,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2317,
+          "reasoning_output_tokens": 32
+        },
+        "mcpCalls": [],
+        "veCommands": [],
+        "ms": 71603,
+        "bytes": 5035,
+        "hasHtml": true,
+        "embeddedReference": false
+      },
+      "b": {
+        "arm": "b",
+        "exit": 0,
+        "usage": {
+          "input_tokens": 583288,
+          "cached_input_tokens": 526080,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2495,
+          "reasoning_output_tokens": 0
+        },
+        "mcpCalls": [],
+        "veCommands": [
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command 'Get-Location; Get-ChildItem -Force -Name; Get-Command ve -ErrorAction SilentlyContinue'",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$cli='\"'<repo>/dist/cli/index.js'; \"'$env:ORBIT_CHECK=Join-Path $env:TEMP ('\"'orbit-b-'+[guid]::NewGuid()); New-Item -ItemType Directory \"'$env:ORBIT_CHECK | Out-Null; Write-Output $env:ORBIT_CH",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$r='\"'<repo>'; rg -n 'case \\\"(capture|critic|fidelity|debug|review|inspect)\\\"|Uso: ve (capture|critic|fidelity|debug|review)' \\\"\"'$r/src/cli\"; Get-ChildItem \"$r/docs/evidencia/1.0-rc2/agents/wor",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$cli='\"'<repo>/dist/cli/index.js'; \"'$o=\"$env:TEMP/orbit-b-4e222135-83f2-4517-8b28-91882aa425bf\"; node $cli review --reference reference.jpg --target-dir . --frames 6 --width 1280 --height 720 -",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$p='\"'<repo>/src/cli/index.ts'; Select-String -Path \"'$p -Pattern '\"'async function cmd(Debug|Critic|Fidelity|Intelligence)|Uso: ve (debug|critic|fidelity|intelligence)|case .intelligence' -Cont",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$cli='\"'<repo>/dist/cli/index.js'; \"'$o=\"$env:TEMP/orbit-b-4e222135-83f2-4517-8b28-91882aa425bf\"; node $cli critic --reference reference.jpg --target-dir . --frames 6 --width 1280 --height 720 -"
+        ],
+        "ms": 116320,
+        "bytes": 4258,
+        "hasHtml": true,
+        "embeddedReference": false
+      }
+    },
+    "premium-landing": {
+      "projectType": "landing",
+      "brief": "Landing editorial de un estudio de cerámica de autor, 1280×720, CSS local.",
+      "reference": "docs\\evidencia\\1.0-rc2\\references\\premium-landing.jpg",
+      "a": {
+        "arm": "a",
+        "exit": 0,
+        "usage": {
+          "input_tokens": 313639,
+          "cached_input_tokens": 279040,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 1912,
+          "reasoning_output_tokens": 15
+        },
+        "mcpCalls": [],
+        "veCommands": [],
+        "ms": 56914,
+        "bytes": 8669,
+        "hasHtml": true,
+        "embeddedReference": false
+      },
+      "b": {
+        "arm": "b",
+        "exit": 0,
+        "usage": {
+          "input_tokens": 771958,
+          "cached_input_tokens": 722816,
+          "cache_write_input_tokens": 0,
+          "output_tokens": 2550,
+          "reasoning_output_tokens": 44
+        },
+        "mcpCalls": [],
+        "veCommands": [
+          "[registro privado omitido]",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$cli='\"'<repo>/dist/cli/index.js'; node \"'$cli agents; Get-FileHash reference.jpg,../../b/reference.jpg; Get-Item ../../b/index.html; node $cli --help'",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$cli='\"'<repo>/dist/cli/index.js'; \"'$out=Join-Path $env:TEMP '\"'ve-barro-b-021253'; node \"'$cli plan \"Recrea la imagen adjunta como una página autocontenida.\" --reference reference.jpg --out \"$",
+          "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command 'Copy-Item -LiteralPath ../../b/index.html -Destination index.html; $cli='\"'<repo>/dist/cli/index.js'; \"'$out=Join-Path $env:TEMP '\"'ve-barro-b-021253'; node \"'$cli capture index.html --serve . -"
+        ],
+        "ms": 113243,
+        "bytes": 8694,
+        "hasHtml": true,
+        "embeddedReference": false
+      }
+    }
+  }
+}

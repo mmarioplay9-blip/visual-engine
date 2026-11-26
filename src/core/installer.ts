@@ -404,7 +404,7 @@ export async function verifyMcpServer(timeoutMs = 20_000): Promise<McpVerificati
   const started = Date.now();
   const { command, args } = mcpCommand();
   const transport = new StdioClientTransport({ command, args, stderr: 'pipe' });
-  const client = new Client({ name: 'visual-engine-verify', version: '1.0.0-rc.1' }, { capabilities: {} });
+  const client = new Client({ name: 'visual-engine-verify', version: '1.0.0-rc.2' }, { capabilities: {} });
   try {
     await client.connect(transport);
     const list = await client.listTools();

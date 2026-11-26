@@ -1,0 +1,19 @@
+{
+  "run": {
+    "arm": "a",
+    "exit": 0,
+    "usage": {
+      "input_tokens": 307545,
+      "cached_input_tokens": 278784,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2317,
+      "reasoning_output_tokens": 32
+    },
+    "mcpCalls": [],
+    "veCommands": [],
+    "ms": 71603,
+    "bytes": 5035,
+    "hasHtml": true,
+    "embeddedReference": false
+  }
+}

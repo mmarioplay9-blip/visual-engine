@@ -1,0 +1,227 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ÉTER — Escultura orbital</title>
+<style>
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #020103; color: #f9f6fa; }
+body { font-family: "Segoe UI", Arial, sans-serif; overflow-x: hidden; }
+main { position: relative; width: min(100%, 1280px); height: min(100svh, 720px); min-height: 360px; margin: auto; overflow: hidden; background: radial-gradient(ellipse at 51% 51%, #702786, #250c34 27%, #030104 57%, #000 75%); }
+canvas { position: absolute; width: 100%; height: 100%; object-fit: cover; }
+header { position: absolute; inset: 6.25% 5.5% auto 6.25%; display: flex; align-items: center; justify-content: space-between; }
+.wordmark { font-size: 14px; font-weight: 600; letter-spacing: .18em; }
+.copy { position: absolute; left: 6.25%; top: 16.1%; }
+h1 { margin: 0; font-size: 23px; font-weight: 500; letter-spacing: -.025em; }
+p { margin: 7px 0 21px; font-size: 15px; color: #dcd3df; }
+button { color: inherit; cursor: pointer; font: inherit; }
+.explore { border: 0; border-radius: 99px; min-width: 102px; min-height: 34px; padding: 0 15px; background: #54246e; font-size: 12px; font-weight: 600; }
+.explore:hover { background: #683285; }
+.expand { border: 0; background: transparent; display: grid; place-items: center; width: 24px; height: 24px; padding: 5px; }
+button:focus-visible { outline: 2px solid #ecd2fc; outline-offset: 4px; }
+@media (max-width: 620px) {
+  canvas { object-fit: contain; transform: translateY(8%); }
+  h1 { font-size: clamp(18px, 5vw, 23px); }
+}
+</style>
+</head>
+<body>
+<main id="scene">
+  <canvas id="art" width="1280" height="720" role="img" aria-label="Anillo de cromo suspendido ante un halo violeta y un campo de estrellas"></canvas>
+  <header>
+    <span class="wordmark">ÉTER</span>
+    <button class="expand" id="expand" type="button" aria-label="Pantalla completa">
+      <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M9 3h4v4M13 3l-4 4M7 13H3V9m0 4 4-4"/></svg>
+    </button>
+  </header>
+  <section class="copy" aria-labelledby="title">
+    <h1 id="title">Escultura orbital en luz y metal</h1>
+    <p>Una órbita suspendida en el vacío.</p>
+    <button class="explore" id="explore" type="button" aria-pressed="false">Explorar</button>
+  </section>
+</main>
+<script>
+const canvas = document.getElementById('art');
+const scene = document.getElementById('scene');
+const expand = document.getElementById('expand');
+const explore = document.getElementById('explore');
+expand.hidden = !scene.requestFullscreen;
+expand.onclick = async () => {
+  try {
+    if (document.fullscreenElement) await document.exitFullscreen();
+    else await scene.requestFullscreen();
+  } catch {
+    expand.hidden = true;
+  }
+};
+document.addEventListener('fullscreenchange', () => {
+  expand.setAttribute('aria-label', document.fullscreenElement ? 'Salir de pantalla completa' : 'Pantalla completa');
+});
+
+const gl = canvas.getContext('webgl', { alpha: false, antialias: false });
+if (gl) {
+  const vertex = `
+    attribute vec2 position;
+    void main() { gl_Position = vec4(position, 0., 1.); }
+  `;
+  const fragment = `
+    precision highp float;
+    uniform float orbit;
+    const vec2 center = vec2(646., 354.);
+    mat2 rotation(float a) {
+      float c = cos(a), s = sin(a);
+      return mat2(c,s,-s,c);
+    }
+    float hash(vec2 p) {
+      return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
+    }
+    float oval(vec2 p, vec2 scale) {
+      vec2 q = p / scale;
+      return dot(q,q);
+    }
+    vec3 background(vec2 pixel) {
+      vec2 p = pixel - center;
+      float halo = exp(-1.4 * oval(p, vec2(205., 219.)));
+      float haze = exp(-1.6 * oval(p, vec2(333., 335.)));
+      float floorGlow = exp(-oval(p + vec2(0.,255.), vec2(158., 62.)));
+      vec3 color = vec3(.35,.102,.44)*halo + vec3(.090,.022,.113)*haze;
+      color += vec3(.073,.019,.103)*floorGlow;
+      float shadow = exp(-oval(p + vec2(0.,229.), vec2(150.,15.)));
+      color *= 1. - .94*shadow;
+      for (int layer = 0; layer < 2; layer++) {
+        float size = layer == 0 ? 29. : 51.;
+        vec2 cell = floor(pixel/size);
+        vec2 offset = vec2(hash(cell), hash(cell+14.8));
+        vec2 d = (fract(pixel/size) - (.12 + .76*offset))*size;
+        float seed = hash(cell+8.6);
+        float radius = layer == 0 ? .45 + .44*seed : .82+1.45*seed;
+        float glow = exp(-dot(d,d)/(radius*radius));
+        float window = exp(-1.3*oval(p+vec2(0.,65.), vec2(352.,283.)));
+        window *= (1.-smoothstep(168.,226.,-p.y))*smoothstep(83.,102.,length(p));
+        color += vec3(.74,.63,.86)*glow*window*seed*seed*.67;
+      }
+      return color;
+    }
+    float shape(vec3 p) {
+      p.xy = rotation(-.29) * p.xy;
+      p.xz = rotation(.17 + orbit) * p.xz;
+      p.yz = rotation(-.20) * p.yz;
+      p.x *= 1.092;
+      float a = atan(p.y,p.x);
+      float rad = length(p.xy);
+      float ridge = .775 + .017*cos(2.*a-.6) + .012*sin(3.*a+.3);
+      float depth = .075*cos(2.*a+.72) + .055*sin(a-.8);
+      vec2 q = rotation(-a-.65-.21*sin(a*2.)) * vec2(rad-ridge,p.z-depth);
+      vec2 axes = vec2(.278,.243);
+      float theta = atan(q.y/axes.y,q.x/axes.x);
+      float lip = 1. + .048*cos(3.*theta+.5) + .033*cos(5.*theta-1.3);
+      return (length(q/axes)-lip)*.188;
+    }
+    vec3 normalAt(vec3 p) {
+      vec2 e = vec2(.001,0.);
+      return normalize(vec3(shape(p+e.xyy)-shape(p-e.xyy),
+                            shape(p+e.yxy)-shape(p-e.yxy),
+                            shape(p+e.yyx)-shape(p-e.yyx)));
+    }
+    float panel(vec3 r, vec3 axis, float angle, vec2 size, float soft) {
+      vec3 u = normalize(cross(vec3(0.,1.,0.),axis));
+      vec3 v = cross(axis,u);
+      vec2 p = rotation(angle)*vec2(dot(r,u),dot(r,v));
+      vec2 coverage = 1. - smoothstep(size-soft,size+soft,abs(p));
+      return coverage.x*coverage.y*smoothstep(0.,.28,dot(r,axis));
+    }
+    vec3 chrome(vec3 p, vec3 ray) {
+      vec3 n = normalAt(p);
+      vec3 r = reflect(ray,n);
+      float rim = pow(1.-max(0.,dot(n,-ray)),4.);
+      vec3 light = vec3(.043,.029,.058);
+      light += vec3(.24,.095,.32)*exp(-oval(r.xy-vec2(.1,-.6),vec2(.76,.36))) * (.68+.32*r.z);
+      light += vec3(.75,.62,.84)*panel(r,normalize(vec3(-.90,.30,.58)),.12,vec2(.26,.71),.11);
+      light += vec3(.94,.88,1.)*panel(r,normalize(vec3(.85,.32,.65)),-.18,vec2(.29,.76),.09);
+      light += vec3(.53,.32,.64)*panel(r,normalize(vec3(.50,-.63,.41)),.65,vec2(.41,.59),.16);
+      light += vec3(.27,.12,.38)*panel(r,normalize(vec3(-.52,-.73,-.28)),-.18,vec2(.23,.65),.12);
+      light += vec3(.66,.60,.75)*panel(r,normalize(vec3(-.13,.84,-.52)),.10,vec2(.60,.085),.046);
+      light += vec3(.57,.48,.66)*panel(r,normalize(vec3(.18,-.70,-.69)),.25,vec2(.54,.105),.072);
+      light += vec3(.72,.61,.82)*panel(r,normalize(vec3(.74,.13,-.66)),-.10,vec2(.20,.78),.13);
+      light += vec3(.55,.44,.66)*panel(r,normalize(vec3(-.75,.20,-.63)),.12,vec2(.18,.71),.12);
+      light += vec3(.25,.16,.31)*rim + vec3(.13,.07,.16)*pow(max(0.,dot(r,normalize(vec3(.4,.6,-.4)))),14.);
+      return pow(clamp(light,0.,1.),vec3(.86));
+    }
+    void main() {
+      vec2 pixel = gl_FragCoord.xy;
+      vec3 color = background(pixel);
+      vec2 plane = (pixel-center)/174.;
+      if (length(plane) < 1.17) {
+        vec3 origin = vec3(plane*1.55, 4.5);
+        vec3 ray = normalize(vec3(-plane*.132,-1.));
+        float travel = 3.73;
+        float nearest = 1.;
+        for (int i=0; i<82; i++) {
+          vec3 point = origin + ray*travel;
+          float distance = shape(point);
+          nearest = min(nearest,distance);
+          if (distance < .00065) {
+            color = chrome(point,ray);
+            break;
+          }
+          if (travel > 5.2) break;
+          travel += max(.0018,distance*.88);
+        }
+        if (nearest >= .00065 && nearest < .0048) {
+          color = mix(color,vec3(.23,.15,.29), (1.-smoothstep(.00065,.0048,nearest))*.59);
+        }
+      }
+      gl_FragColor = vec4(color,1.);
+    }
+  `;
+
+  const program = gl.createProgram();
+  for (const [kind, source] of [[gl.VERTEX_SHADER, vertex], [gl.FRAGMENT_SHADER, fragment]]) {
+    const shader = gl.createShader(kind);
+    gl.shaderSource(shader, source);
+    gl.compileShader(shader);
+    gl.attachShader(program, shader);
+    gl.deleteShader(shader);
+  }
+  gl.linkProgram(program);
+  gl.useProgram(program);
+  const vertices = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, vertices);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 3,-1, -1,3]), gl.STATIC_DRAW);
+  const position = gl.getAttribLocation(program, 'position');
+  gl.enableVertexAttribArray(position);
+  gl.vertexAttribPointer(position, 2, gl.FLOAT, false, 0, 0);
+  const orbit = gl.getUniformLocation(program, 'orbit');
+  function draw(angle) {
+    gl.uniform1f(orbit, angle);
+    gl.drawArrays(gl.TRIANGLES, 0, 3);
+  }
+  draw(0);
+  explore.onclick = () => {
+    const active = explore.getAttribute('aria-pressed') !== 'true';
+    explore.setAttribute('aria-pressed', String(active));
+    explore.textContent = active ? 'Volver' : 'Explorar';
+    draw(active ? .49 : 0);
+  };
+} else {
+  explore.hidden = true;
+  const ctx = canvas.getContext('2d');
+  if (ctx) {
+    const chrome = ctx.createLinearGradient(492, 208, 802, 513);
+    chrome.addColorStop(0, '#e8d6ef');
+    chrome.addColorStop(.22, '#211329');
+    chrome.addColorStop(.42, '#c8a1df');
+    chrome.addColorStop(.57, '#150c1b');
+    chrome.addColorStop(.78, '#e6c3f9');
+    chrome.addColorStop(1, '#2f173e');
+    ctx.lineWidth = 82;
+    ctx.strokeStyle = chrome;
+    ctx.beginPath();
+    ctx.ellipse(646, 366, 130, 144, -.24, 0, Math.PI*2);
+    ctx.stroke();
+  }
+}
+</script>
+</body>
+</html>

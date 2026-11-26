@@ -5,11 +5,13 @@ IA. Mide una referencia real, la convierte en dirección artística y tokens, co
 intención, captura el resultado en un navegador real y compara ambos con números que puede
 auditar cualquiera.
 
-> **Estado: 1.0.0-rc.1 — release candidate.** Verificado en **Windows 11** con **63 pruebas**
-> (código de salida 0, 221 s), **cinco proyectos nuevos** medidos A/B y **cuatro de cinco** pasan
-> los gates sin tocarlos. El quinto se publica como rechazo real. La prueba con Codex está
-> incluida con su resultado negativo. Nada se declara compatible sin haberlo ejecutado.
-> Detalle: [docs/VERIFICACION-1.0.md](docs/VERIFICACION-1.0.md).
+> **Estado: 1.0.0-rc.2 — release candidate.** Verificado en **Windows 11** con **69 pruebas**
+> (código de salida 0, 223 s). Incluye el **protocolo Reference First**, un A/B nuevo con Codex
+> (referencia 16:9 adjunta a los dos brazos), la corrección justificada de la coherencia de matiz
+> y **zod 4.6.7** sin vulnerabilidades. El resultado sigue siendo mixto y se publica tal cual:
+> dos mejoras —una clara— y tres empates. Nada se declara compatible sin haberlo ejecutado.
+> Detalle: [docs/VERIFICACION-1.0-rc2.md](docs/VERIFICACION-1.0-rc2.md) e
+> [docs/INVESTIGACION-RC2.md](docs/INVESTIGACION-RC2.md).
 
 ![Aplicación de escritorio medida por Visual Engine](docs/evidencia/1.0-rc/projects/desktop-app/captures/after.png)
 
@@ -17,6 +19,7 @@ auditar cualquiera.
 
 | Capacidad | Herramienta real | Estado |
 | --- | --- | --- |
+| Reference First: brief medido + plan de 8 pasos | `ve plan` / `visual_plan` | Verificado |
 | Línea temporal: escenas, cortes, fotogramas clave, storyboard | FFmpeg + barrido RGB propio | Verificado |
 | Movimiento de cámara: paneo, zoom, rotación, temblor | Correlación normalizada | Verificado |
 | Composición, formas, texto y profundidad | JS propio + Tesseract opcional | Verificado / estimado declarado |
@@ -53,29 +56,41 @@ Vídeos reales en [docs/evidencia/1.0-rc/motion](docs/evidencia/1.0-rc/motion).
 **WebGL real:** 1,49° medidos frente a 1,5° esperados, error 0,01°, 184 frames, escena
 interactiva con arrastre. `camera.rotation.y` se lee del objeto de cámara, no de una captura.
 
-**El rechazo se publica.** La interfaz de juego sube calidad y fidelidad pero el gate la rechaza
-por coherencia de matiz: la referencia CC0 es casi gris y el HUD no reproduce su distribución de
-matiz. No se tintó la página para aprobar el gate. Es el comportamiento correcto del gate.
+**El rechazo de la interfaz de juego era un error de medición, no del diseño.** La referencia es
+casi gris (cobertura cromática 4,1 %) y el coseno directo del histograma de matiz convertía ruido
+en un defecto. Se investigó, se corrigió la métrica con justificación matemática y el caso se
+re-midió: `game-cinematic` B pasa a **accept**, mientras que **A sigue rechazando** por un defecto
+medido de iluminación. No se bajó ningún umbral; una dimensión no interpretable queda
+`available:false` y no se rellena. Validación: [docs/evidencia/1.0-rc2/coherence](docs/evidencia/1.0-rc2/coherence).
 
 ## Prueba con un agente real (Codex)
 
-Tarea nueva e idéntica para los dos brazos: una landing de HALO FOUNDRY a 1280×720, CSS
-autocontenido. Mismo modelo, prompt, sandbox y directorio temporal; la única diferencia es
-Visual Engine.
+Cinco parejas nuevas. En cada una, mismo modelo, **misma referencia adjunta con `-i`**, mismo
+prompt y mismo sandbox; la única diferencia es Visual Engine. Referencias sintéticas 16:9 y
+prohibido incrustar la imagen: se reconstruye con código.
 
-| | A sin VE | B con VE |
-| --- | ---: | ---: |
-| Calidad global | **77,1** | 62,3 |
-| Fidelidad | **72,8** | 48,4 |
-| Gates | reject | reject |
-| Invocaciones de VE | 0 | **9 comandos `ve`** |
+| Caso | Calidad A → B | Fidelidad A → B | Gates | Comandos `ve` |
+| --- | ---: | ---: | --- | ---: |
+| game-hud | 85,3 → **92,6** | 72,8 → **85,9** | reject → **accept** | 27 |
+| professional-app | 95,2 → **96,8** | 94,9 → 94,7 | reject → **accept** | 6 |
+| motion-title | 96,2 → **97,0** | 95,6 → **96,3** | accept → accept | 6 |
+| scene-3d | 95,7 → **95,8** | 88,0 → 88,0 | accept → accept | 8 |
+| premium-landing | 97,4 → **97,5** | 91,7 → **91,8** | accept → accept | 4 |
 
-**Resultado negativo, publicado.** B invocó de verdad `ve doctor`, `context`, `effects list`,
-`vision status`, `agents`, `art` y `capture`, y leyó la skill instalada; aun así su página —un
-split oscuro con una vasija en CSS— puntuó peor que la de A, porque la composición medida se
-aleja de la referencia clara. Es una limitación del proxy estructural, no una prueba de que VE
-empeore el diseño: hace falta revisión artística humana. Detalle y capturas en
-[docs/evidencia/1.0-rc/agents](docs/evidencia/1.0-rc/agents).
+**Dos mejoras —una clara—, tres empates y dos regresiones de dimensión publicadas.** En `game-hud`
+A dejó una banda negra de ~20 % (el canvas no llenaba 720 px); B midió, capturó, corrigió y llenó
+el lienzo. En `professional-app` A tenía 31 incumplimientos de contraste; B los corrigió y subió
+1,6 de calidad, pero bajó tipografía de 91,1 a 72,2. El coste real es tiempo (1,6×–3×); los tokens de entrada crecen hasta
+6,8× pero 97–99 % son lecturas de caché. Todo, incluidas las capturas, está en
+[docs/evidencia/1.0-rc2/agents](docs/evidencia/1.0-rc2/agents).
+
+### El A/B anterior (rc.1) y por qué no probaba lo que decía
+
+La pareja de rc.1 dio 77,1 → 62,3 y 72,8 → 48,4. La investigación encontró que **la referencia
+nunca se adjuntó al agente**, que la "referencia" era una fotografía vertical de museo (3710×4000)
+comparada con un lienzo 1280×720, y que B no ejecutó ni una medición de la referencia (9 comandos,
+7 de preparación). El resultado negativo está publicado igualmente; lo que no se sostiene es
+atribuirlo al motor. Análisis completo en [docs/INVESTIGACION-RC2.md](docs/INVESTIGACION-RC2.md).
 
 ## Instalación
 
@@ -157,7 +172,7 @@ documentado y probado.
 src/core   análisis, media, cámara, timeline, inspección, efectos, spec,
            composición, refeffects, galería, benchmark, visión, calidad,
            temporal, iteración, instalador, agentes, perfiles, seguridad
-src/mcp    servidor MCP (stdio, 44 herramientas)
+src/mcp    servidor MCP (stdio, 45 herramientas en 5 grupos)
 src/api    API HTTP local (loopback)
 src/cli    comandos `ve` (47)
 library/   58 recetas, 20 composiciones, fuentes OFL, benchmarks

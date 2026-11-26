@@ -1,7 +1,7 @@
-# MCP · Visual Engine 1.0.0-rc.1
+# MCP · Visual Engine 1.0.0-rc.2
 
-Servidor MCP por **stdio**: `node dist/cli/index.js mcp`. Versión 1.0.0-rc.1.
-**44 herramientas**, un recurso y un prompt.
+Servidor MCP por **stdio**: `node dist/cli/index.js mcp`. Versión 1.0.0-rc.2.
+**45 herramientas en 5 grupos**, un recurso y un prompt.
 
 ## Instalación
 
@@ -27,6 +27,7 @@ Codex usa `[mcp_servers.visual-engine]` en TOML.
 
 | Etapa | Herramientas |
 | --- | --- |
+| Entrada | `visual_plan` (brief medido + plan de 8 pasos; puerta de entrada) |
 | Instalación y contexto | `visual_agents`, `visual_install`, `visual_profile`, `visual_activation`, `visual_security`, `visual_usage`, `visual_context`, `visual_doctor` |
 | Referencia | `visual_analyze`, `visual_timeline`, `visual_camera`, `visual_inspect`, `visual_effects_detect`, `visual_spec`, `visual_reference_effects`, `visual_reference_design` |
 | Dirección y composición | `visual_art_direction`, `visual_motion_director`, `visual_showcase`, `visual_compose`, `visual_smart_effects`, `visual_effects_list`, `visual_effect_apply` |
@@ -43,8 +44,24 @@ Codex usa `[mcp_servers.visual-engine]` en TOML.
 - Recurso `visual://effects`: catálogo; no debe pegarse entero en el contexto.
 - Prompt `visual-quality-review`: guía de revisión con evidencia.
 
+## Descubrimiento selectivo
+
+No hace falta cargar las 45 herramientas en cada tarea. El servidor filtra por grupo:
+
+```bash
+VE_MCP_GROUPS=analysis,verify ve mcp        # 19 herramientas
+VE_MCP_TOOLS=visual_plan,visual_capture ve mcp
+node dist/cli/index.js mcp                  # todas (comportamiento por defecto)
+```
+
+Grupos: `analysis` (14), `direction` (10), `build` (9), `verify` (5), `agents` (7).
+La CLI y `ve serve` conservan todas las capacidades; el filtro sólo decide qué se expone al
+modelo. Un test comprueba que el subconjunto tiene 19 herramientas y que `visual_plan` funciona.
+
 ## Optimización
 
+- `visual_plan` devuelve el brief y sólo el paso siguiente con sus herramientas, en vez de la
+  biblioteca completa.
 - `visual_context` devuelve 4–10 herramientas y 0–4 recetas según el perfil.
 - `visual_profile` cambia capacidades y presupuestos, nunca la estética.
 - `visual_usage` distingue `reported` de `estimated`; no convierte estimaciones

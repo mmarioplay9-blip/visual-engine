@@ -1,0 +1,203 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panel de operaciones</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#e5e6ea;color:#171b21;font:12px "Segoe UI",Arial,sans-serif;overflow-x:hidden}
+button,input{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid #1466ad;outline-offset:2px}
+.stage{position:relative;width:1280px;height:720px;transform:scale(var(--scale,1));transform-origin:top left;background:linear-gradient(145deg,#e4e5e8,#e8e9ee 64%,#dfe0e5)}
+.window{position:absolute;inset:40px 28px 1px 27px;border-radius:16px 16px 0 18px;overflow:hidden;background:linear-gradient(135deg,#ebedf3,#edf0f6 58%,#e2e5ed);box-shadow:0 9px 28px #343a5020}
+.bar{height:43px;display:flex;align-items:center;gap:8px;padding:0 14px 0 12px;background:#f5f6fa;border-bottom:1px solid #dadee6}
+.avatar{width:22px;height:23px;border-radius:50%;overflow:hidden;flex:none}
+.avatar.small{width:19px;height:21px}
+.dot{width:8px;height:8px;border-radius:50%;background:#c6a34a}.dot.green{background:#54a364}
+.icon{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.35;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.brand{display:flex;gap:7px;align-items:center;margin:0 17px 0 13px;font-size:11px}
+.search,.team{height:28px;border-radius:20px;display:flex;align-items:center;padding:0 11px;gap:8px}
+.search{width:227px;background:linear-gradient(100deg,#e4e6ee,#ebedf4)}
+.search input{width:100%;background:transparent;border:0;font-size:10px;padding:0}
+.search .icon{width:13px;color:#536071}
+.team{margin-left:auto;width:188px;justify-content:space-between;background:#fff;border:1px solid #eceef2;color:#626c7b}
+.team span{margin-left:auto;font-size:10px}
+.side{position:absolute;inset:43px auto 0 0;width:153px;background:#f0f1f6;border-right:1px solid #dfe3ed;padding-top:9px}
+.side a{height:44px;display:flex;align-items:center;gap:17px;padding:0 15px;color:#252b35;text-decoration:none;font-size:12px}
+.side a[aria-current]{background:#afd8f8;color:#163b57;height:36px;margin:0 0 6px}
+.arrow{margin-left:auto;width:10px;color:#737d89}
+.help{position:absolute;bottom:17px;left:10px;display:grid;place-items:center;width:29px;height:40px;border-radius:10px;border:1px solid #dfe3ec;background:#f4f6fa;color:#143648;text-decoration:none}
+main{position:absolute;left:173px;right:1px;top:77px}
+.metrics{margin:0 16px 0 6px;display:grid;grid-template-columns:197px 197px 203px 1fr;gap:25px}
+.card,.report{background:#fff;border-radius:10px;box-shadow:0 16px 22px #33394c30}
+.card{height:160px;padding:21px 18px}
+.card h2{font-size:13px;margin:0;font-weight:650}
+.flag{color:#a25742;margin-left:4px}
+.value{text-align:center;font-size:33px;font-weight:350;letter-spacing:-1px;margin:24px 0 12px;line-height:1.03}
+.card p{text-align:center;color:#626a75;font-size:12px;margin:17px 0 0}
+.card:nth-child(3) .value{color:#14477a}.card:last-child .value{text-align:left;margin-left:57px;color:#bf4a44}
+.report{margin-top:34px;height:363px;padding:17px 21px 17px 20px}
+.report header{height:45px;display:flex;align-items:flex-start;justify-content:space-between}
+h1{margin:5px 0 0;font-weight:650;font-size:16px;letter-spacing:-.35px}
+.actions{display:flex;align-items:center;gap:6px;color:#626a76;font-size:10px}
+.actions span{margin-right:4px}
+.actions button{height:26px;border:1px solid #dce1e9;background:#fafbfc;border-radius:5px;padding:0 9px;display:flex;align-items:center;gap:4px}
+.actions .primary{background:linear-gradient(#4ca1fb,#2988ea);border-color:#388fea;color:#10283f;font-weight:650}
+.actions .icon{width:11px}
+.detail{display:grid;grid-template-columns:43% 1fr;gap:16px}
+.chart{margin:2px 0 0;border-right:1px solid #e7e9ef;height:274px;padding-right:17px;position:relative}
+.chart svg{width:100%;height:251px;display:block;overflow:visible}
+.chart text{fill:#606977;font-size:9px}
+.legend{background:#258bee;width:8px;height:12px;border-radius:3px;position:absolute;bottom:2px;left:6px}
+.table-wrap{overflow:hidden;border:1px solid #e9ecf1;border-radius:5px;height:283px}
+table{width:100%;height:100%;table-layout:fixed;border-collapse:collapse;font-size:12px;font-variant-numeric:tabular-nums;text-align:center}
+thead{background:#f7f8fa}
+th{height:35px;font-size:11px;font-weight:650;border-bottom:1px solid #e8ebef}
+th+th{box-shadow:inset 1px 0 #eff0f4}
+td{padding:1px 3px;border-bottom:1px solid #edf0f3}
+tbody tr:last-child{border-top:3px solid #f3f4f7;background:#f8f9fb}
+.badge{display:inline-grid;place-items:center;min-width:49px;padding:0 5px;height:19px;border-radius:14px;font-size:10px;font-weight:650;background:linear-gradient(#489af2,#2784df);color:#102947}
+.badge.green{background:linear-gradient(#48bf79,#2ca662);color:#082519}
+.badge.orange{background:linear-gradient(#f8b653,#eb932a);color:#39220c}
+.badge.soft{background:#f9ddb6;color:#513b20;min-width:35px}
+</style>
+</head>
+<body>
+<div class="stage">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<defs>
+<symbol id="search" viewBox="0 0 20 20"><circle cx="8" cy="8" r="5.5"/><path d="m12 12 5 5"/></symbol>
+<symbol id="next" viewBox="0 0 20 20"><path d="m7 3 6 7-6 7"/></symbol>
+<symbol id="overview" viewBox="0 0 20 20"><path d="M2 3h16v14H2zM2 8h16"/></symbol>
+<symbol id="home" viewBox="0 0 20 20"><path d="M2 9 10 2l8 7v9H2z"/></symbol>
+<symbol id="orders" viewBox="0 0 20 20"><path d="M1 8 10 2l9 6M3 10v8h14v-8M8 18v-6h4v6M6 8h1m6 0h1"/></symbol>
+<symbol id="stock" viewBox="0 0 20 20"><path d="M4 3h11l3 4-2 10H2L3 7zm0 5h13M6 12h6"/></symbol>
+<symbol id="box" viewBox="0 0 20 20"><path d="M3 4h14l2 13H1zM7 9h6"/></symbol>
+<symbol id="chat" viewBox="0 0 20 20"><path d="M3 14a8 8 0 1 1 3 3l-4 1zM6 8h7"/></symbol>
+<symbol id="lock" viewBox="0 0 20 20"><path d="M2 17V7a5 5 0 0 1 5-5h6a5 5 0 0 1 5 5v10zM10 8v3"/></symbol>
+<symbol id="download" viewBox="0 0 20 20"><path d="M10 2v10m-4-4 4 4 4-4M3 12v5h14v-5"/></symbol>
+<symbol id="portrait" viewBox="0 0 24 26">
+<rect width="24" height="26" fill="#d5c8bc"/><path d="M4 24 5 10Q4 1 12 1q9 0 8 11l1 12" fill="#352a29"/>
+<path d="M0 26q3-6 9-7h6q7 1 9 7" fill="currentColor"/><path d="M9 15h6l1 6-4 3-4-3z" fill="#ad7962"/>
+<path d="M7 8q5 0 7-4l4 5-1 6-4 4-4-2-2-4z" fill="#dbaa8c"/>
+<path d="M9 11h2m3 0h2m-6 4q2 1 4 0" stroke="#69483d" stroke-width=".65" fill="none"/>
+</symbol>
+</defs>
+</svg>
+<div class="window" data-ui>
+<div class="bar">
+<svg class="avatar small" style="color:#584239" aria-hidden="true"><use href="#portrait"/></svg>
+<i class="dot"></i><i class="dot green"></i>
+<span class="brand"><svg class="icon" aria-hidden="true"><use href="#search"/></svg>Nexo</span>
+<label class="search"><input type="search" aria-label="Buscar pedidos" placeholder="Buscar"><svg class="icon" aria-hidden="true"><use href="#search"/></svg></label>
+<div class="team"><svg class="icon" aria-hidden="true"><use href="#search"/></svg><span>Equipo de operaciones</span><svg class="avatar small" style="color:#ab5270" aria-hidden="true"><use href="#portrait"/></svg></div>
+<svg class="avatar" style="color:#334955" aria-hidden="true"><use href="#portrait"/></svg>
+</div>
+<nav class="side" aria-label="Secciones"></nav>
+<main id="resumen">
+<section class="metrics" aria-label="Indicadores del mes">
+<article class="card"><h2>Venta media</h2><div class="value">12,6</div><p>Unidades por pedido</p></article>
+<article class="card"><h2>Pedidos del día</h2><div class="value">124</div><p>En todos los canales</p></article>
+<article class="card"><h2>Plazo medio<span class="flag">•</span></h2><div class="value">10:08</div><p>Horas de preparación</p></article>
+<article class="card"><h2>Pendientes<span class="flag">•</span></h2><div class="value">148</div></article>
+</section>
+<section class="report" id="pedidos">
+<header><h1>Seguimiento de pedidos</h1><div class="actions"><span>Noviembre de 2026</span><span>Operaciones</span><button id="filter" type="button" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#overview"/></svg> Filtrar</button><button class="primary" id="export" type="button">Exportar</button></div></header>
+<div class="detail">
+<figure class="chart" id="actividad">
+<svg viewBox="0 0 416 251" preserveAspectRatio="none" role="img" aria-label="Pedidos de junio a noviembre. La serie principal termina al alza y la segunda repunta en noviembre.">
+<defs><linearGradient id="pale" x2="1" y2="0"><stop stop-color="#c2dde4"/><stop offset=".4" stop-color="#4295c9"/><stop offset=".88" stop-color="#388dca"/><stop offset="1" stop-color="#a6d1e8"/></linearGradient></defs>
+<path d="M25 34H407M25 74H407M25 113H407M25 153H407M25 185H407M25 219H407" stroke="#edf0f2" fill="none"/>
+<path d="M25 219H407" stroke="#dce2e6"/>
+<g text-anchor="end"><text x="17" y="37">50</text><text x="17" y="77">40</text><text x="17" y="116">30</text><text x="17" y="156">20</text><text x="17" y="188">10</text><text x="17" y="222">0</text></g>
+<g text-anchor="middle"><text x="66" y="237">Jun</text><text x="138" y="237">Jul</text><text x="203" y="237">Ago</text><text x="279" y="237">Sep</text><text x="337" y="237">Oct</text><text x="396" y="237">Nov</text></g>
+<path d="M143 185 188 138 211 114 255 117 298 160 330 179 396 130" stroke="url(#pale)" stroke-width="2.5" fill="none"/>
+<path d="M30 117 68 140 138 90 188 138 211 114 255 117 396 51" stroke="#318bc8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+<g fill="#fff" stroke="#318bc8" stroke-width="2"><circle cx="30" cy="117" r="2.8"/><circle cx="68" cy="140" r="2.8"/><circle cx="138" cy="90" r="2.8"/><circle cx="211" cy="114" r="2.6"/><circle cx="255" cy="117" r="2.6"/><circle cx="396" cy="51" r="3"/><circle cx="330" cy="179" r="2"/></g><circle cx="396" cy="130" r="3" fill="#a6d1e8"/>
+</svg><span class="legend" aria-hidden="true"></span>
+</figure>
+<div class="table-wrap">
+<table aria-label="Pedidos recientes">
+<colgroup><col style="width:10%"><col style="width:18%"><col style="width:12%"><col style="width:18%"><col style="width:12%"><col style="width:17%"><col style="width:13%"></colgroup>
+<thead><tr><th>Pedido</th><th>Cliente</th><th>Unidades</th><th>Pago</th><th>Importe</th><th>Lote</th><th>Envío</th></tr></thead>
+<tbody></tbody>
+</table>
+</div>
+</div>
+</section>
+</main>
+<a class="help" href="#resumen" aria-label="Volver al resumen"><svg class="icon" aria-hidden="true"><use href="#chat"/></svg></a>
+</div>
+</div>
+<script>
+const sections = [
+  ['General','overview','resumen',true], ['Resumen','home','resumen'],
+  ['Pedidos','orders','pedidos',true], ['Inventario','stock','pedidos',true],
+  ['Envíos','box','pedidos'], ['Actividad','chat','actividad'],
+  ['Cuenta','lock','resumen',true]
+];
+const icon = (name, css = '') => '<svg class="icon ' + css + '" aria-hidden="true"><use href="#' + name + '"/></svg>';
+document.querySelector('.side').innerHTML = sections.map(([label, name, target, arrow], index) =>
+  '<a href="#' + target + '"' + (index === 1 ? ' aria-current="page"' : '') + '>' +
+  icon(name) + label + (arrow ? icon('next','arrow') : '') + '</a>'
+).join('');
+
+const orders = [
+  ['8309','Arenas',35,744.45,250,true], ['8300','Solís',38,468.60,119,false],
+  ['8298','Vega',58,263.60,359,true], ['8295','Prado',47,725.80,559,false],
+  ['8293','Lago',35,246.60,333,false], ['8286','León',70,268.90,336,false],
+  ['8281','Ríos',60,385.00,730,false], ['8280','Gil',20,143.39,690,true]
+];
+const body = document.querySelector('tbody');
+const search = document.querySelector('input[type=search]');
+const filter = document.querySelector('#filter');
+const money = new Intl.NumberFormat('es-ES',{style:'currency',currency:'EUR'});
+const normalize = text => text.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+const visibleOrders = () => {
+  const query = normalize(search.value.trim());
+  const pending = filter.getAttribute('aria-pressed') === 'true';
+  return orders.filter(([id, client, , , , sent]) =>
+    (!pending || !sent) && normalize(id + ' ' + client).includes(query));
+};
+function render() {
+  const rows = visibleOrders();
+  body.parentElement.style.height = rows.length === orders.length ? '100%' : 'auto';
+  body.innerHTML = rows.map(([id, client, units, total, lot, sent]) =>
+    '<tr><td><span class="badge">' + id + '</span></td><td>' + client +
+    '</td><td>' + units + '</td><td><span class="badge green">Pagado</span></td><td>' +
+    (id === '8309' ? '<span class="badge soft">' + money.format(total) + '</span>' : money.format(total)) +
+    '</td><td>' + lot + '</td><td><span class="badge' + (sent ? '' : ' orange') + '">' +
+    (sent ? 'Enviado' : 'Pendiente') + '</span></td></tr>'
+  ).join('') || '<tr><td colspan="7">No hay pedidos que coincidan.</td></tr>';
+}
+search.addEventListener('input', render);
+filter.addEventListener('click', () => {
+  const active = filter.getAttribute('aria-pressed') !== 'true';
+  filter.setAttribute('aria-pressed', active);
+  filter.innerHTML = icon('overview') + (active ? ' Pendientes' : ' Filtrar');
+  render();
+});
+document.querySelector('#export').addEventListener('click', () => {
+  const rows = visibleOrders().map(([id, client, units, total, lot, sent]) =>
+    [id,client,units,total.toFixed(2).replace('.',','),lot,sent ? 'Enviado' : 'Pendiente'].join(';'));
+  const file = new Blob(['\ufeffPedido;Cliente;Unidades;Importe;Lote;Envío\r\n' + rows.join('\r\n')], {type:'text/csv;charset=utf-8'});
+  const url = URL.createObjectURL(file);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = 'pedidos.csv';
+  link.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+});
+function fit() {
+  const scale = Math.min(1, document.documentElement.clientWidth / 1280);
+  document.documentElement.style.setProperty('--scale', scale);
+  document.body.style.height = 720 * scale + 'px';
+}
+window.addEventListener('resize', fit);
+fit();
+render();
+</script>
+</body>
+</html>

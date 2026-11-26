@@ -1,0 +1,26 @@
+{
+  "run": {
+    "arm": "b",
+    "exit": 0,
+    "usage": {
+      "input_tokens": 583288,
+      "cached_input_tokens": 526080,
+      "cache_write_input_tokens": 0,
+      "output_tokens": 2495,
+      "reasoning_output_tokens": 0
+    },
+    "mcpCalls": [],
+    "veCommands": [
+      "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command 'Get-Location; Get-ChildItem -Force -Name; Get-Command ve -ErrorAction SilentlyContinue'",
+      "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$cli='\"'<repo>/dist/cli/index.js'; \"'$env:ORBIT_CHECK=Join-Path $env:TEMP ('\"'orbit-b-'+[guid]::NewGuid()); New-Item -ItemType Directory \"'$env:ORBIT_CHECK | Out-Null; Write-Output $env:ORBIT_CH",
+      "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$r='\"'<repo>'; rg -n 'case \\\"(capture|critic|fidelity|debug|review|inspect)\\\"|Uso: ve (capture|critic|fidelity|debug|review)' \\\"\"'$r/src/cli\"; Get-ChildItem \"$r/docs/evidencia/1.0-rc2/agents/wor",
+      "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$cli='\"'<repo>/dist/cli/index.js'; \"'$o=\"$env:TEMP/orbit-b-4e222135-83f2-4517-8b28-91882aa425bf\"; node $cli review --reference reference.jpg --target-dir . --frames 6 --width 1280 --height 720 -",
+      "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$p='\"'<repo>/src/cli/index.ts'; Select-String -Path \"'$p -Pattern '\"'async function cmd(Debug|Critic|Fidelity|Intelligence)|Uso: ve (debug|critic|fidelity|intelligence)|case .intelligence' -Cont",
+      "\"C:\\\\WINDOWS\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\" -Command '$cli='\"'<repo>/dist/cli/index.js'; \"'$o=\"$env:TEMP/orbit-b-4e222135-83f2-4517-8b28-91882aa425bf\"; node $cli critic --reference reference.jpg --target-dir . --frames 6 --width 1280 --height 720 -"
+    ],
+    "ms": 116320,
+    "bytes": 4258,
+    "hasHtml": true,
+    "embeddedReference": false
+  }
+}

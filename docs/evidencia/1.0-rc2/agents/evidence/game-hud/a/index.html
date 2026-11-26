@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="es">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Objetivo del cañón</title>
+<style>
+  * { box-sizing: border-box }
+  html, body { margin: 0; background: #0b0a0b }
+  body { overflow: hidden }
+  main { position: relative; width: min(1280px, 100vw, 177.77778vh); aspect-ratio: 16 / 9 }
+  canvas, svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block }
+  svg { font-family: "Trebuchet MS", Arial, sans-serif }
+  .lit { filter: drop-shadow(0 0 4px #f58b3b55) }
+</style>
+<main data-ui aria-label="Vista del cañón con indicadores de navegación y energía">
+<canvas id="canyon" width="1280" height="720" aria-hidden="true"></canvas>
+<svg viewBox="0 0 1392 752" preserveAspectRatio="none" role="img" aria-labelledby="hud-title hud-desc">
+  <title id="hud-title">Objetivo de navegación</title>
+  <desc id="hud-desc">Cruza el cañón. Mira central, escáner circular y medidor de energía.</desc>
+  <g class="lit" fill="#ffd08b">
+    <text x="104" y="75" font-size="18" letter-spacing=".48">OBJETIVO DE NAVEGACIÓN</text>
+    <text x="104" y="101" font-size="13" letter-spacing=".65" fill="#e1dcce">CRUZA EL CAÑÓN.</text>
+  </g>
+  <g fill="none" stroke="#c89360" stroke-width="1.25" opacity=".67">
+    <ellipse cx="699" cy="372" rx="116" ry="123"/>
+    <ellipse cx="699" cy="369" rx="39.5" ry="41.5"/>
+    <path d="M699 237V362m0 11v134M570 369h90m78 0h88"/>
+    <circle cx="699" cy="367" r="5"/>
+  </g>
+  <g class="lit" fill="none" stroke="#ffb354" stroke-width="2">
+    <circle cx="1162" cy="558" r="128" fill="#0c0806" fill-opacity=".16"/>
+    <path d="M1165 430v14m0 226v16m-131-131h23m210 1h29"/>
+    <path d="M1165 444v226m-108-115h210" stroke-width=".6" opacity=".16"/>
+    <circle cx="1164" cy="555" r="9.5" stroke-width="1.2"/>
+    <circle cx="1164" cy="555" r="7.5" stroke-width=".65" opacity=".65"/>
+  </g>
+  <g class="lit">
+    <circle cx="111" cy="588.5" r="11.5" fill="#231911" stroke="#ffc878" stroke-width="2"/>
+    <circle cx="111" cy="588.5" r="8.1" fill="#ddaa65" stroke="#fcd28c" stroke-width=".7"/>
+    <text x="130" y="594" font-size="16" fill="#ffce82">ENERGÍA</text>
+    <g stroke="#bdf4e5" fill="#a1e8d8" fill-opacity=".34" stroke-width="2.3">
+      <rect x="113" y="618" width="84" height="16.8"/><rect x="202" y="618" width="76" height="16.8"/>
+      <rect x="284" y="618" width="77" height="16.8"/><rect x="366" y="618" width="77" height="16.8"/>
+      <rect x="448" y="618" width="121" height="16.8"/>
+    </g>
+    <path fill="#bdf7e8" d="M111 643h78v14h-78zm80 0h81v14h-81zm83 0h155v14H274z"/>
+    <path d="M104 612v71m0-19h417v18H104" fill="none" stroke="#eea048" stroke-width="2"/>
+  </g>
+</svg>
+</main>
+<script>
+"use strict";
+const ctx = document.querySelector("canvas").getContext("2d");
+ctx.scale(1280 / 1392, 720 / 752);
+let seed = 491327;
+function random() {
+  seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0;
+  return seed / 4294967296;
+}
+function gradient(x0, y0, x1, y1, stops) {
+  const paint = ctx.createLinearGradient(x0, y0, x1, y1);
+  stops.forEach(([at, color]) => paint.addColorStop(at, color));
+  return paint;
+}
+function shape(d, paint) {
+  ctx.fillStyle = paint;
+  ctx.fill(new Path2D(d));
+}
+function polygon(points, paint) {
+  ctx.beginPath();
+  points.forEach(([x,y], i) => i ? ctx.lineTo(x,y) : ctx.moveTo(x,y));
+  ctx.closePath();
+  ctx.fillStyle = paint;
+  ctx.fill();
+}
+function tint(rgb, shift, alpha = 1) {
+  return 'rgba(' + rgb.map(value => Math.max(0, Math.min(255, value + shift))).join(',') + ',' + alpha + ')';
+}
+function fill(paint) {
+  ctx.fillStyle = paint;
+  ctx.fillRect(0,0,1392,752);
+}
+
+// Twilight and layered cloud noise, generated from independent seeded grids.
+fill(gradient(380,0,485,427,[[0,"#242932"],[.39,"#39383d"],[.66,"#574649"],[.83,"#343944"],[1,"#303844"]]));
+const cloud = document.createElement("canvas");
+cloud.width = 696;
+cloud.height = 220;
+const cloudCtx = cloud.getContext("2d");
+const cloudPixels = cloudCtx.createImageData(696,220);
+function noiseGrid(width, height) {
+  const samples = Array.from({length: width * height}, random);
+  return (x,y) => {
+    const column = Math.floor(x), row = Math.floor(y);
+    const u = x - column, v = y - row;
+    const a = u*u*(3-2*u), b = v*v*(3-2*v);
+    const index = row * width + column;
+    return (samples[index]*(1-a)+samples[index+1]*a)*(1-b) +
+      (samples[index+width]*(1-a)+samples[index+width+1]*a)*b;
+  };
+}
+const coarse = noiseGrid(34,34), fine = noiseGrid(70,70);
+for (let y = 0; y < 220; y++) {
+  for (let x = 0; x < 696; x++) {
+    const bend = y + Math.sin(x / 116) * 11 + x * .075;
+    const density = coarse(x/26, (bend+12)/12)*.72 + fine(x/12,(bend+12)/5)*.28;
+    const position = (y*696+x)*4;
+    cloudPixels.data[position] = 19;
+    cloudPixels.data[position+1] = 21;
+    cloudPixels.data[position+2] = 28;
+    cloudPixels.data[position+3] = Math.max(0,(density-.43)*218) * (1-y/230);
+  }
+}
+cloudCtx.putImageData(cloudPixels,0,0);
+ctx.drawImage(cloud,0,0,1392,440);
+
+// Main valley. The floor widens forward along both talus slopes.
+shape("M0 333L257 313 425 378 584 475 680 492 734 488 822 449 1023 331 1392 286V752H0Z",
+  gradient(700,449,687,770,[[0,"#333039"],[.29,"#493733"],[.61,"#523c33"],[1,"#49362d"]]));
+shape("M0 370L219 336 416 388 519 475 623 525 704 552 762 602 813 679 906 752H0Z",
+  gradient(153,357,433,733,[[0,"#302727"],[.61,"#4b3930"],[1,"#32251e"]]));
+shape("M1392 309L1186 340 1030 404 900 473 829 512 737 552 767 573 867 552 953 569 1105 631 1392 581Z",
+  gradient(1020,380,1093,653,[[0,"#2d2b30"],[1,"#51392e"]]));
+shape("M687 510Q715 533 736 540T777 586Q797 615 777 652T809 704L858 752H700Q729 709 731 674T751 615Q755 577 709 549Z","#69504426");
+
+// Rock faces use irregular vertical facets, bedding seams, and finer chips.
+function cliff(outline, rim, bottom, rgb, step, depth) {
+  const boundary = new Path2D(outline);
+  ctx.save();
+  ctx.clip(boundary);
+  const left = rim[0][0], right = rim[rim.length-1][0];
+  const top = Math.min(...rim.map(point => point[1]));
+  fill(gradient(left,top,right,top+depth,[[0,tint(rgb,11)],[.47,tint(rgb,0)],[1,tint(rgb,-9)]]));
+  function edge(x) {
+    for (let i = 1; i < rim.length; i++) {
+      const [rightX,rightY] = rim[i], [leftX,leftY] = rim[i-1];
+      if (x <= rightX) return leftY + (rightY-leftY)*(x-leftX)/(rightX-leftX);
+    }
+    return rim[rim.length-1][1];
+  }
+  for (let x = left-12; x < right+15;) {
+    const width = step * (.35 + random()*1.25);
+    const y = edge(x) - random()*9;
+    const lean = (random()-.42)*step*1.4;
+    const end = Math.min(bottom+30,y+depth*(.78+random()*.8));
+    const mid = y+(end-y)*(.40+random()*.23);
+    const shift = Math.floor((random()-.52)*23);
+    polygon([[x,y],[x+width*.86,y-3],[x+width+lean*.65,mid],[x+width*.66+lean,end],
+      [x+lean*.8,end+3],[x+lean*.30,mid]],tint(rgb,shift));
+    polygon([[x+width*.82,y],[x+width,y+3],[x+width+lean*.65,mid],[x+width*.66+lean,end],
+      [x+width*.49+lean,end-12],[x+width*.76+lean*.65,mid-11]],tint(rgb,shift-11,.86));
+    polygon([[x+width*.12,y+8],[x+width*.32,y+4],[x+width*.18+lean*.3,mid],
+      [x+width*.27+lean*.8,end-8],[x+lean*.8,end],[x+lean*.3,mid]],tint(rgb,shift+10,.52));
+    for(let i = 0; i < 8; i++) {
+      const chipY = y+random()*(end-y), chipX = x+random()*width+lean*(chipY-y)/(end-y);
+      polygon([[chipX,chipY],[chipX+width*.6,chipY-2],[chipX+width*.35,chipY+3],
+        [chipX-2,chipY+4]],tint(rgb,shift-14,.23));
+    }
+    x += width;
+  }
+  for (let band=0; band<8; band++) {
+    const offset = band*band*2.2+3;
+    ctx.beginPath();
+    rim.forEach(([x,y], i) => {
+      const layerY = y+offset + 3*Math.sin(x/43+band);
+      if (i === 0) ctx.moveTo(x-8,layerY);
+      else ctx.lineTo(x,layerY);
+    });
+    ctx.strokeStyle = tint(rgb,band<3?-14:-10,band<3?.48:.24);
+    ctx.lineWidth = band<3 ? 2.4 : 1.1;
+    ctx.stroke();
+  }
+  ctx.restore();
+}
+
+cliff("M255 196L339 191 418 221 497 225 522 241 560 245 580 260 601 273 613 305 648 311 662 369 639 420 602 451 542 430 464 398 389 354Z",
+  [[252,196],[338,191],[420,221],[495,225],[525,241],[563,246],[598,272],[613,305],[649,311],[670,369]],452,[43,46,57],25,175);
+cliff("M772 409L779 339 789 282 809 269 844 267 874 252 910 250 924 231 953 219 1015 212 1067 197 1141 210 1102 361 1024 382 960 406 872 428 815 461Z",
+  [[767,398],[789,282],[809,269],[844,267],[874,252],[910,249],[928,228],[953,219],[1015,212],[1067,197],[1141,210]],461,[43,45,55],27,155);
+
+cliff("M176 151L263 152 285 172 334 188 390 201 410 212 435 222 447 283 452 336 428 341 405 352 362 350 306 326 225 284Z",
+  [[176,151],[262,152],[285,172],[334,188],[390,201],[410,212],[435,222],[455,282]],365,[32,31,34],26,143);
+cliff("M1005 369L1028 323 1046 250 1070 195 1106 177 1123 164 1196 154 1225 131 1272 111 1345 102 1392 75V367L1324 311 1266 318 1195 341 1113 373Z",
+  [[1005,369],[1028,323],[1046,250],[1070,195],[1106,177],[1123,164],[1196,154],[1225,131],[1272,111],[1345,102],[1392,75]],380,[29,28,31],31,177);
+cliff("M0 0L25 7 63 17 122 23 165 35 194 55 230 66 270 102 281 140 304 148 328 169 333 201 342 227 347 267 362 371 327 365 291 368 249 348 200 368 157 363 90 327 0 361Z",
+  [[0,0],[25,7],[63,17],[122,23],[165,35],[194,55],[230,66],[270,102],[281,140],[304,148],[328,169],[333,201],[342,227],[347,267],[362,371]],
+  371,[25,23,25],27,247);
+cliff("M0 0L27 10 42 73 66 124 83 165 101 180 106 230 116 273 116 367 91 375 68 358 41 355 0 370Z",
+  [[0,0],[27,10],[42,73],[66,124],[83,165],[101,180],[106,230],[116,273],[121,366]],375,[19,16,16],30,283);
+
+// Broken ledges closer to the camera.
+function ledge(top, wall, rim, base, color, spacing, depth, cap) {
+  cliff(wall,rim,base,color,spacing,depth);
+  const surface = new Path2D(top);
+  ctx.save();
+  ctx.clip(surface);
+  const left = rim[0][0], right = rim[rim.length-1][0];
+  const high = Math.min(...rim.map(point => point[1]));
+  fill(gradient(left,high-52,right,high+42,[[0,cap],[.64,cap],[1,tint(color,2)]]));
+  for(let i=0;i<230;i++) {
+    const x=left-30+random()*(right-left+60), y=high-82+random()*162;
+    const width=2+Math.pow(random(),2)*41;
+    polygon([[x,y],[x+width*.52,y+width*.05],[x+width,y+width*.39],
+      [x+width*.36,y+width*.28]],i%2 ? "#100c0c33" : "#87716321");
+  }
+  ctx.restore();
+}
+ledge("M188 375L256 390 301 404 346 408 388 401 439 381 485 390 530 408 502 424 438 449 337 466 255 441Z",
+  "M210 417L256 428 324 447 387 439 432 423 479 416 498 410 529 407 537 542 503 554 476 528 457 575 416 596 372 571 336 535 271 511 229 482Z",
+  [[210,417],[256,428],[324,447],[387,439],[432,423],[479,416],[498,410],[529,407],[537,542]],596,[28,24,24],26,132,"#392d28");
+ledge("M0 353L70 354 94 373 135 377 181 401 220 412 184 430 117 457 39 448 0 430Z",
+  "M0 406L52 419 96 425 155 420 194 412 220 412 228 482 259 479 274 507 268 608 218 607 173 577 114 566 65 566 0 548Z",
+  [[0,406],[52,419],[96,425],[155,420],[194,412],[220,412],[228,482],[259,479],[274,507]],609,[23,19,19],31,151,"#332722");
+ledge("M831 467L870 447 901 441 922 457 911 483 864 503 809 510Z",
+  "M805 492L835 472 867 464 914 452 916 481 894 496 868 498 850 524 801 542Z",
+  [[800,500],[835,472],[867,464],[914,452],[922,480]],542,[36,32,34],24,67,"#493936");
+ledge("M901 404L954 393 1018 407 1063 407 1114 422 1083 447 1015 462 950 435Z",
+  "M905 405L936 418 983 415 1017 413 1060 419 1105 430 1100 519 1060 535 1034 548 998 542 971 559 939 552 903 531Z",
+  [[905,405],[936,418],[983,415],[1017,413],[1060,419],[1105,430]],559,[27,24,25],22,123,"#40332e");
+ledge("M1072 428L1123 410 1165 387 1226 374 1288 376 1324 394 1280 425 1212 444 1138 447Z",
+  "M1072 428L1114 435 1158 427 1200 430 1230 421 1251 409 1288 407 1324 395 1337 514 1302 554 1266 577 1238 580 1201 594 1177 613 1147 626 1108 614 1074 590 1056 556Z",
+  [[1056,490],[1072,428],[1114,435],[1158,427],[1200,430],[1230,421],[1251,409],[1288,407],[1324,395],[1337,514]],626,[20,17,17],28,186,"#302622");
+ledge("M1220 374L1251 352 1297 343 1344 322 1392 310V385L1353 401 1301 393Z",
+  "M1240 375L1281 379 1342 376 1392 373V562L1361 556 1326 570 1297 548 1273 517 1261 436Z",
+  [[1240,375],[1281,379],[1342,376],[1392,373]],571,[19,15,15],25,172,"#29201c");
+
+shape("M0 548Q85 579 132 591L201 603 277 625 349 628 420 649 499 660 565 697 632 752H0Z",
+  gradient(143,535,369,752,[[0,"#3a2a22"],[.56,"#453228"],[1,"#35261e"]]));
+shape("M1392 502L1330 546 1296 565 1251 572 1209 598 1146 628 1067 653 1007 689 945 711 907 752H1392Z",
+  gradient(1245,553,1277,752,[[0,"#372923"],[.57,"#51392c"],[1,"#35251e"]]));
+ledge("M1289 554L1324 532 1356 525 1392 504V552L1341 564 1306 572Z",
+  "M1296 553L1326 552 1355 542 1392 530V752H1315L1296 714 1286 654Z",
+  [[1286,649],[1296,553],[1326,552],[1355,542],[1392,530]],752,[18,15,16],26,195,"#292221");
+
+// Scree and scrub are placed by depth, with the nearest silhouettes painted last.
+const debris = [];
+for(let i=0;i<735;i++) {
+  const x = random()*1392, y = 439 + Math.pow(random(),.86)*319;
+  const center = 693 + (y-500)*.25;
+  const near = (y-414)/338;
+  const extent = 60 + Math.pow(near,1.17)*721;
+  const onSand = Math.abs(x-center)<extent ||
+    (x<367 && y>561+x*.21) || (x>915 && x<1291 && y>747-(x-915)*.45);
+  if(onSand) debris.push([x,y,near]);
+}
+function rock(x,y,w,h) {
+  polygon([[x-w*.66,y],[x+w*.28,y-h*.16],[x+w*.88,y+h*.16],[x+w*.40,y+h*.55],[x-w*.34,y+h*.33]],"#150f1087");
+  polygon([[x-w*.51,y],[x-w*.34,y-h*.52],[x-w*.12,y-h*.87],[x+w*.20,y-h],[x+w*.41,y-h*.56],[x+w*.55,y-h*.14],[x+w*.17,y+h*.07]],"#211c1b");
+  polygon([[x-w*.51,y],[x-w*.34,y-h*.52],[x-w*.12,y-h*.87],[x+w*.20,y-h],[x+w*.13,y-h*.55],[x-w*.18,y-h*.14]],"#3b3330");
+  polygon([[x-w*.18,y-h*.14],[x+w*.13,y-h*.55],[x+w*.41,y-h*.56],[x+w*.55,y-h*.14],[x+w*.17,y+h*.07]],"#282322");
+}
+function shrub(x,y,r) {
+  ctx.beginPath();
+  ctx.ellipse(x+r*.1,y+r*.15,r*1.25,r*.32,.09,0,Math.PI*2);
+  ctx.fillStyle="#19131183";
+  ctx.fill();
+  for(let i=0;i<19;i++) {
+    const spread = (random()-.5)*2, height = .26+random()*.98;
+    ctx.beginPath();
+    ctx.moveTo(x+(random()-.5)*r*.45,y);
+    ctx.quadraticCurveTo(x+spread*r*.33,y-r*height*.57,x+spread*r,y-r*height);
+    ctx.strokeStyle=tint([31,32,24],Math.floor(random()*16)-9,.84);
+    ctx.lineWidth=.4+r*.06;
+    ctx.stroke();
+  }
+}
+debris.push([578,683,.94],[676,567,.53],[935,616,.67],[1034,653,.73],[1230,727,.95]);
+debris.sort((a,b)=>a[1]-b[1]);
+for(const [x,y,near] of debris) {
+  const extent = Math.pow(near,1.65)*(2+Math.pow(random(),3)*22)+.8;
+  if(random()<.36) shrub(x,y,extent*.77);
+  else rock(x,y,extent*1.25,extent*(.27+random()*.44));
+}
+rock(587,680,139,38);
+rock(650,559,45,20);
+rock(1156,741,77,26);
+shrub(160,752,63);
+shrub(839,749,28);
+shrub(936,714,22);
+
+// Low frequency mottling and fine grain blend the facets into the atmosphere.
+const landscape = ctx.getImageData(0,0,1280,720);
+const broadGrain = noiseGrid(46,41), fineGrain = noiseGrid(181,106);
+for(let y=0;y<720;y++) {
+  for(let x=0;x<1280;x++) {
+    const index=(y*1280+x)*4;
+    const roughness=(broadGrain(x/31,y/19)-.5)*8+(fineGrain(x/8,y/7)-.5)*5+(random()-.5)*4;
+    const weight=.41+.59*y/720;
+    for(let channel=0;channel<3;channel++) landscape.data[index+channel]+=roughness*weight;
+  }
+}
+ctx.putImageData(landscape,0,0);
+fill(gradient(0,315,0,752,[[0,"#06040800"],[1,"#05030432"]]));
+const vignette = ctx.createRadialGradient(695,349,150,695,357,782);
+vignette.addColorStop(0,"#10101700");
+vignette.addColorStop(.44,"#07060920");
+vignette.addColorStop(.74,"#05040558");
+vignette.addColorStop(1,"#030203bf");
+fill(vignette);
+</script>
+</html>

@@ -9,8 +9,9 @@ Eres un agente local que puede usar Visual Engine por CLI. Antes de afirmar algo
 visual, ejecuta la herramienta y lee su salida. No inventes métricas.
 
 1. Pide contexto, no el catálogo: `ve context "<tarea>" --profile lite`.
-2. Analiza la referencia: `ve analyze <archivo> --samples 4` o `ve spec <archivo>`.
-3. Si hay que crear: `ve art "<brief>" --style <id> --out <dir>`.
+2. Brief Reference First: `ve plan "<intención>" --reference <archivo> --out <dir>`.
+3. Analiza la referencia: `ve analyze <archivo> --samples 4` o `ve spec <archivo>`.
+4. Si hay que crear, sólo después del brief: `ve art "<brief>" --out <dir>`.
 4. Captura y critica: `ve capture <html> --out <dir> --json`, `ve critic ...`.
 5. Entrega sólo lo que la herramienta midió; separa verificado de estimado.
 

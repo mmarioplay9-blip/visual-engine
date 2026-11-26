@@ -94,6 +94,122 @@ function cosine(a: number[], b: number[]): number {
   return na && nb ? clamp(dot / Math.sqrt(na * nb)) : 0;
 }
 
+/**
+ * Croma relativa (0 = gris puro, 1 = matiz saturado).
+ *
+ * El matiz no está definido cuando el croma es cero; cerca de cero su
+ * estimación tiene una varianza enorme. Ponderar por croma y exigir una
+ * cobertura cromática mínima evita puntuar ruido de color como si fuera una
+ * decisión artística.
+ */
+function chromaOf(rgb: [number, number, number]): number {
+  const r = rgb[0] / 255, g = rgb[1] / 255, b = rgb[2] / 255;
+  const mx = Math.max(r, g, b);
+  const mn = Math.min(r, g, b);
+  return mx > 0 ? (mx - mn) / mx : 0;
+}
+
+function hueOfRgb(rgb: [number, number, number]): number {
+  const r = rgb[0] / 255, g = rgb[1] / 255, b = rgb[2] / 255;
+  const mx = Math.max(r, g, b), mn = Math.min(r, g, b), d = mx - mn;
+  if (d === 0) return -1;
+  let h = 0;
+  if (mx === r) h = ((g - b) / d) % 6;
+  else if (mx === g) h = (b - r) / d + 2;
+  else h = (r - g) / d + 4;
+  return (h * 60 + 360) % 360;
+}
+
+/** Cobertura cromática mínima para que el matiz sea interpretable. */
+export const CHROMATIC_COVERAGE_FLOOR = 0.08;
+/** Croma por debajo del cual un color se considera neutro a efectos de matiz. */
+export const NEUTRAL_CHROMA = 0.12;
+/**
+ * Concentración del núcleo circular (von Mises). κ = 4 equivale a una desviación
+ * circular de ≈ 0,5 rad (≈ 29°), es decir, la anchura de un sector de matiz.
+ */
+export const HUE_KERNEL_KAPPA = 4;
+
+/**
+ * Suavizado circular del histograma de matiz.
+ *
+ * El matiz vive en un círculo. Comparar los 12 sectores con un producto escalar
+ * simple convierte 30° de diferencia en ortogonalidad (similitud 0): un acento
+ * desplazado un sector se penaliza igual que su complementario, y dos paletas
+ * ortogonales no tienen término medio. Se convoluciona con un núcleo de von
+ * Mises K(Δ) ∝ exp(κ·cos Δ) y se renormaliza: la similitud pasa a decrecer de
+ * forma monótona con la distancia circular de matiz, sin cambiar el umbral.
+ */
+export function smoothCircular(histogram: number[], kappa = HUE_KERNEL_KAPPA): number[] {
+  const n = histogram.length;
+  if (n === 0) return [];
+  const kernel = new Array(n);
+  for (let k = 0; k < n; k++) kernel[k] = Math.exp(kappa * Math.cos((2 * Math.PI * k) / n));
+  const out = new Array(n).fill(0);
+  for (let i = 0; i < n; i++) {
+    for (let k = 0; k < n; k++) out[i] += histogram[(i - k + n) % n] * kernel[k];
+  }
+  const mass = out.reduce((a, b) => a + b, 0);
+  return mass > 0 ? out.map((v) => v / mass) : out;
+}
+
+/** Media circular ponderada en grados, para declarar el desplazamiento de matiz. */
+function circularMeanDeg(histogram: number[]): number | null {
+  const n = histogram.length;
+  if (!n) return null;
+  let x = 0, y = 0, mass = 0;
+  for (let i = 0; i < n; i++) {
+    const angle = (2 * Math.PI * i) / n;
+    x += histogram[i] * Math.cos(angle);
+    y += histogram[i] * Math.sin(angle);
+    mass += histogram[i];
+  }
+  if (mass <= 0 || Math.hypot(x, y) < 1e-9) return null;
+  return round((((Math.atan2(y, x) * 180) / Math.PI) + 360) % 360, 1);
+}
+
+function hueDistanceDeg(a: number, b: number): number {
+  const d = Math.abs(a - b) % 360;
+  return round(Math.min(d, 360 - d), 1);
+}
+
+export interface HueDistribution {
+  histogram: number[];
+  chromaticCoverage: number;
+  neutralShare: number;
+  circularMeanDeg: number | null;
+  /** Número efectivo de matices (participación) = 1 / Σ p². */
+  effectiveHues: number;
+}
+
+export function hueDistribution(profile: VisualProfile): HueDistribution {
+  const histogram = new Array(12).fill(0);
+  let chromaticCoverage = 0;
+  let neutralShare = 0;
+  for (const color of profile.palette) {
+    const chroma = chromaOf(color.rgb);
+    if (chroma >= NEUTRAL_CHROMA) {
+      const hue = hueOfRgb(color.rgb);
+      if (hue >= 0) {
+        histogram[Math.min(11, Math.floor(hue / 30))] += color.share * chroma;
+        chromaticCoverage += color.share;
+        continue;
+      }
+    }
+    neutralShare += color.share;
+  }
+  const mass = histogram.reduce((a, b) => a + b, 0);
+  if (mass > 0) for (let i = 0; i < histogram.length; i++) histogram[i] /= mass;
+  const participation = histogram.reduce((a, p) => a + p * p, 0);
+  return {
+    histogram,
+    chromaticCoverage: round(chromaticCoverage, 3),
+    neutralShare: round(neutralShare, 3),
+    circularMeanDeg: circularMeanDeg(histogram),
+    effectiveHues: round(participation > 0 ? 1 / participation : 0, 2),
+  };
+}
+
 function lightingIndex(reference: VisualProfile, candidate: VisualProfile): number {
   const luma = similarityOfIndexes(reference.aggregate.luma, candidate.aggregate.luma, 0.35);
   const contrast = similarityOfIndexes(reference.aggregate.contrast, candidate.aggregate.contrast, 0.22);
@@ -184,7 +300,17 @@ export function evaluateQuality(
   const depth = round(similarityOfIndexes(depthIndex(reference), depthIndex(candidate), 0.5) * 100, 1);
   const lighting = round(lightingIndex(reference, candidate) * 100, 1);
   const typography = round(typographyIndex(opts.typography, candHierarchy) * 100, 1);
-  const coherence = round(cosine(reference.hueHistogram, candidate.hueHistogram) * 100, 1);
+  const refHue = hueDistribution(reference);
+  const candHue = hueDistribution(candidate);
+  const comparableCoverage = Math.min(refHue.chromaticCoverage, candHue.chromaticCoverage);
+  const hueComparable = comparableCoverage >= CHROMATIC_COVERAGE_FLOOR;
+  const smoothedSimilarity = hueComparable
+    ? cosine(smoothCircular(refHue.histogram), smoothCircular(candHue.histogram))
+    : 0;
+  const coherence = hueComparable ? round(smoothedSimilarity * 100, 1) : null;
+  const hueShiftDeg = hueComparable && refHue.circularMeanDeg !== null && candHue.circularMeanDeg !== null
+    ? hueDistanceDeg(refHue.circularMeanDeg, candHue.circularMeanDeg)
+    : null;
   const accessibility = accessibilityIndex(opts.accessibility);
   let transitions: number | null = null;
   let transitionEvidence: Record<string, number | string> = {};
@@ -233,8 +359,24 @@ export function evaluateQuality(
     { id: 'transitions', label: 'Transiciones y ritmo', score: transitions, weight: 0.04, evidence: transitionEvidence, available: transitions !== null },
     {
       id: 'coherence', label: 'Coherencia estética', score: coherence, weight: 0.05,
-      evidence: { histogramaDeMatiz: 'coseno entre referencias y resultado', valor: round(coherence / 100, 3) },
-      available: true,
+      evidence: hueComparable
+        ? {
+            metodo: 'coseno de histogramas suavizados con núcleo von Mises (κ=4, circular)',
+            valor: round(coherence! / 100, 3),
+            coberturaCromatica: comparableCoverage,
+            matizMedioReferencia: refHue.circularMeanDeg ?? 'no definido',
+            matizMedioResultado: candHue.circularMeanDeg ?? 'no definido',
+            desplazamientoMatizDeg: hueShiftDeg ?? 'no definido',
+            maticesEfectivos: Math.min(refHue.effectiveHues, candHue.effectiveHues),
+            neutroReferencia: refHue.neutralShare, neutroResultado: candHue.neutralShare,
+          }
+        : {
+            disponible: 'no',
+            motivo: `matiz no interpretable: cobertura cromática ${comparableCoverage} < ${CHROMATIC_COVERAGE_FLOOR}`,
+            coberturaReferencia: refHue.chromaticCoverage, coberturaResultado: candHue.chromaticCoverage,
+            neutroReferencia: refHue.neutralShare, neutroResultado: candHue.neutralShare,
+          },
+      available: hueComparable,
     },
     {
       id: 'accessibility', label: 'Accesibilidad de contraste', score: accessibility === null ? null : round(accessibility * 100, 1), weight: 0.07,
@@ -261,7 +403,7 @@ export function evaluateQuality(
       (animation !== null ? ` · animación ${animation.toFixed(1)}` : '') +
       ` · tipografía ${typography.toFixed(1)} · profundidad ${depth.toFixed(1)} · iluminación ${lighting.toFixed(1)}` +
       (transitions !== null ? ` · transiciones ${transitions.toFixed(1)}` : '') +
-      ` · coherencia ${coherence.toFixed(1)}` +
+      (coherence !== null ? ` · coherencia ${coherence.toFixed(1)}` : ' · coherencia no disponible (imagen casi neutra)') +
       (accessibility !== null ? ` · accesibilidad ${(accessibility * 100).toFixed(1)}` : '') +
       (fluidity !== null ? ` · fluidez ${fluidity.toFixed(1)}` : '') +
       (performance !== null ? ` · rendimiento ${performance.toFixed(1)}` : '') +

@@ -182,10 +182,11 @@ export function selectContext(task: string, opts: { profile?: string; maxTools?:
   const compact = [
     `TAREA: ${task}`,
     `TIPO: ${kind}`,
+    `REFERENCE FIRST: ve plan "${task}" --reference <archivo> --out ./sistema`,
     `HERRAMIENTAS: ${tools.map((t) => t.name).join(', ')}`,
     `RECETAS: ${recipes.map((r) => `${r.id} (${r.role})`).join(', ') || 'ninguna; pide una concreta'}`,
     `DOCS: ${docs.map((d) => d.path).join(', ')}`,
-    `REGLAS: no cargar los 58 efectos; pedir un id; verificar antes de afirmar.`,
+    `REGLAS: la referencia manda sobre el estilo; no cargar los 58 efectos; verificar antes de afirmar.`,
   ].join('\n');
   return {
     version: '1.0', profile: profile.id, tokenBudget: profile.tokenBudget, task, kind, tools, recipes, docs,

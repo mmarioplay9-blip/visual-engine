@@ -49,10 +49,11 @@ import {
   opRestoreLoop,
 } from '../core/intelligence-ops.js';
 import { planInstall, applyInstall, uninstall, repair, inventory, verifyMcpServer } from '../core/installer.js';
-import { PROFILES, describeProfile } from '../core/profiles.js';
+import { PROFILES, describeProfile, type ProfileId } from '../core/profiles.js';
 import { detectActivation, activationSupport } from '../core/activation.js';
 import { auditSecurity } from '../core/security.js';
 import { recordUsage } from '../core/usage.js';
+import { buildPlan, createReferenceBrief, TOOL_GROUPS } from '../core/plan.js';
 
 const json = (v: unknown) => JSON.stringify(v, null, 2);
 
@@ -69,13 +70,15 @@ function fail(e: unknown) {
 
 const INSTRUCTIONS = `Visual Engine eleva la calidad visual de proyectos creados por agentes.
 
-Ciclo obligatorio cuando el usuario pida calidad visual avanzada:
-1. visual_doctor → comprobar herramientas reales antes de prometer nada.
-2. visual_analyze → medir la referencia (paleta, luminancia, contraste, movimiento, cortes).
-3. Diseñar/ajustar sin genéricos: usa visual_effects_list y visual_effect_apply para partir de una base con intención.
-4. visual_capture → capturar el proyecto real (varios fotogramas para animación).
-5. visual_review → puntuación de fidelidad, mapa de calor y correcciones priorizadas.
-6. Aplicar SOLO las correcciones medidas y repetir la revisión para comparar la puntuación.
+Protocolo Reference First (obligatorio):
+1. visual_plan con la intención del usuario y el archivo de referencia → brief medido (7 dimensiones, paleta, composición, tipografía) y plan de 8 pasos.
+2. visual_doctor → comprobar herramientas reales antes de prometer nada.
+3. Medir y comprender sin imponer estética: la referencia y la intención mandan sobre cualquier estilo; no añadas oscuridad, partículas, glow o glassmorphism que no estén.
+4. Diseñar/ajustar: usa visual_effects_list y visual_effect_apply sólo para lo que la referencia sostenga.
+5. visual_capture → capturar el proyecto real (varios fotogramas para animación).
+6. visual_critic / visual_fidelity → defectos con evidencia y dimensiones débiles.
+7. Aplicar SOLO correcciones medidas (máx. 2) y repetir la revisión.
+8. visual_gate → verificar. Sin captura y gate no está terminado; declara los defectos pendientes.
 
 Referencias profesionales (0.2):
 - visual_timeline → escenas, fotogramas clave y storyboard.
@@ -131,7 +134,20 @@ export function createServer(): McpServer {
     { instructions: INSTRUCTIONS },
   );
 
-  server.registerTool(
+  // Descubrimiento selectivo: VE_MCP_GROUPS=analysis,verify expone sólo esos
+  // grupos y los nombres indicados, conservando todas las capacidades en el CLI.
+  const wantedGroups = new Set((process.env.VE_MCP_GROUPS ?? '').split(',').map((v) => v.trim()).filter(Boolean));
+  const wantedNames = new Set((process.env.VE_MCP_TOOLS ?? '').split(',').map((v) => v.trim()).filter(Boolean));
+  const reg = (name: string, definition: unknown, handler: (...a: any[]) => any) => {
+    const group = TOOL_GROUPS[name];
+    const visible = !wantedGroups.size && !wantedNames.size
+      ? true
+      : (!!group && wantedGroups.has(group)) || wantedNames.has(name);
+    if (!visible) return;
+    server.registerTool(name as any, definition as any, handler as any);
+  };
+
+  reg(
     'visual_doctor',
     {
       title: 'Detectar herramientas visuales',
@@ -156,7 +172,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_analyze',
     {
       title: 'Analizar referencia visual',
@@ -177,7 +193,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_extract_frames',
     {
       title: 'Extraer fotogramas',
@@ -200,7 +216,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_capture',
     {
       title: 'Capturar el proyecto real',
@@ -235,7 +251,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_compare',
     {
       title: 'Comparar referencia y resultado',
@@ -268,7 +284,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_review',
     {
       title: 'Revisión visual completa',
@@ -308,7 +324,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_effects_list',
     {
       title: 'Listar biblioteca de efectos',
@@ -327,7 +343,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_effect_get',
     {
       title: 'Ver un efecto',
@@ -343,7 +359,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_effect_apply',
     {
       title: 'Aplicar un efecto',
@@ -351,7 +367,7 @@ export function createServer(): McpServer {
       inputSchema: {
         id: z.string(),
         outDir: z.string().describe('Carpeta del proyecto donde escribir el efecto.'),
-        params: z.record(z.union([z.string(), z.number(), z.boolean()])).optional(),
+        params: z.record(z.string(), z.union([z.string(), z.number(), z.boolean()])).optional(),
       },
     },
     async (args) => {
@@ -363,7 +379,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_adapters',
     {
       title: 'Adaptadores de herramientas',
@@ -379,7 +395,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_scaffold',
     {
       title: 'Generar integración de herramienta',
@@ -399,7 +415,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_deps_plan',
     {
       title: 'Planificar dependencias',
@@ -418,7 +434,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_install_deps',
     {
       title: 'Instalar dependencias gratuitas',
@@ -439,7 +455,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_timeline',
     {
       title: 'Línea temporal de vídeo',
@@ -461,7 +477,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_camera',
     {
       title: 'Movimiento de cámara',
@@ -482,7 +498,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_inspect',
     {
       title: 'Composición, formas, texto y profundidad',
@@ -504,7 +520,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_effects_detect',
     {
       title: 'Detectar efectos visuales',
@@ -525,7 +541,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_spec',
     {
       title: 'Especificación visual estructurada',
@@ -546,7 +562,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_recommend',
     {
       title: 'Tecnología y código por efecto',
@@ -554,7 +570,7 @@ export function createServer(): McpServer {
       inputSchema: {
         effect: z.string().optional().describe('glow, bloom, particles, blur, parallax, glitch, lighting, reflections, distortion, grain'),
         specFile: z.string().optional().describe('spec.json para recomendar todos sus efectos.'),
-        params: z.record(z.union([z.string(), z.number(), z.boolean()])).optional(),
+        params: z.record(z.string(), z.union([z.string(), z.number(), z.boolean()])).optional(),
       },
     },
     async (args) => {
@@ -566,7 +582,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_temporal',
     {
       title: 'Comparación temporal',
@@ -587,7 +603,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_vision',
     {
       title: 'Visión local opcional',
@@ -609,7 +625,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_iterate',
     {
       title: 'Iterar con verificación y reversión',
@@ -639,7 +655,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_backup',
     {
       title: 'Copias de seguridad de iteraciones',
@@ -661,13 +677,13 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_compose',
     {
       title: 'Componer capas de efectos',
       description: 'Valida y renderiza una composición JSON 0.3: capas, parámetros compartidos, mezclas, máscaras, transformaciones y curvas de animación. Genera HTML autónomo y composition.json.',
       inputSchema: {
-        composition: z.record(z.any()).optional().describe('Objeto de composición; si falta, usa file.'),
+        composition: z.record(z.string(), z.any()).optional().describe('Objeto de composición; si falta, usa file.'),
         file: z.string().optional().describe('Ruta a un composition.json.'),
         outDir: z.string().optional().describe('Directorio de salida.'),
         validateOnly: z.boolean().optional(),
@@ -682,7 +698,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_reference_effects',
     {
       title: 'Referencia visual → efectos y composición',
@@ -706,7 +722,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_benchmark',
     {
       title: 'Medir rendimiento de efectos',
@@ -729,7 +745,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_art_direction',
     {
       title: 'Dirección artística y sistema de diseño',
@@ -738,6 +754,7 @@ export function createServer(): McpServer {
         brief: z.string().describe('Brief o descripción del proyecto.'),
         style: z.string().optional().describe('Estilo: minimal-premium, cinematic, futuristic, sci-fi, cyberpunk, glassmorphism, neumorphism, editorial, brutalism, game-ui, professional-app, financial-dashboard, immersive-3d, motion-graphics, organic-natural.'),
         projectType: z.string().optional().describe('landing, dashboard, app, game, editorial, motion...'),
+        fromPlan: z.string().optional().describe('reference-first.json escrito por visual_plan. Sin él, el estilo puede contradecir la referencia.'),
         outDir: z.string().optional(),
       },
     },
@@ -746,7 +763,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_reference_design',
     {
       title: 'Reference-to-Design',
@@ -766,7 +783,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_motion_director',
     {
       title: 'Motion Director',
@@ -783,7 +800,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_showcase',
     {
       title: 'Composiciones completas',
@@ -799,7 +816,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_context',
     {
       title: 'Contexto selectivo para agentes',
@@ -816,7 +833,7 @@ export function createServer(): McpServer {
     async (args) => { try { return ok(opContext(args)); } catch (e) { return fail(e); } },
   );
 
-  server.registerTool(
+  reg(
     'visual_debug',
     {
       title: 'Visual Debugger',
@@ -834,7 +851,7 @@ export function createServer(): McpServer {
     async (args) => { try { return ok(await opDebug(args)); } catch (e) { return fail(e); } },
   );
 
-  server.registerTool(
+  reg(
     'visual_critic',
     {
       title: 'Visual Critic',
@@ -852,13 +869,13 @@ export function createServer(): McpServer {
         width: z.number().int().min(320).max(3840).optional(),
         height: z.number().int().min(240).max(2160).optional(),
         humanApproval: z.object({ approved: z.boolean().optional(), reviewer: z.string().optional(), note: z.string().optional() }).optional(),
-        gates: z.record(z.any()).optional(),
+        gates: z.record(z.string(), z.any()).optional(),
       },
     },
     async (args) => { try { return ok(await opIntelligence(args)); } catch (e) { return fail(e); } },
   );
 
-  server.registerTool(
+  reg(
     'visual_fidelity',
     {
       title: 'Reference Fidelity Engine',
@@ -875,14 +892,14 @@ export function createServer(): McpServer {
     async (args) => { try { return ok(await opIntelligence(args)); } catch (e) { return fail(e); } },
   );
 
-  server.registerTool(
+  reg(
     'visual_gate',
     {
       title: 'Quality Gates',
       description: 'Evalúa fidelidad, calidad, composición, tipografía, accesibilidad, rendimiento, funcionamiento, regresiones y aprobación humana. Un defecto crítico bloquea aunque la puntuación media sea alta.',
       inputSchema: {
         from: z.string().optional().describe('intelligence.json, review.json o gates.json.'),
-        config: z.record(z.any()).optional(),
+        config: z.record(z.string(), z.any()).optional(),
         humanApproval: z.object({ approved: z.boolean().optional(), reviewer: z.string().optional(), note: z.string().optional() }).optional(),
         outDir: z.string().optional(),
       },
@@ -890,7 +907,7 @@ export function createServer(): McpServer {
     async (args) => { try { return ok(opGate(args)); } catch (e) { return fail(e); } },
   );
 
-  server.registerTool(
+  reg(
     'visual_smart_effects',
     {
       title: 'Selección contextual de efectos',
@@ -909,7 +926,7 @@ export function createServer(): McpServer {
     async (args) => { try { return ok(opSmartEffects(args)); } catch (e) { return fail(e); } },
   );
 
-  server.registerTool(
+  reg(
     'visual_loop',
     {
       title: 'Autonomous Improvement Loop',
@@ -932,7 +949,7 @@ export function createServer(): McpServer {
           minQualityDelta: z.number().min(0).max(100).optional(),
           minFidelityDelta: z.number().min(0).max(100).optional(),
         }).optional(),
-        gates: z.record(z.any()).optional(),
+        gates: z.record(z.string(), z.any()).optional(),
         humanApproval: z.object({ approved: z.boolean().optional(), reviewer: z.string().optional(), note: z.string().optional() }).optional(),
         outDir: z.string().optional(),
         confirm: z.boolean().describe('Obligatorio si se aportan cambios: escribe archivos.'),
@@ -941,7 +958,7 @@ export function createServer(): McpServer {
     async (args) => { try { return ok(await opLoop(args)); } catch (e) { return fail(e); } },
   );
 
-  server.registerTool(
+  reg(
     'visual_loops',
     {
       title: 'Historial de loops',
@@ -962,7 +979,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_agents',
     {
       title: 'Agentes instalados y estado de integración',
@@ -972,7 +989,7 @@ export function createServer(): McpServer {
     async (args) => { try { return ok(await inventory(args.project)); } catch (e) { return fail(e); } },
   );
 
-  server.registerTool(
+  reg(
     'visual_install',
     {
       title: 'Universal Installer',
@@ -1003,7 +1020,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_profile',
     {
       title: 'Perfiles Lite, Professional y Cinematic',
@@ -1013,12 +1030,12 @@ export function createServer(): McpServer {
     async (args) => {
       try {
         if (!args.id) return ok(Object.values(PROFILES));
-        return ok({ profile: PROFILES[args.id], description: describeProfile(PROFILES[args.id]) });
+        return ok({ profile: PROFILES[args.id as ProfileId], description: describeProfile(PROFILES[args.id as ProfileId]) });
       } catch (e) { return fail(e); }
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_activation',
     {
       title: 'Activación inteligente',
@@ -1033,7 +1050,7 @@ export function createServer(): McpServer {
     },
   );
 
-  server.registerTool(
+  reg(
     'visual_security',
     {
       title: 'Auditoría de seguridad',
@@ -1043,7 +1060,7 @@ export function createServer(): McpServer {
     async (args) => { try { return ok(auditSecurity({ projectDir: args.project })); } catch (e) { return fail(e); } },
   );
 
-  server.registerTool(
+  reg(
     'visual_usage',
     {
       title: 'Consumo de tokens medido o estimado',
@@ -1055,6 +1072,27 @@ export function createServer(): McpServer {
       },
     },
     async (args) => { try { return ok(recordUsage(args)); } catch (e) { return fail(e); } },
+  );
+
+  reg(
+    'visual_plan',
+    {
+      title: 'Reference First: brief medido y plan de 8 pasos',
+      description: 'Antes de diseñar: mide la referencia y devuelve las siete dimensiones que hay que preservar, la paleta con roles y contraste, la composición, la tipografía estimada y un plan de 8 pasos con herramientas, criterio de terminado y presupuesto. No impone estilos.',
+      inputSchema: {
+        task: z.string().describe('Intención del usuario tal cual, sin reescribirla como estilo.'),
+        reference: z.string().optional().describe('Imagen o vídeo de referencia. Sin ella no se inventan color ni composición.'),
+        outDir: z.string().optional().describe('Carpeta donde escribir reference-first.md y reference-first.json.'),
+        phase: z.string().optional().describe('Paso actual: analizar, comprender, disenar, implementar, renderizar, inspeccionar, corregir, verificar.'),
+      },
+    },
+    async (args) => {
+      try {
+        const plan = buildPlan({ task: args.task, phase: args.phase });
+        const brief = await createReferenceBrief({ intent: args.task, reference: args.reference, outDir: args.outDir });
+        return ok({ plan, brief, next: plan.steps.find((s) => s.status === 'pending') ?? null });
+      } catch (e) { return fail(e); }
+    },
   );
 
   server.registerResource(

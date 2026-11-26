@@ -1,0 +1,93 @@
+{
+  "version": "0.5",
+  "score": 82,
+  "grade": "B",
+  "findings": [
+    {
+      "id": "typography-structure",
+      "category": "typography",
+      "title": "Escala tipográfica insuficiente o cuerpo por debajo del mínimo legible",
+      "severity": "medium",
+      "confidence": 0.85,
+      "evidence": [
+        {
+          "source": "dom",
+          "metric": "pasos tipográficos",
+          "value": 3,
+          "threshold": 3
+        },
+        {
+          "source": "dom",
+          "metric": "cuerpo medio px",
+          "value": 0,
+          "threshold": 12
+        },
+        {
+          "source": "dom",
+          "metric": "ratio máximo/mínimo",
+          "value": 1.38,
+          "threshold": 1.8
+        }
+      ],
+      "location": {
+        "component": "typography"
+      },
+      "fix": {
+        "kind": "typography",
+        "summary": "Define una escala modular de al menos tres pasos y un cuerpo de 16 px cuando el espacio lo permita.",
+        "property": "font-size / line-height",
+        "to": "clamp(16px, 1.25vw, 20px)"
+      },
+      "status": "measured"
+    },
+    {
+      "id": "coherence-low",
+      "category": "coherence",
+      "title": "Incoherencia estética entre la intención y el resultado",
+      "severity": "high",
+      "confidence": 0.75,
+      "evidence": [
+        {
+          "source": "quality",
+          "metric": "coherencia de matiz",
+          "value": 12.1,
+          "threshold": 58
+        }
+      ],
+      "location": {
+        "component": "palette"
+      },
+      "fix": {
+        "kind": "css",
+        "summary": "Reduce la paleta a tokens semánticos y elimina acentos que no tengan un rol.",
+        "property": "color tokens"
+      },
+      "status": "measured"
+    }
+  ],
+  "counts": {
+    "critical": 0,
+    "high": 1,
+    "medium": 1,
+    "low": 0
+  },
+  "summary": "Crítica 82/100 (B): 0 crítico(s), 1 alto(s), 1 medio(s), 0 bajo(s).",
+  "agentTask": "# Tarea visual priorizada\n\nBrief: HUD de videojuego sobre un cañón desértico al atardecer, 1280×720, CSS/SVG local.\nEstilo: game-ui\nCrítica: Crítica 82/100 (B): 0 crítico(s), 1 alto(s), 1 medio(s), 0 bajo(s).\n\n## Corrige sólo estos defectos medidos\n\n### [HIGH] Incoherencia estética entre la intención y el resultado\n- Evidencia: coherencia de matiz=12.1 (objetivo 58)\n- Ubicación: sin selector; componente palette\n- Corrección: Reduce la paleta a tokens semánticos y elimina acentos que no tengan un rol.\n- Propiedad: color tokens\n- Acción base: Reduce la paleta y reutiliza tokens; elimina acentos y materiales que no pertenecen al sistema.\n\n### [MEDIUM] Escala tipográfica insuficiente o cuerpo por debajo del mínimo legible\n- Evidencia: pasos tipográficos=3 (objetivo 3); cuerpo medio px=0 (objetivo 12); ratio máximo/mínimo=1.38 (objetivo 1.8)\n- Ubicación: sin selector; componente typography\n- Corrección: Define una escala modular de al menos tres pasos y un cuerpo de 16 px cuando el espacio lo permita.\n- Propiedad: font-size / line-height\n- Acción base: Ajusta la escala modular, el cuerpo mínimo y el interlineado antes de cambiar la familia.\n\n## Reglas de la iteración\n\n1. No reescribas todo: aplica el cambio mínimo en la ubicación indicada.\n2. No añadas un efecto si no hay evidencia de que falta y una función que cumplir.\n3. Conserva las decisiones que ya pasan los umbrales.\n4. Vuelve a capturar y compara antes/después; revierte si no mejora.\n5. La aprobación artística final es humana.\n\n## Límites\n\n- Sin animaciones observadas no se afirma rigidez temporal.\n- La crítica detecta defectos estructurales; no sustituye la aprobación artística humana.",
+  "limitations": [
+    "Sin animaciones observadas no se afirma rigidez temporal.",
+    "La crítica detecta defectos estructurales; no sustituye la aprobación artística humana."
+  ],
+  "measured": {
+    "quality": 85.3,
+    "fidelity": 94.7,
+    "composition": 82.4,
+    "hierarchy": 85.8,
+    "typography": 61.5,
+    "depth": 98.9,
+    "lighting": 90.4,
+    "coherence": 12.1,
+    "transitions": 100,
+    "performance": 52.8
+  },
+  "artisticJudgment": false
+}

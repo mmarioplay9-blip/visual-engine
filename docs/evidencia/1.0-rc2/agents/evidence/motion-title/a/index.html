@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ORBIT — Secuencia orbital</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #303233; }
+    main { position: relative; width: min(100%, 1280px); aspect-ratio: 16 / 9; margin-inline: auto; overflow: hidden; }
+    svg, canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+    canvas { pointer-events: none; }
+    .label { font: 14px Consolas, "Courier New", monospace; letter-spacing: .45px; }
+    .scale { font-size: 13px; }
+  </style>
+</head>
+<body>
+  <main aria-label="ORBIT, secuencia orbital">
+    <svg viewBox="0 0 1392 752" preserveAspectRatio="none" role="img" aria-labelledby="art-title art-desc">
+      <title id="art-title">ORBIT</title>
+      <desc id="art-desc">Título marfil sobre fondo carbón, con una cuña naranja y una escala de tiempo en el borde inferior.</desc>
+      <defs>
+        <radialGradient id="charcoal" cx="49%" cy="43%" r="72%">
+          <stop stop-color="#383a3b"/>
+          <stop offset=".65" stop-color="#323435"/>
+          <stop offset="1" stop-color="#292b2b"/>
+        </radialGradient>
+        <linearGradient id="orange" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+          <stop stop-color="#cc641c"/>
+          <stop offset=".58" stop-color="#d97426"/>
+          <stop offset="1" stop-color="#b85818"/>
+        </linearGradient>
+        <linearGradient id="fold">
+          <stop stop-color="#bd5e20"/>
+          <stop offset=".85" stop-color="#743715"/>
+          <stop offset="1" stop-color="#382c25"/>
+        </linearGradient>
+        <linearGradient id="ivory" x2="0" y2="1">
+          <stop stop-color="#f7f4e6"/>
+          <stop offset="1" stop-color="#f1eedf"/>
+        </linearGradient>
+        <linearGradient id="rail">
+          <stop stop-color="#9b9c95"/>
+          <stop offset=".54" stop-color="#676a67"/>
+          <stop offset="1" stop-color="#5c605d"/>
+        </linearGradient>
+        <linearGradient id="progress">
+          <stop stop-color="#df792f"/>
+          <stop offset=".83" stop-color="#c1682c"/>
+          <stop offset=".95" stop-color="#c1682c" stop-opacity=".65"/>
+          <stop offset="1" stop-color="#c1682c" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path fill="url(#charcoal)" d="M0 0H1392V752H0Z"/>
+      <path fill="url(#fold)" d="M0 581 417 462 400 490 0 591Z"/>
+      <path fill="url(#orange)" d="M0 241 381 373 407 444 428 468 0 590Z"/>
+      <g fill="url(#ivory)" fill-rule="evenodd">
+        <path d="M326 203C406 203 453 259 453 347S407 492 326 492C245 492 201 435 201 347S246 203 326 203ZM327 258C289 258 272 291 272 347C272 404 289 436 327 436C365 436 381 405 381 347C381 291 365 258 327 258Z"/>
+        <path d="M486 209H571C641 209 677 235 677 290C677 328 658 353 626 363L691 486H620L568 380H552V486H486ZM552 261V329H572C599 329 613 317 613 294C613 271 600 261 574 261Z"/>
+        <path d="M711 209H798C851 209 881 233 881 276C881 306 867 326 840 336C871 344 887 371 887 405C887 456 855 486 800 486H711ZM773 260V316H791C812 316 824 306 824 287C824 269 812 260 790 260ZM773 364V430H793C819 430 832 419 832 397C832 375 818 364 793 364Z"/>
+        <path d="M907 209H966V486H907Z"/>
+        <path d="M1003 209H1204V264H1136V486H1069V264H1003Z"/>
+      </g>
+      <g class="label" fill="#f4f0df">
+        <text x="48" y="44">DISEÑO ORBITAL</text>
+        <text x="1342" y="44" text-anchor="end">ESTUDIO 01</text>
+      </g>
+      <rect x="51" y="688" width="1290" height="6" rx="1" fill="url(#rail)"/>
+      <rect x="199" y="687.5" width="455" height="7" rx="1" fill="url(#progress)"/>
+      <rect x="696" y="681.5" width="10" height="18" rx="5" fill="#f7f4ef"/>
+      <g class="label scale" fill="#edeadc">
+        <text x="51" y="715">SECUENCIA 01</text>
+        <g text-anchor="middle" fill="#d4d3c8">
+          <text x="276" y="714">02</text>
+          <text x="462" y="714">04</text>
+          <text x="644" y="714">06</text>
+          <text x="829" y="714">08</text>
+          <text x="1018" y="714">10</text>
+          <text x="1145" y="714">12</text>
+        </g>
+        <text x="1341" y="715" text-anchor="end" fill="#e79a53">TIEMPO / S</text>
+      </g>
+    </svg>
+    <canvas width="1280" height="720" aria-hidden="true"></canvas>
+  </main>
+  <script>
+    const canvas = document.querySelector('canvas');
+    const context = canvas.getContext('2d');
+    const grain = context.createImageData(canvas.width, canvas.height);
+    let seed = 29751;
+
+    for (let pixel = 0; pixel < grain.data.length; pixel += 4) {
+      seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0;
+      const noise = (seed >>> 24) - 128;
+      const tone = noise < 0 ? 0 : 255;
+      grain.data[pixel] = tone;
+      grain.data[pixel + 1] = tone;
+      grain.data[pixel + 2] = tone;
+      grain.data[pixel + 3] = Math.abs(noise) / 9;
+    }
+
+    context.putImageData(grain, 0, 0);
+  </script>
+</body>
+</html>

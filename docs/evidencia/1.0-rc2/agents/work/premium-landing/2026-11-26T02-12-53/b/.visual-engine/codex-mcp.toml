@@ -1,0 +1,5 @@
+
+# Visual Engine 1.0 — servidor MCP local
+[mcp_servers.visual-engine]
+command = "node"
+args = ["<repo>\\dist\\cli\\index.js","mcp"]

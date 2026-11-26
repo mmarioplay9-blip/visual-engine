@@ -1,0 +1,602 @@
+{
+  "generatedAt": "2026-11-26T02:15:51.683Z",
+  "agent": "codex-cli 0.172.0",
+  "model": "por defecto de la cuenta (el mismo en las dos ramas)",
+  "cases": {
+    "professional-app": {
+      "a": {
+        "quality": 95.2,
+        "grade": "A",
+        "fidelity": 94.9,
+        "composition": 99.8,
+        "typography": 91.1,
+        "accessibility": 62.1,
+        "lighting": 98.8,
+        "coherence": null,
+        "depth": 100,
+        "performance": 85.4,
+        "fps": 60.9,
+        "loadMs": 747,
+        "critic": 70,
+        "critical": 1,
+        "high": 0,
+        "medium": 0,
+        "findings": [
+          "critical:accessibility:Texto por debajo del contraste mínimo en el DOM"
+        ],
+        "gates": "reject",
+        "blockers": [
+          "critical-findings=1",
+          "contrast=31"
+        ],
+        "tricky": {
+          "compositionEvidence": {
+            "referencia": 0.994,
+            "resultado": 0.995,
+            "equilibrio": "masa por cuadrantes"
+          },
+          "coherenceEvidence": {
+            "disponible": "no",
+            "motivo": "matiz no interpretable: cobertura cromática 0.021 < 0.08",
+            "coberturaReferencia": 0.021,
+            "coberturaResultado": 0.024,
+            "neutroReferencia": 0.959,
+            "neutroResultado": 0.958
+          }
+        },
+        "calls": {
+          "ve": 0,
+          "mcp": 0,
+          "tokens": {
+            "input_tokens": 370805,
+            "cached_input_tokens": 334720,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 7121,
+            "reasoning_output_tokens": 41
+          },
+          "ms": 163343,
+          "bytes": 14597,
+          "embeddedReference": false,
+          "cached": 334720,
+          "output": 7121
+        }
+      },
+      "b": {
+        "quality": 96.8,
+        "grade": "A",
+        "fidelity": 94.7,
+        "composition": 99.8,
+        "typography": 72.2,
+        "accessibility": 100,
+        "lighting": 97.5,
+        "coherence": null,
+        "depth": 99.8,
+        "performance": 87.7,
+        "fps": 61.4,
+        "loadMs": 737,
+        "critic": 100,
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "findings": [],
+        "gates": "accept",
+        "blockers": [],
+        "tricky": {
+          "compositionEvidence": {
+            "referencia": 0.994,
+            "resultado": 0.995,
+            "equilibrio": "masa por cuadrantes"
+          },
+          "coherenceEvidence": {
+            "disponible": "no",
+            "motivo": "matiz no interpretable: cobertura cromática 0.017 < 0.08",
+            "coberturaReferencia": 0.021,
+            "coberturaResultado": 0.017,
+            "neutroReferencia": 0.959,
+            "neutroResultado": 0.96
+          }
+        },
+        "calls": {
+          "ve": 6,
+          "commands": 16,
+          "mcp": 0,
+          "tokens": {
+            "input_tokens": 1189664,
+            "cached_input_tokens": 1146240,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 9090,
+            "reasoning_output_tokens": 183
+          },
+          "ms": 256887,
+          "bytes": 14124,
+          "embeddedReference": false,
+          "installed": {
+            "agents": true,
+            "skill": true
+          },
+          "cached": 1146240,
+          "output": 9090
+        }
+      }
+    },
+    "scene-3d": {
+      "a": {
+        "quality": 95.7,
+        "grade": "A",
+        "fidelity": 88,
+        "composition": 94.1,
+        "typography": 85.1,
+        "accessibility": 100,
+        "lighting": 97.3,
+        "coherence": 100,
+        "depth": 91.8,
+        "performance": 83.5,
+        "fps": 61.3,
+        "loadMs": 741,
+        "critic": 94,
+        "critical": 0,
+        "high": 0,
+        "medium": 1,
+        "findings": [
+          "medium:materials:El material declarado no aparece en el render"
+        ],
+        "gates": "accept",
+        "blockers": [],
+        "tricky": {
+          "compositionEvidence": {
+            "referencia": 0.949,
+            "resultado": 0.978,
+            "equilibrio": "masa por cuadrantes"
+          },
+          "coherenceEvidence": {
+            "metodo": "coseno de histogramas suavizados con núcleo von Mises (κ=4, circular)",
+            "valor": 1,
+            "coberturaCromatica": 0.966,
+            "matizMedioReferencia": 270,
+            "matizMedioResultado": 270,
+            "desplazamientoMatizDeg": 0,
+            "maticesEfectivos": 1,
+            "neutroReferencia": 0.008,
+            "neutroResultado": 0.008
+          }
+        },
+        "calls": {
+          "ve": 0,
+          "mcp": 0,
+          "tokens": {
+            "input_tokens": 440358,
+            "cached_input_tokens": 409728,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2202,
+            "reasoning_output_tokens": 47
+          },
+          "ms": 72020,
+          "bytes": 9800,
+          "embeddedReference": false,
+          "cached": 409728,
+          "output": 2202
+        }
+      },
+      "b": {
+        "quality": 95.8,
+        "grade": "A",
+        "fidelity": 88,
+        "composition": 94.1,
+        "typography": 85.1,
+        "accessibility": 100,
+        "lighting": 97.7,
+        "coherence": 100,
+        "depth": 90.9,
+        "performance": 85.3,
+        "fps": 60.9,
+        "loadMs": 726,
+        "critic": 94,
+        "critical": 0,
+        "high": 0,
+        "medium": 1,
+        "findings": [
+          "medium:materials:El material declarado no aparece en el render"
+        ],
+        "gates": "accept",
+        "blockers": [],
+        "tricky": {
+          "compositionEvidence": {
+            "referencia": 0.949,
+            "resultado": 0.978,
+            "equilibrio": "masa por cuadrantes"
+          },
+          "coherenceEvidence": {
+            "metodo": "coseno de histogramas suavizados con núcleo von Mises (κ=4, circular)",
+            "valor": 1,
+            "coberturaCromatica": 0.966,
+            "matizMedioReferencia": 270,
+            "matizMedioResultado": 270,
+            "desplazamientoMatizDeg": 0,
+            "maticesEfectivos": 1,
+            "neutroReferencia": 0.008,
+            "neutroResultado": 0.007
+          }
+        },
+        "calls": {
+          "ve": 8,
+          "commands": 14,
+          "mcp": 0,
+          "tokens": {
+            "input_tokens": 721550,
+            "cached_input_tokens": 677504,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 3343,
+            "reasoning_output_tokens": 34
+          },
+          "ms": 142810,
+          "bytes": 9801,
+          "embeddedReference": false,
+          "installed": {
+            "agents": true,
+            "skill": true
+          },
+          "cached": 677504,
+          "output": 3343
+        }
+      }
+    },
+    "game-hud": {
+      "a": {
+        "quality": 85.3,
+        "grade": "A",
+        "fidelity": 72.8,
+        "composition": 82.4,
+        "typography": 61.5,
+        "accessibility": null,
+        "lighting": 90.4,
+        "coherence": 12.1,
+        "depth": 98.9,
+        "performance": 52.8,
+        "fps": 61.3,
+        "loadMs": 795,
+        "critic": 82,
+        "critical": 0,
+        "high": 1,
+        "medium": 1,
+        "findings": [
+          "medium:typography:Escala tipográfica insuficiente o cuerpo por debajo del mínimo legible",
+          "high:coherence:Incoherencia estética entre la intención y el resultado"
+        ],
+        "gates": "reject",
+        "blockers": [
+          "typography=61.5",
+          "high-findings=1"
+        ],
+        "tricky": {
+          "compositionEvidence": {
+            "referencia": 0.888,
+            "resultado": 0.976,
+            "equilibrio": "masa por cuadrantes"
+          },
+          "coherenceEvidence": {
+            "metodo": "coseno de histogramas suavizados con núcleo von Mises (κ=4, circular)",
+            "valor": 0.121,
+            "coberturaCromatica": 0.323,
+            "matizMedioReferencia": 238.6,
+            "matizMedioResultado": 1,
+            "desplazamientoMatizDeg": 122.4,
+            "maticesEfectivos": 1.05,
+            "neutroReferencia": 0.676,
+            "neutroResultado": 0.38
+          }
+        },
+        "calls": {
+          "ve": 0,
+          "mcp": 0,
+          "tokens": {
+            "input_tokens": 419402,
+            "cached_input_tokens": 359296,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2652,
+            "reasoning_output_tokens": 80
+          },
+          "ms": 84076,
+          "bytes": 15501,
+          "embeddedReference": false,
+          "cached": 359296,
+          "output": 2652
+        }
+      },
+      "b": {
+        "quality": 92.6,
+        "grade": "A",
+        "fidelity": 85.9,
+        "composition": 86.6,
+        "typography": 68.7,
+        "accessibility": 100,
+        "lighting": 94.5,
+        "coherence": 99.6,
+        "depth": 87.2,
+        "performance": 51.4,
+        "fps": 60.9,
+        "loadMs": 840,
+        "critic": 88,
+        "critical": 0,
+        "high": 0,
+        "medium": 2,
+        "findings": [
+          "medium:typography:Escala tipográfica insuficiente o cuerpo por debajo del mínimo legible",
+          "medium:materials:El material declarado no aparece en el render"
+        ],
+        "gates": "accept",
+        "blockers": [],
+        "tricky": {
+          "compositionEvidence": {
+            "referencia": 0.888,
+            "resultado": 0.956,
+            "equilibrio": "masa por cuadrantes"
+          },
+          "coherenceEvidence": {
+            "metodo": "coseno de histogramas suavizados con núcleo von Mises (κ=4, circular)",
+            "valor": 0.996,
+            "coberturaCromatica": 0.323,
+            "matizMedioReferencia": 238.6,
+            "matizMedioResultado": 239.6,
+            "desplazamientoMatizDeg": 1,
+            "maticesEfectivos": 1.15,
+            "neutroReferencia": 0.676,
+            "neutroResultado": 0
+          }
+        },
+        "calls": {
+          "ve": 27,
+          "commands": 34,
+          "mcp": 0,
+          "tokens": {
+            "input_tokens": 2865608,
+            "cached_input_tokens": 2802944,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 5743,
+            "reasoning_output_tokens": 200
+          },
+          "ms": 248516,
+          "bytes": 14096,
+          "embeddedReference": false,
+          "installed": {
+            "agents": true,
+            "skill": true
+          },
+          "cached": 2802944,
+          "output": 5743
+        }
+      }
+    },
+    "motion-title": {
+      "a": {
+        "quality": 96.2,
+        "grade": "A",
+        "fidelity": 95.6,
+        "composition": 98.9,
+        "typography": 79.7,
+        "accessibility": null,
+        "lighting": 97.4,
+        "coherence": null,
+        "depth": 99.1,
+        "performance": 67.7,
+        "fps": 61.7,
+        "loadMs": 738,
+        "critic": 100,
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "findings": [],
+        "gates": "accept",
+        "blockers": [],
+        "tricky": {
+          "compositionEvidence": {
+            "referencia": 0.94,
+            "resultado": 0.935,
+            "equilibrio": "masa por cuadrantes"
+          },
+          "coherenceEvidence": {
+            "disponible": "no",
+            "motivo": "matiz no interpretable: cobertura cromática 0.066 < 0.08",
+            "coberturaReferencia": 0.069,
+            "coberturaResultado": 0.066,
+            "neutroReferencia": 0.922,
+            "neutroResultado": 0.922
+          }
+        },
+        "calls": {
+          "ve": 0,
+          "mcp": 0,
+          "tokens": {
+            "input_tokens": 307545,
+            "cached_input_tokens": 278784,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2317,
+            "reasoning_output_tokens": 32
+          },
+          "ms": 71603,
+          "bytes": 5035,
+          "embeddedReference": false,
+          "cached": 278784,
+          "output": 2317
+        }
+      },
+      "b": {
+        "quality": 97,
+        "grade": "A",
+        "fidelity": 96.3,
+        "composition": 99.5,
+        "typography": 80.7,
+        "accessibility": null,
+        "lighting": 99.9,
+        "coherence": null,
+        "depth": 99.7,
+        "performance": 65.1,
+        "fps": 61.1,
+        "loadMs": 724,
+        "critic": 100,
+        "critical": 0,
+        "high": 0,
+        "medium": 0,
+        "findings": [],
+        "gates": "accept",
+        "blockers": [],
+        "tricky": {
+          "compositionEvidence": {
+            "referencia": 0.94,
+            "resultado": 0.938,
+            "equilibrio": "masa por cuadrantes"
+          },
+          "coherenceEvidence": {
+            "disponible": "no",
+            "motivo": "matiz no interpretable: cobertura cromática 0.068 < 0.08",
+            "coberturaReferencia": 0.069,
+            "coberturaResultado": 0.068,
+            "neutroReferencia": 0.922,
+            "neutroResultado": 0.92
+          }
+        },
+        "calls": {
+          "ve": 6,
+          "commands": 13,
+          "mcp": 0,
+          "tokens": {
+            "input_tokens": 583288,
+            "cached_input_tokens": 526080,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2495,
+            "reasoning_output_tokens": 0
+          },
+          "ms": 116320,
+          "bytes": 4258,
+          "embeddedReference": false,
+          "installed": {
+            "agents": true,
+            "skill": true
+          },
+          "cached": 526080,
+          "output": 2495
+        }
+      }
+    },
+    "premium-landing": {
+      "a": {
+        "quality": 97.4,
+        "grade": "A",
+        "fidelity": 91.7,
+        "composition": 98,
+        "typography": 91.2,
+        "accessibility": 100,
+        "lighting": 95.3,
+        "coherence": 100,
+        "depth": 98.3,
+        "performance": 86.3,
+        "fps": 60.9,
+        "loadMs": 786,
+        "critic": 94,
+        "critical": 0,
+        "high": 0,
+        "medium": 1,
+        "findings": [
+          "medium:materials:El material declarado no aparece en el render"
+        ],
+        "gates": "accept",
+        "blockers": [],
+        "tricky": {
+          "compositionEvidence": {
+            "referencia": 0.88,
+            "resultado": 0.87,
+            "equilibrio": "masa por cuadrantes"
+          },
+          "coherenceEvidence": {
+            "metodo": "coseno de histogramas suavizados con núcleo von Mises (κ=4, circular)",
+            "valor": 1,
+            "coberturaCromatica": 0.213,
+            "matizMedioReferencia": 4.8,
+            "matizMedioResultado": 5.9,
+            "desplazamientoMatizDeg": 1.1,
+            "maticesEfectivos": 1.37,
+            "neutroReferencia": 0.672,
+            "neutroResultado": 0.68
+          }
+        },
+        "calls": {
+          "ve": 0,
+          "mcp": 0,
+          "tokens": {
+            "input_tokens": 313639,
+            "cached_input_tokens": 279040,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 1912,
+            "reasoning_output_tokens": 15
+          },
+          "ms": 56914,
+          "bytes": 8669,
+          "embeddedReference": false,
+          "cached": 279040,
+          "output": 1912
+        }
+      },
+      "b": {
+        "quality": 97.5,
+        "grade": "A",
+        "fidelity": 91.8,
+        "composition": 98,
+        "typography": 91.2,
+        "accessibility": 100,
+        "lighting": 95.9,
+        "coherence": 100,
+        "depth": 98.5,
+        "performance": 86.1,
+        "fps": 61.6,
+        "loadMs": 779,
+        "critic": 94,
+        "critical": 0,
+        "high": 0,
+        "medium": 1,
+        "findings": [
+          "medium:materials:El material declarado no aparece en el render"
+        ],
+        "gates": "accept",
+        "blockers": [],
+        "tricky": {
+          "compositionEvidence": {
+            "referencia": 0.88,
+            "resultado": 0.87,
+            "equilibrio": "masa por cuadrantes"
+          },
+          "coherenceEvidence": {
+            "metodo": "coseno de histogramas suavizados con núcleo von Mises (κ=4, circular)",
+            "valor": 1,
+            "coberturaCromatica": 0.213,
+            "matizMedioReferencia": 4.8,
+            "matizMedioResultado": 6,
+            "desplazamientoMatizDeg": 1.2,
+            "maticesEfectivos": 1.37,
+            "neutroReferencia": 0.672,
+            "neutroResultado": 0.682
+          }
+        },
+        "calls": {
+          "ve": 4,
+          "commands": 9,
+          "mcp": 0,
+          "tokens": {
+            "input_tokens": 771958,
+            "cached_input_tokens": 722816,
+            "cache_write_input_tokens": 0,
+            "output_tokens": 2550,
+            "reasoning_output_tokens": 44
+          },
+          "ms": 113243,
+          "bytes": 8694,
+          "embeddedReference": false,
+          "installed": {
+            "agents": true,
+            "skill": true
+          },
+          "cached": 722816,
+          "output": 2550
+        }
+      }
+    }
+  }
+}
